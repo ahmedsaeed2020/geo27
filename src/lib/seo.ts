@@ -2,7 +2,7 @@
 // so canonical, og:url, locale, hreflang and JSON-LD stay consistent site-wide.
 export const SITE_URL = "https://digit-erp.com";
 
-type MetaTag = Record<string, string | undefined> & { title?: string };
+type MetaTag = { title?: string; name?: string; property?: string; content?: string; charSet?: string };
 type Head = { meta?: MetaTag[]; links?: Record<string, string>[]; scripts?: Record<string, string>[] };
 
 const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
@@ -101,7 +101,7 @@ export function withSeo(path: string, head: Head = {}): Head {
   const jsonld: object[] = [];
   if (arPath === "/" && !english) jsonld.push(...HOME_JSONLD);
   if (arPath.startsWith("/modules/")) {
-    const crumb = (english ? title.split(/[—|]/)[0].trim() : override?.crumb ?? title.split(/[—|]/)[0].trim());
+    const crumb = (english ? (title.split(/[—|]/)[0] ?? title).trim() : override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim());
     jsonld.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
