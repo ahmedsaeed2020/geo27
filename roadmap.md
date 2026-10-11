@@ -36,3 +36,7 @@
 - [x] Translate all page content, navigation, shared controls, and home sections professionally into English.
 - [x] Add equivalent English routes and page-preserving language switching with Arabic default.
 - [x] Verify both languages, directions, navigation, pricing, and package interactions.
+
+# Non-hero motion
+- [ ] Refine staggered section/card reveals, process progression, FAQs and package previews without altering heroes or backgrounds.
+- [ ] Verify both languages, interactions, reduced motion, and unchanged heroes.
