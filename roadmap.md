@@ -16,4 +16,4 @@
 - [x] Verify all page images load, layouts remain readable, and existing interactions work.
 - [x] Inspect the uploaded image library and select clean photographic crops by subject.
 - [x] Install suitable crops on matching pages without advertising copy or layout changes.
-- [ ] Verify installed crops and page readability.
+- [x] Verify installed crops and page readability.
