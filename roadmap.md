@@ -9,5 +9,8 @@
 - [x] Match the XML menus to published Arabic pages and supplied templates.
 - [x] Install all matched pages with extracted source content, scoped design, and interactions.
 - [x] Connect navigation and verify every menu destination and representative page interactions.
-- [x] Leave image completion and English translation for the next requested step.- [ ] توليد الشخصيات في سياقات مختلفة لكل صفحة (هيدر/خلفيات/جسم الصفحة) عبر imagegen بدل وضعها مقصوصة
-- [ ] إعادة توليد مشاهد الصفحات بأسلوب البرومبت الاحترافي المرفوع (شخصية مرجعية من الأرشيف + هوية Digit + ضوابط سلبية) عبر edit_image
+- [x] Leave English translation for its requested step.
+- [x] Generate the initial six referenced Digit scenes and connect them to representative pages.
+- [ ] Generate two page-specific referenced scenes for every Arabic content page: background and body.
+- [ ] Integrate the complete scene collection without changing source content or hosted forms.
+- [ ] Verify all page images load, layouts remain readable, and existing interactions work.
