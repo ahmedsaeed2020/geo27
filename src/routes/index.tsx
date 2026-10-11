@@ -47,7 +47,6 @@ function Index() {
         <Modules />
         <Capabilities />
         <ProblemConveyor />
-        <Personas />
         <Industries />
         <SaudiLocalization />
         <Faq />
