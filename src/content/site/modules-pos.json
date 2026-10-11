@@ -1,1 +1,1157 @@
-{"title":"نقاط البيع","description":"كل عملية بيع تتحوّل تلقائيًا إلى فاتورة متوافقة وقيد محاسبي وخصم مخزون — لكل القطاعات: تجزئة ومطاعم.","sourceUrl":"https://digit-erp.com/modules/pos/","nodes":[{"id":"76ace120","type":"container","className":"in-76ace120 digit kit","anchor":"","children":[{"id":"eca21d6","type":"html","className":"in-eca21d6 ","anchor":"digit-kit","html":""}]},{"id":"7da3b789","type":"container","className":"in-7da3b789 digit band-crumb","anchor":"","children":[{"id":"56251c7e","type":"text-editor","className":"in-56251c7e ","anchor":"","html":"<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-5\">نقاط البيع</span>"}]},{"id":"7bccc4f5","type":"container","className":"in-7bccc4f5 digit hero","anchor":"","children":[{"id":"79525a83","type":"container","className":"in-79525a83 ","anchor":"","children":[{"id":"28bc8ab2","type":"container","className":"in-28bc8ab2 ","anchor":"","children":[{"id":"521327d7","type":"container","className":"in-521327d7 ","anchor":"","children":[{"id":"6b82c90","type":"html","className":"in-6b82c90 ","anchor":"","html":"<span aria-label=\"نقاط البيع\" class=\"is-11\" role=\"img\"><svg aria-label=\"pos\" class=\"is-12\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-13\" height=\"34\" rx=\"7\" width=\"44\" x=\"28\" y=\"24\"></rect>\n<rect class=\"iv-14\" height=\"8\" rx=\"4\" width=\"24\" x=\"38\" y=\"32\"></rect>\n<rect class=\"iv-15\" height=\"12\" rx=\"6\" width=\"56\" x=\"22\" y=\"66\"></rect>\n</svg></span>"},{"id":"10d0ce77","type":"text-editor","className":"in-10d0ce77 ","anchor":"","html":"موديول · نقاط البيع"}]},{"id":"4360fa89","type":"heading","className":"in-4360fa89 ","anchor":"","html":"نقاط بيع متصلة بمحاسبتك ومخزونك… <em class=\"is-18\">بلا فجوات</em>","tag":"h1"},{"id":"10d167a2","type":"text-editor","className":"in-10d167a2 ","anchor":"","html":"كل عملية بيع تتحوّل تلقائيًا إلى فاتورة متوافقة وقيد محاسبي وخصم مخزون — لكل القطاعات: تجزئة ومطاعم."},{"id":"3a8f3ba2","type":"container","className":"in-3a8f3ba2 ","anchor":"","children":[{"id":"484a3f1e","type":"button","className":"in-484a3f1e btn solid","anchor":"","text":"احجز عرض POS","href":"#cta","external":false},{"id":"59b05f63","type":"button","className":"in-59b05f63 btn ghost","anchor":"","text":"شاهدها من الداخل","href":"#inside","external":false}]},{"id":"474b302b","type":"text-editor","className":"in-474b302b ","anchor":"","html":"<span class=\"chip\">متصلة بالمحاسبة</span><span class=\"chip\">خصم مخزون فوري</span><span class=\"chip\">تجزئة ومطاعم</span>"}]},{"id":"3d208fdd","type":"container","className":"in-3d208fdd ","anchor":"","children":[{"id":"5799c8ff","type":"html","className":"in-5799c8ff ","anchor":"","html":"<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / pos</span></div>"},{"id":"564201f1","type":"image-slot","className":"in-564201f1 ","anchor":""},{"id":"31247ddb","type":"text-editor","className":"in-31247ddb ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"60517b89","type":"container","className":"in-60517b89 digit proof","anchor":"","children":[{"id":"2d9bd3ac","type":"container","className":"in-2d9bd3ac ","anchor":"","children":[{"id":"3db2628d","type":"container","className":"in-3db2628d ","anchor":"","children":[{"id":"331a39ed","type":"heading","className":"in-331a39ed ","anchor":"","html":"متصلة","tag":"h3"},{"id":"58c914dd","type":"text-editor","className":"in-58c914dd ","anchor":"","html":"بالمحاسبة والمخزون"},{"id":"27b5d74d","type":"text-editor","className":"in-27b5d74d ","anchor":"","html":"بلا فجوات"}]},{"id":"24d3312","type":"container","className":"in-24d3312 ","anchor":"","children":[{"id":"171bd2cf","type":"heading","className":"in-171bd2cf ","anchor":"","html":"لكل بيعة","tag":"h3"},{"id":"4c67799d","type":"text-editor","className":"in-4c67799d ","anchor":"","html":"فاتورة وقيد وخصم"},{"id":"5b70da13","type":"text-editor","className":"in-5b70da13 ","anchor":"","html":"تلقائيًا"}]},{"id":"58bf0ab8","type":"container","className":"in-58bf0ab8 ","anchor":"","children":[{"id":"63985e8d","type":"heading","className":"in-63985e8d ","anchor":"","html":"القطاعات","tag":"h3"},{"id":"7e73ce0b","type":"text-editor","className":"in-7e73ce0b ","anchor":"","html":"تجزئة ومطاعم"},{"id":"76a9db44","type":"text-editor","className":"in-76a9db44 ","anchor":"","html":"واجهة مناسبة"}]},{"id":"60127def","type":"container","className":"in-60127def ","anchor":"","children":[{"id":"3ac6fd47","type":"heading","className":"in-3ac6fd47 ","anchor":"","html":"الفروع","tag":"h3"},{"id":"460e21a7","type":"text-editor","className":"in-460e21a7 ","anchor":"","html":"ورديات وصلاحيات"},{"id":"281a7157","type":"text-editor","className":"in-281a7157 ","anchor":"","html":"ورؤية موحّدة"}]}]}]},{"id":"2129eba","type":"container","className":"in-2129eba digit benefits","anchor":"","children":[{"id":"44e29b4","type":"container","className":"in-44e29b4 ","anchor":"","children":[{"id":"e5c8fb3","type":"text-editor","className":"in-e5c8fb3 ","anchor":"","html":"لماذا نقاط بيع Digit"},{"id":"5e629d76","type":"heading","className":"in-5e629d76 ","anchor":"","html":"كاشير… متصل بكل شيء","tag":"h2"},{"id":"4e6a5351","type":"text-editor","className":"in-4e6a5351 ","anchor":"","html":"من البيع إلى القيد وخصم المخزون — دون أنظمة منفصلة ولا تسويات يدوية."}]},{"id":"2fc0c836","type":"container","className":"in-2fc0c836 ","anchor":"","children":[{"id":"769e64bf","type":"container","className":"in-769e64bf ","anchor":"","children":[{"id":"255d815b","type":"html","className":"in-255d815b ","anchor":"","html":"<span aria-label=\"فوترة ومرتجعات\" class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" class=\"is-61\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-62\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-63\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"},{"id":"4efcb1a3","type":"heading","className":"in-4efcb1a3 ","anchor":"","html":"فوترة ومرتجعات","tag":"h3"},{"id":"2211297","type":"text-editor","className":"in-2211297 ","anchor":"","html":"إصدار فواتير ومرتجعات بسرعة وبصيغة مبسطة."}]},{"id":"34cda2a4","type":"container","className":"in-34cda2a4 ","anchor":"","children":[{"id":"61f4aa11","type":"html","className":"in-61f4aa11 ","anchor":"","html":"<span aria-label=\"سلة وباركود\" class=\"is-68\" role=\"img\"><svg aria-label=\"search\" class=\"is-69\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-70\" cx=\"44\" cy=\"44\" fill=\"none\" r=\"17\" stroke-width=\"9\"></circle>\n<line class=\"iv-71\" stroke-linecap=\"round\" stroke-width=\"10\" x1=\"56\" x2=\"75\" y1=\"56\" y2=\"75\"></line>\n</svg></span>"},{"id":"7277c14f","type":"heading","className":"in-7277c14f ","anchor":"","html":"سلة وباركود","tag":"h3"},{"id":"4a3db448","type":"text-editor","className":"in-4a3db448 ","anchor":"","html":"سلة بيع سريعة مع مسح الباركود."}]},{"id":"20fda588","type":"container","className":"in-20fda588 ","anchor":"","children":[{"id":"ff4dc87","type":"html","className":"in-ff4dc87 ","anchor":"","html":"<span aria-label=\"وضع عدم الاتصال\" class=\"is-76\" role=\"img\"><svg aria-label=\"backup\" class=\"is-77\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-78\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"26\"></rect>\n<rect class=\"iv-79\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"46\"></rect>\n<rect class=\"iv-80\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"66\"></rect>\n</svg></span>"},{"id":"4cf4f7dc","type":"heading","className":"in-4cf4f7dc ","anchor":"","html":"وضع عدم الاتصال","tag":"h3"},{"id":"7325a9fe","type":"text-editor","className":"in-7325a9fe ","anchor":"","html":"استمرار البيع عند انقطاع الإنترنت ثم المزامنة."}]},{"id":"2b1c22a","type":"container","className":"in-2b1c22a ","anchor":"","children":[{"id":"4bbd8f09","type":"html","className":"in-4bbd8f09 ","anchor":"","html":"<span aria-label=\"مدفوعات مرنة\" class=\"is-85\" role=\"img\"><svg aria-label=\"financial\" class=\"is-86\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-87\" height=\"11\" rx=\"5.5\" width=\"52\" x=\"24\" y=\"26\"></rect>\n<rect class=\"iv-88\" height=\"11\" rx=\"5.5\" width=\"36\" x=\"24\" y=\"42\"></rect>\n<rect class=\"iv-89\" height=\"11\" rx=\"5.5\" width=\"44\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-90\" height=\"8\" rx=\"4\" width=\"52\" x=\"24\" y=\"75\"></rect>\n</svg></span>"},{"id":"36d23ccf","type":"heading","className":"in-36d23ccf ","anchor":"","html":"مدفوعات مرنة","tag":"h3"},{"id":"145e77d8","type":"text-editor","className":"in-145e77d8 ","anchor":"","html":"نقدًا أو بطاقة أو تحويل مع تقسيم الدفع."}]},{"id":"556cc417","type":"container","className":"in-556cc417 ","anchor":"","children":[{"id":"57ed930b","type":"html","className":"in-57ed930b ","anchor":"","html":"<span aria-label=\"صلاحيات وورديات\" class=\"is-95\" role=\"img\"><svg aria-label=\"permissions\" class=\"is-96\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-97\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-98\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-99\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-100\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"3ef597ae","type":"heading","className":"in-3ef597ae ","anchor":"","html":"صلاحيات وورديات","tag":"h3"},{"id":"5a35ac09","type":"text-editor","className":"in-5a35ac09 ","anchor":"","html":"صلاحيات للكاشير وإدارة الورديات والإغلاق."}]},{"id":"76ec90d","type":"container","className":"in-76ec90d ","anchor":"","children":[{"id":"4262f8fb","type":"html","className":"in-4262f8fb ","anchor":"","html":"<span aria-label=\"تقارير وفروع\" class=\"is-105\" role=\"img\"><svg aria-label=\"reports\" class=\"is-106\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-107\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-108\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-109\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-110\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"7faead4c","type":"heading","className":"in-7faead4c ","anchor":"","html":"تقارير وفروع","tag":"h3"},{"id":"4142c253","type":"text-editor","className":"in-4142c253 ","anchor":"","html":"تقارير مبيعات لحظية لكل فرع وكاشير."}]}]}]},{"id":"390eed2e","type":"container","className":"in-390eed2e digit inside","anchor":"inside","children":[{"id":"6518284","type":"container","className":"in-6518284 ","anchor":"","children":[{"id":"71dde359","type":"container","className":"in-71dde359 ","anchor":"","children":[{"id":"295d91b5","type":"text-editor","className":"in-295d91b5 ","anchor":"","html":"من الداخل"},{"id":"2ecd327","type":"heading","className":"in-2ecd327 ","anchor":"","html":"كاشير سريع… متصل بالخلفية","tag":"h2"},{"id":"93dcb5a","type":"text-editor","className":"in-93dcb5a ","anchor":"","html":"البيع والمرتجعات والمدفوعات في شاشة سريعة، وكل عملية تنعكس في المخزون والمحاسبة فورًا."},{"id":"4b5d7fab","type":"text-editor","className":"in-4b5d7fab ","anchor":"","html":"<ul class=\"checks\"><li>سلة بيع وباركود</li><li>فاتورة مبسطة + QR</li><li>خصم المخزون فورًا</li><li>قيد محاسبي تلقائي</li><li>ورديات وصلاحيات</li></ul>"}]},{"id":"28c3c141","type":"container","className":"in-28c3c141 ","anchor":"","children":[{"id":"3b07dbdd","type":"html","className":"in-3b07dbdd ","anchor":"","html":"<div class=\"is-122\"><span class=\"is-123\"><i class=\"is-124\"></i><i class=\"is-125\"></i><i class=\"is-126\"></i></span><span class=\"is-127\">digit-erp.com / app / pos</span></div>"},{"id":"19c11f36","type":"image-slot","className":"in-19c11f36 ","anchor":""},{"id":"1bd2247b","type":"text-editor","className":"in-1bd2247b ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"7dcf7876","type":"container","className":"in-7dcf7876 digit sec","anchor":"","children":[{"id":"6b2c3a26","type":"container","className":"in-6b2c3a26 ","anchor":"","children":[{"id":"2c756d87","type":"container","className":"in-2c756d87 ","anchor":"","children":[{"id":"12465729","type":"text-editor","className":"in-12465729 ","anchor":"","html":"بماذا تدير مبيعاتك اليوم؟"},{"id":"85b565a","type":"heading","className":"in-85b565a ","anchor":"","html":"كاشير منفصل… مقابل كاشير متصل","tag":"h2"},{"id":"2cea19ae","type":"text-editor","className":"in-2cea19ae ","anchor":"","html":"الفرق بين نقطة بيع معزولة تحتاج تسويات يدوية، ونقطة بيع متصلة تحدّث المخزون والحسابات لحظيًا."}]},{"id":"46db81f4","type":"container","className":"in-46db81f4 ","anchor":"","children":[{"id":"5421a1f0","type":"container","className":"in-5421a1f0 ","anchor":"","children":[{"id":"2cefc205","type":"heading","className":"in-2cefc205 ","anchor":"","html":"دفتر/إكسل","tag":"h3"},{"id":"27012c8f","type":"text-editor","className":"in-27012c8f ","anchor":"","html":"بلا ربط ولا تقارير"}]},{"id":"61e9843","type":"container","className":"in-61e9843 ","anchor":"","children":[{"id":"cd040cf","type":"heading","className":"in-cd040cf ","anchor":"","html":"كاشير منفصل","tag":"h3"},{"id":"c6f4ae7","type":"text-editor","className":"in-c6f4ae7 ","anchor":"","html":"تسويات يدوية ��آخر اليوم"}]},{"id":"1763abb6","type":"container","className":"in-1763abb6 ","anchor":"","children":[{"id":"aff79fa","type":"heading","className":"in-aff79fa ","anchor":"","html":"كاشير متصل","tag":"h3"},{"id":"4c6ec3d1","type":"text-editor","className":"in-4c6ec3d1 ","anchor":"","html":"قيد وخصم مخزون فوري"}]},{"id":"1a3286d1","type":"container","className":"in-1a3286d1 ","anchor":"","children":[{"id":"545943ea","type":"heading","className":"in-545943ea ","anchor":"","html":"تجزئة/مطاعم","tag":"h3"},{"id":"598a5dd4","type":"text-editor","className":"in-598a5dd4 ","anchor":"","html":"واجهة لكل قطاع"}]}]}]}]},{"id":"30d0f3a9","type":"container","className":"in-30d0f3a9 digit demo","anchor":"","children":[{"id":"3d65308a","type":"container","className":"in-3d65308a ","anchor":"","children":[{"id":"494482e8","type":"container","className":"in-494482e8 ","anchor":"","children":[{"id":"66b752be","type":"text-editor","className":"in-66b752be ","anchor":"","html":"سيناريو حيّ"},{"id":"4682727c","type":"heading","className":"in-4682727c ","anchor":"","html":"من البيع… إلى القيد وخصم المخزون","tag":"h2"},{"id":"d36c1b","type":"html","className":"in-d36c1b ","anchor":"","html":"<div class=\"is-155\"><span class=\"node\">بيع على الكاشير</span><span class=\"is-156\">←</span><span class=\"node\">فاتورة مبسطة + QR</span><span class=\"is-157\">←</span><span class=\"node\">قيد محاسبي</span><span class=\"is-158\">←</span><span class=\"node\">خصم مخزون</span></div>"}]},{"id":"3946419","type":"container","className":"in-3946419 ","anchor":"","children":[{"id":"6de4ea4a","type":"button","className":"in-6de4ea4a btn mint","anchor":"","text":"احجز عرض POS","href":"#cta","external":false}]}]}]},{"id":"53b11995","type":"container","className":"in-53b11995 digit faq","anchor":"","children":[{"id":"74c26194","type":"container","className":"in-74c26194 ","anchor":"","children":[{"id":"22863e7d","type":"text-editor","className":"in-22863e7d ","anchor":"","html":"أسئلة متكررة"},{"id":"2cc91ca3","type":"heading","className":"in-2cc91ca3 ","anchor":"","html":"أسئلة قبل القرار","tag":"h2"},{"id":"22e6329d","type":"text-editor","className":"in-22e6329d ","anchor":"","html":"إجابات صريحة على أكثر ما يشغل أصحاب التجزئة والمطاعم."}]},{"id":"8adaad2","type":"accordion","className":"in-8adaad2 qa","anchor":"","tabs":[{"title":"هل الفواتير متوافقة مع المرحلة الثانية؟","html":"<p>يصدر النظام فاتورة مبسطة برمز QR وفق متطلبات المرحلة الثانية حسب التهيئة.</p>"},{"title":"هل يعمل بدون إنترنت؟","html":"<p>يدعم البيع في وضع عدم الاتصال ثم المزامنة عند عودة الاتصال.</p>"},{"title":"هل يرتبط بالمحاسبة والمخزون؟","html":"<p>نعم، كل بيعة تنشئ قيدًا وتخصم المخزون من نفس قاعدة البيانات.</p>"},{"title":"ما الأجهزة المدعومة؟","html":"<p>يعمل على الأجهزة الشائعة؛ تُحدّد المتوافقة حسب الإعداد والتنفيذ.</p>"},{"title":"هل توجد صلاحيات وورديات؟","html":"<p>نعم، صلاحيات للكاشير وإدارة الورديات والإغلاق اليومي.</p>"},{"title":"هل يناسب التجزئة والمطاعم؟","html":"<p>نعم، واجهة مناسبة لكل قطاع: تجزئة ومطاعم.</p>"},{"title":"هل يدعم المرتجعات؟","html":"<p>نعم، إصدار مرتجعات مرتبطة بالفاتورة الأصلية.</p>"},{"title":"هل التقارير لكل فرع؟","html":"<p>نعم، تقارير مبيعات لكل فرع وكاشير حسب الصلاحيات.</p>"}]}]},{"id":"3abead8e","type":"container","className":"in-3abead8e digit related","anchor":"","children":[{"id":"289e8a35","type":"container","className":"in-289e8a35 ","anchor":"","children":[{"id":"189f05c4","type":"text-editor","className":"in-189f05c4 ","anchor":"","html":"موديولات مترابطة"},{"id":"4d20ad9e","type":"heading","className":"in-4d20ad9e ","anchor":"","html":"نقاط البيع متصلة بشركتك","tag":"h2"},{"id":"3e14c869","type":"text-editor","className":"in-3e14c869 ","anchor":"","html":"نفس قاعدة البيانات — كل بيعة تغذّي المخزون والمحاسبة والتقارير."}]},{"id":"3e59271a","type":"container","className":"in-3e59271a ","anchor":"","children":[{"id":"4e41e33e","type":"container","className":"in-4e41e33e ","anchor":"","children":[{"id":"552260d7","type":"html","className":"in-552260d7 ","anchor":"","html":"<span aria-label=\"المحاسبة\" class=\"is-175\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-176\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-177\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-178\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-179\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-180\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"},{"id":"59bfe670","type":"heading","className":"in-59bfe670 ","anchor":"","html":"المحاسبة","tag":"h3"},{"id":"4dd71191","type":"text-editor","className":"in-4dd71191 ","anchor":"","html":"قيد تلقائي لكل بيعة"},{"id":"3605da5d","type":"text-editor","className":"in-3605da5d ","anchor":"","html":"<a class=\"is-184\" href=\"/accounting\">عرض الموديول ←</a>"}]},{"id":"4bb7cce6","type":"container","className":"in-4bb7cce6 ","anchor":"","children":[{"id":"2e13b4f9","type":"html","className":"in-2e13b4f9 ","anchor":"","html":"<span aria-label=\"المخزون\" class=\"is-187\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-188\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-189\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-190\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-191\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-192\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"},{"id":"71c9c3d4","type":"heading","className":"in-71c9c3d4 ","anchor":"","html":"المخزون","tag":"h3"},{"id":"1c71eaee","type":"text-editor","className":"in-1c71eaee ","anchor":"","html":"خصم فوري عند البيع"},{"id":"7100982c","type":"text-editor","className":"in-7100982c ","anchor":"","html":"<a class=\"is-196\" href=\"/inventory\">عرض الموديول ←</a>"}]},{"id":"541d75e6","type":"container","className":"in-541d75e6 ","anchor":"","children":[{"id":"5ecab356","type":"html","className":"in-5ecab356 ","anchor":"","html":"<span aria-label=\"التوطين السعودي\" class=\"is-199\" role=\"img\"><svg aria-label=\"zatca\" class=\"is-200\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-201\" points=\"50,16 84,30 84,54 50,84 16,54 16,30\"></polygon>\n<path class=\"iv-202\" d=\"M38 50 l9 10 l18 -22\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"8\"></path>\n</svg></span>"},{"id":"745e2f32","type":"heading","className":"in-745e2f32 ","anchor":"","html":"التوطين السعودي","tag":"h3"},{"id":"319feebf","type":"text-editor","className":"in-319feebf ","anchor":"","html":"فاتورة مبسطة + QR"},{"id":"7f52bdc6","type":"text-editor","className":"in-7f52bdc6 ","anchor":"","html":"<a class=\"is-206\" href=\"/localization\">عرض الموديول ←</a>"}]},{"id":"130a9c6b","type":"container","className":"in-130a9c6b ","anchor":"","children":[{"id":"1167e453","type":"html","className":"in-1167e453 ","anchor":"","html":"<span aria-label=\"التقارير\" class=\"is-209\" role=\"img\"><svg aria-label=\"reports\" class=\"is-210\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-211\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-212\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-213\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-214\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"715d2db0","type":"heading","className":"in-715d2db0 ","anchor":"","html":"التقارير","tag":"h3"},{"id":"c085134","type":"text-editor","className":"in-c085134 ","anchor":"","html":"تقارير الفروع والمبيعات"},{"id":"73b0f25c","type":"text-editor","className":"in-73b0f25c ","anchor":"","html":"<a class=\"is-218\" href=\"/reports\">عرض الموديول ←</a>"}]}]}]},{"id":"3a0743eb","type":"container","className":"in-3a0743eb digit final","anchor":"cta","children":[{"id":"235a7d49","type":"container","className":"in-235a7d49 ","anchor":"","children":[{"id":"7109d15a","type":"heading","className":"in-7109d15a ","anchor":"","html":"جاهز توصّل نقاط بيعك بمحاسبتك ومخزونك؟","tag":"h2"},{"id":"4888ed6c","type":"text-editor","className":"in-4888ed6c ","anchor":"","html":"عرض تجريبي لنقاط البيع ببيانات سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."},{"id":"2410b732","type":"container","className":"in-2410b732 ","anchor":"","children":[{"id":"2444a11e","type":"button","className":"in-2444a11e btn mint","anchor":"","text":"احجز عرض POS","href":"#","external":false},{"id":"58f713b","type":"button","className":"in-58f713b btn light","anchor":"","text":"واتساب المبيعات","href":"https://wa.me/","external":false}]}]}]},{"id":"24216379","type":"container","className":"in-24216379 digit seo-schema","anchor":"","children":[{"id":"55c3401c","type":"html","className":"in-55c3401c ","anchor":"seo-jsonld","html":"\n"}]}]}
+{
+ "title": "نقاط البيع",
+ "description": "كل عملية بيع تتحوّل تلقائيًا إلى فاتورة متوافقة وقيد محاسبي وخصم مخزون — لكل القطاعات: تجزئة ومطاعم.",
+ "sourceUrl": "https://digit-erp.com/modules/pos/",
+ "nodes": [
+  {
+   "id": "76ace120",
+   "type": "container",
+   "className": "in-76ace120 digit kit",
+   "anchor": "",
+   "children": [
+    {
+     "id": "eca21d6",
+     "type": "html",
+     "className": "in-eca21d6 ",
+     "anchor": "digit-kit",
+     "html": ""
+    }
+   ]
+  },
+  {
+   "id": "7da3b789",
+   "type": "container",
+   "className": "in-7da3b789 digit band-crumb",
+   "anchor": "",
+   "children": [
+    {
+     "id": "56251c7e",
+     "type": "text-editor",
+     "className": "in-56251c7e ",
+     "anchor": "",
+     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-5\">نقاط البيع</span>"
+    }
+   ]
+  },
+  {
+   "id": "7bccc4f5",
+   "type": "container",
+   "className": "in-7bccc4f5 digit hero",
+   "anchor": "",
+   "children": [
+    {
+     "id": "79525a83",
+     "type": "container",
+     "className": "in-79525a83 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "28bc8ab2",
+       "type": "container",
+       "className": "in-28bc8ab2 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "521327d7",
+         "type": "container",
+         "className": "in-521327d7 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "6b82c90",
+           "type": "html",
+           "className": "in-6b82c90 ",
+           "anchor": "",
+           "html": "<span aria-label=\"نقاط البيع\" class=\"is-11\" role=\"img\"><svg aria-label=\"pos\" class=\"is-12\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-13\" height=\"34\" rx=\"7\" width=\"44\" x=\"28\" y=\"24\"></rect>\n<rect class=\"iv-14\" height=\"8\" rx=\"4\" width=\"24\" x=\"38\" y=\"32\"></rect>\n<rect class=\"iv-15\" height=\"12\" rx=\"6\" width=\"56\" x=\"22\" y=\"66\"></rect>\n</svg></span>"
+          },
+          {
+           "id": "10d0ce77",
+           "type": "text-editor",
+           "className": "in-10d0ce77 ",
+           "anchor": "",
+           "html": "موديول · نقاط البيع"
+          }
+         ]
+        },
+        {
+         "id": "4360fa89",
+         "type": "heading",
+         "className": "in-4360fa89 ",
+         "anchor": "",
+         "html": "نقاط بيع متصلة بمحاسبتك ومخزونك… <em class=\"is-18\">بلا فجوات</em>",
+         "tag": "h1"
+        },
+        {
+         "id": "10d167a2",
+         "type": "text-editor",
+         "className": "in-10d167a2 ",
+         "anchor": "",
+         "html": "كل عملية بيع تتحوّل تلقائيًا إلى فاتورة متوافقة وقيد محاسبي وخصم مخزون — لكل القطاعات: تجزئة ومطاعم."
+        },
+        {
+         "id": "3a8f3ba2",
+         "type": "container",
+         "className": "in-3a8f3ba2 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "484a3f1e",
+           "type": "button",
+           "className": "in-484a3f1e btn solid",
+           "anchor": "",
+           "text": "احجز عرض POS",
+           "href": "#cta",
+           "external": false
+          },
+          {
+           "id": "59b05f63",
+           "type": "button",
+           "className": "in-59b05f63 btn ghost",
+           "anchor": "",
+           "text": "شاهدها من الداخل",
+           "href": "#inside",
+           "external": false
+          }
+         ]
+        },
+        {
+         "id": "474b302b",
+         "type": "text-editor",
+         "className": "in-474b302b ",
+         "anchor": "",
+         "html": "<span class=\"chip\">متصلة بالمحاسبة</span><span class=\"chip\">خصم مخزون فوري</span><span class=\"chip\">تجزئة ومطاعم</span>"
+        }
+       ]
+      },
+      {
+       "id": "3d208fdd",
+       "type": "container",
+       "className": "in-3d208fdd ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5799c8ff",
+         "type": "html",
+         "className": "in-5799c8ff ",
+         "anchor": "",
+         "html": "<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / pos</span></div>"
+        },
+        {
+         "id": "564201f1",
+         "type": "image-slot",
+         "className": "in-564201f1 ",
+         "anchor": "",
+         "src": "/__l5e/assets-v1/0deae5c7-4426-44a3-b3f3-e7f898371f3a/pos-retail.jpg",
+         "alt": "نقاط البيع"
+        },
+        {
+         "id": "31247ddb",
+         "type": "text-editor",
+         "className": "in-31247ddb ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "60517b89",
+   "type": "container",
+   "className": "in-60517b89 digit proof",
+   "anchor": "",
+   "children": [
+    {
+     "id": "2d9bd3ac",
+     "type": "container",
+     "className": "in-2d9bd3ac ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "3db2628d",
+       "type": "container",
+       "className": "in-3db2628d ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "331a39ed",
+         "type": "heading",
+         "className": "in-331a39ed ",
+         "anchor": "",
+         "html": "متصلة",
+         "tag": "h3"
+        },
+        {
+         "id": "58c914dd",
+         "type": "text-editor",
+         "className": "in-58c914dd ",
+         "anchor": "",
+         "html": "بالمحاسبة والمخزون"
+        },
+        {
+         "id": "27b5d74d",
+         "type": "text-editor",
+         "className": "in-27b5d74d ",
+         "anchor": "",
+         "html": "بلا فجوات"
+        }
+       ]
+      },
+      {
+       "id": "24d3312",
+       "type": "container",
+       "className": "in-24d3312 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "171bd2cf",
+         "type": "heading",
+         "className": "in-171bd2cf ",
+         "anchor": "",
+         "html": "لكل بيعة",
+         "tag": "h3"
+        },
+        {
+         "id": "4c67799d",
+         "type": "text-editor",
+         "className": "in-4c67799d ",
+         "anchor": "",
+         "html": "فاتورة وقيد وخصم"
+        },
+        {
+         "id": "5b70da13",
+         "type": "text-editor",
+         "className": "in-5b70da13 ",
+         "anchor": "",
+         "html": "تلقائيًا"
+        }
+       ]
+      },
+      {
+       "id": "58bf0ab8",
+       "type": "container",
+       "className": "in-58bf0ab8 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "63985e8d",
+         "type": "heading",
+         "className": "in-63985e8d ",
+         "anchor": "",
+         "html": "القطاعات",
+         "tag": "h3"
+        },
+        {
+         "id": "7e73ce0b",
+         "type": "text-editor",
+         "className": "in-7e73ce0b ",
+         "anchor": "",
+         "html": "تجزئة ومطاعم"
+        },
+        {
+         "id": "76a9db44",
+         "type": "text-editor",
+         "className": "in-76a9db44 ",
+         "anchor": "",
+         "html": "واجهة مناسبة"
+        }
+       ]
+      },
+      {
+       "id": "60127def",
+       "type": "container",
+       "className": "in-60127def ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3ac6fd47",
+         "type": "heading",
+         "className": "in-3ac6fd47 ",
+         "anchor": "",
+         "html": "الفروع",
+         "tag": "h3"
+        },
+        {
+         "id": "460e21a7",
+         "type": "text-editor",
+         "className": "in-460e21a7 ",
+         "anchor": "",
+         "html": "ورديات وصلاحيات"
+        },
+        {
+         "id": "281a7157",
+         "type": "text-editor",
+         "className": "in-281a7157 ",
+         "anchor": "",
+         "html": "ورؤية موحّدة"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2129eba",
+   "type": "container",
+   "className": "in-2129eba digit benefits",
+   "anchor": "",
+   "children": [
+    {
+     "id": "44e29b4",
+     "type": "container",
+     "className": "in-44e29b4 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "e5c8fb3",
+       "type": "text-editor",
+       "className": "in-e5c8fb3 ",
+       "anchor": "",
+       "html": "لماذا نقاط بيع Digit"
+      },
+      {
+       "id": "5e629d76",
+       "type": "heading",
+       "className": "in-5e629d76 ",
+       "anchor": "",
+       "html": "كاشير… متصل بكل شيء",
+       "tag": "h2"
+      },
+      {
+       "id": "4e6a5351",
+       "type": "text-editor",
+       "className": "in-4e6a5351 ",
+       "anchor": "",
+       "html": "من البيع إلى القيد وخصم المخزون — دون أنظمة منفصلة ولا تسويات يدوية."
+      }
+     ]
+    },
+    {
+     "id": "2fc0c836",
+     "type": "container",
+     "className": "in-2fc0c836 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "769e64bf",
+       "type": "container",
+       "className": "in-769e64bf ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "255d815b",
+         "type": "html",
+         "className": "in-255d815b ",
+         "anchor": "",
+         "html": "<span aria-label=\"فوترة ومرتجعات\" class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" class=\"is-61\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-62\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-63\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "4efcb1a3",
+         "type": "heading",
+         "className": "in-4efcb1a3 ",
+         "anchor": "",
+         "html": "فوترة ومرتجعات",
+         "tag": "h3"
+        },
+        {
+         "id": "2211297",
+         "type": "text-editor",
+         "className": "in-2211297 ",
+         "anchor": "",
+         "html": "إصدار فواتير ومرتجعات بسرعة وبصيغة مبسطة."
+        }
+       ]
+      },
+      {
+       "id": "34cda2a4",
+       "type": "container",
+       "className": "in-34cda2a4 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "61f4aa11",
+         "type": "html",
+         "className": "in-61f4aa11 ",
+         "anchor": "",
+         "html": "<span aria-label=\"سلة وباركود\" class=\"is-68\" role=\"img\"><svg aria-label=\"search\" class=\"is-69\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-70\" cx=\"44\" cy=\"44\" fill=\"none\" r=\"17\" stroke-width=\"9\"></circle>\n<line class=\"iv-71\" stroke-linecap=\"round\" stroke-width=\"10\" x1=\"56\" x2=\"75\" y1=\"56\" y2=\"75\"></line>\n</svg></span>"
+        },
+        {
+         "id": "7277c14f",
+         "type": "heading",
+         "className": "in-7277c14f ",
+         "anchor": "",
+         "html": "سلة وباركود",
+         "tag": "h3"
+        },
+        {
+         "id": "4a3db448",
+         "type": "text-editor",
+         "className": "in-4a3db448 ",
+         "anchor": "",
+         "html": "سلة بيع سريعة مع مسح الباركود."
+        }
+       ]
+      },
+      {
+       "id": "20fda588",
+       "type": "container",
+       "className": "in-20fda588 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "ff4dc87",
+         "type": "html",
+         "className": "in-ff4dc87 ",
+         "anchor": "",
+         "html": "<span aria-label=\"وضع عدم الاتصال\" class=\"is-76\" role=\"img\"><svg aria-label=\"backup\" class=\"is-77\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-78\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"26\"></rect>\n<rect class=\"iv-79\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"46\"></rect>\n<rect class=\"iv-80\" height=\"14\" rx=\"7\" width=\"48\" x=\"26\" y=\"66\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "4cf4f7dc",
+         "type": "heading",
+         "className": "in-4cf4f7dc ",
+         "anchor": "",
+         "html": "وضع عدم الاتصال",
+         "tag": "h3"
+        },
+        {
+         "id": "7325a9fe",
+         "type": "text-editor",
+         "className": "in-7325a9fe ",
+         "anchor": "",
+         "html": "استمرار البيع عند انقطاع الإنترنت ثم المزامنة."
+        }
+       ]
+      },
+      {
+       "id": "2b1c22a",
+       "type": "container",
+       "className": "in-2b1c22a ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4bbd8f09",
+         "type": "html",
+         "className": "in-4bbd8f09 ",
+         "anchor": "",
+         "html": "<span aria-label=\"مدفوعات مرنة\" class=\"is-85\" role=\"img\"><svg aria-label=\"financial\" class=\"is-86\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-87\" height=\"11\" rx=\"5.5\" width=\"52\" x=\"24\" y=\"26\"></rect>\n<rect class=\"iv-88\" height=\"11\" rx=\"5.5\" width=\"36\" x=\"24\" y=\"42\"></rect>\n<rect class=\"iv-89\" height=\"11\" rx=\"5.5\" width=\"44\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-90\" height=\"8\" rx=\"4\" width=\"52\" x=\"24\" y=\"75\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "36d23ccf",
+         "type": "heading",
+         "className": "in-36d23ccf ",
+         "anchor": "",
+         "html": "مدفوعات مرنة",
+         "tag": "h3"
+        },
+        {
+         "id": "145e77d8",
+         "type": "text-editor",
+         "className": "in-145e77d8 ",
+         "anchor": "",
+         "html": "نقدًا أو بطاقة أو تحويل مع تقسيم الدفع."
+        }
+       ]
+      },
+      {
+       "id": "556cc417",
+       "type": "container",
+       "className": "in-556cc417 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "57ed930b",
+         "type": "html",
+         "className": "in-57ed930b ",
+         "anchor": "",
+         "html": "<span aria-label=\"صلاحيات وورديات\" class=\"is-95\" role=\"img\"><svg aria-label=\"permissions\" class=\"is-96\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-97\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-98\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-99\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-100\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "3ef597ae",
+         "type": "heading",
+         "className": "in-3ef597ae ",
+         "anchor": "",
+         "html": "صلاحيات وورديات",
+         "tag": "h3"
+        },
+        {
+         "id": "5a35ac09",
+         "type": "text-editor",
+         "className": "in-5a35ac09 ",
+         "anchor": "",
+         "html": "صلاحيات للكاشير وإدارة الورديات والإغلاق."
+        }
+       ]
+      },
+      {
+       "id": "76ec90d",
+       "type": "container",
+       "className": "in-76ec90d ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4262f8fb",
+         "type": "html",
+         "className": "in-4262f8fb ",
+         "anchor": "",
+         "html": "<span aria-label=\"تقارير وفروع\" class=\"is-105\" role=\"img\"><svg aria-label=\"reports\" class=\"is-106\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-107\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-108\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-109\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-110\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "7faead4c",
+         "type": "heading",
+         "className": "in-7faead4c ",
+         "anchor": "",
+         "html": "تقارير وفروع",
+         "tag": "h3"
+        },
+        {
+         "id": "4142c253",
+         "type": "text-editor",
+         "className": "in-4142c253 ",
+         "anchor": "",
+         "html": "تقارير مبيعات لحظية لكل فرع وكاشير."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "390eed2e",
+   "type": "container",
+   "className": "in-390eed2e digit inside",
+   "anchor": "inside",
+   "children": [
+    {
+     "id": "6518284",
+     "type": "container",
+     "className": "in-6518284 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "71dde359",
+       "type": "container",
+       "className": "in-71dde359 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "295d91b5",
+         "type": "text-editor",
+         "className": "in-295d91b5 ",
+         "anchor": "",
+         "html": "من الداخل"
+        },
+        {
+         "id": "2ecd327",
+         "type": "heading",
+         "className": "in-2ecd327 ",
+         "anchor": "",
+         "html": "كاشير سريع… متصل بالخلفية",
+         "tag": "h2"
+        },
+        {
+         "id": "93dcb5a",
+         "type": "text-editor",
+         "className": "in-93dcb5a ",
+         "anchor": "",
+         "html": "البيع والمرتجعات والمدفوعات في شاشة سريعة، وكل عملية تنعكس في المخزون والمحاسبة فورًا."
+        },
+        {
+         "id": "4b5d7fab",
+         "type": "text-editor",
+         "className": "in-4b5d7fab ",
+         "anchor": "",
+         "html": "<ul class=\"checks\"><li>سلة بيع وباركود</li><li>فاتورة مبسطة + QR</li><li>خصم المخزون فورًا</li><li>قيد محاسبي تلقائي</li><li>ورديات وصلاحيات</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "28c3c141",
+       "type": "container",
+       "className": "in-28c3c141 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3b07dbdd",
+         "type": "html",
+         "className": "in-3b07dbdd ",
+         "anchor": "",
+         "html": "<div class=\"is-122\"><span class=\"is-123\"><i class=\"is-124\"></i><i class=\"is-125\"></i><i class=\"is-126\"></i></span><span class=\"is-127\">digit-erp.com / app / pos</span></div>"
+        },
+        {
+         "id": "19c11f36",
+         "type": "image-slot",
+         "className": "in-19c11f36 ",
+         "anchor": ""
+        },
+        {
+         "id": "1bd2247b",
+         "type": "text-editor",
+         "className": "in-1bd2247b ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "7dcf7876",
+   "type": "container",
+   "className": "in-7dcf7876 digit sec",
+   "anchor": "",
+   "children": [
+    {
+     "id": "6b2c3a26",
+     "type": "container",
+     "className": "in-6b2c3a26 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "2c756d87",
+       "type": "container",
+       "className": "in-2c756d87 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "12465729",
+         "type": "text-editor",
+         "className": "in-12465729 ",
+         "anchor": "",
+         "html": "بماذا تدير مبيعاتك اليوم؟"
+        },
+        {
+         "id": "85b565a",
+         "type": "heading",
+         "className": "in-85b565a ",
+         "anchor": "",
+         "html": "كاشير منفصل… مقابل كاشير متصل",
+         "tag": "h2"
+        },
+        {
+         "id": "2cea19ae",
+         "type": "text-editor",
+         "className": "in-2cea19ae ",
+         "anchor": "",
+         "html": "الفرق بين نقطة بيع معزولة تحتاج تسويات يدوية، ونقطة بيع متصلة تحدّث المخزون والحسابات لحظيًا."
+        }
+       ]
+      },
+      {
+       "id": "46db81f4",
+       "type": "container",
+       "className": "in-46db81f4 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5421a1f0",
+         "type": "container",
+         "className": "in-5421a1f0 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "2cefc205",
+           "type": "heading",
+           "className": "in-2cefc205 ",
+           "anchor": "",
+           "html": "دفتر/إكسل",
+           "tag": "h3"
+          },
+          {
+           "id": "27012c8f",
+           "type": "text-editor",
+           "className": "in-27012c8f ",
+           "anchor": "",
+           "html": "بلا ربط ولا تقارير"
+          }
+         ]
+        },
+        {
+         "id": "61e9843",
+         "type": "container",
+         "className": "in-61e9843 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "cd040cf",
+           "type": "heading",
+           "className": "in-cd040cf ",
+           "anchor": "",
+           "html": "كاشير منفصل",
+           "tag": "h3"
+          },
+          {
+           "id": "c6f4ae7",
+           "type": "text-editor",
+           "className": "in-c6f4ae7 ",
+           "anchor": "",
+           "html": "تسويات يدوية ��آخر اليوم"
+          }
+         ]
+        },
+        {
+         "id": "1763abb6",
+         "type": "container",
+         "className": "in-1763abb6 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "aff79fa",
+           "type": "heading",
+           "className": "in-aff79fa ",
+           "anchor": "",
+           "html": "كاشير متصل",
+           "tag": "h3"
+          },
+          {
+           "id": "4c6ec3d1",
+           "type": "text-editor",
+           "className": "in-4c6ec3d1 ",
+           "anchor": "",
+           "html": "قيد وخصم مخزون فوري"
+          }
+         ]
+        },
+        {
+         "id": "1a3286d1",
+         "type": "container",
+         "className": "in-1a3286d1 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "545943ea",
+           "type": "heading",
+           "className": "in-545943ea ",
+           "anchor": "",
+           "html": "تجزئة/مطاعم",
+           "tag": "h3"
+          },
+          {
+           "id": "598a5dd4",
+           "type": "text-editor",
+           "className": "in-598a5dd4 ",
+           "anchor": "",
+           "html": "واجهة لكل قطاع"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "30d0f3a9",
+   "type": "container",
+   "className": "in-30d0f3a9 digit demo",
+   "anchor": "",
+   "children": [
+    {
+     "id": "3d65308a",
+     "type": "container",
+     "className": "in-3d65308a ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "494482e8",
+       "type": "container",
+       "className": "in-494482e8 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "66b752be",
+         "type": "text-editor",
+         "className": "in-66b752be ",
+         "anchor": "",
+         "html": "سيناريو حيّ"
+        },
+        {
+         "id": "4682727c",
+         "type": "heading",
+         "className": "in-4682727c ",
+         "anchor": "",
+         "html": "من البيع… إلى القيد وخصم المخزون",
+         "tag": "h2"
+        },
+        {
+         "id": "d36c1b",
+         "type": "html",
+         "className": "in-d36c1b ",
+         "anchor": "",
+         "html": "<div class=\"is-155\"><span class=\"node\">بيع على الكاشير</span><span class=\"is-156\">←</span><span class=\"node\">فاتورة مبسطة + QR</span><span class=\"is-157\">←</span><span class=\"node\">قيد محاسبي</span><span class=\"is-158\">←</span><span class=\"node\">خصم مخزون</span></div>"
+        }
+       ]
+      },
+      {
+       "id": "3946419",
+       "type": "container",
+       "className": "in-3946419 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6de4ea4a",
+         "type": "button",
+         "className": "in-6de4ea4a btn mint",
+         "anchor": "",
+         "text": "احجز عرض POS",
+         "href": "#cta",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "53b11995",
+   "type": "container",
+   "className": "in-53b11995 digit faq",
+   "anchor": "",
+   "children": [
+    {
+     "id": "74c26194",
+     "type": "container",
+     "className": "in-74c26194 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "22863e7d",
+       "type": "text-editor",
+       "className": "in-22863e7d ",
+       "anchor": "",
+       "html": "أسئلة متكررة"
+      },
+      {
+       "id": "2cc91ca3",
+       "type": "heading",
+       "className": "in-2cc91ca3 ",
+       "anchor": "",
+       "html": "أسئلة قبل القرار",
+       "tag": "h2"
+      },
+      {
+       "id": "22e6329d",
+       "type": "text-editor",
+       "className": "in-22e6329d ",
+       "anchor": "",
+       "html": "إجابات صريحة على أكثر ما يشغل أصحاب التجزئة والمطاعم."
+      }
+     ]
+    },
+    {
+     "id": "8adaad2",
+     "type": "accordion",
+     "className": "in-8adaad2 qa",
+     "anchor": "",
+     "tabs": [
+      {
+       "title": "هل الفواتير متوافقة مع المرحلة الثانية؟",
+       "html": "<p>يصدر النظام فاتورة مبسطة برمز QR وفق متطلبات المرحلة الثانية حسب التهيئة.</p>"
+      },
+      {
+       "title": "هل يعمل بدون إنترنت؟",
+       "html": "<p>يدعم البيع في وضع عدم الاتصال ثم المزامنة عند عودة الاتصال.</p>"
+      },
+      {
+       "title": "هل يرتبط بالمحاسبة والمخزون؟",
+       "html": "<p>نعم، كل بيعة تنشئ قيدًا وتخصم المخزون من نفس قاعدة البيانات.</p>"
+      },
+      {
+       "title": "ما الأجهزة المدعومة؟",
+       "html": "<p>يعمل على الأجهزة الشائعة؛ تُحدّد المتوافقة حسب الإعداد والتنفيذ.</p>"
+      },
+      {
+       "title": "هل توجد صلاحيات وورديات؟",
+       "html": "<p>نعم، صلاحيات للكاشير وإدارة الورديات والإغلاق اليومي.</p>"
+      },
+      {
+       "title": "هل يناسب التجزئة والمطاعم؟",
+       "html": "<p>نعم، واجهة مناسبة لكل قطاع: تجزئة ومطاعم.</p>"
+      },
+      {
+       "title": "هل يدعم المرتجعات؟",
+       "html": "<p>نعم، إصدار مرتجعات مرتبطة بالفاتورة الأصلية.</p>"
+      },
+      {
+       "title": "هل التقارير لكل فرع؟",
+       "html": "<p>نعم، تقارير مبيعات لكل فرع وكاشير حسب الصلاحيات.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3abead8e",
+   "type": "container",
+   "className": "in-3abead8e digit related",
+   "anchor": "",
+   "children": [
+    {
+     "id": "289e8a35",
+     "type": "container",
+     "className": "in-289e8a35 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "189f05c4",
+       "type": "text-editor",
+       "className": "in-189f05c4 ",
+       "anchor": "",
+       "html": "موديولات مترابطة"
+      },
+      {
+       "id": "4d20ad9e",
+       "type": "heading",
+       "className": "in-4d20ad9e ",
+       "anchor": "",
+       "html": "نقاط البيع متصلة بشركتك",
+       "tag": "h2"
+      },
+      {
+       "id": "3e14c869",
+       "type": "text-editor",
+       "className": "in-3e14c869 ",
+       "anchor": "",
+       "html": "نفس قاعدة البيانات — كل بيعة تغذّي المخزون والمحاسبة والتقارير."
+      }
+     ]
+    },
+    {
+     "id": "3e59271a",
+     "type": "container",
+     "className": "in-3e59271a ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "4e41e33e",
+       "type": "container",
+       "className": "in-4e41e33e ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "552260d7",
+         "type": "html",
+         "className": "in-552260d7 ",
+         "anchor": "",
+         "html": "<span aria-label=\"المحاسبة\" class=\"is-175\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-176\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-177\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-178\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-179\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-180\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "59bfe670",
+         "type": "heading",
+         "className": "in-59bfe670 ",
+         "anchor": "",
+         "html": "المحاسبة",
+         "tag": "h3"
+        },
+        {
+         "id": "4dd71191",
+         "type": "text-editor",
+         "className": "in-4dd71191 ",
+         "anchor": "",
+         "html": "قيد تلقائي لكل بيعة"
+        },
+        {
+         "id": "3605da5d",
+         "type": "text-editor",
+         "className": "in-3605da5d ",
+         "anchor": "",
+         "html": "<a class=\"is-184\" href=\"/accounting\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "4bb7cce6",
+       "type": "container",
+       "className": "in-4bb7cce6 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2e13b4f9",
+         "type": "html",
+         "className": "in-2e13b4f9 ",
+         "anchor": "",
+         "html": "<span aria-label=\"المخزون\" class=\"is-187\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-188\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-189\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-190\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-191\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-192\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "71c9c3d4",
+         "type": "heading",
+         "className": "in-71c9c3d4 ",
+         "anchor": "",
+         "html": "المخزون",
+         "tag": "h3"
+        },
+        {
+         "id": "1c71eaee",
+         "type": "text-editor",
+         "className": "in-1c71eaee ",
+         "anchor": "",
+         "html": "خصم فوري عند البيع"
+        },
+        {
+         "id": "7100982c",
+         "type": "text-editor",
+         "className": "in-7100982c ",
+         "anchor": "",
+         "html": "<a class=\"is-196\" href=\"/inventory\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "541d75e6",
+       "type": "container",
+       "className": "in-541d75e6 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5ecab356",
+         "type": "html",
+         "className": "in-5ecab356 ",
+         "anchor": "",
+         "html": "<span aria-label=\"التوطين السعودي\" class=\"is-199\" role=\"img\"><svg aria-label=\"zatca\" class=\"is-200\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-201\" points=\"50,16 84,30 84,54 50,84 16,54 16,30\"></polygon>\n<path class=\"iv-202\" d=\"M38 50 l9 10 l18 -22\" fill=\"none\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"8\"></path>\n</svg></span>"
+        },
+        {
+         "id": "745e2f32",
+         "type": "heading",
+         "className": "in-745e2f32 ",
+         "anchor": "",
+         "html": "التوطين السعودي",
+         "tag": "h3"
+        },
+        {
+         "id": "319feebf",
+         "type": "text-editor",
+         "className": "in-319feebf ",
+         "anchor": "",
+         "html": "فاتورة مبسطة + QR"
+        },
+        {
+         "id": "7f52bdc6",
+         "type": "text-editor",
+         "className": "in-7f52bdc6 ",
+         "anchor": "",
+         "html": "<a class=\"is-206\" href=\"/localization\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "130a9c6b",
+       "type": "container",
+       "className": "in-130a9c6b ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "1167e453",
+         "type": "html",
+         "className": "in-1167e453 ",
+         "anchor": "",
+         "html": "<span aria-label=\"التقارير\" class=\"is-209\" role=\"img\"><svg aria-label=\"reports\" class=\"is-210\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-211\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-212\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-213\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-214\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "715d2db0",
+         "type": "heading",
+         "className": "in-715d2db0 ",
+         "anchor": "",
+         "html": "التقارير",
+         "tag": "h3"
+        },
+        {
+         "id": "c085134",
+         "type": "text-editor",
+         "className": "in-c085134 ",
+         "anchor": "",
+         "html": "تقارير الفروع والمبيعات"
+        },
+        {
+         "id": "73b0f25c",
+         "type": "text-editor",
+         "className": "in-73b0f25c ",
+         "anchor": "",
+         "html": "<a class=\"is-218\" href=\"/reports\">عرض الموديول ←</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3a0743eb",
+   "type": "container",
+   "className": "in-3a0743eb digit final",
+   "anchor": "cta",
+   "children": [
+    {
+     "id": "235a7d49",
+     "type": "container",
+     "className": "in-235a7d49 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "7109d15a",
+       "type": "heading",
+       "className": "in-7109d15a ",
+       "anchor": "",
+       "html": "جاهز توصّل نقاط بيعك بمحاسبتك ومخزونك؟",
+       "tag": "h2"
+      },
+      {
+       "id": "4888ed6c",
+       "type": "text-editor",
+       "className": "in-4888ed6c ",
+       "anchor": "",
+       "html": "عرض تجريبي لنقاط البيع ببيانات سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+      },
+      {
+       "id": "2410b732",
+       "type": "container",
+       "className": "in-2410b732 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2444a11e",
+         "type": "button",
+         "className": "in-2444a11e btn mint",
+         "anchor": "",
+         "text": "احجز عرض POS",
+         "href": "#",
+         "external": false
+        },
+        {
+         "id": "58f713b",
+         "type": "button",
+         "className": "in-58f713b btn light",
+         "anchor": "",
+         "text": "واتساب المبيعات",
+         "href": "https://wa.me/",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "24216379",
+   "type": "container",
+   "className": "in-24216379 digit seo-schema",
+   "anchor": "",
+   "children": [
+    {
+     "id": "55c3401c",
+     "type": "html",
+     "className": "in-55c3401c ",
+     "anchor": "seo-jsonld",
+     "html": "\n"
+    }
+   ]
+  }
+ ]
+}

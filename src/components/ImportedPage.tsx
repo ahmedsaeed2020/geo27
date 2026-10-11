@@ -30,7 +30,9 @@ function RenderNode({ node }: { node: Node }) {
     return <Tag {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
   }
   if (node.type === "html" || node.type === "text-editor") return <div {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
-  if (node.type === "image-slot") return <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
+  if (node.type === "image-slot") return node.src
+    ? <div {...props} className={`${node.className} import-image-slot import-image-filled`}><img className="import-scene-img" src={node.src} alt={node.alt ?? ""} loading="lazy" width={1600} height={900} /></div>
+    : <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
   if (node.type === "feature-card") return <article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض التفاصيل ←</Link></Button></article>;
   if (node.type === "button") {
     const href = node.href || "#";

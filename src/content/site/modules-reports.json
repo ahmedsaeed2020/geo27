@@ -1,1 +1,1119 @@
-{"title":"التقارير","description":"مركز تقارير عربي: قوائم مالية جاهزة، لوحات مؤشرات، تقارير حسب الفرع والمشروع، وتصدير وجدولة — بلا مستشار لكل تقرير.","sourceUrl":"https://digit-erp.com/modules/reports/","nodes":[{"id":"5f91833b","type":"container","className":"in-5f91833b digit band-crumb","anchor":"","children":[{"id":"6bc1682c","type":"text-editor","className":"in-6bc1682c ","anchor":"","html":"<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">التقارير</span>"}]},{"id":"e308c5d","type":"container","className":"in-e308c5d digit hero","anchor":"","children":[{"id":"7882829e","type":"container","className":"in-7882829e ","anchor":"","children":[{"id":"5b9d5dd2","type":"container","className":"in-5b9d5dd2 ","anchor":"","children":[{"id":"24b2ffc5","type":"container","className":"in-24b2ffc5 ","anchor":"","children":[{"id":"57833341","type":"html","className":"in-57833341 ","anchor":"","html":"<span class=\"is-8\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-10\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-11\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-12\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"1daa1026","type":"text-editor","className":"in-1daa1026 ","anchor":"","html":"موديول · التقارير"}]},{"id":"1c3d5170","type":"heading","className":"in-1c3d5170 ","anchor":"","html":"٥٠+ تقريرًا جاهزًا بالعربية… <em class=\"is-15\">وتقريرك الخاص بدون كود</em>","tag":"h1"},{"id":"7e97dc7","type":"text-editor","className":"in-7e97dc7 ","anchor":"","html":"مركز تقارير عربي: قوائم مالية جاهزة، لوحات مؤشرات، تقارير حسب الفرع والمشروع، وتصدير وجدولة — بلا مستشار لكل تقرير."},{"id":"699f9ad8","type":"container","className":"in-699f9ad8 ","anchor":"","children":[{"id":"5c7adaa4","type":"button","className":"in-5c7adaa4 btn solid","anchor":"","text":"استعرض مكتبة التقارير","href":"/demo","external":false},{"id":"3275891c","type":"button","className":"in-3275891c btn ghost","anchor":"","text":"شاهدها من الداخل","href":"#inside","external":false}]},{"id":"6ef0bbf9","type":"text-editor","className":"in-6ef0bbf9 ","anchor":"","html":"<span class=\"is-21\">٥٠+ تقرير جاهز</span><span class=\"is-22\">بدون مستشار</span><span class=\"is-23\">تصدير وجدولة</span>"}]},{"id":"1448edb0","type":"container","className":"in-1448edb0 ","anchor":"","children":[{"id":"5b1a726a","type":"html","className":"in-5b1a726a ","anchor":"","html":"<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / digit-reports</span></div>"},{"id":"16fc0bf","type":"image-slot","className":"in-16fc0bf ","anchor":""},{"id":"42f768f2","type":"text-editor","className":"in-42f768f2 ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"51083069","type":"container","className":"in-51083069 digit proof","anchor":"","children":[{"id":"2d120f05","type":"container","className":"in-2d120f05 ","anchor":"","children":[{"id":"1de7646","type":"container","className":"in-1de7646 ","anchor":"","children":[{"id":"6c906f94","type":"heading","className":"in-6c906f94 ","anchor":"","html":"50+","tag":"h3"},{"id":"11d0e417","type":"text-editor","className":"in-11d0e417 ","anchor":"","html":"تقرير مالي وإداري"},{"id":"4c2b914a","type":"text-editor","className":"in-4c2b914a ","anchor":"","html":"يُحقَّق العدد ويُدرَج قبل النشر"}]},{"id":"7fdb9708","type":"container","className":"in-7fdb9708 ","anchor":"","children":[{"id":"6426323f","type":"heading","className":"in-6426323f ","anchor":"","html":"6 فئات","tag":"h3"},{"id":"2baa65aa","type":"text-editor","className":"in-2baa65aa ","anchor":"","html":"مالية·مبيعات·مشتريات·مخزون·ضريبة·HR"},{"id":"33f78cd7","type":"text-editor","className":"in-33f78cd7 ","anchor":"","html":"مصنّفة بالعربية"}]},{"id":"674b63b3","type":"container","className":"in-674b63b3 ","anchor":"","children":[{"id":"66e5e3ef","type":"heading","className":"in-66e5e3ef ","anchor":"","html":"بدون كود","tag":"h3"},{"id":"34fe3063","type":"text-editor","className":"in-34fe3063 ","anchor":"","html":"منشئ تقارير ذاتي"},{"id":"358c505","type":"text-editor","className":"in-358c505 ","anchor":"","html":"أعمدة وفلاتر وتجميع"}]},{"id":"456e9c94","type":"container","className":"in-456e9c94 ","anchor":"","children":[{"id":"79f3dd7b","type":"heading","className":"in-79f3dd7b ","anchor":"","html":"PDF·Excel","tag":"h3"},{"id":"48e5d96b","type":"text-editor","className":"in-48e5d96b ","anchor":"","html":"تصدير وجدولة بريد"},{"id":"4ea67079","type":"text-editor","className":"in-4ea67079 ","anchor":"","html":"إرسال تلقائي في وقت محدد"}]}]}]},{"id":"4cc2785f","type":"container","className":"in-4cc2785f digit benefits","anchor":"","children":[{"id":"2a51b216","type":"container","className":"in-2a51b216 ","anchor":"","children":[{"id":"33e3ee9","type":"text-editor","className":"in-33e3ee9 ","anchor":"","html":"لماذا تقارير Digit"},{"id":"5a97dc2","type":"heading","className":"in-5a97dc2 ","anchor":"","html":"تقاريرك جاهزة… بدون انتظار ولا مستشار","tag":"h2"},{"id":"2f3f4482","type":"text-editor","className":"in-2f3f4482 ","anchor":"","html":"ست قدرات تردّ على الشكوى الأولى: تقارير متناثرة وإنجليزية ومتأخرة وتحتاج مبرمجًا."}]},{"id":"6a061660","type":"container","className":"in-6a061660 ","anchor":"","children":[{"id":"36e4e9c4","type":"container","className":"in-36e4e9c4 ","anchor":"","children":[{"id":"406b6749","type":"html","className":"in-406b6749 ","anchor":"","html":"<span class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-61\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-62\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"},{"id":"1518fbf9","type":"heading","className":"in-1518fbf9 ","anchor":"","html":"مكتبة 50+ تقرير جاهز","tag":"h3"},{"id":"1f0fdbd","type":"text-editor","className":"in-1f0fdbd ","anchor":"","html":"مالية ومبيعات ومشتريات ومخزون وضريبة — مصنّفة بالعربية وجاهزة للاستخدام."}]},{"id":"43136ea2","type":"container","className":"in-43136ea2 ","anchor":"","children":[{"id":"3630e16c","type":"html","className":"in-3630e16c ","anchor":"","html":"<span class=\"is-67\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-68\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-69\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"},{"id":"6b93f38","type":"heading","className":"in-6b93f38 ","anchor":"","html":"منشئ تقارير بدون كود","tag":"h3"},{"id":"115d0dc3","type":"text-editor","className":"in-115d0dc3 ","anchor":"","html":"اختر الأعمدة والفلاتر والتجميع واحفظ تقريرك الخاص دون برمجة."}]},{"id":"415f3de5","type":"container","className":"in-415f3de5 ","anchor":"","children":[{"id":"4f4120ed","type":"html","className":"in-4f4120ed ","anchor":"","html":"<span class=\"is-74\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-76\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"},{"id":"15c7b99b","type":"heading","className":"in-15c7b99b ","anchor":"","html":"فلاتر محفوظة وحديثة","tag":"h3"},{"id":"6225227b","type":"text-editor","className":"in-6225227b ","anchor":"","html":"احفظ طرق العرض المفضّلة وارجع لتقاريرك الأخيرة بضغطة."}]},{"id":"2a6402aa","type":"container","className":"in-2a6402aa ","anchor":"","children":[{"id":"27476889","type":"html","className":"in-27476889 ","anchor":"","html":"<span class=\"is-81\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-82\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-83\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-84\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-85\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"45327451","type":"heading","className":"in-45327451 ","anchor":"","html":"جدولة بالإيميل","tag":"h3"},{"id":"59808880","type":"text-editor","className":"in-59808880 ","anchor":"","html":"أرسل أي تقرير تلقائيًا في وقت محدد لمن يحتاجه."}]},{"id":"4d4203d","type":"container","className":"in-4d4203d ","anchor":"","children":[{"id":"7fc6b6c3","type":"html","className":"in-7fc6b6c3 ","anchor":"","html":"<span class=\"is-90\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-93\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-94\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-97\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"},{"id":"613fe650","type":"heading","className":"in-613fe650 ","anchor":"","html":"تصدير PDF وExcel","tag":"h3"},{"id":"617a5e06","type":"text-editor","className":"in-617a5e06 ","anchor":"","html":"صدّر أي تقرير بصيغة جاهزة للمشاركة أو التحليل في ثوانٍ."}]},{"id":"739f4357","type":"container","className":"in-739f4357 ","anchor":"","children":[{"id":"5aa15ab8","type":"html","className":"in-5aa15ab8 ","anchor":"","html":"<span class=\"is-102\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-103\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-104\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-105\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-106\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"},{"id":"201d2343","type":"heading","className":"in-201d2343 ","anchor":"","html":"لوحات ومؤشرات","tag":"h3"},{"id":"2fa09d18","type":"text-editor","className":"in-2fa09d18 ","anchor":"","html":"النقدية والمبيعات والذمم والربحية في لوحة واحدة، كل رقم قابل للنقر."}]}]}]},{"id":"6c31d599","type":"container","className":"in-6c31d599 digit inside","anchor":"inside","children":[{"id":"4eb88817","type":"container","className":"in-4eb88817 ","anchor":"","children":[{"id":"48d5623e","type":"container","className":"in-48d5623e ","anchor":"","children":[{"id":"7332d59","type":"text-editor","className":"in-7332d59 ","anchor":"","html":"من الداخل"},{"id":"6246964c","type":"heading","className":"in-6246964c ","anchor":"","html":"مركز تقارير مرتّب… بالعربية","tag":"h2"},{"id":"708f2e2b","type":"text-editor","className":"in-708f2e2b ","anchor":"","html":"تقاريرك مصنّفة بفئات واضحة، مع مفضّلة وحديثة وفلاتر محفوظة — لا بحث في قوائم طويلة ولا أسماء إنجليزية."},{"id":"6c330b47","type":"text-editor","className":"in-6c330b47 ","anchor":"","html":"<ul class=\"is-116\"><li class=\"is-117\"><span class=\"is-118\">✓</span><span>قوائم مالية: ميزان، دخل، مركز مالي، تدفق نقدي</span></li><li class=\"is-119\"><span class=\"is-120\">✓</span><span>تقارير ضريبة القيمة المضافة وأعمار الديون</span></li><li class=\"is-121\"><span class=\"is-122\">✓</span><span>تقارير حسب الفرع والمشروع ومركز التكلفة</span></li><li class=\"is-123\"><span class=\"is-124\">✓</span><span>منشئ تقارير بدون كود + فلاتر محفوظة</span></li><li class=\"is-125\"><span class=\"is-126\">✓</span><span>جدولة بالإيميل وتصدير PDF/Excel</span></li></ul>"}]},{"id":"7e0c79bb","type":"container","className":"in-7e0c79bb ","anchor":"","children":[{"id":"a43c37f","type":"html","className":"in-a43c37f ","anchor":"","html":"<div class=\"is-129\"><span class=\"is-130\"><i class=\"is-131\"></i><i class=\"is-132\"></i><i class=\"is-133\"></i></span><span class=\"is-134\">digit-erp.com / app / digit-reports</span></div>"},{"id":"4e1c0ad","type":"image-slot","className":"in-4e1c0ad ","anchor":""},{"id":"30ff3c35","type":"text-editor","className":"in-30ff3c35 ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"5d0794a0","type":"container","className":"in-5d0794a0 digit sec","anchor":"","children":[{"id":"3b1ecf01","type":"container","className":"in-3b1ecf01 ","anchor":"","children":[{"id":"5544d97f","type":"container","className":"in-5544d97f ","anchor":"","children":[{"id":"601e1201","type":"text-editor","className":"in-601e1201 ","anchor":"","html":"رؤية الإدارة"},{"id":"63ddf404","type":"heading","className":"in-63ddf404 ","anchor":"","html":"كل رقم قابل للنقر… حتى المستند","tag":"h2"},{"id":"24c2a61c","type":"text-editor","className":"in-24c2a61c ","anchor":"","html":"انطلق من الملخّص إلى التفصيل: انقر أي رقم لترى المستند الذي كوّنه، واعرض تقاريرك حسب الفرع والمشروع والقسم."}]},{"id":"46492cea","type":"container","className":"in-46492cea ","anchor":"","children":[{"id":"65a0e1ec","type":"container","className":"in-65a0e1ec ","anchor":"","children":[{"id":"103dcfe7","type":"heading","className":"in-103dcfe7 ","anchor":"","html":"من الملخّص للتفصيل","tag":"h3"},{"id":"d064e5","type":"text-editor","className":"in-d064e5 ","anchor":"","html":"من الرقم إلى مصدره"}]},{"id":"e71ed5e","type":"container","className":"in-e71ed5e ","anchor":"","children":[{"id":"ca2eac6","type":"heading","className":"in-ca2eac6 ","anchor":"","html":"حسب الفرع","tag":"h3"},{"id":"746c605b","type":"text-editor","className":"in-746c605b ","anchor":"","html":"أداء كل فرع"}]},{"id":"abc356c","type":"container","className":"in-abc356c ","anchor":"","children":[{"id":"924bf56","type":"heading","className":"in-924bf56 ","anchor":"","html":"حسب المشروع","tag":"h3"},{"id":"6a4430af","type":"text-editor","className":"in-6a4430af ","anchor":"","html":"إيراد وتكلفة كل مشروع"}]},{"id":"2a2481e6","type":"container","className":"in-2a2481e6 ","anchor":"","children":[{"id":"3b06816e","type":"heading","className":"in-3b06816e ","anchor":"","html":"حسب القسم","tag":"h3"},{"id":"2958b56b","type":"text-editor","className":"in-2958b56b ","anchor":"","html":"مصروفات كل قسم"}]}]}]}]},{"id":"3188bd02","type":"container","className":"in-3188bd02 digit demo","anchor":"","children":[{"id":"55c9bc6e","type":"container","className":"in-55c9bc6e ","anchor":"","children":[{"id":"60df07c","type":"container","className":"in-60df07c ","anchor":"","children":[{"id":"9d55fd7","type":"text-editor","className":"in-9d55fd7 ","anchor":"","html":"سيناريو حيّ"},{"id":"657e9481","type":"heading","className":"in-657e9481 ","anchor":"","html":"ابنِ تقريرًا جديدًا… في أقل من 3 دقائق","tag":"h2"},{"id":"3395a52e","type":"html","className":"in-3395a52e ","anchor":"","html":"<div class=\"is-162\"><span class=\"is-163\">اختر النوع</span><span class=\"is-164\">←</span><span class=\"is-165\">حدّد الفلاتر</span><span class=\"is-166\">←</span><span class=\"is-167\">جمّع البيانات</span><span class=\"is-168\">←</span><span class=\"is-169\">احفظ التقرير</span><span class=\"is-170\">←</span><span class=\"is-171\">صدّر أو جدوِل</span></div>"}]},{"id":"71076492","type":"container","className":"in-71076492 ","anchor":"","children":[{"id":"425fec80","type":"button","className":"in-425fec80 btn mint","anchor":"","text":"استعرض مكتبة التقارير","href":"/demo","external":false}]}]}]},{"id":"2539e63e","type":"container","className":"in-2539e63e digit faq","anchor":"","children":[{"id":"3da5302a","type":"container","className":"in-3da5302a ","anchor":"","children":[{"id":"1346ed7d","type":"text-editor","className":"in-1346ed7d ","anchor":"","html":"أسئلة متكررة"},{"id":"5eacf26c","type":"heading","className":"in-5eacf26c ","anchor":"","html":"أسئلة المدير المالي قبل القرار","tag":"h2"},{"id":"1b8818db","type":"text-editor","className":"in-1b8818db ","anchor":"","html":"إجابات صريحة عمّن ينتظر تقاريره أيامًا أو يعتمد على مستشار."}]},{"id":"664ba7","type":"accordion","className":"in-664ba7 qa","anchor":"","tabs":[{"title":"هل التقارير بالعربية بالكامل؟","html":"<p>نعم، أسماء التقارير وأعمدتها ومخرجاتها بالعربية، مع طباعة وتصدير ثنائيي اللغة.</p>"},{"title":"هل أبني تقريرًا جديدًا بنفسي دون مبرمج؟","html":"<p>نعم، منشئ التقارير بدون كود: تختار الأعمدة والفلاتر والتجميع وتحفظ التقرير.</p>"},{"title":"هل يمكن جدولة التقارير وتصديرها؟","html":"<p>نعم، تُصدّر PDF وExcel ويمكن جدولة إرسالها بالبريد تلقائيًا.</p>"},{"title":"هل أرى تفاصيل كل رقم؟","html":"<p>نعم، كل رقم قابل للنقر حتى مستوى المستند الأصلي.</p>"},{"title":"هل أرى الأرباح حسب الفرع أو المشروع؟","html":"<p>نعم، عبر الأبعاد التحليلية ومراكز التكلفة.</p>"},{"title":"هل أحتاج مستشارًا لإخراج التقارير؟","html":"<p>لا، مكتبة جاهزة + منشئ بدون كود يغنيان عن الاعتماد على مستشار.</p>"}]}]},{"id":"419be5cf","type":"container","className":"in-419be5cf digit related","anchor":"","children":[{"id":"7d5417c","type":"container","className":"in-7d5417c ","anchor":"","children":[{"id":"72c22b30","type":"text-editor","className":"in-72c22b30 ","anchor":"","html":"موديولات مترابطة"},{"id":"25cac78f","type":"heading","className":"in-25cac78f ","anchor":"","html":"التقارير تقرأ كل شركتك","tag":"h2"},{"id":"58092ead","type":"text-editor","className":"in-58092ead ","anchor":"","html":"نفس قاعدة البيانات — المحاسبة والمبيعات والمشتريات والمخزون تغذّي تقاريرك تلقائيًا."}]},{"id":"207d6160","type":"container","className":"in-207d6160 ","anchor":"","children":[{"id":"73e4181d","type":"container","className":"in-73e4181d ","anchor":"","children":[{"id":"553f9178","type":"html","className":"in-553f9178 ","anchor":"","html":"<span class=\"is-188\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-189\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-190\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-191\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-192\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"},{"id":"57acbe9c","type":"heading","className":"in-57acbe9c ","anchor":"","html":"المحاسبة","tag":"h3"},{"id":"5353bba0","type":"text-editor","className":"in-5353bba0 ","anchor":"","html":"من القيد إلى القوائم"},{"id":"7ee8f920","type":"text-editor","className":"in-7ee8f920 ","anchor":"","html":"<a class=\"is-196\" href=\"/accounting\">عرض الموديول ←</a>"}]},{"id":"7366ae1a","type":"container","className":"in-7366ae1a ","anchor":"","children":[{"id":"c5ff07d","type":"html","className":"in-c5ff07d ","anchor":"","html":"<span class=\"is-199\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-200\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-201\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-202\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"},{"id":"7652bbc6","type":"heading","className":"in-7652bbc6 ","anchor":"","html":"المبيعات","tag":"h3"},{"id":"24dbce0a","type":"text-editor","className":"in-24dbce0a ","anchor":"","html":"من عرض السعر إلى التحصيل"},{"id":"73dc0f50","type":"text-editor","className":"in-73dc0f50 ","anchor":"","html":"<a class=\"is-206\" href=\"/sales\">عرض الموديول ←</a>"}]},{"id":"4b734259","type":"container","className":"in-4b734259 ","anchor":"","children":[{"id":"5d554376","type":"html","className":"in-5d554376 ","anchor":"","html":"<span class=\"is-209\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-210\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-211\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-212\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"},{"id":"5a014751","type":"heading","className":"in-5a014751 ","anchor":"","html":"المشتريات","tag":"h3"},{"id":"23ee445","type":"text-editor","className":"in-23ee445 ","anchor":"","html":"من الطلب إلى الفاتورة"},{"id":"e3531dc","type":"text-editor","className":"in-e3531dc ","anchor":"","html":"<a class=\"is-216\" href=\"/purchasing\">عرض الموديول ←</a>"}]},{"id":"34838eb7","type":"container","className":"in-34838eb7 ","anchor":"","children":[{"id":"77601726","type":"html","className":"in-77601726 ","anchor":"","html":"<span class=\"is-219\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-220\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-221\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-222\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-223\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"},{"id":"3230d239","type":"heading","className":"in-3230d239 ","anchor":"","html":"المخزون","tag":"h3"},{"id":"6ff57b4f","type":"text-editor","className":"in-6ff57b4f ","anchor":"","html":"مخزون دقيق لحظة بلحظة"},{"id":"9b471b7","type":"text-editor","className":"in-9b471b7 ","anchor":"","html":"<a class=\"is-227\" href=\"/inventory\">عرض الموديول ←</a>"}]}]}]},{"id":"9eb9ae6","type":"container","className":"in-9eb9ae6 digit cta","anchor":"cta","children":[{"id":"2476af03","type":"container","className":"in-2476af03 ","anchor":"","children":[{"id":"2a12c3bf","type":"heading","className":"in-2a12c3bf ","anchor":"","html":"جاهز تشوف أرقام شركتك بوضوح؟","tag":"h2"},{"id":"3d293a76","type":"text-editor","className":"in-3d293a76 ","anchor":"","html":"عرض تجريبي ببيانات شركة سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."},{"id":"12473d05","type":"container","className":"in-12473d05 ","anchor":"","children":[{"id":"49255d53","type":"button","className":"in-49255d53 btn mint","anchor":"","text":"استعرض مكتبة التقارير","href":"/demo","external":false},{"id":"6ae1beee","type":"button","className":"in-6ae1beee btn light","anchor":"","text":"واتساب المبيعات","href":"https://wa.me/966591909277","external":true}]}]}]}]}
+{
+ "title": "التقارير",
+ "description": "مركز تقارير عربي: قوائم مالية جاهزة، لوحات مؤشرات، تقارير حسب الفرع والمشروع، وتصدير وجدولة — بلا مستشار لكل تقرير.",
+ "sourceUrl": "https://digit-erp.com/modules/reports/",
+ "nodes": [
+  {
+   "id": "5f91833b",
+   "type": "container",
+   "className": "in-5f91833b digit band-crumb",
+   "anchor": "",
+   "children": [
+    {
+     "id": "6bc1682c",
+     "type": "text-editor",
+     "className": "in-6bc1682c ",
+     "anchor": "",
+     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">التقارير</span>"
+    }
+   ]
+  },
+  {
+   "id": "e308c5d",
+   "type": "container",
+   "className": "in-e308c5d digit hero",
+   "anchor": "",
+   "children": [
+    {
+     "id": "7882829e",
+     "type": "container",
+     "className": "in-7882829e ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "5b9d5dd2",
+       "type": "container",
+       "className": "in-5b9d5dd2 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "24b2ffc5",
+         "type": "container",
+         "className": "in-24b2ffc5 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "57833341",
+           "type": "html",
+           "className": "in-57833341 ",
+           "anchor": "",
+           "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-10\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-11\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-12\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+          },
+          {
+           "id": "1daa1026",
+           "type": "text-editor",
+           "className": "in-1daa1026 ",
+           "anchor": "",
+           "html": "موديول · التقارير"
+          }
+         ]
+        },
+        {
+         "id": "1c3d5170",
+         "type": "heading",
+         "className": "in-1c3d5170 ",
+         "anchor": "",
+         "html": "٥٠+ تقريرًا جاهزًا بالعربية… <em class=\"is-15\">وتقريرك الخاص بدون كود</em>",
+         "tag": "h1"
+        },
+        {
+         "id": "7e97dc7",
+         "type": "text-editor",
+         "className": "in-7e97dc7 ",
+         "anchor": "",
+         "html": "مركز تقارير عربي: قوائم مالية جاهزة، لوحات مؤشرات، تقارير حسب الفرع والمشروع، وتصدير وجدولة — بلا مستشار لكل تقرير."
+        },
+        {
+         "id": "699f9ad8",
+         "type": "container",
+         "className": "in-699f9ad8 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "5c7adaa4",
+           "type": "button",
+           "className": "in-5c7adaa4 btn solid",
+           "anchor": "",
+           "text": "استعرض مكتبة التقارير",
+           "href": "/demo",
+           "external": false
+          },
+          {
+           "id": "3275891c",
+           "type": "button",
+           "className": "in-3275891c btn ghost",
+           "anchor": "",
+           "text": "شاهدها من الداخل",
+           "href": "#inside",
+           "external": false
+          }
+         ]
+        },
+        {
+         "id": "6ef0bbf9",
+         "type": "text-editor",
+         "className": "in-6ef0bbf9 ",
+         "anchor": "",
+         "html": "<span class=\"is-21\">٥٠+ تقرير جاهز</span><span class=\"is-22\">بدون مستشار</span><span class=\"is-23\">تصدير وجدولة</span>"
+        }
+       ]
+      },
+      {
+       "id": "1448edb0",
+       "type": "container",
+       "className": "in-1448edb0 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5b1a726a",
+         "type": "html",
+         "className": "in-5b1a726a ",
+         "anchor": "",
+         "html": "<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / digit-reports</span></div>"
+        },
+        {
+         "id": "16fc0bf",
+         "type": "image-slot",
+         "className": "in-16fc0bf ",
+         "anchor": "",
+         "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
+         "alt": "التقارير"
+        },
+        {
+         "id": "42f768f2",
+         "type": "text-editor",
+         "className": "in-42f768f2 ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "51083069",
+   "type": "container",
+   "className": "in-51083069 digit proof",
+   "anchor": "",
+   "children": [
+    {
+     "id": "2d120f05",
+     "type": "container",
+     "className": "in-2d120f05 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "1de7646",
+       "type": "container",
+       "className": "in-1de7646 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6c906f94",
+         "type": "heading",
+         "className": "in-6c906f94 ",
+         "anchor": "",
+         "html": "50+",
+         "tag": "h3"
+        },
+        {
+         "id": "11d0e417",
+         "type": "text-editor",
+         "className": "in-11d0e417 ",
+         "anchor": "",
+         "html": "تقرير مالي وإداري"
+        },
+        {
+         "id": "4c2b914a",
+         "type": "text-editor",
+         "className": "in-4c2b914a ",
+         "anchor": "",
+         "html": "يُحقَّق العدد ويُدرَج قبل النشر"
+        }
+       ]
+      },
+      {
+       "id": "7fdb9708",
+       "type": "container",
+       "className": "in-7fdb9708 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6426323f",
+         "type": "heading",
+         "className": "in-6426323f ",
+         "anchor": "",
+         "html": "6 فئات",
+         "tag": "h3"
+        },
+        {
+         "id": "2baa65aa",
+         "type": "text-editor",
+         "className": "in-2baa65aa ",
+         "anchor": "",
+         "html": "مالية·مبيعات·مشتريات·مخزون·ضريبة·HR"
+        },
+        {
+         "id": "33f78cd7",
+         "type": "text-editor",
+         "className": "in-33f78cd7 ",
+         "anchor": "",
+         "html": "مصنّفة بالعربية"
+        }
+       ]
+      },
+      {
+       "id": "674b63b3",
+       "type": "container",
+       "className": "in-674b63b3 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "66e5e3ef",
+         "type": "heading",
+         "className": "in-66e5e3ef ",
+         "anchor": "",
+         "html": "بدون كود",
+         "tag": "h3"
+        },
+        {
+         "id": "34fe3063",
+         "type": "text-editor",
+         "className": "in-34fe3063 ",
+         "anchor": "",
+         "html": "منشئ تقارير ذاتي"
+        },
+        {
+         "id": "358c505",
+         "type": "text-editor",
+         "className": "in-358c505 ",
+         "anchor": "",
+         "html": "أعمدة وفلاتر وتجميع"
+        }
+       ]
+      },
+      {
+       "id": "456e9c94",
+       "type": "container",
+       "className": "in-456e9c94 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "79f3dd7b",
+         "type": "heading",
+         "className": "in-79f3dd7b ",
+         "anchor": "",
+         "html": "PDF·Excel",
+         "tag": "h3"
+        },
+        {
+         "id": "48e5d96b",
+         "type": "text-editor",
+         "className": "in-48e5d96b ",
+         "anchor": "",
+         "html": "تصدير وجدولة بريد"
+        },
+        {
+         "id": "4ea67079",
+         "type": "text-editor",
+         "className": "in-4ea67079 ",
+         "anchor": "",
+         "html": "إرسال تلقائي في وقت محدد"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "4cc2785f",
+   "type": "container",
+   "className": "in-4cc2785f digit benefits",
+   "anchor": "",
+   "children": [
+    {
+     "id": "2a51b216",
+     "type": "container",
+     "className": "in-2a51b216 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "33e3ee9",
+       "type": "text-editor",
+       "className": "in-33e3ee9 ",
+       "anchor": "",
+       "html": "لماذا تقارير Digit"
+      },
+      {
+       "id": "5a97dc2",
+       "type": "heading",
+       "className": "in-5a97dc2 ",
+       "anchor": "",
+       "html": "تقاريرك جاهزة… بدون انتظار ولا مستشار",
+       "tag": "h2"
+      },
+      {
+       "id": "2f3f4482",
+       "type": "text-editor",
+       "className": "in-2f3f4482 ",
+       "anchor": "",
+       "html": "ست قدرات تردّ على الشكوى الأولى: تقارير متناثرة وإنجليزية ومتأخرة وتحتاج مبرمجًا."
+      }
+     ]
+    },
+    {
+     "id": "6a061660",
+     "type": "container",
+     "className": "in-6a061660 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "36e4e9c4",
+       "type": "container",
+       "className": "in-36e4e9c4 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "406b6749",
+         "type": "html",
+         "className": "in-406b6749 ",
+         "anchor": "",
+         "html": "<span class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-61\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-62\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "1518fbf9",
+         "type": "heading",
+         "className": "in-1518fbf9 ",
+         "anchor": "",
+         "html": "مكتبة 50+ تقرير جاهز",
+         "tag": "h3"
+        },
+        {
+         "id": "1f0fdbd",
+         "type": "text-editor",
+         "className": "in-1f0fdbd ",
+         "anchor": "",
+         "html": "مالية ومبيعات ومشتريات ومخزون وضريبة — مصنّفة بالعربية وجاهزة للاستخدام."
+        }
+       ]
+      },
+      {
+       "id": "43136ea2",
+       "type": "container",
+       "className": "in-43136ea2 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3630e16c",
+         "type": "html",
+         "className": "in-3630e16c ",
+         "anchor": "",
+         "html": "<span class=\"is-67\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-68\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-69\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
+        },
+        {
+         "id": "6b93f38",
+         "type": "heading",
+         "className": "in-6b93f38 ",
+         "anchor": "",
+         "html": "منشئ تقارير بدون كود",
+         "tag": "h3"
+        },
+        {
+         "id": "115d0dc3",
+         "type": "text-editor",
+         "className": "in-115d0dc3 ",
+         "anchor": "",
+         "html": "اختر الأعمدة والفلاتر والتجميع واحفظ تقريرك الخاص دون برمجة."
+        }
+       ]
+      },
+      {
+       "id": "415f3de5",
+       "type": "container",
+       "className": "in-415f3de5 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4f4120ed",
+         "type": "html",
+         "className": "in-4f4120ed ",
+         "anchor": "",
+         "html": "<span class=\"is-74\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-76\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "15c7b99b",
+         "type": "heading",
+         "className": "in-15c7b99b ",
+         "anchor": "",
+         "html": "فلاتر محفوظة وحديثة",
+         "tag": "h3"
+        },
+        {
+         "id": "6225227b",
+         "type": "text-editor",
+         "className": "in-6225227b ",
+         "anchor": "",
+         "html": "احفظ طرق العرض المفضّلة وارجع لتقاريرك الأخيرة بضغطة."
+        }
+       ]
+      },
+      {
+       "id": "2a6402aa",
+       "type": "container",
+       "className": "in-2a6402aa ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "27476889",
+         "type": "html",
+         "className": "in-27476889 ",
+         "anchor": "",
+         "html": "<span class=\"is-81\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-82\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-83\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-84\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-85\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "45327451",
+         "type": "heading",
+         "className": "in-45327451 ",
+         "anchor": "",
+         "html": "جدولة بالإيميل",
+         "tag": "h3"
+        },
+        {
+         "id": "59808880",
+         "type": "text-editor",
+         "className": "in-59808880 ",
+         "anchor": "",
+         "html": "أرسل أي تقرير تلقائيًا في وقت محدد لمن يحتاجه."
+        }
+       ]
+      },
+      {
+       "id": "4d4203d",
+       "type": "container",
+       "className": "in-4d4203d ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7fc6b6c3",
+         "type": "html",
+         "className": "in-7fc6b6c3 ",
+         "anchor": "",
+         "html": "<span class=\"is-90\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-93\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-94\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-97\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
+        },
+        {
+         "id": "613fe650",
+         "type": "heading",
+         "className": "in-613fe650 ",
+         "anchor": "",
+         "html": "تصدير PDF وExcel",
+         "tag": "h3"
+        },
+        {
+         "id": "617a5e06",
+         "type": "text-editor",
+         "className": "in-617a5e06 ",
+         "anchor": "",
+         "html": "صدّر أي تقرير بصيغة جاهزة للمشاركة أو التحليل في ثوانٍ."
+        }
+       ]
+      },
+      {
+       "id": "739f4357",
+       "type": "container",
+       "className": "in-739f4357 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5aa15ab8",
+         "type": "html",
+         "className": "in-5aa15ab8 ",
+         "anchor": "",
+         "html": "<span class=\"is-102\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-103\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-104\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-105\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-106\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "201d2343",
+         "type": "heading",
+         "className": "in-201d2343 ",
+         "anchor": "",
+         "html": "لوحات ومؤشرات",
+         "tag": "h3"
+        },
+        {
+         "id": "2fa09d18",
+         "type": "text-editor",
+         "className": "in-2fa09d18 ",
+         "anchor": "",
+         "html": "النقدية والمبيعات والذمم والربحية في لوحة واحدة، كل رقم قابل للنقر."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "6c31d599",
+   "type": "container",
+   "className": "in-6c31d599 digit inside",
+   "anchor": "inside",
+   "children": [
+    {
+     "id": "4eb88817",
+     "type": "container",
+     "className": "in-4eb88817 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "48d5623e",
+       "type": "container",
+       "className": "in-48d5623e ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7332d59",
+         "type": "text-editor",
+         "className": "in-7332d59 ",
+         "anchor": "",
+         "html": "من الداخل"
+        },
+        {
+         "id": "6246964c",
+         "type": "heading",
+         "className": "in-6246964c ",
+         "anchor": "",
+         "html": "مركز تقارير مرتّب… بالعربية",
+         "tag": "h2"
+        },
+        {
+         "id": "708f2e2b",
+         "type": "text-editor",
+         "className": "in-708f2e2b ",
+         "anchor": "",
+         "html": "تقاريرك مصنّفة بفئات واضحة، مع مفضّلة وحديثة وفلاتر محفوظة — لا بحث في قوائم طويلة ولا أسماء إنجليزية."
+        },
+        {
+         "id": "6c330b47",
+         "type": "text-editor",
+         "className": "in-6c330b47 ",
+         "anchor": "",
+         "html": "<ul class=\"is-116\"><li class=\"is-117\"><span class=\"is-118\">✓</span><span>قوائم مالية: ميزان، دخل، مركز مالي، تدفق نقدي</span></li><li class=\"is-119\"><span class=\"is-120\">✓</span><span>تقارير ضريبة القيمة المضافة وأعمار الديون</span></li><li class=\"is-121\"><span class=\"is-122\">✓</span><span>تقارير حسب الفرع والمشروع ومركز التكلفة</span></li><li class=\"is-123\"><span class=\"is-124\">✓</span><span>منشئ تقارير بدون كود + فلاتر محفوظة</span></li><li class=\"is-125\"><span class=\"is-126\">✓</span><span>جدولة بالإيميل وتصدير PDF/Excel</span></li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "7e0c79bb",
+       "type": "container",
+       "className": "in-7e0c79bb ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "a43c37f",
+         "type": "html",
+         "className": "in-a43c37f ",
+         "anchor": "",
+         "html": "<div class=\"is-129\"><span class=\"is-130\"><i class=\"is-131\"></i><i class=\"is-132\"></i><i class=\"is-133\"></i></span><span class=\"is-134\">digit-erp.com / app / digit-reports</span></div>"
+        },
+        {
+         "id": "4e1c0ad",
+         "type": "image-slot",
+         "className": "in-4e1c0ad ",
+         "anchor": ""
+        },
+        {
+         "id": "30ff3c35",
+         "type": "text-editor",
+         "className": "in-30ff3c35 ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5d0794a0",
+   "type": "container",
+   "className": "in-5d0794a0 digit sec",
+   "anchor": "",
+   "children": [
+    {
+     "id": "3b1ecf01",
+     "type": "container",
+     "className": "in-3b1ecf01 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "5544d97f",
+       "type": "container",
+       "className": "in-5544d97f ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "601e1201",
+         "type": "text-editor",
+         "className": "in-601e1201 ",
+         "anchor": "",
+         "html": "رؤية الإدارة"
+        },
+        {
+         "id": "63ddf404",
+         "type": "heading",
+         "className": "in-63ddf404 ",
+         "anchor": "",
+         "html": "كل رقم قابل للنقر… حتى المستند",
+         "tag": "h2"
+        },
+        {
+         "id": "24c2a61c",
+         "type": "text-editor",
+         "className": "in-24c2a61c ",
+         "anchor": "",
+         "html": "انطلق من الملخّص إلى التفصيل: انقر أي رقم لترى المستند الذي كوّنه، واعرض تقاريرك حسب الفرع والمشروع والقسم."
+        }
+       ]
+      },
+      {
+       "id": "46492cea",
+       "type": "container",
+       "className": "in-46492cea ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "65a0e1ec",
+         "type": "container",
+         "className": "in-65a0e1ec ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "103dcfe7",
+           "type": "heading",
+           "className": "in-103dcfe7 ",
+           "anchor": "",
+           "html": "من الملخّص للتفصيل",
+           "tag": "h3"
+          },
+          {
+           "id": "d064e5",
+           "type": "text-editor",
+           "className": "in-d064e5 ",
+           "anchor": "",
+           "html": "من الرقم إلى مصدره"
+          }
+         ]
+        },
+        {
+         "id": "e71ed5e",
+         "type": "container",
+         "className": "in-e71ed5e ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "ca2eac6",
+           "type": "heading",
+           "className": "in-ca2eac6 ",
+           "anchor": "",
+           "html": "حسب الفرع",
+           "tag": "h3"
+          },
+          {
+           "id": "746c605b",
+           "type": "text-editor",
+           "className": "in-746c605b ",
+           "anchor": "",
+           "html": "أداء كل فرع"
+          }
+         ]
+        },
+        {
+         "id": "abc356c",
+         "type": "container",
+         "className": "in-abc356c ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "924bf56",
+           "type": "heading",
+           "className": "in-924bf56 ",
+           "anchor": "",
+           "html": "حسب المشروع",
+           "tag": "h3"
+          },
+          {
+           "id": "6a4430af",
+           "type": "text-editor",
+           "className": "in-6a4430af ",
+           "anchor": "",
+           "html": "إيراد وتكلفة كل مشروع"
+          }
+         ]
+        },
+        {
+         "id": "2a2481e6",
+         "type": "container",
+         "className": "in-2a2481e6 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "3b06816e",
+           "type": "heading",
+           "className": "in-3b06816e ",
+           "anchor": "",
+           "html": "حسب القسم",
+           "tag": "h3"
+          },
+          {
+           "id": "2958b56b",
+           "type": "text-editor",
+           "className": "in-2958b56b ",
+           "anchor": "",
+           "html": "مصروفات كل قسم"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3188bd02",
+   "type": "container",
+   "className": "in-3188bd02 digit demo",
+   "anchor": "",
+   "children": [
+    {
+     "id": "55c9bc6e",
+     "type": "container",
+     "className": "in-55c9bc6e ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "60df07c",
+       "type": "container",
+       "className": "in-60df07c ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "9d55fd7",
+         "type": "text-editor",
+         "className": "in-9d55fd7 ",
+         "anchor": "",
+         "html": "سيناريو حيّ"
+        },
+        {
+         "id": "657e9481",
+         "type": "heading",
+         "className": "in-657e9481 ",
+         "anchor": "",
+         "html": "ابنِ تقريرًا جديدًا… في أقل من 3 دقائق",
+         "tag": "h2"
+        },
+        {
+         "id": "3395a52e",
+         "type": "html",
+         "className": "in-3395a52e ",
+         "anchor": "",
+         "html": "<div class=\"is-162\"><span class=\"is-163\">اختر النوع</span><span class=\"is-164\">←</span><span class=\"is-165\">حدّد الفلاتر</span><span class=\"is-166\">←</span><span class=\"is-167\">جمّع البيانات</span><span class=\"is-168\">←</span><span class=\"is-169\">احفظ التقرير</span><span class=\"is-170\">←</span><span class=\"is-171\">صدّر أو جدوِل</span></div>"
+        }
+       ]
+      },
+      {
+       "id": "71076492",
+       "type": "container",
+       "className": "in-71076492 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "425fec80",
+         "type": "button",
+         "className": "in-425fec80 btn mint",
+         "anchor": "",
+         "text": "استعرض مكتبة التقارير",
+         "href": "/demo",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2539e63e",
+   "type": "container",
+   "className": "in-2539e63e digit faq",
+   "anchor": "",
+   "children": [
+    {
+     "id": "3da5302a",
+     "type": "container",
+     "className": "in-3da5302a ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "1346ed7d",
+       "type": "text-editor",
+       "className": "in-1346ed7d ",
+       "anchor": "",
+       "html": "أسئلة متكررة"
+      },
+      {
+       "id": "5eacf26c",
+       "type": "heading",
+       "className": "in-5eacf26c ",
+       "anchor": "",
+       "html": "أسئلة المدير المالي قبل القرار",
+       "tag": "h2"
+      },
+      {
+       "id": "1b8818db",
+       "type": "text-editor",
+       "className": "in-1b8818db ",
+       "anchor": "",
+       "html": "إجابات صريحة عمّن ينتظر تقاريره أيامًا أو يعتمد على مستشار."
+      }
+     ]
+    },
+    {
+     "id": "664ba7",
+     "type": "accordion",
+     "className": "in-664ba7 qa",
+     "anchor": "",
+     "tabs": [
+      {
+       "title": "هل التقارير بالعربية بالكامل؟",
+       "html": "<p>نعم، أسماء التقارير وأعمدتها ومخرجاتها بالعربية، مع طباعة وتصدير ثنائيي اللغة.</p>"
+      },
+      {
+       "title": "هل أبني تقريرًا جديدًا بنفسي دون مبرمج؟",
+       "html": "<p>نعم، منشئ التقارير بدون كود: تختار الأعمدة والفلاتر والتجميع وتحفظ التقرير.</p>"
+      },
+      {
+       "title": "هل يمكن جدولة التقارير وتصديرها؟",
+       "html": "<p>نعم، تُصدّر PDF وExcel ويمكن جدولة إرسالها بالبريد تلقائيًا.</p>"
+      },
+      {
+       "title": "هل أرى تفاصيل كل رقم؟",
+       "html": "<p>نعم، كل رقم قابل للنقر حتى مستوى المستند الأصلي.</p>"
+      },
+      {
+       "title": "هل أرى الأرباح حسب الفرع أو المشروع؟",
+       "html": "<p>نعم، عبر الأبعاد التحليلية ومراكز التكلفة.</p>"
+      },
+      {
+       "title": "هل أحتاج مستشارًا لإخراج التقارير؟",
+       "html": "<p>لا، مكتبة جاهزة + منشئ بدون كود يغنيان عن الاعتماد على مستشار.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "419be5cf",
+   "type": "container",
+   "className": "in-419be5cf digit related",
+   "anchor": "",
+   "children": [
+    {
+     "id": "7d5417c",
+     "type": "container",
+     "className": "in-7d5417c ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "72c22b30",
+       "type": "text-editor",
+       "className": "in-72c22b30 ",
+       "anchor": "",
+       "html": "موديولات مترابطة"
+      },
+      {
+       "id": "25cac78f",
+       "type": "heading",
+       "className": "in-25cac78f ",
+       "anchor": "",
+       "html": "التقارير تقرأ كل شركتك",
+       "tag": "h2"
+      },
+      {
+       "id": "58092ead",
+       "type": "text-editor",
+       "className": "in-58092ead ",
+       "anchor": "",
+       "html": "نفس قاعدة البيانات — المحاسبة والمبيعات والمشتريات والمخزون تغذّي تقاريرك تلقائيًا."
+      }
+     ]
+    },
+    {
+     "id": "207d6160",
+     "type": "container",
+     "className": "in-207d6160 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "73e4181d",
+       "type": "container",
+       "className": "in-73e4181d ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "553f9178",
+         "type": "html",
+         "className": "in-553f9178 ",
+         "anchor": "",
+         "html": "<span class=\"is-188\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-189\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-190\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-191\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-192\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "57acbe9c",
+         "type": "heading",
+         "className": "in-57acbe9c ",
+         "anchor": "",
+         "html": "المحاسبة",
+         "tag": "h3"
+        },
+        {
+         "id": "5353bba0",
+         "type": "text-editor",
+         "className": "in-5353bba0 ",
+         "anchor": "",
+         "html": "من القيد إلى القوائم"
+        },
+        {
+         "id": "7ee8f920",
+         "type": "text-editor",
+         "className": "in-7ee8f920 ",
+         "anchor": "",
+         "html": "<a class=\"is-196\" href=\"/accounting\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "7366ae1a",
+       "type": "container",
+       "className": "in-7366ae1a ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "c5ff07d",
+         "type": "html",
+         "className": "in-c5ff07d ",
+         "anchor": "",
+         "html": "<span class=\"is-199\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-200\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-201\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-202\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "7652bbc6",
+         "type": "heading",
+         "className": "in-7652bbc6 ",
+         "anchor": "",
+         "html": "المبيعات",
+         "tag": "h3"
+        },
+        {
+         "id": "24dbce0a",
+         "type": "text-editor",
+         "className": "in-24dbce0a ",
+         "anchor": "",
+         "html": "من عرض السعر إلى التحصيل"
+        },
+        {
+         "id": "73dc0f50",
+         "type": "text-editor",
+         "className": "in-73dc0f50 ",
+         "anchor": "",
+         "html": "<a class=\"is-206\" href=\"/sales\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "4b734259",
+       "type": "container",
+       "className": "in-4b734259 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5d554376",
+         "type": "html",
+         "className": "in-5d554376 ",
+         "anchor": "",
+         "html": "<span class=\"is-209\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-210\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-211\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-212\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "5a014751",
+         "type": "heading",
+         "className": "in-5a014751 ",
+         "anchor": "",
+         "html": "المشتريات",
+         "tag": "h3"
+        },
+        {
+         "id": "23ee445",
+         "type": "text-editor",
+         "className": "in-23ee445 ",
+         "anchor": "",
+         "html": "من الطلب إلى الفاتورة"
+        },
+        {
+         "id": "e3531dc",
+         "type": "text-editor",
+         "className": "in-e3531dc ",
+         "anchor": "",
+         "html": "<a class=\"is-216\" href=\"/purchasing\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "34838eb7",
+       "type": "container",
+       "className": "in-34838eb7 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "77601726",
+         "type": "html",
+         "className": "in-77601726 ",
+         "anchor": "",
+         "html": "<span class=\"is-219\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-220\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-221\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-222\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-223\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "3230d239",
+         "type": "heading",
+         "className": "in-3230d239 ",
+         "anchor": "",
+         "html": "المخزون",
+         "tag": "h3"
+        },
+        {
+         "id": "6ff57b4f",
+         "type": "text-editor",
+         "className": "in-6ff57b4f ",
+         "anchor": "",
+         "html": "مخزون دقيق لحظة بلحظة"
+        },
+        {
+         "id": "9b471b7",
+         "type": "text-editor",
+         "className": "in-9b471b7 ",
+         "anchor": "",
+         "html": "<a class=\"is-227\" href=\"/inventory\">عرض الموديول ←</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "9eb9ae6",
+   "type": "container",
+   "className": "in-9eb9ae6 digit cta",
+   "anchor": "cta",
+   "children": [
+    {
+     "id": "2476af03",
+     "type": "container",
+     "className": "in-2476af03 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "2a12c3bf",
+       "type": "heading",
+       "className": "in-2a12c3bf ",
+       "anchor": "",
+       "html": "جاهز تشوف أرقام شركتك بوضوح؟",
+       "tag": "h2"
+      },
+      {
+       "id": "3d293a76",
+       "type": "text-editor",
+       "className": "in-3d293a76 ",
+       "anchor": "",
+       "html": "عرض تجريبي ببيانات شركة سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+      },
+      {
+       "id": "12473d05",
+       "type": "container",
+       "className": "in-12473d05 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "49255d53",
+         "type": "button",
+         "className": "in-49255d53 btn mint",
+         "anchor": "",
+         "text": "استعرض مكتبة التقارير",
+         "href": "/demo",
+         "external": false
+        },
+        {
+         "id": "6ae1beee",
+         "type": "button",
+         "className": "in-6ae1beee btn light",
+         "anchor": "",
+         "text": "واتساب المبيعات",
+         "href": "https://wa.me/966591909277",
+         "external": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

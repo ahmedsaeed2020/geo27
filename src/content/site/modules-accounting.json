@@ -1,1 +1,1127 @@
-{"title":"المحاسبة","description":"شجرة حسابات سعودية جاهزة، ضريبة قيمة مضافة وفوترة فاتورة، قيود تلقائية من المستندات، وسجل تدقيق كامل — في مساحة عمل عربية واحدة.","sourceUrl":"https://digit-erp.com/modules/accounting/","nodes":[{"id":"3d3b62d9","type":"container","className":"in-3d3b62d9 digit band-crumb","anchor":"","children":[{"id":"389a7154","type":"text-editor","className":"in-389a7154 ","anchor":"","html":"<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">المحاسبة</span>"}]},{"id":"762e62a2","type":"container","className":"in-762e62a2 digit hero","anchor":"","children":[{"id":"789a618a","type":"container","className":"in-789a618a ","anchor":"","children":[{"id":"17a014fc","type":"container","className":"in-17a014fc ","anchor":"","children":[{"id":"51229690","type":"container","className":"in-51229690 ","anchor":"","children":[{"id":"70ad2e1e","type":"html","className":"in-70ad2e1e ","anchor":"","html":"<span class=\"is-8\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-10\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-11\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-12\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"},{"id":"5589e356","type":"text-editor","className":"in-5589e356 ","anchor":"","html":"موديول · المحاسبة"}]},{"id":"2489b674","type":"heading","className":"in-2489b674 ","anchor":"","html":"محاسبة سعودية متكاملة… <em class=\"is-15\">من القيد إلى القوائم</em>","tag":"h1"},{"id":"11e8746e","type":"text-editor","className":"in-11e8746e ","anchor":"","html":"شجرة حسابات سعودية جاهزة، ضريبة قيمة مضافة وفوترة فاتورة، قيود تلقائية من المستندات، وسجل تدقيق كامل — في مساحة عمل عربية واحدة."},{"id":"4c9e61ee","type":"container","className":"in-4c9e61ee ","anchor":"","children":[{"id":"4eb5b7dd","type":"button","className":"in-4eb5b7dd btn solid","anchor":"","text":"احجز عرض المحاسبة","href":"/demo","external":false},{"id":"665fe712","type":"button","className":"in-665fe712 btn ghost","anchor":"","text":"شاهدها من الداخل","href":"#inside","external":false}]},{"id":"3f562ba2","type":"text-editor","className":"in-3f562ba2 ","anchor":"","html":"<span class=\"is-21\">أقفل شهرك في أيام لا أسابيع</span><span class=\"is-22\">ضريبة بصيغة الهيئة بلا قلق</span><span class=\"is-23\">سجل تدقيق لكل حركة</span>"}]},{"id":"68b1f00b","type":"container","className":"in-68b1f00b ","anchor":"","children":[{"id":"1942ade8","type":"html","className":"in-1942ade8 ","anchor":"","html":"<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / accounting</span></div>"},{"id":"50a2b17","type":"image-slot","className":"in-50a2b17 ","anchor":""},{"id":"788ab1a8","type":"text-editor","className":"in-788ab1a8 ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"69ab469c","type":"container","className":"in-69ab469c digit proof","anchor":"","children":[{"id":"10b010c","type":"container","className":"in-10b010c ","anchor":"","children":[{"id":"7742061c","type":"container","className":"in-7742061c ","anchor":"","children":[{"id":"2cfa76ae","type":"heading","className":"in-2cfa76ae ","anchor":"","html":"+30,000","tag":"h3"},{"id":"304699a6","type":"text-editor","className":"in-304699a6 ","anchor":"","html":"شركة تستخدم المنصة الأساس"},{"id":"1a107ddb","type":"text-editor","className":"in-1a107ddb ","anchor":"","html":"ERPNext عالميًا — يُنسب للمنصة لا لـDigit"}]},{"id":"6e2d3f3a","type":"container","className":"in-6e2d3f3a ","anchor":"","children":[{"id":"39db7fc7","type":"heading","className":"in-39db7fc7 ","anchor":"","html":"50+","tag":"h3"},{"id":"463afcd6","type":"text-editor","className":"in-463afcd6 ","anchor":"","html":"تقرير مالي وإداري"},{"id":"707aad31","type":"text-editor","className":"in-707aad31 ","anchor":"","html":"جاهز بالعربية — قابل للتصدير والجدولة"}]},{"id":"7293e7be","type":"container","className":"in-7293e7be ","anchor":"","children":[{"id":"6c77a566","type":"heading","className":"in-6c77a566 ","anchor":"","html":"سجل تدقيق","tag":"h3"},{"id":"3855e821","type":"text-editor","className":"in-3855e821 ","anchor":"","html":"كامل لكل مستند"},{"id":"37742672","type":"text-editor","className":"in-37742672 ","anchor":"","html":"تغييرات ومستخدمون وتواريخ"}]},{"id":"17bae03f","type":"container","className":"in-17bae03f ","anchor":"","children":[{"id":"346aed31","type":"heading","className":"in-346aed31 ","anchor":"","html":"100%","tag":"h3"},{"id":"3490c490","type":"text-editor","className":"in-3490c490 ","anchor":"","html":"واجهة وتقارير بالعربية"},{"id":"450633c6","type":"text-editor","className":"in-450633c6 ","anchor":"","html":"سندات ومستندات ثنائية اللغة"}]}]}]},{"id":"60a612c7","type":"container","className":"in-60a612c7 digit benefits","anchor":"","children":[{"id":"1ca47f7","type":"container","className":"in-1ca47f7 ","anchor":"","children":[{"id":"cf0c5eb","type":"text-editor","className":"in-cf0c5eb ","anchor":"","html":"لماذا محاسبة Digit"},{"id":"5a822921","type":"heading","className":"in-5a822921 ","anchor":"","html":"كل ما يحتاجه فريقك المالي… بوضوح","tag":"h2"},{"id":"5ec7275d","type":"text-editor","className":"in-5ec7275d ","anchor":"","html":"ست قدرات أساسية تردّ على آلام الإقفال المتأخر وضغط الضريبة وضعف سجل التدقيق."}]},{"id":"4512e388","type":"container","className":"in-4512e388 ","anchor":"","children":[{"id":"205f0a6e","type":"container","className":"in-205f0a6e ","anchor":"","children":[{"id":"4c1eec85","type":"html","className":"in-4c1eec85 ","anchor":"","html":"<span class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-61\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-62\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"},{"id":"18fc80ef","type":"heading","className":"in-18fc80ef ","anchor":"","html":"قيود تلقائية من المستندات","tag":"h3"},{"id":"debc0c0","type":"text-editor","className":"in-debc0c0 ","anchor":"","html":"الفواتير والسندات تُنشئ قيودها تلقائيًا — أقل إدخال يدوي وأقل أخطاء."}]},{"id":"424fa33","type":"container","className":"in-424fa33 ","anchor":"","children":[{"id":"2e3a5641","type":"html","className":"in-2e3a5641 ","anchor":"","html":"<span class=\"is-67\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-68\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-69\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"},{"id":"17b64243","type":"heading","className":"in-17b64243 ","anchor":"","html":"سندات قبض وصرف بالعربية","tag":"h3"},{"id":"6aaa1a1f","type":"text-editor","className":"in-6aaa1a1f ","anchor":"","html":"سند قبض، سند صرف، وقيد يومية بمسمّيات عربية وطباعة ثنائية اللغة."}]},{"id":"731b7ebc","type":"container","className":"in-731b7ebc ","anchor":"","children":[{"id":"7ad3a3ff","type":"html","className":"in-7ad3a3ff ","anchor":"","html":"<span class=\"is-74\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-75\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-76\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"},{"id":"63cf1bf6","type":"heading","className":"in-63cf1bf6 ","anchor":"","html":"تسوية بنكية سريعة","tag":"h3"},{"id":"7d39554c","type":"text-editor","className":"in-7d39554c ","anchor":"","html":"طابق حركات البنك مع القيود بخطوات قليلة، مع متابعة الفروقات أولًا بأول."}]},{"id":"776326d3","type":"container","className":"in-776326d3 ","anchor":"","children":[{"id":"734ce7b0","type":"html","className":"in-734ce7b0 ","anchor":"","html":"<span class=\"is-81\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-82\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-83\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-84\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-85\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"7860f562","type":"heading","className":"in-7860f562 ","anchor":"","html":"مراكز تكلفة وأبعاد تحليلية","tag":"h3"},{"id":"725b4092","type":"text-editor","className":"in-725b4092 ","anchor":"","html":"وزّع المصروفات على الفروع والمشاريع ومراكز التكلفة لتحليل أدق للربحية."}]},{"id":"3adda352","type":"container","className":"in-3adda352 ","anchor":"","children":[{"id":"1677ccf","type":"html","className":"in-1677ccf ","anchor":"","html":"<span class=\"is-90\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-93\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-94\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-97\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"},{"id":"630502af","type":"heading","className":"in-630502af ","anchor":"","html":"قوائم مالية فورية","tag":"h3"},{"id":"5b3a3ab6","type":"text-editor","className":"in-5b3a3ab6 ","anchor":"","html":"ميزان المراجعة، قائمة الدخل، والمركز المالي — جاهزة من نفس قاعدة البيانات على بُعد نقرتين."}]},{"id":"30393666","type":"container","className":"in-30393666 ","anchor":"","children":[{"id":"71c2b8d","type":"html","className":"in-71c2b8d ","anchor":"","html":"<span class=\"is-102\" role=\"img\"><svg aria-label=\"security\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-103\" points=\"50,16 84,50 50,84 16,50\"></polygon>\n<rect class=\"iv-104\" height=\"18\" rx=\"5\" width=\"18\" x=\"41\" y=\"44\"></rect>\n</svg></span>"},{"id":"5dde77a8","type":"heading","className":"in-5dde77a8 ","anchor":"","html":"إقرار ضريبي بصيغة الهيئة","tag":"h3"},{"id":"546aac94","type":"text-editor","className":"in-546aac94 ","anchor":"","html":"تقرير ضريبة القيمة المضافة منظّم بالشكل المطلوب لتسهيل التقديم."}]}]}]},{"id":"52b68636","type":"container","className":"in-52b68636 digit inside","anchor":"inside","children":[{"id":"570c0ff4","type":"container","className":"in-570c0ff4 ","anchor":"","children":[{"id":"286e858f","type":"container","className":"in-286e858f ","anchor":"","children":[{"id":"6113fa8","type":"text-editor","className":"in-6113fa8 ","anchor":"","html":"من الداخل"},{"id":"5a23dbd6","type":"heading","className":"in-5a23dbd6 ","anchor":"","html":"شاشة محاسبة مرتبة… حسب أولويات يومك","tag":"h2"},{"id":"4e841964","type":"text-editor","className":"in-4e841964 ","anchor":"","html":"النقدية والذمم في الأعلى، الإجراءات اليومية بضغطة، والتقارير المالية مجمّعة — لا قوائم طويلة ولا بحث عن الأوامر."},{"id":"21190a63","type":"text-editor","className":"in-21190a63 ","anchor":"","html":"<ul class=\"is-114\"><li class=\"is-115\"><span class=\"is-116\">✓</span><span>شجرة الحسابات السعودية الجاهزة</span></li><li class=\"is-117\"><span class=\"is-118\">✓</span><span>قيد اليومية وسندات القبض والصرف</span></li><li class=\"is-119\"><span class=\"is-120\">✓</span><span>أداة التسوية البنكية</span></li><li class=\"is-121\"><span class=\"is-122\">✓</span><span>تقرير ضريبة القيمة المضافة</span></li><li class=\"is-123\"><span class=\"is-124\">✓</span><span>سجل التدقيق الكامل لكل مستند</span></li></ul>"}]},{"id":"52a74f64","type":"container","className":"in-52a74f64 ","anchor":"","children":[{"id":"4f4f598b","type":"html","className":"in-4f4f598b ","anchor":"","html":"<div class=\"is-127\"><span class=\"is-128\"><i class=\"is-129\"></i><i class=\"is-130\"></i><i class=\"is-131\"></i></span><span class=\"is-132\">digit-erp.com / app / accounting</span></div>"},{"id":"1f43d58","type":"image-slot","className":"in-1f43d58 ","anchor":""},{"id":"21c32ec7","type":"text-editor","className":"in-21c32ec7 ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"16334b42","type":"container","className":"in-16334b42 digit sec","anchor":"","children":[{"id":"53e501fb","type":"container","className":"in-53e501fb ","anchor":"","children":[{"id":"27c08a8e","type":"container","className":"in-27c08a8e ","anchor":"","children":[{"id":"69e68b81","type":"text-editor","className":"in-69e68b81 ","anchor":"","html":"رؤية الإدارة"},{"id":"6f733559","type":"heading","className":"in-6f733559 ","anchor":"","html":"اعرف ربحية كل فرع ومشروع وقسم","tag":"h2"},{"id":"50a093e1","type":"text-editor","className":"in-50a093e1 ","anchor":"","html":"مراكز التكلفة والأبعاد التحليلية توزّع كل حركة على الفرع والمشروع والقسم — فترى صورة شركتك المالية من أي زاوية، لا رقمًا إجماليًا واحدًا فقط."}]},{"id":"181eb3aa","type":"container","className":"in-181eb3aa ","anchor":"","children":[{"id":"26cd5aae","type":"container","className":"in-26cd5aae ","anchor":"","children":[{"id":"3531bce0","type":"heading","className":"in-3531bce0 ","anchor":"","html":"حسب الفرع","tag":"h3"},{"id":"461ad5f7","type":"text-editor","className":"in-461ad5f7 ","anchor":"","html":"ربحية كل فرع على حدة"}]},{"id":"1df81992","type":"container","className":"in-1df81992 ","anchor":"","children":[{"id":"73a914f8","type":"heading","className":"in-73a914f8 ","anchor":"","html":"حسب المشروع","tag":"h3"},{"id":"64f3d2b","type":"text-editor","className":"in-64f3d2b ","anchor":"","html":"تكلفة وإيراد كل مشروع"}]},{"id":"7323ad30","type":"container","className":"in-7323ad30 ","anchor":"","children":[{"id":"72b22bb3","type":"heading","className":"in-72b22bb3 ","anchor":"","html":"حسب القسم","tag":"h3"},{"id":"5d37b8e","type":"text-editor","className":"in-5d37b8e ","anchor":"","html":"مصروفات كل قسم"}]},{"id":"775a0c2f","type":"container","className":"in-775a0c2f ","anchor":"","children":[{"id":"4ed5f8de","type":"heading","className":"in-4ed5f8de ","anchor":"","html":"مركز التكلفة","tag":"h3"},{"id":"5bc31935","type":"text-editor","className":"in-5bc31935 ","anchor":"","html":"توزيع تحليلي مرن"}]}]}]}]},{"id":"af67c5d","type":"container","className":"in-af67c5d digit demo","anchor":"","children":[{"id":"186006ee","type":"container","className":"in-186006ee ","anchor":"","children":[{"id":"27c136b2","type":"container","className":"in-27c136b2 ","anchor":"","children":[{"id":"7668207f","type":"text-editor","className":"in-7668207f ","anchor":"","html":"سيناريو حيّ"},{"id":"527c6920","type":"heading","className":"in-527c6920 ","anchor":"","html":"من فاتورة المورد… إلى الدفع وإقفال الضريبة","tag":"h2"},{"id":"7430295b","type":"html","className":"in-7430295b ","anchor":"","html":"<div class=\"is-160\"><span class=\"is-161\">فاتورة مورد</span><span class=\"is-162\">←</span><span class=\"is-163\">قيد تلقائي</span><span class=\"is-164\">←</span><span class=\"is-165\">سند صرف</span><span class=\"is-166\">←</span><span class=\"is-167\">تسوية بنكية</span><span class=\"is-168\">←</span><span class=\"is-169\">إقرار الضريبة</span></div>"}]},{"id":"403f2974","type":"container","className":"in-403f2974 ","anchor":"","children":[{"id":"15f321cc","type":"button","className":"in-15f321cc btn mint","anchor":"","text":"احجز عرض المحاسبة","href":"/demo","external":false}]}]}]},{"id":"71a5363d","type":"container","className":"in-71a5363d digit faq","anchor":"","children":[{"id":"2fda0994","type":"container","className":"in-2fda0994 ","anchor":"","children":[{"id":"1034cca2","type":"text-editor","className":"in-1034cca2 ","anchor":"","html":"أسئلة متكررة"},{"id":"58ac4054","type":"heading","className":"in-58ac4054 ","anchor":"","html":"أسئلة فريق المحاسبة قبل القرار","tag":"h2"},{"id":"39fa559d","type":"text-editor","className":"in-39fa559d ","anchor":"","html":"إجابات صريحة على أكثر ما يشغل المحاسب والمدير المالي."}]},{"id":"27870505","type":"accordion","className":"in-27870505 qa","anchor":"","tabs":[{"title":"هل يدعم النظام ضريبة القيمة المضافة بصيغة الهيئة؟","html":"<p>نعم، يُصدر تقرير ضريبة القيمة المضافة منظّمًا بالشكل المطلوب لتسهيل التقديم.</p>"},{"title":"هل أحتاج محاسبًا أو مستشارًا لإخراج التقارير؟","html":"<p>لا، التقارير المالية جاهزة بالعربية ويمكن لفريقك الوصول إليها مباشرة دون كتابة أي كود.</p>"},{"title":"هل يوجد سجل تدقيق لكل عملية؟","html":"<p>نعم، كل مستند يحتفظ بسجل تدقيق كامل يوضّح التغييرات والمستخدمين والتواريخ.</p>"},{"title":"هل شجرة الحسابات سعودية وجاهزة؟","html":"<p>نعم، تأتي بشجرة حسابات سعودية جاهزة يمكن تعديلها حسب نشاطك.</p>"},{"title":"هل يمكن توزيع المصروفات على الفروع والمشاريع؟","html":"<p>نعم، عبر مراكز التكلفة والأبعاد التحليلية ترى الربحية لكل فرع ومشروع وقسم.</p>"},{"title":"هل يرتبط النظام ببنوك سعودية؟","html":"<p>يدعم النظام التسوية البنكية ومتابعة الحركات، ويعتمد الربط البنكي المباشر على توفّر التكامل في الباقة أو التنفيذ.</p>"},{"title":"هل يوجد تدريب ودعم بالعربية؟","html":"<p>نعم، تدريب عربي عند التشغيل ودعم فني وقاعدة معرفة بالعربية.</p>"},{"title":"هل أرى تفاصيل كل رقم في التقارير؟","html":"<p>نعم، يمكن الوصول من الأرقام إلى تفاصيلها حسب إعداد التقارير والصلاحيات، ومركز التقارير يجمع تقاريرك بالعربية في مكان واحد.</p>"}]}]},{"id":"77a7a3b8","type":"container","className":"in-77a7a3b8 digit related","anchor":"","children":[{"id":"4c725bb7","type":"container","className":"in-4c725bb7 ","anchor":"","children":[{"id":"5be31bb2","type":"text-editor","className":"in-5be31bb2 ","anchor":"","html":"موديولات مترابطة"},{"id":"4f97ede8","type":"heading","className":"in-4f97ede8 ","anchor":"","html":"المحاسبة متصلة بباقي شركتك","tag":"h2"},{"id":"7180fe75","type":"text-editor","className":"in-7180fe75 ","anchor":"","html":"نفس قاعدة البيانات — المبيعات والمشتريات والمخزون تغذّي القيود تلقائيًا."}]},{"id":"6198becb","type":"container","className":"in-6198becb ","anchor":"","children":[{"id":"6582541a","type":"container","className":"in-6582541a ","anchor":"","children":[{"id":"3c48db50","type":"html","className":"in-3c48db50 ","anchor":"","html":"<span class=\"is-186\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-187\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-188\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-189\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"},{"id":"5a7e550c","type":"heading","className":"in-5a7e550c ","anchor":"","html":"المبيعات","tag":"h3"},{"id":"d763cfc","type":"text-editor","className":"in-d763cfc ","anchor":"","html":"من عرض السعر إلى التحصيل"},{"id":"1983c63a","type":"text-editor","className":"in-1983c63a ","anchor":"","html":"<a class=\"is-193\" href=\"/modules/sales\">عرض الموديول ←</a>"}]},{"id":"5eaea1db","type":"container","className":"in-5eaea1db ","anchor":"","children":[{"id":"529c8735","type":"html","className":"in-529c8735 ","anchor":"","html":"<span class=\"is-196\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-197\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-198\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-199\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"},{"id":"7d373157","type":"heading","className":"in-7d373157 ","anchor":"","html":"المشتريات","tag":"h3"},{"id":"5efb2f9e","type":"text-editor","className":"in-5efb2f9e ","anchor":"","html":"من الطلب إلى الفاتورة"},{"id":"23838748","type":"text-editor","className":"in-23838748 ","anchor":"","html":"<a class=\"is-203\" href=\"/modules/purchasing\">عرض الموديول ←</a>"}]},{"id":"758aa0a9","type":"container","className":"in-758aa0a9 ","anchor":"","children":[{"id":"23f3c2b4","type":"html","className":"in-23f3c2b4 ","anchor":"","html":"<span class=\"is-206\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-207\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-208\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-209\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-210\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"},{"id":"5206f27c","type":"heading","className":"in-5206f27c ","anchor":"","html":"المخزون","tag":"h3"},{"id":"3b742cf6","type":"text-editor","className":"in-3b742cf6 ","anchor":"","html":"مخزون دقيق لحظة بلحظة"},{"id":"23e111ca","type":"text-editor","className":"in-23e111ca ","anchor":"","html":"<a class=\"is-214\" href=\"/modules/inventory\">عرض الموديول ←</a>"}]},{"id":"2f6edc0b","type":"container","className":"in-2f6edc0b ","anchor":"","children":[{"id":"4febc3f4","type":"html","className":"in-4febc3f4 ","anchor":"","html":"<span class=\"is-217\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-218\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-219\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-220\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-221\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"331cacb3","type":"heading","className":"in-331cacb3 ","anchor":"","html":"التقارير","tag":"h3"},{"id":"7f2671d8","type":"text-editor","className":"in-7f2671d8 ","anchor":"","html":"تقارير عربية بدون مستشار"},{"id":"6ccaedb","type":"text-editor","className":"in-6ccaedb ","anchor":"","html":"<a class=\"is-225\" href=\"/modules/reports\">عرض الموديول ←</a>"}]}]}]},{"id":"16a60a91","type":"container","className":"in-16a60a91 digit cta","anchor":"cta","children":[{"id":"64ffd758","type":"container","className":"in-64ffd758 ","anchor":"","children":[{"id":"21cc33a1","type":"heading","className":"in-21cc33a1 ","anchor":"","html":"جاهز تشوف محاسبتك أوضح من أول يوم؟","tag":"h2"},{"id":"3195a194","type":"text-editor","className":"in-3195a194 ","anchor":"","html":"عرض تجريبي ببيانات شركة سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."},{"id":"702bea09","type":"container","className":"in-702bea09 ","anchor":"","children":[{"id":"48ccd8f1","type":"button","className":"in-48ccd8f1 btn mint","anchor":"","text":"احجز عرض المحاسبة","href":"/demo","external":false},{"id":"776370e9","type":"button","className":"in-776370e9 btn light","anchor":"","text":"واتساب المبيعات","href":"https://wa.me/966591909277","external":true}]}]}]}]}
+{
+ "title": "المحاسبة",
+ "description": "شجرة حسابات سعودية جاهزة، ضريبة قيمة مضافة وفوترة فاتورة، قيود تلقائية من المستندات، وسجل تدقيق كامل — في مساحة عمل عربية واحدة.",
+ "sourceUrl": "https://digit-erp.com/modules/accounting/",
+ "nodes": [
+  {
+   "id": "3d3b62d9",
+   "type": "container",
+   "className": "in-3d3b62d9 digit band-crumb",
+   "anchor": "",
+   "children": [
+    {
+     "id": "389a7154",
+     "type": "text-editor",
+     "className": "in-389a7154 ",
+     "anchor": "",
+     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">المحاسبة</span>"
+    }
+   ]
+  },
+  {
+   "id": "762e62a2",
+   "type": "container",
+   "className": "in-762e62a2 digit hero",
+   "anchor": "",
+   "children": [
+    {
+     "id": "789a618a",
+     "type": "container",
+     "className": "in-789a618a ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "17a014fc",
+       "type": "container",
+       "className": "in-17a014fc ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "51229690",
+         "type": "container",
+         "className": "in-51229690 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "70ad2e1e",
+           "type": "html",
+           "className": "in-70ad2e1e ",
+           "anchor": "",
+           "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-10\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-11\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-12\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+          },
+          {
+           "id": "5589e356",
+           "type": "text-editor",
+           "className": "in-5589e356 ",
+           "anchor": "",
+           "html": "موديول · المحاسبة"
+          }
+         ]
+        },
+        {
+         "id": "2489b674",
+         "type": "heading",
+         "className": "in-2489b674 ",
+         "anchor": "",
+         "html": "محاسبة سعودية متكاملة… <em class=\"is-15\">من القيد إلى القوائم</em>",
+         "tag": "h1"
+        },
+        {
+         "id": "11e8746e",
+         "type": "text-editor",
+         "className": "in-11e8746e ",
+         "anchor": "",
+         "html": "شجرة حسابات سعودية جاهزة، ضريبة قيمة مضافة وفوترة فاتورة، قيود تلقائية من المستندات، وسجل تدقيق كامل — في مساحة عمل عربية واحدة."
+        },
+        {
+         "id": "4c9e61ee",
+         "type": "container",
+         "className": "in-4c9e61ee ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "4eb5b7dd",
+           "type": "button",
+           "className": "in-4eb5b7dd btn solid",
+           "anchor": "",
+           "text": "احجز عرض المحاسبة",
+           "href": "/demo",
+           "external": false
+          },
+          {
+           "id": "665fe712",
+           "type": "button",
+           "className": "in-665fe712 btn ghost",
+           "anchor": "",
+           "text": "شاهدها من الداخل",
+           "href": "#inside",
+           "external": false
+          }
+         ]
+        },
+        {
+         "id": "3f562ba2",
+         "type": "text-editor",
+         "className": "in-3f562ba2 ",
+         "anchor": "",
+         "html": "<span class=\"is-21\">أقفل شهرك في أيام لا أسابيع</span><span class=\"is-22\">ضريبة بصيغة الهيئة بلا قلق</span><span class=\"is-23\">سجل تدقيق لكل حركة</span>"
+        }
+       ]
+      },
+      {
+       "id": "68b1f00b",
+       "type": "container",
+       "className": "in-68b1f00b ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "1942ade8",
+         "type": "html",
+         "className": "in-1942ade8 ",
+         "anchor": "",
+         "html": "<div class=\"is-26\"><span class=\"is-27\"><i class=\"is-28\"></i><i class=\"is-29\"></i><i class=\"is-30\"></i></span><span class=\"is-31\">digit-erp.com / app / accounting</span></div>"
+        },
+        {
+         "id": "50a2b17",
+         "type": "image-slot",
+         "className": "in-50a2b17 ",
+         "anchor": "",
+         "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
+         "alt": "المحاسبة"
+        },
+        {
+         "id": "788ab1a8",
+         "type": "text-editor",
+         "className": "in-788ab1a8 ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "69ab469c",
+   "type": "container",
+   "className": "in-69ab469c digit proof",
+   "anchor": "",
+   "children": [
+    {
+     "id": "10b010c",
+     "type": "container",
+     "className": "in-10b010c ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "7742061c",
+       "type": "container",
+       "className": "in-7742061c ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2cfa76ae",
+         "type": "heading",
+         "className": "in-2cfa76ae ",
+         "anchor": "",
+         "html": "+30,000",
+         "tag": "h3"
+        },
+        {
+         "id": "304699a6",
+         "type": "text-editor",
+         "className": "in-304699a6 ",
+         "anchor": "",
+         "html": "شركة تستخدم المنصة الأساس"
+        },
+        {
+         "id": "1a107ddb",
+         "type": "text-editor",
+         "className": "in-1a107ddb ",
+         "anchor": "",
+         "html": "ERPNext عالميًا — يُنسب للمنصة لا لـDigit"
+        }
+       ]
+      },
+      {
+       "id": "6e2d3f3a",
+       "type": "container",
+       "className": "in-6e2d3f3a ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "39db7fc7",
+         "type": "heading",
+         "className": "in-39db7fc7 ",
+         "anchor": "",
+         "html": "50+",
+         "tag": "h3"
+        },
+        {
+         "id": "463afcd6",
+         "type": "text-editor",
+         "className": "in-463afcd6 ",
+         "anchor": "",
+         "html": "تقرير مالي وإداري"
+        },
+        {
+         "id": "707aad31",
+         "type": "text-editor",
+         "className": "in-707aad31 ",
+         "anchor": "",
+         "html": "جاهز بالعربية — قابل للتصدير والجدولة"
+        }
+       ]
+      },
+      {
+       "id": "7293e7be",
+       "type": "container",
+       "className": "in-7293e7be ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6c77a566",
+         "type": "heading",
+         "className": "in-6c77a566 ",
+         "anchor": "",
+         "html": "سجل تدقيق",
+         "tag": "h3"
+        },
+        {
+         "id": "3855e821",
+         "type": "text-editor",
+         "className": "in-3855e821 ",
+         "anchor": "",
+         "html": "كامل لكل مستند"
+        },
+        {
+         "id": "37742672",
+         "type": "text-editor",
+         "className": "in-37742672 ",
+         "anchor": "",
+         "html": "تغييرات ومستخدمون وتواريخ"
+        }
+       ]
+      },
+      {
+       "id": "17bae03f",
+       "type": "container",
+       "className": "in-17bae03f ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "346aed31",
+         "type": "heading",
+         "className": "in-346aed31 ",
+         "anchor": "",
+         "html": "100%",
+         "tag": "h3"
+        },
+        {
+         "id": "3490c490",
+         "type": "text-editor",
+         "className": "in-3490c490 ",
+         "anchor": "",
+         "html": "واجهة وتقارير بالعربية"
+        },
+        {
+         "id": "450633c6",
+         "type": "text-editor",
+         "className": "in-450633c6 ",
+         "anchor": "",
+         "html": "سندات ومستندات ثنائية اللغة"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "60a612c7",
+   "type": "container",
+   "className": "in-60a612c7 digit benefits",
+   "anchor": "",
+   "children": [
+    {
+     "id": "1ca47f7",
+     "type": "container",
+     "className": "in-1ca47f7 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "cf0c5eb",
+       "type": "text-editor",
+       "className": "in-cf0c5eb ",
+       "anchor": "",
+       "html": "لماذا محاسبة Digit"
+      },
+      {
+       "id": "5a822921",
+       "type": "heading",
+       "className": "in-5a822921 ",
+       "anchor": "",
+       "html": "كل ما يحتاجه فريقك المالي… بوضوح",
+       "tag": "h2"
+      },
+      {
+       "id": "5ec7275d",
+       "type": "text-editor",
+       "className": "in-5ec7275d ",
+       "anchor": "",
+       "html": "ست قدرات أساسية تردّ على آلام الإقفال المتأخر وضغط الضريبة وضعف سجل التدقيق."
+      }
+     ]
+    },
+    {
+     "id": "4512e388",
+     "type": "container",
+     "className": "in-4512e388 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "205f0a6e",
+       "type": "container",
+       "className": "in-205f0a6e ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4c1eec85",
+         "type": "html",
+         "className": "in-4c1eec85 ",
+         "anchor": "",
+         "html": "<span class=\"is-60\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-61\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-62\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "18fc80ef",
+         "type": "heading",
+         "className": "in-18fc80ef ",
+         "anchor": "",
+         "html": "قيود تلقائية من المستندات",
+         "tag": "h3"
+        },
+        {
+         "id": "debc0c0",
+         "type": "text-editor",
+         "className": "in-debc0c0 ",
+         "anchor": "",
+         "html": "الفواتير والسندات تُنشئ قيودها تلقائيًا — أقل إدخال يدوي وأقل أخطاء."
+        }
+       ]
+      },
+      {
+       "id": "424fa33",
+       "type": "container",
+       "className": "in-424fa33 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2e3a5641",
+         "type": "html",
+         "className": "in-2e3a5641 ",
+         "anchor": "",
+         "html": "<span class=\"is-67\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-68\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-69\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "17b64243",
+         "type": "heading",
+         "className": "in-17b64243 ",
+         "anchor": "",
+         "html": "سندات قبض وصرف بالعربية",
+         "tag": "h3"
+        },
+        {
+         "id": "6aaa1a1f",
+         "type": "text-editor",
+         "className": "in-6aaa1a1f ",
+         "anchor": "",
+         "html": "سند قبض، سند صرف، وقيد يومية بمسمّيات عربية وطباعة ثنائية اللغة."
+        }
+       ]
+      },
+      {
+       "id": "731b7ebc",
+       "type": "container",
+       "className": "in-731b7ebc ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7ad3a3ff",
+         "type": "html",
+         "className": "in-7ad3a3ff ",
+         "anchor": "",
+         "html": "<span class=\"is-74\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-75\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-76\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
+        },
+        {
+         "id": "63cf1bf6",
+         "type": "heading",
+         "className": "in-63cf1bf6 ",
+         "anchor": "",
+         "html": "تسوية بنكية سريعة",
+         "tag": "h3"
+        },
+        {
+         "id": "7d39554c",
+         "type": "text-editor",
+         "className": "in-7d39554c ",
+         "anchor": "",
+         "html": "طابق حركات البنك مع القيود بخطوات قليلة، مع متابعة الفروقات أولًا بأول."
+        }
+       ]
+      },
+      {
+       "id": "776326d3",
+       "type": "container",
+       "className": "in-776326d3 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "734ce7b0",
+         "type": "html",
+         "className": "in-734ce7b0 ",
+         "anchor": "",
+         "html": "<span class=\"is-81\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-82\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-83\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-84\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-85\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "7860f562",
+         "type": "heading",
+         "className": "in-7860f562 ",
+         "anchor": "",
+         "html": "مراكز تكلفة وأبعاد تحليلية",
+         "tag": "h3"
+        },
+        {
+         "id": "725b4092",
+         "type": "text-editor",
+         "className": "in-725b4092 ",
+         "anchor": "",
+         "html": "وزّع المصروفات على الفروع والمشاريع ومراكز التكلفة لتحليل أدق للربحية."
+        }
+       ]
+      },
+      {
+       "id": "3adda352",
+       "type": "container",
+       "className": "in-3adda352 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "1677ccf",
+         "type": "html",
+         "className": "in-1677ccf ",
+         "anchor": "",
+         "html": "<span class=\"is-90\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-93\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-94\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-97\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
+        },
+        {
+         "id": "630502af",
+         "type": "heading",
+         "className": "in-630502af ",
+         "anchor": "",
+         "html": "قوائم مالية فورية",
+         "tag": "h3"
+        },
+        {
+         "id": "5b3a3ab6",
+         "type": "text-editor",
+         "className": "in-5b3a3ab6 ",
+         "anchor": "",
+         "html": "ميزان المراجعة، قائمة الدخل، والمركز المالي — جاهزة من نفس قاعدة البيانات على بُعد نقرتين."
+        }
+       ]
+      },
+      {
+       "id": "30393666",
+       "type": "container",
+       "className": "in-30393666 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "71c2b8d",
+         "type": "html",
+         "className": "in-71c2b8d ",
+         "anchor": "",
+         "html": "<span class=\"is-102\" role=\"img\"><svg aria-label=\"security\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-103\" points=\"50,16 84,50 50,84 16,50\"></polygon>\n<rect class=\"iv-104\" height=\"18\" rx=\"5\" width=\"18\" x=\"41\" y=\"44\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "5dde77a8",
+         "type": "heading",
+         "className": "in-5dde77a8 ",
+         "anchor": "",
+         "html": "إقرار ضريبي بصيغة الهيئة",
+         "tag": "h3"
+        },
+        {
+         "id": "546aac94",
+         "type": "text-editor",
+         "className": "in-546aac94 ",
+         "anchor": "",
+         "html": "تقرير ضريبة القيمة المضافة منظّم بالشكل المطلوب لتسهيل التقديم."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "52b68636",
+   "type": "container",
+   "className": "in-52b68636 digit inside",
+   "anchor": "inside",
+   "children": [
+    {
+     "id": "570c0ff4",
+     "type": "container",
+     "className": "in-570c0ff4 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "286e858f",
+       "type": "container",
+       "className": "in-286e858f ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6113fa8",
+         "type": "text-editor",
+         "className": "in-6113fa8 ",
+         "anchor": "",
+         "html": "من الداخل"
+        },
+        {
+         "id": "5a23dbd6",
+         "type": "heading",
+         "className": "in-5a23dbd6 ",
+         "anchor": "",
+         "html": "شاشة محاسبة مرتبة… حسب أولويات يومك",
+         "tag": "h2"
+        },
+        {
+         "id": "4e841964",
+         "type": "text-editor",
+         "className": "in-4e841964 ",
+         "anchor": "",
+         "html": "النقدية والذمم في الأعلى، الإجراءات اليومية بضغطة، والتقارير المالية مجمّعة — لا قوائم طويلة ولا بحث عن الأوامر."
+        },
+        {
+         "id": "21190a63",
+         "type": "text-editor",
+         "className": "in-21190a63 ",
+         "anchor": "",
+         "html": "<ul class=\"is-114\"><li class=\"is-115\"><span class=\"is-116\">✓</span><span>شجرة الحسابات السعودية الجاهزة</span></li><li class=\"is-117\"><span class=\"is-118\">✓</span><span>قيد اليومية وسندات القبض والصرف</span></li><li class=\"is-119\"><span class=\"is-120\">✓</span><span>أداة التسوية البنكية</span></li><li class=\"is-121\"><span class=\"is-122\">✓</span><span>تقرير ضريبة القيمة المضافة</span></li><li class=\"is-123\"><span class=\"is-124\">✓</span><span>سجل التدقيق الكامل لكل مستند</span></li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "52a74f64",
+       "type": "container",
+       "className": "in-52a74f64 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4f4f598b",
+         "type": "html",
+         "className": "in-4f4f598b ",
+         "anchor": "",
+         "html": "<div class=\"is-127\"><span class=\"is-128\"><i class=\"is-129\"></i><i class=\"is-130\"></i><i class=\"is-131\"></i></span><span class=\"is-132\">digit-erp.com / app / accounting</span></div>"
+        },
+        {
+         "id": "1f43d58",
+         "type": "image-slot",
+         "className": "in-1f43d58 ",
+         "anchor": ""
+        },
+        {
+         "id": "21c32ec7",
+         "type": "text-editor",
+         "className": "in-21c32ec7 ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "16334b42",
+   "type": "container",
+   "className": "in-16334b42 digit sec",
+   "anchor": "",
+   "children": [
+    {
+     "id": "53e501fb",
+     "type": "container",
+     "className": "in-53e501fb ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "27c08a8e",
+       "type": "container",
+       "className": "in-27c08a8e ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "69e68b81",
+         "type": "text-editor",
+         "className": "in-69e68b81 ",
+         "anchor": "",
+         "html": "رؤية الإدارة"
+        },
+        {
+         "id": "6f733559",
+         "type": "heading",
+         "className": "in-6f733559 ",
+         "anchor": "",
+         "html": "اعرف ربحية كل فرع ومشروع وقسم",
+         "tag": "h2"
+        },
+        {
+         "id": "50a093e1",
+         "type": "text-editor",
+         "className": "in-50a093e1 ",
+         "anchor": "",
+         "html": "مراكز التكلفة والأبعاد التحليلية توزّع كل حركة على الفرع والمشروع والقسم — فترى صورة شركتك المالية من أي زاوية، لا رقمًا إجماليًا واحدًا فقط."
+        }
+       ]
+      },
+      {
+       "id": "181eb3aa",
+       "type": "container",
+       "className": "in-181eb3aa ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "26cd5aae",
+         "type": "container",
+         "className": "in-26cd5aae ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "3531bce0",
+           "type": "heading",
+           "className": "in-3531bce0 ",
+           "anchor": "",
+           "html": "حسب الفرع",
+           "tag": "h3"
+          },
+          {
+           "id": "461ad5f7",
+           "type": "text-editor",
+           "className": "in-461ad5f7 ",
+           "anchor": "",
+           "html": "ربحية كل فرع على حدة"
+          }
+         ]
+        },
+        {
+         "id": "1df81992",
+         "type": "container",
+         "className": "in-1df81992 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "73a914f8",
+           "type": "heading",
+           "className": "in-73a914f8 ",
+           "anchor": "",
+           "html": "حسب المشروع",
+           "tag": "h3"
+          },
+          {
+           "id": "64f3d2b",
+           "type": "text-editor",
+           "className": "in-64f3d2b ",
+           "anchor": "",
+           "html": "تكلفة وإيراد كل مشروع"
+          }
+         ]
+        },
+        {
+         "id": "7323ad30",
+         "type": "container",
+         "className": "in-7323ad30 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "72b22bb3",
+           "type": "heading",
+           "className": "in-72b22bb3 ",
+           "anchor": "",
+           "html": "حسب القسم",
+           "tag": "h3"
+          },
+          {
+           "id": "5d37b8e",
+           "type": "text-editor",
+           "className": "in-5d37b8e ",
+           "anchor": "",
+           "html": "مصروفات كل قسم"
+          }
+         ]
+        },
+        {
+         "id": "775a0c2f",
+         "type": "container",
+         "className": "in-775a0c2f ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "4ed5f8de",
+           "type": "heading",
+           "className": "in-4ed5f8de ",
+           "anchor": "",
+           "html": "مركز التكلفة",
+           "tag": "h3"
+          },
+          {
+           "id": "5bc31935",
+           "type": "text-editor",
+           "className": "in-5bc31935 ",
+           "anchor": "",
+           "html": "توزيع تحليلي مرن"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "af67c5d",
+   "type": "container",
+   "className": "in-af67c5d digit demo",
+   "anchor": "",
+   "children": [
+    {
+     "id": "186006ee",
+     "type": "container",
+     "className": "in-186006ee ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "27c136b2",
+       "type": "container",
+       "className": "in-27c136b2 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7668207f",
+         "type": "text-editor",
+         "className": "in-7668207f ",
+         "anchor": "",
+         "html": "سيناريو حيّ"
+        },
+        {
+         "id": "527c6920",
+         "type": "heading",
+         "className": "in-527c6920 ",
+         "anchor": "",
+         "html": "من فاتورة المورد… إلى الدفع وإقفال الضريبة",
+         "tag": "h2"
+        },
+        {
+         "id": "7430295b",
+         "type": "html",
+         "className": "in-7430295b ",
+         "anchor": "",
+         "html": "<div class=\"is-160\"><span class=\"is-161\">فاتورة مورد</span><span class=\"is-162\">←</span><span class=\"is-163\">قيد تلقائي</span><span class=\"is-164\">←</span><span class=\"is-165\">سند صرف</span><span class=\"is-166\">←</span><span class=\"is-167\">تسوية بنكية</span><span class=\"is-168\">←</span><span class=\"is-169\">إقرار الضريبة</span></div>"
+        }
+       ]
+      },
+      {
+       "id": "403f2974",
+       "type": "container",
+       "className": "in-403f2974 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "15f321cc",
+         "type": "button",
+         "className": "in-15f321cc btn mint",
+         "anchor": "",
+         "text": "احجز عرض المحاسبة",
+         "href": "/demo",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "71a5363d",
+   "type": "container",
+   "className": "in-71a5363d digit faq",
+   "anchor": "",
+   "children": [
+    {
+     "id": "2fda0994",
+     "type": "container",
+     "className": "in-2fda0994 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "1034cca2",
+       "type": "text-editor",
+       "className": "in-1034cca2 ",
+       "anchor": "",
+       "html": "أسئلة متكررة"
+      },
+      {
+       "id": "58ac4054",
+       "type": "heading",
+       "className": "in-58ac4054 ",
+       "anchor": "",
+       "html": "أسئلة فريق المحاسبة قبل القرار",
+       "tag": "h2"
+      },
+      {
+       "id": "39fa559d",
+       "type": "text-editor",
+       "className": "in-39fa559d ",
+       "anchor": "",
+       "html": "إجابات صريحة على أكثر ما يشغل المحاسب والمدير المالي."
+      }
+     ]
+    },
+    {
+     "id": "27870505",
+     "type": "accordion",
+     "className": "in-27870505 qa",
+     "anchor": "",
+     "tabs": [
+      {
+       "title": "هل يدعم النظام ضريبة القيمة المضافة بصيغة الهيئة؟",
+       "html": "<p>نعم، يُصدر تقرير ضريبة القيمة المضافة منظّمًا بالشكل المطلوب لتسهيل التقديم.</p>"
+      },
+      {
+       "title": "هل أحتاج محاسبًا أو مستشارًا لإخراج التقارير؟",
+       "html": "<p>لا، التقارير المالية جاهزة بالعربية ويمكن لفريقك الوصول إليها مباشرة دون كتابة أي كود.</p>"
+      },
+      {
+       "title": "هل يوجد سجل تدقيق لكل عملية؟",
+       "html": "<p>نعم، كل مستند يحتفظ بسجل تدقيق كامل يوضّح التغييرات والمستخدمين والتواريخ.</p>"
+      },
+      {
+       "title": "هل شجرة الحسابات سعودية وجاهزة؟",
+       "html": "<p>نعم، تأتي بشجرة حسابات سعودية جاهزة يمكن تعديلها حسب نشاطك.</p>"
+      },
+      {
+       "title": "هل يمكن توزيع المصروفات على الفروع والمشاريع؟",
+       "html": "<p>نعم، عبر مراكز التكلفة والأبعاد التحليلية ترى الربحية لكل فرع ومشروع وقسم.</p>"
+      },
+      {
+       "title": "هل يرتبط النظام ببنوك سعودية؟",
+       "html": "<p>يدعم النظام التسوية البنكية ومتابعة الحركات، ويعتمد الربط البنكي المباشر على توفّر التكامل في الباقة أو التنفيذ.</p>"
+      },
+      {
+       "title": "هل يوجد تدريب ودعم بالعربية؟",
+       "html": "<p>نعم، تدريب عربي عند التشغيل ودعم فني وقاعدة معرفة بالعربية.</p>"
+      },
+      {
+       "title": "هل أرى تفاصيل كل رقم في التقارير؟",
+       "html": "<p>نعم، يمكن الوصول من الأرقام إلى تفاصيلها حسب إعداد التقارير والصلاحيات، ومركز التقارير يجمع تقاريرك بالعربية في مكان واحد.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "77a7a3b8",
+   "type": "container",
+   "className": "in-77a7a3b8 digit related",
+   "anchor": "",
+   "children": [
+    {
+     "id": "4c725bb7",
+     "type": "container",
+     "className": "in-4c725bb7 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "5be31bb2",
+       "type": "text-editor",
+       "className": "in-5be31bb2 ",
+       "anchor": "",
+       "html": "موديولات مترابطة"
+      },
+      {
+       "id": "4f97ede8",
+       "type": "heading",
+       "className": "in-4f97ede8 ",
+       "anchor": "",
+       "html": "المحاسبة متصلة بباقي شركتك",
+       "tag": "h2"
+      },
+      {
+       "id": "7180fe75",
+       "type": "text-editor",
+       "className": "in-7180fe75 ",
+       "anchor": "",
+       "html": "نفس قاعدة البيانات — المبيعات والمشتريات والمخزون تغذّي القيود تلقائيًا."
+      }
+     ]
+    },
+    {
+     "id": "6198becb",
+     "type": "container",
+     "className": "in-6198becb ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "6582541a",
+       "type": "container",
+       "className": "in-6582541a ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3c48db50",
+         "type": "html",
+         "className": "in-3c48db50 ",
+         "anchor": "",
+         "html": "<span class=\"is-186\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-187\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-188\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-189\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "5a7e550c",
+         "type": "heading",
+         "className": "in-5a7e550c ",
+         "anchor": "",
+         "html": "المبيعات",
+         "tag": "h3"
+        },
+        {
+         "id": "d763cfc",
+         "type": "text-editor",
+         "className": "in-d763cfc ",
+         "anchor": "",
+         "html": "من عرض السعر إلى التحصيل"
+        },
+        {
+         "id": "1983c63a",
+         "type": "text-editor",
+         "className": "in-1983c63a ",
+         "anchor": "",
+         "html": "<a class=\"is-193\" href=\"/modules/sales\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "5eaea1db",
+       "type": "container",
+       "className": "in-5eaea1db ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "529c8735",
+         "type": "html",
+         "className": "in-529c8735 ",
+         "anchor": "",
+         "html": "<span class=\"is-196\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-197\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-198\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-199\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "7d373157",
+         "type": "heading",
+         "className": "in-7d373157 ",
+         "anchor": "",
+         "html": "المشتريات",
+         "tag": "h3"
+        },
+        {
+         "id": "5efb2f9e",
+         "type": "text-editor",
+         "className": "in-5efb2f9e ",
+         "anchor": "",
+         "html": "من الطلب إلى الفاتورة"
+        },
+        {
+         "id": "23838748",
+         "type": "text-editor",
+         "className": "in-23838748 ",
+         "anchor": "",
+         "html": "<a class=\"is-203\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "758aa0a9",
+       "type": "container",
+       "className": "in-758aa0a9 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "23f3c2b4",
+         "type": "html",
+         "className": "in-23f3c2b4 ",
+         "anchor": "",
+         "html": "<span class=\"is-206\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-207\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-208\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-209\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-210\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "5206f27c",
+         "type": "heading",
+         "className": "in-5206f27c ",
+         "anchor": "",
+         "html": "المخزون",
+         "tag": "h3"
+        },
+        {
+         "id": "3b742cf6",
+         "type": "text-editor",
+         "className": "in-3b742cf6 ",
+         "anchor": "",
+         "html": "مخزون دقيق لحظة بلحظة"
+        },
+        {
+         "id": "23e111ca",
+         "type": "text-editor",
+         "className": "in-23e111ca ",
+         "anchor": "",
+         "html": "<a class=\"is-214\" href=\"/modules/inventory\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "2f6edc0b",
+       "type": "container",
+       "className": "in-2f6edc0b ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4febc3f4",
+         "type": "html",
+         "className": "in-4febc3f4 ",
+         "anchor": "",
+         "html": "<span class=\"is-217\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-218\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-219\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-220\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-221\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "331cacb3",
+         "type": "heading",
+         "className": "in-331cacb3 ",
+         "anchor": "",
+         "html": "التقارير",
+         "tag": "h3"
+        },
+        {
+         "id": "7f2671d8",
+         "type": "text-editor",
+         "className": "in-7f2671d8 ",
+         "anchor": "",
+         "html": "تقارير عربية بدون مستشار"
+        },
+        {
+         "id": "6ccaedb",
+         "type": "text-editor",
+         "className": "in-6ccaedb ",
+         "anchor": "",
+         "html": "<a class=\"is-225\" href=\"/modules/reports\">عرض الموديول ←</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "16a60a91",
+   "type": "container",
+   "className": "in-16a60a91 digit cta",
+   "anchor": "cta",
+   "children": [
+    {
+     "id": "64ffd758",
+     "type": "container",
+     "className": "in-64ffd758 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "21cc33a1",
+       "type": "heading",
+       "className": "in-21cc33a1 ",
+       "anchor": "",
+       "html": "جاهز تشوف محاسبتك أوضح من أول يوم؟",
+       "tag": "h2"
+      },
+      {
+       "id": "3195a194",
+       "type": "text-editor",
+       "className": "in-3195a194 ",
+       "anchor": "",
+       "html": "عرض تجريبي ببيانات شركة سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+      },
+      {
+       "id": "702bea09",
+       "type": "container",
+       "className": "in-702bea09 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "48ccd8f1",
+         "type": "button",
+         "className": "in-48ccd8f1 btn mint",
+         "anchor": "",
+         "text": "احجز عرض المحاسبة",
+         "href": "/demo",
+         "external": false
+        },
+        {
+         "id": "776370e9",
+         "type": "button",
+         "className": "in-776370e9 btn light",
+         "anchor": "",
+         "text": "واتساب المبيعات",
+         "href": "https://wa.me/966591909277",
+         "external": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
