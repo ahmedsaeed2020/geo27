@@ -14,9 +14,11 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { localizeTree, useLocale } from "@/lib/i18n";
 
 function NotFoundComponent() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
@@ -34,17 +36,18 @@ function NotFoundComponent() {
         </div>
       </div>
     </div>
-  );
+  ), locale);
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
+  const locale = useLocale();
   console.error(error);
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
-  return (
+  return localizeTree((
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
@@ -72,7 +75,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
         </div>
       </div>
     </div>
-  );
+  ), locale);
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
