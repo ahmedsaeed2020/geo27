@@ -81,6 +81,7 @@ function OrbitBackground() {
       svg.setAttribute("height", String(H));
       ringEls.forEach((e, i) => {
         const c = RINGS[i];
+        if (!c) return;
         e.style.width = c.rx * R * 2 + "px";
         e.style.height = c.ry * R * 2 + "px";
       });
