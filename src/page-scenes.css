@@ -11,6 +11,8 @@
 .page-scene-body{width:100%;aspect-ratio:16/9;border-radius:8px}
 .scene-body-band{padding:32px 24px 48px;background:var(--paper)}
 .scene-body-band>.page-scene{max-width:1100px;margin-inline:auto;max-height:560px}
+.scene-body-band>.page-scene-photographic{aspect-ratio:auto;max-height:none}
+.page-scene-photographic img{width:auto;max-width:100%;height:auto;max-height:560px;margin-inline:auto;object-fit:contain;border-radius:8px}
 .imported-page .scene-backed h1,.imported-page .scene-backed h2{color:var(--ink)}
 .imported-page .scene-backed{color:var(--body2)}
 @media(min-width:1025px){.scene-backed>[data-import-container]:first-of-type,.scene-backed>[data-package-container]:first-of-type{margin-inline: auto!important}.scene-backed .page-scene-background img{object-position:left center}}

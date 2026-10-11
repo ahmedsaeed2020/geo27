@@ -14,6 +14,6 @@
 - [x] Generate two page-specific referenced scenes for every Arabic content page: background and body.
 - [x] Integrate the complete scene collection without changing source content or hosted forms.
 - [x] Verify all page images load, layouts remain readable, and existing interactions work.
-- [ ] Inspect the uploaded image library and select clean photographic crops by subject.
-- [ ] Install suitable crops on matching pages without advertising copy or layout changes.
+- [x] Inspect the uploaded image library and select clean photographic crops by subject.
+- [x] Install suitable crops on matching pages without advertising copy or layout changes.
 - [ ] Verify installed crops and page readability.
