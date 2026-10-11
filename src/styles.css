@@ -120,6 +120,7 @@
   --package-action-shadow: 0 6px 18px color-mix(in oklab, var(--deep) 15%, transparent);
   --scene-heading-wash: linear-gradient(90deg, color-mix(in oklab, var(--paper2) 6%, transparent) 0%, color-mix(in oklab, var(--paper2) 64%, transparent) 38%, var(--paper2) 72%);
   --scene-content-wash: linear-gradient(90deg, color-mix(in oklab, var(--paper2) 62%, transparent), color-mix(in oklab, var(--paper2) 88%, transparent) 55%, color-mix(in oklab, var(--paper2) 97%, transparent));
+  --scene-content-dark-wash: linear-gradient(90deg, color-mix(in oklab, var(--dark) 28%, transparent), color-mix(in oklab, var(--dark) 78%, transparent) 58%, color-mix(in oklab, var(--dark) 94%, transparent));
 }
 
 @layer base {

@@ -9,6 +9,7 @@
 .scene-content-section>:not(.page-scene){position:relative;z-index:1}
 .scene-content-section>.page-scene-content-background{width:100%;height:100%;border-radius:0}
 .page-scene-content-background::after{background:var(--scene-content-wash)}
+.scene-content-dark>.page-scene-content-background::after{background:var(--scene-content-dark-wash)}
 .scene-content-section>section{background:transparent!important}
 .scene-content-section .page-scene-content-background img{object-fit:cover;object-position:center;max-height:none;border-radius:0}
 .import-directory.scene-backed>.page-scene-background{width:100%;height:100%}

@@ -44,7 +44,7 @@ function Index() {
         <Hero />
         <TrustStrip />
         <ChaosToControl />
-        <div className="scene-backed scene-content-section"><PageScene pageKey="home" kind="body" backdrop /><ProductBand /></div>
+        <div className="scene-backed scene-content-section scene-content-dark"><PageScene pageKey="home" kind="body" backdrop /><ProductBand /></div>
         <Modules />
         <Capabilities />
         <ProblemConveyor />
