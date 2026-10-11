@@ -25,4 +25,4 @@
 
 # Integrate body imagery
 - [x] Remove standalone body image bands and integrate their images behind existing content sections.
-- [ ] Verify content remains readable and page controls remain usable.
+- [x] Verify content remains readable and page controls remain usable.
