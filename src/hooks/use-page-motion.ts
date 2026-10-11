@@ -15,6 +15,8 @@ export function usePageMotion(ref: RefObject<HTMLElement | null>, pageKey: strin
         if (!heading.closest("article, .import-feature-card, [data-motion-card]")) targets.add(heading);
       });
       section.querySelectorAll<HTMLElement>("[data-motion-card], [data-motion-step], .import-feature-card, .features > div:nth-child(2) > div, .steps > div:last-child > div, .fit > div:nth-child(2) > div").forEach(card => targets.add(card));
+      // Extracted module/service templates keep their original anonymous inner containers.
+      section.querySelectorAll<HTMLElement>(".benefits > div:last-child > div, .how > div:last-child > div, .deliver > div:last-child > div, .vals > div:last-child > div, .related > div:last-child > div, .sec > div > div:last-child > div").forEach(card => targets.add(card));
     }
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -29,7 +31,7 @@ export function usePageMotion(ref: RefObject<HTMLElement | null>, pageKey: strin
       const bounds = target.getBoundingClientRect();
       target.classList.add("motion-target");
       const siblings = target.parentElement ? Array.from(target.parentElement.children).filter(child => targets.has(child as HTMLElement)) : [];
-      target.dataset.motionStage = String(Math.max(0, siblings.indexOf(target)) % 4);
+      target.dataset['motionStage'] = String(Math.max(0, siblings.indexOf(target)) % 4);
       if (bounds.top < window.innerHeight && bounds.bottom > 0) target.classList.add("motion-visible");
       else observer.observe(target);
     });
@@ -44,7 +46,7 @@ export function usePageMotion(ref: RefObject<HTMLElement | null>, pageKey: strin
       preference.removeEventListener("change", revealAll);
       targets.forEach(target => {
         target.classList.remove("motion-target", "motion-visible");
-        delete target.dataset.motionStage;
+        delete target.dataset['motionStage'];
       });
     };
   }, [ref, pageKey]);
