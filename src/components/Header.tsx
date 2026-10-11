@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { Link, useRouterState } from "@tanstack/react-router";
 
 import navigation from "@/content/site/navigation.json";
 import { Button } from "@/components/ui/button";
