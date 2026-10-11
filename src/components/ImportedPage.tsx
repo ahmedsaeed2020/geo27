@@ -4,6 +4,7 @@ import { ChevronDown, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import PageScene, { getPageScene } from "@/components/PageScene";
 import "@/imported-pages.css";
 
 type Node = {
@@ -17,13 +18,18 @@ type Node = {
   text?: string;
   href?: string;
   external?: boolean;
+  src?: string;
+  alt?: string;
   tabs?: { title: string; html: string }[];
 };
 type Page = { title: string; sourceUrl: string; nodes: Node[] };
 
-function RenderNode({ node }: { node: Node }) {
+function RenderNode({ node, pageKey }: { node: Node; pageKey: string }) {
   const props = { className: node.className, id: node.anchor || undefined };
-  if (node.type === "container") return <div {...props} data-import-container>{node.children?.map(child => <RenderNode node={child} key={child.id} />)}</div>;
+  if (node.type === "container") {
+    const hero = /(?:^|\s)(?:hero|pos-hero)(?:\s|$)/.test(node.className) && getPageScene(pageKey);
+    return <div {...props} className={`${node.className}${hero ? " scene-backed" : ""}`} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{node.children?.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}</div>;
+  }
   if (node.type === "heading") {
     const tags: Record<string, ElementType> = { h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
     const Tag = tags[node.tag ?? "h2"] ?? "h2";
@@ -69,5 +75,6 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
     main.querySelectorAll(".digit:not(.hero):not(.pos-hero):not(.band-crumb) > [data-import-container]").forEach(element => { element.classList.add("import-reveal"); observer?.observe(element); });
     return () => { observer?.disconnect(); pricing?.removeEventListener("change", updatePricing); };
   }, [pageKey]);
-  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map(node => <RenderNode key={node.id} node={node} />)}</main><Footer /></div>;
+  const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero)(?:\s|$)/.test(node.className));
+  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <div key={node.id} className="contents"><RenderNode node={node} pageKey={pageKey} />{index === (heroIndex < 0 ? 0 : heroIndex + 1) && <div className="scene-body-band"><PageScene pageKey={pageKey} alt={`مشهد عمل — ${page.title}`} /></div>}</div>)}{heroIndex < 0 && <div className="scene-body-band"><PageScene pageKey={pageKey} kind="background" /></div>}</main><Footer /></div>;
 }

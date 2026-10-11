@@ -118,6 +118,7 @@
   --package-preview-hover: oklch(0.75 0.13 235);
   --package-card-shadow: 0 12px 34px color-mix(in oklab, var(--deep) 8%, transparent);
   --package-action-shadow: 0 6px 18px color-mix(in oklab, var(--deep) 15%, transparent);
+  --scene-heading-wash: linear-gradient(90deg, color-mix(in oklab, var(--paper2) 6%, transparent) 0%, color-mix(in oklab, var(--paper2) 64%, transparent) 38%, var(--paper2) 72%);
 }
 
 @layer base {
