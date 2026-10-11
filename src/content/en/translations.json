@@ -9,7 +9,7 @@
  "<span class=\"is-15\">✓ منتج: Digit</span>": "<span class=\"is-15\">✓ Product: Digit</span>",
  "<span class=\"is-17\">✓ الجهة: Trilogy</span>": "<span class=\"is-17\">✓ Entity: Trilogy</span>",
  "<span class=\"is-19\">✓ مبني للسعودية</span>": "<span class=\"is-19\">✓ Built for Saudi Arabia</span>",
- "<span class=\"is-23\">من المسؤول</span>": "Who is Responsible",
+ "<span class=\"is-23\">من المسؤول</span>": "<span class=\"is-23\">Who is responsible</span>",
  "Digit المنتج… Trilogy الجهة": "Digit is the Product… Trilogy is the Entity",
  "Digit — المنتج": "Digit — The Product",
  "نظام ERP عربي يجمع المحاسبة والمبيعات والمشتريات والمخزون ونقاط البيع والتقارير والفوترة الإلكترونية — من نفس قاعدة البيانات. هذا ما يستخدمه فريقك يوميًا.": "An Arabic ERP system that integrates Accounting, Sales, Purchasing, Inventory, POS, Reporting, and ZATCA e-invoicing — all from the same database. This is what your team uses every day.",
@@ -2945,7 +2945,7 @@
  "احجز عرضاً، أو اطلب تحليل جاهزية ERP، أو شاهد جولة داخل النظام — بلا التزام.": "Book a demo, request an ERP readiness analysis, or take a tour inside the system—no commitment required.",
  "اطلب تحليل جاهزية ERP": "Request ERP Readiness Analysis",
  "شاهد جولة داخل النظام": "Watch a System Tour",
- "محاسبتك أوضح مع ديجيت": "Your Accounting is Clearer with Digit",
+ "محاسبتك أوضح مع ديجيت": "Clearer accounting with Digit",
  "منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.": "One platform to manage your finances, operations, and points of sale.",
  "Digit نظام ERP مالي وتشغيلي للسوق السعودي — محاسبة وفوترة إلكترونية ومبيعات ومشتريات ومخزون ونقاط بيع وتقارير، سحابياً أو داخل سيرفراتك.": "Digit is a financial and operational ERP system for the Saudi market—Accounting, ZATCA e-invoicing, Sales, Purchasing, Inventory, POS, and Reports, on the cloud or on your own servers.",
  "يدعم الفوترة الإلكترونية · يعتمد عليه أكثر من 50 منشأة سعودية": "Supports e-invoicing · Trusted by more than 50 Saudi entities",
@@ -3024,7 +3024,7 @@
  "مع Digit": "With Digit",
  "السابق": "Previous",
  "التالي": "Next",
- "محاسبتك أوضح": "Your accounting is clearer",
+ "محاسبتك أوضح": "Clearer accounting",
  "الفوترة الإلكترونية — المرحلة الثانية": "ZATCA E-invoicing — Phase Two",
  "مصمّم لدعم متطلبات الفوترة الإلكترونية.": "Designed to support ZATCA e-invoicing requirements.",
  "تقارير ضريبة القيمة المضافة": "VAT Reports",
@@ -3096,5 +3096,8 @@
  "Digit — منصة ERP سعودية": "Digit — Saudi ERP Platform",
  "Digit نظام ERP مالي وتشغيلي للسوق السعودي — محاسبة وفوترة إلكترونية ومبيعات ومشتريات ومخزون ونقاط بيع وتقارير.": "Digit is a financial and operational ERP system for the Saudi market — Accounting, E-invoicing, Sales, Purchasing, Inventory, POS, and Reports.",
  "منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك — محاسبة وفوترة إلكترونية ومخزون وتقارير، سحابياً أو داخل سيرفراتك.": "One platform to manage your finances, operations, and points of sale — Accounting, E-invoicing, Inventory, and Reports, on the cloud or on-premise.",
- "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع": "Digit — Saudi ERP Platform | Accounting, E-invoicing, POS"
+ "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع": "Digit — Saudi ERP Platform | Accounting, E-invoicing, POS",
+ "من عرض السعر إلى التحصيل… دورة مبيعات كاملة": "From quotation to payment… a complete sales cycle",
+ "حلول Digit للقطاعات السعودية — المقاولات والتجزئة والتوزيع والصناعة والخدمات.": "Digit solutions for Saudi industries — contracting, retail, distribution, manufacturing and professional services.",
+ " — الكل": " — All"
 }
