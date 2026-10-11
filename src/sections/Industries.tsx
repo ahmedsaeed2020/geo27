@@ -89,7 +89,5 @@ export default function Industries() {
         </div>
       </div>
     </section>
-  ), locale)iv>
-    </section>
-  );
+  ), locale);
 }
