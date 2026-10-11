@@ -1,5 +1,4 @@
 import { useState, type ElementType } from "react";
-import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -67,6 +66,5 @@ function RenderNode({ node, slug }: { node: PackageNode; slug: "starter" | "pro"
 export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slug: "starter" | "pro" }) {
   return <div className="bg-paper font-plex"><Header /><main className={`package-page package-${slug}`}>
     {nodes.map(node => <RenderNode key={node.id} node={node} slug={slug} />)}
-    <nav className="package-switch" aria-label="باقات Digit"><Link to="/starter" activeProps={{ className: "text-primary" }}>Starter</Link><span> / </span><Link to="/pro" activeProps={{ className: "text-primary" }}>Pro</Link></nav>
   </main><Footer /></div>;
 }

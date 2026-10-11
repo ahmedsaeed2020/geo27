@@ -1,6 +1,9 @@
 .package-page { color: var(--body2); }
 .package-page h1, .package-page h2, .package-page h3 { font-weight: 700; letter-spacing: 0; }
 .package-page .hero h1 { font-size: 42px; }
+.package-page .hero h1 { color: var(--primary-foreground); }
+.package-page .hero h1 em { color: var(--mint) !important; }
+.package-page .hero h1 + div { color: var(--primary-foreground); }
 .package-page .hero > div { min-height: 580px; }
 .package-page .features > div:first-child, .package-page .fit > div:first-child, .package-page .steps > div:first-child, .package-page .faq > div:first-child { margin-bottom: 28px; }
 .package-page .features h2, .package-page .preview h2, .package-page .fit h2, .package-page .steps h2, .package-page .faq h2, .package-page .signup h2, .package-page .demoform h2 { font-size: 30px; margin-bottom: 12px; }
@@ -37,6 +40,9 @@
   .package-page > div { padding-inline: 20px; }
   .package-page .hero { background-image: none; }
   .package-page .hero h1 { font-size: 32px; }
+  .package-page .hero h1 { color: var(--ink); }
+  .package-page .hero h1 em { color: var(--primary) !important; }
+  .package-page .hero h1 + div { color: var(--body2); }
   .package-page .hero > div { min-height: 0; }
   .package-page .hero > div > div:empty { display: none; }
   .package-page div[class*="pkg-"] { max-width: 100%; }
