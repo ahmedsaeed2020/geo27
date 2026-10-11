@@ -8,11 +8,11 @@ export function getPageScene(key: string) {
   return scenes[key];
 }
 
-export default function PageScene({ pageKey, kind = "body", alt = "" }: { pageKey: string; kind?: "background" | "body"; alt?: string }) {
+export default function PageScene({ pageKey, kind = "body", alt = "", backdrop = false }: { pageKey: string; kind?: "background" | "body"; alt?: string; backdrop?: boolean }) {
   const scene = getPageScene(pageKey);
   if (!scene) return null;
-  const photographic = kind === "body" && scene.photographicBody;
-  return <div className={`page-scene page-scene-${kind}${photographic ? " page-scene-photographic" : ""}`} aria-hidden={kind === "background" ? true : undefined}>
-    <img src={scene[kind]} alt={kind === "background" ? "" : alt} loading={kind === "background" ? "eager" : "lazy"} decoding="async" width={kind === "body" ? scene.bodyWidth ?? 1536 : 1536} height={kind === "body" ? scene.bodyHeight ?? 864 : 864} />
+  const photographic = kind === "body" && scene.photographicBody && !backdrop;
+  return <div className={`page-scene page-scene-${backdrop ? "background page-scene-content-background" : kind}${photographic ? " page-scene-photographic" : ""}`} aria-hidden={kind === "background" || backdrop ? true : undefined}>
+    <img src={scene[kind]} alt={kind === "background" || backdrop ? "" : alt} loading={kind === "background" ? "eager" : "lazy"} decoding="async" width={kind === "body" ? scene.bodyWidth ?? 1536 : 1536} height={kind === "body" ? scene.bodyHeight ?? 864 : 864} />
   </div>;
 }

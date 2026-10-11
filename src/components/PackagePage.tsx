@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState, type ElementType } from "react";
+import { useEffect, useRef, useState, type ElementType } from "react";
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import previewMeta from "@/content/package-preview-meta.json";
 import { Button } from "@/components/ui/button";
@@ -51,11 +51,11 @@ function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro
   </div>;
 }
 
-function RenderNode({ node, slug }: { node: PackageNode; slug: "starter" | "pro" }) {
+function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean }) {
   const common = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") {
     const hero = node.className.split(" ").includes("hero");
-    return <div {...common} className={`${node.className}${hero ? " scene-backed" : ""}`} data-package-container>{hero && <PageScene pageKey={slug} kind="background" />}{node.children?.map(child => <RenderNode key={child.id} node={child} slug={slug} />)}</div>;
+    return <div {...common} className={`${node.className}${hero || bodyBackdrop ? " scene-backed" : ""}${bodyBackdrop ? " scene-content-section" : ""}`} data-package-container>{bodyBackdrop ? <PageScene pageKey={slug} kind="body" backdrop /> : hero && <PageScene pageKey={slug} kind="background" />}{node.children?.map(child => <RenderNode key={child.id} node={child} slug={slug} />)}</div>;
   }
   if (node.type === "heading") {
     const Tag: ElementType = node.tag === "h1" ? "h1" : node.tag === "h3" ? "h3" : "h2";
@@ -96,6 +96,6 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
     return () => observer.disconnect();
   }, [slug]);
   return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
-    {nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} slug={slug} />{index === 2 && <div className="scene-body-band"><PageScene pageKey={slug} alt={`فريق عمل باقة Digit ${slug}`} /></div>}</Fragment>)}
+    {nodes.map((node, index) => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={index === 3} />)}
   </main><Footer /></div>;
 }

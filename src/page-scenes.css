@@ -6,15 +6,17 @@
 .scene-backed{position:relative;isolation:isolate;background-image:none!important}
 .scene-backed>[data-import-container],.scene-backed>[data-package-container]{position:relative;z-index:1}
 .scene-backed .page-scene-background{max-width:none!important;margin:0!important}
+.scene-content-section>:not(.page-scene){position:relative;z-index:1}
+.scene-content-section>.page-scene-content-background{width:100%;height:100%;border-radius:0}
+.page-scene-content-background::after{background:var(--scene-content-wash)}
+.scene-content-dark>.page-scene-content-background::after{background:var(--scene-content-dark-wash)}
+.scene-content-section>section{background:transparent!important}
+.scene-content-section .page-scene-content-background img{object-fit:cover;object-position:center;max-height:none;border-radius:0}
 .import-directory.scene-backed>.page-scene-background{width:100%;height:100%}
 .import-directory.scene-backed>:not(.page-scene){position:relative;z-index:1}
 .page-scene-body{width:100%;aspect-ratio:16/9;border-radius:8px}
-.scene-body-band{padding:32px 24px 48px;background:var(--paper)}
-.scene-body-band>.page-scene{max-width:1100px;margin-inline:auto;max-height:560px}
-.scene-body-band>.page-scene-photographic{aspect-ratio:auto;max-height:none}
 .page-scene-photographic img{width:auto;max-width:100%;height:auto;max-height:560px;margin-inline:auto;object-fit:contain;border-radius:8px}
 .imported-page .scene-backed h1,.imported-page .scene-backed h2{color:var(--ink)}
 .imported-page .scene-backed{color:var(--body2)}
 @media(min-width:1025px){.scene-backed>[data-import-container]:first-of-type,.scene-backed>[data-package-container]:first-of-type{margin-inline: auto!important}.scene-backed .page-scene-background img{object-position:left center}}
-@media(max-width:767px){.page-scene-background img{opacity:.45;object-position:25% center}.scene-body-band{padding:20px 18px 30px}.page-scene-body{aspect-ratio:4/3}}
-@media(prefers-reduced-motion:no-preference){.page-scene-body img{transition:transform .7s ease}.scene-body-band:hover img{transform:scale(1.025)}}
+@media(max-width:767px){.page-scene-background img{opacity:.45;object-position:25% center}.page-scene-body{aspect-ratio:4/3}}
