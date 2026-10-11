@@ -15,4 +15,5 @@
 - Render menu-linked WordPress pages through a shared React renderer with extracted per-page JSON and scoped source CSS; this preserves source layouts without executing WordPress scripts.
 - Keep every imported content page in its own file-based route and preserve legacy menu URL aliases with redirects; this prevents broken published links and isolates page metadata.
 - Keep contextual background and body images in one page-keyed scene manifest consumed by shared renderers; this gives every Arabic page distinct imagery without modifying extracted source content or hosted forms.
+- Keep the home page on its original section composition without the internal-page scene renderer; this isolates internal imagery revisions from the restored home design.
 - Store photographic crop dimensions in the shared scene manifest and render body scenes as decorative backgrounds behind existing content sections, never inserted image-only bands; this preserves page flow and separates imagery from source content.
