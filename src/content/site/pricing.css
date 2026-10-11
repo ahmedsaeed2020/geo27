@@ -13,7 +13,7 @@
 .import-pricing .is-12{display:inline-block;font-size:12.5px;color:var(--import-source-4);background:var(--import-source-10);border:1px solid var(--import-source-6);border-radius:10px;padding:8px 14px}
 .import-pricing .in-2294d8b3{display:flex;flex-direction:row;min-width:0;gap:12px;flex-wrap:wrap;justify-content:center}
 .import-pricing .in-3bf8778e{border-radius:12px 12px 12px 12px;background-color:var(--import-source-7);font-weight:700;font-size:15px}
-.import-pricing .in-3dbe4429{border-radius:12px 12px 12px 12px;border-width:1px 1px 1px 1px;background-color:var(--import-source-8);border-color:var(--import-source-6);font-weight:700;border-style:solid;font-size:15px}
+.import-pricing .in-3dbe4429{border-radius:12px 12px 12px 12px;border-width:1px 1px 1px 1px;background-color:var(--import-source-8);border-color:var(--import-source-6);font-weight:700;border-style:solid;font-size:15px;color:var(--ink)}
 .import-pricing .in-4327ba7{display:flex;flex-direction:column;min-width:0;gap:0px;padding:56px 24px;padding:58px 24px 58px 24px}
 .import-pricing .in-5227b041{}
 .import-pricing #prc{font-family:'IBM Plex Sans Arabic',sans-serif;color:var(--import-source-2)}.import-pricing #prc .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch;max-width:1180px;margin:0 auto}
@@ -55,6 +55,6 @@
 .import-pricing .is-48{color:var(--import-source-45)}
 .import-pricing .in-b240eba{display:flex;flex-direction:row;min-width:0;gap:12px;flex-wrap:wrap;justify-content:center}
 .import-pricing .in-6da39e47{border-radius:12px 12px 12px 12px;background-color:var(--import-source-7);font-weight:700;font-size:15px}
-.import-pricing .in-f39de6b{border-radius:12px 12px 12px 12px;border-width:1px 1px 1px 1px;background-color:var(--import-source-8);border-color:var(--import-source-6);font-weight:700;border-style:solid;font-size:15px}
+.import-pricing .in-f39de6b{border-radius:12px 12px 12px 12px;border-width:1px 1px 1px 1px;background-color:var(--import-source-8);border-color:var(--import-source-6);font-weight:700;border-style:solid;font-size:15px;color:var(--ink)}
 .import-pricing .in-4729014{display:flex;flex-direction:column;min-width:0;gap:0px;padding:56px 24px}
 .import-pricing .in-cd28fe9{}
