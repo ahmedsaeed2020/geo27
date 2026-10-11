@@ -17,3 +17,8 @@
 - [x] Inspect the uploaded image library and select clean photographic crops by subject.
 - [x] Install suitable crops on matching pages without advertising copy or layout changes.
 - [x] Verify installed crops and page readability.
+
+# Correct rejected image selection
+- [ ] Confirm approved, defect-free source advertisements for projects, services, and features; awaiting the user's image selection when approval labels are unavailable.
+- [ ] Replace the affected images with photographic crops from the confirmed sources.
+- [ ] Verify the replacements preserve the subjects and page readability.
