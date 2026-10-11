@@ -15,3 +15,4 @@
 - Render menu-linked WordPress pages through a shared React renderer with extracted per-page JSON and scoped source CSS; this preserves source layouts without executing WordPress scripts.
 - Keep every imported content page in its own file-based route and preserve legacy menu URL aliases with redirects; this prevents broken published links and isolates page metadata.
 - Keep contextual background and body images in one page-keyed scene manifest consumed by shared renderers; this gives every Arabic page distinct imagery without modifying extracted source content or hosted forms.
+- Store uploaded photographic crop dimensions in the shared scene manifest and preserve their proportions in body bands; this avoids cutting subjects again after editorial cropping.
