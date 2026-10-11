@@ -1,3 +1,4 @@
+import { ORGANIZATION_JSONLD } from "@/lib/seo";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -97,7 +98,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:site_name", content: "Digit" },
     ],
+    scripts: [{ type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },

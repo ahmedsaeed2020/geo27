@@ -1,9 +1,10 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/modules-e-invoicing-zatca.json";
 import "@/content/site/modules-e-invoicing-zatca.css";
 export const Route = createFileRoute("/modules/e-invoicing-zatca")({
-  head: () => ({ meta: [
+  head: () => withSeo("/modules/e-invoicing-zatca", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },
     { property: "og:title", content: page.title + " — Digit" },

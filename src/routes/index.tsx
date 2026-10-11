@@ -1,7 +1,8 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import HomePage from "@/components/HomePage";
 export const Route = createFileRoute("/")({
-  head: () => ({
+  head: () => withSeo("/", {
     meta: [
       { title: "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع" },
       {

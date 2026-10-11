@@ -1,9 +1,10 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/modules-projects.json";
 import "@/content/site/modules-projects.css";
 export const Route = createFileRoute("/modules/projects")({
-  head: () => ({ meta: [
+  head: () => withSeo("/modules/projects", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },
     { property: "og:title", content: page.title + " — Digit" },
