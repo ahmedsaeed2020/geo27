@@ -196,7 +196,7 @@
   {
     "path": "/modules/hr-payroll",
     "title": "الموارد البشرية والرواتب",
-    "nodes": 11,
+    "nodes": 10,
     "key": "modules-hr-payroll",
     "h1": [
       "موارد بشرية ورواتب… بقواعد السعودية"
@@ -302,11 +302,9 @@
   {
     "path": "/pos-solutions/mobile-shops",
     "title": "محلات الجوال",
-    "nodes": 21,
+    "nodes": 10,
     "key": "pos-solutions-mobile-shops",
-    "h1": [
-      "نقاط بيع للجوالات… تتبّع IMEI والضمان لكل جهاز"
-    ]
+    "h1": []
   },
   {
     "path": "/pos-solutions/optical",
