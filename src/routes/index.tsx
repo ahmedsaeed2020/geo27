@@ -9,6 +9,7 @@ import Modules from "@/sections/Modules";
 import Capabilities from "@/sections/Capabilities";
 import ProblemConveyor from "@/sections/ProblemConveyor";
 import Industries from "@/sections/Industries";
+import Personas from "@/sections/Personas";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
@@ -47,6 +48,7 @@ function Index() {
         <Modules />
         <Capabilities />
         <ProblemConveyor />
+        <Personas />
         <Industries />
         <SaudiLocalization />
         <Faq />
