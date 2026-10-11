@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { DigitMarkLight } from "./Header";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 const COLS: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -156,9 +157,7 @@ export default function Footer() {
             <span className="mx-2 opacity-50">·</span>
             <a href="/#" className="hover:text-mint">الشروط والأحكام</a>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/#" className="hover:text-mint">العربية</a>
-            <span className="mx-1 opacity-50">/</span>
-            <a href="/#" className="hover:text-mint">EN</a>
+            <LanguageSwitch />
           </span>
         </div>
       </div>
