@@ -77,6 +77,6 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
   }, [pageKey]);
   const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
   const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));
-  const bodyIndex = contentIndex < 0 ? Math.max(heroIndex, 0) : contentIndex;
+   const bodyIndex = contentIndex;
   return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <RenderNode key={node.id} node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />)}</main><Footer /></div>;
 }

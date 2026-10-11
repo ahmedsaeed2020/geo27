@@ -26,3 +26,8 @@
 # Integrate body imagery
 - [x] Remove standalone body image bands and integrate their images behind existing content sections.
 - [x] Verify content remains readable and page controls remain usable.
+
+# Restore original home and correct internal pages
+- [x] Remove added photographic scenes from the home page, restoring its original sections.
+- [x] Correct internal backgrounds without overriding source template colors or overwhelming content.
+- [x] Verify home and representative internal pages and their navigation.

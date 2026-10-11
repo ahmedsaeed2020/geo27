@@ -12,7 +12,6 @@ import Industries from "@/sections/Industries";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
-import PageScene from "@/components/PageScene";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,7 +43,7 @@ function Index() {
         <Hero />
         <TrustStrip />
         <ChaosToControl />
-        <div className="scene-backed scene-content-section scene-content-dark"><PageScene pageKey="home" kind="body" backdrop /><ProductBand /></div>
+        <ProductBand />
         <Modules />
         <Capabilities />
         <ProblemConveyor />
