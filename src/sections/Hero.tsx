@@ -122,7 +122,7 @@ function OrbitBackground() {
       curY += (tgY - curY) * 0.08;
       core.style.transform = `translate(-50%,-50%) translate(${(curX * -18).toFixed(1)}px,${(curY * -14).toFixed(1)}px)`;
       for (let i = 0; i < chips.length; i++) {
-        const c = chips[i], cfg = RINGS[c.ring];
+        const c = chips[i]!, cfg = RINGS[c.ring]!;
         const ang = c.base - (t / c.period) * Math.PI * 2;
         const depth = (Math.sin(ang) + 1) / 2;
         const par = 1 + c.ring * 0.9;
