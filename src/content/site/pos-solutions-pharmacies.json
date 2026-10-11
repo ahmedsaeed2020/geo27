@@ -1,1 +1,1068 @@
-{"title":"الصيدليات","description":"بيع سريع بالباركود، تنبيه صلاحية عند البيع، دفعات لكل دواء، ومخزون عبر الفروع — بفاتورة مبسطة تدعم سيناريوهات المرحلة الثانية عند تهيئته بالشكل الصحيح.","sourceUrl":"https://digit-erp.com/pos-solutions/pharmacies/","nodes":[{"id":"49344958","type":"container","className":"in-49344958 digit band-crumb","anchor":"","children":[{"id":"d2cf1d2","type":"text-editor","className":"in-d2cf1d2 ","anchor":"","html":"<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">الصيدليات</span>"}]},{"id":"1be0f43a","type":"container","className":"in-1be0f43a digit pos-hero","anchor":"","children":[{"id":"22775c9f","type":"container","className":"in-22775c9f ","anchor":"","children":[{"id":"7ae7ced8","type":"container","className":"in-7ae7ced8 ","anchor":"","children":[{"id":"7350af45","type":"container","className":"in-7350af45 ","anchor":"","children":[{"id":"7e2c3151","type":"html","className":"in-7e2c3151 ","anchor":"","html":"<span aria-label=\"الصيدليات\" class=\"is-8\" role=\"img\"><svg aria-label=\"pharmacies\" class=\"is-9\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-10\" height=\"52\" rx=\"12\" width=\"40\" x=\"30\" y=\"24\"></rect>\n<rect class=\"iv-11\" height=\"32\" rx=\"4\" width=\"10\" x=\"45\" y=\"34\"></rect>\n<rect class=\"iv-12\" height=\"10\" rx=\"4\" width=\"32\" x=\"34\" y=\"45\"></rect>\n</svg></span>"},{"id":"6c9b719e","type":"text-editor","className":"in-6c9b719e ","anchor":"","html":"حلول نقاط البيع · الصيدليات"}]},{"id":"7db74091","type":"heading","className":"in-7db74091 ","anchor":"","html":"نقاط بيع للصيدليات… <em class=\"is-15\">تتبّع الصلاحية والدفعات من نفس النظام</em>","tag":"h1"},{"id":"2f6104d3","type":"text-editor","className":"in-2f6104d3 ","anchor":"","html":"بيع سريع بالباركود، تنبيه صلاحية عند البيع، دفعات لكل دواء، ومخزون عبر الفروع — بفاتورة مبسطة تدعم سيناريوهات المرحلة الثانية عند تهيئته بالشكل الصحيح."},{"id":"72eeced5","type":"container","className":"in-72eeced5 ","anchor":"","children":[{"id":"3b925047","type":"button","className":"in-3b925047 ","anchor":"","text":"احجز عرض صيدليتك","href":"/demo","external":false},{"id":"5fc87640","type":"button","className":"in-5fc87640 ","anchor":"","text":"واتساب المبيعات","href":"https://wa.me/966591909277","external":false}]},{"id":"4414e19d","type":"text-editor","className":"in-4414e19d ","anchor":"","html":"<span class=\"chip\">تتبّع الصلاحية</span><span class=\"chip\">دفعات الأدوية</span><span class=\"chip\">باركود سريع</span><span class=\"chip\">متعدد الفروع</span><span class=\"chip\">فاتورة QR</span>"}]}]}]},{"id":"446827d0","type":"container","className":"in-446827d0 digit pos-proof","anchor":"","children":[{"id":"2dbca2df","type":"container","className":"in-2dbca2df ","anchor":"","children":[{"id":"4e856320","type":"container","className":"in-4e856320 ","anchor":"","children":[{"id":"357281d7","type":"heading","className":"in-357281d7 ","anchor":"","html":"متصل","tag":"h3"},{"id":"450a7ef3","type":"text-editor","className":"in-450a7ef3 ","anchor":"","html":"كاشير بالمخزون والحسابات"},{"id":"16394725","type":"text-editor","className":"in-16394725 ","anchor":"","html":"لا أداة منفصلة"}]},{"id":"788c8a11","type":"container","className":"in-788c8a11 ","anchor":"","children":[{"id":"74730d80","type":"heading","className":"in-74730d80 ","anchor":"","html":"لحظي","tag":"h3"},{"id":"d3804e7","type":"text-editor","className":"in-d3804e7 ","anchor":"","html":"خصم مخزون مع كل بيعة"},{"id":"64057a76","type":"text-editor","className":"in-64057a76 ","anchor":"","html":"من نفس قاعدة البيانات"}]},{"id":"44a7d192","type":"container","className":"in-44a7d192 ","anchor":"","children":[{"id":"3f9e49ee","type":"heading","className":"in-3f9e49ee ","anchor":"","html":"مبسطة + QR","tag":"h3"},{"id":"2366a656","type":"text-editor","className":"in-2366a656 ","anchor":"","html":"فاتورة وفق المرحلة الثانية"},{"id":"762c69b2","type":"text-editor","className":"in-762c69b2 ","anchor":"","html":"عند تهيئته بالشكل الصحيح"}]},{"id":"15255d80","type":"container","className":"in-15255d80 ","anchor":"","children":[{"id":"754ea71d","type":"heading","className":"in-754ea71d ","anchor":"","html":"الفروع","tag":"h3"},{"id":"13e95d79","type":"text-editor","className":"in-13e95d79 ","anchor":"","html":"رؤية موحّدة"},{"id":"4d0f6a77","type":"text-editor","className":"in-4d0f6a77 ","anchor":"","html":"وتقارير لكل فرع"}]}]}]},{"id":"76a2300c","type":"container","className":"in-76a2300c digit pos-pain","anchor":"","children":[{"id":"6a151530","type":"container","className":"in-6a151530 ","anchor":"","children":[{"id":"776deac4","type":"text-editor","className":"in-776deac4 ","anchor":"","html":"المزايا"},{"id":"6592e86d","type":"heading","className":"in-6592e86d ","anchor":"","html":"كل ما يحتاجه نشاطك… في نقطة بيع متصلة","tag":"h2"},{"id":"2c38dd45","type":"text-editor","className":"in-2c38dd45 ","anchor":"","html":"كاشير سريع داخل ERP كامل — البيع يخصم المخزون وينشئ القيد، وفق إعدادات النظام."}]},{"id":"1ae5187a","type":"container","className":"in-1ae5187a ","anchor":"","children":[{"id":"277c5ad5","type":"container","className":"in-277c5ad5 ","anchor":"","children":[{"id":"34e4dbce","type":"html","className":"in-34e4dbce ","anchor":"","html":"<span aria-label=\"تنبيه الصلاحية عند البيع\" class=\"is-47\" role=\"img\"><svg aria-label=\"calendar\" class=\"is-48\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-49\" height=\"14\" rx=\"4\" width=\"8\" x=\"34\" y=\"20\"></rect>\n<rect class=\"iv-50\" height=\"14\" rx=\"4\" width=\"8\" x=\"58\" y=\"20\"></rect>\n<rect class=\"iv-51\" height=\"48\" rx=\"8\" width=\"56\" x=\"22\" y=\"30\"></rect>\n<rect class=\"iv-52\" height=\"14\" rx=\"8\" width=\"56\" x=\"22\" y=\"30\"></rect>\n</svg></span>"},{"id":"41aa2ec7","type":"heading","className":"in-41aa2ec7 ","anchor":"","html":"تنبيه الصلاحية عند البيع","tag":"h3"},{"id":"143cdf1f","type":"text-editor","className":"in-143cdf1f ","anchor":"","html":"ينبّه الكاشير للأصناف قريبة الانتهاء قبل إتمام البيع."}]},{"id":"406ac73c","type":"container","className":"in-406ac73c ","anchor":"","children":[{"id":"575a892c","type":"html","className":"in-575a892c ","anchor":"","html":"<span aria-label=\"تتبّع الدفعات\" class=\"is-57\" role=\"img\"><svg aria-label=\"filter\" class=\"is-58\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-59\" points=\"22,26 78,26 56,50 44,50\"></polygon>\n<rect class=\"iv-60\" height=\"30\" rx=\"4\" width=\"12\" x=\"44\" y=\"50\"></rect>\n</svg></span>"},{"id":"3813effc","type":"heading","className":"in-3813effc ","anchor":"","html":"تتبّع الدفعات","tag":"h3"},{"id":"77c40aec","type":"text-editor","className":"in-77c40aec ","anchor":"","html":"لكل دواء دفعته وتاريخ صلاحيتها."}]},{"id":"4dde9a60","type":"container","className":"in-4dde9a60 ","anchor":"","children":[{"id":"59718a96","type":"html","className":"in-59718a96 ","anchor":"","html":"<span aria-label=\"باركود وبحث سريع\" class=\"is-65\" role=\"img\"><svg aria-label=\"search\" class=\"is-66\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"44\" cy=\"44\" fill=\"none\" r=\"17\" stroke-width=\"9\"></circle>\n<line class=\"iv-68\" stroke-linecap=\"round\" stroke-width=\"10\" x1=\"56\" x2=\"75\" y1=\"56\" y2=\"75\"></line>\n</svg></span>"},{"id":"4f2a449c","type":"heading","className":"in-4f2a449c ","anchor":"","html":"باركود وبحث سريع","tag":"h3"},{"id":"73d2b855","type":"text-editor","className":"in-73d2b855 ","anchor":"","html":"مسح سريع وبحث فوري عن الأدوية."}]},{"id":"ec18380","type":"container","className":"in-ec18380 ","anchor":"","children":[{"id":"613ef4c","type":"html","className":"in-613ef4c ","anchor":"","html":"<span aria-label=\"حد إعادة الطلب\" class=\"is-73\" role=\"img\"><svg aria-label=\"warning\" class=\"is-74\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-75\" points=\"50,22 82,76 18,76\"></polygon>\n<rect class=\"iv-76\" height=\"20\" rx=\"4\" width=\"8\" x=\"46\" y=\"40\"></rect>\n<circle class=\"iv-77\" cx=\"50\" cy=\"69\" r=\"5\"></circle>\n</svg></span>"},{"id":"2fe3d26d","type":"heading","className":"in-2fe3d26d ","anchor":"","html":"حد إعادة الطلب","tag":"h3"},{"id":"4a213502","type":"text-editor","className":"in-4a213502 ","anchor":"","html":"تنبيهات النواقص قبل النفاد."}]},{"id":"eb6b1f7","type":"container","className":"in-eb6b1f7 ","anchor":"","children":[{"id":"2cd933c3","type":"html","className":"in-2cd933c3 ","anchor":"","html":"<span aria-label=\"أرصدة عبر الفروع\" class=\"is-82\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-83\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-84\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-85\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-86\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-87\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"},{"id":"4716873a","type":"heading","className":"in-4716873a ","anchor":"","html":"أرصدة عبر الفروع","tag":"h3"},{"id":"19915544","type":"text-editor","className":"in-19915544 ","anchor":"","html":"رؤية مخزون موحّدة لكل صيدلياتك."}]},{"id":"235752f","type":"container","className":"in-235752f ","anchor":"","children":[{"id":"5d0ab346","type":"html","className":"in-5d0ab346 ","anchor":"","html":"<span aria-label=\"قيد محاسبي تلقائي\" class=\"is-92\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-93\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-94\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-95\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-96\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-97\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"},{"id":"4f7e69e1","type":"heading","className":"in-4f7e69e1 ","anchor":"","html":"قيد محاسبي تلقائي","tag":"h3"},{"id":"2cba2be5","type":"text-editor","className":"in-2cba2be5 ","anchor":"","html":"كل بيعة تنشئ قيدها من نفس قاعدة البيانات."}]}]}]},{"id":"1c6681ca","type":"container","className":"in-1c6681ca digit pos-ui","anchor":"inside","children":[{"id":"180224cb","type":"container","className":"in-180224cb ","anchor":"","children":[{"id":"550a3af2","type":"container","className":"in-550a3af2 ","anchor":"","children":[{"id":"6f410d2e","type":"text-editor","className":"in-6f410d2e ","anchor":"","html":"كيف يعمل"},{"id":"1ee5978d","type":"heading","className":"in-1ee5978d ","anchor":"","html":"نقطة بيع داخل ERP كامل","tag":"h2"},{"id":"66b7ca3b","type":"text-editor","className":"in-66b7ca3b ","anchor":"","html":"كل بيعة تخصم المخزون وتُصدر فاتورة مبسطة وتنشئ قيدًا محاسبيًا وتظهر في التقارير — من نفس قاعدة البيانات، وفق إعدادات النظام."},{"id":"4c462c6a","type":"text-editor","className":"in-4c462c6a ","anchor":"","html":"<ul class=\"checks\"><li>بيع سريع على الكاشير</li><li>خصم المخزون فورًا</li><li>فاتورة مبسطة + QR (وفق الإعداد)</li><li>قيد محاسبي تلقائي</li><li>تقارير وفروع لحظية</li></ul>"}]},{"id":"749bef8c","type":"container","className":"in-749bef8c ","anchor":"","children":[{"id":"15e3109c","type":"html","className":"in-15e3109c ","anchor":"","html":"<div class=\"is-109\"><span class=\"is-110\"><i class=\"is-111\"></i><i class=\"is-112\"></i><i class=\"is-113\"></i></span><span class=\"is-114\">digit-erp.com / app / point-of-sale</span></div>"},{"id":"1579e9a5","type":"image-slot","className":"in-1579e9a5 ","anchor":""},{"id":"87e54de","type":"text-editor","className":"in-87e54de ","anchor":"","html":"معاينة واجهة · بيانات تجريبية"}]}]}]},{"id":"547c3c5","type":"container","className":"in-547c3c5 digit pos-feat","anchor":"","children":[{"id":"3f1f9c5f","type":"container","className":"in-3f1f9c5f ","anchor":"","children":[{"id":"66e1fbda","type":"container","className":"in-66e1fbda ","anchor":"","children":[{"id":"74bd74b5","type":"text-editor","className":"in-74bd74b5 ","anchor":"","html":"التحدّي"},{"id":"1eb0e33b","type":"heading","className":"in-1eb0e33b ","anchor":"","html":"أين يضيع الوقت والمال في الصيدلية؟","tag":"h2"},{"id":"7c34e887","type":"text-editor","className":"in-7c34e887 ","anchor":"","html":"أكثر ما يضيع فيه الوقت والمال في نشاطك — ولكل تحدٍّ معالجة داخل النظام."}]},{"id":"41a5789d","type":"container","className":"in-41a5789d ","anchor":"","children":[{"id":"6960af28","type":"container","className":"in-6960af28 ","anchor":"","children":[{"id":"1ddde294","type":"heading","className":"in-1ddde294 ","anchor":"","html":"بيع دواء قريب الانتهاء","tag":"h3"},{"id":"613ab02c","type":"text-editor","className":"in-613ab02c ","anchor":"","html":"صلاحية تفوت بلا تنبيه"}]},{"id":"22aedf40","type":"container","className":"in-22aedf40 ","anchor":"","children":[{"id":"590055ec","type":"heading","className":"in-590055ec ","anchor":"","html":"نواقص مفاجئة","tag":"h3"},{"id":"3aaeca74","type":"text-editor","className":"in-3aaeca74 ","anchor":"","html":"نفاد أصناف دون إنذار"}]},{"id":"6efcc89e","type":"container","className":"in-6efcc89e ","anchor":"","children":[{"id":"21da5a9d","type":"heading","className":"in-21da5a9d ","anchor":"","html":"خلط OTC بالوصفة","tag":"h3"},{"id":"4cda9fb7","type":"text-editor","className":"in-4cda9fb7 ","anchor":"","html":"تقارير غير مفصولة"}]}]}]}]},{"id":"3c901a2c","type":"container","className":"in-3c901a2c digit pos-flow","anchor":"","children":[{"id":"1f9c2f60","type":"container","className":"in-1f9c2f60 ","anchor":"","children":[{"id":"651cfa55","type":"container","className":"in-651cfa55 ","anchor":"","children":[{"id":"2b3f67c0","type":"text-editor","className":"in-2b3f67c0 ","anchor":"","html":"المسار"},{"id":"15d047eb","type":"heading","className":"in-15d047eb ","anchor":"","html":"من بيع الدواء… إلى التقارير","tag":"h2"},{"id":"2c6adfb9","type":"html","className":"in-2c6adfb9 ","anchor":"","html":"<div class=\"is-139\"><span class=\"node\">البيع</span><span class=\"is-140\">←</span><span class=\"node\">المخزون</span><span class=\"is-141\">←</span><span class=\"node\">فاتورة إلكترونية</span><span class=\"is-142\">←</span><span class=\"node\">المحاسبة</span><span class=\"is-143\">←</span><span class=\"node\">التقارير</span></div>"}]},{"id":"13e9d1ba","type":"container","className":"in-13e9d1ba ","anchor":"","children":[{"id":"2b0967a9","type":"button","className":"in-2b0967a9 btn mint","anchor":"","text":"احجز عرض صيدليتك","href":"/demo","external":false}]}]}]},{"id":"63c0abd5","type":"container","className":"in-63c0abd5 digit pos-faq","anchor":"","children":[{"id":"6cc2cb4","type":"container","className":"in-6cc2cb4 ","anchor":"","children":[{"id":"531ddb73","type":"text-editor","className":"in-531ddb73 ","anchor":"","html":"أسئلة متكررة"},{"id":"3a40bd27","type":"heading","className":"in-3a40bd27 ","anchor":"","html":"أسئلة قبل القرار","tag":"h2"},{"id":"53bca4fc","type":"text-editor","className":"in-53bca4fc ","anchor":"","html":"إجابات صريحة لأصحاب الصيدليات."}]},{"id":"43ad3045","type":"accordion","className":"in-43ad3045 qa","anchor":"","tabs":[{"title":"هل ينبّه للأدوية قريبة الانتهاء؟","html":"<p>نعم، تنبيه صلاحية عند البيع وفق إعداد النظام.</p>"},{"title":"هل يتتبّع الدفعات؟","html":"<p>نعم، لكل دواء دفعته وتاريخ صلاحيتها.</p>"},{"title":"هل الفاتورة متوافقة مع المرحلة الثانية؟","html":"<p>يدعم سيناريوهات الفوترة الإلكترونية للمرحلة الثانية عند تهيئته بالشكل الصحيح؛ الاعتماد الرسمي يخص منشأتك عبر منصة فاتورة.</p>"},{"title":"هل يدعم عدة صيدليات؟","html":"<p>نعم، أرصدة وتقارير عبر الفروع.</p>"},{"title":"هل يربط جهات التأمين/الصحة؟","html":"<p>حسب التكامل المتاح ويخضع للتحقق — لا ربط SFDA رسمي مؤكد.</p>"},{"title":"هل يخصم المخزون تلقائيًا؟","html":"<p>نعم، كل بيعة تخصم المخزون من نفس قاعدة البيانات.</p>"}]}]},{"id":"3201f4c1","type":"container","className":"in-3201f4c1 digit pos-related","anchor":"","children":[{"id":"c55ec40","type":"container","className":"in-c55ec40 ","anchor":"","children":[{"id":"35ee9d12","type":"text-editor","className":"in-35ee9d12 ","anchor":"","html":"موديولات مترابطة"},{"id":"7bbf3f5c","type":"heading","className":"in-7bbf3f5c ","anchor":"","html":"موديولات مترابطة","tag":"h2"},{"id":"35296986","type":"text-editor","className":"in-35296986 ","anchor":"","html":"نفس قاعدة البيانات — نقاط البيع تغذّي المخزون والمحاسبة والتقارير."}]},{"id":"1b008768","type":"container","className":"in-1b008768 ","anchor":"","children":[{"id":"24426c00","type":"container","className":"in-24426c00 ","anchor":"","children":[{"id":"4b17a62c","type":"html","className":"in-4b17a62c ","anchor":"","html":"<span aria-label=\"المحاسبة\" class=\"is-160\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-161\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-162\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-163\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-164\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-165\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"},{"id":"36f225d5","type":"heading","className":"in-36f225d5 ","anchor":"","html":"المحاسبة","tag":"h3"},{"id":"4baa8042","type":"text-editor","className":"in-4baa8042 ","anchor":"","html":"قيد تلقائي لكل بيعة"},{"id":"b82106c","type":"text-editor","className":"in-b82106c ","anchor":"","html":"<a class=\"is-169\" href=\"/modules/accounting\">عرض الموديول ←</a>"}]},{"id":"e7d5591","type":"container","className":"in-e7d5591 ","anchor":"","children":[{"id":"6faa6d70","type":"html","className":"in-6faa6d70 ","anchor":"","html":"<span aria-label=\"المخزون\" class=\"is-172\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-173\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-174\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-175\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-176\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-177\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"},{"id":"7f2e48a1","type":"heading","className":"in-7f2e48a1 ","anchor":"","html":"المخزون","tag":"h3"},{"id":"3ae23763","type":"text-editor","className":"in-3ae23763 ","anchor":"","html":"خصم فوري عند البيع"},{"id":"771798f1","type":"text-editor","className":"in-771798f1 ","anchor":"","html":"<a class=\"is-181\" href=\"/modules/inventory\">عرض الموديول ←</a>"}]},{"id":"5145e52","type":"container","className":"in-5145e52 ","anchor":"","children":[{"id":"72047624","type":"html","className":"in-72047624 ","anchor":"","html":"<span aria-label=\"التقارير\" class=\"is-184\" role=\"img\"><svg aria-label=\"reports\" class=\"is-185\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-186\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-187\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-188\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-189\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"},{"id":"32828ca4","type":"heading","className":"in-32828ca4 ","anchor":"","html":"التقارير","tag":"h3"},{"id":"2ea54a71","type":"text-editor","className":"in-2ea54a71 ","anchor":"","html":"تقارير المبيعات والفروع"},{"id":"3f4d5387","type":"text-editor","className":"in-3f4d5387 ","anchor":"","html":"<a class=\"is-193\" href=\"/modules/reports\">عرض الموديول ←</a>"}]},{"id":"1f8fe0ee","type":"container","className":"in-1f8fe0ee ","anchor":"","children":[{"id":"7c865483","type":"html","className":"in-7c865483 ","anchor":"","html":"<span aria-label=\"الفوترة الإلكترونية\" class=\"is-196\" role=\"img\"><svg aria-label=\"einvoicing\" class=\"is-197\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-198\" height=\"9\" rx=\"4.5\" width=\"34\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-199\" height=\"9\" rx=\"4.5\" width=\"34\" x=\"22\" y=\"44\"></rect>\n<rect class=\"iv-200\" height=\"9\" rx=\"4.5\" width=\"24\" x=\"22\" y=\"60\"></rect>\n<rect class=\"iv-201\" height=\"22\" rx=\"5\" width=\"22\" x=\"58\" y=\"52\"></rect>\n</svg></span>"},{"id":"189e50f6","type":"heading","className":"in-189e50f6 ","anchor":"","html":"الفوترة الإلكترونية","tag":"h3"},{"id":"136b5cd4","type":"text-editor","className":"in-136b5cd4 ","anchor":"","html":"فاتورة مبسطة + QR"},{"id":"53d04605","type":"text-editor","className":"in-53d04605 ","anchor":"","html":"<a class=\"is-205\" href=\"/modules/e-invoicing-zatca\">عرض الموديول ←</a>"}]}]}]},{"id":"5393d5ea","type":"container","className":"in-5393d5ea digit pos-cta","anchor":"cta","children":[{"id":"34bbe83f","type":"container","className":"in-34bbe83f ","anchor":"","children":[{"id":"20b87cd3","type":"heading","className":"in-20b87cd3 ","anchor":"","html":"جاهز تشغّل نشاطك على نقطة بيع متصلة؟","tag":"h2"},{"id":"11e7eb9c","type":"text-editor","className":"in-11e7eb9c ","anchor":"","html":"عرض تجريبي ببيانات سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."},{"id":"471b82f0","type":"container","className":"in-471b82f0 ","anchor":"","children":[{"id":"3131377f","type":"button","className":"in-3131377f ","anchor":"","text":"احجز عرض صيدليتك","href":"/demo","external":false},{"id":"7370ba49","type":"button","className":"in-7370ba49 ","anchor":"","text":"واتساب المبيعات","href":"https://wa.me/966591909277","external":false}]}]}]}]}
+{
+ "title": "الصيدليات",
+ "description": "بيع سريع بالباركود، تنبيه صلاحية عند البيع، دفعات لكل دواء، ومخزون عبر الفروع — بفاتورة مبسطة تدعم سيناريوهات المرحلة الثانية عند تهيئته بالشكل الصحيح.",
+ "sourceUrl": "https://digit-erp.com/pos-solutions/pharmacies/",
+ "nodes": [
+  {
+   "id": "49344958",
+   "type": "container",
+   "className": "in-49344958 digit band-crumb",
+   "anchor": "",
+   "children": [
+    {
+     "id": "d2cf1d2",
+     "type": "text-editor",
+     "className": "in-d2cf1d2 ",
+     "anchor": "",
+     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">الصيدليات</span>"
+    }
+   ]
+  },
+  {
+   "id": "1be0f43a",
+   "type": "container",
+   "className": "in-1be0f43a digit pos-hero",
+   "anchor": "",
+   "children": [
+    {
+     "id": "22775c9f",
+     "type": "container",
+     "className": "in-22775c9f ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "7ae7ced8",
+       "type": "container",
+       "className": "in-7ae7ced8 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7350af45",
+         "type": "container",
+         "className": "in-7350af45 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "7e2c3151",
+           "type": "html",
+           "className": "in-7e2c3151 ",
+           "anchor": "",
+           "html": "<span aria-label=\"الصيدليات\" class=\"is-8\" role=\"img\"><svg aria-label=\"pharmacies\" class=\"is-9\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-10\" height=\"52\" rx=\"12\" width=\"40\" x=\"30\" y=\"24\"></rect>\n<rect class=\"iv-11\" height=\"32\" rx=\"4\" width=\"10\" x=\"45\" y=\"34\"></rect>\n<rect class=\"iv-12\" height=\"10\" rx=\"4\" width=\"32\" x=\"34\" y=\"45\"></rect>\n</svg></span>"
+          },
+          {
+           "id": "6c9b719e",
+           "type": "text-editor",
+           "className": "in-6c9b719e ",
+           "anchor": "",
+           "html": "حلول نقاط البيع · الصيدليات"
+          }
+         ]
+        },
+        {
+         "id": "7db74091",
+         "type": "heading",
+         "className": "in-7db74091 ",
+         "anchor": "",
+         "html": "نقاط بيع للصيدليات… <em class=\"is-15\">تتبّع الصلاحية والدفعات من نفس النظام</em>",
+         "tag": "h1"
+        },
+        {
+         "id": "2f6104d3",
+         "type": "text-editor",
+         "className": "in-2f6104d3 ",
+         "anchor": "",
+         "html": "بيع سريع بالباركود، تنبيه صلاحية عند البيع، دفعات لكل دواء، ومخزون عبر الفروع — بفاتورة مبسطة تدعم سيناريوهات المرحلة الثانية عند تهيئته بالشكل الصحيح."
+        },
+        {
+         "id": "72eeced5",
+         "type": "container",
+         "className": "in-72eeced5 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "3b925047",
+           "type": "button",
+           "className": "in-3b925047 ",
+           "anchor": "",
+           "text": "احجز عرض صيدليتك",
+           "href": "/demo",
+           "external": false
+          },
+          {
+           "id": "5fc87640",
+           "type": "button",
+           "className": "in-5fc87640 ",
+           "anchor": "",
+           "text": "واتساب المبيعات",
+           "href": "https://wa.me/966591909277",
+           "external": false
+          }
+         ]
+        },
+        {
+         "id": "4414e19d",
+         "type": "text-editor",
+         "className": "in-4414e19d ",
+         "anchor": "",
+         "html": "<span class=\"chip\">تتبّع الصلاحية</span><span class=\"chip\">دفعات الأدوية</span><span class=\"chip\">باركود سريع</span><span class=\"chip\">متعدد الفروع</span><span class=\"chip\">فاتورة QR</span>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "446827d0",
+   "type": "container",
+   "className": "in-446827d0 digit pos-proof",
+   "anchor": "",
+   "children": [
+    {
+     "id": "2dbca2df",
+     "type": "container",
+     "className": "in-2dbca2df ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "4e856320",
+       "type": "container",
+       "className": "in-4e856320 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "357281d7",
+         "type": "heading",
+         "className": "in-357281d7 ",
+         "anchor": "",
+         "html": "متصل",
+         "tag": "h3"
+        },
+        {
+         "id": "450a7ef3",
+         "type": "text-editor",
+         "className": "in-450a7ef3 ",
+         "anchor": "",
+         "html": "كاشير بالمخزون والحسابات"
+        },
+        {
+         "id": "16394725",
+         "type": "text-editor",
+         "className": "in-16394725 ",
+         "anchor": "",
+         "html": "لا أداة منفصلة"
+        }
+       ]
+      },
+      {
+       "id": "788c8a11",
+       "type": "container",
+       "className": "in-788c8a11 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "74730d80",
+         "type": "heading",
+         "className": "in-74730d80 ",
+         "anchor": "",
+         "html": "لحظي",
+         "tag": "h3"
+        },
+        {
+         "id": "d3804e7",
+         "type": "text-editor",
+         "className": "in-d3804e7 ",
+         "anchor": "",
+         "html": "خصم مخزون مع كل بيعة"
+        },
+        {
+         "id": "64057a76",
+         "type": "text-editor",
+         "className": "in-64057a76 ",
+         "anchor": "",
+         "html": "من نفس قاعدة البيانات"
+        }
+       ]
+      },
+      {
+       "id": "44a7d192",
+       "type": "container",
+       "className": "in-44a7d192 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3f9e49ee",
+         "type": "heading",
+         "className": "in-3f9e49ee ",
+         "anchor": "",
+         "html": "مبسطة + QR",
+         "tag": "h3"
+        },
+        {
+         "id": "2366a656",
+         "type": "text-editor",
+         "className": "in-2366a656 ",
+         "anchor": "",
+         "html": "فاتورة وفق المرحلة الثانية"
+        },
+        {
+         "id": "762c69b2",
+         "type": "text-editor",
+         "className": "in-762c69b2 ",
+         "anchor": "",
+         "html": "عند تهيئته بالشكل الصحيح"
+        }
+       ]
+      },
+      {
+       "id": "15255d80",
+       "type": "container",
+       "className": "in-15255d80 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "754ea71d",
+         "type": "heading",
+         "className": "in-754ea71d ",
+         "anchor": "",
+         "html": "الفروع",
+         "tag": "h3"
+        },
+        {
+         "id": "13e95d79",
+         "type": "text-editor",
+         "className": "in-13e95d79 ",
+         "anchor": "",
+         "html": "رؤية موحّدة"
+        },
+        {
+         "id": "4d0f6a77",
+         "type": "text-editor",
+         "className": "in-4d0f6a77 ",
+         "anchor": "",
+         "html": "وتقارير لكل فرع"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "76a2300c",
+   "type": "container",
+   "className": "in-76a2300c digit pos-pain",
+   "anchor": "",
+   "children": [
+    {
+     "id": "6a151530",
+     "type": "container",
+     "className": "in-6a151530 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "776deac4",
+       "type": "text-editor",
+       "className": "in-776deac4 ",
+       "anchor": "",
+       "html": "المزايا"
+      },
+      {
+       "id": "6592e86d",
+       "type": "heading",
+       "className": "in-6592e86d ",
+       "anchor": "",
+       "html": "كل ما يحتاجه نشاطك… في نقطة بيع متصلة",
+       "tag": "h2"
+      },
+      {
+       "id": "2c38dd45",
+       "type": "text-editor",
+       "className": "in-2c38dd45 ",
+       "anchor": "",
+       "html": "كاشير سريع داخل ERP كامل — البيع يخصم المخزون وينشئ القيد، وفق إعدادات النظام."
+      }
+     ]
+    },
+    {
+     "id": "1ae5187a",
+     "type": "container",
+     "className": "in-1ae5187a ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "277c5ad5",
+       "type": "container",
+       "className": "in-277c5ad5 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "34e4dbce",
+         "type": "html",
+         "className": "in-34e4dbce ",
+         "anchor": "",
+         "html": "<span aria-label=\"تنبيه الصلاحية عند البيع\" class=\"is-47\" role=\"img\"><svg aria-label=\"calendar\" class=\"is-48\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-49\" height=\"14\" rx=\"4\" width=\"8\" x=\"34\" y=\"20\"></rect>\n<rect class=\"iv-50\" height=\"14\" rx=\"4\" width=\"8\" x=\"58\" y=\"20\"></rect>\n<rect class=\"iv-51\" height=\"48\" rx=\"8\" width=\"56\" x=\"22\" y=\"30\"></rect>\n<rect class=\"iv-52\" height=\"14\" rx=\"8\" width=\"56\" x=\"22\" y=\"30\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "41aa2ec7",
+         "type": "heading",
+         "className": "in-41aa2ec7 ",
+         "anchor": "",
+         "html": "تنبيه الصلاحية عند البيع",
+         "tag": "h3"
+        },
+        {
+         "id": "143cdf1f",
+         "type": "text-editor",
+         "className": "in-143cdf1f ",
+         "anchor": "",
+         "html": "ينبّه الكاشير للأصناف قريبة الانتهاء قبل إتمام البيع."
+        }
+       ]
+      },
+      {
+       "id": "406ac73c",
+       "type": "container",
+       "className": "in-406ac73c ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "575a892c",
+         "type": "html",
+         "className": "in-575a892c ",
+         "anchor": "",
+         "html": "<span aria-label=\"تتبّع الدفعات\" class=\"is-57\" role=\"img\"><svg aria-label=\"filter\" class=\"is-58\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-59\" points=\"22,26 78,26 56,50 44,50\"></polygon>\n<rect class=\"iv-60\" height=\"30\" rx=\"4\" width=\"12\" x=\"44\" y=\"50\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "3813effc",
+         "type": "heading",
+         "className": "in-3813effc ",
+         "anchor": "",
+         "html": "تتبّع الدفعات",
+         "tag": "h3"
+        },
+        {
+         "id": "77c40aec",
+         "type": "text-editor",
+         "className": "in-77c40aec ",
+         "anchor": "",
+         "html": "لكل دواء دفعته وتاريخ صلاحيتها."
+        }
+       ]
+      },
+      {
+       "id": "4dde9a60",
+       "type": "container",
+       "className": "in-4dde9a60 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "59718a96",
+         "type": "html",
+         "className": "in-59718a96 ",
+         "anchor": "",
+         "html": "<span aria-label=\"باركود وبحث سريع\" class=\"is-65\" role=\"img\"><svg aria-label=\"search\" class=\"is-66\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"44\" cy=\"44\" fill=\"none\" r=\"17\" stroke-width=\"9\"></circle>\n<line class=\"iv-68\" stroke-linecap=\"round\" stroke-width=\"10\" x1=\"56\" x2=\"75\" y1=\"56\" y2=\"75\"></line>\n</svg></span>"
+        },
+        {
+         "id": "4f2a449c",
+         "type": "heading",
+         "className": "in-4f2a449c ",
+         "anchor": "",
+         "html": "باركود وبحث سريع",
+         "tag": "h3"
+        },
+        {
+         "id": "73d2b855",
+         "type": "text-editor",
+         "className": "in-73d2b855 ",
+         "anchor": "",
+         "html": "مسح سريع وبحث فوري عن الأدوية."
+        }
+       ]
+      },
+      {
+       "id": "ec18380",
+       "type": "container",
+       "className": "in-ec18380 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "613ef4c",
+         "type": "html",
+         "className": "in-613ef4c ",
+         "anchor": "",
+         "html": "<span aria-label=\"حد إعادة الطلب\" class=\"is-73\" role=\"img\"><svg aria-label=\"warning\" class=\"is-74\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<polygon class=\"iv-75\" points=\"50,22 82,76 18,76\"></polygon>\n<rect class=\"iv-76\" height=\"20\" rx=\"4\" width=\"8\" x=\"46\" y=\"40\"></rect>\n<circle class=\"iv-77\" cx=\"50\" cy=\"69\" r=\"5\"></circle>\n</svg></span>"
+        },
+        {
+         "id": "2fe3d26d",
+         "type": "heading",
+         "className": "in-2fe3d26d ",
+         "anchor": "",
+         "html": "حد إعادة الطلب",
+         "tag": "h3"
+        },
+        {
+         "id": "4a213502",
+         "type": "text-editor",
+         "className": "in-4a213502 ",
+         "anchor": "",
+         "html": "تنبيهات النواقص قبل النفاد."
+        }
+       ]
+      },
+      {
+       "id": "eb6b1f7",
+       "type": "container",
+       "className": "in-eb6b1f7 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2cd933c3",
+         "type": "html",
+         "className": "in-2cd933c3 ",
+         "anchor": "",
+         "html": "<span aria-label=\"أرصدة عبر الفروع\" class=\"is-82\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-83\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-84\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-85\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-86\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-87\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "4716873a",
+         "type": "heading",
+         "className": "in-4716873a ",
+         "anchor": "",
+         "html": "أرصدة عبر الفروع",
+         "tag": "h3"
+        },
+        {
+         "id": "19915544",
+         "type": "text-editor",
+         "className": "in-19915544 ",
+         "anchor": "",
+         "html": "رؤية مخزون موحّدة لكل صيدلياتك."
+        }
+       ]
+      },
+      {
+       "id": "235752f",
+       "type": "container",
+       "className": "in-235752f ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "5d0ab346",
+         "type": "html",
+         "className": "in-5d0ab346 ",
+         "anchor": "",
+         "html": "<span aria-label=\"قيد محاسبي تلقائي\" class=\"is-92\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-93\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-94\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-95\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-96\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-97\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "4f7e69e1",
+         "type": "heading",
+         "className": "in-4f7e69e1 ",
+         "anchor": "",
+         "html": "قيد محاسبي تلقائي",
+         "tag": "h3"
+        },
+        {
+         "id": "2cba2be5",
+         "type": "text-editor",
+         "className": "in-2cba2be5 ",
+         "anchor": "",
+         "html": "كل بيعة تنشئ قيدها من نفس قاعدة البيانات."
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "1c6681ca",
+   "type": "container",
+   "className": "in-1c6681ca digit pos-ui",
+   "anchor": "inside",
+   "children": [
+    {
+     "id": "180224cb",
+     "type": "container",
+     "className": "in-180224cb ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "550a3af2",
+       "type": "container",
+       "className": "in-550a3af2 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6f410d2e",
+         "type": "text-editor",
+         "className": "in-6f410d2e ",
+         "anchor": "",
+         "html": "كيف يعمل"
+        },
+        {
+         "id": "1ee5978d",
+         "type": "heading",
+         "className": "in-1ee5978d ",
+         "anchor": "",
+         "html": "نقطة بيع داخل ERP كامل",
+         "tag": "h2"
+        },
+        {
+         "id": "66b7ca3b",
+         "type": "text-editor",
+         "className": "in-66b7ca3b ",
+         "anchor": "",
+         "html": "كل بيعة تخصم المخزون وتُصدر فاتورة مبسطة وتنشئ قيدًا محاسبيًا وتظهر في التقارير — من نفس قاعدة البيانات، وفق إعدادات النظام."
+        },
+        {
+         "id": "4c462c6a",
+         "type": "text-editor",
+         "className": "in-4c462c6a ",
+         "anchor": "",
+         "html": "<ul class=\"checks\"><li>بيع سريع على الكاشير</li><li>خصم المخزون فورًا</li><li>فاتورة مبسطة + QR (وفق الإعداد)</li><li>قيد محاسبي تلقائي</li><li>تقارير وفروع لحظية</li></ul>"
+        }
+       ]
+      },
+      {
+       "id": "749bef8c",
+       "type": "container",
+       "className": "in-749bef8c ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "15e3109c",
+         "type": "html",
+         "className": "in-15e3109c ",
+         "anchor": "",
+         "html": "<div class=\"is-109\"><span class=\"is-110\"><i class=\"is-111\"></i><i class=\"is-112\"></i><i class=\"is-113\"></i></span><span class=\"is-114\">digit-erp.com / app / point-of-sale</span></div>"
+        },
+        {
+         "id": "1579e9a5",
+         "type": "image-slot",
+         "className": "in-1579e9a5 ",
+         "anchor": "",
+         "src": "/__l5e/assets-v1/0deae5c7-4426-44a3-b3f3-e7f898371f3a/pos-retail.jpg",
+         "alt": "الصيدليات"
+        },
+        {
+         "id": "87e54de",
+         "type": "text-editor",
+         "className": "in-87e54de ",
+         "anchor": "",
+         "html": "معاينة واجهة · بيانات تجريبية"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "547c3c5",
+   "type": "container",
+   "className": "in-547c3c5 digit pos-feat",
+   "anchor": "",
+   "children": [
+    {
+     "id": "3f1f9c5f",
+     "type": "container",
+     "className": "in-3f1f9c5f ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "66e1fbda",
+       "type": "container",
+       "className": "in-66e1fbda ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "74bd74b5",
+         "type": "text-editor",
+         "className": "in-74bd74b5 ",
+         "anchor": "",
+         "html": "التحدّي"
+        },
+        {
+         "id": "1eb0e33b",
+         "type": "heading",
+         "className": "in-1eb0e33b ",
+         "anchor": "",
+         "html": "أين يضيع الوقت والمال في الصيدلية؟",
+         "tag": "h2"
+        },
+        {
+         "id": "7c34e887",
+         "type": "text-editor",
+         "className": "in-7c34e887 ",
+         "anchor": "",
+         "html": "أكثر ما يضيع فيه الوقت والمال في نشاطك — ولكل تحدٍّ معالجة داخل النظام."
+        }
+       ]
+      },
+      {
+       "id": "41a5789d",
+       "type": "container",
+       "className": "in-41a5789d ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6960af28",
+         "type": "container",
+         "className": "in-6960af28 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "1ddde294",
+           "type": "heading",
+           "className": "in-1ddde294 ",
+           "anchor": "",
+           "html": "بيع دواء قريب الانتهاء",
+           "tag": "h3"
+          },
+          {
+           "id": "613ab02c",
+           "type": "text-editor",
+           "className": "in-613ab02c ",
+           "anchor": "",
+           "html": "صلاحية تفوت بلا تنبيه"
+          }
+         ]
+        },
+        {
+         "id": "22aedf40",
+         "type": "container",
+         "className": "in-22aedf40 ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "590055ec",
+           "type": "heading",
+           "className": "in-590055ec ",
+           "anchor": "",
+           "html": "نواقص مفاجئة",
+           "tag": "h3"
+          },
+          {
+           "id": "3aaeca74",
+           "type": "text-editor",
+           "className": "in-3aaeca74 ",
+           "anchor": "",
+           "html": "نفاد أصناف دون إنذار"
+          }
+         ]
+        },
+        {
+         "id": "6efcc89e",
+         "type": "container",
+         "className": "in-6efcc89e ",
+         "anchor": "",
+         "children": [
+          {
+           "id": "21da5a9d",
+           "type": "heading",
+           "className": "in-21da5a9d ",
+           "anchor": "",
+           "html": "خلط OTC بالوصفة",
+           "tag": "h3"
+          },
+          {
+           "id": "4cda9fb7",
+           "type": "text-editor",
+           "className": "in-4cda9fb7 ",
+           "anchor": "",
+           "html": "تقارير غير مفصولة"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3c901a2c",
+   "type": "container",
+   "className": "in-3c901a2c digit pos-flow",
+   "anchor": "",
+   "children": [
+    {
+     "id": "1f9c2f60",
+     "type": "container",
+     "className": "in-1f9c2f60 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "651cfa55",
+       "type": "container",
+       "className": "in-651cfa55 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2b3f67c0",
+         "type": "text-editor",
+         "className": "in-2b3f67c0 ",
+         "anchor": "",
+         "html": "المسار"
+        },
+        {
+         "id": "15d047eb",
+         "type": "heading",
+         "className": "in-15d047eb ",
+         "anchor": "",
+         "html": "من بيع الدواء… إلى التقارير",
+         "tag": "h2"
+        },
+        {
+         "id": "2c6adfb9",
+         "type": "html",
+         "className": "in-2c6adfb9 ",
+         "anchor": "",
+         "html": "<div class=\"is-139\"><span class=\"node\">البيع</span><span class=\"is-140\">←</span><span class=\"node\">المخزون</span><span class=\"is-141\">←</span><span class=\"node\">فاتورة إلكترونية</span><span class=\"is-142\">←</span><span class=\"node\">المحاسبة</span><span class=\"is-143\">←</span><span class=\"node\">التقارير</span></div>"
+        }
+       ]
+      },
+      {
+       "id": "13e9d1ba",
+       "type": "container",
+       "className": "in-13e9d1ba ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "2b0967a9",
+         "type": "button",
+         "className": "in-2b0967a9 btn mint",
+         "anchor": "",
+         "text": "احجز عرض صيدليتك",
+         "href": "/demo",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "63c0abd5",
+   "type": "container",
+   "className": "in-63c0abd5 digit pos-faq",
+   "anchor": "",
+   "children": [
+    {
+     "id": "6cc2cb4",
+     "type": "container",
+     "className": "in-6cc2cb4 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "531ddb73",
+       "type": "text-editor",
+       "className": "in-531ddb73 ",
+       "anchor": "",
+       "html": "أسئلة متكررة"
+      },
+      {
+       "id": "3a40bd27",
+       "type": "heading",
+       "className": "in-3a40bd27 ",
+       "anchor": "",
+       "html": "أسئلة قبل القرار",
+       "tag": "h2"
+      },
+      {
+       "id": "53bca4fc",
+       "type": "text-editor",
+       "className": "in-53bca4fc ",
+       "anchor": "",
+       "html": "إجابات صريحة لأصحاب الصيدليات."
+      }
+     ]
+    },
+    {
+     "id": "43ad3045",
+     "type": "accordion",
+     "className": "in-43ad3045 qa",
+     "anchor": "",
+     "tabs": [
+      {
+       "title": "هل ينبّه للأدوية قريبة الانتهاء؟",
+       "html": "<p>نعم، تنبيه صلاحية عند البيع وفق إعداد النظام.</p>"
+      },
+      {
+       "title": "هل يتتبّع الدفعات؟",
+       "html": "<p>نعم، لكل دواء دفعته وتاريخ صلاحيتها.</p>"
+      },
+      {
+       "title": "هل الفاتورة متوافقة مع المرحلة الثانية؟",
+       "html": "<p>يدعم سيناريوهات الفوترة الإلكترونية للمرحلة الثانية عند تهيئته بالشكل الصحيح؛ الاعتماد الرسمي يخص منشأتك عبر منصة فاتورة.</p>"
+      },
+      {
+       "title": "هل يدعم عدة صيدليات؟",
+       "html": "<p>نعم، أرصدة وتقارير عبر الفروع.</p>"
+      },
+      {
+       "title": "هل يربط جهات التأمين/الصحة؟",
+       "html": "<p>حسب التكامل المتاح ويخضع للتحقق — لا ربط SFDA رسمي مؤكد.</p>"
+      },
+      {
+       "title": "هل يخصم المخزون تلقائيًا؟",
+       "html": "<p>نعم، كل بيعة تخصم المخزون من نفس قاعدة البيانات.</p>"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "3201f4c1",
+   "type": "container",
+   "className": "in-3201f4c1 digit pos-related",
+   "anchor": "",
+   "children": [
+    {
+     "id": "c55ec40",
+     "type": "container",
+     "className": "in-c55ec40 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "35ee9d12",
+       "type": "text-editor",
+       "className": "in-35ee9d12 ",
+       "anchor": "",
+       "html": "موديولات مترابطة"
+      },
+      {
+       "id": "7bbf3f5c",
+       "type": "heading",
+       "className": "in-7bbf3f5c ",
+       "anchor": "",
+       "html": "موديولات مترابطة",
+       "tag": "h2"
+      },
+      {
+       "id": "35296986",
+       "type": "text-editor",
+       "className": "in-35296986 ",
+       "anchor": "",
+       "html": "نفس قاعدة البيانات — نقاط البيع تغذّي المخزون والمحاسبة والتقارير."
+      }
+     ]
+    },
+    {
+     "id": "1b008768",
+     "type": "container",
+     "className": "in-1b008768 ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "24426c00",
+       "type": "container",
+       "className": "in-24426c00 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "4b17a62c",
+         "type": "html",
+         "className": "in-4b17a62c ",
+         "anchor": "",
+         "html": "<span aria-label=\"المحاسبة\" class=\"is-160\" role=\"img\"><svg aria-label=\"Accounts\" class=\"is-161\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-162\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-163\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-164\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-165\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "36f225d5",
+         "type": "heading",
+         "className": "in-36f225d5 ",
+         "anchor": "",
+         "html": "المحاسبة",
+         "tag": "h3"
+        },
+        {
+         "id": "4baa8042",
+         "type": "text-editor",
+         "className": "in-4baa8042 ",
+         "anchor": "",
+         "html": "قيد تلقائي لكل بيعة"
+        },
+        {
+         "id": "b82106c",
+         "type": "text-editor",
+         "className": "in-b82106c ",
+         "anchor": "",
+         "html": "<a class=\"is-169\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "e7d5591",
+       "type": "container",
+       "className": "in-e7d5591 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "6faa6d70",
+         "type": "html",
+         "className": "in-6faa6d70 ",
+         "anchor": "",
+         "html": "<span aria-label=\"المخزون\" class=\"is-172\" role=\"img\"><svg aria-label=\"Inventory\" class=\"is-173\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-174\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-175\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-176\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-177\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "7f2e48a1",
+         "type": "heading",
+         "className": "in-7f2e48a1 ",
+         "anchor": "",
+         "html": "المخزون",
+         "tag": "h3"
+        },
+        {
+         "id": "3ae23763",
+         "type": "text-editor",
+         "className": "in-3ae23763 ",
+         "anchor": "",
+         "html": "خصم فوري عند البيع"
+        },
+        {
+         "id": "771798f1",
+         "type": "text-editor",
+         "className": "in-771798f1 ",
+         "anchor": "",
+         "html": "<a class=\"is-181\" href=\"/modules/inventory\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "5145e52",
+       "type": "container",
+       "className": "in-5145e52 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "72047624",
+         "type": "html",
+         "className": "in-72047624 ",
+         "anchor": "",
+         "html": "<span aria-label=\"التقارير\" class=\"is-184\" role=\"img\"><svg aria-label=\"reports\" class=\"is-185\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-186\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-187\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-188\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-189\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "32828ca4",
+         "type": "heading",
+         "className": "in-32828ca4 ",
+         "anchor": "",
+         "html": "التقارير",
+         "tag": "h3"
+        },
+        {
+         "id": "2ea54a71",
+         "type": "text-editor",
+         "className": "in-2ea54a71 ",
+         "anchor": "",
+         "html": "تقارير المبيعات والفروع"
+        },
+        {
+         "id": "3f4d5387",
+         "type": "text-editor",
+         "className": "in-3f4d5387 ",
+         "anchor": "",
+         "html": "<a class=\"is-193\" href=\"/modules/reports\">عرض الموديول ←</a>"
+        }
+       ]
+      },
+      {
+       "id": "1f8fe0ee",
+       "type": "container",
+       "className": "in-1f8fe0ee ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "7c865483",
+         "type": "html",
+         "className": "in-7c865483 ",
+         "anchor": "",
+         "html": "<span aria-label=\"الفوترة الإلكترونية\" class=\"is-196\" role=\"img\"><svg aria-label=\"einvoicing\" class=\"is-197\" role=\"img\" viewbox=\"0 0 100 100\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-198\" height=\"9\" rx=\"4.5\" width=\"34\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-199\" height=\"9\" rx=\"4.5\" width=\"34\" x=\"22\" y=\"44\"></rect>\n<rect class=\"iv-200\" height=\"9\" rx=\"4.5\" width=\"24\" x=\"22\" y=\"60\"></rect>\n<rect class=\"iv-201\" height=\"22\" rx=\"5\" width=\"22\" x=\"58\" y=\"52\"></rect>\n</svg></span>"
+        },
+        {
+         "id": "189e50f6",
+         "type": "heading",
+         "className": "in-189e50f6 ",
+         "anchor": "",
+         "html": "الفوترة الإلكترونية",
+         "tag": "h3"
+        },
+        {
+         "id": "136b5cd4",
+         "type": "text-editor",
+         "className": "in-136b5cd4 ",
+         "anchor": "",
+         "html": "فاتورة مبسطة + QR"
+        },
+        {
+         "id": "53d04605",
+         "type": "text-editor",
+         "className": "in-53d04605 ",
+         "anchor": "",
+         "html": "<a class=\"is-205\" href=\"/modules/e-invoicing-zatca\">عرض الموديول ←</a>"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "5393d5ea",
+   "type": "container",
+   "className": "in-5393d5ea digit pos-cta",
+   "anchor": "cta",
+   "children": [
+    {
+     "id": "34bbe83f",
+     "type": "container",
+     "className": "in-34bbe83f ",
+     "anchor": "",
+     "children": [
+      {
+       "id": "20b87cd3",
+       "type": "heading",
+       "className": "in-20b87cd3 ",
+       "anchor": "",
+       "html": "جاهز تشغّل نشاطك على نقطة بيع متصلة؟",
+       "tag": "h2"
+      },
+      {
+       "id": "11e7eb9c",
+       "type": "text-editor",
+       "className": "in-11e7eb9c ",
+       "anchor": "",
+       "html": "عرض تجريبي ببيانات سعودية — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+      },
+      {
+       "id": "471b82f0",
+       "type": "container",
+       "className": "in-471b82f0 ",
+       "anchor": "",
+       "children": [
+        {
+         "id": "3131377f",
+         "type": "button",
+         "className": "in-3131377f ",
+         "anchor": "",
+         "text": "احجز عرض صيدليتك",
+         "href": "/demo",
+         "external": false
+        },
+        {
+         "id": "7370ba49",
+         "type": "button",
+         "className": "in-7370ba49 ",
+         "anchor": "",
+         "text": "واتساب المبيعات",
+         "href": "https://wa.me/966591909277",
+         "external": false
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
