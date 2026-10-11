@@ -33,6 +33,6 @@
 - [x] Verify home and representative internal pages and their navigation.
 
 # Bilingual site
-- [ ] Translate all page content, navigation, shared controls, and home sections professionally into English.
-- [ ] Add equivalent English routes and page-preserving language switching with Arabic default.
-- [ ] Verify both languages, directions, navigation, pricing, and package interactions.
+- [x] Translate all page content, navigation, shared controls, and home sections professionally into English.
+- [x] Add equivalent English routes and page-preserving language switching with Arabic default.
+- [x] Verify both languages, directions, navigation, pricing, and package interactions.
