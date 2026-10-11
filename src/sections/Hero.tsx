@@ -56,7 +56,7 @@ function OrbitBackground() {
         const el = document.createElement("div");
         el.className = "dgt-chip";
         const img = document.createElement("img");
-        img.src = ICONS[mod];
+        img.src = ICONS[mod]!;
         img.alt = "";
         img.setAttribute("aria-hidden", "true");
         el.appendChild(img);
@@ -87,7 +87,7 @@ function OrbitBackground() {
       });
     }
     let ro: ResizeObserver | null = null;
-    if ("ResizeObserver" in window) {
+    if (typeof ResizeObserver !== "undefined") {
       ro = new ResizeObserver(resize);
       ro.observe(root);
     } else {
