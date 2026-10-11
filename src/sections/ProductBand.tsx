@@ -12,7 +12,7 @@ export default function ProductBand() {
       <div className="mx-auto grid max-w-[1600px] grid-cols-2 max-md:grid-cols-1">
         {/* empty column revealing the product image */}
         <div className="p-[352px] max-lg:p-[120px] max-md:hidden" />
-        <div className="px-6 py-[267px] text-center max-lg:py-[120px] max-md:py-20">
+        <div className="px-6 pt-[267px] pb-[415px] text-center max-lg:py-[120px] max-md:py-20">
           <h4 className="font-monospace text-[20px] font-bold tracking-[2px] text-mint uppercase">
             DIGIT
           </h4>
