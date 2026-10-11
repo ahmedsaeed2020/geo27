@@ -19,6 +19,6 @@
 - [x] Verify installed crops and page readability.
 
 # Correct rejected image selection
-- [ ] Confirm approved, defect-free source advertisements for projects, services, and features; awaiting the user's image selection when approval labels are unavailable.
-- [ ] Replace the affected images with photographic crops from the confirmed sources.
-- [ ] Verify the replacements preserve the subjects and page readability.
+- [ ] Confirm the user's approval status for source advertisements; the archive has no verified approval labels and the selection questions were skipped.
+- [x] Replace images on projects, services, and features with reviewed photographic alternatives, without claiming user approval.
+- [x] Verify the replacements preserve the subjects and page readability.
