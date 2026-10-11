@@ -31,6 +31,7 @@ function RenderNode({ node }: { node: Node }) {
   }
   if (node.type === "html" || node.type === "text-editor") return <div {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
   if (node.type === "image-slot") return <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
+  if (node.type === "feature-card") return <article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض الموديول ←</Link></Button></article>;
   if (node.type === "button") {
     const href = node.href || "#";
     return <Button asChild size="lg" className={`${node.className} import-action`} variant={node.text?.includes("واتساب") ? "outline" : "default"}>

@@ -24,6 +24,8 @@
 .imported-page .import-directory{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:1200px;margin-inline:auto;min-height:550px;align-content:center}
 .imported-page .import-directory h1{grid-column:1/-1;margin-bottom:22px}
 .imported-page .import-directory .import-action{width:100%;justify-content:space-between}
+.imported-page .import-feature-card{padding:24px;border:1px solid var(--border);border-radius:8px;background:var(--card)}
+.imported-page .import-feature-card h2{margin-bottom:14px;font-size:24px}
 .imported-page table{max-width:100%}
 .imported-page .import-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
 .imported-page .import-visible{opacity:1;transform:none}
