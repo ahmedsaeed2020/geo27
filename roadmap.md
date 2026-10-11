@@ -22,3 +22,7 @@
 - [ ] Confirm the user's approval status for source advertisements; the archive has no verified approval labels and the selection questions were skipped.
 - [x] Replace images on projects, services, and features with reviewed photographic alternatives, without claiming user approval.
 - [x] Verify the replacements preserve the subjects and page readability.
+
+# Integrate body imagery
+- [x] Remove standalone body image bands and integrate their images behind existing content sections.
+- [ ] Verify content remains readable and page controls remain usable.

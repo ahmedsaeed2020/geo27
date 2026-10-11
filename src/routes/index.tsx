@@ -44,8 +44,7 @@ function Index() {
         <Hero />
         <TrustStrip />
         <ChaosToControl />
-        <div className="scene-body-band"><PageScene pageKey="home" alt="فريق سعودي ينسق عمليات الشركة باستخدام Digit" /></div>
-        <ProductBand />
+        <div className="scene-backed scene-content-section"><PageScene pageKey="home" kind="body" backdrop /><ProductBand /></div>
         <Modules />
         <Capabilities />
         <ProblemConveyor />
