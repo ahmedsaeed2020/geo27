@@ -38,6 +38,7 @@ export default function Capabilities() {
           {CARDS.map((c) => (
             <div
               key={c.title}
+              data-motion-card
               className="rounded-[16px] border border-[rgba(244,243,238,.14)] bg-[rgba(244,243,238,.06)] p-[22px] text-start"
             >
               {c.icon && <div className="mb-3 text-mint">{c.icon}</div>}

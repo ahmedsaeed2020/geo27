@@ -37,6 +37,7 @@ export default function Modules() {
           {MODULES.map((m) => (
             <div
               key={m.title}
+              data-motion-card
               className="group relative flex h-full flex-col overflow-hidden rounded-[14px] border border-dline bg-white p-[26px_24px] text-start shadow-[0_10px_30px_rgba(6,78,59,.07)] transition-colors hover:border-primary"
             >
               <div className="mb-2.5 inline-flex self-start rounded-[13px] border border-iconborder p-[15px] shadow-[0_8px_22px_rgba(10,135,84,.12)] transition-colors group-hover:bg-white">
