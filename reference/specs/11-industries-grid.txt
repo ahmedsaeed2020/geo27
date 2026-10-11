@@ -1,0 +1,68 @@
+- container
+    flex_direction=column
+    content_width=full
+  - bdt-hover-box
+      title_color=#EBEFEC
+      sub_title_color=#EBEFEC
+      box_item_active_border_color=#EBEFEC
+      hover_box_min_height=801px
+      box_item_background_background=classic
+      box_item_radius_advanced=75% 25% 43% 57% / 46% 29% 71% 54%
+      icon_radius_advanced=75% 25% 43% 57% / 46% 29% 71% 54%
+      border_radius_advanced=30% 70% 82% 18% / 46% 62% 38% 54%
+      _background_background=classic
+      hover_box_min_height_tablet=700px
+      hover_box_min_height_mobile=550px
+      box_item_background_color=#064E3B52
+      box_item_border_border=solid
+      box_item_border_width=0 0 0 0 px (T R B L)
+      box_item_hover_background_background=classic
+      box_item_hover_background_color=#F4F3EEB8
+      title_color=#EBEFEC
+      sub_title_color=#EBEFEC
+      title_hover_color=#064E3B
+      sub_title_hover_color=#0A8754
+      show_button=yes
+      box_item_radius=5 5 5 5 px (T R B L)
+      description_hover_color=rgba(11,31,23,0.7)
+      button_hover_color=#FFFFFF
+      button_hover_background_background=classic
+      button_hover_background_color=#064E3B
+      box_item_padding_mobile=10 10 16 10 px (T R B L)
+      title_typography_typography=custom
+      title_typography_font_size_mobile=16px
+      description_spacing_mobile=6px
+      description_typography_typography=custom
+      description_typography_font_size_mobile=12px
+      button_padding_mobile=4 10 4 10 px (T R B L)
+      button_typography_typography=custom
+      button_typography_font_size_mobile=12px
+      button_spacing_mobile=13px
+      box_image_effect=yes
+      button_text_color=#FFFFFF
+      button_background_background=classic
+      button_background_color=#0A8754
+      button_active_color=#FFFFFF
+      button_active_background_color=#064E3B
+      hover_box_active_item=1
+      icon_border_radius_advanced=30% 70% 82% 18% / 46% 62% 38% 54%
+      _element_width=initial
+      _element_custom_width=100%
+      title_typography_font_family=IBM Plex Sans Arabic
+      sub_title_typography_typography=custom
+      sub_title_typography_font_family=IBM Plex Sans Arabic
+      description_typography_font_family=IBM Plex Sans Arabic
+      button_typography_font_family=IBM Plex Sans Arabic
+      columns=4
+      layout_style=style-2
+      match_height=yes
+      box_item_active_background_background=classic
+      box_item_active_border_color=#EBEFEC
+      · hover_box[1]: hover_box_sub_title=تكلفة المشاريع · مقاولون من الباطن | hover_box_title=المقاولات | hover_box_content=<p>تكلفة كل مشروع، إدارة المقاولين من الباطن، ومستخلصات تقدّم ومحتجزات — مرتبطة بمحاسبتك.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/Ultra-wide_cinematic_21_9_scene_on_202606151013-scaled-1.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-contracting-light.svg | title_link=/industries/contracting-industry | hover_box_button=اعرف أكثر | button_link=/industries/contracting-industry
+      · hover_box[2]: hover_box_sub_title=قوائم مواد وأوامر تشغيل · تكلفة | hover_box_title=التصنيع | hover_box_content=<p>قوائم مواد وأوامر تشغيل وتكلفة فعلية لكل أمر إنتاج — مرتبطة بالمخزون والمشتريات والمحاسبة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/Man-scaled-1.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-manufacturing-light.svg | title_link=/industries/manufacturing-industry | hover_box_button=اعرف أكثر | button_link=/industries/manufacturing-industry
+      · hover_box[3]: hover_box_sub_title=كاشير متصل · فروع وولاء | hover_box_title=التجزئة | hover_box_content=<p>كاشير سريع متصل بالمخزون والحسابات، فروع وولاء، وفواتير مبسطة متوافقة — لكل متاجر التجزئة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/retail-scaled-1.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-retail-light.svg | title_link=/industries/retail | hover_box_button=اعرف أكثر | button_link=/industries/retail
+      · hover_box[4]: hover_box_sub_title=متعدد المستودعات · تحصيل | hover_box_title=التجارة والتوزيع | hover_box_content=<p>مخزون متعدد المستودعات، مشتريات ومبيعات بأسعار متدرّجة، وتحصيل — كل شيء متصل بالمحاسبة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/Dis.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-distribution-light.svg | title_link=/industries/distribution | hover_box_button=اعرف أكثر | button_link=/industries/distribution
+      · hover_box[5]: hover_box_sub_title=عقود وإيجارات · تحصيل | hover_box_title=العقارات | hover_box_content=<p>إدارة العقود والإيجارات والتحصيل، تكاليف المشاريع العقارية، ومحاسبة وفوترة متوافقة على منصة واحدة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/RS-scaled-1.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-realestate-light.svg | title_link=/industries/real-estate | hover_box_button=اعرف أكثر | button_link=/industries/real-estate
+      · hover_box[6]: hover_box_sub_title=صيدليات · صلاحية ودفعات | hover_box_title=القطاع الطبي | hover_box_content=<p>نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/med-scaled-1.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-healthcare-light.svg | title_link=/industries/healthcare | hover_box_button=اعرف أكثر | button_link=/industries/healthcare
+      · hover_box[7]: hover_box_sub_title=مراكز تدريب - مدارس - نظام تعليمي متكامل | hover_box_title=التعليمي | hover_box_content=<p>نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/Edu.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-healthcare-light.svg | title_link=/industries/healthcare | hover_box_button=اعرف أكثر | button_link=https://digit-erp.com/industries/education/
+      · hover_box[8]: hover_box_sub_title=الزيارات - الصيانات | hover_box_title=التشغيل والصيانة | hover_box_content=<p>نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.</p> | slide_image=https://digit-erp.com/wp-content/uploads/2026/06/Saudi_manager_reviewing_screens_202606160104.jpeg | icon_type=image | image=https://digit-erp.com/wp-content/uploads/2026/06/digit-ind-healthcare-light.svg | title_link=/industries/healthcare | hover_box_button=اعرف أكثر | button_link=/industries/healthcare

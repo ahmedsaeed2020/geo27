@@ -1,0 +1,86 @@
+- container
+    background_color=#0B1F17
+    background_color_b=#0A8754
+    flex_direction=column
+    flex_gap=0px
+    padding=84 28 84 28 px (T R B L)
+    _css_classes=digit final
+    background_background=gradient
+    background_color_stop=42%
+    background_color_b_stop=95%
+    background_gradient_angle=21deg
+  - container
+      content_width=full
+      flex_direction=column
+      flex_gap=14px
+      flex_align_items=center
+    - heading
+        title=جاهز تشوف كيف يناسب النظام شركتك؟
+        title_color=#FFFFFF
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=700
+        typography_font_size=38px
+        typography_line_height=1.2em
+        _margin=0 0 10 0 px (T R B L)
+        typography_letter_spacing=-1px
+        align=center
+    - text-editor
+        editor=احجز عرضاً، أو اطلب تحليل جاهزية ERP، أو شاهد جولة داخل النظام — بلا التزام.
+        text_color=rgba(244,243,238,.74)
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_size=17px
+        typography_line_height=1.7em
+        align=center
+    - container
+        content_width=full
+        flex_direction=row
+        flex_wrap=wrap
+        flex_gap=12px
+        flex_justify_content=center
+        flex_align_items=stretch
+      - button
+          text=احجز عرضاً تجريبياً
+          link=/demo
+          background_color=#34D399
+          button_text_color=#0B1F17
+          border_radius=11 11 11 11 px (T R B L)
+          text_padding=13 26 13 26 px (T R B L)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=15px
+          _css_classes=btn mint
+      - button
+          button_hover_border_color=#34D399
+          text=اطلب تحليل جاهزية ERP
+          link=/demo
+          background_color=rgba(0,0,0,0)
+          button_text_color=#FFFFFF
+          border_radius=11 11 11 11 px (T R B L)
+          text_padding=13 26 13 26 px (T R B L)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=15px
+          _css_classes=btn ghost
+          border_border=solid
+          border_width=1.5 1.5 1.5 1.5 px (T R B L)
+          border_color=rgba(244,243,238,.34)
+      - button
+          button_hover_border_color=#34D399
+          text=شاهد جولة داخل النظام
+          link=/demo
+          background_color=rgba(0,0,0,0)
+          button_text_color=#FFFFFF
+          border_radius=11 11 11 11 px (T R B L)
+          text_padding=13 26 13 26 px (T R B L)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=15px
+          _css_classes=btn ghost
+          border_border=solid
+          border_width=1.5 1.5 1.5 1.5 px (T R B L)
+          border_color=rgba(244,243,238,.34)

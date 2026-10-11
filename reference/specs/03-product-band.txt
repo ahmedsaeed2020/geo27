@@ -1,0 +1,53 @@
+- section
+    background_background=classic
+    background_color=#0a5a44
+    background_color_b=#08140F
+    background_gradient_angle=160deg
+    padding=80 0 80 0 px (T R B L)
+    structure=20
+    background_image=https://digit-erp.com/wp-content/uploads/2026/07/pro1.jpg
+    background_size=cover
+  - column
+      _column_size=50
+      padding=352 352 352 352 px (T R B L)
+    - heading
+        header_size=h4
+        align=center
+        title_color=#34D399
+        typography_typography=custom
+        typography_font_family=Space Mono
+        typography_font_weight=700
+        typography_font_size=20px
+        typography_letter_spacing=2px
+        typography_text_transform=uppercase
+  - column
+      _column_size=50
+      padding=267 0 415 0 px (T R B L)
+    - heading
+        title=DIGIT
+        header_size=h4
+        align=center
+        title_color=#34D399
+        typography_typography=custom
+        typography_font_family=Space Mono
+        typography_font_weight=700
+        typography_font_size=20px
+        typography_letter_spacing=2px
+        typography_text_transform=uppercase
+    - heading
+        title=محاسبتك أوضح
+        align=center
+        title_color=#ffffff
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=800
+        typography_font_size=36px
+        typography_line_height=1.2em
+    - text-editor
+        editor=<p>ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.</p>
+        align=center
+        text_color=rgba(244,243,238,.74)
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_size=17px
+        typography_line_height=1.7em

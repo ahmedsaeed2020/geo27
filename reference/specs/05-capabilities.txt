@@ -1,0 +1,203 @@
+- section
+    background_background=gradient
+    background_color=#0a5a44
+    background_color_b=#08140F
+    background_gradient_angle=160deg
+    padding=80 0 80 0 px (T R B L)
+  - column
+      _column_size=100
+      _inline_size=100
+    - heading
+        title=القدرات
+        header_size=h4
+        align=center
+        title_color=#34D399
+        typography_typography=custom
+        typography_font_family=Space Mono
+        typography_font_weight=700
+        typography_font_size=20px
+        typography_letter_spacing=2px
+        typography_text_transform=uppercase
+    - heading
+        title=قدرات تمتد عبر النظام كله.
+        align=center
+        title_color=#ffffff
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=800
+        typography_font_size=36px
+        typography_line_height=1.2em
+    - text-editor
+        editor=<p>ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.</p>
+        align=center
+        text_color=rgba(244,243,238,.74)
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_size=17px
+        typography_line_height=1.7em
+    - section
+        gap=wide
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=ri ri-secure-payment-line
+            title_text=الأمان · MFA
+            description_text=مصادقة متعددة العوامل وحماية الوصول لكل حساب.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=fas fa-user-lock
+            title_text=الصلاحيات والمستخدمون
+            description_text=أدوار دقيقة لكل فرع ومستخدم، وسجل عمليات كامل.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=fas fa-file-signature
+            title_text=التوقيع الرقمي
+            description_text=اعتماد رقمي للمستندات داخل دورة العمل.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)
+    - section
+        gap=wide
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=fas fa-folder-open
+            title_text=إدارة المستندات
+            description_text=أرشفة مرتبطة مباشرة بالعمليات والمعاملات.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=fas fa-robot
+            title_text=الذكاء الاصطناعي
+            description_text=رؤى ومساعدة ذكية ومؤشّرات لحظية للقرار.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)
+      - column
+          _column_size=33
+          _inline_size=33
+        - icon-box
+            selected_icon=lu lu-waypoints
+            title_text=التكاملات
+            description_text=WooCommerce و API وربط منصاتك الخارجية.
+            position=top
+            text_align=right
+            title_color=#ffffff
+            description_color=rgba(244,243,238,.66)
+            primary_color=#34D399
+            icon_size=25px
+            title_typography_typography=custom
+            title_typography_font_family=IBM Plex Sans Arabic
+            title_typography_font_weight=800
+            title_typography_font_size=16px
+            description_typography_typography=custom
+            description_typography_font_family=IBM Plex Sans Arabic
+            description_typography_font_size=13px
+            _background_background=classic
+            _background_color=rgba(244,243,238,.06)
+            _border_border=solid
+            _border_width=1 1 1 1 px (T R B L)
+            _border_color=rgba(244,243,238,.14)
+            _border_radius=16 16 16 16 px (T R B L)
+            _padding=22 22 22 22 px (T R B L)

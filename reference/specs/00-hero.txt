@@ -1,0 +1,85 @@
+- section
+    gap=no
+    height=min-height
+    custom_height=60vh
+    padding=0 0 0 0 px (T R B L)
+    background_background=classic
+    background_color=#08140F
+    overflow=hidden
+    css_classes=digit-orbit-background-host
+    position=relative
+    layout=full_width
+  - column
+      _column_size=100
+      padding=0 0 40 0 px (T R B L)
+    - html
+        _margin=0 0 0 0 px (T R B L)
+        _padding=600 0 0 0 px (T R B L)
+    - heading
+        title=محاسبتك أوضح مع ديجيت
+        title_color=#34D399
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=500
+        typography_font_size=44px
+        align=center
+    - heading
+        title=منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.
+        header_size=h1
+        title_color=#F4F3EE
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=700
+        typography_font_size=56px
+        align=center
+        _padding=0 50 0 50 px (T R B L)
+    - text-editor
+        editor=<p>Digit نظام ERP مالي وتشغيلي للسوق السعودي — محاسبة وفوترة إلكترونية ومبيعات ومشتريات ومخزون ونقاط بيع وتقارير، سحابياً أو داخل سيرفراتك.</p>
+        text_color=#C2CCC5
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=400
+        typography_font_size=22px
+        paragraph_spacing=0px
+        align=center
+        _padding=1 50 1 50 px (T R B L)
+    - button
+        text=اطلب عرض سعر
+        link=/demo
+        align=left
+        border_radius=12 12 12 12 px (T R B L)
+        button_text_color=#ffffff
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=600
+        background_color=#0A8754
+        _element_width=initial
+        _element_custom_width=51%
+        _flex_align_self=center
+    - button
+        text=احجز Demo
+        link=/demo
+        align=left
+        border_radius=12 12 12 12 px (T R B L)
+        button_text_color=#34D399
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=600
+        background_color=rgba(0,0,0,0)
+        border_border=solid
+        border_width=1 1 1 1 px (T R B L)
+        border_color=#34D399
+        _element_width=initial
+        _flex_size=custom
+        _element_custom_width=15%
+    - text-editor
+        link_color=#5B6B63
+        editor=<p>يدعم الفوترة الإلكترونية · يعتمد عليه أكثر من 50 منشأة سعودية</p>
+        text_color=#C3C3C3
+        paragraph_spacing=8px
+        _padding=29 0 0 0 px (T R B L)
+        align=center
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=700
+        link_color=#5B6B63

@@ -1,24 +1,58 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import Hero from "@/sections/Hero";
+import TrustStrip from "@/sections/TrustStrip";
+import ChaosToControl from "@/sections/ChaosToControl";
+import ProductBand from "@/sections/ProductBand";
+import Modules from "@/sections/Modules";
+import Capabilities from "@/sections/Capabilities";
+import ProblemConveyor from "@/sections/ProblemConveyor";
+import Industries from "@/sections/Industries";
+import SaudiLocalization from "@/sections/SaudiLocalization";
+import Faq from "@/sections/Faq";
+import FinalCta from "@/sections/FinalCta";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title: "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع" },
+      {
+        name: "description",
+        content:
+          "Digit نظام ERP مالي وتشغيلي للسوق السعودي — محاسبة وفوترة إلكترونية ومبيعات ومشتريات ومخزون ونقاط بيع وتقارير، سحابياً أو داخل سيرفراتك.",
+      },
+      { property: "og:title", content: "Digit — منصة ERP سعودية" },
+      {
+        property: "og:description",
+        content:
+          "منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك — محاسبة وفوترة إلكترونية ومخزون وتقارير، سحابياً أو داخل سيرفراتك.",
+      },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-paper font-plex">
+      <Header />
+      <main>
+        <Hero />
+        <TrustStrip />
+        <ChaosToControl />
+        <ProductBand />
+        <Modules />
+        <Capabilities />
+        <ProblemConveyor />
+        <Industries />
+        <SaudiLocalization />
+        <Faq />
+        <FinalCta />
+      </main>
+      <Footer />
     </div>
   );
 }

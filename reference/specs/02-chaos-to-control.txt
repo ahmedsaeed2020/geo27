@@ -1,0 +1,11 @@
+- section
+    layout=full_width
+    content_width=1600px
+    gap=no
+    padding=0 0 0 0 px (T R B L)
+    margin=0 0 0 0 px (T R B L)
+    background_background=classic
+  - column
+      _column_size=100
+      padding=0 0 0 0 px (T R B L)
+    - html

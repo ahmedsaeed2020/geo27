@@ -1,0 +1,134 @@
+- container
+    flex_direction=column
+    flex_gap=0px
+    padding=84 28 84 28 px (T R B L)
+    _css_classes=digit faq
+    background_background=classic
+    background_color=#F4F3EE
+  - container
+      content_width=full
+      flex_direction=column
+      flex_gap=6px
+      flex_align_items=center
+      padding=0 0 30 0 px (T R B L)
+    - text-editor
+        editor=الأسئلة الشائعة
+        text_color=#0A8754
+        typography_typography=custom
+        typography_font_family=Space Mono
+        typography_font_size=12px
+        typography_line_height=1.7em
+        typography_font_weight=700
+        typography_letter_spacing=2px
+        typography_text_transform=uppercase
+        align=center
+        _margin=0 0 8 0 px (T R B L)
+    - heading
+        title=أسئلة قبل أن تقرّر — إجابات مباشرة
+        title_color=#064E3B
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_weight=700
+        typography_font_size=38px
+        typography_line_height=1.14em
+        _margin=0 0 10 0 px (T R B L)
+        typography_letter_spacing=-1px
+        align=center
+    - text-editor
+        editor=أكثر ما يسأل عنه مديرو الشركات قبل اختيار نظام ERP.
+        text_color=#5B6B63
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_size=18px
+        typography_line_height=1.8em
+        align=center
+        _margin=0 0 6 0 px (T R B L)
+  - container
+      content_width=full
+      flex_direction=row
+      flex_wrap=wrap
+      flex_gap=26px
+      flex_justify_content=flex-start
+      flex_align_items=flex-start
+    - container
+        content_width=full
+        flex_direction=column
+        flex_gap=0px
+        flex_align_items=flex-start
+        width=62%
+      - accordion
+          faq_schema=yes
+          title_typography_typography=custom
+          title_typography_font_family=IBM Plex Sans Arabic
+          title_typography_font_weight=700
+          title_typography_font_size=14.5px
+          title_color=#064E3B
+          _css_classes=qa
+          · tabs[1]: tab_title=هل هذا نظام ERP عادي؟ | tab_content=<p>لا. Digit منصة عربية بواجهات أوضح وتقارير أقوى وتوطين سعودي أعمق، مصمّمة تحديداً للسوق المحلي.</p>
+          · tabs[2]: tab_title=هل النظام مناسب للشركات السعودية؟ | tab_content=<p>نعم، مصمّم لمتطلبات السوق السعودي من شجرة الحسابات إلى التقويم الهجري والواجهة العربية.</p>
+          · tabs[3]: tab_title=هل يدعم الفوترة الإلكترونية؟ | tab_content=<p>مصمّم لدعم متطلبات الفوترة الإلكترونية (المرحلة الثانية) برمز QR وتقارير ضريبية.</p>
+          · tabs[4]: tab_title=هل يدعم مدد والتأمينات؟ | tab_content=<p>نعم، الرواتب مبنية لتتوافق مع حماية الأجور (مدد) والتأمينات. نؤكّد نطاق الدعم الفعلي في تحليل الجاهزية.</p>
+          · tabs[5]: tab_title=هل يمكن تخصيص النظام؟ | tab_content=<p>نعم، الشاشات والتقارير والصلاحيات قابلة للتخصيص، وتخصيص أعمق عبر باقة Enterprise.</p>
+          · tabs[6]: tab_title=هل هناك رسوم على كل مستخدم؟ | tab_content=<p>الباقة المالية اشتراك سنوي واضح ($3,000/سنة). نقاط البيع تُسعّر لكل نقطة بالريال. بلا مفاجآت لكل مستخدم.</p>
+          · tabs[7]: tab_title=كم يستغرق التطبيق؟ | tab_content=<p>عادةً خلال أسابيع، وفق منهجية محددة من ثماني مراحل — تُضبط حسب حجم بياناتك وموديولاتك.</p>
+          · tabs[8]: tab_title=هل توفّرون تدريباً ودعماً؟ | tab_content=<p>نعم، الاشتراك السنوي يشمل التنفيذ وتدريب المستخدمين ودعماً محلياً مستمراً.</p>
+          · tabs[9]: tab_title=هل يمكن نقل البيانات من Excel أو نظام سابق؟ | tab_content=<p>نعم، نقل البيانات مرحلة مستقلة في منهجيتنا، من الإكسل أو نظامك السابق.</p>
+          · tabs[10]: tab_title=هل يمكن تجربة النظام قبل الشراء؟ | tab_content=<p>نعم، احجز عرضاً تجريبياً مخصّصاً أو بيئة تجربة لترى Digit على حالتك.</p>
+    - container
+        content_width=full
+        flex_direction=column
+        flex_gap=10px
+        flex_align_items=flex-start
+        width=30%
+        padding=28 28 28 28 px (T R B L)
+        background_background=classic
+        background_color=#064E3B
+        border_radius=18 18 18 18 px (T R B L)
+      - heading
+          title=لم تجد إجابتك؟
+          header_size=h3
+          title_color=#FFFFFF
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=18px
+          typography_line_height=1.2em
+          _margin=0 0 10 0 px (T R B L)
+      - text-editor
+          editor=تحدّث مع فريقنا واحصل على إجابة مخصّصة لشركتك — وتحليل جاهزية.
+          text_color=rgba(244,243,238,.78)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_size=13px
+          typography_line_height=1.6em
+      - button
+          text=احجز عرضاً تجريبياً
+          link=/demo
+          background_color=#34D399
+          button_text_color=#0B1F17
+          border_radius=11 11 11 11 px (T R B L)
+          text_padding=13 26 13 26 px (T R B L)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=15px
+          _css_classes=btn mint
+          _element_width=initial
+          align=stretch
+      - button
+          text=تواصل معنا
+          link=https://wa.me/966591909277
+          background_color=rgba(0,0,0,0)
+          button_text_color=#FFFFFF
+          border_radius=11 11 11 11 px (T R B L)
+          text_padding=13 26 13 26 px (T R B L)
+          typography_typography=custom
+          typography_font_family=IBM Plex Sans Arabic
+          typography_font_weight=700
+          typography_font_size=15px
+          _css_classes=btn ghost
+          border_border=solid
+          border_width=1.5 1.5 1.5 1.5 px (T R B L)
+          border_color=rgba(244,243,238,.34)
+          _element_width=initial
+          align=stretch
