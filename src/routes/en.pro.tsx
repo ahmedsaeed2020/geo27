@@ -1,3 +1,4 @@
+import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
@@ -5,7 +6,7 @@ import arabicNodes from "@/content/pro.json";
 
 const nodes = localizeData(arabicNodes);
 export const Route = createFileRoute("/en/pro")({
-  head: () => ({ meta: [
+  head: () => withSeo("/en/pro", { meta: [
     { title: translate("باقة Pro — Digit | النظام المالي والتشغيلي") },
     { name: "description", content: translate("باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد.") },
     { property: "og:title", content: translate("باقة Pro — Digit") },

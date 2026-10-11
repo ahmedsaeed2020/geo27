@@ -1,9 +1,10 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
 import nodes from "@/content/starter.json";
 
 export const Route = createFileRoute("/starter")({
-  head: () => ({ meta: [
+  head: () => withSeo("/starter", { meta: [
     { title: "باقة Starter — Digit | الفوترة الإلكترونية" },
     { name: "description", content: "باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، تبدأ من 1,499 ر.س سنويًا، مع خيار ربط ZATCA." },
     { property: "og:title", content: "باقة Starter — Digit" },

@@ -1,7 +1,8 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import HomePage from "@/components/HomePage";
 export const Route = createFileRoute("/en/")({
- head: () => ({ meta: [
+ head: () => withSeo("/en", { meta: [
  { title: "Digit — Saudi ERP | Accounting, E-Invoicing & POS" },
  { name: "description", content: "Digit connects accounting, e-invoicing, sales, purchasing, inventory, POS and reporting for Saudi businesses, in the cloud or on your own servers." },
  { property: "og:title", content: "Digit — Saudi ERP" },

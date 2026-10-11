@@ -1,9 +1,10 @@
+import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
 import nodes from "@/content/pro.json";
 
 export const Route = createFileRoute("/pro")({
-  head: () => ({ meta: [
+  head: () => withSeo("/pro", { meta: [
     { title: "باقة Pro — Digit | النظام المالي والتشغيلي" },
     { name: "description", content: "باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد." },
     { property: "og:title", content: "باقة Pro — Digit" },

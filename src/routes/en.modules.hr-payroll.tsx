@@ -1,3 +1,4 @@
+import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
@@ -5,7 +6,7 @@ import arabicPage from "@/content/site/modules-hr-payroll.json";
 import "@/content/site/modules-hr-payroll.css";
 const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/modules/hr-payroll")({
-  head: () => ({ meta: [
+  head: () => withSeo("/en/modules/hr-payroll", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },
     { property: "og:title", content: page.title + " — Digit" },
