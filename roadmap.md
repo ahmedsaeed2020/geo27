@@ -11,6 +11,6 @@
 - [x] Connect navigation and verify every menu destination and representative page interactions.
 - [x] Leave English translation for its requested step.
 - [x] Generate the initial six referenced Digit scenes and connect them to representative pages.
-- [ ] Generate two page-specific referenced scenes for every Arabic content page: background and body.
-- [ ] Integrate the complete scene collection without changing source content or hosted forms.
-- [ ] Verify all page images load, layouts remain readable, and existing interactions work.
+- [x] Generate two page-specific referenced scenes for every Arabic content page: background and body.
+- [x] Integrate the complete scene collection without changing source content or hosted forms.
+- [x] Verify all page images load, layouts remain readable, and existing interactions work.
