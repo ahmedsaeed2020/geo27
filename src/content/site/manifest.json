@@ -1,0 +1,483 @@
+[
+  {
+    "path": "/about-4",
+    "title": "من نحن",
+    "nodes": 11,
+    "key": "about-4",
+    "h1": [
+      "Digit من Trilogy — نظام ERP مبني للسعودية، يطبّقه ويدعمه فريق محلي"
+    ]
+  },
+  {
+    "path": "/careers",
+    "title": "Careers الوظائف",
+    "nodes": 10,
+    "key": "careers",
+    "h1": [
+      "نبني الجيل القادم من أنظمة الأعمال في السعودية"
+    ]
+  },
+  {
+    "path": "/contact-4",
+    "title": "تواصل معنا",
+    "nodes": 8,
+    "key": "contact-4",
+    "h1": [
+      "تواصل مع فريق Digit / Trilogy"
+    ]
+  },
+  {
+    "path": "/demo",
+    "title": "احجز عرضًا تجريبيًا",
+    "nodes": 9,
+    "key": "demo",
+    "h1": [
+      "احجز عرض Digit… ببيانات شركة سعودية تجريبية"
+    ]
+  },
+  {
+    "path": "/demo-3",
+    "title": "احجز عرضًا تجريبيًا",
+    "nodes": 9,
+    "key": "demo-3",
+    "h1": [
+      "احجز عرض Digit… ببيانات شركة سعودية تجريبية"
+    ]
+  },
+  {
+    "path": "/faq",
+    "title": "الأسئلة الشائعة",
+    "nodes": 4,
+    "key": "faq",
+    "h1": [
+      "إجابات مباشرة… قبل أن تقرّر"
+    ]
+  },
+  {
+    "path": "/features",
+    "title": "القدرات",
+    "nodes": 14,
+    "key": "features",
+    "h1": [
+      "قدرات تمتد عبر النظام كله… تخدم كل موديول"
+    ]
+  },
+  {
+    "path": "/industries",
+    "title": "القطاعات",
+    "nodes": 1,
+    "key": "industries",
+    "h1": []
+  },
+  {
+    "path": "/industries/contracting-industry",
+    "title": "المقاولات",
+    "nodes": 8,
+    "key": "industries-contracting-industry",
+    "h1": [
+      "تحكّم في تكاليف مشاريعك… قطاع المقاولات"
+    ]
+  },
+  {
+    "path": "/industries/distribution",
+    "title": "التوزيع والجملة",
+    "nodes": 8,
+    "key": "industries-distribution",
+    "h1": [
+      "مبيعات ومخزون… للتوزيع والجملة"
+    ]
+  },
+  {
+    "path": "/industries/education",
+    "title": "التعليم",
+    "nodes": 8,
+    "key": "industries-education",
+    "h1": [
+      "نظام إداري ومالي… لمنشآت التعليم"
+    ]
+  },
+  {
+    "path": "/industries/healthcare",
+    "title": "الطبي والرعاية الصحية",
+    "nodes": 8,
+    "key": "industries-healthcare",
+    "h1": [
+      "إدارة مالية ومخزون… للقطاع الطبي"
+    ]
+  },
+  {
+    "path": "/industries/manufacturing-industry",
+    "title": "التصنيع",
+    "nodes": 8,
+    "key": "industries-manufacturing-industry",
+    "h1": [
+      "من قائمة المواد إلى المنتج… قطاع التصنيع"
+    ]
+  },
+  {
+    "path": "/industries/professional-services",
+    "title": "الخدمات المهنية",
+    "nodes": 8,
+    "key": "industries-professional-services",
+    "h1": [
+      "مشاريع وفوترة… للخدمات المهنية"
+    ]
+  },
+  {
+    "path": "/industries/real-estate-2",
+    "title": "العقارات",
+    "nodes": 8,
+    "key": "industries-real-estate-2",
+    "h1": [
+      "إدارة مالية… لقطاع العقارات"
+    ]
+  },
+  {
+    "path": "/industries/retail",
+    "title": "التجزئة",
+    "nodes": 8,
+    "key": "industries-retail",
+    "h1": [
+      "من الكاشير إلى الدفاتر… قطاع التجزئة"
+    ]
+  },
+  {
+    "path": "/modules",
+    "title": "الموديولات",
+    "nodes": 1,
+    "key": "modules",
+    "h1": []
+  },
+  {
+    "path": "/modules/accounting",
+    "title": "المحاسبة",
+    "nodes": 10,
+    "key": "modules-accounting",
+    "h1": [
+      "محاسبة سعودية متكاملة… من القيد إلى القوائم"
+    ]
+  },
+  {
+    "path": "/modules/contracting",
+    "title": "المقاولات",
+    "nodes": 10,
+    "key": "modules-contracting",
+    "h1": [
+      "مقاولاتك بحساب دقيق… من التكلفة إلى المستخلص"
+    ]
+  },
+  {
+    "path": "/modules/crm",
+    "title": "إدارة العملاء CRM",
+    "nodes": 10,
+    "key": "modules-crm",
+    "h1": [
+      "عملاؤك ومتابعاتك… في مكان واحد"
+    ]
+  },
+  {
+    "path": "/modules/e-invoicing-zatca",
+    "title": "الفوترة الإلكترونية (ZATCA)",
+    "nodes": 10,
+    "key": "modules-e-invoicing-zatca",
+    "h1": [
+      "جاهز لفاتورة هيئة الزكاة والضريبة… من اليوم الأول"
+    ]
+  },
+  {
+    "path": "/modules/fixed-assets",
+    "title": "الأصول الثابتة",
+    "nodes": 10,
+    "key": "modules-fixed-assets",
+    "h1": [
+      "أصولك الثابتة… مسجّلة ومُهلَكة تلقائيًا"
+    ]
+  },
+  {
+    "path": "/modules/hr-payroll",
+    "title": "الموارد البشرية والرواتب",
+    "nodes": 11,
+    "key": "modules-hr-payroll",
+    "h1": [
+      "موارد بشرية ورواتب… بقواعد السعودية"
+    ]
+  },
+  {
+    "path": "/modules/inventory",
+    "title": "المخزون",
+    "nodes": 10,
+    "key": "modules-inventory",
+    "h1": [
+      "مخزون دقيق في كل مستودع… لحظة بلحظة"
+    ]
+  },
+  {
+    "path": "/modules/manufacturing",
+    "title": "التصنيع",
+    "nodes": 10,
+    "key": "modules-manufacturing",
+    "h1": [
+      "إنتاجك مرئي… من قائمة المواد إلى المنتج"
+    ]
+  },
+  {
+    "path": "/modules/pos",
+    "title": "نقاط البيع",
+    "nodes": 12,
+    "key": "modules-pos",
+    "h1": [
+      "نقاط بيع متصلة بمحاسبتك ومخزونك… بلا فجوات"
+    ]
+  },
+  {
+    "path": "/modules/projects",
+    "title": "المشاريع",
+    "nodes": 10,
+    "key": "modules-projects",
+    "h1": [
+      "كل مشروع بربحيته… وتكاليفه أمامك"
+    ]
+  },
+  {
+    "path": "/modules/purchasing",
+    "title": "المشتريات",
+    "nodes": 10,
+    "key": "modules-purchasing",
+    "h1": [
+      "مشترياتك تحت السيطرة… من الطلب إلى الاستلام"
+    ]
+  },
+  {
+    "path": "/modules/reports",
+    "title": "التقارير",
+    "nodes": 10,
+    "key": "modules-reports",
+    "h1": [
+      "٥٠+ تقريرًا جاهزًا بالعربية… وتقريرك الخاص بدون كود"
+    ]
+  },
+  {
+    "path": "/modules/sales",
+    "title": "المبيعات",
+    "nodes": 10,
+    "key": "modules-sales",
+    "h1": [
+      "من عرض السعر إلى التحصيل… دورة مبيعات كاملة"
+    ]
+  },
+  {
+    "path": "/partnership",
+    "title": "الشراكة",
+    "nodes": 8,
+    "key": "partnership",
+    "h1": [
+      "انمُ مع Digit — كن شريك إحالة أو تنفيذ"
+    ]
+  },
+  {
+    "path": "/pos-solutions/electrical-appliances",
+    "title": "الأجهزة الكهربائية",
+    "nodes": 10,
+    "key": "pos-solutions-electrical-appliances",
+    "h1": []
+  },
+  {
+    "path": "/pos-solutions/florist",
+    "title": "الزهور",
+    "nodes": 10,
+    "key": "pos-solutions-florist",
+    "h1": [
+      "نقاط بيع للزهور والهدايا… باقات وطلبات وتوصيل"
+    ]
+  },
+  {
+    "path": "/pos-solutions/furniture",
+    "title": "الأثاث والمفروشات",
+    "nodes": 10,
+    "key": "pos-solutions-furniture",
+    "h1": [
+      "نقاط بيع للأثاث والمفروشات… من المعرض إلى التوصيل"
+    ]
+  },
+  {
+    "path": "/pos-solutions/mobile-shops",
+    "title": "محلات الجوال",
+    "nodes": 21,
+    "key": "pos-solutions-mobile-shops",
+    "h1": [
+      "نقاط بيع للجوالات… تتبّع IMEI والضمان لكل جهاز"
+    ]
+  },
+  {
+    "path": "/pos-solutions/optical",
+    "title": "النظارات",
+    "nodes": 10,
+    "key": "pos-solutions-optical",
+    "h1": []
+  },
+  {
+    "path": "/pos-solutions/pharmacies",
+    "title": "الصيدليات",
+    "nodes": 10,
+    "key": "pos-solutions-pharmacies",
+    "h1": [
+      "نقاط بيع للصيدليات… تتبّع الصلاحية والدفعات من نفس النظام"
+    ]
+  },
+  {
+    "path": "/pos-solutions/restaurants-cafes",
+    "title": "المطاعم والكافيهات",
+    "nodes": 10,
+    "key": "pos-solutions-restaurants-cafes",
+    "h1": []
+  },
+  {
+    "path": "/pos-solutions/salons",
+    "title": "الصالونات",
+    "nodes": 10,
+    "key": "pos-solutions-salons",
+    "h1": []
+  },
+  {
+    "path": "/pos-solutions/sweets",
+    "title": "الحلويات",
+    "nodes": 9,
+    "key": "pos-solutions-sweets",
+    "h1": []
+  },
+  {
+    "path": "/pricing",
+    "title": "الأسعار",
+    "nodes": 8,
+    "key": "pricing",
+    "h1": [
+      "باقات واضحة لنظامك المالي والتشغيلي"
+    ]
+  },
+  {
+    "path": "/saudi-localization",
+    "title": "التوطين السعودي",
+    "nodes": 8,
+    "key": "saudi-localization",
+    "h1": [
+      "ERP جاهز لواقع الشركات السعودية… يطبّقه فريق Trilogy محليًا"
+    ]
+  },
+  {
+    "path": "/services-3",
+    "title": "الخدمات",
+    "nodes": 1,
+    "key": "services-3",
+    "h1": [
+      "الخدمات"
+    ]
+  },
+  {
+    "path": "/services-3/customization",
+    "title": "التخصيص",
+    "nodes": 10,
+    "key": "services-3-customization",
+    "h1": [
+      "تخصيص آمن… لا ينكسر مع التحديثات"
+    ]
+  },
+  {
+    "path": "/services-3/data-migration",
+    "title": "ترحيل البيانات",
+    "nodes": 10,
+    "key": "services-3-data-migration",
+    "h1": [
+      "دعم عربي… باتفاقية مستوى خدمة معلنة"
+    ]
+  },
+  {
+    "path": "/services-3/discovery-workshop",
+    "title": "جلسة تحليل وتهيئة",
+    "nodes": 11,
+    "key": "services-3-discovery-workshop",
+    "h1": [
+      "جلسة تحليل لاحتياجك… ومخرج مكتوب"
+    ]
+  },
+  {
+    "path": "/services-3/erpnext-service",
+    "title": "تنفيذ وترقية ERPNext",
+    "nodes": 10,
+    "key": "services-3-erpnext-service",
+    "h1": [
+      "تنفيذ وترقية ERPNext… بانضباط هندسي"
+    ]
+  },
+  {
+    "path": "/services-3/hosting",
+    "title": "الاستضافة والتشغيل",
+    "nodes": 10,
+    "key": "services-3-hosting",
+    "h1": [
+      "استضافة سحابية مُدارة أو محلية… أنت تملك بياناتك"
+    ]
+  },
+  {
+    "path": "/services-3/implementation",
+    "title": "تطبيق النظام",
+    "nodes": 10,
+    "key": "services-3-implementation",
+    "h1": [
+      "نشغّل Digit في شركتك… بمدة معلنة ومخرجات مكتوبة"
+    ]
+  },
+  {
+    "path": "/services-3/maintenance",
+    "title": "الصيانة والخدمة المُدارة",
+    "nodes": 10,
+    "key": "services-3-maintenance",
+    "h1": [
+      "خدمة مُدارة… نظامك تحت العناية دائمًا"
+    ]
+  },
+  {
+    "path": "/services-3/support",
+    "title": "الدعم",
+    "nodes": 11,
+    "key": "services-3-support",
+    "h1": [
+      "دعم عربي… باتفاقية مستوى خدمة معلنة"
+    ]
+  },
+  {
+    "path": "/services-3/training",
+    "title": "التدريب",
+    "nodes": 10,
+    "key": "services-3-training",
+    "h1": [
+      "نظام يفهمه فريقك… من أول أسبوع"
+    ]
+  },
+  {
+    "path": "/services-3/zatca-onboarding",
+    "title": "تجهيز الفوترة الإلكترونية",
+    "nodes": 10,
+    "key": "services-3-zatca-onboarding",
+    "h1": [
+      "نجهّز منشأتك للمرحلة الثانية… قبل موعد موجتك"
+    ]
+  },
+  {
+    "path": "/terms",
+    "title": "الشروط",
+    "nodes": 5,
+    "key": "terms",
+    "h1": [
+      "الشروط والأحكام"
+    ]
+  },
+  {
+    "path": "/trust-security",
+    "title": "الثقة والأمان",
+    "nodes": 6,
+    "key": "trust-security",
+    "h1": [
+      "بياناتك وأمانك… مسؤولية واضحة"
+    ]
+  }
+]
