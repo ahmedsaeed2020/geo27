@@ -5,6 +5,7 @@
 - [x] Compare both pages visually and verify their interactive previews.
 
 # Arabic menu pages
+- [ ] Apply Accounting design to modules, Contracting design to industries, and Mobile Shops design to POS pages, retaining each page's XML content.
 - [ ] Match the XML menus to published Arabic pages and supplied templates.
 - [ ] Install all matched pages with extracted source content, scoped design, and interactions.
 - [ ] Connect navigation and verify every menu destination and representative page interactions.

@@ -25,7 +25,8 @@ function RenderNode({ node }: { node: Node }) {
   const props = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") return <div {...props} data-import-container>{node.children?.map(child => <RenderNode node={child} key={child.id} />)}</div>;
   if (node.type === "heading") {
-    const Tag: ElementType = ["h1", "h2", "h3", "h4", "h5", "h6"].includes(node.tag ?? "") ? node.tag ?? "h2" : "h2";
+    const tags: Record<string, ElementType> = { h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
+    const Tag = tags[node.tag ?? "h2"] ?? "h2";
     return <Tag {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
   }
   if (node.type === "html" || node.type === "text-editor") return <div {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
