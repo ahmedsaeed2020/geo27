@@ -1,0 +1,222 @@
+[
+  {
+    "label": "من نحن",
+    "href": "/about-4",
+    "children": [
+      {
+        "label": "القدرات",
+        "href": "/features"
+      },
+      {
+        "label": "تواصل معنا",
+        "href": "/contact-4"
+      }
+    ]
+  },
+  {
+    "label": "الموديولات",
+    "href": "/modules",
+    "children": [
+      {
+        "label": "المحاسبة",
+        "href": "/modules/accounting"
+      },
+      {
+        "label": "المبيعات",
+        "href": "/modules/sales"
+      },
+      {
+        "label": "المشتريات",
+        "href": "/modules/purchasing"
+      },
+      {
+        "label": "المخزون",
+        "href": "/modules/inventory"
+      },
+      {
+        "label": "الأصول الثابتة",
+        "href": "/modules/fixed-assets"
+      },
+      {
+        "label": "التقارير",
+        "href": "/modules/reports"
+      },
+      {
+        "label": "الفوترة الإلكترونية (ZATCA)",
+        "href": "/modules/e-invoicing-zatca"
+      },
+      {
+        "label": "إدارة العملاء CRM",
+        "href": "/modules/crm"
+      },
+      {
+        "label": "الموارد البشرية والرواتب",
+        "href": "/modules/hr-payroll"
+      },
+      {
+        "label": "المشاريع",
+        "href": "/modules/projects"
+      },
+      {
+        "label": "التصنيع",
+        "href": "/modules/manufacturing"
+      },
+      {
+        "label": "المقاولات",
+        "href": "/modules/contracting"
+      }
+    ]
+  },
+  {
+    "label": "الخدمات",
+    "href": "/services-3",
+    "children": [
+      {
+        "label": "جلسة تحليل وتهيئة",
+        "href": "/services-3/discovery-workshop"
+      },
+      {
+        "label": "تنفيذ وترقية ERPNext",
+        "href": "/services-3/erpnext-service"
+      },
+      {
+        "label": "تطبيق النظام",
+        "href": "/services-3/implementation"
+      },
+      {
+        "label": "التخصيص",
+        "href": "/services-3/customization"
+      },
+      {
+        "label": "التدريب",
+        "href": "/services-3/training"
+      },
+      {
+        "label": "ترحيل البيانات",
+        "href": "/services-3/data-migration"
+      },
+      {
+        "label": "الاستضافة والتشغيل",
+        "href": "/services-3/hosting"
+      },
+      {
+        "label": "الدعم",
+        "href": "/services-3/support"
+      },
+      {
+        "label": "تجهيز الفوترة الإلكترونية",
+        "href": "/services-3/zatca-onboarding"
+      },
+      {
+        "label": "الصيانة والخدمة المُدارة",
+        "href": "/services-3/maintenance"
+      },
+      {
+        "label": "التوطين السعودي",
+        "href": "/saudi-localization"
+      },
+      {
+        "label": "الثقة والأمان",
+        "href": "/trust-security"
+      }
+    ]
+  },
+  {
+    "label": "نقاط البيع",
+    "href": "/modules/pos",
+    "children": [
+      {
+        "label": "محلات الجوال",
+        "href": "/pos-solutions/mobile-shops"
+      },
+      {
+        "label": "الزهور",
+        "href": "/pos-solutions/florist"
+      },
+      {
+        "label": "الصالونات",
+        "href": "/pos-solutions/salons"
+      },
+      {
+        "label": "الأجهزة الكهربائية",
+        "href": "/pos-solutions/electrical-appliances"
+      },
+      {
+        "label": "الأثاث والمفروشات",
+        "href": "/pos-solutions/furniture"
+      },
+      {
+        "label": "النظارات",
+        "href": "/pos-solutions/optical"
+      },
+      {
+        "label": "المطاعم والكافيهات",
+        "href": "/pos-solutions/restaurants-cafes"
+      },
+      {
+        "label": "الحلويات",
+        "href": "/pos-solutions/sweets"
+      },
+      {
+        "label": "الصيدليات",
+        "href": "/pos-solutions/pharmacies"
+      }
+    ]
+  },
+  {
+    "label": "القطاعات",
+    "href": "/industries",
+    "children": [
+      {
+        "label": "التعليم",
+        "href": "/industries/education"
+      },
+      {
+        "label": "الطبي والرعاية الصحية",
+        "href": "/industries/healthcare"
+      },
+      {
+        "label": "المقاولات",
+        "href": "/modules/contracting"
+      },
+      {
+        "label": "العقارات",
+        "href": "/industries/real-estate-2"
+      },
+      {
+        "label": "التصنيع",
+        "href": "/industries/manufacturing-industry"
+      },
+      {
+        "label": "التجزئة",
+        "href": "/industries/retail"
+      },
+      {
+        "label": "التوزيع والجملة",
+        "href": "/industries/distribution"
+      },
+      {
+        "label": "الخدمات المهنية",
+        "href": "/industries/professional-services"
+      },
+      {
+        "label": "المقاولات",
+        "href": "/industries/contracting-industry"
+      }
+    ]
+  },
+  {
+    "label": "الأسعار",
+    "href": "/pricing",
+    "children": [
+      {
+        "label": "Starter",
+        "href": "/starter"
+      },
+      {
+        "label": "Pro",
+        "href": "/pro"
+      }
+    ]
+  }
+]

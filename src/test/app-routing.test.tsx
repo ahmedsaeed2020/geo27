@@ -3,10 +3,24 @@ import { createRouter, rootRouteId } from "@tanstack/react-router";
 import { describe, expect, it } from "vitest";
 
 import { routeTree } from "@/routeTree.gen";
+import navigation from "@/content/site/navigation.json";
+import manifest from "@/content/site/manifest.json";
 
 // Match routes without running loaders or rendering: loaders may need a server or
 // network the test run lacks, and jsdom never loads the stylesheets React waits on.
 describe("App routing", () => {
+  it("matches every imported page and current menu destination", () => {
+    const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
+    const destinations = new Set([
+      ...manifest.map(page => page.path),
+      ...navigation.flatMap(group => [group.href, ...group.children.map(child => child.href)]),
+    ]);
+    for (const path of destinations) {
+      const matches = router.matchRoutes(path);
+      expect(matches.at(-1)?.routeId, path).not.toBe(rootRouteId);
+      expect(matches.at(-1)?.pathname.replace(/\/$/, ""), path).toBe(path);
+    }
+  });
   it("matches a page for / instead of falling back to not found", () => {
     const router = createRouter({ routeTree, context: { queryClient: new QueryClient() } });
 

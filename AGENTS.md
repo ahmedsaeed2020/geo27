@@ -12,3 +12,5 @@
 - Render imported Elementor package pages through one shared React renderer with extracted content and scoped CSS so both pages preserve their source layout without WordPress dependencies.
 - Keep published preview metadata alongside extracted package content and implement motion in the shared renderer so both packages retain their original interactive layout without loading WordPress scripts.
 - Keep WordPress-only trial and payment forms on their original hosted pages until those services are explicitly connected; never simulate successful submissions or payments.
+- Render menu-linked WordPress pages through a shared React renderer with extracted per-page JSON and scoped source CSS; this preserves source layouts without executing WordPress scripts.
+- Keep every imported content page in its own file-based route and preserve legacy menu URL aliases with redirects; this prevents broken published links and isolates page metadata.

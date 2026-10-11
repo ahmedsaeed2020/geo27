@@ -10,12 +10,145 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as About4RouteImport } from './routes/about-4'
+import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as Contact4RouteImport } from './routes/contact-4'
+import { Route as DemoRouteImport } from './routes/demo'
+import { Route as Demo3RouteImport } from './routes/demo-3'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as ModulesRouteImport } from './routes/modules'
+import { Route as PartnershipRouteImport } from './routes/partnership'
+import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProRouteImport } from './routes/pro'
+import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as Services3RouteImport } from './routes/services-3'
 import { Route as StarterRouteImport } from './routes/starter'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as TermsRouteImport } from './routes/terms'
+import { Route as TrustSecurityRouteImport } from './routes/trust-security'
+import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
+import { Route as IndustriesContractingIndustryRouteImport } from './routes/industries.contracting-industry'
+import { Route as IndustriesDistributionRouteImport } from './routes/industries.distribution'
+import { Route as IndustriesEducationRouteImport } from './routes/industries.education'
+import { Route as IndustriesHealthcareRouteImport } from './routes/industries.healthcare'
+import { Route as IndustriesManufacturingIndustryRouteImport } from './routes/industries.manufacturing-industry'
+import { Route as IndustriesProfessionalServicesRouteImport } from './routes/industries.professional-services'
+import { Route as IndustriesRealEstate2RouteImport } from './routes/industries.real-estate-2'
+import { Route as IndustriesRetailRouteImport } from './routes/industries.retail'
+import { Route as ModulesIndexRouteImport } from './routes/modules.index'
+import { Route as ModulesAccountingRouteImport } from './routes/modules.accounting'
+import { Route as ModulesContractingRouteImport } from './routes/modules.contracting'
+import { Route as ModulesCrmRouteImport } from './routes/modules.crm'
+import { Route as ModulesEInvoicingZatcaRouteImport } from './routes/modules.e-invoicing-zatca'
+import { Route as ModulesFixedAssetsRouteImport } from './routes/modules.fixed-assets'
+import { Route as ModulesHrPayrollRouteImport } from './routes/modules.hr-payroll'
+import { Route as ModulesInventoryRouteImport } from './routes/modules.inventory'
+import { Route as ModulesManufacturingRouteImport } from './routes/modules.manufacturing'
+import { Route as ModulesPosRouteImport } from './routes/modules.pos'
+import { Route as ModulesProjectsRouteImport } from './routes/modules.projects'
+import { Route as ModulesPurchasingRouteImport } from './routes/modules.purchasing'
+import { Route as ModulesReportsRouteImport } from './routes/modules.reports'
+import { Route as ModulesSalesRouteImport } from './routes/modules.sales'
+import { Route as PosSolutionsElectricalAppliancesRouteImport } from './routes/pos-solutions.electrical-appliances'
+import { Route as PosSolutionsFloristRouteImport } from './routes/pos-solutions.florist'
+import { Route as PosSolutionsFurnitureRouteImport } from './routes/pos-solutions.furniture'
+import { Route as PosSolutionsMobileShopsRouteImport } from './routes/pos-solutions.mobile-shops'
+import { Route as PosSolutionsOpticalRouteImport } from './routes/pos-solutions.optical'
+import { Route as PosSolutionsPharmaciesRouteImport } from './routes/pos-solutions.pharmacies'
+import { Route as PosSolutionsRestaurantsCafesRouteImport } from './routes/pos-solutions.restaurants-cafes'
+import { Route as PosSolutionsSalonsRouteImport } from './routes/pos-solutions.salons'
+import { Route as PosSolutionsSweetsRouteImport } from './routes/pos-solutions.sweets'
+import { Route as Services3IndexRouteImport } from './routes/services-3.index'
+import { Route as Services3CustomizationRouteImport } from './routes/services-3.customization'
+import { Route as Services3DataMigrationRouteImport } from './routes/services-3.data-migration'
+import { Route as Services3DiscoveryWorkshopRouteImport } from './routes/services-3.discovery-workshop'
+import { Route as Services3ErpnextServiceRouteImport } from './routes/services-3.erpnext-service'
+import { Route as Services3HostingRouteImport } from './routes/services-3.hosting'
+import { Route as Services3ImplementationRouteImport } from './routes/services-3.implementation'
+import { Route as Services3MaintenanceRouteImport } from './routes/services-3.maintenance'
+import { Route as Services3SupportRouteImport } from './routes/services-3.support'
+import { Route as Services3TrainingRouteImport } from './routes/services-3.training'
+import { Route as Services3ZatcaOnboardingRouteImport } from './routes/services-3.zatca-onboarding'
+import { Route as ServicesCustomizationRouteImport } from './routes/services.customization'
+import { Route as ServicesDataMigrationRouteImport } from './routes/services.data-migration'
+import { Route as ServicesHostingRouteImport } from './routes/services.hosting'
+import { Route as ServicesImplementationRouteImport } from './routes/services.implementation'
+import { Route as ServicesSupportRouteImport } from './routes/services.support'
+import { Route as ServicesTrainingRouteImport } from './routes/services.training'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const About4Route = About4RouteImport.update({
+  id: '/about-4',
+  path: '/about-4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CareersRoute = CareersRouteImport.update({
+  id: '/careers',
+  path: '/careers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Contact4Route = Contact4RouteImport.update({
+  id: '/contact-4',
+  path: '/contact-4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DemoRoute = DemoRouteImport.update({
+  id: '/demo',
+  path: '/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Demo3Route = Demo3RouteImport.update({
+  id: '/demo-3',
+  path: '/demo-3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FeaturesRoute = FeaturesRouteImport.update({
+  id: '/features',
+  path: '/features',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesRoute = IndustriesRouteImport.update({
+  id: '/industries',
+  path: '/industries',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ModulesRoute = ModulesRouteImport.update({
+  id: '/modules',
+  path: '/modules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipRoute = PartnershipRouteImport.update({
+  id: '/partnership',
+  path: '/partnership',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PricingRoute = PricingRouteImport.update({
+  id: '/pricing',
+  path: '/pricing',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProRoute = ProRouteImport.update({
@@ -23,40 +156,762 @@ const ProRoute = ProRouteImport.update({
   path: '/pro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SaudiLocalizationRoute = SaudiLocalizationRouteImport.update({
+  id: '/saudi-localization',
+  path: '/saudi-localization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Services3Route = Services3RouteImport.update({
+  id: '/services-3',
+  path: '/services-3',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const StarterRoute = StarterRouteImport.update({
   id: '/starter',
   path: '/starter',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TrustSecurityRoute = TrustSecurityRouteImport.update({
+  id: '/trust-security',
+  path: '/trust-security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesContractingIndustryRoute =
+  IndustriesContractingIndustryRouteImport.update({
+    id: '/contracting-industry',
+    path: '/contracting-industry',
+    getParentRoute: () => IndustriesRoute,
+  } as any)
+const IndustriesDistributionRoute = IndustriesDistributionRouteImport.update({
+  id: '/distribution',
+  path: '/distribution',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesEducationRoute = IndustriesEducationRouteImport.update({
+  id: '/education',
+  path: '/education',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesHealthcareRoute = IndustriesHealthcareRouteImport.update({
+  id: '/healthcare',
+  path: '/healthcare',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesManufacturingIndustryRoute =
+  IndustriesManufacturingIndustryRouteImport.update({
+    id: '/manufacturing-industry',
+    path: '/manufacturing-industry',
+    getParentRoute: () => IndustriesRoute,
+  } as any)
+const IndustriesProfessionalServicesRoute =
+  IndustriesProfessionalServicesRouteImport.update({
+    id: '/professional-services',
+    path: '/professional-services',
+    getParentRoute: () => IndustriesRoute,
+  } as any)
+const IndustriesRealEstate2Route = IndustriesRealEstate2RouteImport.update({
+  id: '/real-estate-2',
+  path: '/real-estate-2',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const IndustriesRetailRoute = IndustriesRetailRouteImport.update({
+  id: '/retail',
+  path: '/retail',
+  getParentRoute: () => IndustriesRoute,
+} as any)
+const ModulesIndexRoute = ModulesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesAccountingRoute = ModulesAccountingRouteImport.update({
+  id: '/accounting',
+  path: '/accounting',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesContractingRoute = ModulesContractingRouteImport.update({
+  id: '/contracting',
+  path: '/contracting',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesCrmRoute = ModulesCrmRouteImport.update({
+  id: '/crm',
+  path: '/crm',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesEInvoicingZatcaRoute = ModulesEInvoicingZatcaRouteImport.update({
+  id: '/e-invoicing-zatca',
+  path: '/e-invoicing-zatca',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesFixedAssetsRoute = ModulesFixedAssetsRouteImport.update({
+  id: '/fixed-assets',
+  path: '/fixed-assets',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesHrPayrollRoute = ModulesHrPayrollRouteImport.update({
+  id: '/hr-payroll',
+  path: '/hr-payroll',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesInventoryRoute = ModulesInventoryRouteImport.update({
+  id: '/inventory',
+  path: '/inventory',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesManufacturingRoute = ModulesManufacturingRouteImport.update({
+  id: '/manufacturing',
+  path: '/manufacturing',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesPosRoute = ModulesPosRouteImport.update({
+  id: '/pos',
+  path: '/pos',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesProjectsRoute = ModulesProjectsRouteImport.update({
+  id: '/projects',
+  path: '/projects',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesPurchasingRoute = ModulesPurchasingRouteImport.update({
+  id: '/purchasing',
+  path: '/purchasing',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesReportsRoute = ModulesReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const ModulesSalesRoute = ModulesSalesRouteImport.update({
+  id: '/sales',
+  path: '/sales',
+  getParentRoute: () => ModulesRoute,
+} as any)
+const PosSolutionsElectricalAppliancesRoute =
+  PosSolutionsElectricalAppliancesRouteImport.update({
+    id: '/pos-solutions/electrical-appliances',
+    path: '/pos-solutions/electrical-appliances',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PosSolutionsFloristRoute = PosSolutionsFloristRouteImport.update({
+  id: '/pos-solutions/florist',
+  path: '/pos-solutions/florist',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsFurnitureRoute = PosSolutionsFurnitureRouteImport.update({
+  id: '/pos-solutions/furniture',
+  path: '/pos-solutions/furniture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsMobileShopsRoute = PosSolutionsMobileShopsRouteImport.update({
+  id: '/pos-solutions/mobile-shops',
+  path: '/pos-solutions/mobile-shops',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsOpticalRoute = PosSolutionsOpticalRouteImport.update({
+  id: '/pos-solutions/optical',
+  path: '/pos-solutions/optical',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsPharmaciesRoute = PosSolutionsPharmaciesRouteImport.update({
+  id: '/pos-solutions/pharmacies',
+  path: '/pos-solutions/pharmacies',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsRestaurantsCafesRoute =
+  PosSolutionsRestaurantsCafesRouteImport.update({
+    id: '/pos-solutions/restaurants-cafes',
+    path: '/pos-solutions/restaurants-cafes',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const PosSolutionsSalonsRoute = PosSolutionsSalonsRouteImport.update({
+  id: '/pos-solutions/salons',
+  path: '/pos-solutions/salons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PosSolutionsSweetsRoute = PosSolutionsSweetsRouteImport.update({
+  id: '/pos-solutions/sweets',
+  path: '/pos-solutions/sweets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Services3IndexRoute = Services3IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3CustomizationRoute = Services3CustomizationRouteImport.update({
+  id: '/customization',
+  path: '/customization',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3DataMigrationRoute = Services3DataMigrationRouteImport.update({
+  id: '/data-migration',
+  path: '/data-migration',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3DiscoveryWorkshopRoute =
+  Services3DiscoveryWorkshopRouteImport.update({
+    id: '/discovery-workshop',
+    path: '/discovery-workshop',
+    getParentRoute: () => Services3Route,
+  } as any)
+const Services3ErpnextServiceRoute = Services3ErpnextServiceRouteImport.update({
+  id: '/erpnext-service',
+  path: '/erpnext-service',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3HostingRoute = Services3HostingRouteImport.update({
+  id: '/hosting',
+  path: '/hosting',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3ImplementationRoute = Services3ImplementationRouteImport.update({
+  id: '/implementation',
+  path: '/implementation',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3MaintenanceRoute = Services3MaintenanceRouteImport.update({
+  id: '/maintenance',
+  path: '/maintenance',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3SupportRoute = Services3SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3TrainingRoute = Services3TrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => Services3Route,
+} as any)
+const Services3ZatcaOnboardingRoute =
+  Services3ZatcaOnboardingRouteImport.update({
+    id: '/zatca-onboarding',
+    path: '/zatca-onboarding',
+    getParentRoute: () => Services3Route,
+  } as any)
+const ServicesCustomizationRoute = ServicesCustomizationRouteImport.update({
+  id: '/customization',
+  path: '/customization',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesDataMigrationRoute = ServicesDataMigrationRouteImport.update({
+  id: '/data-migration',
+  path: '/data-migration',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesHostingRoute = ServicesHostingRouteImport.update({
+  id: '/hosting',
+  path: '/hosting',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesImplementationRoute = ServicesImplementationRouteImport.update({
+  id: '/implementation',
+  path: '/implementation',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesSupportRoute = ServicesSupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => ServicesRoute,
+} as any)
+const ServicesTrainingRoute = ServicesTrainingRouteImport.update({
+  id: '/training',
+  path: '/training',
+  getParentRoute: () => ServicesRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/about-4': typeof About4Route
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/contact-4': typeof Contact4Route
+  '/demo': typeof DemoRoute
+  '/demo-3': typeof Demo3Route
+  '/faq': typeof FaqRoute
+  '/features': typeof FeaturesRoute
+  '/industries': typeof IndustriesRouteWithChildren
+  '/modules': typeof ModulesRouteWithChildren
+  '/partnership': typeof PartnershipRoute
+  '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/saudi-localization': typeof SaudiLocalizationRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services-3': typeof Services3RouteWithChildren
   '/starter': typeof StarterRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/trust-security': typeof TrustSecurityRoute
+  '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
+  '/industries/distribution': typeof IndustriesDistributionRoute
+  '/industries/education': typeof IndustriesEducationRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing-industry': typeof IndustriesManufacturingIndustryRoute
+  '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
+  '/industries/real-estate-2': typeof IndustriesRealEstate2Route
+  '/industries/retail': typeof IndustriesRetailRoute
+  '/modules/accounting': typeof ModulesAccountingRoute
+  '/modules/contracting': typeof ModulesContractingRoute
+  '/modules/crm': typeof ModulesCrmRoute
+  '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
+  '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/hr-payroll': typeof ModulesHrPayrollRoute
+  '/modules/inventory': typeof ModulesInventoryRoute
+  '/modules/manufacturing': typeof ModulesManufacturingRoute
+  '/modules/pos': typeof ModulesPosRoute
+  '/modules/projects': typeof ModulesProjectsRoute
+  '/modules/purchasing': typeof ModulesPurchasingRoute
+  '/modules/reports': typeof ModulesReportsRoute
+  '/modules/sales': typeof ModulesSalesRoute
+  '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
+  '/pos-solutions/florist': typeof PosSolutionsFloristRoute
+  '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
+  '/pos-solutions/mobile-shops': typeof PosSolutionsMobileShopsRoute
+  '/pos-solutions/optical': typeof PosSolutionsOpticalRoute
+  '/pos-solutions/pharmacies': typeof PosSolutionsPharmaciesRoute
+  '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
+  '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
+  '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/services-3/customization': typeof Services3CustomizationRoute
+  '/services-3/data-migration': typeof Services3DataMigrationRoute
+  '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
+  '/services-3/erpnext-service': typeof Services3ErpnextServiceRoute
+  '/services-3/hosting': typeof Services3HostingRoute
+  '/services-3/implementation': typeof Services3ImplementationRoute
+  '/services-3/maintenance': typeof Services3MaintenanceRoute
+  '/services-3/support': typeof Services3SupportRoute
+  '/services-3/training': typeof Services3TrainingRoute
+  '/services-3/zatca-onboarding': typeof Services3ZatcaOnboardingRoute
+  '/services/customization': typeof ServicesCustomizationRoute
+  '/services/data-migration': typeof ServicesDataMigrationRoute
+  '/services/hosting': typeof ServicesHostingRoute
+  '/services/implementation': typeof ServicesImplementationRoute
+  '/services/support': typeof ServicesSupportRoute
+  '/services/training': typeof ServicesTrainingRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/modules/': typeof ModulesIndexRoute
+  '/services-3/': typeof Services3IndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/about-4': typeof About4Route
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/contact-4': typeof Contact4Route
+  '/demo': typeof DemoRoute
+  '/demo-3': typeof Demo3Route
+  '/faq': typeof FaqRoute
+  '/features': typeof FeaturesRoute
+  '/partnership': typeof PartnershipRoute
+  '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/saudi-localization': typeof SaudiLocalizationRoute
+  '/services': typeof ServicesRouteWithChildren
   '/starter': typeof StarterRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/trust-security': typeof TrustSecurityRoute
+  '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
+  '/industries/distribution': typeof IndustriesDistributionRoute
+  '/industries/education': typeof IndustriesEducationRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing-industry': typeof IndustriesManufacturingIndustryRoute
+  '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
+  '/industries/real-estate-2': typeof IndustriesRealEstate2Route
+  '/industries/retail': typeof IndustriesRetailRoute
+  '/modules/accounting': typeof ModulesAccountingRoute
+  '/modules/contracting': typeof ModulesContractingRoute
+  '/modules/crm': typeof ModulesCrmRoute
+  '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
+  '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/hr-payroll': typeof ModulesHrPayrollRoute
+  '/modules/inventory': typeof ModulesInventoryRoute
+  '/modules/manufacturing': typeof ModulesManufacturingRoute
+  '/modules/pos': typeof ModulesPosRoute
+  '/modules/projects': typeof ModulesProjectsRoute
+  '/modules/purchasing': typeof ModulesPurchasingRoute
+  '/modules/reports': typeof ModulesReportsRoute
+  '/modules/sales': typeof ModulesSalesRoute
+  '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
+  '/pos-solutions/florist': typeof PosSolutionsFloristRoute
+  '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
+  '/pos-solutions/mobile-shops': typeof PosSolutionsMobileShopsRoute
+  '/pos-solutions/optical': typeof PosSolutionsOpticalRoute
+  '/pos-solutions/pharmacies': typeof PosSolutionsPharmaciesRoute
+  '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
+  '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
+  '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/services-3/customization': typeof Services3CustomizationRoute
+  '/services-3/data-migration': typeof Services3DataMigrationRoute
+  '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
+  '/services-3/erpnext-service': typeof Services3ErpnextServiceRoute
+  '/services-3/hosting': typeof Services3HostingRoute
+  '/services-3/implementation': typeof Services3ImplementationRoute
+  '/services-3/maintenance': typeof Services3MaintenanceRoute
+  '/services-3/support': typeof Services3SupportRoute
+  '/services-3/training': typeof Services3TrainingRoute
+  '/services-3/zatca-onboarding': typeof Services3ZatcaOnboardingRoute
+  '/services/customization': typeof ServicesCustomizationRoute
+  '/services/data-migration': typeof ServicesDataMigrationRoute
+  '/services/hosting': typeof ServicesHostingRoute
+  '/services/implementation': typeof ServicesImplementationRoute
+  '/services/support': typeof ServicesSupportRoute
+  '/services/training': typeof ServicesTrainingRoute
+  '/industries': typeof IndustriesIndexRoute
+  '/modules': typeof ModulesIndexRoute
+  '/services-3': typeof Services3IndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/about-4': typeof About4Route
+  '/careers': typeof CareersRoute
+  '/contact': typeof ContactRoute
+  '/contact-4': typeof Contact4Route
+  '/demo': typeof DemoRoute
+  '/demo-3': typeof Demo3Route
+  '/faq': typeof FaqRoute
+  '/features': typeof FeaturesRoute
+  '/industries': typeof IndustriesRouteWithChildren
+  '/modules': typeof ModulesRouteWithChildren
+  '/partnership': typeof PartnershipRoute
+  '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/saudi-localization': typeof SaudiLocalizationRoute
+  '/services': typeof ServicesRouteWithChildren
+  '/services-3': typeof Services3RouteWithChildren
   '/starter': typeof StarterRoute
+  '/support': typeof SupportRoute
+  '/terms': typeof TermsRoute
+  '/trust-security': typeof TrustSecurityRoute
+  '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
+  '/industries/distribution': typeof IndustriesDistributionRoute
+  '/industries/education': typeof IndustriesEducationRoute
+  '/industries/healthcare': typeof IndustriesHealthcareRoute
+  '/industries/manufacturing-industry': typeof IndustriesManufacturingIndustryRoute
+  '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
+  '/industries/real-estate-2': typeof IndustriesRealEstate2Route
+  '/industries/retail': typeof IndustriesRetailRoute
+  '/modules/accounting': typeof ModulesAccountingRoute
+  '/modules/contracting': typeof ModulesContractingRoute
+  '/modules/crm': typeof ModulesCrmRoute
+  '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
+  '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/hr-payroll': typeof ModulesHrPayrollRoute
+  '/modules/inventory': typeof ModulesInventoryRoute
+  '/modules/manufacturing': typeof ModulesManufacturingRoute
+  '/modules/pos': typeof ModulesPosRoute
+  '/modules/projects': typeof ModulesProjectsRoute
+  '/modules/purchasing': typeof ModulesPurchasingRoute
+  '/modules/reports': typeof ModulesReportsRoute
+  '/modules/sales': typeof ModulesSalesRoute
+  '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
+  '/pos-solutions/florist': typeof PosSolutionsFloristRoute
+  '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
+  '/pos-solutions/mobile-shops': typeof PosSolutionsMobileShopsRoute
+  '/pos-solutions/optical': typeof PosSolutionsOpticalRoute
+  '/pos-solutions/pharmacies': typeof PosSolutionsPharmaciesRoute
+  '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
+  '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
+  '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/services-3/customization': typeof Services3CustomizationRoute
+  '/services-3/data-migration': typeof Services3DataMigrationRoute
+  '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
+  '/services-3/erpnext-service': typeof Services3ErpnextServiceRoute
+  '/services-3/hosting': typeof Services3HostingRoute
+  '/services-3/implementation': typeof Services3ImplementationRoute
+  '/services-3/maintenance': typeof Services3MaintenanceRoute
+  '/services-3/support': typeof Services3SupportRoute
+  '/services-3/training': typeof Services3TrainingRoute
+  '/services-3/zatca-onboarding': typeof Services3ZatcaOnboardingRoute
+  '/services/customization': typeof ServicesCustomizationRoute
+  '/services/data-migration': typeof ServicesDataMigrationRoute
+  '/services/hosting': typeof ServicesHostingRoute
+  '/services/implementation': typeof ServicesImplementationRoute
+  '/services/support': typeof ServicesSupportRoute
+  '/services/training': typeof ServicesTrainingRoute
+  '/industries/': typeof IndustriesIndexRoute
+  '/modules/': typeof ModulesIndexRoute
+  '/services-3/': typeof Services3IndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/pro' | '/starter'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/about-4'
+    | '/careers'
+    | '/contact'
+    | '/contact-4'
+    | '/demo'
+    | '/demo-3'
+    | '/faq'
+    | '/features'
+    | '/industries'
+    | '/modules'
+    | '/partnership'
+    | '/pricing'
+    | '/pro'
+    | '/saudi-localization'
+    | '/services'
+    | '/services-3'
+    | '/starter'
+    | '/support'
+    | '/terms'
+    | '/trust-security'
+    | '/industries/contracting-industry'
+    | '/industries/distribution'
+    | '/industries/education'
+    | '/industries/healthcare'
+    | '/industries/manufacturing-industry'
+    | '/industries/professional-services'
+    | '/industries/real-estate-2'
+    | '/industries/retail'
+    | '/modules/accounting'
+    | '/modules/contracting'
+    | '/modules/crm'
+    | '/modules/e-invoicing-zatca'
+    | '/modules/fixed-assets'
+    | '/modules/hr-payroll'
+    | '/modules/inventory'
+    | '/modules/manufacturing'
+    | '/modules/pos'
+    | '/modules/projects'
+    | '/modules/purchasing'
+    | '/modules/reports'
+    | '/modules/sales'
+    | '/pos-solutions/electrical-appliances'
+    | '/pos-solutions/florist'
+    | '/pos-solutions/furniture'
+    | '/pos-solutions/mobile-shops'
+    | '/pos-solutions/optical'
+    | '/pos-solutions/pharmacies'
+    | '/pos-solutions/restaurants-cafes'
+    | '/pos-solutions/salons'
+    | '/pos-solutions/sweets'
+    | '/services-3/customization'
+    | '/services-3/data-migration'
+    | '/services-3/discovery-workshop'
+    | '/services-3/erpnext-service'
+    | '/services-3/hosting'
+    | '/services-3/implementation'
+    | '/services-3/maintenance'
+    | '/services-3/support'
+    | '/services-3/training'
+    | '/services-3/zatca-onboarding'
+    | '/services/customization'
+    | '/services/data-migration'
+    | '/services/hosting'
+    | '/services/implementation'
+    | '/services/support'
+    | '/services/training'
+    | '/industries/'
+    | '/modules/'
+    | '/services-3/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/pro' | '/starter'
-  id: '__root__' | '/' | '/pro' | '/starter'
+  to:
+    | '/'
+    | '/about'
+    | '/about-4'
+    | '/careers'
+    | '/contact'
+    | '/contact-4'
+    | '/demo'
+    | '/demo-3'
+    | '/faq'
+    | '/features'
+    | '/partnership'
+    | '/pricing'
+    | '/pro'
+    | '/saudi-localization'
+    | '/services'
+    | '/starter'
+    | '/support'
+    | '/terms'
+    | '/trust-security'
+    | '/industries/contracting-industry'
+    | '/industries/distribution'
+    | '/industries/education'
+    | '/industries/healthcare'
+    | '/industries/manufacturing-industry'
+    | '/industries/professional-services'
+    | '/industries/real-estate-2'
+    | '/industries/retail'
+    | '/modules/accounting'
+    | '/modules/contracting'
+    | '/modules/crm'
+    | '/modules/e-invoicing-zatca'
+    | '/modules/fixed-assets'
+    | '/modules/hr-payroll'
+    | '/modules/inventory'
+    | '/modules/manufacturing'
+    | '/modules/pos'
+    | '/modules/projects'
+    | '/modules/purchasing'
+    | '/modules/reports'
+    | '/modules/sales'
+    | '/pos-solutions/electrical-appliances'
+    | '/pos-solutions/florist'
+    | '/pos-solutions/furniture'
+    | '/pos-solutions/mobile-shops'
+    | '/pos-solutions/optical'
+    | '/pos-solutions/pharmacies'
+    | '/pos-solutions/restaurants-cafes'
+    | '/pos-solutions/salons'
+    | '/pos-solutions/sweets'
+    | '/services-3/customization'
+    | '/services-3/data-migration'
+    | '/services-3/discovery-workshop'
+    | '/services-3/erpnext-service'
+    | '/services-3/hosting'
+    | '/services-3/implementation'
+    | '/services-3/maintenance'
+    | '/services-3/support'
+    | '/services-3/training'
+    | '/services-3/zatca-onboarding'
+    | '/services/customization'
+    | '/services/data-migration'
+    | '/services/hosting'
+    | '/services/implementation'
+    | '/services/support'
+    | '/services/training'
+    | '/industries'
+    | '/modules'
+    | '/services-3'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/about-4'
+    | '/careers'
+    | '/contact'
+    | '/contact-4'
+    | '/demo'
+    | '/demo-3'
+    | '/faq'
+    | '/features'
+    | '/industries'
+    | '/modules'
+    | '/partnership'
+    | '/pricing'
+    | '/pro'
+    | '/saudi-localization'
+    | '/services'
+    | '/services-3'
+    | '/starter'
+    | '/support'
+    | '/terms'
+    | '/trust-security'
+    | '/industries/contracting-industry'
+    | '/industries/distribution'
+    | '/industries/education'
+    | '/industries/healthcare'
+    | '/industries/manufacturing-industry'
+    | '/industries/professional-services'
+    | '/industries/real-estate-2'
+    | '/industries/retail'
+    | '/modules/accounting'
+    | '/modules/contracting'
+    | '/modules/crm'
+    | '/modules/e-invoicing-zatca'
+    | '/modules/fixed-assets'
+    | '/modules/hr-payroll'
+    | '/modules/inventory'
+    | '/modules/manufacturing'
+    | '/modules/pos'
+    | '/modules/projects'
+    | '/modules/purchasing'
+    | '/modules/reports'
+    | '/modules/sales'
+    | '/pos-solutions/electrical-appliances'
+    | '/pos-solutions/florist'
+    | '/pos-solutions/furniture'
+    | '/pos-solutions/mobile-shops'
+    | '/pos-solutions/optical'
+    | '/pos-solutions/pharmacies'
+    | '/pos-solutions/restaurants-cafes'
+    | '/pos-solutions/salons'
+    | '/pos-solutions/sweets'
+    | '/services-3/customization'
+    | '/services-3/data-migration'
+    | '/services-3/discovery-workshop'
+    | '/services-3/erpnext-service'
+    | '/services-3/hosting'
+    | '/services-3/implementation'
+    | '/services-3/maintenance'
+    | '/services-3/support'
+    | '/services-3/training'
+    | '/services-3/zatca-onboarding'
+    | '/services/customization'
+    | '/services/data-migration'
+    | '/services/hosting'
+    | '/services/implementation'
+    | '/services/support'
+    | '/services/training'
+    | '/industries/'
+    | '/modules/'
+    | '/services-3/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  About4Route: typeof About4Route
+  CareersRoute: typeof CareersRoute
+  ContactRoute: typeof ContactRoute
+  Contact4Route: typeof Contact4Route
+  DemoRoute: typeof DemoRoute
+  Demo3Route: typeof Demo3Route
+  FaqRoute: typeof FaqRoute
+  FeaturesRoute: typeof FeaturesRoute
+  IndustriesRoute: typeof IndustriesRouteWithChildren
+  ModulesRoute: typeof ModulesRouteWithChildren
+  PartnershipRoute: typeof PartnershipRoute
+  PricingRoute: typeof PricingRoute
   ProRoute: typeof ProRoute
+  SaudiLocalizationRoute: typeof SaudiLocalizationRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
+  Services3Route: typeof Services3RouteWithChildren
   StarterRoute: typeof StarterRoute
+  SupportRoute: typeof SupportRoute
+  TermsRoute: typeof TermsRoute
+  TrustSecurityRoute: typeof TrustSecurityRoute
+  PosSolutionsElectricalAppliancesRoute: typeof PosSolutionsElectricalAppliancesRoute
+  PosSolutionsFloristRoute: typeof PosSolutionsFloristRoute
+  PosSolutionsFurnitureRoute: typeof PosSolutionsFurnitureRoute
+  PosSolutionsMobileShopsRoute: typeof PosSolutionsMobileShopsRoute
+  PosSolutionsOpticalRoute: typeof PosSolutionsOpticalRoute
+  PosSolutionsPharmaciesRoute: typeof PosSolutionsPharmaciesRoute
+  PosSolutionsRestaurantsCafesRoute: typeof PosSolutionsRestaurantsCafesRoute
+  PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
+  PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -68,11 +923,123 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about-4': {
+      id: '/about-4'
+      path: '/about-4'
+      fullPath: '/about-4'
+      preLoaderRoute: typeof About4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/careers': {
+      id: '/careers'
+      path: '/careers'
+      fullPath: '/careers'
+      preLoaderRoute: typeof CareersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact-4': {
+      id: '/contact-4'
+      path: '/contact-4'
+      fullPath: '/contact-4'
+      preLoaderRoute: typeof Contact4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo': {
+      id: '/demo'
+      path: '/demo'
+      fullPath: '/demo'
+      preLoaderRoute: typeof DemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/demo-3': {
+      id: '/demo-3'
+      path: '/demo-3'
+      fullPath: '/demo-3'
+      preLoaderRoute: typeof Demo3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/features': {
+      id: '/features'
+      path: '/features'
+      fullPath: '/features'
+      preLoaderRoute: typeof FeaturesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries': {
+      id: '/industries'
+      path: '/industries'
+      fullPath: '/industries'
+      preLoaderRoute: typeof IndustriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/modules': {
+      id: '/modules'
+      path: '/modules'
+      fullPath: '/modules'
+      preLoaderRoute: typeof ModulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnership': {
+      id: '/partnership'
+      path: '/partnership'
+      fullPath: '/partnership'
+      preLoaderRoute: typeof PartnershipRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pricing': {
+      id: '/pricing'
+      path: '/pricing'
+      fullPath: '/pricing'
+      preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pro': {
       id: '/pro'
       path: '/pro'
       fullPath: '/pro'
       preLoaderRoute: typeof ProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/saudi-localization': {
+      id: '/saudi-localization'
+      path: '/saudi-localization'
+      fullPath: '/saudi-localization'
+      preLoaderRoute: typeof SaudiLocalizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services-3': {
+      id: '/services-3'
+      path: '/services-3'
+      fullPath: '/services-3'
+      preLoaderRoute: typeof Services3RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/starter': {
@@ -82,13 +1049,524 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof StarterRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trust-security': {
+      id: '/trust-security'
+      path: '/trust-security'
+      fullPath: '/trust-security'
+      preLoaderRoute: typeof TrustSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/industries/': {
+      id: '/industries/'
+      path: '/'
+      fullPath: '/industries/'
+      preLoaderRoute: typeof IndustriesIndexRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/contracting-industry': {
+      id: '/industries/contracting-industry'
+      path: '/contracting-industry'
+      fullPath: '/industries/contracting-industry'
+      preLoaderRoute: typeof IndustriesContractingIndustryRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/distribution': {
+      id: '/industries/distribution'
+      path: '/distribution'
+      fullPath: '/industries/distribution'
+      preLoaderRoute: typeof IndustriesDistributionRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/education': {
+      id: '/industries/education'
+      path: '/education'
+      fullPath: '/industries/education'
+      preLoaderRoute: typeof IndustriesEducationRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/healthcare': {
+      id: '/industries/healthcare'
+      path: '/healthcare'
+      fullPath: '/industries/healthcare'
+      preLoaderRoute: typeof IndustriesHealthcareRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/manufacturing-industry': {
+      id: '/industries/manufacturing-industry'
+      path: '/manufacturing-industry'
+      fullPath: '/industries/manufacturing-industry'
+      preLoaderRoute: typeof IndustriesManufacturingIndustryRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/professional-services': {
+      id: '/industries/professional-services'
+      path: '/professional-services'
+      fullPath: '/industries/professional-services'
+      preLoaderRoute: typeof IndustriesProfessionalServicesRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/real-estate-2': {
+      id: '/industries/real-estate-2'
+      path: '/real-estate-2'
+      fullPath: '/industries/real-estate-2'
+      preLoaderRoute: typeof IndustriesRealEstate2RouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/industries/retail': {
+      id: '/industries/retail'
+      path: '/retail'
+      fullPath: '/industries/retail'
+      preLoaderRoute: typeof IndustriesRetailRouteImport
+      parentRoute: typeof IndustriesRoute
+    }
+    '/modules/': {
+      id: '/modules/'
+      path: '/'
+      fullPath: '/modules/'
+      preLoaderRoute: typeof ModulesIndexRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/accounting': {
+      id: '/modules/accounting'
+      path: '/accounting'
+      fullPath: '/modules/accounting'
+      preLoaderRoute: typeof ModulesAccountingRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/contracting': {
+      id: '/modules/contracting'
+      path: '/contracting'
+      fullPath: '/modules/contracting'
+      preLoaderRoute: typeof ModulesContractingRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/crm': {
+      id: '/modules/crm'
+      path: '/crm'
+      fullPath: '/modules/crm'
+      preLoaderRoute: typeof ModulesCrmRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/e-invoicing-zatca': {
+      id: '/modules/e-invoicing-zatca'
+      path: '/e-invoicing-zatca'
+      fullPath: '/modules/e-invoicing-zatca'
+      preLoaderRoute: typeof ModulesEInvoicingZatcaRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/fixed-assets': {
+      id: '/modules/fixed-assets'
+      path: '/fixed-assets'
+      fullPath: '/modules/fixed-assets'
+      preLoaderRoute: typeof ModulesFixedAssetsRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/hr-payroll': {
+      id: '/modules/hr-payroll'
+      path: '/hr-payroll'
+      fullPath: '/modules/hr-payroll'
+      preLoaderRoute: typeof ModulesHrPayrollRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/inventory': {
+      id: '/modules/inventory'
+      path: '/inventory'
+      fullPath: '/modules/inventory'
+      preLoaderRoute: typeof ModulesInventoryRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/manufacturing': {
+      id: '/modules/manufacturing'
+      path: '/manufacturing'
+      fullPath: '/modules/manufacturing'
+      preLoaderRoute: typeof ModulesManufacturingRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/pos': {
+      id: '/modules/pos'
+      path: '/pos'
+      fullPath: '/modules/pos'
+      preLoaderRoute: typeof ModulesPosRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/projects': {
+      id: '/modules/projects'
+      path: '/projects'
+      fullPath: '/modules/projects'
+      preLoaderRoute: typeof ModulesProjectsRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/purchasing': {
+      id: '/modules/purchasing'
+      path: '/purchasing'
+      fullPath: '/modules/purchasing'
+      preLoaderRoute: typeof ModulesPurchasingRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/reports': {
+      id: '/modules/reports'
+      path: '/reports'
+      fullPath: '/modules/reports'
+      preLoaderRoute: typeof ModulesReportsRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/modules/sales': {
+      id: '/modules/sales'
+      path: '/sales'
+      fullPath: '/modules/sales'
+      preLoaderRoute: typeof ModulesSalesRouteImport
+      parentRoute: typeof ModulesRoute
+    }
+    '/pos-solutions/electrical-appliances': {
+      id: '/pos-solutions/electrical-appliances'
+      path: '/pos-solutions/electrical-appliances'
+      fullPath: '/pos-solutions/electrical-appliances'
+      preLoaderRoute: typeof PosSolutionsElectricalAppliancesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/florist': {
+      id: '/pos-solutions/florist'
+      path: '/pos-solutions/florist'
+      fullPath: '/pos-solutions/florist'
+      preLoaderRoute: typeof PosSolutionsFloristRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/furniture': {
+      id: '/pos-solutions/furniture'
+      path: '/pos-solutions/furniture'
+      fullPath: '/pos-solutions/furniture'
+      preLoaderRoute: typeof PosSolutionsFurnitureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/mobile-shops': {
+      id: '/pos-solutions/mobile-shops'
+      path: '/pos-solutions/mobile-shops'
+      fullPath: '/pos-solutions/mobile-shops'
+      preLoaderRoute: typeof PosSolutionsMobileShopsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/optical': {
+      id: '/pos-solutions/optical'
+      path: '/pos-solutions/optical'
+      fullPath: '/pos-solutions/optical'
+      preLoaderRoute: typeof PosSolutionsOpticalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/pharmacies': {
+      id: '/pos-solutions/pharmacies'
+      path: '/pos-solutions/pharmacies'
+      fullPath: '/pos-solutions/pharmacies'
+      preLoaderRoute: typeof PosSolutionsPharmaciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/restaurants-cafes': {
+      id: '/pos-solutions/restaurants-cafes'
+      path: '/pos-solutions/restaurants-cafes'
+      fullPath: '/pos-solutions/restaurants-cafes'
+      preLoaderRoute: typeof PosSolutionsRestaurantsCafesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/salons': {
+      id: '/pos-solutions/salons'
+      path: '/pos-solutions/salons'
+      fullPath: '/pos-solutions/salons'
+      preLoaderRoute: typeof PosSolutionsSalonsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pos-solutions/sweets': {
+      id: '/pos-solutions/sweets'
+      path: '/pos-solutions/sweets'
+      fullPath: '/pos-solutions/sweets'
+      preLoaderRoute: typeof PosSolutionsSweetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services-3/': {
+      id: '/services-3/'
+      path: '/'
+      fullPath: '/services-3/'
+      preLoaderRoute: typeof Services3IndexRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/customization': {
+      id: '/services-3/customization'
+      path: '/customization'
+      fullPath: '/services-3/customization'
+      preLoaderRoute: typeof Services3CustomizationRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/data-migration': {
+      id: '/services-3/data-migration'
+      path: '/data-migration'
+      fullPath: '/services-3/data-migration'
+      preLoaderRoute: typeof Services3DataMigrationRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/discovery-workshop': {
+      id: '/services-3/discovery-workshop'
+      path: '/discovery-workshop'
+      fullPath: '/services-3/discovery-workshop'
+      preLoaderRoute: typeof Services3DiscoveryWorkshopRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/erpnext-service': {
+      id: '/services-3/erpnext-service'
+      path: '/erpnext-service'
+      fullPath: '/services-3/erpnext-service'
+      preLoaderRoute: typeof Services3ErpnextServiceRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/hosting': {
+      id: '/services-3/hosting'
+      path: '/hosting'
+      fullPath: '/services-3/hosting'
+      preLoaderRoute: typeof Services3HostingRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/implementation': {
+      id: '/services-3/implementation'
+      path: '/implementation'
+      fullPath: '/services-3/implementation'
+      preLoaderRoute: typeof Services3ImplementationRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/maintenance': {
+      id: '/services-3/maintenance'
+      path: '/maintenance'
+      fullPath: '/services-3/maintenance'
+      preLoaderRoute: typeof Services3MaintenanceRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/support': {
+      id: '/services-3/support'
+      path: '/support'
+      fullPath: '/services-3/support'
+      preLoaderRoute: typeof Services3SupportRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/training': {
+      id: '/services-3/training'
+      path: '/training'
+      fullPath: '/services-3/training'
+      preLoaderRoute: typeof Services3TrainingRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services-3/zatca-onboarding': {
+      id: '/services-3/zatca-onboarding'
+      path: '/zatca-onboarding'
+      fullPath: '/services-3/zatca-onboarding'
+      preLoaderRoute: typeof Services3ZatcaOnboardingRouteImport
+      parentRoute: typeof Services3Route
+    }
+    '/services/customization': {
+      id: '/services/customization'
+      path: '/customization'
+      fullPath: '/services/customization'
+      preLoaderRoute: typeof ServicesCustomizationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/data-migration': {
+      id: '/services/data-migration'
+      path: '/data-migration'
+      fullPath: '/services/data-migration'
+      preLoaderRoute: typeof ServicesDataMigrationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/hosting': {
+      id: '/services/hosting'
+      path: '/hosting'
+      fullPath: '/services/hosting'
+      preLoaderRoute: typeof ServicesHostingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/implementation': {
+      id: '/services/implementation'
+      path: '/implementation'
+      fullPath: '/services/implementation'
+      preLoaderRoute: typeof ServicesImplementationRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/support': {
+      id: '/services/support'
+      path: '/support'
+      fullPath: '/services/support'
+      preLoaderRoute: typeof ServicesSupportRouteImport
+      parentRoute: typeof ServicesRoute
+    }
+    '/services/training': {
+      id: '/services/training'
+      path: '/training'
+      fullPath: '/services/training'
+      preLoaderRoute: typeof ServicesTrainingRouteImport
+      parentRoute: typeof ServicesRoute
+    }
   }
 }
 
+interface IndustriesRouteChildren {
+  IndustriesContractingIndustryRoute: typeof IndustriesContractingIndustryRoute
+  IndustriesDistributionRoute: typeof IndustriesDistributionRoute
+  IndustriesEducationRoute: typeof IndustriesEducationRoute
+  IndustriesHealthcareRoute: typeof IndustriesHealthcareRoute
+  IndustriesManufacturingIndustryRoute: typeof IndustriesManufacturingIndustryRoute
+  IndustriesProfessionalServicesRoute: typeof IndustriesProfessionalServicesRoute
+  IndustriesRealEstate2Route: typeof IndustriesRealEstate2Route
+  IndustriesRetailRoute: typeof IndustriesRetailRoute
+  IndustriesIndexRoute: typeof IndustriesIndexRoute
+}
+
+const IndustriesRouteChildren: IndustriesRouteChildren = {
+  IndustriesContractingIndustryRoute: IndustriesContractingIndustryRoute,
+  IndustriesDistributionRoute: IndustriesDistributionRoute,
+  IndustriesEducationRoute: IndustriesEducationRoute,
+  IndustriesHealthcareRoute: IndustriesHealthcareRoute,
+  IndustriesManufacturingIndustryRoute: IndustriesManufacturingIndustryRoute,
+  IndustriesProfessionalServicesRoute: IndustriesProfessionalServicesRoute,
+  IndustriesRealEstate2Route: IndustriesRealEstate2Route,
+  IndustriesRetailRoute: IndustriesRetailRoute,
+  IndustriesIndexRoute: IndustriesIndexRoute,
+}
+
+const IndustriesRouteWithChildren = IndustriesRoute._addFileChildren(
+  IndustriesRouteChildren,
+)
+
+interface ModulesRouteChildren {
+  ModulesAccountingRoute: typeof ModulesAccountingRoute
+  ModulesContractingRoute: typeof ModulesContractingRoute
+  ModulesCrmRoute: typeof ModulesCrmRoute
+  ModulesEInvoicingZatcaRoute: typeof ModulesEInvoicingZatcaRoute
+  ModulesFixedAssetsRoute: typeof ModulesFixedAssetsRoute
+  ModulesHrPayrollRoute: typeof ModulesHrPayrollRoute
+  ModulesInventoryRoute: typeof ModulesInventoryRoute
+  ModulesManufacturingRoute: typeof ModulesManufacturingRoute
+  ModulesPosRoute: typeof ModulesPosRoute
+  ModulesProjectsRoute: typeof ModulesProjectsRoute
+  ModulesPurchasingRoute: typeof ModulesPurchasingRoute
+  ModulesReportsRoute: typeof ModulesReportsRoute
+  ModulesSalesRoute: typeof ModulesSalesRoute
+  ModulesIndexRoute: typeof ModulesIndexRoute
+}
+
+const ModulesRouteChildren: ModulesRouteChildren = {
+  ModulesAccountingRoute: ModulesAccountingRoute,
+  ModulesContractingRoute: ModulesContractingRoute,
+  ModulesCrmRoute: ModulesCrmRoute,
+  ModulesEInvoicingZatcaRoute: ModulesEInvoicingZatcaRoute,
+  ModulesFixedAssetsRoute: ModulesFixedAssetsRoute,
+  ModulesHrPayrollRoute: ModulesHrPayrollRoute,
+  ModulesInventoryRoute: ModulesInventoryRoute,
+  ModulesManufacturingRoute: ModulesManufacturingRoute,
+  ModulesPosRoute: ModulesPosRoute,
+  ModulesProjectsRoute: ModulesProjectsRoute,
+  ModulesPurchasingRoute: ModulesPurchasingRoute,
+  ModulesReportsRoute: ModulesReportsRoute,
+  ModulesSalesRoute: ModulesSalesRoute,
+  ModulesIndexRoute: ModulesIndexRoute,
+}
+
+const ModulesRouteWithChildren =
+  ModulesRoute._addFileChildren(ModulesRouteChildren)
+
+interface ServicesRouteChildren {
+  ServicesCustomizationRoute: typeof ServicesCustomizationRoute
+  ServicesDataMigrationRoute: typeof ServicesDataMigrationRoute
+  ServicesHostingRoute: typeof ServicesHostingRoute
+  ServicesImplementationRoute: typeof ServicesImplementationRoute
+  ServicesSupportRoute: typeof ServicesSupportRoute
+  ServicesTrainingRoute: typeof ServicesTrainingRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesCustomizationRoute: ServicesCustomizationRoute,
+  ServicesDataMigrationRoute: ServicesDataMigrationRoute,
+  ServicesHostingRoute: ServicesHostingRoute,
+  ServicesImplementationRoute: ServicesImplementationRoute,
+  ServicesSupportRoute: ServicesSupportRoute,
+  ServicesTrainingRoute: ServicesTrainingRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
+interface Services3RouteChildren {
+  Services3CustomizationRoute: typeof Services3CustomizationRoute
+  Services3DataMigrationRoute: typeof Services3DataMigrationRoute
+  Services3DiscoveryWorkshopRoute: typeof Services3DiscoveryWorkshopRoute
+  Services3ErpnextServiceRoute: typeof Services3ErpnextServiceRoute
+  Services3HostingRoute: typeof Services3HostingRoute
+  Services3ImplementationRoute: typeof Services3ImplementationRoute
+  Services3MaintenanceRoute: typeof Services3MaintenanceRoute
+  Services3SupportRoute: typeof Services3SupportRoute
+  Services3TrainingRoute: typeof Services3TrainingRoute
+  Services3ZatcaOnboardingRoute: typeof Services3ZatcaOnboardingRoute
+  Services3IndexRoute: typeof Services3IndexRoute
+}
+
+const Services3RouteChildren: Services3RouteChildren = {
+  Services3CustomizationRoute: Services3CustomizationRoute,
+  Services3DataMigrationRoute: Services3DataMigrationRoute,
+  Services3DiscoveryWorkshopRoute: Services3DiscoveryWorkshopRoute,
+  Services3ErpnextServiceRoute: Services3ErpnextServiceRoute,
+  Services3HostingRoute: Services3HostingRoute,
+  Services3ImplementationRoute: Services3ImplementationRoute,
+  Services3MaintenanceRoute: Services3MaintenanceRoute,
+  Services3SupportRoute: Services3SupportRoute,
+  Services3TrainingRoute: Services3TrainingRoute,
+  Services3ZatcaOnboardingRoute: Services3ZatcaOnboardingRoute,
+  Services3IndexRoute: Services3IndexRoute,
+}
+
+const Services3RouteWithChildren = Services3Route._addFileChildren(
+  Services3RouteChildren,
+)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  About4Route: About4Route,
+  CareersRoute: CareersRoute,
+  ContactRoute: ContactRoute,
+  Contact4Route: Contact4Route,
+  DemoRoute: DemoRoute,
+  Demo3Route: Demo3Route,
+  FaqRoute: FaqRoute,
+  FeaturesRoute: FeaturesRoute,
+  IndustriesRoute: IndustriesRouteWithChildren,
+  ModulesRoute: ModulesRouteWithChildren,
+  PartnershipRoute: PartnershipRoute,
+  PricingRoute: PricingRoute,
   ProRoute: ProRoute,
+  SaudiLocalizationRoute: SaudiLocalizationRoute,
+  ServicesRoute: ServicesRouteWithChildren,
+  Services3Route: Services3RouteWithChildren,
   StarterRoute: StarterRoute,
+  SupportRoute: SupportRoute,
+  TermsRoute: TermsRoute,
+  TrustSecurityRoute: TrustSecurityRoute,
+  PosSolutionsElectricalAppliancesRoute: PosSolutionsElectricalAppliancesRoute,
+  PosSolutionsFloristRoute: PosSolutionsFloristRoute,
+  PosSolutionsFurnitureRoute: PosSolutionsFurnitureRoute,
+  PosSolutionsMobileShopsRoute: PosSolutionsMobileShopsRoute,
+  PosSolutionsOpticalRoute: PosSolutionsOpticalRoute,
+  PosSolutionsPharmaciesRoute: PosSolutionsPharmaciesRoute,
+  PosSolutionsRestaurantsCafesRoute: PosSolutionsRestaurantsCafesRoute,
+  PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
+  PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
