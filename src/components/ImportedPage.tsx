@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PageScene, { getPageScene } from "@/components/PageScene";
 import "@/imported-pages.css";
+import { usePageMotion } from "@/hooks/use-page-motion";
 
 type Node = {
   id: string;
@@ -56,6 +57,7 @@ function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: {
 export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: string }) {
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
+  usePageMotion(mainRef, `${pageKey}-${locale}`);
   useEffect(() => {
     const main = mainRef.current;
     if (!main) return;
@@ -72,11 +74,7 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
     });
     pricing?.addEventListener("change", updatePricing);
     updatePricing();
-    const observer = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? null : new IntersectionObserver(entries => entries.forEach(entry => {
-      if (entry.isIntersecting) { entry.target.classList.add("import-visible"); observer?.unobserve(entry.target); }
-    }), { threshold: 0.06 });
-    main.querySelectorAll(".digit:not(.hero):not(.pos-hero):not(.band-crumb) > [data-import-container]").forEach(element => { element.classList.add("import-reveal"); observer?.observe(element); });
-    return () => { observer?.disconnect(); pricing?.removeEventListener("change", updatePricing); };
+    return () => { pricing?.removeEventListener("change", updatePricing); };
   }, [pageKey]);
   const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
   const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));

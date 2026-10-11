@@ -44,9 +44,9 @@ export default function Industries() {
 
       {/* hover box */}
       <div
-        className="relative min-h-[801px] bg-cover bg-center transition-[background-image] duration-300 max-lg:min-h-[700px] max-md:min-h-[550px]"
-        style={{ backgroundImage: `url(${TILES[active]?.img})` }}
+        className="relative min-h-[801px] overflow-hidden max-lg:min-h-[700px] max-md:min-h-[550px]"
       >
+        {TILES.map((tile, index) => <img key={tile.img} src={tile.img} alt="" aria-hidden="true" loading="lazy" className="industry-scene" data-active={index === active} />)}
         <div className="absolute inset-0 bg-dark/40" />
         <div className="relative mx-auto grid h-full min-h-[801px] max-w-[1240px] grid-cols-4 grid-rows-2 items-stretch gap-2 px-6 py-24 max-lg:min-h-[700px] max-md:min-h-[550px] max-md:grid-cols-2 max-md:grid-rows-4 max-md:px-4 max-md:py-10">
           {TILES.map((t, i) => {
@@ -54,6 +54,7 @@ export default function Industries() {
             return (
               <div
                 key={t.title}
+                data-sector-active={isActive}
                 onMouseEnter={() => setActive(i)}
                 onClick={() => setActive(i)}
                 className={`flex cursor-pointer flex-col items-center justify-center gap-2 rounded-[5px] p-4 text-center transition-colors max-md:p-[10px_10px_16px] ${

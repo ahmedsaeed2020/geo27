@@ -1,0 +1,36 @@
+/* Scoped to marked content: no hero or background-image motion. */
+.motion-target { opacity: 0; translate: 0 16px; transition: opacity 560ms ease, translate 560ms cubic-bezier(.22,1,.36,1); }
+.motion-target[data-motion-stage="1"] { transition-delay: 70ms; }
+.motion-target[data-motion-stage="2"] { transition-delay: 140ms; }
+.motion-target[data-motion-stage="3"] { transition-delay: 210ms; }
+.motion-target.motion-visible { opacity: 1; translate: 0 0; }
+[data-motion-card] { transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease; }
+@media (hover: hover) {
+  [data-motion-card]:hover, [data-motion-card]:focus-within { transform: translateY(-3px); border-color: var(--primary); }
+  [data-motion-card] img, [data-motion-card] svg { transition: transform 220ms ease; }
+  [data-motion-card]:hover img, [data-motion-card]:hover svg { transform: translateY(-2px); }
+}
+[data-motion-step].motion-target { translate: 0 10px; }
+[data-motion-step].motion-visible { translate: 0 0; }
+[data-motion-step].motion-visible > span:last-child svg { animation: motion-check 450ms ease both; animation-delay: 260ms; }
+@keyframes motion-check { from { opacity: 0; transform: scale(.75); } to { opacity: 1; transform: scale(1); } }
+.industry-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 480ms ease; pointer-events: none; }
+.industry-scene[data-active="true"] { opacity: 1; }
+#industries [data-sector-active="true"] > :is(p, a, span) { animation: sector-copy 240ms ease both; }
+@keyframes sector-copy { from { opacity: 0; translate: 0 4px; } to { opacity: 1; translate: 0 0; } }
+.package-page .package-tab { position: relative; }
+.package-page .package-tab::after { content: ""; position: absolute; inset-inline-start: 0; inset-block: 16px; width: 3px; background: var(--primary); transform: scaleY(0); transform-origin: center; transition: transform 250ms ease; }
+.package-page .package-tab[aria-selected="true"]::after { transform: scaleY(1); }
+.package-tab-copy { text-align: start; }
+@supports (interpolate-size: allow-keywords) {
+  :is(#faq, .import-faq, .package-faq) details { interpolate-size: allow-keywords; }
+  :is(#faq, .import-faq, .package-faq) details::details-content { block-size: 0; opacity: 0; overflow: clip; transition: block-size 280ms ease, opacity 220ms ease, content-visibility 280ms allow-discrete; }
+  :is(#faq, .import-faq, .package-faq) details[open]::details-content { block-size: auto; opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .motion-target, [data-motion-step].motion-target { opacity: 1; translate: none; transition: none; }
+  [data-motion-card], [data-motion-card] img, [data-motion-card] svg, .industry-scene, .package-page .package-tab::after { transition: none; }
+  [data-motion-card]:hover, [data-motion-card]:focus-within { transform: none; }
+  [data-motion-step].motion-visible svg, #industries [data-sector-active="true"] > :is(p, a, span) { animation: none; }
+  :is(#faq, .import-faq, .package-faq) details::details-content { transition: none; }
+}

@@ -50,6 +50,7 @@ export default function ChaosToControl() {
             {PAINS.map((p, i) => (
               <div
                 key={p}
+                data-motion-step
                 className={`flex items-center gap-[11px] rounded-[12px] border border-[rgba(6,78,59,.12)] bg-white px-4 py-3.5 text-[13.5px] text-[rgba(11,31,23,.78)] shadow-[0_8px_22px_rgba(6,78,59,.05)] ${
                   i % 2 === 0 ? "rotate-[-1.4deg]" : "rotate-[1.4deg]"
                 }`}
@@ -97,6 +98,7 @@ export default function ChaosToControl() {
             {ROWS.map((r, i) => (
               <div
                 key={r.label}
+                data-motion-step
                 className={`relative flex items-center justify-between py-[11px] text-[13.5px] text-[rgba(244,243,238,.9)] ${
                   i < ROWS.length - 1 ? "border-b border-[rgba(244,243,238,.1)]" : ""
                 }`}

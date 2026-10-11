@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { useEffect, useRef, useState, type ElementType } from "react";
+import { useRef, useState, type ElementType } from "react";
+import { usePageMotion } from "@/hooks/use-page-motion";
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import previewMeta from "@/content/package-preview-meta.json";
 import { Button } from "@/components/ui/button";
@@ -34,7 +35,8 @@ function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro
       {tabs.map((tab, index) => <Button key={tab.title} variant="outline" role="tab" id={`${node.id}-tab-${index}`} aria-controls={`${node.id}-panel`} aria-selected={active === index} onClick={() => setActive(index)} onKeyDown={(event) => {
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
           event.preventDefault();
-          const next = (active + (event.key === "ArrowLeft" ? 1 : -1) + tabs.length) % tabs.length;
+          const forward = event.key === (locale === "ar" ? "ArrowLeft" : "ArrowRight");
+          const next = (active + (forward ? 1 : -1) + tabs.length) % tabs.length;
           setActive(next);
           document.getElementById(`${node.id}-tab-${next}`)?.focus();
         }
@@ -82,23 +84,7 @@ function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; s
 export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slug: "starter" | "pro" }) {
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
-  useEffect(() => {
-    const main = mainRef.current;
-    if (!main || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("package-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    main.querySelectorAll(".digit:not(.hero):not(.band-crumb) > [data-package-container], .features > div:nth-child(2) > div, .steps > div:last-child > div").forEach(element => {
-      element.classList.add("package-reveal");
-      observer.observe(element);
-    });
-    return () => observer.disconnect();
-  }, [slug]);
+  usePageMotion(mainRef, `${slug}-${locale}`);
   return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
     {nodes.map((node, index) => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={index === 3} />)}
   </main><Footer /></div>, locale);
