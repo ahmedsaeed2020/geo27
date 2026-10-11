@@ -114,6 +114,9 @@
   --dline: oklch(0.905 0.008 155);
   --iconborder: oklch(0.885 0.045 160);
   --tabactive: oklch(0.96 0.015 160);
+  --package-preview-hover: oklch(0.75 0.13 235);
+  --package-card-shadow: 0 12px 34px color-mix(in oklab, var(--deep) 8%, transparent);
+  --package-action-shadow: 0 6px 18px color-mix(in oklab, var(--deep) 15%, transparent);
 }
 
 @layer base {

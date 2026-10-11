@@ -1,0 +1,54 @@
+{
+  "starter": [
+    {
+      "subtitle": "نماذج طباعة مختلفة",
+      "icon": "<svg aria-label=\"Accounts\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect><rect fill=\"var(--primary)\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect><rect fill=\"var(--ink)\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect><rect fill=\"var(--ink)\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect></svg>"
+    },
+    {
+      "subtitle": "سجل متكامل",
+      "icon": "<svg aria-label=\"File\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"56\" rx=\"8\" width=\"44\" x=\"28\" y=\"22\"></rect><rect fill=\"var(--primary)\" height=\"14\" rx=\"3\" width=\"14\" x=\"58\" y=\"22\"></rect><rect fill=\"var(--primary)\" height=\"7\" rx=\"3\" width=\"22\" x=\"37\" y=\"58\"></rect></svg>"
+    },
+    {
+      "subtitle": "سندات نقدية وبنكية",
+      "icon": "<svg aria-label=\"Purchases\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--primary)\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect><rect fill=\"var(--ink)\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect><rect fill=\"var(--ink)\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect></svg>"
+    },
+    {
+      "subtitle": "مطابقة كشوف البنك",
+      "icon": ""
+    },
+    {
+      "subtitle": "مطابقة كشوف البنك",
+      "icon": ""
+    },
+    {
+      "subtitle": "دخل، ميزانية، تدفق",
+      "icon": "<svg aria-label=\"reports\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect><rect fill=\"var(--ink)\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect><rect fill=\"var(--primary)\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect><rect fill=\"var(--ink)\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect></svg>"
+    }
+  ],
+  "pro": [
+    {
+      "subtitle": "نماذج طباعة مختلفة",
+      "icon": "<svg aria-label=\"Accounts\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect><rect fill=\"var(--primary)\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect><rect fill=\"var(--ink)\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect><rect fill=\"var(--ink)\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect></svg>"
+    },
+    {
+      "subtitle": "سجل متكامل",
+      "icon": "<svg aria-label=\"File\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"56\" rx=\"8\" width=\"44\" x=\"28\" y=\"22\"></rect><rect fill=\"var(--primary)\" height=\"14\" rx=\"3\" width=\"14\" x=\"58\" y=\"22\"></rect><rect fill=\"var(--primary)\" height=\"7\" rx=\"3\" width=\"22\" x=\"37\" y=\"58\"></rect></svg>"
+    },
+    {
+      "subtitle": "سندات نقدية وبنكية",
+      "icon": "<svg aria-label=\"Purchases\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--primary)\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect><rect fill=\"var(--ink)\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect><rect fill=\"var(--ink)\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect></svg>"
+    },
+    {
+      "subtitle": "مطابقة كشوف البنك",
+      "icon": "<svg aria-label=\"Inventory\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect><rect fill=\"var(--ink)\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect><rect fill=\"var(--ink)\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect><rect fill=\"var(--primary)\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect></svg>"
+    },
+    {
+      "subtitle": "مطابقة كشوف البنك",
+      "icon": "<svg aria-label=\"Assets\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"30\" rx=\"6\" width=\"36\" x=\"32\" y=\"26\"></rect><rect fill=\"var(--primary)\" height=\"14\" rx=\"4\" width=\"20\" x=\"40\" y=\"34\"></rect><rect fill=\"var(--ink)\" height=\"13\" rx=\"6.5\" width=\"60\" x=\"20\" y=\"64\"></rect></svg>"
+    },
+    {
+      "subtitle": "دخل، ميزانية، تدفق",
+      "icon": "<svg aria-label=\"reports\" height=\"100\" role=\"img\" viewBox=\"0 0 100 100\" width=\"100\" xmlns=\"http://www.w3.org/2000/svg\"><rect fill=\"var(--ink)\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect><rect fill=\"var(--ink)\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect><rect fill=\"var(--primary)\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect><rect fill=\"var(--ink)\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect></svg>"
+    }
+  ]
+}
