@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { ShieldCheck, UserLock, FileSignature, FolderOpen, Bot, Waypoints } from "lucide-react";
 
 const CARDS: { title: string; desc: string; icon: React.ReactNode | null }[] = [
@@ -13,7 +14,8 @@ void ShieldCheck;
 void Waypoints;
 
 export default function Capabilities() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section
       id="capabilities"
       className="py-20"
@@ -46,5 +48,5 @@ export default function Capabilities() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

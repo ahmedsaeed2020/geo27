@@ -1,4 +1,6 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { DigitMarkLight } from "./Header";
+import LanguageSwitch from "@/components/LanguageSwitch";
 
 const COLS: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -59,7 +61,8 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
 ];
 
 export default function Footer() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <footer className="bg-gradient-to-b from-dark to-deep text-[rgba(244,243,238,.66)]">
       <div className="mx-auto max-w-[1240px] px-6 pt-16 pb-8">
         {/* Top CTA bar */}
@@ -154,12 +157,10 @@ export default function Footer() {
             <span className="mx-2 opacity-50">·</span>
             <a href="/#" className="hover:text-mint">الشروط والأحكام</a>
             <span className="mx-2 opacity-50">·</span>
-            <a href="/#" className="hover:text-mint">العربية</a>
-            <span className="mx-1 opacity-50">/</span>
-            <a href="/#" className="hover:text-mint">EN</a>
+            <LanguageSwitch />
           </span>
         </div>
       </div>
     </footer>
-  );
+  ), locale);
 }

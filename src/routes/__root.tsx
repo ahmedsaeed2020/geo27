@@ -6,15 +6,19 @@ import {
   useRouter,
   HeadContent,
   Scripts,
+  useRouterState,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import bilingualCss from "../bilingual.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { localizeTree, useLocale } from "@/lib/i18n";
 
 function NotFoundComponent() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
@@ -32,17 +36,18 @@ function NotFoundComponent() {
         </div>
       </div>
     </div>
-  );
+  ), locale);
 }
 
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
+  const locale = useLocale();
   console.error(error);
   const router = useRouter();
   useEffect(() => {
     reportLovableError(error, { boundary: "tanstack_root_error_component" });
   }, [error]);
 
-  return (
+  return localizeTree((
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
@@ -70,7 +75,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
         </div>
       </div>
     </div>
-  );
+  ), locale);
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
@@ -95,12 +100,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "stylesheet", href: bilingualCss },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap",
       },
     ],
   }),
@@ -111,8 +117,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const english = useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) });
   return (
-    <html lang="ar" dir="rtl">
+    <html lang={english ? "en" : "ar"} dir={english ? "ltr" : "rtl"}>
       <head>
         <HeadContent />
       </head>

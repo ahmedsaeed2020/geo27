@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 const MODULES: { title: string; icon: string; bullets: string[]; href: string }[] = [
   { title: "المحاسبة", icon: "/icons/digit-mod-accounts-light-17.svg", bullets: ["قيد يومي", "سند صرف", "تسوية بنكية"], href: "/modules/accounting" },
   { title: "الفوترة الإلكترونية", icon: "/icons/digit-mod-einvoicing-light-5.svg", bullets: ["فاتورة متوافقة", "رمز QR", "ربط فاتورة"], href: "/modules/e-invoicing-zatca" },
@@ -14,7 +15,8 @@ const MODULES: { title: string; icon: string; bullets: string[]; href: string }[
 ];
 
 export default function Modules() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section id="modules" className="bg-paper py-[84px] max-md:px-4 max-md:py-[54px]">
       <div className="mx-auto w-[88%] max-w-[1600px]">
         <div className="flex flex-col items-center">
@@ -60,5 +62,5 @@ export default function Modules() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

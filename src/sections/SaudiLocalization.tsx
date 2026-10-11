@@ -1,6 +1,8 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useEffect, useRef } from "react";
 
 function EmeraldFlow() {
+  const locale = useLocale();
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -74,7 +76,7 @@ function EmeraldFlow() {
     };
   }, []);
 
-  return (
+  return localizeTree((
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden bg-dark" aria-hidden="true">
       <canvas ref={canvasRef} className="absolute inset-0 block h-full w-full" />
       <div
@@ -85,7 +87,7 @@ function EmeraldFlow() {
         }}
       />
     </div>
-  );
+  ), locale);
 }
 
 const TILES: { title: string; desc: string; icon: string }[] = [
@@ -103,7 +105,8 @@ const TILES: { title: string; desc: string; icon: string }[] = [
 const CHECKS = ["رمز QR يُولَّد تلقائياً", "احتساب وتقارير الضريبة", "تواريخ هجرية وميلادية"];
 
 export default function SaudiLocalization() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section id="saudi-localization" className="relative overflow-hidden bg-dark py-[100px] max-md:px-4 max-md:py-[54px]">
       <EmeraldFlow />
       <div className="relative z-[2] mx-auto max-w-[1240px] px-6">
@@ -192,5 +195,5 @@ export default function SaudiLocalization() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

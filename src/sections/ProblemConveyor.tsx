@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useRef, useState } from "react";
 
 const SLIDES: { pain: string; mod: string; sol: string }[] = [
@@ -32,7 +33,8 @@ const ArrowIcon = (
 );
 
 function NavButton({ dir, onClick, label }: { dir: "prev" | "next"; onClick: () => void; label: string }) {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <button
       aria-label={label}
       onClick={onClick}
@@ -42,16 +44,17 @@ function NavButton({ dir, onClick, label }: { dir: "prev" | "next"; onClick: () 
         {dir === "prev" ? <path d="M9 6l6 6-6 6" /> : <path d="M15 6l-6 6 6 6" />}
       </svg>
     </button>
-  );
+  ), locale);
 }
 
 export default function ProblemConveyor() {
+  const locale = useLocale();
   const [idx, setIdx] = useState(0);
   const touchX = useRef<number | null>(null);
   const n = SLIDES.length;
   const go = (i: number) => setIdx(((i % n) + n) % n);
 
-  return (
+  return localizeTree((
     <section id="problem" className="bg-paper2 py-[88px] max-lg:py-[72px] max-md:py-14">
       <div className="mx-auto max-w-[1240px] px-6">
         <div className="mx-auto mb-11 max-w-[680px] text-center">
@@ -165,5 +168,5 @@ export default function ProblemConveyor() {
       </div>
       <style>{`@keyframes dcvfade{from{opacity:0;transform:translateX(18px);}to{opacity:1;transform:none;}}`}</style>
     </section>
-  );
+  ), locale);
 }

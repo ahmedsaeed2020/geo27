@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useState } from "react";
 
 const QA: { q: string; a: string }[] = [
@@ -14,9 +15,10 @@ const QA: { q: string; a: string }[] = [
 ];
 
 export default function Faq() {
+  const locale = useLocale();
   const [open, setOpen] = useState(0);
 
-  return (
+  return localizeTree((
     <section id="faq" className="bg-paper px-7 py-[84px]">
       <div className="mx-auto max-w-[1240px]">
         <div className="mb-[30px] flex flex-col items-center gap-1.5 text-center">
@@ -79,5 +81,5 @@ export default function Faq() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

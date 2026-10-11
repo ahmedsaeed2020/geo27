@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useEffect, useRef, useState, type ElementType } from "react";
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import previewMeta from "@/content/package-preview-meta.json";
@@ -23,11 +24,12 @@ type PackageNode = {
 };
 
 function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro" }) {
+  const locale = useLocale();
   const [active, setActive] = useState(0);
   const tabs = node.tabs ?? [];
   const selected = tabs[active];
   const changeTab = (next: number) => setActive((next + tabs.length) % tabs.length);
-  return <div className="package-preview">
+  return localizeTree(<div className="package-preview">
     <div role="tablist" aria-label="معاينة النظام" className="package-tablist">
       {tabs.map((tab, index) => <Button key={tab.title} variant="outline" role="tab" id={`${node.id}-tab-${index}`} aria-controls={`${node.id}-panel`} aria-selected={active === index} onClick={() => setActive(index)} onKeyDown={(event) => {
         if (event.key === "ArrowLeft" || event.key === "ArrowRight") {
@@ -48,35 +50,37 @@ function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro
         <Button variant="outline" size="icon" aria-label="المعاينة التالية" title="المعاينة التالية" onClick={() => changeTab(active + 1)}><ArrowLeft /></Button>
       </div>
     </div>}
-  </div>;
+  </div>, locale);
 }
 
 function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean }) {
+  const locale = useLocale();
   const common = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") {
     const hero = node.className.split(" ").includes("hero");
-    return <div {...common} className={`${node.className}${hero || bodyBackdrop ? " scene-backed" : ""}${bodyBackdrop ? " scene-content-section" : ""}`} data-package-container>{bodyBackdrop ? <PageScene pageKey={slug} kind="body" backdrop /> : hero && <PageScene pageKey={slug} kind="background" />}{node.children?.map(child => <RenderNode key={child.id} node={child} slug={slug} />)}</div>;
+    return localizeTree(<div {...common} className={`${node.className}${hero || bodyBackdrop ? " scene-backed" : ""}${bodyBackdrop ? " scene-content-section" : ""}`} data-package-container>{bodyBackdrop ? <PageScene pageKey={slug} kind="body" backdrop /> : hero && <PageScene pageKey={slug} kind="background" />}{node.children?.map(child => <RenderNode key={child.id} node={child} slug={slug} />)}</div>, locale);
   }
   if (node.type === "heading") {
     const Tag: ElementType = node.tag === "h1" ? "h1" : node.tag === "h3" ? "h3" : "h2";
-    return <Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
+    return localizeTree(<Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
   }
-  if (node.type === "text-editor" || node.type === "html") return <div {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
+  if (node.type === "text-editor" || node.type === "html") return localizeTree(<div {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
   if (node.type === "button") {
     const href = node.href === "#final" ? (slug === "starter" ? "#starter-form" : "#pro") : node.href;
-    return <Button asChild size="lg" variant={node.text?.includes("واتساب") ? "outline" : "default"} className={`${node.className} package-action`}><a href={href} target={node.external && !href?.startsWith("#") ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a></Button>;
+    return localizeTree(<Button asChild size="lg" variant={node.text?.includes("واتساب") ? "outline" : "default"} className={`${node.className} package-action`}><a href={href} target={node.external && !href?.startsWith("#") ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a></Button>, locale);
   }
-  if (node.type === "hosted-form") return <div {...common} className={`${node.className} package-hosted-form`}>
+  if (node.type === "hosted-form") return localizeTree(<div {...common} className={`${node.className} package-hosted-form`}>
     <Button asChild size="lg"><a href={`https://digit-erp.com/${slug}/#${node.checkout ? (slug === "starter" ? "Checkout" : "pro") : "starter-form"}`} target="_blank" rel="noopener noreferrer">{node.checkout ? "متابعة الاشتراك على موقع Digit" : "فتح نموذج التجربة المجانية"}<ExternalLink /></a></Button>
-  </div>;
-  if (node.type === "bdt-interactive-tabs") return <PreviewTabs node={node} slug={slug} />;
-  if (node.type === "accordion") return <div {...common} className={`${node.className} package-faq`}>
+  </div>, locale);
+  if (node.type === "bdt-interactive-tabs") return localizeTree(<PreviewTabs node={node} slug={slug} />, locale);
+  if (node.type === "accordion") return localizeTree(<div {...common} className={`${node.className} package-faq`}>
     {node.tabs?.map(tab => <details key={tab.title}><summary>{tab.title}<ChevronDown size={18} /></summary><div dangerouslySetInnerHTML={{ __html: tab.html }} /></details>)}
-  </div>;
+  </div>, locale);
   return null;
 }
 
 export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slug: "starter" | "pro" }) {
+  const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
   useEffect(() => {
     const main = mainRef.current;
@@ -95,7 +99,7 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
     });
     return () => observer.disconnect();
   }, [slug]);
-  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
     {nodes.map((node, index) => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={index === 3} />)}
-  </main><Footer /></div>;
+  </main><Footer /></div>, locale);
 }

@@ -16,4 +16,6 @@
 - Keep every imported content page in its own file-based route and preserve legacy menu URL aliases with redirects; this prevents broken published links and isolates page metadata.
 - Keep contextual background and body images in one page-keyed scene manifest consumed by shared renderers; this gives every Arabic page distinct imagery without modifying extracted source content or hosted forms.
 - Keep the home page on its original section composition without the internal-page scene renderer; this isolates internal imagery revisions from the restored home design.
+- Keep Arabic routes unchanged and give each English content page its own matching /en file-based route; shared renderers and a static translation dictionary preserve layout, SEO, and interactions without runtime translation requests.
+- Derive language and document direction from the URL and keep internal links in that language; page-preserving switches must not alter hosted forms, payments, or media URLs.
 - Store photographic crop dimensions in the shared scene manifest and render body scenes as decorative backgrounds behind existing content sections, never inserted image-only bands; this preserves page flow and separates imagery from source content.

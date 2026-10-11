@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 const PAINS = [
   "فواتير في إكسل وواتساب",
   "كاشير غير مربوط بالحسابات",
@@ -27,7 +28,8 @@ const CheckIcon = (
 );
 
 export default function ChaosToControl() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section id="chaos-to-control" className="bg-paper">
       <div className="relative z-10 mx-auto max-w-[1600px] px-8 py-20 max-md:px-4">
         <div className="mx-auto mb-12 max-w-[680px] text-center">
@@ -110,5 +112,5 @@ export default function ChaosToControl() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

@@ -31,3 +31,8 @@
 - [x] Remove added photographic scenes from the home page, restoring its original sections.
 - [x] Correct internal backgrounds without overriding source template colors or overwhelming content.
 - [x] Verify home and representative internal pages and their navigation.
+
+# Bilingual site
+- [x] Translate all page content, navigation, shared controls, and home sections professionally into English.
+- [x] Add equivalent English routes and page-preserving language switching with Arabic default.
+- [x] Verify both languages, directions, navigation, pricing, and package interactions.
