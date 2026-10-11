@@ -38,5 +38,5 @@
 - [x] Verify both languages, directions, navigation, pricing, and package interactions.
 
 # Non-hero motion
-- [ ] Refine staggered section/card reveals, process progression, FAQs and package previews without altering heroes or backgrounds.
-- [ ] Verify both languages, interactions, reduced motion, and unchanged heroes.
+- [x] Refine staggered section/card reveals, process progression, FAQs and package previews without altering heroes or backgrounds.
+- [x] Verify both languages, interactions, reduced motion, and unchanged heroes.
