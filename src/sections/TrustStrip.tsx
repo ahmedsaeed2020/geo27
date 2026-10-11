@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 const ITEMS: { label: string; icon: React.ReactNode }[] = [
   {
     label: "الفوترة الإلكترونية",
@@ -61,7 +62,8 @@ const ITEMS: { label: string; icon: React.ReactNode }[] = [
 ];
 
 export default function TrustStrip() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section id="trust-strip" className="border-t border-[rgba(52,211,153,.15)] bg-[#053a2c] text-paper">
       <div className="mx-auto grid max-w-[1600px] grid-cols-6 gap-3.5 px-7 py-[18px] max-lg:grid-cols-3 max-md:grid-cols-2">
         {ITEMS.map((it) => (
@@ -74,5 +76,5 @@ export default function TrustStrip() {
         ))}
       </div>
     </section>
-  );
+  ), locale);
 }

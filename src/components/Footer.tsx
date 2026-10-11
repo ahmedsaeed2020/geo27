@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { DigitMarkLight } from "./Header";
 
 const COLS: { title: string; links: { label: string; href: string }[] }[] = [
@@ -59,7 +60,8 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
 ];
 
 export default function Footer() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <footer className="bg-gradient-to-b from-dark to-deep text-[rgba(244,243,238,.66)]">
       <div className="mx-auto max-w-[1240px] px-6 pt-16 pb-8">
         {/* Top CTA bar */}
@@ -161,5 +163,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  ), locale);
 }

@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useState } from "react";
 
 const TILES: { title: string; sub: string; desc: string; img: string; href: string }[] = [
@@ -12,9 +13,10 @@ const TILES: { title: string; sub: string; desc: string; img: string; href: stri
 ];
 
 export default function Industries() {
+  const locale = useLocale();
   const [active, setActive] = useState(0);
 
-  return (
+  return localizeTree((
     <section id="industries" className="bg-paper">
       {/* head */}
       <div className="relative overflow-hidden py-[84px] max-md:px-4 max-md:py-[54px]">
@@ -86,6 +88,8 @@ export default function Industries() {
           })}
         </div>
       </div>
+    </section>
+  ), locale)iv>
     </section>
   );
 }

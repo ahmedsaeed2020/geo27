@@ -1,5 +1,7 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 export default function ProductBand() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section
       id="product-band"
       className="bg-cover bg-center py-20"
@@ -25,5 +27,5 @@ export default function ProductBand() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

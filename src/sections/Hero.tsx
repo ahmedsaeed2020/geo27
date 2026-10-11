@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useEffect, useRef } from "react";
 
 const DIGIT_ICON =
@@ -34,6 +35,7 @@ const RINGS = [
 ];
 
 function OrbitBackground() {
+  const locale = useLocale();
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -167,7 +169,7 @@ function OrbitBackground() {
     };
   }, []);
 
-  return (
+  return localizeTree((
     <div ref={rootRef} id="dgt-bg" aria-hidden="true">
       <div className="dgt-bloom" />
       <div className="dgt-corona" />
@@ -186,11 +188,12 @@ function OrbitBackground() {
       </div>
       <div className="dgt-vignette" />
     </div>
-  );
+  ), locale);
 }
 
 export default function Hero() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section id="hero" className="relative min-h-[60vh] overflow-hidden bg-dark">
       <style>{`
 #dgt-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#08140F;font-family:'IBM Plex Sans Arabic',-apple-system,Segoe UI,Tahoma,sans-serif;}
@@ -246,5 +249,5 @@ export default function Hero() {
         </p>
       </div>
     </section>
-  );
+  ), locale);
 }

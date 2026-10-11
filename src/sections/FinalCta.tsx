@@ -1,5 +1,7 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 export default function FinalCta() {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <section
       id="final"
       className="px-7 py-[84px]"
@@ -34,5 +36,5 @@ export default function FinalCta() {
         </div>
       </div>
     </section>
-  );
+  ), locale);
 }

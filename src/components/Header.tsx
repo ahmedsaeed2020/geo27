@@ -1,3 +1,4 @@
+import { useLocale, localizeTree } from "@/lib/i18n";
 import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 
@@ -6,28 +7,31 @@ import { Button } from "@/components/ui/button";
 const MENU = navigation;
 
 export function DigitMark({ className = "h-8 w-8" }: { className?: string }) {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <svg viewBox="0 0 100 100" className={className} role="img" aria-label="Digit">
       <rect x="18" y="22.5" width="40" height="13" rx="6.5" fill="var(--ink)" />
       <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--primary)" />
       <rect x="18" y="43.5" width="64" height="13" rx="6.5" fill="var(--ink)" />
       <rect x="18" y="64.5" width="50" height="13" rx="6.5" fill="var(--ink)" />
     </svg>
-  );
+  ), locale);
 }
 
 export function DigitMarkLight({ className = "h-8 w-8" }: { className?: string }) {
-  return (
+  const locale = useLocale();
+  return localizeTree((
     <svg viewBox="0 0 100 100" className={className} role="img" aria-label="Digit">
       <rect x="18" y="22.5" width="40" height="13" rx="6.5" fill="var(--paper)" />
       <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--mint)" />
       <rect x="18" y="43.5" width="64" height="13" rx="6.5" fill="var(--paper)" />
       <rect x="18" y="64.5" width="50" height="13" rx="6.5" fill="var(--paper)" />
     </svg>
-  );
+  ), locale);
 }
 
 export default function Header() {
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +42,7 @@ export default function Header() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
-  return <header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-light/85 shadow-[0_8px_30px_rgba(11,31,23,0.10)] backdrop-blur-xl" : "bg-light shadow-sm"}`}>
+  return localizeTree(<header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-light/85 shadow-[0_8px_30px_rgba(11,31,23,0.10)] backdrop-blur-xl" : "bg-light shadow-sm"}`}>
     <div className={`mx-auto flex max-w-[1600px] items-center gap-8 px-6 transition-all duration-300 max-lg:px-4 ${scrolled ? "h-16 max-lg:h-14" : "h-24 max-lg:h-16"}`}>
       <Link to="/" className="flex items-center gap-2.5" dir="ltr"><DigitMark className={`transition-all duration-300 ${scrolled ? "h-7 w-7" : "h-9 w-9"}`} /><span className="font-archivo text-2xl font-extrabold text-ink max-lg:hidden">DIGIT</span></Link>
       <nav aria-label="القائمة الرئيسية" className="flex items-center gap-7 max-lg:hidden">
@@ -56,5 +60,5 @@ export default function Header() {
       {MENU.map((item,i) => <div key={item.href} className="border-b border-dline"><Button variant="ghost" className="h-auto w-full justify-between py-3.5 text-[15px] font-bold text-ink" aria-expanded={openIdx===i} onClick={() => setOpenIdx(openIdx===i?null:i)}>{item.label}<svg viewBox="0 0 24 24" className={openIdx===i?"rotate-180":""} fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M6 9l6 6 6-6" /></svg></Button>{openIdx===i && <div className="pb-3"><Link to={item.href} onClick={() => setOpen(false)} className="block py-1.5 ps-3 text-sm font-semibold text-primary">{item.label} — الكل</Link>{item.children.map((c,j) => <Link key={c.href+j} to={c.href} onClick={() => setOpen(false)} className="block py-1.5 ps-3 text-sm text-body2">{c.label}</Link>)}</div>}</div>)}
       <Button asChild size="lg" className="mt-5"><Link to="/demo" onClick={() => setOpen(false)}>جرب مجانا</Link></Button>
     </div></div>}
-  </header>;
+  </header>, locale);
 }
