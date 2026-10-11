@@ -20,3 +20,4 @@
 - Derive language and document direction from the URL and keep internal links in that language; page-preserving switches must not alter hosted forms, payments, or media URLs.
 - Store photographic crop dimensions in the shared scene manifest and render body scenes as decorative backgrounds behind existing content sections, never inserted image-only bands; this preserves page flow and separates imagery from source content.
 - Coordinate non-hero reveals through the shared page-motion hook using content targets and sibling stages; one observer avoids conflicting animations and honors reduced-motion preferences without changing layouts or scenes.
+- Wrap every content route head() with withSeo(path, head) from src/lib/seo.ts and keep public/sitemap.xml in sync with routes; one module keeps canonical, hreflang, og and JSON-LD consistent across both languages.
