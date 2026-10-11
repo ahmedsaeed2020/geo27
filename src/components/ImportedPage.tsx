@@ -1,4 +1,4 @@
-import { useEffect, useRef, type ElementType } from "react";
+import { Fragment, useEffect, useRef, type ElementType } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
@@ -27,7 +27,7 @@ type Page = { title: string; sourceUrl: string; nodes: Node[] };
 function RenderNode({ node, pageKey }: { node: Node; pageKey: string }) {
   const props = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") {
-    const hero = /(?:^|\s)(?:hero|pos-hero)(?:\s|$)/.test(node.className) && getPageScene(pageKey);
+    const hero = /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className) && getPageScene(pageKey);
     return <div {...props} className={`${node.className}${hero ? " scene-backed" : ""}`} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{node.children?.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}</div>;
   }
   if (node.type === "heading") {
@@ -36,8 +36,8 @@ function RenderNode({ node, pageKey }: { node: Node; pageKey: string }) {
     return <Tag {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
   }
   if (node.type === "html" || node.type === "text-editor") return <div {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
-  if (node.type === "image-slot") return node.src
-    ? <div {...props} className={`${node.className} import-image-slot import-image-filled`}><img className="import-scene-img" src={node.src} alt={node.alt ?? ""} loading="lazy" width={1600} height={900} /></div>
+  if (node.type === "image-slot") return getPageScene(pageKey)?.body || node.src
+    ? <div {...props} className={`${node.className} import-image-slot import-image-filled`}><img className="import-scene-img" src={getPageScene(pageKey)?.body ?? node.src} alt={node.alt ?? ""} loading="lazy" width={1536} height={864} /></div>
     : <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
   if (node.type === "feature-card") return <article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض التفاصيل ←</Link></Button></article>;
   if (node.type === "button") {
@@ -75,6 +75,7 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
     main.querySelectorAll(".digit:not(.hero):not(.pos-hero):not(.band-crumb) > [data-import-container]").forEach(element => { element.classList.add("import-reveal"); observer?.observe(element); });
     return () => { observer?.disconnect(); pricing?.removeEventListener("change", updatePricing); };
   }, [pageKey]);
-  const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero)(?:\s|$)/.test(node.className));
-  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <div key={node.id} className="contents"><RenderNode node={node} pageKey={pageKey} />{index === (heroIndex < 0 ? 0 : heroIndex + 1) && <div className="scene-body-band"><PageScene pageKey={pageKey} alt={`مشهد عمل — ${page.title}`} /></div>}</div>)}{heroIndex < 0 && <div className="scene-body-band"><PageScene pageKey={pageKey} kind="background" /></div>}</main><Footer /></div>;
+  const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
+  const bodyIndex = Math.min(heroIndex + 1, page.nodes.length - 1);
+  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{index === bodyIndex && <div className="scene-body-band"><PageScene pageKey={pageKey} alt={`مشهد عمل — ${page.title}`} /></div>}</Fragment>)}</main><Footer /></div>;
 }
