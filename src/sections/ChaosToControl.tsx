@@ -1,5 +1,3 @@
-import PageScene from "@/components/PageScene";
-
 const PAINS = [
   "فواتير في إكسل وواتساب",
   "كاشير غير مربوط بالحسابات",
@@ -30,8 +28,7 @@ const CheckIcon = (
 
 export default function ChaosToControl() {
   return (
-    <section id="chaos-to-control" className="scene-backed bg-paper">
-      <PageScene pageKey="home" kind="background" />
+    <section id="chaos-to-control" className="bg-paper">
       <div className="relative z-10 mx-auto max-w-[1600px] px-8 py-20 max-md:px-4">
         <div className="mx-auto mb-12 max-w-[680px] text-center">
           <div className="font-monospace text-[12px] font-bold tracking-[0.14em] text-primary uppercase">
