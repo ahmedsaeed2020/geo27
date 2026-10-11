@@ -1,0 +1,34 @@
+- container
+    content_width=full
+    background_background=classic
+    background_color=#F4F3EE
+    padding=84 0 84 0 px (T R B L)
+    padding_mobile=54 16 54 16 px (T R B L)
+  - container
+      flex_direction=column
+      flex_align_items=center
+    - bdt-advanced-heading
+        sub_heading=القطاعات
+        main_heading=مصمَّم لقطاع عملك
+        main_heading_color=#0B1F17
+        sub_heading_color=#0A8754
+        sub_heading_style=line
+        sub_heading_style_color=#0A8754
+        main_heading_typography_typography=custom
+        main_heading_typography_font_family=IBM Plex Sans Arabic
+        main_heading_typography_font_size=34px
+        main_heading_typography_font_size_mobile=26px
+        sub_heading_typography_typography=custom
+        sub_heading_typography_font_family=IBM Plex Sans Arabic
+        _align=center
+        split_text=Split Text
+        advanced_heading=DIGIT Industries
+        advanced_heading_x_position=50px
+    - text-editor
+        editor=<p>قطاعات بنموذج عمل، لكل قطاع موديولاته المناسبة — من التجارة والمقاولات إلى التجزئة والخدمات.</p>
+        align=center
+        text_color=#5B6B63
+        typography_typography=custom
+        typography_font_family=IBM Plex Sans Arabic
+        typography_font_size=16px
+        _element_custom_width=680px

@@ -1,0 +1,409 @@
+<!-- ===== HTML widget at [0, 1] ===== -->
+<div class="digit-concept-bg digit-bg-06_emerald_flow" data-concept="06-emerald-flow" data-concept-name="الهوية">
+  <canvas id="digit-bg-06_emerald_flow-canvas"></canvas>
+  <div class="digit-concept-scrim"></div>
+  <span id="digit-bg-06_emerald_flow-idea" class="digit-concept-hidden"></span>
+  <div id="digit-bg-06_emerald_flow-switcher" class="switcher digit-concept-hidden"></div>
+</div>
+<style>
+  .digit-concept-bg-host { position:relative !important; overflow:hidden !important; background:#08140F !important; }
+  .digit-concept-bg-host > .elementor-container,
+  .digit-concept-bg-host > .e-con-inner { position:relative; z-index:2; }
+  .digit-concept-bg-host .elementor-column,
+  .digit-concept-bg-host .elementor-widget-wrap,
+  .digit-concept-bg-host .elementor-widget { position:relative; z-index:2; }
+  .digit-concept-bg {
+    position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;
+    background:#08140F; font-family:'IBM Plex Sans Arabic', sans-serif; color:#F4F3EE;
+  }
+  .digit-concept-bg canvas { position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; }
+  .digit-concept-bg .digit-concept-scrim {
+    position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:
+      radial-gradient(ellipse 70% 58% at 58% 48%, rgba(8,20,15,.20) 0%, rgba(8,20,15,.16) 52%, rgba(8,20,15,.34) 100%),
+      linear-gradient(90deg, rgba(8,20,15,.24) 0%, rgba(8,20,15,.62) 52%, rgba(8,20,15,.30) 100%);
+  }
+  .digit-concept-hidden { display:none !important; }
+</style>
+<script>
+(function () {
+  var canvas = document.getElementById('digit-bg-06_emerald_flow-canvas');
+  var stage = canvas ? canvas.closest('.digit-concept-bg') : null;
+  var host = stage && (stage.closest('.elementor-section') || stage.closest('.e-con') || stage.closest('section') || stage.parentElement);
+  if (host) {
+    if (stage.parentElement !== host) { host.insertBefore(stage, host.firstChild); }
+    host.classList.add('digit-concept-bg-host', 'digit-bg-06_emerald_flow-host');
+    host.style.position = host.style.position || 'relative';
+    host.style.overflow = 'hidden';
+    host.style.backgroundColor = '#08140F';
+  }
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0, dpr = 1, t = 0;
+
+  /* ---- palette (Digit brand) ---- */
+  var BG = '#08140F';
+  var RGB = { deep: '6,78,59', em: '10,135,84', mint: '52,211,153', bright: '63,203,134', core: '234,255,244' };
+
+  function resize() {
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = canvas.clientWidth || (stage ? stage.clientWidth : 0) || (host ? host.clientWidth : 0) || window.innerWidth; H = canvas.clientHeight || (stage ? stage.clientHeight : 0) || (host ? host.clientHeight : 0) || window.innerHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    if (OPTIONS[current] && OPTIONS[current].init) { OPTIONS[current].init(); }
+    ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
+  }
+  window.addEventListener('resize', resize);
+
+  function reset() { ctx.globalAlpha = 1; ctx.globalCompositeOperation = 'source-over'; ctx.shadowBlur = 0; }
+  function bgFull() { reset(); ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H); }
+  function bgFade(a) { reset(); ctx.fillStyle = 'rgba(8,20,15,' + a + ')'; ctx.fillRect(0, 0, W, H); }
+
+  /* =========================================================
+     1) DATA STREAMS — scattered data unifies into one system
+     ========================================================= */
+  var streams = [];
+  function spawnStream(fromBottom) {
+    return {
+      x: Math.random() * W,
+      y: fromBottom ? (H + Math.random() * H * 0.4) : (H * 0.1 + Math.random() * H * 0.95),
+      px: 0, py: 0,
+      v: 0.6 + Math.random() * 1.3,
+      merged: false,
+      wob: Math.random() * 6.28
+    };
+  }
+  function initStreams() {
+    streams = [];
+    var n = Math.min(300, Math.floor(W * H / 8200));
+    for (var i = 0; i < n; i++) { streams.push(spawnStream(false)); }
+  }
+  function drawStreams() {
+    bgFade(0.11);
+    var cx = W / 2;
+    /* central unified glow spine */
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    var pulse = 0.5 + 0.5 * Math.sin(t * 1.2);
+    var g = ctx.createLinearGradient(cx - 90, 0, cx + 90, 0);
+    g.addColorStop(0, 'rgba(' + RGB.mint + ',0)');
+    g.addColorStop(0.5, 'rgba(' + RGB.mint + ',' + (0.10 + pulse * 0.06) + ')');
+    g.addColorStop(1, 'rgba(' + RGB.mint + ',0)');
+    ctx.fillStyle = g; ctx.fillRect(cx - 90, 0, 180, H);
+
+    for (var i = 0; i < streams.length; i++) {
+      var s = streams[i];
+      s.px = s.x; s.py = s.y;
+      var dx = cx - s.x;
+      if (!s.merged && Math.abs(dx) > 6) {
+        s.x += Math.sign(dx) * Math.min(Math.abs(dx), 2.4) * s.v * 0.85;
+        s.y -= 0.25 * s.v;
+      } else {
+        s.merged = true;
+        s.x += (cx - s.x) * 0.12 + Math.sin(s.y * 0.045 + t * 1.5 + s.wob) * 1.3;
+        s.y -= (1.7 + s.v) * 1.35;
+      }
+      if (s.y < -20) { var ns = spawnStream(true); s.x = ns.x; s.y = ns.y; s.px = s.x; s.py = s.y; s.v = ns.v; s.merged = false; s.wob = ns.wob; continue; }
+      ctx.strokeStyle = s.merged ? 'rgba(' + RGB.bright + ',0.72)' : 'rgba(' + RGB.em + ',0.5)';
+      ctx.lineWidth = s.merged ? 1.7 : 1.1;
+      ctx.beginPath(); ctx.moveTo(s.px, s.py); ctx.lineTo(s.x, s.y); ctx.stroke();
+    }
+    reset();
+  }
+
+  /* =========================================================
+     2) NETWORK — integrated modules, real-time connections
+     ========================================================= */
+  var nodes = [], edges = [], pulses = [];
+  function initNetwork() {
+    nodes = []; edges = []; pulses = [];
+    var cx = W / 2, cy = H / 2, R = Math.min(W, H) * 0.22;
+    var M = 6;
+    for (var i = 0; i < M; i++) {
+      var a = i / M * Math.PI * 2 - Math.PI / 2;
+      nodes.push({ x: cx + Math.cos(a) * R, y: cy + Math.sin(a) * R, r: 5, hub: true, vx: (Math.random() - 0.5) * 0.12, vy: (Math.random() - 0.5) * 0.12 });
+    }
+    var sat = Math.min(52, Math.floor(W * H / 24000));
+    for (var j = 0; j < sat; j++) {
+      nodes.push({ x: Math.random() * W, y: Math.random() * H, r: 1.4 + Math.random() * 1.6, hub: false, vx: (Math.random() - 0.5) * 0.22, vy: (Math.random() - 0.5) * 0.22 });
+    }
+    for (var h = 0; h < M; h++) { edges.push([h, (h + 1) % M]); }
+    for (var s = M; s < nodes.length; s++) {
+      var best = 0, bd = 1e9;
+      for (var k = 0; k < M; k++) { var d = Math.hypot(nodes[s].x - nodes[k].x, nodes[s].y - nodes[k].y); if (d < bd) { bd = d; best = k; } }
+      edges.push([s, best]);
+    }
+  }
+  function drawNetwork() {
+    bgFull();
+    for (var i = 0; i < nodes.length; i++) {
+      var n = nodes[i];
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) { n.vx *= -1; }
+      if (n.y < 0 || n.y > H) { n.vy *= -1; }
+    }
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    for (var e = 0; e < edges.length; e++) {
+      var a = nodes[edges[e][0]], b = nodes[edges[e][1]];
+      var dd = Math.hypot(a.x - b.x, a.y - b.y);
+      var al = Math.max(0, 0.5 - dd / (Math.min(W, H) * 0.9));
+      ctx.strokeStyle = 'rgba(' + RGB.em + ',' + al.toFixed(3) + ')';
+      ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+    }
+    /* pulses along edges */
+    if (Math.random() < 0.06 && pulses.length < 26) { pulses.push({ e: (Math.random() * edges.length) | 0, p: 0, sp: 0.006 + Math.random() * 0.01 }); }
+    for (var p = pulses.length - 1; p >= 0; p--) {
+      var pl = pulses[p]; pl.p += pl.sp;
+      if (pl.p >= 1) { pulses.splice(p, 1); continue; }
+      var ea = nodes[edges[pl.e][0]], eb = nodes[edges[pl.e][1]];
+      var px = ea.x + (eb.x - ea.x) * pl.p, py = ea.y + (eb.y - ea.y) * pl.p;
+      ctx.fillStyle = 'rgba(' + RGB.core + ',0.9)';
+      ctx.beginPath(); ctx.arc(px, py, 2.2, 0, 6.283); ctx.fill();
+    }
+    /* nodes */
+    for (var m = 0; m < nodes.length; m++) {
+      var nd = nodes[m];
+      var tw = nd.hub ? 1 : (0.5 + 0.5 * Math.sin(t * 2 + m));
+      ctx.fillStyle = nd.hub ? 'rgba(' + RGB.bright + ',0.95)' : 'rgba(' + RGB.mint + ',' + (0.35 + tw * 0.5).toFixed(2) + ')';
+      ctx.shadowColor = 'rgba(' + RGB.bright + ',0.9)';
+      ctx.shadowBlur = nd.hub ? 16 : 6;
+      ctx.beginPath(); ctx.arc(nd.x, nd.y, nd.r + (nd.hub ? 0.5 * Math.sin(t * 2) : 0), 0, 6.283); ctx.fill();
+      if (nd.hub) {
+        ctx.shadowBlur = 0; ctx.strokeStyle = 'rgba(' + RGB.mint + ',0.5)'; ctx.lineWidth = 1;
+        ctx.beginPath(); ctx.arc(nd.x, nd.y, nd.r + 6, 0, 6.283); ctx.stroke();
+      }
+    }
+    reset();
+  }
+
+  /* =========================================================
+     3) GROWTH — analytics bars trending upward
+     ========================================================= */
+  function drawBars() {
+    bgFull();
+    var base = H * 0.8;
+    var bw = W < 640 ? 12 : 18, gap = W < 640 ? 8 : 12;
+    var count = Math.floor(W / (bw + gap)) + 1;
+    reset();
+    for (var i = 0; i < count; i++) {
+      var x = i * (bw + gap) + gap * 0.5;
+      var frac = i / (count - 1);
+      var env = 0.16 + frac * 0.52;                       // upward trend to the right
+      var wob = 0.16 * Math.sin(t * 1.4 + i * 0.55) + 0.10 * Math.sin(t * 0.7 + i * 1.7);
+      var hh = Math.max(6, (env + wob) * H * 0.66);
+      var y = base - hh;
+      var g = ctx.createLinearGradient(0, base, 0, y);
+      g.addColorStop(0, 'rgba(' + RGB.deep + ',0.55)');
+      g.addColorStop(0.6, 'rgba(' + RGB.em + ',0.8)');
+      g.addColorStop(1, 'rgba(' + RGB.mint + ',0.95)');
+      ctx.fillStyle = g;
+      roundRectTop(x, y, bw, hh, 4);
+      /* glowing cap */
+      ctx.globalCompositeOperation = 'lighter';
+      ctx.fillStyle = 'rgba(' + RGB.bright + ',0.9)';
+      ctx.shadowColor = 'rgba(' + RGB.bright + ',1)'; ctx.shadowBlur = 14;
+      ctx.beginPath(); ctx.arc(x + bw / 2, y, bw * 0.32, 0, 6.283); ctx.fill();
+      ctx.shadowBlur = 0; ctx.globalCompositeOperation = 'source-over';
+      /* reflection */
+      var rg = ctx.createLinearGradient(0, base, 0, base + hh * 0.4);
+      rg.addColorStop(0, 'rgba(' + RGB.em + ',0.14)');
+      rg.addColorStop(1, 'rgba(' + RGB.em + ',0)');
+      ctx.fillStyle = rg;
+      ctx.fillRect(x, base, bw, hh * 0.4);
+    }
+    /* trend line across caps */
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    ctx.strokeStyle = 'rgba(' + RGB.core + ',0.28)'; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    for (var j = 0; j < count; j++) {
+      var xx = j * (bw + gap) + gap * 0.5 + bw / 2;
+      var fr = j / (count - 1);
+      var ev = 0.16 + fr * 0.52;
+      var wb = 0.16 * Math.sin(t * 1.4 + j * 0.55) + 0.10 * Math.sin(t * 0.7 + j * 1.7);
+      var yy = base - Math.max(6, (ev + wb) * H * 0.66);
+      j === 0 ? ctx.moveTo(xx, yy) : ctx.lineTo(xx, yy);
+    }
+    ctx.stroke();
+    reset();
+  }
+  function roundRectTop(x, y, w, h, r) {
+    ctx.beginPath();
+    ctx.moveTo(x, y + h);
+    ctx.lineTo(x, y + r);
+    ctx.quadraticCurveTo(x, y, x + r, y);
+    ctx.lineTo(x + w - r, y);
+    ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+    ctx.lineTo(x + w, y + h);
+    ctx.closePath(); ctx.fill();
+  }
+
+  /* =========================================================
+     4) ORBIT — one core, everything revolves around it
+     ========================================================= */
+  var orbits = [];
+  function initOrbit() {
+    var S = Math.min(W, H);
+    orbits = [
+      { rx: 0.20, ry: 0.075, rot: 0.35, sp: 0.55, sats: 2, col: RGB.mint },
+      { rx: 0.30, ry: 0.12, rot: -0.25, sp: -0.4, sats: 2, col: RGB.bright },
+      { rx: 0.40, ry: 0.15, rot: 0.15, sp: 0.3, sats: 3, col: RGB.em },
+      { rx: 0.50, ry: 0.20, rot: -0.5, sp: -0.22, sats: 2, col: RGB.mint }
+    ].map(function (o) { o.rx *= S; o.ry *= S; return o; });
+  }
+  function drawOrbit() {
+    bgFade(0.12);
+    var cx = W / 2, cy = H / 2;
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    /* core */
+    var cp = 0.6 + 0.4 * Math.sin(t * 1.5);
+    var cg = ctx.createRadialGradient(cx, cy, 0, cx, cy, 70);
+    cg.addColorStop(0, 'rgba(' + RGB.core + ',' + (0.5 * cp) + ')');
+    cg.addColorStop(0.35, 'rgba(' + RGB.bright + ',0.4)');
+    cg.addColorStop(1, 'rgba(' + RGB.bright + ',0)');
+    ctx.fillStyle = cg; ctx.beginPath(); ctx.arc(cx, cy, 70, 0, 6.283); ctx.fill();
+    ctx.fillStyle = 'rgba(' + RGB.core + ',0.95)';
+    ctx.beginPath(); ctx.arc(cx, cy, 4 + cp * 1.5, 0, 6.283); ctx.fill();
+
+    for (var i = 0; i < orbits.length; i++) {
+      var o = orbits[i], cs = Math.cos(o.rot), sn = Math.sin(o.rot);
+      /* faint dotted path */
+      ctx.strokeStyle = 'rgba(' + o.col + ',0.16)'; ctx.lineWidth = 1;
+      ctx.setLineDash([2, 6]);
+      ctx.beginPath();
+      for (var a = 0; a <= 6.4; a += 0.15) {
+        var ex = Math.cos(a) * o.rx, ey = Math.sin(a) * o.ry;
+        var X = cx + ex * cs - ey * sn, Y = cy + ex * sn + ey * cs;
+        a === 0 ? ctx.moveTo(X, Y) : ctx.lineTo(X, Y);
+      }
+      ctx.closePath(); ctx.stroke(); ctx.setLineDash([]);
+      /* satellites */
+      for (var s = 0; s < o.sats; s++) {
+        var ang = t * o.sp + s / o.sats * 6.283;
+        var ex2 = Math.cos(ang) * o.rx, ey2 = Math.sin(ang) * o.ry;
+        var X2 = cx + ex2 * cs - ey2 * sn, Y2 = cy + ex2 * sn + ey2 * cs;
+        ctx.fillStyle = 'rgba(' + o.col + ',0.95)';
+        ctx.shadowColor = 'rgba(' + RGB.bright + ',1)'; ctx.shadowBlur = 14;
+        ctx.beginPath(); ctx.arc(X2, Y2, 3.2, 0, 6.283); ctx.fill();
+      }
+    }
+    reset();
+  }
+
+  /* =========================================================
+     5) ISO GRID — organized operations, cell by cell
+     ========================================================= */
+  var iso = null;
+  function initIso() {
+    var tw = 30, th = 15;
+    var cols = Math.ceil(W / tw) + 6, rows = Math.ceil(H / th) + 10;
+    iso = { tw: tw, th: th, cols: cols, rows: rows };
+  }
+  function drawIso() {
+    bgFull();
+    var tw = iso.tw, th = iso.th;
+    var cx = W / 2, cy = H / 2 - (iso.rows * th) / 4;
+    var ci = iso.cols / 2, cj = iso.rows / 2;
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    for (var i = 0; i < iso.cols; i++) {
+      for (var j = 0; j < iso.rows; j++) {
+        var x = cx + (i - j) * tw / 2 - (iso.cols - iso.rows) * tw / 4;
+        var y = cy + (i + j) * th / 2 - (iso.cols + iso.rows) * th / 4 + H / 2;
+        if (x < -20 || x > W + 20 || y < -20 || y > H + 20) { continue; }
+        var d = Math.hypot(i - ci, j - cj);
+        var wave = Math.sin(d * 0.55 - t * 2.2);
+        var b = wave * 0.5 + 0.5;
+        if (b > 0.72) {
+          var lift = (b - 0.72) / 0.28;
+          ctx.fillStyle = 'rgba(' + RGB.bright + ',' + (0.35 + lift * 0.55).toFixed(2) + ')';
+          ctx.shadowColor = 'rgba(' + RGB.bright + ',0.9)'; ctx.shadowBlur = 8 + lift * 8;
+          ctx.beginPath(); ctx.arc(x, y, 1.3 + lift * 2.2, 0, 6.283); ctx.fill();
+        } else {
+          ctx.shadowBlur = 0;
+          ctx.fillStyle = 'rgba(' + RGB.em + ',' + (0.10 + b * 0.14).toFixed(2) + ')';
+          ctx.beginPath(); ctx.arc(x, y, 1.1, 0, 6.283); ctx.fill();
+        }
+      }
+    }
+    reset();
+    /* depth fade */
+    var g = ctx.createLinearGradient(0, 0, 0, H);
+    g.addColorStop(0, 'rgba(8,20,15,.55)');
+    g.addColorStop(0.45, 'rgba(8,20,15,0)');
+    g.addColorStop(1, 'rgba(8,20,15,.5)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+  }
+
+  /* =========================================================
+     6) EMERALD FLOW — brand mood, calm & premium
+     ========================================================= */
+  var blobs = [];
+  function initFlow() {
+    blobs = [];
+    var cols = [RGB.em, RGB.deep, RGB.mint, RGB.em, RGB.deep];
+    for (var i = 0; i < 6; i++) {
+      blobs.push({ c: cols[i % cols.length], r: 240 + Math.random() * 320, ox: Math.random() * 1000, oy: Math.random() * 1000, sp: 0.00012 + Math.random() * 0.00018, al: i < 2 ? 0.5 : 0.32 });
+    }
+  }
+  function drawFlow() {
+    bgFull();
+    reset(); ctx.globalCompositeOperation = 'lighter';
+    for (var i = 0; i < blobs.length; i++) {
+      var b = blobs[i];
+      var x = W * (0.5 + 0.42 * Math.sin(t * b.sp * 1000 + b.ox));
+      var y = H * (0.5 + 0.4 * Math.cos(t * b.sp * 820 + b.oy));
+      var g = ctx.createRadialGradient(x, y, 0, x, y, b.r);
+      g.addColorStop(0, 'rgba(' + b.c + ',' + b.al + ')');
+      g.addColorStop(1, 'rgba(' + b.c + ',0)');
+      ctx.fillStyle = g;
+      ctx.beginPath(); ctx.arc(x, y, b.r, 0, 6.283); ctx.fill();
+    }
+    reset();
+    var g2 = ctx.createLinearGradient(0, 0, 0, H);
+    g2.addColorStop(0, 'rgba(8,20,15,.5)');
+    g2.addColorStop(0.4, 'rgba(8,20,15,0)');
+    g2.addColorStop(1, 'rgba(8,20,15,.6)');
+    ctx.fillStyle = g2; ctx.fillRect(0, 0, W, H);
+  }
+
+  /* ---------- registry ---------- */
+  var OPTIONS = [
+    { id: 'streams', name: 'التدفّق', num: 'DATA STREAMS', idea: 'كل بياناتك المتفرّقة… تتوحّد في نظام واحد', init: initStreams, draw: drawStreams },
+    { id: 'network', name: 'التكامل', num: 'MODULES NET', idea: 'كل الوحدات متصلة ومتكاملة في الوقت الحقيقي', init: initNetwork, draw: drawNetwork },
+    { id: 'growth',  name: 'النمو', num: 'ANALYTICS', idea: 'أرقام شغلك بتنمو — وتحليلات واضحة قدامك', init: null, draw: drawBars },
+    { id: 'orbit',   name: 'المركز', num: 'ONE CORE', idea: 'مركز واحد تدور حوله كل عملياتك', init: initOrbit, draw: drawOrbit },
+    { id: 'iso',     name: 'التنظيم', num: 'ISO GRID', idea: 'عملياتك منظّمة… خلية خلية', init: initIso, draw: drawIso },
+    { id: 'flow',    name: 'الهوية', num: 'EMERALD FLOW', idea: 'مود ديجيت — هدوء وثقة', init: initFlow, draw: drawFlow }
+  ];
+  var current = 0;
+
+  function setOption(i) {
+    current = i;
+    if (OPTIONS[i].init) { OPTIONS[i].init(); }
+    ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
+    document.getElementById('digit-bg-06_emerald_flow-idea').textContent = OPTIONS[i].idea;
+    var btns = sw ? sw.querySelectorAll('button') : [];
+    for (var b = 0; b < btns.length; b++) { btns[b].classList.toggle('on', b === i); }
+    try { localStorage.setItem('digit-bg-06_emerald_flow-concept', String(i)); } catch (e) {}
+  }
+
+  function loop(ts) {
+    t = ts / 1000;
+    OPTIONS[current].draw();
+    requestAnimationFrame(loop);
+  }
+
+  /* build switcher */
+  var sw = document.getElementById('digit-bg-06_emerald_flow-switcher');
+  OPTIONS.forEach(function (o, i) {
+    var b = document.createElement('button');
+    b.innerHTML = '<span class="num">' + o.num + '</span><span class="nm">' + o.name + '</span>';
+    b.addEventListener('click', function () { setOption(i); });
+    sw.appendChild(b);
+  });
+
+  resize();
+  var saved = 5;
+  setOption(saved);
+  requestAnimationFrame(loop);
+})();
+</script>
+

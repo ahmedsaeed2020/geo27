@@ -1,0 +1,10 @@
+- section
+    content_width=1240px
+    padding=88 0 88 0 px (T R B L)
+    padding_tablet=72 0 72 0 px (T R B L)
+    padding_mobile=56 0 56 0 px (T R B L)
+    background_background=classic
+    background_color=#FBFBF9
+  - column
+      _column_size=100
+    - html
