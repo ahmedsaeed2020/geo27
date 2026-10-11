@@ -29,7 +29,14 @@
 .imported-page .import-feature-card h2{margin-bottom:14px;font-size:24px}
 .imported-page table{max-width:100%}
 .imported-page .import-reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}
+.imported-page .import-reveal:nth-of-type(2){transition-delay:.08s}
+.imported-page .import-reveal:nth-of-type(3){transition-delay:.16s}
+.imported-page .import-reveal:nth-of-type(4){transition-delay:.24s}
 .imported-page .import-visible{opacity:1;transform:none}
+.imported-page .import-feature-card{transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.imported-page .import-feature-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(6,78,59,.12);border-color:var(--primary)}
+.imported-page .import-faq details{transition:background .3s ease}
+.imported-page .import-faq details[open]{background:var(--tabactive)}
 @media(max-width:1024px){.imported-page .hero,.imported-page .pos-hero{min-height:480px}}
 @media(max-width:767px){
  .imported-page h1{font-size:30px!important}.imported-page h2{font-size:25px!important}
