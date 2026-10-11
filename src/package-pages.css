@@ -1,0 +1,57 @@
+.package-page { color: var(--body2); }
+.package-page h1, .package-page h2, .package-page h3 { font-weight: 700; letter-spacing: 0; }
+.package-page .hero h1 { font-size: 42px; }
+.package-page .hero h1 { color: var(--primary-foreground); }
+.package-page .hero h1 em { color: var(--mint) !important; }
+.package-page .hero h1 + div { color: var(--primary-foreground); }
+.package-page .hero > div { min-height: 580px; }
+.package-page .features > div:first-child, .package-page .fit > div:first-child, .package-page .steps > div:first-child, .package-page .faq > div:first-child { margin-bottom: 28px; }
+.package-page .features h2, .package-page .preview h2, .package-page .fit h2, .package-page .steps h2, .package-page .faq h2, .package-page .signup h2, .package-page .demoform h2 { font-size: 30px; margin-bottom: 12px; }
+.package-page .features > div:last-child { gap: 24px; }
+.package-page .features > div:last-child > div { flex: 1 1 30%; }
+.package-page .features h3 { font-size: 20px; margin: 16px 0 8px; }
+.package-page .zatca h2, .package-page .cta h2 { color: var(--primary-foreground); font-size: 30px; margin-bottom: 14px; }
+.package-page .zatca > div, .package-page .cta > div { border-radius: 18px; }
+.package-page .cta > div { align-items: center; text-align: center; gap: 18px; }
+.package-page .cta > div > div:last-child { justify-content: center; }
+.package-page .fit > div:nth-child(2) { gap: 24px; }
+.package-page .fit > div:nth-child(2) > div { flex: 1 1 45%; }
+.package-page .fit h3 { font-size: 20px; margin-bottom: 12px; }
+.package-page .steps > div:last-child { gap: 22px; }
+.package-page .steps > div:last-child > div { flex: 1 1 20%; gap: 14px; }
+.package-page [id] { scroll-margin-top: 115px; }
+.package-page .package-action { height: auto; min-height: 48px; padding: 12px 22px; font-size: 15px; font-weight: 700; border-radius: 12px; white-space: normal; text-align: center; }
+.package-preview { width: 100%; max-width: 1200px; margin: 24px auto 0; }
+.package-tablist { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+.package-tab { height: 46px; flex: 1 1 130px; font-weight: 600; }
+.package-tab[aria-selected="true"] { border-color: var(--primary); background: var(--tabactive); color: var(--primary); }
+.package-preview-panel { border: 1px solid var(--dline); border-radius: 14px; overflow: hidden; background: var(--card); }
+.package-preview-panel img { display: block; width: 100%; height: auto; max-height: 680px; object-fit: contain; }
+.package-faq { max-width: 1200px; width: 100%; margin-inline: auto; }
+.package-faq details { border-bottom: 1px solid var(--dline); }
+.package-faq summary { display: flex; justify-content: space-between; gap: 18px; padding: 20px 0; cursor: pointer; color: var(--deep); font-size: 16px; font-weight: 600; list-style: none; }
+.package-faq summary::-webkit-details-marker { display: none; }
+.package-faq details[open] summary svg { transform: rotate(180deg); }
+.package-faq details > div { padding-bottom: 22px; max-width: 850px; }
+.package-hosted-form { padding-block: 24px; }
+.package-hosted-form a { white-space: normal; height: auto; min-height: 44px; text-align: center; }
+.package-switch { max-width: 1200px; margin: auto; padding: 20px 24px; display: flex; gap: 12px; justify-content: center; }
+@media (max-width: 767px) {
+  .package-page > div { padding-inline: 20px; }
+  .package-page .hero { background-image: none; }
+  .package-page .hero h1 { font-size: 32px; }
+  .package-page .hero h1 { color: var(--ink); }
+  .package-page .hero h1 em { color: var(--primary) !important; }
+  .package-page .hero h1 + div { color: var(--body2); }
+  .package-page .hero > div { min-height: 0; }
+  .package-page .hero > div > div:empty { display: none; }
+  .package-page div[class*="pkg-"] { max-width: 100%; }
+  .package-page div[class*="pkg-"] > div[class*="pkg-"] { width: 100%; }
+  .package-page .features > div:last-child > div { flex-basis: 100%; }
+  .package-page .fit > div:nth-child(2) > div, .package-page .steps > div:last-child > div { flex-basis: 100%; }
+  .package-page .zatca > div { padding: 24px; }
+  .package-page .zatca > div > div { flex-direction: column; gap: 24px; }
+  .package-page .cta > div { padding: 32px 20px; }
+  .package-tab { flex-basis: 40%; }
+}
+@media (prefers-reduced-motion: reduce) { .package-page *, .package-page { scroll-behavior: auto; transition: none; } }

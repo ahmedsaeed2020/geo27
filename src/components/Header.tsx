@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 
 type MenuItem = { label: string; href: string; children?: MenuItem[] };
 
@@ -142,6 +143,11 @@ export default function Header() {
               {item.children && (
                 <div className="invisible absolute top-full right-0 z-50 min-w-[220px] translate-y-2 rounded-[12px] bg-white p-2 opacity-0 shadow-[0_18px_44px_rgba(6,78,59,.14)] transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
                   {item.children.map((c, i) => (
+                    c.href === "/starter/" || c.href === "/pro/" ? <Link
+                      key={c.label + i}
+                      to={c.href === "/starter/" ? "/starter" : "/pro"}
+                      className="block rounded-[8px] px-4 py-2.5 text-[14px] font-semibold text-ink transition-colors hover:bg-tabactive hover:text-primary"
+                    >{c.label}</Link> :
                     <a
                       key={c.label + i}
                       href={c.href}
@@ -212,6 +218,7 @@ export default function Header() {
                       {item.label} — الكل
                     </a>
                     {item.children.map((c, j) => (
+                      c.href === "/starter/" || c.href === "/pro/" ? <Link key={c.label + j} to={c.href === "/starter/" ? "/starter" : "/pro"} onClick={() => setOpen(false)} className="block py-1.5 ps-3 text-[13.5px] text-body2">{c.label}</Link> :
                       <a key={c.label + j} href={c.href} className="block py-1.5 ps-3 text-[13.5px] text-body2">
                         {c.label}
                       </a>
