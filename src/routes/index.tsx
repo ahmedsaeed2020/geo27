@@ -12,6 +12,7 @@ import Industries from "@/sections/Industries";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
+import PageScene from "@/components/PageScene";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -43,6 +44,7 @@ function Index() {
         <Hero />
         <TrustStrip />
         <ChaosToControl />
+        <div className="scene-body-band"><PageScene pageKey="home" alt="فريق سعودي ينسق عمليات الشركة باستخدام Digit" /></div>
         <ProductBand />
         <Modules />
         <Capabilities />

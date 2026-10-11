@@ -1,9 +1,10 @@
-import { useEffect, useRef, type ElementType } from "react";
+import { Fragment, useEffect, useRef, type ElementType } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
+import PageScene, { getPageScene } from "@/components/PageScene";
 import "@/imported-pages.css";
 
 type Node = {
@@ -17,21 +18,26 @@ type Node = {
   text?: string;
   href?: string;
   external?: boolean;
+  src?: string;
+  alt?: string;
   tabs?: { title: string; html: string }[];
 };
 type Page = { title: string; sourceUrl: string; nodes: Node[] };
 
-function RenderNode({ node }: { node: Node }) {
+function RenderNode({ node, pageKey, backdrop = false }: { node: Node; pageKey: string; backdrop?: boolean }) {
   const props = { className: node.className, id: node.anchor || undefined };
-  if (node.type === "container") return <div {...props} data-import-container>{node.children?.map(child => <RenderNode node={child} key={child.id} />)}</div>;
+  if (node.type === "container") {
+    const hero = (backdrop || /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className)) && getPageScene(pageKey);
+    return <div {...props} className={`${node.className}${hero ? " scene-backed" : ""}`} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{node.children?.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}</div>;
+  }
   if (node.type === "heading") {
     const tags: Record<string, ElementType> = { h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
     const Tag = tags[node.tag ?? "h2"] ?? "h2";
     return <Tag {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
   }
   if (node.type === "html" || node.type === "text-editor") return <div {...props} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />;
-  if (node.type === "image-slot") return node.src
-    ? <div {...props} className={`${node.className} import-image-slot import-image-filled`}><img className="import-scene-img" src={node.src} alt={node.alt ?? ""} loading="lazy" width={1600} height={900} /></div>
+  if (node.type === "image-slot") return getPageScene(pageKey)?.body || node.src
+    ? <div {...props} className={`${node.className} import-image-slot import-image-filled`}><img className="import-scene-img" src={getPageScene(pageKey)?.body ?? node.src} alt={node.alt ?? ""} loading="lazy" width={1536} height={864} /></div>
     : <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
   if (node.type === "feature-card") return <article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض التفاصيل ←</Link></Button></article>;
   if (node.type === "button") {
@@ -69,5 +75,7 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
     main.querySelectorAll(".digit:not(.hero):not(.pos-hero):not(.band-crumb) > [data-import-container]").forEach(element => { element.classList.add("import-reveal"); observer?.observe(element); });
     return () => { observer?.disconnect(); pricing?.removeEventListener("change", updatePricing); };
   }, [pageKey]);
-  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map(node => <RenderNode key={node.id} node={node} />)}</main><Footer /></div>;
+  const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
+  const bodyIndex = Math.min(heroIndex + 1, page.nodes.length - 1);
+  return <div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} />{index === bodyIndex && <div className="scene-body-band"><PageScene pageKey={pageKey} alt={`مشهد عمل — ${page.title}`} /></div>}</Fragment>)}</main><Footer /></div>;
 }

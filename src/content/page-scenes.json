@@ -1,0 +1,234 @@
+{
+  "modules-crm": {
+    "background": "/__l5e/assets-v1/b4785e60-e496-4b13-9e48-949da8feba34/modules-crm-background.jpg",
+    "body": "/__l5e/assets-v1/346194c2-c999-427e-bfdc-f4afddde95fa/modules-crm-body.jpg"
+  },
+  "modules-hr-payroll": {
+    "background": "/__l5e/assets-v1/a2a1cfb4-7e1a-4cb2-8363-d0e742be8e48/modules-hr-payroll-background.jpg",
+    "body": "/__l5e/assets-v1/75299b14-4639-420c-a2e3-3b7c2b864571/modules-hr-payroll-body.jpg"
+  },
+  "modules-inventory": {
+    "background": "/__l5e/assets-v1/0c699104-a41b-43ec-8f61-5842a98e613a/modules-inventory-background.jpg",
+    "body": "/__l5e/assets-v1/9ff0c399-4604-4673-abac-b57c1f75fe08/modules-inventory-body.jpg"
+  },
+  "home": {
+    "background": "/__l5e/assets-v1/feb8fccd-4306-4f81-b71b-c515400defcb/home-background.jpg",
+    "body": "/__l5e/assets-v1/3fab66cb-4c20-4015-b591-e3c16f401e40/home-body.jpg"
+  },
+  "modules-accounting": {
+    "background": "/__l5e/assets-v1/c8c4eecb-a5a1-44a8-bd4e-6de233fb5324/modules-accounting-background.jpg",
+    "body": "/__l5e/assets-v1/7ae86c12-a797-430d-8e70-6e38fca91b56/modules-accounting-body.jpg"
+  },
+  "modules-e-invoicing-zatca": {
+    "background": "/__l5e/assets-v1/fff93bbb-b56f-485f-b355-298afb49c28b/modules-e-invoicing-zatca-background.jpg",
+    "body": "/__l5e/assets-v1/d27e1634-b121-4e4a-aaff-79318161fc53/modules-e-invoicing-zatca-body.jpg"
+  },
+  "modules-purchasing": {
+    "background": "/__l5e/assets-v1/992bfee6-9fd9-435d-b302-aa8f8db93863/modules-purchasing-background.jpg",
+    "body": "/__l5e/assets-v1/07b29797-9500-4000-9e63-56875101baea/modules-purchasing-body.jpg"
+  },
+  "modules-sales": {
+    "background": "/__l5e/assets-v1/c14abf24-7378-4a2f-90a6-15fa739f9ea2/modules-sales-background.jpg",
+    "body": "/__l5e/assets-v1/dc3c5de4-bbf7-4585-a54c-1c5a1381adb4/modules-sales-body.jpg"
+  },
+  "modules-reports": {
+    "background": "/__l5e/assets-v1/6ae3a216-5f1e-4f39-9d14-b228e1e3f8cc/modules-reports-background.jpg",
+    "body": "/__l5e/assets-v1/f9a26625-ce35-45c3-9b34-6d1f8528b0b3/modules-reports-body.jpg"
+  },
+  "modules-manufacturing": {
+    "background": "/__l5e/assets-v1/1af1e618-66ac-4a5c-a344-d8951323a3fc/modules-manufacturing-background.jpg",
+    "body": "/__l5e/assets-v1/a80d9d1f-17fb-4947-b5d9-474bda9516ed/modules-manufacturing-body.jpg"
+  },
+  "modules-projects": {
+    "background": "/__l5e/assets-v1/38be4f6a-3a95-42a2-966c-107ffac4a370/modules-projects-background.jpg",
+    "body": "/__l5e/assets-v1/875a0a60-c315-4b46-a3bf-fb1d55d5df0a/modules-projects-body.jpg"
+  },
+  "modules-fixed-assets": {
+    "background": "/__l5e/assets-v1/e824207f-2703-4d8c-a8d7-9589e0cdf039/modules-fixed-assets-background.jpg",
+    "body": "/__l5e/assets-v1/57156ac5-2745-47a2-8e2d-4b1cd03dd50f/modules-fixed-assets-body.jpg"
+  },
+  "modules-contracting": {
+    "background": "/__l5e/assets-v1/3e992b29-ae98-46e4-a009-40269bb65f7e/modules-contracting-background.jpg",
+    "body": "/__l5e/assets-v1/5b0adfcf-87d4-44ec-bf51-745d24d01820/modules-contracting-body.jpg"
+  },
+  "industries-distribution": {
+    "background": "/__l5e/assets-v1/47069e9a-89d1-4c8f-9d95-e431e75f8d35/industries-distribution-background.jpg",
+    "body": "/__l5e/assets-v1/346834fb-6459-4c96-a0c3-f30b08a74688/industries-distribution-body.jpg"
+  },
+  "industries-real-estate-2": {
+    "background": "/__l5e/assets-v1/66f19729-aa94-452f-a229-7be1c4dddeca/industries-real-estate-2-background.jpg",
+    "body": "/__l5e/assets-v1/d9b0bb02-3639-4b4d-89cf-8413a7b18551/industries-real-estate-2-body.jpg"
+  },
+  "industries-education": {
+    "background": "/__l5e/assets-v1/0439eaab-6100-40dc-9df4-f219991a330b/industries-education-background.jpg",
+    "body": "/__l5e/assets-v1/8e574500-9cee-4869-a4e2-d29a06e53665/industries-education-body.jpg"
+  },
+  "industries-healthcare": {
+    "background": "/__l5e/assets-v1/cb0249b8-5f45-4d1b-9683-1aa72ce15f08/industries-healthcare-background.jpg",
+    "body": "/__l5e/assets-v1/e2259703-2664-43be-8550-49acea55ab37/industries-healthcare-body.jpg"
+  },
+  "modules-pos": {
+    "background": "/__l5e/assets-v1/331cafd9-d9b7-49bc-8430-30df0c709af7/modules-pos-background.jpg",
+    "body": "/__l5e/assets-v1/40c80fcb-0145-4a24-b098-2b9c80ab9192/modules-pos-body.jpg"
+  },
+  "industries-manufacturing-industry": {
+    "background": "/__l5e/assets-v1/edf05095-5a27-4c28-9600-149e06e04a59/industries-manufacturing-industry-background.jpg",
+    "body": "/__l5e/assets-v1/5e51a5fa-8a9b-42a4-a090-9e5b8714a3d3/industries-manufacturing-industry-body.jpg"
+  },
+  "industries-professional-services": {
+    "background": "/__l5e/assets-v1/02eeb93d-8c73-4024-adb4-d4748aa9d5d2/industries-professional-services-background.jpg",
+    "body": "/__l5e/assets-v1/c56d72d4-c802-43fb-b895-8bba1c7c5bad/industries-professional-services-body.jpg"
+  },
+  "industries-contracting-industry": {
+    "background": "/__l5e/assets-v1/16128be0-8c3d-455a-81ac-fa6e1c49462b/industries-contracting-industry-background.jpg",
+    "body": "/__l5e/assets-v1/312a845f-a052-423f-84a2-e063a48da053/industries-contracting-industry-body.jpg"
+  },
+  "industries-retail": {
+    "background": "/__l5e/assets-v1/5a5471a3-721d-4e52-8464-f43cb0626e42/industries-retail-background.jpg",
+    "body": "/__l5e/assets-v1/c338d8ca-a019-4456-9c2a-33b091756f11/industries-retail-body.jpg"
+  },
+  "pos-solutions-furniture": {
+    "background": "/__l5e/assets-v1/5ff67d28-d941-4436-adfb-9028e0c1024c/pos-solutions-furniture-background.jpg",
+    "body": "/__l5e/assets-v1/b0657bd6-b24d-4338-92df-b49091f5dfaf/pos-solutions-furniture-body.jpg"
+  },
+  "pos-solutions-mobile-shops": {
+    "background": "/__l5e/assets-v1/90aad3f2-f929-4313-b531-db2aa30dc2a0/pos-solutions-mobile-shops-background.jpg",
+    "body": "/__l5e/assets-v1/1d2c85b4-bd4f-45f3-b39c-55187cd914cd/pos-solutions-mobile-shops-body.jpg"
+  },
+  "pos-solutions-salons": {
+    "background": "/__l5e/assets-v1/72b8d2e6-c0ca-421f-9c8e-a67b77f9b3af/pos-solutions-salons-background.jpg",
+    "body": "/__l5e/assets-v1/c4acbdc8-51b0-4f50-a78e-e6830c20a30d/pos-solutions-salons-body.jpg"
+  },
+  "pos-solutions-electrical-appliances": {
+    "background": "/__l5e/assets-v1/d845c499-e84e-4ac5-b9c1-7d1e8d05dc49/pos-solutions-electrical-appliances-background.jpg",
+    "body": "/__l5e/assets-v1/c178167b-3f94-4792-96fb-e24368f01439/pos-solutions-electrical-appliances-body.jpg"
+  },
+  "pos-solutions-florist": {
+    "background": "/__l5e/assets-v1/8f97e8f1-3993-46c6-ae60-587f8b0cd8d2/pos-solutions-florist-background.jpg",
+    "body": "/__l5e/assets-v1/c9588b90-509b-4786-be04-e9dd2318e137/pos-solutions-florist-body.jpg"
+  },
+  "pos-solutions-optical": {
+    "background": "/__l5e/assets-v1/52164a85-d231-4709-92b7-55921c45c68c/pos-solutions-optical-background.jpg",
+    "body": "/__l5e/assets-v1/32206ba0-9885-4f2c-8f86-9104ed5ce823/pos-solutions-optical-body.jpg"
+  },
+  "pos-solutions-pharmacies": {
+    "background": "/__l5e/assets-v1/2dae59c3-7c0e-485a-96fc-b272680f7e90/pos-solutions-pharmacies-background.jpg",
+    "body": "/__l5e/assets-v1/9aaebda4-fabc-44bb-bf00-3455eea95bc6/pos-solutions-pharmacies-body.jpg"
+  },
+  "pos-solutions-restaurants-cafes": {
+    "background": "/__l5e/assets-v1/93069a11-ff71-4adb-91b6-12bb3430e2bb/pos-solutions-restaurants-cafes-background.jpg",
+    "body": "/__l5e/assets-v1/78704c0b-7832-4924-b82e-6f088bf3145a/pos-solutions-restaurants-cafes-body.jpg"
+  },
+  "pos-solutions-sweets": {
+    "background": "/__l5e/assets-v1/05b42c2d-0ce7-4e64-8a8b-37d3531019ab/pos-solutions-sweets-background.jpg",
+    "body": "/__l5e/assets-v1/90032772-57c9-409c-981a-d319ce576315/pos-solutions-sweets-body.jpg"
+  },
+  "services-3-customization": {
+    "background": "/__l5e/assets-v1/f2698e0f-b0d9-474a-95a9-89e4daa658f3/services-3-customization-background.jpg",
+    "body": "/__l5e/assets-v1/c5219b51-0fb9-4d99-9178-d13256074bca/services-3-customization-body.jpg"
+  },
+  "services-3-zatca-onboarding": {
+    "background": "/__l5e/assets-v1/f9c06885-783b-4462-b710-4ce638315d15/services-3-zatca-onboarding-background.jpg",
+    "body": "/__l5e/assets-v1/1bc75d72-95b3-464a-8b40-254bf567b5fd/services-3-zatca-onboarding-body.jpg"
+  },
+  "services-3-implementation": {
+    "background": "/__l5e/assets-v1/5ee2adb2-e02a-425f-ae71-fe8ffabae94f/services-3-implementation-background.jpg",
+    "body": "/__l5e/assets-v1/a4b7d875-32fb-4b96-8ef5-56201b662e83/services-3-implementation-body.jpg"
+  },
+  "services-3-data-migration": {
+    "background": "/__l5e/assets-v1/63243187-040a-4abd-b0b6-12000c4935eb/services-3-data-migration-background.jpg",
+    "body": "/__l5e/assets-v1/48690c47-5640-404a-ab6d-46f5b293a39f/services-3-data-migration-body.jpg"
+  },
+  "services-3-discovery-workshop": {
+    "background": "/__l5e/assets-v1/d5924e2b-689c-4b7c-b81c-a0d5817e88a8/services-3-discovery-workshop-background.jpg",
+    "body": "/__l5e/assets-v1/dec35ada-9153-4ee5-b697-e36a851eb719/services-3-discovery-workshop-body.jpg"
+  },
+  "services-3-erpnext-service": {
+    "background": "/__l5e/assets-v1/0c35f687-c6fb-447c-b443-7106b67887c6/services-3-erpnext-service-background.jpg",
+    "body": "/__l5e/assets-v1/6beee3e0-4808-4e37-98ba-7bc5b998064e/services-3-erpnext-service-body.jpg"
+  },
+  "services-3-hosting": {
+    "background": "/__l5e/assets-v1/5b007b4f-b718-4361-995d-da9ffb76d6df/services-3-hosting-background.jpg",
+    "body": "/__l5e/assets-v1/1ba5bb23-8b7b-4238-87f2-e1a1cded6842/services-3-hosting-body.jpg"
+  },
+  "services-3-maintenance": {
+    "background": "/__l5e/assets-v1/2c99a3ed-fe27-4181-86c9-f83826171d75/services-3-maintenance-background.jpg",
+    "body": "/__l5e/assets-v1/5a02b317-599e-43df-b615-f75394d7fc54/services-3-maintenance-body.jpg"
+  },
+  "services-3-support": {
+    "background": "/__l5e/assets-v1/95eebd7f-44cb-4d98-98ff-060911938990/services-3-support-background.jpg",
+    "body": "/__l5e/assets-v1/c01b4208-15d3-4d44-9242-3cfdccb1a2bd/services-3-support-body.jpg"
+  },
+  "services-3-training": {
+    "background": "/__l5e/assets-v1/46e5c02b-66f9-4c9c-a1fa-ef3650d9040b/services-3-training-background.jpg",
+    "body": "/__l5e/assets-v1/4d2696fb-38b0-4774-a6fa-1e3de429852e/services-3-training-body.jpg"
+  },
+  "features": {
+    "background": "/__l5e/assets-v1/ee9df45c-efb8-4e5f-847d-ce19e0198737/features-background.jpg",
+    "body": "/__l5e/assets-v1/30483e8f-2b29-41a8-a659-931523104881/features-body.jpg"
+  },
+  "about-4": {
+    "background": "/__l5e/assets-v1/e03bfbb8-2392-4513-8def-7ea6c5703ba5/about-4-background.jpg",
+    "body": "/__l5e/assets-v1/0ef0a4df-49e0-4e08-bdd3-d0711f873044/about-4-body.jpg"
+  },
+  "careers": {
+    "background": "/__l5e/assets-v1/fcd9d80f-a110-4d1e-bf4a-5f8b6c0e033d/careers-background.jpg",
+    "body": "/__l5e/assets-v1/72db226f-fce4-4910-be63-20e3e4b5c9f2/careers-body.jpg"
+  },
+  "demo": {
+    "background": "/__l5e/assets-v1/31d44cc3-ef69-4773-b067-e8c619bff8ba/demo-background.jpg",
+    "body": "/__l5e/assets-v1/b1f05c86-1d30-47b3-b60a-269bd83f4309/demo-body.jpg"
+  },
+  "modules": {
+    "background": "/__l5e/assets-v1/11e670c3-f9d6-473b-bc25-eb70f2d3b9fe/modules-background.jpg",
+    "body": "/__l5e/assets-v1/76cc2a53-d797-4048-8392-e8bb02c9cd68/modules-body.jpg"
+  },
+  "contact-4": {
+    "background": "/__l5e/assets-v1/dac6c66a-263b-4b2e-8420-b45674e34047/contact-4-background.jpg",
+    "body": "/__l5e/assets-v1/48a2003b-877a-45de-a9c7-b35bbacbcebd/contact-4-body.jpg"
+  },
+  "industries": {
+    "background": "/__l5e/assets-v1/e96410ea-18d3-4e2b-b08a-a9cfa62e0753/industries-background.jpg",
+    "body": "/__l5e/assets-v1/cc6e2bf4-deb0-4001-823d-62bda8fa598e/industries-body.jpg"
+  },
+  "faq": {
+    "background": "/__l5e/assets-v1/71ec21c7-ad07-402e-bd79-d2ebf54c98b5/faq-background.jpg",
+    "body": "/__l5e/assets-v1/7a7aa70e-d023-4885-b963-1065a4307a08/faq-body.jpg"
+  },
+  "pricing": {
+    "background": "/__l5e/assets-v1/097184a5-8b17-4393-bbe1-7439d78f48b4/pricing-background.jpg",
+    "body": "/__l5e/assets-v1/591dfcb2-a583-409e-b776-f1fbef51cbeb/pricing-body.jpg"
+  },
+  "saudi-localization": {
+    "background": "/__l5e/assets-v1/0b3f82b5-0636-494f-81bb-ff1c298a02a9/saudi-localization-background.jpg",
+    "body": "/__l5e/assets-v1/19d01e25-be50-4438-86a3-1640fad1c5ee/saudi-localization-body.jpg"
+  },
+  "demo-3": {
+    "background": "/__l5e/assets-v1/b7a6ca30-8c38-419a-936e-2f08ac3f5472/demo-3-background.jpg",
+    "body": "/__l5e/assets-v1/35042483-302b-4773-8336-75e5eb5c2338/demo-3-body.jpg"
+  },
+  "services-3": {
+    "background": "/__l5e/assets-v1/f99f0f3f-539b-4099-8ddf-a224b4c72fe9/services-3-background.jpg",
+    "body": "/__l5e/assets-v1/7b279807-5d5a-4db4-a8a1-25129be81800/services-3-body.jpg"
+  },
+  "partnership": {
+    "background": "/__l5e/assets-v1/39043e1b-78d1-45fa-9304-fa6f8c12d9b9/partnership-background.jpg",
+    "body": "/__l5e/assets-v1/00398c4f-4516-4df4-9755-c4bcb75580c4/partnership-body.jpg"
+  },
+  "starter": {
+    "background": "/__l5e/assets-v1/82b8ae80-9912-4b79-ad52-c0e6fbb7293c/starter-background.jpg",
+    "body": "/__l5e/assets-v1/97f402dd-a47e-4d0a-a3a6-c19ce60bb159/starter-body.jpg"
+  },
+  "terms": {
+    "background": "/__l5e/assets-v1/328fab25-28f7-47c8-b6b8-271f528e1fbc/terms-background.jpg",
+    "body": "/__l5e/assets-v1/28bb8a6f-5a88-4409-bc3a-2fa52d8129d6/terms-body.jpg"
+  },
+  "pro": {
+    "background": "/__l5e/assets-v1/3866e5da-d656-439f-832b-3b8b23255b04/pro-background.jpg",
+    "body": "/__l5e/assets-v1/0fd70429-34c7-4dc4-ba46-ad25314c1a74/pro-body.jpg"
+  },
+  "trust-security": {
+    "background": "/__l5e/assets-v1/555ad65f-16cb-4700-be23-b724405d6730/trust-security-background.jpg",
+    "body": "/__l5e/assets-v1/88028e41-0ed0-40af-a881-43d64a794a44/trust-security-body.jpg"
+  }
+}
