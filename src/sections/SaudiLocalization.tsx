@@ -17,7 +17,7 @@ function EmeraldFlow() {
     const cols = [RGB.em, RGB.deep, RGB.mint, RGB.em, RGB.deep];
     for (let i = 0; i < 6; i++) {
       blobs.push({
-        c: cols[i % cols.length],
+        c: cols[i % cols.length]!,
         r: 240 + Math.random() * 320,
         ox: Math.random() * 1000,
         oy: Math.random() * 1000,

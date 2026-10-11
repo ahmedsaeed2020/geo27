@@ -84,10 +84,10 @@ export default function ProblemConveyor() {
           {/* stage */}
           <div
             className="relative"
-            onTouchStart={(e) => { touchX.current = e.touches[0].clientX; }}
+            onTouchStart={(e) => { touchX.current = e.touches[0]?.clientX ?? null; }}
             onTouchEnd={(e) => {
               if (touchX.current === null) return;
-              const dx = e.changedTouches[0].clientX - touchX.current;
+              const dx = (e.changedTouches[0]?.clientX ?? touchX.current) - touchX.current;
               if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
               touchX.current = null;
             }}

@@ -43,7 +43,7 @@ export default function Industries() {
       {/* hover box */}
       <div
         className="relative min-h-[801px] bg-cover bg-center transition-[background-image] duration-300 max-lg:min-h-[700px] max-md:min-h-[550px]"
-        style={{ backgroundImage: `url(${TILES[active].img})` }}
+        style={{ backgroundImage: `url(${TILES[active]?.img})` }}
       >
         <div className="absolute inset-0 bg-dark/40" />
         <div className="relative mx-auto grid h-full min-h-[801px] max-w-[1240px] grid-cols-4 grid-rows-2 items-stretch gap-2 px-6 py-24 max-lg:min-h-[700px] max-md:min-h-[550px] max-md:grid-cols-2 max-md:grid-rows-4 max-md:px-4 max-md:py-10">
