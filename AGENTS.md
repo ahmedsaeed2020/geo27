@@ -21,3 +21,5 @@
 - Store photographic crop dimensions in the shared scene manifest and render body scenes as decorative backgrounds behind existing content sections, never inserted image-only bands; this preserves page flow and separates imagery from source content.
 - Coordinate non-hero reveals through the shared page-motion hook using content targets and sibling stages; one observer avoids conflicting animations and honors reduced-motion preferences without changing layouts or scenes.
 - Wrap every content route head() with withSeo(path, head) from src/lib/seo.ts and keep public/sitemap.xml in sync with routes; one module keeps canonical, hreflang, og and JSON-LD consistent across both languages.
+- Visitor chat uses /api/chat (AI SDK Responses, openai/gpt-6-astra) with threads/messages in public.chat_threads/chat_messages keyed by a localStorage visitor UUID; anon RLS is open by design (unguessable UUIDs) — do not add auth to the widget.
+- Admin lives at /admin under the _authenticated gate with role checks via public.has_role('admin'); admin accounts are created in the Users view then granted the role in user_roles.

@@ -42,9 +42,10 @@
 - [x] Verify both languages, interactions, reduced motion, and unchanged heroes.
 
 # Site growth phase (user request 2026-10-17)
-- [ ] Research comparable Saudi ERP/accounting/POS websites and derive concrete improvements.
-- [ ] AI chat agent that answers visitors from site content (Arabic/English). Requires Lovable Cloud.
-- [ ] Internal contact/demo forms replacing hosted WordPress forms. Requires Lovable Cloud.
-- [ ] Catchier brand-driven backgrounds using logo identity motifs.
-- [ ] Admin login and customization panel. Requires Lovable Cloud; scope to confirm.
-- [ ] Deepen SEO for Saudi market: ERP, accounting, HR, contracting, POS keywords (Arabic/English).
+- [x] Research comparable Saudi ERP/accounting/POS websites (report: /mnt/documents/marketing/research.md).
+- [x] AI chat agent answering visitors from site content, Arabic/English, floating on all pages, multi-thread, DB-persisted.
+- [x] Internal contact/demo forms added alongside the hosted ones (demo, demo-3, contact-4).
+- [x] Brand-driven background motif (Digit-primary mesh + dot grid) behind internal page sections.
+- [x] Admin login (/auth: email, Google, Lovable) and panel (/admin: form requests, chat transcripts, site settings).
+- [x] SEO deepening: llms.txt with Saudi-market keywords; research actions (Mazaya, ZATCA list, comparison outreach) are owner-side.
+- [ ] Grant the owner account admin role after they create it (More → Users → Add user), then verify /admin end-to-end.
