@@ -32,6 +32,7 @@ import { Route as StarterRouteImport } from './routes/starter'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TrustSecurityRouteImport } from './routes/trust-security'
+import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
 import { Route as EnAbout4RouteImport } from './routes/en.about-4'
@@ -266,6 +267,11 @@ const TermsRoute = TermsRouteImport.update({
 const TrustSecurityRoute = TrustSecurityRouteImport.update({
   id: '/trust-security',
   path: '/trust-security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiChatRoute = ApiChatRouteImport.update({
+  id: '/api/chat',
+  path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnIndexRoute = EnIndexRouteImport.update({
@@ -916,6 +922,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1057,6 +1064,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1200,6 +1208,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1347,6 +1356,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/api/chat'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1488,6 +1498,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/api/chat'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1630,6 +1641,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/api/chat'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1776,6 +1788,7 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   TrustSecurityRoute: typeof TrustSecurityRoute
+  ApiChatRoute: typeof ApiChatRoute
   PosSolutionsElectricalAppliancesRoute: typeof PosSolutionsElectricalAppliancesRoute
   PosSolutionsFloristRoute: typeof PosSolutionsFloristRoute
   PosSolutionsFurnitureRoute: typeof PosSolutionsFurnitureRoute
@@ -1948,6 +1961,13 @@ declare module '@tanstack/react-router' {
       path: '/trust-security'
       fullPath: '/trust-security'
       preLoaderRoute: typeof TrustSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/chat': {
+      id: '/api/chat'
+      path: '/api/chat'
+      fullPath: '/api/chat'
+      preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en/': {
@@ -3128,6 +3148,7 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
   TrustSecurityRoute: TrustSecurityRoute,
+  ApiChatRoute: ApiChatRoute,
   PosSolutionsElectricalAppliancesRoute: PosSolutionsElectricalAppliancesRoute,
   PosSolutionsFloristRoute: PosSolutionsFloristRoute,
   PosSolutionsFurnitureRoute: PosSolutionsFurnitureRoute,
