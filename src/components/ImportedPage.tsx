@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PageScene, { getPageScene } from "@/components/PageScene";
+import ContactForm from "@/components/ContactForm";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
 
@@ -79,5 +80,6 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
   const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
   const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));
    const bodyIndex = contentIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <RenderNode key={node.id} node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />)}</main><Footer /></div>, locale);
+  const formKind = pageKey === "demo" || pageKey === "demo-3" ? "demo" : pageKey === "contact-4" ? "contact" : null;
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <RenderNode key={node.id} node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />)}{formKind && <section className="mx-auto max-w-3xl px-4 pb-16"><ContactForm kind={formKind} /></section>}</main><Footer /></div>, locale);
 }
