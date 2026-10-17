@@ -40,3 +40,11 @@
 # Non-hero motion
 - [x] Refine staggered section/card reveals, process progression, FAQs and package previews without altering heroes or backgrounds.
 - [x] Verify both languages, interactions, reduced motion, and unchanged heroes.
+
+# Site growth phase (user request 2026-10-17)
+- [ ] Research comparable Saudi ERP/accounting/POS websites and derive concrete improvements.
+- [ ] AI chat agent that answers visitors from site content (Arabic/English). Requires Lovable Cloud.
+- [ ] Internal contact/demo forms replacing hosted WordPress forms. Requires Lovable Cloud.
+- [ ] Catchier brand-driven backgrounds using logo identity motifs.
+- [ ] Admin login and customization panel. Requires Lovable Cloud; scope to confirm.
+- [ ] Deepen SEO for Saudi market: ERP, accounting, HR, contracting, POS keywords (Arabic/English).
