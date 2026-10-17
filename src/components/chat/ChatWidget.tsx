@@ -161,7 +161,7 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
         <PromptInput onSubmit={handleSubmit}>
           <PromptInputTextarea ref={textareaRef} placeholder={t.placeholder} className="min-h-10 text-sm" />
           <PromptInputFooter className="justify-end">
-            <PromptInputSubmit status={status} disabled={busy} size="icon" />
+            <PromptInputSubmit status={status} disabled={busy} size="icon-sm" />
           </PromptInputFooter>
         </PromptInput>
       </div>
