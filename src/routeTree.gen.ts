@@ -10,8 +10,10 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as About4RouteImport } from './routes/about-4'
+import { Route as AuthRouteImport } from './routes/auth'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as Contact4RouteImport } from './routes/contact-4'
@@ -32,6 +34,7 @@ import { Route as StarterRouteImport } from './routes/starter'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TrustSecurityRouteImport } from './routes/trust-security'
+import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
@@ -159,6 +162,10 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
+  id: '/_authenticated',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -167,6 +174,11 @@ const AboutRoute = AboutRouteImport.update({
 const About4Route = About4RouteImport.update({
   id: '/about-4',
   path: '/about-4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AuthRoute = AuthRouteImport.update({
+  id: '/auth',
+  path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CareersRoute = CareersRouteImport.update({
@@ -268,6 +280,11 @@ const TrustSecurityRoute = TrustSecurityRouteImport.update({
   id: '/trust-security',
   path: '/trust-security',
   getParentRoute: () => rootRouteImport,
+} as any)
+const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
@@ -902,6 +919,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
+  '/auth': typeof AuthRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -922,6 +940,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
@@ -1048,6 +1067,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
+  '/auth': typeof AuthRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -1064,6 +1084,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
@@ -1186,8 +1207,10 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
+  '/auth': typeof AuthRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -1208,6 +1231,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
@@ -1336,6 +1360,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/about-4'
+    | '/auth'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1356,6 +1381,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/admin'
     | '/api/chat'
     | '/en/about'
     | '/en/about-4'
@@ -1482,6 +1508,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/about-4'
+    | '/auth'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1498,6 +1525,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/admin'
     | '/api/chat'
     | '/en/about'
     | '/en/about-4'
@@ -1619,8 +1647,10 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/_authenticated'
     | '/about'
     | '/about-4'
+    | '/auth'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1641,6 +1671,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/trust-security'
+    | '/_authenticated/admin'
     | '/api/chat'
     | '/en/about'
     | '/en/about-4'
@@ -1766,8 +1797,10 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
   AboutRoute: typeof AboutRoute
   About4Route: typeof About4Route
+  AuthRoute: typeof AuthRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   Contact4Route: typeof Contact4Route
@@ -1809,6 +1842,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated': {
+      id: '/_authenticated'
+      path: ''
+      fullPath: '/'
+      preLoaderRoute: typeof AuthenticatedRouteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -1821,6 +1861,13 @@ declare module '@tanstack/react-router' {
       path: '/about-4'
       fullPath: '/about-4'
       preLoaderRoute: typeof About4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/auth': {
+      id: '/auth'
+      path: '/auth'
+      fullPath: '/auth'
+      preLoaderRoute: typeof AuthRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -1962,6 +2009,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/trust-security'
       preLoaderRoute: typeof TrustSecurityRouteImport
       parentRoute: typeof rootRouteImport
+    }
+    '/_authenticated/admin': {
+      id: '/_authenticated/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AuthenticatedAdminRouteImport
+      parentRoute: typeof AuthenticatedRouteRoute
     }
     '/api/chat': {
       id: '/api/chat'
@@ -2813,6 +2867,17 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface AuthenticatedRouteRouteChildren {
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+}
+
+const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
+  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+}
+
+const AuthenticatedRouteRouteWithChildren =
+  AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
 interface EnIndustriesRouteChildren {
   EnIndustriesContractingIndustryRoute: typeof EnIndustriesContractingIndustryRoute
   EnIndustriesDistributionRoute: typeof EnIndustriesDistributionRoute
@@ -3126,8 +3191,10 @@ const Services3RouteWithChildren = Services3Route._addFileChildren(
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
   AboutRoute: AboutRoute,
   About4Route: About4Route,
+  AuthRoute: AuthRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   Contact4Route: Contact4Route,
