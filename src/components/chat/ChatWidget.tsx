@@ -161,7 +161,7 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
         <PromptInput onSubmit={handleSubmit}>
           <PromptInputTextarea ref={textareaRef} placeholder={t.placeholder} className="min-h-10 text-sm" />
           <PromptInputFooter className="justify-end">
-            <PromptInputSubmit status={status} disabled={busy} size="icon-sm" />
+            <PromptInputSubmit status={status} disabled={busy} size="icon" />
           </PromptInputFooter>
         </PromptInput>
       </div>
@@ -223,7 +223,7 @@ export default function ChatWidget() {
               {view === "chat" ? (
                 <Button
                   variant="ghost"
-                  size="icon-sm"
+                  size="icon"
                   className="text-primary-foreground hover:bg-primary-foreground/10"
                   onClick={() => setView("threads")}
                   aria-label={t.threads}
@@ -233,7 +233,7 @@ export default function ChatWidget() {
               ) : (
                 <Button
                   variant="ghost"
-                  size="icon-sm"
+                  size="icon"
                   className="text-primary-foreground hover:bg-primary-foreground/10"
                   onClick={() => setView("chat")}
                   aria-label={t.back}
@@ -243,7 +243,7 @@ export default function ChatWidget() {
               )}
               <Button
                 variant="ghost"
-                size="icon-sm"
+                size="icon"
                 className="text-primary-foreground hover:bg-primary-foreground/10"
                 onClick={() => setOpen(false)}
                 aria-label="Close"
@@ -291,7 +291,7 @@ export default function ChatWidget() {
       )}
 
       <Button
-        size="icon-lg"
+        size="icon"
         className="size-14 rounded-full shadow-xl"
         onClick={() => setOpen((v) => !v)}
         aria-label={t.title}

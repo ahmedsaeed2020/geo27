@@ -211,7 +211,7 @@ function SettingsTab() {
     }
     const { error } = await supabase
       .from("site_settings")
-      .upsert({ key, value, updated_at: new Date().toISOString() });
+      .upsert({ key, value: value as Record<string, never>, updated_at: new Date().toISOString() });
     if (!error) {
       setSaved(key);
       setTimeout(() => setSaved(null), 2000);
