@@ -190,8 +190,11 @@ export default function ChatWidget() {
   }, []);
 
   useEffect(() => {
-    if (open) loadThreads();
-  }, [open, loadThreads]);
+    if (open) {
+      loadThreads();
+      if (!activeThread && getStoredThreadIds().length > 0) setView("threads");
+    }
+  }, [open, loadThreads, activeThread]);
 
   const createThread = useCallback(async () => {
     const visitorId = getVisitorId();
