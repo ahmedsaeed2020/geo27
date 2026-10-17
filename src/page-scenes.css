@@ -17,3 +17,14 @@
 .page-scene-photographic img{width:auto;max-width:100%;height:auto;max-height:560px;margin-inline:auto;object-fit:contain;border-radius:8px}
 @media(min-width:1025px){.scene-backed>[data-import-container]:first-of-type,.scene-backed>[data-package-container]:first-of-type{margin-inline: auto!important}.scene-backed .page-scene-background img{object-position:left center}}
 @media(max-width:767px){.page-scene-background img{opacity:.45;object-position:25% center}.page-scene-body{aspect-ratio:4/3}}
+/* Brand identity motif: subtle Digit-primary mesh and dot grid behind internal page content */
+.scene-content-section{position:relative}
+.scene-content-section::before{
+  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(42rem 22rem at 85% -10%, color-mix(in oklab, var(--primary) 10%, transparent), transparent 65%),
+    radial-gradient(36rem 20rem at 5% 110%, color-mix(in oklab, var(--primary) 8%, transparent), transparent 60%),
+    radial-gradient(color-mix(in oklab, var(--primary) 14%, transparent) 1px, transparent 1px);
+  background-size:auto,auto,26px 26px;
+  opacity:.5;
+}

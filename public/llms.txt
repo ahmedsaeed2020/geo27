@@ -1,0 +1,25 @@
+# Digit — نظام ERP سعودي سحابي / Saudi Cloud ERP
+
+> Digit (ديجيت) is a Saudi cloud ERP platform for SMEs: accounting, ZATCA e-invoicing (Fatoora) integration, sales, purchasing, inventory, fixed assets, POS, HR & payroll, contracting, CRM, projects, and manufacturing. Arabic-first, fully bilingual. Cloud or on-premise. Trusted by 50+ Saudi businesses. Contact: +966 59 505 1150, a.saeed@digit-erp.com.
+
+## Pricing (annual, SAR, excl. 15% VAT, launch discount)
+- Starter (e-invoicing, 3 users): 1,499 SAR; with ZATCA link 1,999 SAR
+- Pro (accounting, sales, purchasing, inventory, assets; 10 users; 15h training): 9,999 SAR; with ZATCA link 12,999 SAR
+- POS add-on: 5,000 SAR first point, 3,000 SAR each additional
+- Enterprise: custom quote. Extra training: 250 SAR/hour
+
+## Main pages
+- [Home](https://digit-erp.com/): نظام ERP سعودي للمحاسبة والمبيعات والمخزون
+- [English](https://digit-erp.com/en): Saudi ERP — accounting, e-invoicing, POS
+- [Pricing](https://digit-erp.com/pricing): أسعار الباقات
+- [Book a demo](https://digit-erp.com/demo): احجز عرضًا تجريبيًا
+- [E-invoicing / ZATCA](https://digit-erp.com/modules/e-invoicing-zatca): الفوترة الإلكترونية والربط مع فاتورة
+- [Accounting](https://digit-erp.com/modules/accounting): نظام محاسبة سعودي
+- [POS](https://digit-erp.com/modules/pos): نظام نقاط بيع
+- [Inventory](https://digit-erp.com/modules/inventory): إدارة المخزون والمشتريات
+- [HR & Payroll](https://digit-erp.com/modules/hr-payroll): الموارد البشرية والرواتب
+- [Contracting](https://digit-erp.com/modules/contracting): نظام المقاولات — مستخلصات ومحتجزات
+- [Industries](https://digit-erp.com/industries): القطاعات
+- [Services](https://digit-erp.com/services-3): التنفيذ والتدريب والدعم ونقل البيانات
+- [About](https://digit-erp.com/about-4): عن Digit
+- [Contact](https://digit-erp.com/contact-4): تواصل معنا

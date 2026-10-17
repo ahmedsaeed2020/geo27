@@ -3,6 +3,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
   Link,
+  ClientOnly,
   createRootRouteWithContext,
   useRouter,
   HeadContent,
@@ -11,6 +12,7 @@ import {
   type ErrorComponentProps,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
@@ -141,6 +143,9 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <ClientOnly fallback={null}>
+        <ChatWidget />
+      </ClientOnly>
     </QueryClientProvider>
   );
 }
