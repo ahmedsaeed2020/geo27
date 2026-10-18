@@ -8,7 +8,7 @@ const nodes = localizeData(arabicNodes);
 export const Route = createFileRoute("/en/starter")({
   head: () => withSeo("/en/starter", { meta: [
     { title: translate("باقة Starter — Digit | الفوترة الإلكترونية") },
-    { name: "description", content: translate("باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، تبدأ من 1,499 ر.س سنويًا، مع خيار ربط ZATCA.") },
+    { name: "description", content: translate("باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، مع خيار ربط ZATCA وعرض سعر مخصص.") },
     { property: "og:title", content: translate("باقة Starter — Digit") },
     { property: "og:description", content: translate("ابدأ الفوترة الإلكترونية مع Starter، 3 مستخدمين واستضافة ونسخ احتياطي وخيار ربط ZATCA.") },
     { property: "og:type", content: "website" },
