@@ -62,7 +62,6 @@ const HOME_JSONLD = [
     operatingSystem: "Web, Cloud",
     inLanguage: "ar",
     description: "نظام ERP سعودي سحابي: محاسبة، مبيعات، مخزون، نقاط بيع وموارد بشرية، مع دعم الربط بمنظومة الفوترة الإلكترونية.",
-    offers: { "@type": "AggregateOffer", priceCurrency: "SAR", lowPrice: "1499", offerCount: "4", description: "باقات Starter وPro ونقاط البيع، مع Enterprise بعرض مخصص" },
     featureList: ["المحاسبة والتقارير المالية", "المبيعات والعملاء", "إدارة المخزون والمشتريات", "نقاط البيع (POS)", "الموارد البشرية والرواتب", "دعم الربط مع منظومة الفوترة الإلكترونية (فاتورة)"],
   },
   {
