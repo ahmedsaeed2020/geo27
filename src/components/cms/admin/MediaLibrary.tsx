@@ -7,6 +7,7 @@ import { SHOTS } from '@/content/product-shots';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Slider } from '@/components/ui/slider';
+import AuthedImage from './AuthedImage';
 import { EmptyState, errorText, Field, formatDate, NativeSelect, StatusPill, useRefresh, type ConfigRow, type Doc, type Media } from './shared';
 
 const MAX = 8 * 1024 * 1024;
@@ -150,9 +151,10 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
         <section className="mb-8 grid gap-6 rounded-lg border border-border bg-card p-5 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.2fr)]">
           <div>
             <div className="relative overflow-hidden rounded-md bg-muted">
-              <img
+              <AuthedImage
                 src={`${selected.url}${selected.replaced_at ? `?v=${new Date(selected.replaced_at).getTime()}` : ''}`}
-                alt={selected.alt_ar}
+                isPublic={selected.approval === 'approved' && !selected.archived_at}
+                alt={selected.alt_ar || selected.title}
                 width={selected.width ?? 600}
                 height={selected.height ?? 400}
                 className="aspect-[3/2] w-full object-cover"
@@ -267,16 +269,14 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
           const u = usage.get(m.id);
           return (
             <button key={m.id} type="button" className="rounded-lg border border-border bg-card p-3 text-start transition-colors hover:border-primary" onClick={() => { setSelected(m); setError(''); }}>
-              <img
+              <AuthedImage
                 src={`${m.url}?w=480${m.replaced_at ? `&v=${new Date(m.replaced_at).getTime()}` : ''}`}
+                isPublic={m.approval === 'approved' && !m.archived_at}
                 alt={m.alt_ar || m.title}
                 width={m.width ?? 300}
                 height={m.height ?? 200}
                 loading="lazy"
                 className="h-40 w-full rounded bg-muted object-contain"
-                onError={e => {
-                  e.currentTarget.style.visibility = 'hidden';
-                }}
               />
               <h3 className="mt-2 truncate font-bold">{m.title}</h3>
               <div className="mt-1 flex flex-wrap gap-1">
