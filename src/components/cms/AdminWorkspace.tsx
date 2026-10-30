@@ -18,6 +18,7 @@ import {
   Palette,
   Shield,
   SquarePen,
+  Rows3,
 } from 'lucide-react';
 import { cmsWorkspace } from '@/lib/cms.functions';
 import { supabase } from '@/integrations/supabase/client';
@@ -34,6 +35,7 @@ import Audit from './admin/Audit';
 import Redirects from './admin/Redirects';
 import FormsEditor from './admin/FormsEditor';
 import BrandingEditor from './admin/BrandingEditor';
+import SectionsEditor from './admin/SectionsEditor';
 import SecurityPanel, { MfaChallenge } from './admin/Security';
 import { ROLE_LABELS, WORKSPACE_KEY, type Doc } from './admin/shared';
 
@@ -46,6 +48,8 @@ const TABS: Tab[] = [
   { id: 'stories', label: 'قصص الميزات', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'resources', label: 'الموارد', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'media', label: 'مكتبة الصور', icon: Image, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'home', label: 'أقسام الرئيسية', icon: Rows3, roles: ['owner', 'editor'], group: 'الموقع' },
+  { id: 'pro', label: 'أقسام صفحة Pro', icon: Rows3, roles: ['owner', 'editor'], group: 'الموقع' },
   { id: 'navigation', label: 'روابط القائمة', icon: Menu, roles: ['owner', 'editor'], group: 'الموقع' },
   { id: 'seo', label: 'محركات البحث', icon: Globe, roles: ['owner', 'editor'], group: 'الموقع' },
   { id: 'redirects', label: 'التحويلات', icon: ArrowLeftRight, roles: ['owner', 'editor'], group: 'الموقع' },
@@ -210,6 +214,7 @@ export default function AdminWorkspace() {
           ))}
         {current?.id === 'media' && <MediaLibrary rows={w.media} docs={w.docs} config={w.config} owner={owner} notice={setNotice} />}
         {current?.id === 'redirects' && <Redirects rows={w.redirects} docs={w.docs} owner={owner} notice={setNotice} />}
+        {(current?.id === 'home' || current?.id === 'pro') && <SectionsEditor key={current.id} page={current.id} rows={w.config} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'forms' && <FormsEditor rows={w.config} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'branding' && <BrandingEditor rows={w.config} media={w.media} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'leads' && <Leads rows={w.leads} team={w.team} notice={setNotice} />}
