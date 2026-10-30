@@ -7,7 +7,7 @@ import type { Database } from '@/integrations/supabase/types';
 import { cmsContentSchema, safePath, type PublishedRecord } from './cms-schema';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
-import { assertPublishAllowed, audit, resolveAccess, type CmsRole, type Db } from './cms-access';
+import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type CmsRole, type Db } from './cms-access';
 
 /** Publishable-key client for public reads during SSR; opaque sb_ keys travel only as apikey. */
 function publicClient(): Db {
@@ -57,11 +57,6 @@ export const getPublishedSite = createServerFn({ method: 'GET' }).handler(async 
 
 export type PreviewResult = { status: 'ok'; record: PublishedRecord; expiresAt: string } | { status: 'invalid' };
 export const PREVIEW_TOKEN = /^[A-Za-z0-9_-]{43}$/;
-
-export async function sha256Hex(value: string): Promise<string> {
-  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
-  return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
-}
 
 /** Public: the unguessable, expiring token is the credential. Only the draft of the token's own document is returned. */
 export const getPreviewRecord = createServerFn({ method: 'GET' })

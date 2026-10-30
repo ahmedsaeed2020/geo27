@@ -30,3 +30,8 @@ export async function assertPublishAllowed(admin: Db, claims: unknown) {
 export async function audit(admin: Db, actor: string, action: string, entity: string, entityId: string) {
   await admin.from('cms_audit').insert({ actor_id: actor, action, entity, entity_id: entityId });
 }
+
+export async function sha256Hex(value: string): Promise<string> {
+  const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
+  return Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
+}

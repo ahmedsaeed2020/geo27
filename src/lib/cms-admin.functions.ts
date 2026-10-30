@@ -1,10 +1,9 @@
 import { createServerFn } from '@tanstack/react-start';
 import { requireSupabaseAuth } from '@/integrations/supabase/auth-middleware';
 import { z } from 'zod';
-import { assertPublishAllowed, audit, resolveAccess, type Db } from './cms-access';
+import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type Db } from './cms-access';
 import { CONFIG_SCHEMAS, SITE_CONFIG_KEYS, parseConfig } from './site-config-schema';
 import { normalizeRedirectSource, normalizeRedirectTarget, resolveFinalTarget, targetPath } from './redirect-rules';
-import { sha256Hex } from './cms.functions';
 
 /* ----------------------------- Team & roles ----------------------------- */
 

@@ -11,7 +11,7 @@ export const uploadCmsMedia=createServerFn({method:'POST'}).middleware([requireS
   const path=`${crypto.randomUUID()}.${png?'png':jpg?'jpg':'webp'}`;
   const {supabaseAdmin}=await import('@/integrations/supabase/client.server');
   const {error}=await supabaseAdmin.storage.from('digit-cms-media').upload(path,bytes,{contentType:png?'image/png':jpg?'image/jpeg':'image/webp',upsert:false});if(error)throw error;
-  const {data:row,error:rowError}=await supabaseAdmin.from('cms_media').insert({url:`/api/public/cms-media/${path}`,storage_path:path,title:data.title,alt_ar:data.altAr,alt_en:data.altEn,source:data.source,width:data.width,height:data.height,created_by:context.userId}).select().single();if(rowError)throw rowError;
+  const {data:row,error:rowError}=await supabaseAdmin.from('cms_media').insert({url:`/api/public/cms-media/${path}`,storage_path:path,title:data.title,alt_ar:data.altAr,alt_en:data.altEn,source:data.source,width:data.width,height:data.height,bytes:bytes.length,mime:png?'image/png':jpg?'image/jpeg':'image/webp',created_by:context.userId}).select().single();if(rowError)throw rowError;
   await supabaseAdmin.from('cms_audit').insert({actor_id:context.userId,action:'upload',entity:'media',entity_id:row.id});return row;
 });
 export const updateCmsMedia=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({id:z.string().uuid(),altAr:z.string().max(300),altEn:z.string().max(300),approval:z.enum(['draft','approved']),focalX:z.number().int().min(0).max(100),focalY:z.number().int().min(0).max(100)})).handler(async({data,context})=>{
