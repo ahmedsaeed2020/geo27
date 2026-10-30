@@ -31,6 +31,10 @@ const COPY = {
     success: "تم حفظ طلبك لدى فريق Digit.",
     error: "تعذّر الإرسال. حاول مرة أخرى أو تواصل معنا واتساب.",
     invalid: "تحقق من البيانات المدخلة.",
+    missingIdentity: "أدخل الاسم واسم المنشأة.",
+    missingConsent: "يلزم الموافقة على استخدام بياناتك للتواصل.",
+    missingJob: "أدخل دورك الوظيفي.",
+    missingMessage: "اكتب رسالتك.",
     demoOnly: "معاينة فقط — لم يُرسل أي طلب.",
   },
   en: {
@@ -54,6 +58,10 @@ const COPY = {
     success: "Your request has been saved with the Digit team.",
     error: "Could not send. Please try again or reach us on WhatsApp.",
     invalid: "Please check the entered data.",
+    missingIdentity: "Enter your name and company name.",
+    missingConsent: "Please agree to being contacted about this request.",
+    missingJob: "Enter your job role.",
+    missingMessage: "Please write your message.",
     demoOnly: "Preview only — no request was sent.",
   },
 } as const;
@@ -64,7 +72,7 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
   const t = COPY[locale];
   const settings = useSiteConfig().forms;
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
-  const [invalid, setInvalid] = useState(false);
+  const [invalid, setInvalid] = useState<string | false>(false);
   const saveLead = useServerFn(submitLead);
   // Until hydration the browser would submit natively (GET with the visitor's details in the URL), so the button waits.
   const hydrated = useHydrated();
@@ -95,7 +103,15 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
       website: form.get('website') ?? '',
     });
     if (!parsed.success || (requireJob && !jobRole) || (requireMessage && !message)) {
-      setInvalid(true);
+      const issues = parsed.success ? [] : parsed.error.issues.map(i => String(i.path[0]));
+      setInvalid(
+        issues.includes('name') || issues.includes('company') ? t.missingIdentity
+          : issues.includes('email') || issues.includes('phone') ? t.channel
+          : issues.includes('consent') ? t.missingConsent
+          : requireJob && !jobRole ? t.missingJob
+          : requireMessage && !message ? t.missingMessage
+          : t.invalid,
+      );
       return;
     }
     setInvalid(false);
@@ -158,7 +174,7 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
       <div className="hidden" aria-hidden="true"><Input name="website" tabIndex={-1} autoComplete="off" /></div>
       <p className="mt-3 text-sm text-muted-foreground">{t.channel}</p>
       <label className="mt-3 flex items-start gap-2 text-sm"><input type="checkbox" name="consent" required className="mt-1" />{t.consent}</label>
-      {invalid && <p role="alert" className="mt-2 text-sm text-destructive">{t.invalid}</p>}
+      {invalid && <p role="alert" className="mt-2 text-sm text-destructive">{invalid}</p>}
       {state === "error" && <p className="mt-2 text-sm text-destructive">{t.error}</p>}
       <Button type="submit" className="mt-4" disabled={!hydrated || state === "sending"}>
         {state === "sending" ? t.sending : settings.submit[locale] || t.submit}
