@@ -10,6 +10,19 @@
 - [ ] Stage 5 completion: full all-page acceptance, two-role permission E2E, full revision rollback/media replacement regressions, chat isolation/security decision (existing anon behavior preserved), dynamic sitemap deployment behavior and performance field measurements. Depends on completing remaining CMS capabilities and approved product evidence.
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
 
+# V3 Stage 4/5 completion — build order (started 2026-10-30 "next")
+- [ ] Split the admin into focused panels and restore visitor chat transcripts (lost when the new admin replaced the old one).
+- [ ] Team lifecycle: accounts by email, grant/change/remove roles with last-owner protection, emails in lead assignment; authenticator-app MFA with an owner switch requiring it for publishing.
+- [ ] Expiring, revocable preview links that render the full draft page with a preview banner and noindex.
+- [ ] Scheduled publish and scheduled unpublish, resolved at read time and materialized into revisions.
+- [ ] Redirect manager: 301/302/307/308, loop and chain checks, existing-page warnings, hit counts.
+- [ ] One cached published-content query per navigation instead of two server calls; refresh after publishing.
+- [ ] Form settings editor: visible optional fields, labels, interest options, success messages; server minimums unchanged.
+- [ ] Branding: logo, favicon and accent colour from approved media/presets with contrast checks; draft/publish/history.
+- [ ] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes with srcset.
+- [ ] Home and Pro section editing: section order/visibility and editable headings with source fallback.
+- [ ] Stage 5 regressions: editor vs sales permissions, rollback, preview/schedule/redirect E2E, chat isolation; tests kept in src/test.
+
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
 - [x] Verify page content, navigation, FAQ, and narrow-screen layout.
 - [x] Restore Starter and Pro published styling and motion, not just their content.
