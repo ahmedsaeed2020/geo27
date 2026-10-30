@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageScene from "@/components/PageScene";
 import ProShowcase from "@/components/product/ProShowcase";
+import LeadCapturePanel from './LeadCapturePanel';
+import CmsBlocks from './cms/CmsBlocks';
 import "@/package-pages.css";
 
 type PackageNode = {
@@ -90,5 +92,6 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
   const showcaseAfter = slug === "pro" ? nodes.findIndex(node => node.className.split(" ").includes("features")) : -1;
   return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
     {nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} slug={slug} bodyBackdrop={index === 3} />{index === showcaseAfter && <ProShowcase />}</Fragment>)}
+    <CmsBlocks /><LeadCapturePanel interest={`DIGIT ${slug==='pro'?'Pro':'Starter'}`}/>
   </main><Footer /></div>, locale);
 }

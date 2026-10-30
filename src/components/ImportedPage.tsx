@@ -7,6 +7,9 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PageScene, { getPageScene } from "@/components/PageScene";
 import ContactForm from "@/components/ContactForm";
+import LeadCapturePanel from './LeadCapturePanel';
+import CmsBlocks from './cms/CmsBlocks';
+import { useCmsPage } from './cms/CmsContext';
 import { PageProofs } from "@/components/product/ProductProof";
 import { PAGE_PROOFS } from "@/content/product-proof";
 import "@/imported-pages.css";
@@ -31,6 +34,9 @@ type Page = { title: string; sourceUrl: string; nodes: Node[] };
 
 function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: { node: Node; pageKey: string; backdrop?: boolean; bodyBackdrop?: boolean }) {
   const locale = useLocale();
+  const cms = useCmsPage();
+  const override = cms?.[locale].sourceEdits[node.id];
+  if (override !== undefined) node = { ...node, html:override, text:override };
   const props = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") {
     const hero = (backdrop || /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className)) && getPageScene(pageKey);
@@ -82,9 +88,9 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
   const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
   const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));
    const bodyIndex = contentIndex;
-  const formKind = pageKey === "demo" || pageKey === "demo-3" ? "demo" : pageKey === "contact-4" ? "contact" : null;
+  const cms = useCmsPage();
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}</Fragment>)}{formKind && <section className="mx-auto max-w-3xl px-4 pb-16"><ContactForm kind={formKind} /></section>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
 }

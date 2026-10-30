@@ -1,6 +1,10 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Hero from "@/sections/Hero";
+import ProductHeroV3 from '@/sections/ProductHeroV3';
+import AppExplorer from '@/sections/AppExplorer';
+import WorkflowJourney from '@/sections/WorkflowJourney';
+import LeadCapturePanel from '@/components/LeadCapturePanel';
+import CmsBlocks from '@/components/cms/CmsBlocks';
 import TrustStrip from "@/sections/TrustStrip";
 import ChaosToControl from "@/sections/ChaosToControl";
 import ProductBand from "@/sections/ProductBand";
@@ -24,8 +28,10 @@ export default function HomePage() {
     <div className="min-h-screen bg-paper font-plex">
       <Header />
       <main ref={mainRef}>
-        <Hero />
+        <ProductHeroV3 />
         <TrustStrip />
+        <AppExplorer />
+        <WorkflowJourney />
         <ChaosToControl />
         <ProductBand />
         <Modules />
@@ -35,6 +41,8 @@ export default function HomePage() {
         <Industries />
         <SaudiLocalization />
         <Faq />
+        <CmsBlocks />
+        <LeadCapturePanel interest="DIGIT Pro" />
         <FinalCta />
       </main>
       <Footer />

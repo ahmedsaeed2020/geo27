@@ -13,6 +13,9 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import ChatWidget from "@/components/chat/ChatWidget";
+import { getPublishedContent } from '@/lib/cms.functions';
+import { CmsProvider } from '@/components/cms/CmsContext';
+import v3Css from '../v3.css?url';
 
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
@@ -82,6 +85,7 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
+  loader: () => getPublishedContent(),
   head: () => ({
     meta: [
       { charSet: "utf-8" },
@@ -106,6 +110,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },
+      { rel: 'stylesheet', href: v3Css },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
       { rel: "apple-touch-icon", href: "/favicon.png" },
@@ -140,11 +145,12 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const records = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <CmsProvider records={records}><Outlet /></CmsProvider>
       <ClientOnly fallback={null}>
         <ChatWidget />
       </ClientOnly>
