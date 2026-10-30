@@ -1,6 +1,7 @@
 import { createServerFn } from '@tanstack/react-start';
 import { requireSupabaseAuth } from '@/integrations/supabase/auth-middleware';
 import { z } from 'zod';
+import type { Json } from '@/integrations/supabase/types';
 import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type Db } from './cms-access';
 import { CONFIG_SCHEMAS, SITE_CONFIG_KEYS, parseConfig } from './site-config-schema';
 import { normalizeRedirectSource, normalizeRedirectTarget, resolveFinalTarget, targetPath } from './redirect-rules';
@@ -176,6 +177,7 @@ export const saveSiteConfig = createServerFn({ method: 'POST' })
     const parsed = schema.safeParse(data.value);
     if (!parsed.success) throw new Error(parsed.error.issues[0]?.message ?? 'Invalid settings');
     const value = parsed.data as Record<string, unknown>;
+    const json = value as unknown as Json;
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
     if (data.action !== 'save' || data.key === 'security') await assertPublishAllowed(supabaseAdmin, context.claims);
     if (data.key === 'security' && value['requireMfaForPublish'] && (context.claims as { aal?: string }).aal !== 'aal2') {
@@ -194,11 +196,11 @@ export const saveSiteConfig = createServerFn({ method: 'POST' })
     // Security settings take effect immediately; other settings keep a draft until published.
     const immediate = data.key === 'security';
     const patch = {
-      draft: value,
+      draft: json,
       updated_by: context.userId,
       updated_at: now,
       version: data.version + 1,
-      ...(data.action === 'publish' || immediate ? { published: value, published_at: now } : {}),
+      ...(data.action === 'publish' || immediate ? { published: json, published_at: now } : {}),
       ...(data.action === 'unpublish' ? { published: null } : {}),
     };
     const result =

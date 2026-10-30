@@ -26,7 +26,7 @@ export const STATUS_LABELS: Record<string, string> = {
   closed: 'مغلق',
 };
 
-export const ROLE_LABELS: Record<string, string> = {
+export const ROLE_LABELS: Record<'admin' | 'owner' | 'editor' | 'sales', string> = {
   admin: 'مالك النظام',
   owner: 'مالك',
   editor: 'محرر محتوى',
@@ -96,7 +96,7 @@ export function NativeSelect({ className = '', ...props }: SelectHTMLAttributes<
   return <select {...props} className={`h-10 w-full rounded-md border border-input bg-background px-3 text-sm disabled:opacity-60 ${className}`} />;
 }
 
-export function Field({ label, hint, children, className = '' }: { label: string; hint?: string; children: ReactNode; className?: string }) {
+export function Field({ label, hint, children, className = '' }: { label: string; hint?: string | undefined; children: ReactNode; className?: string }) {
   return (
     <label className={`block space-y-1.5 text-sm font-medium ${className}`}>
       <span>{label}</span>
