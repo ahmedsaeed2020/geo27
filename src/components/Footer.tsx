@@ -4,6 +4,7 @@ import LanguageSwitch from "@/components/LanguageSwitch";
 import {Button} from './ui/button';
 import {focusLeadForm} from './LeadCapturePanel';
 import {usePublishedRecords} from './cms/CmsNavigation';
+import { useSiteConfig } from './cms/CmsContext';
 
 const COLS: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -92,10 +93,16 @@ export default function Footer() {
         <div className="grid grid-cols-6 gap-8 border-b border-[rgba(244,243,238,.1)] py-12 max-lg:grid-cols-3 max-md:grid-cols-2">
           <div className="max-lg:col-span-3 max-md:col-span-2">
             <a href="/" className="flex items-center gap-2.5" dir="ltr">
-              <DigitMarkLight className="h-9 w-9" />
-              <span className="font-archivo text-[24px] font-extrabold tracking-[-0.03em] text-white">
-                DIGIT
-              </span>
+              {branding.logoOnDarkUrl ? (
+                <img src={branding.logoOnDarkUrl} alt={(locale === 'ar' ? branding.logoAltAr : branding.logoAltEn) || 'Digit'} className="h-9 w-auto max-w-[200px] object-contain" />
+              ) : (
+                <>
+                  <DigitMarkLight className="h-9 w-9" />
+                  <span className="font-archivo text-[24px] font-extrabold tracking-[-0.03em] text-white">
+                    DIGIT
+                  </span>
+                </>
+              )}
             </a>
             <p className="mt-4 max-w-[280px] text-[13.5px] leading-[1.8]">
               منصة ERP مبنية للسعودية — محاسبة ومبيعات ومشتريات ومخزون وتقارير وفوترة إلكترونية بالعربية، بدعم وتنفيذ محلي.
