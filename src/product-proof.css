@@ -103,11 +103,11 @@
 .pp .pp-pro-price { margin: 10px 0 0; font-size: 17px; font-weight: 600; line-height: 1.7; color: var(--mint); font-variant-numeric: tabular-nums; }
 
 /* Home challenge thumbnails */
-.pp-thumb-slot { flex: none; width: 168px; }
+.pp-thumb-slot { flex: none; width: 156px; margin-inline-end: 14px; }
 .pp-thumb-note { margin: 18px auto 0; justify-content: center; }
 
 /* Lightbox */
-.pp-lb-overlay { position: fixed; inset: 0; z-index: 90; background: color-mix(in oklab, var(--dark) 92%, transparent); animation: pp-fade 200ms ease both; }
+.pp-lb-overlay { position: fixed; inset: 0; z-index: 90; background: color-mix(in oklab, var(--dark) 95%, transparent); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); animation: pp-fade 200ms ease both; }
 .pp-lb { position: fixed; inset: 0; z-index: 91; display: grid; grid-template-rows: auto minmax(0, 1fr); font-family: var(--font-plex); color: var(--primary-foreground); outline: none; }
 .pp-lb-top { display: flex; align-items: center; gap: 14px; padding: 14px 20px; }
 .pp-lb-caption { flex: 1; min-width: 0; margin: 0; font-size: 15.5px; font-weight: 600; line-height: 1.5; color: var(--primary-foreground); }
@@ -143,7 +143,7 @@
   .pp .pp-home-foot { flex-direction: column; align-items: stretch; }
   .pp-lb-stage { padding: 4px 16px 96px; }
   .pp-lb-nav { top: auto; bottom: 22px; translate: none; }
-  .pp-thumb-slot { width: min(100%, 260px); }
+  .pp-thumb-slot { width: min(100%, 260px); margin-inline-end: 0; }
 }
 @media (max-width: 640px) {
   .pp .pp-grid, .pp .pp-theme .pp-grid, .pp .pp-panel-side { grid-template-columns: minmax(0, 1fr); }

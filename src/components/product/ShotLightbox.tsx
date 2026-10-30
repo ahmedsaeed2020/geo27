@@ -38,7 +38,7 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
         <Dialog.Content className="pp-lb" dir={locale === "ar" ? "rtl" : "ltr"} lang={locale} onKeyDown={onKeyDown} aria-describedby={undefined}>
           {current && <>
             <div className="pp-lb-top">
-              {multiple && <span className="pp-lb-count">{(index ?? 0) + 1} / {shots.length}</span>}
+              {multiple && <span className="pp-lb-count" dir="ltr">{(index ?? 0) + 1} / {shots.length}</span>}
               <Dialog.Title className="pp-lb-caption">{current.caption[locale]}</Dialog.Title>
               <Dialog.Close className="pp-lb-btn" aria-label={PROOF_COPY.close[locale]} title={PROOF_COPY.close[locale]}><X /></Dialog.Close>
             </div>
