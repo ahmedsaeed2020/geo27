@@ -8,7 +8,7 @@ import "@/product-proof.css";
 import { SectionHeading } from '@/components/cms/SectionText';
 
 const SLIDES: { pain: string; mod: string; sol: string }[] = [
-  { pain: "أسعار مخفية ورسوم لكل مستخدم", mod: "التسعير", sol: "تسعير واضح بلا مفاجآت" },
+  { pain: "أسعار مخفية ورسوم غير متوقعة", mod: "التسعير", sol: "تسعير واضح بلا مفاجآت" },
   { pain: "تطبيق طويل ومكلف", mod: "التطبيق", sol: "منهجية تطبيق محدّدة المدة" },
   { pain: "واجهات معقّدة", mod: "الواجهة", sol: "واجهات عربية مبسّطة" },
   { pain: "تقارير متأخّرة", mod: "التقارير", sol: "رؤية لحظية في لوحة واحدة" },
