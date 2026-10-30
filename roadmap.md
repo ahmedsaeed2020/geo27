@@ -49,3 +49,12 @@
 - [x] Admin login (/auth: email, Google, Lovable) and panel (/admin: form requests, chat transcripts, site settings).
 - [x] SEO deepening: llms.txt with Saudi-market keywords; research actions (Mazaya, ZATCA list, comparison outreach) are owner-side.
 - [ ] Grant the owner account admin role after they create it (More → Users → Add user), then verify /admin end-to-end.
+
+# Real DIGIT Pro screenshots (owner prompt 2026-10-30)
+- [x] Upload all 49 product screenshots with their original file names.
+- [ ] Shared screenshot frame, lightbox (Esc, click-to-close, next/prev within a section) and ProductProof block.
+- [ ] Home: tabbed "شوف النظام من جوّه" after the modules grid; thumbnails on three challenge slides; customer count 50 in hero and search description.
+- [ ] Module pages (accounting x2, sales, purchasing, inventory, fixed assets, reports): ProductProof after the hero.
+- [ ] Features: smart document and daily control blocks at the top; AI card copy without assistant wording.
+- [ ] Pro: "ماذا تحصل في DIGIT Pro" with all 10 themes, sticky theme chips, the Pro price line and demo CTA.
+- [ ] English versions on /en pages; tests for the new rules; desktop/mobile/lightbox verification.
