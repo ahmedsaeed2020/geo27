@@ -12,7 +12,7 @@ import LeadCapturePanel from './LeadCapturePanel';
 import CmsBlocks from './cms/CmsBlocks';
 import { useSiteConfig } from './cms/CmsContext';
 import { EditableSections, useSectionOverride } from './cms/SectionText';
-import { arrangeSections, PRO_SECTIONS } from '@/content/section-registry';
+import { arrangeSections, PRO_SECTIONS, proSectionIdOf as packageSectionId } from '@/content/section-registry';
 import "@/package-pages.css";
 
 type PackageNode = {
@@ -68,12 +68,6 @@ function PackageHeading({ node }: { node: PackageNode }) {
   const common = { className: node.className, id: node.anchor || undefined };
   if (override) return <Tag {...common}>{override}</Tag>;
   return localizeTree(<Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
-}
-
-/** The editable section id of a top-level package container (its design class, e.g. "features"). */
-export function packageSectionId(node: { className: string }): string | undefined {
-  const classes = node.className.split(" ");
-  return PRO_SECTIONS.find(s => classes.includes(s.id))?.id;
 }
 
 function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean }) {

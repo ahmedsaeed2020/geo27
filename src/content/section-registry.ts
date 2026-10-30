@@ -62,3 +62,9 @@ export function arrangeSections<T extends readonly SectionDef[]>(defs: T, layout
   const movable = orderSections(defs.filter(d => !d.locked).map(d => d.id as T[number]['id']), layout).map(s => ({ ...s, locked: false }));
   return [...locked, ...movable];
 }
+
+/** The editable section id of a top-level Pro container (its design class, e.g. "features"). */
+export function proSectionIdOf(node: { className: string }): ProSectionId | undefined {
+  const classes = node.className.split(' ');
+  return PRO_SECTIONS.find(s => classes.includes(s.id))?.id;
+}
