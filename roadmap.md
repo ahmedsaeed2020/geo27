@@ -22,7 +22,7 @@
 - [x] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes. (srcset on public blocks still to wire — see below.)
 - [ ] Public CMS image blocks use responsive sizes (srcset) and focal points.
 - [ ] Content claims audit: confirm imported pages follow the banned-wording/competitor rules (e.g. third-party platform counts on module pages).
-- [ ] Home and Pro section editing: section order/visibility and editable headings with source fallback.
+- [x] Home and Pro section editing: section order/visibility and editable headings with source fallback; signed-in draft preview on the real page. (E2E: draft preview, publish, revert.)
 - [ ] Stage 5 regressions: editor vs sales permissions, rollback, preview/schedule/redirect E2E, chat isolation; tests kept in src/test.
 
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
