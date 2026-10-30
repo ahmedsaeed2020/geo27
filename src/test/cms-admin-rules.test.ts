@@ -105,3 +105,28 @@ describe('admin sections by role', () => {
     expect(ids).toContain('home');
   });
 });
+
+describe('sitemap', () => {
+  const rec = (path: string, indexable: boolean, en = 'Title') =>
+    ({ path, kind: 'page', published_at: '2026-10-29T10:00:00Z', published: { ...cmsContentSchemaDefaults(), indexable, en: { ...cmsContentSchemaDefaults().en, title: en } } }) as never;
+  it('adds indexable published pages in both languages', async () => {
+    const { buildSitemap } = await import('@/lib/sitemap');
+    const xml = buildSitemap(['/'], [rec('/lp/offer', true)]);
+    expect(xml).toContain('<loc>https://digit-erp.com/lp/offer</loc><lastmod>2026-10-29</lastmod>');
+    expect(xml).toContain('<loc>https://digit-erp.com/en/lp/offer</loc>');
+  });
+  it('drops a page in both languages when it is set not to be indexed', async () => {
+    const { buildSitemap } = await import('@/lib/sitemap');
+    const xml = buildSitemap(['/modules/sales', '/en/modules/sales'], [rec('/modules/sales', false)]);
+    expect(xml).not.toContain('/modules/sales');
+  });
+  it('skips the English address when the page has no English title', async () => {
+    const { buildSitemap } = await import('@/lib/sitemap');
+    expect(buildSitemap([], [rec('/lp/ar-only', true, '')])).not.toContain('/en/lp/ar-only');
+  });
+});
+
+function cmsContentSchemaDefaults() {
+  const locale = { title: '', description: '', blocks: [], sourceEdits: {} };
+  return { ar: { ...locale }, en: { ...locale }, indexable: true };
+}
