@@ -31,7 +31,7 @@ export async function loadSite(queryClient: QueryClient, search: unknown): Promi
   try {
     site = await queryClient.fetchQuery(publishedSiteQuery);
   } catch {
-    site = { records: [], config: DEFAULT_SITE_CONFIG };
+    site = { records: [], config: DEFAULT_SITE_CONFIG, media: [] };
   }
   if (!token) return { ...site, preview: null };
   let preview: PreviewResult;

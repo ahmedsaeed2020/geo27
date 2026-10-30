@@ -42,17 +42,20 @@ export const getPublishedContent = createServerFn({ method: 'GET' }).handler(asy
   return readPublishedRecords(publicClient());
 });
 
-export type PublishedSite = { records: PublishedRecord[]; config: SiteConfig };
+export type PublicMedia = { url: string; width: number | null; height: number | null; focalX: number; focalY: number };
+export type PublishedSite = { records: PublishedRecord[]; config: SiteConfig; media: PublicMedia[] };
 
 export const getPublishedSite = createServerFn({ method: 'GET' }).handler(async (): Promise<PublishedSite> => {
   const client = publicClient();
-  const [records, settings] = await Promise.all([readPublishedRecords(client), client.rpc('cms_site_published')]);
+  const [records, settings, media] = await Promise.all([readPublishedRecords(client), client.rpc('cms_site_published'), client.rpc('cms_media_public')]);
   const config: SiteConfig = { ...DEFAULT_SITE_CONFIG };
   for (const row of settings.data ?? []) {
     const key = row.key as (typeof PUBLIC_CONFIG_KEYS)[number];
     if (PUBLIC_CONFIG_KEYS.includes(key)) (config as Record<string, unknown>)[key] = parseConfig(key, row.published);
   }
-  return { records, config };
+  // Image dimensions are an enhancement: if unavailable, pages still render with their default frames.
+  const mediaRows = (media.data ?? []).map(m => ({ url: m.url, width: m.width, height: m.height, focalX: m.focal_x ?? 50, focalY: m.focal_y ?? 50 }));
+  return { records, config, media: mediaRows };
 });
 
 export type PreviewResult = { status: 'ok'; record: PublishedRecord; expiresAt: string } | { status: 'invalid' };

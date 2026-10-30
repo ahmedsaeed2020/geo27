@@ -196,7 +196,7 @@ function RootComponent() {
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <CmsProvider records={site.records} config={config} preview={site.preview}>
+      <CmsProvider records={site.records} config={config} preview={site.preview} media={site.media}>
         <Outlet />
         <PreviewBanner />
         <SettingsDraftBanner state={draft} />
