@@ -8,8 +8,8 @@ const TILES: { title: string; sub: string; desc: string; img: string; href: stri
   { title: "التجارة والتوزيع", sub: "متعدد المستودعات · تحصيل", desc: "مخزون متعدد المستودعات، مشتريات ومبيعات بأسعار متدرّجة، وتحصيل — كل شيء متصل بالمحاسبة.", img: "/images/dis.jpg", href: "/industries/distribution" },
   { title: "العقارات", sub: "عقود وإيجارات · تحصيل", desc: "إدارة العقود والإيجارات والتحصيل، تكاليف المشاريع العقارية، ومحاسبة وفوترة متوافقة على منصة واحدة.", img: "/images/rs.jpg", href: "/industries/real-estate" },
   { title: "القطاع الطبي", sub: "صيدليات · صلاحية ودفعات", desc: "نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.", img: "/images/med.jpg", href: "/industries/healthcare" },
-  { title: "التعليمي", sub: "مراكز تدريب - مدارس - نظام تعليمي متكامل", desc: "نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.", img: "/images/edu.jpg", href: "https://digit-erp.com/industries/education/" },
-  { title: "التشغيل والصيانة", sub: "الزيارات - الصيانات", desc: "نقاط بيع للصيدليات بتتبّع الدفعات والصلاحية، مخزون أدوية ومستلزمات، وحسابات وفوترة متوافقة.", img: "/images/om.jpg", href: "/industries/healthcare" },
+  { title: "التعليمي", sub: "مدارس ومراكز تدريب", desc: "ناقش احتياجات مؤسستك التعليمية من الإيرادات والمصروفات والتقارير، وحدّد نطاق التطبيق المناسب.", img: "/images/edu.jpg", href: "/industries/education" },
+  { title: "التشغيل والصيانة", sub: "الخدمة والزيارات الميدانية", desc: "حدّد احتياجك لإدارة الزيارات والخدمة والموارد مع فريق Digit؛ نطاق الخدمة الميدانية يخضع للتحقق.", img: "/images/om.jpg", href: "/services-3/maintenance" },
 ];
 
 export default function Industries() {
