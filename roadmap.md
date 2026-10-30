@@ -1,4 +1,12 @@
 # Requested pages
+# DIGIT Website V3 — 2026-10-30
+- [ ] Stage 1: contextual server-saved leads, consent, channel validation, rate limits, private inbox and approved notification recipient.
+- [ ] Stage 2: product-led Home and searchable App Explorer/navigation while retaining all 49 screenshots.
+- [ ] Stage 3: map all 42 stories, enrich verified journeys and keep unverified HR/CRM/Construction/FSM content in CMS drafts; resource hub.
+- [ ] Stage 4: operational CMS pages/blocks, revisions/preview/publish/rollback, media, SEO, navigation, branding, resources, leads and role/audit controls.
+- [ ] Stage 5: real public/admin E2E, security, bilingual/mobile/SEO verification and evidence report; no live publish.
+- [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
+
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
 - [x] Verify page content, navigation, FAQ, and narrow-screen layout.
 - [x] Restore Starter and Pro published styling and motion, not just their content.
