@@ -1,10 +1,13 @@
 # Requested pages
 # DIGIT Website V3 — 2026-10-30
-- [ ] Stage 1: contextual server-saved leads, consent, channel validation, rate limits, private inbox and approved notification recipient.
-- [ ] Stage 2: product-led Home and searchable App Explorer/navigation while retaining all 49 screenshots.
-- [ ] Stage 3: map all 42 stories, enrich verified journeys and keep unverified HR/CRM/Construction/FSM content in CMS drafts; resource hub.
-- [ ] Stage 4: operational CMS pages/blocks, revisions/preview/publish/rollback, media, SEO, navigation, branding, resources, leads and role/audit controls.
-- [ ] Stage 5: real public/admin E2E, security, bilingual/mobile/SEO verification and evidence report; no live publish.
+- [x] Stage 1 foundation: server-saved contextual leads, consent/channel checks, durable rate limit, private inbox and exact approved notification recipient; saved/read-back tested.
+- [x] Stage 2 foundation: real-screen Home, searchable App Explorer by department/role/problem/industry, four-step workflow, contextual header/footer CTA; 49 original assets retained.
+- [x] Stage 3 foundation: all 42 matrix entries retained as evidence-gated CMS drafts; five screen-led journey drafts and bilingual resource hub.
+- [x] Stage 4 foundation: 58 source documents, block ordering/editor, bilingual device preview, save/review/publish/unpublish/history/restore, immutable Pro library, validated media upload, published SSR SEO, private leads/status/export/assignment, editor/sales permissions and audit.
+- [x] Stage 5 checked: 21 tests, anonymous lead save/Admin read-back, draft isolation/publish/SEO readback/restoration, upload/approve/placement readback, anonymous admin denial and lead RLS, eight mobile routes without overflow. Synthetic data removed; no live publish.
+- [ ] Stage 3 completion: deeper distinct stories across all matrix targets, independent reviewed Arabic/English content, evidence-approved HR/CRM/Construction/FSM public launch; blocker is product evidence and owner release approval.
+- [ ] Stage 4 completion: signed full-page preview, complete original Home/Pro section editing and migration, media derivatives/usage graph, general form-definition editor, logo/favicon/theme management, redirect editor, role removal/MFA and scheduling. Current CMS is a working foundation, not the full reference feature set.
+- [ ] Stage 5 completion: full all-page acceptance, two-role permission E2E, full revision rollback/media replacement regressions, chat isolation/security decision (existing anon behavior preserved), dynamic sitemap deployment behavior and performance field measurements. Depends on completing remaining CMS capabilities and approved product evidence.
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
 
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
