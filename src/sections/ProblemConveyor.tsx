@@ -1,5 +1,10 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { useRef, useState } from "react";
+import ShotFrame from "@/components/product/ShotFrame";
+import ShotLightbox from "@/components/product/ShotLightbox";
+import { shot } from "@/content/product-shots";
+import { PROBLEM_SHOTS, PROOF_COPY } from "@/content/product-proof";
+import "@/product-proof.css";
 
 const SLIDES: { pain: string; mod: string; sol: string }[] = [
   { pain: "أسعار مخفية ورسوم لكل مستخدم", mod: "التسعير", sol: "تسعير واضح بلا مفاجآت" },
@@ -53,6 +58,10 @@ export default function ProblemConveyor() {
   const touchX = useRef<number | null>(null);
   const n = SLIDES.length;
   const go = (i: number) => setIdx(((i % n) + n) % n);
+  // Real screenshots back three of the challenges; the lightbox steps through those three.
+  const proofShots = SLIDES.flatMap(slide => PROBLEM_SHOTS[slide.pain] ? [shot(PROBLEM_SHOTS[slide.pain]!)] : []);
+  const [openShot, setOpenShot] = useState<number | null>(null);
+  const currentShot = PROBLEM_SHOTS[SLIDES[idx]?.pain ?? ""];
 
   return localizeTree((
     <section id="problem" className="bg-paper2 py-[88px] max-lg:py-[72px] max-md:py-14">
@@ -132,13 +141,23 @@ export default function ProblemConveyor() {
                     <div className="font-monospace text-[11px] font-bold tracking-[0.10em] text-primary">
                       مع Digit
                     </div>
-                    <div className="flex items-center gap-[15px]">
+                    <div className="flex items-center gap-[15px] max-md:flex-wrap">
                       <span className="flex h-[46px] w-[46px] flex-none items-center justify-center rounded-[13px] bg-[rgba(10,135,84,.12)]">
                         {SolMark}
                       </span>
-                      <span className="text-[clamp(18px,1.7vw,22px)] leading-[1.4] font-bold text-deep">
+                      <span className="min-w-0 flex-1 text-[clamp(18px,1.7vw,22px)] leading-[1.4] font-bold text-deep">
                         {s.sol}
                       </span>
+                      {PROBLEM_SHOTS[s.pain] && (
+                        <div className="pp-thumb-slot">
+                          <ShotFrame
+                            shot={shot(PROBLEM_SHOTS[s.pain]!)}
+                            size="thumb"
+                            mode="screen"
+                            onOpen={() => setOpenShot(proofShots.findIndex(item => item.id === PROBLEM_SHOTS[s.pain]))}
+                          />
+                        </div>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -154,6 +173,10 @@ export default function ProblemConveyor() {
             </div>
           </div>
 
+          <p className="pp-footnote pp-thumb-note" style={{ visibility: currentShot ? "visible" : "hidden" }} aria-hidden={currentShot ? undefined : true}>
+            {PROOF_COPY.footnote[locale]}
+          </p>
+
           {/* foot */}
           <div className="mx-auto mt-[30px] flex max-w-[940px] items-center justify-between max-md:justify-center">
             <div className="font-monospace text-[13px] text-body2 max-md:hidden">
@@ -166,6 +189,7 @@ export default function ProblemConveyor() {
           </div>
         </div>
       </div>
+      <ShotLightbox shots={proofShots} index={openShot} onIndexChange={setOpenShot} onClose={() => setOpenShot(null)} />
       <style>{`@keyframes dcvfade{from{opacity:0;transform:translateX(18px);}to{opacity:1;transform:none;}}`}</style>
     </section>
   ), locale);
