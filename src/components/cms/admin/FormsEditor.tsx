@@ -36,7 +36,7 @@ export default function FormsEditor({ rows, owner, team, notice }: { rows: Confi
       <p className="mb-4 max-w-3xl text-sm text-muted-foreground">
         يطبَّق على نموذج الطلب في كل الصفحات. الاسم والمنشأة ووسيلة تواصل واحدة والموافقة مطلوبة دائمًا ولا يمكن إيقافها. الطلبات تُحفظ في «طلبات العملاء»، وعنوان الإشعارات المعتمد <span dir="ltr">{LEAD_RECIPIENT}</span>.
       </p>
-      <ConfigToolbar editor={editor as never} owner={owner} />
+      <ConfigToolbar editor={editor} owner={owner} />
       <div className="v3-editor-grid">
         <div className="space-y-6">
           <section className="space-y-4 rounded-lg border border-border bg-card p-5">

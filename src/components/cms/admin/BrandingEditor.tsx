@@ -43,7 +43,7 @@ export default function BrandingEditor({ rows, media, owner, team, notice }: { r
         الشعار والأيقونة يُختاران من الصور المعتمدة في المكتبة. اللون يطبَّق على الأزرار والروابط والعناصر البارزة في كل الصفحات، ويجب أن يحقق تباينًا كافيًا مع النص الأبيض.
       </p>
       {!owner && <p className="mb-4 text-sm text-muted-foreground">تغيير الهوية متاح للمالك فقط.</p>}
-      {owner && <ConfigToolbar editor={editor as never} owner={owner} />}
+      {owner && <ConfigToolbar editor={editor} owner={owner} />}
       <div className="v3-editor-grid">
         <fieldset className="space-y-5" disabled={!owner}>
           <section className="space-y-4 rounded-lg border border-border bg-card p-5">

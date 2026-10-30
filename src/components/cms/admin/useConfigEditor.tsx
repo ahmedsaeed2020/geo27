@@ -46,15 +46,16 @@ export function useConfigEditor<K extends SiteConfigKey>(key: K, rows: ConfigRow
   return { row, value, setValue, dirty, busy, error, run, published, unpublishedChanges, replace: setValue };
 }
 
-export function ConfigToolbar({
-  editor,
-  owner,
-  publishLabel = 'نشر على الموقع',
-}: {
-  editor: ReturnType<typeof useConfigEditor>;
-  owner: boolean;
-  publishLabel?: string;
-}) {
+type ToolbarEditor = {
+  row: ConfigRow | undefined;
+  dirty: boolean;
+  busy: boolean;
+  error: string;
+  unpublishedChanges: boolean;
+  run: (action: 'save' | 'publish' | 'unpublish') => Promise<void>;
+};
+
+export function ConfigToolbar({ editor, owner, publishLabel = 'نشر على الموقع' }: { editor: ToolbarEditor; owner: boolean; publishLabel?: string }) {
   const { row, dirty, busy, run, unpublishedChanges, error } = editor;
   return (
     <div className="mb-6 space-y-3">
