@@ -2,7 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
 import { MessageCircle, X, Plus, ArrowRight, ArrowLeft } from "lucide-react";
-import { supabase } from "@/integrations/supabase/client";
+import { useServerFn } from "@tanstack/react-start";
+import { createVisitorThread, getVisitorMessages, listVisitorThreads } from "@/lib/chat.functions";
 import { useLocale } from "@/lib/i18n";
 import {
   Conversation,
@@ -78,7 +79,7 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
     () =>
       new DefaultChatTransport({
         api: "/api/chat",
-        body: { threadId, locale },
+        body: { threadId, visitorId: getVisitorId(), locale },
       }),
     [threadId, locale],
   );
@@ -90,22 +91,20 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
   const busy = status === "submitted" || status === "streaming";
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
+  const loadMessages = useServerFn(getVisitorMessages);
   useEffect(() => {
     let cancelled = false;
-    supabase
-      .from("chat_messages")
-      .select("role, content, created_at")
-      .eq("thread_id", threadId)
-      .order("created_at")
-      .then(({ data, error }) => {
-        if (cancelled || error || !data || data.length === 0) return;
+    loadMessages({ data: { visitorId: getVisitorId(), threadId } })
+      .then((data) => {
+        if (cancelled || data.length === 0) return;
         const restored: UIMessage[] = data.map((row, i) => ({
           id: `db-${i}`,
           role: row.role === "user" ? "user" : "assistant",
           parts: [{ type: "text", text: row.content }],
         }));
         setMessages(restored);
-      });
+      })
+      .catch(() => {});
     return () => {
       cancelled = true;
     };
@@ -178,16 +177,17 @@ export default function ChatWidget() {
   const [activeThread, setActiveThread] = useState<string | null>(null);
   const [error, setError] = useState(false);
 
+  const fetchThreads = useServerFn(listVisitorThreads);
+  const startThread = useServerFn(createVisitorThread);
   const loadThreads = useCallback(async () => {
-    const ids = getStoredThreadIds();
+    const ids = getStoredThreadIds().filter((id) => /^[0-9a-f-]{36}$/i.test(id)).slice(0, 20);
     if (ids.length === 0) return;
-    const { data } = await supabase
-      .from("chat_threads")
-      .select("id, title, updated_at")
-      .in("id", ids)
-      .order("updated_at", { ascending: false });
-    if (data) setThreads(data as Thread[]);
-  }, []);
+    try {
+      setThreads((await fetchThreads({ data: { visitorId: getVisitorId(), ids } })) as Thread[]);
+    } catch {
+      /* the thread list is a convenience; the chat itself still works */
+    }
+  }, [fetchThreads]);
 
   useEffect(() => {
     if (open) {
@@ -197,19 +197,19 @@ export default function ChatWidget() {
   }, [open, loadThreads, activeThread]);
 
   const createThread = useCallback(async () => {
-    const visitorId = getVisitorId();
-    const { data, error: insertError } = await supabase
-      .from("chat_threads")
-      .insert({ visitor_id: visitorId, locale })
-      .select("id")
-      .single();
-    if (insertError || !data) return;
+    let data: { id: string };
+    try {
+      data = await startThread({ data: { visitorId: getVisitorId(), locale } });
+    } catch {
+      setError(true);
+      return;
+    }
     rememberThread(data.id);
     setActiveThread(data.id);
     setView("chat");
     setError(false);
     loadThreads();
-  }, [locale, loadThreads]);
+  }, [locale, loadThreads, startThread]);
 
   const BackIcon = locale === "ar" ? ArrowRight : ArrowLeft;
 
