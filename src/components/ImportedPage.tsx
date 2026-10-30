@@ -1,5 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { useEffect, useRef, type ElementType } from "react";
+import { Fragment, useEffect, useRef, type ElementType } from "react";
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
@@ -7,6 +7,8 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PageScene, { getPageScene } from "@/components/PageScene";
 import ContactForm from "@/components/ContactForm";
+import { PageProofs } from "@/components/product/ProductProof";
+import { PAGE_PROOFS } from "@/content/product-proof";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
 
@@ -81,5 +83,8 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
   const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));
    const bodyIndex = contentIndex;
   const formKind = pageKey === "demo" || pageKey === "demo-3" ? "demo" : pageKey === "contact-4" ? "contact" : null;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <RenderNode key={node.id} node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />)}{formKind && <section className="mx-auto max-w-3xl px-4 pb-16"><ContactForm kind={formKind} /></section>}</main><Footer /></div>, locale);
+  // Real product screenshots sit right after the hero (and its stats band), before the source content.
+  const proofs = PAGE_PROOFS[pageKey];
+  const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}</Fragment>)}{formKind && <section className="mx-auto max-w-3xl px-4 pb-16"><ContactForm kind={formKind} /></section>}</main><Footer /></div>, locale);
 }

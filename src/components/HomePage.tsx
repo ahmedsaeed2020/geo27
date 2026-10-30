@@ -5,6 +5,7 @@ import TrustStrip from "@/sections/TrustStrip";
 import ChaosToControl from "@/sections/ChaosToControl";
 import ProductBand from "@/sections/ProductBand";
 import Modules from "@/sections/Modules";
+import ProductShowcase from "@/sections/ProductShowcase";
 import Capabilities from "@/sections/Capabilities";
 import ProblemConveyor from "@/sections/ProblemConveyor";
 import Industries from "@/sections/Industries";
@@ -28,6 +29,7 @@ export default function HomePage() {
         <ChaosToControl />
         <ProductBand />
         <Modules />
+        <ProductShowcase />
         <Capabilities />
         <ProblemConveyor />
         <Industries />
