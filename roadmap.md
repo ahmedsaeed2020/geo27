@@ -48,7 +48,7 @@
 - [x] Brand-driven background motif (Digit-primary mesh + dot grid) behind internal page sections.
 - [x] Admin login (/auth: email, Google, Lovable) and panel (/admin: form requests, chat transcripts, site settings).
 - [x] SEO deepening: llms.txt with Saudi-market keywords; research actions (Mazaya, ZATCA list, comparison outreach) are owner-side.
-- [ ] Grant the owner account admin role after they create it (More → Users → Add user), then verify /admin end-to-end.
+- [x] Grant the owner account admin role after they create it (More → Users → Add user), then verify /admin end-to-end.
 
 # Real DIGIT Pro screenshots (owner prompt 2026-10-30)
 - [x] Upload all 49 product screenshots with their original file names.
