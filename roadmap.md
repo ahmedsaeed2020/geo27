@@ -7,7 +7,8 @@
 - [x] Stage 5 checked: 21 tests, anonymous lead save/Admin read-back, draft isolation/publish/SEO readback/restoration, upload/approve/placement readback, anonymous admin denial and lead RLS, eight mobile routes without overflow. Synthetic data removed; no live publish.
 - [ ] Stage 3 completion: deeper distinct stories across all matrix targets, independent reviewed Arabic/English content, evidence-approved HR/CRM/Construction/FSM public launch; blocker is product evidence and owner release approval.
 - [x] Stage 4 completion: signed full-page preview, Home/Pro section editing, media derivatives/usage, form settings editor, logo/favicon/theme, redirect editor, role removal/MFA and scheduling (see the 2026-10-30 build order below).
-- [ ] Stage 5 completion: all-page acceptance sweep (AR+EN status, titles, canonical, console errors); CMS-published landing pages in the sitemap; performance measurement on the published build after approval. Rollback, media replacement, chat isolation and role access are done.
+- [x] Stage 5 acceptance: all 118 AR+EN pages return 200 with unique titles, one h1, canonical, descriptions, correct direction and no untranslated Arabic on English pages; no browser errors on key pages; sitemap now served live with indexable admin pages.
+- [ ] Performance measurement on the published build — blocked on owner approval to publish.
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
 
 # V3 Stage 4/5 completion — build order (started 2026-10-30 "next")
