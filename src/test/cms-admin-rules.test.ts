@@ -74,3 +74,21 @@ describe('media and preview safety', () => {
     expect(previewTokenFrom({ preview: 'a'.repeat(43) })).toBe('a'.repeat(43));
   });
 });
+
+describe('home and pro section layout', () => {
+  it('keeps the home hero first and visible even if a stored layout hides it', async () => {
+    const { arrangeSections, HOME_SECTIONS } = await import('@/content/section-registry');
+    const out = arrangeSections(HOME_SECTIONS, { sections: [{ id: 'hero', enabled: false }, { id: 'faq', enabled: true }], texts: {} });
+    expect(out[0]).toEqual({ id: 'hero', enabled: true, locked: true });
+    expect(out[1]?.id).toBe('faq');
+  });
+  it('keeps the original order when nothing is stored', async () => {
+    const { arrangeSections, PRO_SECTIONS } = await import('@/content/section-registry');
+    expect(arrangeSections(PRO_SECTIONS, { sections: [], texts: {} }).map(s => s.id)).toEqual(PRO_SECTIONS.map(s => s.id));
+  });
+  it('maps every Pro source container to a registered section', async () => {
+    const { proSectionIdOf } = await import('@/content/section-registry');
+    const nodes = (await import('@/content/pro.json')).default as { className: string }[];
+    expect(nodes.map(n => proSectionIdOf(n))).not.toContain(undefined);
+  });
+});
