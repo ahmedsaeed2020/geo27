@@ -23,3 +23,4 @@
 - Wrap every content route head() with withSeo(path, head) from src/lib/seo.ts and keep public/sitemap.xml in sync with routes; one module keeps canonical, hreflang, og and JSON-LD consistent across both languages.
 - Visitor chat uses /api/chat (AI SDK Responses, openai/gpt-6-astra) with threads/messages in public.chat_threads/chat_messages keyed by a localStorage visitor UUID; anon RLS is open by design (unguessable UUIDs) — do not add auth to the widget.
 - Admin lives at /admin under the _authenticated gate with role checks via public.has_role('admin'); admin accounts are created in the Users view then granted the role in user_roles.
+- Real product screenshots are Lovable asset pointers in src/assets/product, with sizes and bilingual captions in src/content/product-shots.ts and page placements in src/content/product-proof.ts; shared ShotFrame/ShotLightbox/ProductProof render them so frames reserve their size and each section keeps its own lightbox.

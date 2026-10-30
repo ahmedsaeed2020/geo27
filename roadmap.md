@@ -52,9 +52,12 @@
 
 # Real DIGIT Pro screenshots (owner prompt 2026-10-30)
 - [x] Upload all 49 product screenshots with their original file names.
-- [ ] Shared screenshot frame, lightbox (Esc, click-to-close, next/prev within a section) and ProductProof block.
-- [ ] Home: tabbed "شوف النظام من جوّه" after the modules grid; thumbnails on three challenge slides; customer count 50 in hero and search description.
-- [ ] Module pages (accounting x2, sales, purchasing, inventory, fixed assets, reports): ProductProof after the hero.
-- [ ] Features: smart document and daily control blocks at the top; AI card copy without assistant wording.
-- [ ] Pro: "ماذا تحصل في DIGIT Pro" with all 10 themes, sticky theme chips, the Pro price line and demo CTA.
-- [ ] English versions on /en pages; tests for the new rules; desktop/mobile/lightbox verification.
+- [x] Shared screenshot frame, lightbox (Esc, click-to-close, next/prev within a section) and ProductProof block.
+- [x] Home: tabbed "شوف النظام من جوّه" after the modules grid; thumbnails on three challenge slides; customer count 50 in hero and search description.
+- [x] Module pages (accounting x2, sales, purchasing, inventory, fixed assets, reports): ProductProof after the hero.
+- [x] Features: smart document and daily control blocks at the top; AI card copy without assistant wording.
+- [x] Pro: "ماذا تحصل في DIGIT Pro" with all 10 themes, sticky theme chips, the Pro price line and demo CTA.
+- [x] English versions on /en pages; tests for the new rules; desktop/mobile/lightbox verification.
+- [ ] Owner decision: the top of /pro still says «عرض سعر مخصص» while the new section shows the Pro price.
+- [ ] Owner decision: several screenshots show the word "ERPNext" in small print; recapture if it must not appear.
+- [ ] Owner decision: the /pro preview section still says its images are illustrative and will be replaced.
