@@ -6,8 +6,8 @@
 - [x] Stage 4 foundation: 58 source documents, block ordering/editor, bilingual device preview, save/review/publish/unpublish/history/restore, immutable Pro library, validated media upload, published SSR SEO, private leads/status/export/assignment, editor/sales permissions and audit.
 - [x] Stage 5 checked: 21 tests, anonymous lead save/Admin read-back, draft isolation/publish/SEO readback/restoration, upload/approve/placement readback, anonymous admin denial and lead RLS, eight mobile routes without overflow. Synthetic data removed; no live publish.
 - [ ] Stage 3 completion: deeper distinct stories across all matrix targets, independent reviewed Arabic/English content, evidence-approved HR/CRM/Construction/FSM public launch; blocker is product evidence and owner release approval.
-- [ ] Stage 4 completion: signed full-page preview, complete original Home/Pro section editing and migration, media derivatives/usage graph, general form-definition editor, logo/favicon/theme management, redirect editor, role removal/MFA and scheduling. Current CMS is a working foundation, not the full reference feature set.
-- [ ] Stage 5 completion: full all-page acceptance, two-role permission E2E, full revision rollback/media replacement regressions, chat isolation/security decision (existing anon behavior preserved), dynamic sitemap deployment behavior and performance field measurements. Depends on completing remaining CMS capabilities and approved product evidence.
+- [x] Stage 4 completion: signed full-page preview, Home/Pro section editing, media derivatives/usage, form settings editor, logo/favicon/theme, redirect editor, role removal/MFA and scheduling (see the 2026-10-30 build order below).
+- [ ] Stage 5 completion: all-page acceptance sweep (AR+EN status, titles, canonical, console errors); CMS-published landing pages in the sitemap; performance measurement on the published build after approval. Rollback, media replacement, chat isolation and role access are done.
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
 
 # V3 Stage 4/5 completion — build order (started 2026-10-30 "next")
