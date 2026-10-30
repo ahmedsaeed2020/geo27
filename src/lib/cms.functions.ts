@@ -11,7 +11,7 @@ export const getPublishedContent = createServerFn({method:'GET'}).handler(async 
   const client=createClient(endpoint,key,{auth:{persistSession:false},global:{fetch:(input,init)=>{const h=new Headers(init?.headers);if(key.startsWith('sb_') && h.get('Authorization')===`Bearer ${key}`) h.delete('Authorization');h.set('apikey',key);return fetch(input,{...init,headers:h});}}});
   const {data,error}=await client.rpc('cms_published');
   if(error) throw new Error('Content service unavailable');
-  return (data ?? []) as PublishedRecord[];
+  return (data ?? []).map((row:PublishedRecord)=>({...row,published:cmsContentSchema.parse(row.published)}));
 });
 export const cmsWorkspace = createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).handler(async ({context})=>{
   const [content,leads,owner]=await Promise.all(['content','leads','owner'].map(scope=>context.supabase.rpc('cms_access',{scope})));
@@ -32,9 +32,10 @@ export const saveCmsDocument=createServerFn({method:'POST'}).middleware([require
   if(['publish','unpublish','rollback'].includes(data.action)&&!owner)throw new Error('Publishing requires owner approval');
   const content=cmsContentSchema.parse(data.content);
   for(const locale of ['ar','en'] as const) for(const [id,html] of Object.entries(content[locale].sourceEdits)) content[locale].sourceEdits[id]=sanitizeHtml(html,{allowedTags:['p','span','strong','em','br','ul','ol','li','h2','h3','h4','a'],allowedAttributes:{a:['href']},allowedSchemes:['https','mailto','tel']});
-  for(const locale of ['ar','en'] as const) for(const b of content[locale].blocks) if(b.href && !b.href.startsWith('/')) throw new Error('Use an internal page link');
+  for(const locale of ['ar','en'] as const) for(const b of content[locale].blocks) if(b.href && !safePath.safeParse(b.href).success) throw new Error('Use a valid internal page link');
   if((data.action==='publish'||data.action==='rollback')&&content.evidence!=='approved')throw new Error('Evidence approval is required before publishing');
   const {supabaseAdmin}=await import('@/integrations/supabase/client.server');
+  for(const locale of ['ar','en'] as const) for(const b of content[locale].blocks) if(b.mediaUrl){const {data:media}=await supabaseAdmin.from('cms_media').select('id').eq('url',b.mediaUrl).eq('approval','approved').maybeSingle();if(!media)throw new Error('Use an approved library image');}
   const updates={draft:content,updated_by:context.userId,updated_at:new Date().toISOString(),version:(data.version??0)+1,
     ...(data.action==='review'?{state:'review'}:{}),
     ...(data.action==='publish'||data.action==='rollback'?{published:content,state:'published',published_at:new Date().toISOString()}:{}),
