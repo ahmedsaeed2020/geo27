@@ -86,15 +86,17 @@ export const ORGANIZATION_JSONLD = {
 
 const url = (path: string) => SITE_URL + (path === "/" ? "/" : path);
 
-export function withSeo(path: string, head: Head = {}): Head {
+export function withSeo(path: string, head: Head = {}, records: import('./cms-schema').PublishedRecord[] = []): Head {
   const english = path === "/en" || path.startsWith("/en/");
   const arPath = english ? path.replace(/^\/en/, "") || "/" : path;
   const enPath = arPath === "/" ? "/en" : "/en" + arPath;
   const override = english ? undefined : AR_OVERRIDES[arPath];
   const meta = [...(head.meta ?? [])];
   const get = (key: string) => meta.find(m => m.name === key || m.property === key)?.content;
-  const title = override?.title ?? meta.find(m => m.title)?.title ?? "Digit";
-  const description = override?.description ?? get("description") ?? "";
+  const content = records.find(r => r.path===arPath)?.published;
+  const localized=content?.[english?'en':'ar'];
+  const title = localized?.title || override?.title || meta.find(m => m.title)?.title || "Digit";
+  const description = localized?.description || override?.description || get("description") || "";
   const kept = meta.filter(m => !m.title && !["description", "og:title", "og:description", "og:url", "og:locale", "og:type", "twitter:card", "twitter:title", "twitter:description"].includes((m.name ?? m.property) as string));
   const scripts = [...(head.scripts ?? [])];
   const jsonld: object[] = [];
@@ -125,11 +127,13 @@ export function withSeo(path: string, head: Head = {}): Head {
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
+      ...(content?.indexable===false ? [{name:'robots',content:'noindex, nofollow'}] : []),
+      ...(content?.ogImage?.startsWith('https://') ? [{property:'og:image',content:content.ogImage},{name:'twitter:image',content:content.ogImage}] : []),
       ...kept,
     ],
     links: [
       ...(head.links ?? []),
-      { rel: "canonical", href: url(path) },
+      { rel: "canonical", href: url(content?.canonical || path) },
       { rel: "alternate", hrefLang: "ar", href: url(arPath) },
       { rel: "alternate", hrefLang: "en", href: url(enPath) },
       { rel: "alternate", hrefLang: "x-default", href: url(arPath) },

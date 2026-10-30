@@ -1,0 +1,5 @@
+import {createFileRoute,notFound} from '@tanstack/react-router';
+import {getPublishedContent} from '@/lib/cms.functions';
+import {withSeo} from '@/lib/seo';
+import DynamicContentPage from '@/components/cms/DynamicContentPage';
+export const Route=createFileRoute('/$')({loader:async({location})=>{const rows=await getPublishedContent();const path=location.pathname;const bare=path.replace(/^\/en(?=\/|$)/,'')||'/';if(!rows.some(r=>r.path===bare))throw notFound();return {rows,path};},head:({loaderData})=>loaderData?withSeo(loaderData.path,{},loaderData.rows):{meta:[{title:'صفحة غير متاحة — Digit'},{name:'description',content:'الصفحة المطلوبة غير متاحة.'},{property:'og:title',content:'صفحة غير متاحة — Digit'},{property:'og:description',content:'الصفحة المطلوبة غير متاحة.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary'},{name:'robots',content:'noindex'}]},component:DynamicContentPage});
