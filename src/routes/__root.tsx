@@ -158,6 +158,7 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const site = Route.useLoaderData();
+  const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -167,7 +168,7 @@ function RootComponent() {
         <PreviewBanner />
       </CmsProvider>
       <ClientOnly fallback={null}>
-        <ChatWidget />
+        {!privateArea && <ChatWidget />}
       </ClientOnly>
     </QueryClientProvider>
   );
