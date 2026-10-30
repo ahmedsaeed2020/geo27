@@ -6,9 +6,29 @@
 - [x] Stage 4 foundation: 58 source documents, block ordering/editor, bilingual device preview, save/review/publish/unpublish/history/restore, immutable Pro library, validated media upload, published SSR SEO, private leads/status/export/assignment, editor/sales permissions and audit.
 - [x] Stage 5 checked: 21 tests, anonymous lead save/Admin read-back, draft isolation/publish/SEO readback/restoration, upload/approve/placement readback, anonymous admin denial and lead RLS, eight mobile routes without overflow. Synthetic data removed; no live publish.
 - [ ] Stage 3 completion: deeper distinct stories across all matrix targets, independent reviewed Arabic/English content, evidence-approved HR/CRM/Construction/FSM public launch; blocker is product evidence and owner release approval.
-- [ ] Stage 4 completion: signed full-page preview, complete original Home/Pro section editing and migration, media derivatives/usage graph, general form-definition editor, logo/favicon/theme management, redirect editor, role removal/MFA and scheduling. Current CMS is a working foundation, not the full reference feature set.
-- [ ] Stage 5 completion: full all-page acceptance, two-role permission E2E, full revision rollback/media replacement regressions, chat isolation/security decision (existing anon behavior preserved), dynamic sitemap deployment behavior and performance field measurements. Depends on completing remaining CMS capabilities and approved product evidence.
+- [x] Stage 4 completion: signed full-page preview, Home/Pro section editing, media derivatives/usage, form settings editor, logo/favicon/theme, redirect editor, role removal/MFA and scheduling (see the 2026-10-30 build order below).
+- [x] Stage 5 acceptance: all 118 AR+EN pages return 200 with unique titles, one h1, canonical, descriptions, correct direction and no untranslated Arabic on English pages; no browser errors on key pages; sitemap now served live with indexable admin pages.
+- [ ] Performance measurement on the published build — blocked on owner approval to publish.
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
+
+# V3 Stage 4/5 completion — build order (started 2026-10-30 "next")
+- [x] Split the admin into focused panels and restore visitor chat transcripts (lost when the new admin replaced the old one).
+- [x] Team lifecycle: accounts by email, grant/change/remove roles with last-owner protection, emails in lead assignment; authenticator-app MFA with an owner switch requiring it for publishing. (MFA enrolment UI built; not exercised with a real authenticator app.)
+- [x] Expiring, revocable preview links that render the full draft page with a preview banner and noindex. (E2E: create, visitor view, revoke.)
+- [x] Scheduled publish and scheduled unpublish, resolved at read time and materialized into revisions. (E2E: page went live 2 min later.)
+- [x] Redirect manager: 301/302/307/308, loop and chain checks, existing-page warnings, hit counts. (E2E: 301 verified.)
+- [x] One cached published-content query per navigation instead of two server calls; refresh after publishing.
+- [x] Form settings editor: visible optional fields, labels, interest options, success messages; server minimums unchanged. (E2E publish/revert.)
+- [x] Branding: logo, favicon and accent colour from approved media/presets with contrast checks; draft/publish/history. (E2E colour publish/revert; logo/favicon need an approved upload to exercise.)
+- [x] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes. (srcset on public blocks still to wire — see below.)
+- [x] Public CMS image blocks use responsive sizes (srcset) and focal points. (E2E: upload, SVG refusal, approval, 480/960 WebP, replace, archive.)
+- [x] Content claims audit: removed third-party platform count, "100%" stat, internal ERPNext captions, per-user-fee and Mudad wording on home/accounting/industry pages (AR+EN).
+- [ ] Owner decision: "تنفيذ وترقية ERPNext" service page headline/menu (keep, rename or remove) — blocked on owner.
+- [ ] Owner decision: HR/payroll and Saudi-localization claims on WPS/GOSI/Mudad come from the original site — confirm scope — blocked on owner.
+- [x] Home and Pro section editing: section order/visibility and editable headings with source fallback; signed-in draft preview on the real page. (E2E: draft preview, publish, revert.)
+- [x] Visitor chat: widget reads/writes through visitor-checked server actions; /api/chat saves only into the visitor's own thread, with length and burst limits.
+- [ ] Close direct visitor access to chat tables (drop anon policies/grants on chat_threads/chat_messages) — apply together with the next owner-approved publish, because the live site's current widget still reads them directly.
+- [x] Stage 5 regressions: editor vs sales access checked against the database rules (editor: pages only; sales: requests and chats only; no role: nothing), rollback E2E, preview/schedule/redirect E2E, chat isolation E2E; rules kept as tests in src/test.
 
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
 - [x] Verify page content, navigation, FAQ, and narrow-screen layout.

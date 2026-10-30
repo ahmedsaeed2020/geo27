@@ -1,6 +1,7 @@
 import { createServerFn } from '@tanstack/react-start';
 import { getRequest } from '@tanstack/react-start/server';
 import { leadSchema, LEAD_RECIPIENT } from './leads-schema';
+import { parseConfig } from './site-config-schema';
 
 export const submitLead = createServerFn({ method: 'POST' }).inputValidator(leadSchema).handler(async ({ data }) => {
   if (data.website) throw new Error('Invalid submission');
@@ -11,6 +12,11 @@ export const submitLead = createServerFn({ method: 'POST' }).inputValidator(lead
   const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
   const { data: allowed, error: rateError } = await supabaseAdmin.rpc('consume_lead_limit', { rate_key: rateKey });
   if (rateError || !allowed) throw new Error('Please try again later');
+  // Published form settings may require extra fields; the fixed minimum (name, company, one channel, consent) always applies.
+  const { data: formRow } = await supabaseAdmin.from('cms_site_config').select('published').eq('key','forms').maybeSingle();
+  const forms = parseConfig('forms', formRow?.published);
+  if (forms.showJobRole && forms.requireJobRole && !data.jobRole) throw new Error('Job role is required');
+  if (forms.showMessage && forms.requireMessage && !data.message) throw new Error('Message is required');
   const { data: setting } = await supabaseAdmin.from('cms_config').select('value').eq('key','lead_notification_recipient').maybeSingle();
   const recipient = typeof setting?.value === 'string' ? setting.value : LEAD_RECIPIENT;
   const { data: row, error } = await supabaseAdmin.from('contact_requests').insert({

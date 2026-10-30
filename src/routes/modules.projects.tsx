@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/modules-projects.json";
 import "@/content/site/modules-projects.css";
 export const Route = createFileRoute("/modules/projects")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/modules/projects", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },

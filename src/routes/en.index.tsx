@@ -1,9 +1,9 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import HomePage from "@/components/HomePage";
 export const Route = createFileRoute("/en/")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
  head: ({ loaderData }) => withSeo("/en", { meta: [
  { title: "Digit — Saudi ERP | Accounting, E-Invoicing & POS" },
  { name: "description", content: "Digit connects accounting, e-invoicing, sales, purchasing, inventory, POS and reporting for Saudi businesses, in the cloud or on your own servers." },

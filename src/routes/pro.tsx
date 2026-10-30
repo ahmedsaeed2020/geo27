@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
 import nodes from "@/content/pro.json";
 
 export const Route = createFileRoute("/pro")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/pro", { meta: [
     { title: "باقة Pro — Digit | النظام المالي والتشغيلي" },
     { name: "description", content: "باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد." },

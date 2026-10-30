@@ -16,34 +16,46 @@ import Industries from "@/sections/Industries";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
-import { useRef } from "react";
+import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { useLocale } from "@/lib/i18n";
+import { useSiteConfig } from '@/components/cms/CmsContext';
+import { EditableSections } from '@/components/cms/SectionText';
+import { arrangeSections, HOME_SECTIONS, type HomeSectionId } from '@/content/section-registry';
+
+const RENDER: Record<HomeSectionId, () => ReactNode> = {
+  hero: () => <ProductHeroV3 />,
+  trust: () => <TrustStrip />,
+  explorer: () => <AppExplorer />,
+  journey: () => <WorkflowJourney />,
+  chaos: () => <ChaosToControl />,
+  band: () => <ProductBand />,
+  modules: () => <Modules />,
+  showcase: () => <ProductShowcase />,
+  capabilities: () => <Capabilities />,
+  problems: () => <ProblemConveyor />,
+  industries: () => <Industries />,
+  saudi: () => <SaudiLocalization />,
+  faq: () => <Faq />,
+  cms: () => <CmsBlocks />,
+  lead: () => <LeadCapturePanel interest="DIGIT Pro" />,
+  final: () => <FinalCta />,
+};
 
 export default function HomePage() {
   const mainRef = useRef<HTMLElement>(null);
   const locale = useLocale();
-  usePageMotion(mainRef, `home-${locale}`);
+  const { home } = useSiteConfig();
+  const sections = arrangeSections(HOME_SECTIONS, home).filter(s => s.enabled);
+  // Re-run reveal staging when the published layout changes so moved sections are observed.
+  usePageMotion(mainRef, `home-${locale}-${sections.map(s => s.id).join('.')}`);
   return (
     <div className="min-h-screen bg-paper font-plex">
       <Header />
       <main ref={mainRef}>
-        <ProductHeroV3 />
-        <TrustStrip />
-        <AppExplorer />
-        <WorkflowJourney />
-        <ChaosToControl />
-        <ProductBand />
-        <Modules />
-        <ProductShowcase />
-        <Capabilities />
-        <ProblemConveyor />
-        <Industries />
-        <SaudiLocalization />
-        <Faq />
-        <CmsBlocks />
-        <LeadCapturePanel interest="DIGIT Pro" />
-        <FinalCta />
+        <EditableSections page="home">
+          {sections.map(s => <Fragment key={s.id}>{RENDER[s.id]()}</Fragment>)}
+        </EditableSections>
       </main>
       <Footer />
     </div>

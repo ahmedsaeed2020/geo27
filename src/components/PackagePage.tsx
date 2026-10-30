@@ -1,5 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { Fragment, useRef, useState, type ElementType } from "react";
+import { Fragment, useRef, useState, type ElementType, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import previewMeta from "@/content/package-preview-meta.json";
@@ -10,6 +10,9 @@ import PageScene from "@/components/PageScene";
 import ProShowcase from "@/components/product/ProShowcase";
 import LeadCapturePanel from './LeadCapturePanel';
 import CmsBlocks from './cms/CmsBlocks';
+import { useSiteConfig } from './cms/CmsContext';
+import { EditableSections, useSectionOverride } from './cms/SectionText';
+import { arrangeSections, PRO_SECTIONS, proSectionIdOf as packageSectionId } from '@/content/section-registry';
 import "@/package-pages.css";
 
 type PackageNode = {
@@ -58,6 +61,15 @@ function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro
   </div>, locale);
 }
 
+function PackageHeading({ node }: { node: PackageNode }) {
+  const locale = useLocale();
+  const override = useSectionOverride(node.id);
+  const Tag: ElementType = node.tag === "h1" ? "h1" : node.tag === "h3" ? "h3" : "h2";
+  const common = { className: node.className, id: node.anchor || undefined };
+  if (override) return <Tag {...common}>{override}</Tag>;
+  return localizeTree(<Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
+}
+
 function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean }) {
   const locale = useLocale();
   const common = { className: node.className, id: node.anchor || undefined };
@@ -65,10 +77,7 @@ function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; s
     const hero = node.className.split(" ").includes("hero");
     return localizeTree(<div {...common} className={`${node.className}${hero || bodyBackdrop ? " scene-backed" : ""}${bodyBackdrop ? " scene-content-section" : ""}`} data-package-container>{bodyBackdrop ? <PageScene pageKey={slug} kind="body" backdrop /> : hero && <PageScene pageKey={slug} kind="background" />}{node.children?.map(child => <RenderNode key={child.id} node={child} slug={slug} />)}</div>, locale);
   }
-  if (node.type === "heading") {
-    const Tag: ElementType = node.tag === "h1" ? "h1" : node.tag === "h3" ? "h3" : "h2";
-    return localizeTree(<Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
-  }
+  if (node.type === "heading") return <PackageHeading node={node} />;
   if (node.type === "text-editor" || node.type === "html") return localizeTree(<div {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
   if (node.type === "button") {
     const href = node.href === "#final" ? (slug === "starter" ? "#starter-form" : "#pro") : node.href;
@@ -87,11 +96,27 @@ function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; s
 export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slug: "starter" | "pro" }) {
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
-  usePageMotion(mainRef, `${slug}-${locale}`);
-  // Pro shows its real screenshots right after the "what's included" features section.
-  const showcaseAfter = slug === "pro" ? nodes.findIndex(node => node.className.split(" ").includes("features")) : -1;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
-    {nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} slug={slug} bodyBackdrop={index === 3} />{index === showcaseAfter && <ProShowcase />}</Fragment>)}
-    <CmsBlocks /><LeadCapturePanel interest={`DIGIT ${slug==='pro'?'Pro':'Starter'}`}/>
-  </main><Footer /></div>, locale);
+  const { pro } = useSiteConfig();
+  // The scene backdrop belongs to the fourth source container wherever the layout moves it.
+  const backdropId = nodes[3]?.id;
+  const lead = <LeadCapturePanel interest={`DIGIT ${slug === 'pro' ? 'Pro' : 'Starter'}`} />;
+  let body: ReactNode;
+  if (slug === "pro") {
+    const byId = new Map(nodes.map(node => [packageSectionId(node), node]));
+    const sections = arrangeSections(PRO_SECTIONS, pro).filter(s => s.enabled);
+    body = <EditableSections page="pro">{sections.map(s => {
+      if (s.id === "showcase") return <ProShowcase key={s.id} />;
+      if (s.id === "cms") return <CmsBlocks key={s.id} />;
+      if (s.id === "lead") return <Fragment key={s.id}>{lead}</Fragment>;
+      const node = byId.get(s.id);
+      return node ? <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={node.id === backdropId} /> : null;
+    })}</EditableSections>;
+    // Source containers without a registered id (none today) still render, after the arranged sections.
+    const unknown = nodes.filter(node => !packageSectionId(node));
+    if (unknown.length) body = <>{body}{unknown.map(node => <RenderNode key={node.id} node={node} slug={slug} />)}</>;
+  } else {
+    body = <>{nodes.map(node => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={node.id === backdropId} />)}<CmsBlocks />{lead}</>;
+  }
+  usePageMotion(mainRef, `${slug}-${locale}-${slug === "pro" ? pro.sections.map(s => `${s.id}${s.enabled ? "" : "-"}`).join(".") : ""}`);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>{body}</main><Footer /></div>, locale);
 }

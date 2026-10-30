@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
 import nodes from "@/content/starter.json";
 
 export const Route = createFileRoute("/starter")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/starter", { meta: [
     { title: "باقة Starter — Digit | الفوترة الإلكترونية" },
     { name: "description", content: "باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، مع خيار ربط ZATCA وعرض سعر مخصص." },

@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { useState } from "react";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 const TILES: { title: string; sub: string; desc: string; img: string; href: string }[] = [
   { title: "المقاولات", sub: "تكلفة المشاريع · مقاولون من الباطن", desc: "تكلفة كل مشروع، إدارة المقاولين من الباطن، ومستخلصات تقدّم ومحتجزات — مرتبطة بمحاسبتك.", img: "/images/contracting.jpg", href: "/industries/contracting-industry" },
@@ -33,9 +34,9 @@ export default function Industries() {
             القطاعات
             <span className="inline-block h-[2px] w-[50px] bg-primary" />
           </div>
-          <h2 className="pt-5 text-center text-[34px] font-bold text-ink max-md:text-[26px]">
+          <SectionHeading k="industries" className="pt-5 text-center text-[34px] font-bold text-ink max-md:text-[26px]">
             مصمَّم لقطاع عملك
-          </h2>
+          </SectionHeading>
           <p className="mt-3 max-w-[680px] text-center text-[16px] text-body2">
             قطاعات بنموذج عمل، لكل قطاع موديولاته المناسبة — من التجارة والمقاولات إلى التجزئة والخدمات.
           </p>

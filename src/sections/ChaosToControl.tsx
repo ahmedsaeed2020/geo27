@@ -1,4 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
+import { SectionHeading } from '@/components/cms/SectionText';
 const PAINS = [
   "فواتير في إكسل وواتساب",
   "كاشير غير مربوط بالحسابات",
@@ -36,9 +37,9 @@ export default function ChaosToControl() {
           <div className="font-monospace text-[12px] font-bold tracking-[0.14em] text-primary uppercase">
             التحدّي
           </div>
-          <h2 className="font-archivo mx-0 my-2.5 text-[34px] leading-[1.16] font-extrabold tracking-[-0.025em] text-ink max-md:text-[27px]">
+          <SectionHeading k="chaos" className="font-archivo mx-0 my-2.5 text-[34px] leading-[1.16] font-extrabold tracking-[-0.025em] text-ink max-md:text-[27px]">
             من الفوضى… إلى التحكّم
-          </h2>
+          </SectionHeading>
           <p className="text-[16.5px] leading-[1.8] text-[rgba(11,31,23,.62)]">
             تدير شركتك بأدوات لا تتكلّم مع بعضها — فتضيع الأرقام ويتأخّر القرار. Digit يجمعها في نظام واحد.
           </p>

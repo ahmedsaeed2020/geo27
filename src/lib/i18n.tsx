@@ -37,6 +37,9 @@ export function localizeTree(tree: ReactNode, locale: Locale): ReactNode {
   for (const key of ["title", "alt", "aria-label", "placeholder"]) if (typeof props[key] === "string") props[key] = translate(props[key], locale);
   for (const key of ["href", "to"]) if (typeof props[key] === "string") props[key] = localeHref(props[key], locale);
   if (props['dangerouslySetInnerHTML']) props['dangerouslySetInnerHTML'] = localizeData(props['dangerouslySetInnerHTML'], locale);
-  if (props['children'] !== undefined) props['children'] = localizeTree(props['children'] as ReactNode, locale);
-  return cloneElement(element, props);
+  const { children, ...rest } = props;
+  if (children === undefined) return cloneElement(element, rest);
+  const localized = localizeTree(children as ReactNode, locale);
+  // Spread static child lists back as arguments so React keeps treating them as static (no key warnings).
+  return Array.isArray(localized) ? cloneElement(element, rest, ...localized) : cloneElement(element, rest, localized);
 }

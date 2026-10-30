@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/saudi-localization.json";
 import "@/content/site/saudi-localization.css";
 export const Route = createFileRoute("/saudi-localization")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/saudi-localization", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },

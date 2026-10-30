@@ -5,9 +5,10 @@ import ShotLightbox from "@/components/product/ShotLightbox";
 import { shot } from "@/content/product-shots";
 import { PROBLEM_SHOTS, PROOF_COPY } from "@/content/product-proof";
 import "@/product-proof.css";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 const SLIDES: { pain: string; mod: string; sol: string }[] = [
-  { pain: "أسعار مخفية ورسوم لكل مستخدم", mod: "التسعير", sol: "تسعير واضح بلا مفاجآت" },
+  { pain: "أسعار مخفية ورسوم غير متوقعة", mod: "التسعير", sol: "تسعير واضح بلا مفاجآت" },
   { pain: "تطبيق طويل ومكلف", mod: "التطبيق", sol: "منهجية تطبيق محدّدة المدة" },
   { pain: "واجهات معقّدة", mod: "الواجهة", sol: "واجهات عربية مبسّطة" },
   { pain: "تقارير متأخّرة", mod: "التقارير", sol: "رؤية لحظية في لوحة واحدة" },
@@ -70,9 +71,9 @@ export default function ProblemConveyor() {
           <div className="font-monospace text-[12px] font-bold tracking-[0.16em] text-primary uppercase">
             التحدّي
           </div>
-          <h2 className="mt-3.5 text-[clamp(28px,3.4vw,42px)] leading-[1.18] font-bold tracking-[-0.02em] text-ink">
+          <SectionHeading k="problems" className="mt-3.5 text-[clamp(28px,3.4vw,42px)] leading-[1.18] font-bold tracking-[-0.02em] text-ink">
             وداعاً لمشاكل الأنظمة التقليدية
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 text-[17px] leading-[1.75] text-[rgba(11,31,23,.62)]">
             لكل ألمٍ تعرفه في أنظمة ERP… حلٌّ جاهز داخل المنصة. من أدوات متفرّقة إلى نظام واحد مترابط.
           </p>

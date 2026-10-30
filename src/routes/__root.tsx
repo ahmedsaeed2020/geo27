@@ -11,10 +11,14 @@ import {
   useRouterState,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { useServerFn } from '@tanstack/react-start';
+import { getDraftSiteConfig } from '@/lib/cms-admin.functions';
+import type { SiteConfig } from '@/lib/site-config-schema';
 import ChatWidget from "@/components/chat/ChatWidget";
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadSite, previewTokenFrom } from '@/lib/cms-query';
 import { CmsProvider } from '@/components/cms/CmsContext';
+import PreviewBanner, { SettingsDraftBanner, type SettingsDraftState } from '@/components/cms/PreviewBanner';
 import v3Css from '../v3.css?url';
 
 import appCss from "../styles.css?url";
@@ -85,8 +89,12 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  loader: () => getPublishedContent(),
-  head: () => ({
+  loaderDeps: ({ search }) => ({ preview: previewTokenFrom(search) }),
+  loader: ({ context, deps }) => loadSite(context.queryClient, deps),
+  head: ({ loaderData }) => {
+    const branding = loaderData?.config.branding;
+    const icon = branding?.faviconUrl;
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -105,15 +113,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:site_name", content: "Digit" },
+      ...(loaderData?.preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
     ],
+    styles: branding?.primary ? [{ children: `:root{--primary:${branding.primary};--ring:${branding.primary};}` }] : [],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },
       { rel: 'stylesheet', href: v3Css },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      ...(icon
+        ? [{ rel: "icon", href: icon, type: "image/png" }, { rel: "apple-touch-icon", href: icon }]
+        : [
+            { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+            { rel: "icon", href: "/favicon.png", type: "image/png" },
+            { rel: "apple-touch-icon", href: "/favicon.png" },
+          ]),
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -121,7 +135,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap",
       },
     ],
-  }),
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -143,16 +158,51 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const DRAFT_SETTING_KEYS = ['forms', 'home', 'pro'] as const;
+
+/**
+ * `?draft_settings=home|pro|forms` shows saved, unpublished settings to a signed-in editor. It runs only in the
+ * browser after hydration (the session lives there) and never changes what visitors or crawlers receive.
+ */
+function useSettingsDraft(): SettingsDraftState {
+  const requested = useRouterState({ select: s => String((s.location.search as Record<string, unknown>)['draft_settings'] ?? '') });
+  const key = DRAFT_SETTING_KEYS.find(k => k === requested);
+  const load = useServerFn(getDraftSiteConfig);
+  const [state, setState] = useState<SettingsDraftState>({ status: 'off' });
+  useEffect(() => {
+    if (!key) {
+      setState({ status: 'off' });
+      return;
+    }
+    let live = true;
+    setState({ status: 'loading', key });
+    load({ data: { key } })
+      .then(r => live && setState({ status: 'ok', key, value: r.value as never }))
+      .catch(() => live && setState({ status: 'denied', key }));
+    return () => {
+      live = false;
+    };
+  }, [key, load]);
+  return state;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const records = Route.useLoaderData();
+  const site = Route.useLoaderData();
+  const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
+  const draft = useSettingsDraft();
+  const config: SiteConfig = draft.status === 'ok' ? { ...site.config, [draft.key]: draft.value } : site.config;
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <CmsProvider records={records}><Outlet /></CmsProvider>
+      <CmsProvider records={site.records} config={config} preview={site.preview} media={site.media}>
+        <Outlet />
+        <PreviewBanner />
+        <SettingsDraftBanner state={draft} />
+      </CmsProvider>
       <ClientOnly fallback={null}>
-        <ChatWidget />
+        {!privateArea && <ChatWidget />}
       </ClientOnly>
     </QueryClientProvider>
   );
