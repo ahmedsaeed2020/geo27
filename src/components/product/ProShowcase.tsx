@@ -46,10 +46,12 @@ function ThemeBlock({ theme }: { theme: Theme }) {
 /** /pro "ماذا تحصل في DIGIT Pro": all ten themes with sticky chips and the Pro price line. */
 export default function ProShowcase() {
   const locale = useLocale();
-  const rootRef = useRef<HTMLElement>(null);
   const chipsRef = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(THEMES[0]!.key);
   const [stickyTop, setStickyTop] = useState(72);
+  const stickyTopRef = useRef(72);
+  const lockUntil = useRef(0);
+  stickyTopRef.current = stickyTop;
 
   useEffect(() => {
     const header = document.querySelector<HTMLElement>("body header");
@@ -61,16 +63,30 @@ export default function ProShowcase() {
     return () => observer.disconnect();
   }, []);
 
+  // Scroll spy: the active theme is the last one whose top has passed the sticky chips.
   useEffect(() => {
-    const root = rootRef.current;
-    if (!root) return;
-    const blocks = THEMES.map(theme => document.getElementById(themeId(theme))).filter((el): el is HTMLElement => Boolean(el));
-    const observer = new IntersectionObserver(entries => {
-      const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)[0];
-      if (visible) setActive(visible.target.id.replace("pro-theme-", ""));
-    }, { rootMargin: "-35% 0px -55% 0px" });
-    blocks.forEach(block => observer.observe(block));
-    return () => observer.disconnect();
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (Date.now() < lockUntil.current) return;
+      const line = stickyTopRef.current + 140;
+      let current = THEMES[0]!.key;
+      for (const theme of THEMES) {
+        const block = document.getElementById(themeId(theme));
+        if (block && block.getBoundingClientRect().top <= line) current = theme.key;
+      }
+      setActive(current);
+    };
+    const onScroll = () => { if (!frame) frame = requestAnimationFrame(update); };
+    const release = () => { lockUntil.current = 0; onScroll(); };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("scrollend", release);
+    update();
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("scrollend", release);
+      if (frame) cancelAnimationFrame(frame);
+    };
   }, []);
 
   useEffect(() => {
@@ -87,12 +103,14 @@ export default function ProShowcase() {
     if (!target) return;
     event.preventDefault();
     setActive(theme.key);
+    // Keep the clicked chip active while the page glides past the themes in between.
+    lockUntil.current = Date.now() + 1200;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
   };
 
   return (
-    <section ref={rootRef} id="pro-inside" className="pp pp-pro" aria-labelledby="pp-pro-title" lang={locale} style={{ "--pp-sticky-top": `${stickyTop}px` } as CSSProperties}>
+    <section id="pro-inside" className="pp pp-pro" aria-labelledby="pp-pro-title" lang={locale} style={{ "--pp-sticky-top": `${stickyTop}px` } as CSSProperties}>
       <div className="pp-wrap pp-intro">
         <span className="pp-eyebrow">{PRO_SHOWCASE.eyebrow[locale]}</span>
         <h2 className="pp-title" id="pp-pro-title">{PRO_SHOWCASE.title[locale]}</h2>
