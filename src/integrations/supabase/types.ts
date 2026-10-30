@@ -399,6 +399,15 @@ export type Database = {
     }
     Functions: {
       cms_access: { Args: { scope: string }; Returns: boolean }
+      cms_published: {
+        Args: never
+        Returns: {
+          kind: string
+          path: string
+          published: Json
+          published_at: string
+        }[]
+      }
       consume_lead_limit: { Args: { rate_key: string }; Returns: boolean }
       has_role: {
         Args: {

@@ -15,6 +15,13 @@
       "when": 1793396548222,
       "tag": "0001_digit_v3_cms_and_lead_foundation",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1793396590749,
+      "tag": "0002_cms_publication_and_media_access",
+      "breakpoints": true
     }
   ]
 }
