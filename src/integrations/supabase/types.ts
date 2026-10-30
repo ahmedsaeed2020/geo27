@@ -118,15 +118,46 @@ export type Database = {
         }
         Relationships: []
       }
+      cms_config_revisions: {
+        Row: {
+          action: string
+          author_id: string | null
+          config_key: string
+          created_at: string
+          id: string
+          snapshot: Json
+        }
+        Insert: {
+          action: string
+          author_id?: string | null
+          config_key: string
+          created_at?: string
+          id?: string
+          snapshot: Json
+        }
+        Update: {
+          action?: string
+          author_id?: string | null
+          config_key?: string
+          created_at?: string
+          id?: string
+          snapshot?: Json
+        }
+        Relationships: []
+      }
       cms_documents: {
         Row: {
           draft: Json
           id: string
           kind: string
           path: string
+          publish_at: string | null
           published: Json | null
           published_at: string | null
+          scheduled: Json | null
+          scheduled_by: string | null
           state: string
+          unpublish_at: string | null
           updated_at: string
           updated_by: string | null
           version: number
@@ -136,9 +167,13 @@ export type Database = {
           id?: string
           kind?: string
           path: string
+          publish_at?: string | null
           published?: Json | null
           published_at?: string | null
+          scheduled?: Json | null
+          scheduled_by?: string | null
           state?: string
+          unpublish_at?: string | null
           updated_at?: string
           updated_by?: string | null
           version?: number
@@ -148,9 +183,13 @@ export type Database = {
           id?: string
           kind?: string
           path?: string
+          publish_at?: string | null
           published?: Json | null
           published_at?: string | null
+          scheduled?: Json | null
+          scheduled_by?: string | null
           state?: string
+          unpublish_at?: string | null
           updated_at?: string
           updated_by?: string | null
           version?: number
@@ -162,6 +201,8 @@ export type Database = {
           alt_ar: string
           alt_en: string
           approval: string
+          archived_at: string | null
+          bytes: number | null
           created_at: string
           created_by: string | null
           focal_x: number
@@ -169,16 +210,21 @@ export type Database = {
           height: number | null
           id: string
           locked: boolean
+          mime: string | null
+          replaced_at: string | null
           source: string
           storage_path: string | null
           title: string
           url: string
+          variants: Json
           width: number | null
         }
         Insert: {
           alt_ar?: string
           alt_en?: string
           approval?: string
+          archived_at?: string | null
+          bytes?: number | null
           created_at?: string
           created_by?: string | null
           focal_x?: number
@@ -186,16 +232,21 @@ export type Database = {
           height?: number | null
           id?: string
           locked?: boolean
+          mime?: string | null
+          replaced_at?: string | null
           source?: string
           storage_path?: string | null
           title: string
           url: string
+          variants?: Json
           width?: number | null
         }
         Update: {
           alt_ar?: string
           alt_en?: string
           approval?: string
+          archived_at?: string | null
+          bytes?: number | null
           created_at?: string
           created_by?: string | null
           focal_x?: number
@@ -203,10 +254,13 @@ export type Database = {
           height?: number | null
           id?: string
           locked?: boolean
+          mime?: string | null
+          replaced_at?: string | null
           source?: string
           storage_path?: string | null
           title?: string
           url?: string
+          variants?: Json
           width?: number | null
         }
         Relationships: []
@@ -226,6 +280,86 @@ export type Database = {
           created_at?: string
           role?: string
           user_id?: string
+        }
+        Relationships: []
+      }
+      cms_preview_tokens: {
+        Row: {
+          created_at: string
+          created_by: string
+          document_id: string
+          expires_at: string
+          last_used_at: string | null
+          revoked_at: string | null
+          token_hash: string
+        }
+        Insert: {
+          created_at?: string
+          created_by: string
+          document_id: string
+          expires_at: string
+          last_used_at?: string | null
+          revoked_at?: string | null
+          token_hash: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string
+          document_id?: string
+          expires_at?: string
+          last_used_at?: string | null
+          revoked_at?: string | null
+          token_hash?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cms_preview_tokens_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "cms_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      cms_redirects: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          enabled: boolean
+          from_path: string
+          hits: number
+          id: string
+          last_hit_at: string | null
+          note: string
+          status_code: number
+          to_path: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          enabled?: boolean
+          from_path: string
+          hits?: number
+          id?: string
+          last_hit_at?: string | null
+          note?: string
+          status_code?: number
+          to_path: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          enabled?: boolean
+          from_path?: string
+          hits?: number
+          id?: string
+          last_hit_at?: string | null
+          note?: string
+          status_code?: number
+          to_path?: string
+          updated_at?: string
         }
         Relationships: []
       }
@@ -263,6 +397,36 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      cms_site_config: {
+        Row: {
+          draft: Json
+          key: string
+          published: Json | null
+          published_at: string | null
+          updated_at: string
+          updated_by: string | null
+          version: number
+        }
+        Insert: {
+          draft?: Json
+          key: string
+          published?: Json | null
+          published_at?: string | null
+          updated_at?: string
+          updated_by?: string | null
+          version?: number
+        }
+        Update: {
+          draft?: Json
+          key?: string
+          published?: Json | null
+          published_at?: string | null
+          updated_at?: string
+          updated_by?: string | null
+          version?: number
+        }
+        Relationships: []
       }
       contact_requests: {
         Row: {
@@ -399,11 +563,27 @@ export type Database = {
     }
     Functions: {
       cms_access: { Args: { scope: string }; Returns: boolean }
+      cms_apply_schedules: { Args: never; Returns: number }
       cms_published: {
         Args: never
         Returns: {
           kind: string
           path: string
+          published: Json
+          published_at: string
+        }[]
+      }
+      cms_resolve_redirect: {
+        Args: { p_path: string }
+        Returns: {
+          status_code: number
+          to_path: string
+        }[]
+      }
+      cms_site_published: {
+        Args: never
+        Returns: {
+          key: string
           published: Json
           published_at: string
         }[]

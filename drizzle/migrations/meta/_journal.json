@@ -29,6 +29,13 @@
       "when": 1793397119661,
       "tag": "0003_enforce_cms_server_mutations",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1793398253062,
+      "tag": "0004_cms_schedule_preview_redirects_config",
+      "breakpoints": true
     }
   ]
 }
