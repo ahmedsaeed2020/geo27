@@ -27,3 +27,5 @@
 - CMS documents keep separate draft/published snapshots and immutable revisions; existing renderers use published overrides with source fallback so editorial changes do not erase imported layouts. Authenticate every mutation and enforce content/lead/owner scopes on the server.
 - Contextual forms save through server functions into the existing contact_requests store; notification status records actual sending readiness. Managed email handles delivery/retries externally; never create an email queue or email SQL tables.
 - CMS media uses a private bucket and a server-validated approval-gated media route; deny SVG and preserve original Pro pointers unchanged.
+- Home and Pro sections are listed in src/content/section-registry.ts and arranged from the `home`/`pro` site settings (order, visibility, plain-text heading overrides with source fallback); heroes are locked so the original first fold never moves or disappears.
+- Editors preview unpublished form/section settings with `?draft_settings=<key>`, loaded only in the browser through an authenticated server function, so visitors and crawlers always receive published settings.
