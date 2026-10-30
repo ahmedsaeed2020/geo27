@@ -1,5 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { ShieldCheck, UserLock, FileSignature, FolderOpen, Bot, Waypoints } from "lucide-react";
+import { ShieldCheck, UserLock, FileSignature, FolderOpen, Gauge, Waypoints } from "lucide-react";
 
 const CARDS: { title: string; desc: string; icon: React.ReactNode | null }[] = [
   { title: "الأمان · MFA", desc: "مصادقة متعددة العوامل وحماية الوصول لكل حساب.", icon: null },
