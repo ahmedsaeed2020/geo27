@@ -20,8 +20,10 @@
 - [x] Form settings editor: visible optional fields, labels, interest options, success messages; server minimums unchanged. (E2E publish/revert.)
 - [x] Branding: logo, favicon and accent colour from approved media/presets with contrast checks; draft/publish/history. (E2E colour publish/revert; logo/favicon need an approved upload to exercise.)
 - [x] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes. (srcset on public blocks still to wire — see below.)
-- [ ] Public CMS image blocks use responsive sizes (srcset) and focal points.
-- [ ] Content claims audit: confirm imported pages follow the banned-wording/competitor rules (e.g. third-party platform counts on module pages).
+- [x] Public CMS image blocks use responsive sizes (srcset) and focal points. (E2E: upload, SVG refusal, approval, 480/960 WebP, replace, archive.)
+- [x] Content claims audit: removed third-party platform count, "100%" stat, internal ERPNext captions, per-user-fee and Mudad wording on home/accounting/industry pages (AR+EN).
+- [ ] Owner decision: "تنفيذ وترقية ERPNext" service page headline/menu (keep, rename or remove) — blocked on owner.
+- [ ] Owner decision: HR/payroll and Saudi-localization claims on WPS/GOSI/Mudad come from the original site — confirm scope — blocked on owner.
 - [x] Home and Pro section editing: section order/visibility and editable headings with source fallback; signed-in draft preview on the real page. (E2E: draft preview, publish, revert.)
 - [ ] Stage 5 regressions: editor vs sales permissions, rollback, preview/schedule/redirect E2E, chat isolation; tests kept in src/test.
 
