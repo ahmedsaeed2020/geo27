@@ -20,7 +20,7 @@
 .pp.pp-block[data-tone="raised"] { background: var(--paper2); border-block: 1px solid var(--dline); }
 .pp.pp-block + .pp.pp-block { border-top: 0; }
 .pp .pp-head { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 48px; align-items: center; }
-.pp .pp-grid { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 22px; }
+.pp .pp-grid { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(var(--pp-cols, 4), minmax(0, 1fr)); gap: 22px; }
 .pp .pp-grid > li { margin: 0; min-width: 0; }
 .pp .pp-bullets { list-style: none; margin: 30px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .pp .pp-bullets > li { display: flex; align-items: flex-start; gap: 10px; margin: 0; padding: 15px 16px; border: 1px solid var(--dline); border-radius: 12px; background: var(--card); font-size: 14.5px; font-weight: 600; line-height: 1.65; color: var(--ink); }
@@ -43,8 +43,12 @@
 .pp-frame-body { position: relative; display: flex; align-items: center; justify-content: center; aspect-ratio: var(--pp-ratio, 1.6); overflow: hidden; background: var(--paper2); }
 .pp-frame-body img { display: block; }
 .pp-frame[data-mode="screen"] .pp-frame-body img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.pp-frame:is([data-mode="detail"], [data-mode="column"]) .pp-frame-body { padding: 14px; background: radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--deep) 13%, transparent) 1px, transparent 0) 0 0 / 14px 14px, linear-gradient(160deg, var(--tabactive), var(--paper2)); }
+.pp-frame:is([data-mode="detail"], [data-mode="column"], [data-mode="strip"]) .pp-frame-body { padding: 14px; background: radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--deep) 13%, transparent) 1px, transparent 0) 0 0 / 14px 14px, linear-gradient(160deg, var(--tabactive), var(--paper2)); }
 .pp-shot[data-size="lead"] .pp-frame:is([data-mode="detail"], [data-mode="column"]) .pp-frame-body { padding: 24px; }
+.pp-frame[data-mode="strip"] .pp-frame-body { container-type: size; direction: ltr; justify-content: flex-end; padding-inline: 0 14px; }
+.pp-shot[data-size="lead"] .pp-frame[data-mode="strip"] .pp-frame-body { padding-inline: 0 24px; }
+.pp-frame[data-mode="strip"] .pp-frame-body img { flex: none; width: auto; max-width: none; height: min(var(--pp-h), 62cqh); border-radius: 8px; background: var(--card); box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--deep) 30%, transparent); }
+.pp-frame[data-mode="strip"] .pp-frame-body::after { content: ""; position: absolute; inset-block: 0; left: 0; width: 22%; background: linear-gradient(to right, var(--tabactive) 15%, transparent); pointer-events: none; }
 .pp-frame[data-mode="detail"] .pp-frame-body img { width: auto; height: auto; max-width: min(100%, var(--pp-w)); max-height: 100%; object-fit: contain; border-radius: 8px; background: var(--card); box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--deep) 30%, transparent); }
 .pp-frame[data-mode="column"] .pp-frame-body { align-items: flex-start; padding-bottom: 0; }
 .pp-frame[data-mode="column"] .pp-frame-body img { width: min(var(--pp-w), 72%); height: 100%; object-fit: cover; object-position: top; border-radius: 10px 10px 0 0; background: var(--card); box-shadow: 0 12px 30px -10px color-mix(in oklab, var(--deep) 30%, transparent); -webkit-mask-image: linear-gradient(to bottom, black 76%, transparent); mask-image: linear-gradient(to bottom, black 76%, transparent); }
@@ -128,7 +132,7 @@
   .pp .pp-head { grid-template-columns: minmax(0, 1fr); gap: 30px; }
   .pp .pp-panel-grid { grid-template-columns: minmax(0, 1fr); }
   .pp .pp-panel-side { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .pp .pp-theme .pp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pp .pp-grid, .pp .pp-theme .pp-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 860px) {
   .pp .pp-bullets { grid-template-columns: minmax(0, 1fr); }

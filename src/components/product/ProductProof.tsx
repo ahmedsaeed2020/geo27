@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { Link } from "@tanstack/react-router";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,7 +47,7 @@ export default function ProductProof({ eyebrow, title, hook, pain, lead, shots, 
           </div>
           <ShotFrame shot={leadShot} size="lead" onOpen={() => setOpen(0)} />
         </div>
-        {rest.length > 0 && <ul className="pp-grid" role="list">
+        {rest.length > 0 && <ul className="pp-grid" role="list" style={{ "--pp-cols": String(rest.length === 6 ? 3 : Math.min(rest.length, 5)) } as CSSProperties}>
           {rest.map((item, index) => <li key={item.id}><ShotFrame shot={item} motion onOpen={() => setOpen(index + 1)} /></li>)}
         </ul>}
         {bullets && bullets.length > 0 && <ul className="pp-bullets" role="list">
