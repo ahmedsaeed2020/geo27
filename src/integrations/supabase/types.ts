@@ -73,45 +73,287 @@ export type Database = {
         }
         Relationships: []
       }
+      cms_audit: {
+        Row: {
+          action: string
+          actor_id: string | null
+          created_at: string
+          entity: string
+          entity_id: string | null
+          id: string
+        }
+        Insert: {
+          action: string
+          actor_id?: string | null
+          created_at?: string
+          entity: string
+          entity_id?: string | null
+          id?: string
+        }
+        Update: {
+          action?: string
+          actor_id?: string | null
+          created_at?: string
+          entity?: string
+          entity_id?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
+      cms_config: {
+        Row: {
+          key: string
+          updated_at: string
+          value: Json
+        }
+        Insert: {
+          key: string
+          updated_at?: string
+          value: Json
+        }
+        Update: {
+          key?: string
+          updated_at?: string
+          value?: Json
+        }
+        Relationships: []
+      }
+      cms_documents: {
+        Row: {
+          draft: Json
+          id: string
+          kind: string
+          path: string
+          published: Json | null
+          published_at: string | null
+          state: string
+          updated_at: string
+          updated_by: string | null
+          version: number
+        }
+        Insert: {
+          draft?: Json
+          id?: string
+          kind?: string
+          path: string
+          published?: Json | null
+          published_at?: string | null
+          state?: string
+          updated_at?: string
+          updated_by?: string | null
+          version?: number
+        }
+        Update: {
+          draft?: Json
+          id?: string
+          kind?: string
+          path?: string
+          published?: Json | null
+          published_at?: string | null
+          state?: string
+          updated_at?: string
+          updated_by?: string | null
+          version?: number
+        }
+        Relationships: []
+      }
+      cms_media: {
+        Row: {
+          alt_ar: string
+          alt_en: string
+          approval: string
+          created_at: string
+          created_by: string | null
+          focal_x: number
+          focal_y: number
+          height: number | null
+          id: string
+          locked: boolean
+          source: string
+          storage_path: string | null
+          title: string
+          url: string
+          width: number | null
+        }
+        Insert: {
+          alt_ar?: string
+          alt_en?: string
+          approval?: string
+          created_at?: string
+          created_by?: string | null
+          focal_x?: number
+          focal_y?: number
+          height?: number | null
+          id?: string
+          locked?: boolean
+          source?: string
+          storage_path?: string | null
+          title: string
+          url: string
+          width?: number | null
+        }
+        Update: {
+          alt_ar?: string
+          alt_en?: string
+          approval?: string
+          created_at?: string
+          created_by?: string | null
+          focal_x?: number
+          focal_y?: number
+          height?: number | null
+          id?: string
+          locked?: boolean
+          source?: string
+          storage_path?: string | null
+          title?: string
+          url?: string
+          width?: number | null
+        }
+        Relationships: []
+      }
+      cms_members: {
+        Row: {
+          created_at: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          role: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cms_revisions: {
+        Row: {
+          action: string
+          author_id: string | null
+          created_at: string
+          document_id: string
+          id: string
+          snapshot: Json
+        }
+        Insert: {
+          action: string
+          author_id?: string | null
+          created_at?: string
+          document_id: string
+          id?: string
+          snapshot: Json
+        }
+        Update: {
+          action?: string
+          author_id?: string | null
+          created_at?: string
+          document_id?: string
+          id?: string
+          snapshot?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "cms_revisions_document_id_fkey"
+            columns: ["document_id"]
+            isOneToOne: false
+            referencedRelation: "cms_documents"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       contact_requests: {
         Row: {
+          assigned_to: string | null
           company: string | null
+          consent: boolean
           created_at: string
           email: string | null
           id: string
+          industry: string | null
+          interest: string | null
+          job_role: string | null
           kind: string
           locale: string
           message: string | null
           name: string
+          notification_error: string | null
+          notification_recipient: string | null
+          notification_status: string
           page_path: string | null
           phone: string | null
+          referrer: string | null
+          request_type: string
           status: string
+          utm: Json
         }
         Insert: {
+          assigned_to?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           email?: string | null
           id?: string
+          industry?: string | null
+          interest?: string | null
+          job_role?: string | null
           kind?: string
           locale?: string
           message?: string | null
           name: string
+          notification_error?: string | null
+          notification_recipient?: string | null
+          notification_status?: string
           page_path?: string | null
           phone?: string | null
+          referrer?: string | null
+          request_type?: string
           status?: string
+          utm?: Json
         }
         Update: {
+          assigned_to?: string | null
           company?: string | null
+          consent?: boolean
           created_at?: string
           email?: string | null
           id?: string
+          industry?: string | null
+          interest?: string | null
+          job_role?: string | null
           kind?: string
           locale?: string
           message?: string | null
           name?: string
+          notification_error?: string | null
+          notification_recipient?: string | null
+          notification_status?: string
           page_path?: string | null
           phone?: string | null
+          referrer?: string | null
+          request_type?: string
           status?: string
+          utm?: Json
+        }
+        Relationships: []
+      }
+      lead_rate_limits: {
+        Row: {
+          attempts: number
+          key: string
+          window_start: string
+        }
+        Insert: {
+          attempts?: number
+          key: string
+          window_start?: string
+        }
+        Update: {
+          attempts?: number
+          key?: string
+          window_start?: string
         }
         Relationships: []
       }
@@ -156,6 +398,17 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      cms_access: { Args: { scope: string }; Returns: boolean }
+      cms_published: {
+        Args: never
+        Returns: {
+          kind: string
+          path: string
+          published: Json
+          published_at: string
+        }[]
+      }
+      consume_lead_limit: { Args: { rate_key: string }; Returns: boolean }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

@@ -1,0 +1,5 @@
+import ContactForm from './ContactForm';
+import { useLocale } from '@/lib/i18n';
+import { Button } from './ui/button';
+export function focusLeadForm(){const form=document.querySelector<HTMLElement>('[data-contextual-form]');form?.scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'center'});form?.querySelector<HTMLInputElement>('input[name=name]')?.focus({preventScroll:true});}
+export default function LeadCapturePanel({interest='DIGIT'}:{interest?:string}){const l=useLocale();return <section id="digit-lead" className="mx-auto max-w-5xl px-4 py-16"><div className="mb-6 flex flex-wrap items-end justify-between gap-4"><div><p className="text-sm font-semibold text-primary">DIGIT · {interest}</p><h2 className="text-3xl font-bold text-foreground">{l==='ar'?'ديمو مبني على احتياجك':'A demo built around your needs'}</h2></div><Button asChild variant="outline"><a href="https://wa.me/966595051150" target="_blank" rel="noopener noreferrer">{l==='ar'?'تواصل عبر واتساب':'Contact on WhatsApp'}</a></Button></div><ContactForm kind="demo" interest={interest}/></section>}

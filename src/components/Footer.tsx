@@ -1,6 +1,9 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { DigitMarkLight } from "./Header";
 import LanguageSwitch from "@/components/LanguageSwitch";
+import {Button} from './ui/button';
+import {focusLeadForm} from './LeadCapturePanel';
+import {usePublishedRecords} from './cms/CmsNavigation';
 
 const COLS: { title: string; links: { label: string; href: string }[] }[] = [
   {
@@ -62,6 +65,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
 
 export default function Footer() {
   const locale = useLocale();
+  const nav = usePublishedRecords().find(r=>r.kind==='navigation')?.published;
   return localizeTree((
     <footer className="bg-gradient-to-b from-dark to-deep text-[rgba(244,243,238,.66)]">
       <div className="mx-auto max-w-[1240px] px-6 pt-16 pb-8">
@@ -70,16 +74,11 @@ export default function Footer() {
           <div>
             <h3 className="text-[24px] font-extrabold text-white">جاهز تشوف شركتك في نظام واحد؟</h3>
             <p className="mt-2 text-[14px] text-[rgba(244,243,238,.85)]">
-              عرض تجريبي ببيانات سعودية — نرد خلال ساعتين عمل.
+              ناقش نطاق العمل المناسب لمنشأتك مع فريق Digit.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <a
-              href="/demo"
-              className="rounded-[11px] bg-mint px-6 py-3 text-[15px] font-bold text-ink transition-colors hover:bg-[#54e0a8]"
-            >
-              احجز عرضًا تجريبيًا
-            </a>
+            <Button size="lg" onClick={focusLeadForm}>{locale==='ar'?'احجز ديمو Digit':'Book Digit demo'}</Button>
             <a
               href="https://wa.me/966595051150"
               className="rounded-[11px] border-[1.5px] border-[rgba(244,243,238,.34)] px-6 py-3 text-[15px] font-bold text-white transition-colors hover:border-mint"
@@ -128,6 +127,7 @@ export default function Footer() {
               ))}
             </div>
           ))}
+          {nav&&<div><h5 className="mb-4 font-bold text-light">{locale==='ar'?'الموارد':'Resources'}</h5>{nav[locale].blocks.filter(b=>b.enabled&&b.href).map(b=><a key={b.id} href={locale==='en'?`/en${b.href}`:b.href} className="block py-2 text-sm">{b.title}</a>)}</div>}
         </div>
 
         {/* Contact row */}
@@ -138,14 +138,14 @@ export default function Footer() {
           </div>
           <div>
             <span className="font-bold text-white">البريد: </span>
-            <a href="mailto:sales@digit-erp.com" className="hover:text-mint">sales@digit-erp.com</a>
+            <a href="mailto:a.saeed@digit-erp.com" className="hover:text-mint">a.saeed@digit-erp.com</a>
           </div>
           <div>
             <span className="font-bold text-white">العنوان: </span>
             طريق صلاح الدين الأيوبي، تقاطع، شارع جرير، الرياض 12836
           </div>
           <span className="rounded-full border border-[rgba(52,211,153,.35)] bg-[rgba(52,211,153,.1)] px-4 py-1.5 text-[12px] text-mint">
-            ● متوافق مع المرحلة الثانية للفوترة الإلكترونية
+            ● يدعم الربط مع منظومة الفوترة الإلكترونية (فاتورة)
           </span>
         </div>
 

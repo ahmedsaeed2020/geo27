@@ -1,3 +1,4 @@
+import { getPublishedContent } from '@/lib/cms.functions';
 import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
@@ -6,14 +7,15 @@ import arabicPage from "@/content/site/modules-e-invoicing-zatca.json";
 import "@/content/site/modules-e-invoicing-zatca.css";
 const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/modules/e-invoicing-zatca")({
-  head: () => withSeo("/en/modules/e-invoicing-zatca", { meta: [
+ loader: () => getPublishedContent(),
+  head: ({ loaderData }) => withSeo("/en/modules/e-invoicing-zatca", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },
     { property: "og:title", content: page.title + " — Digit" },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  ] }, loaderData),
   component: Page,
 });
 function Page() { return <ImportedPage page={page} pageKey="modules-e-invoicing-zatca" />; }
