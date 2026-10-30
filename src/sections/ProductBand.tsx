@@ -1,4 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
+import { SectionHeading } from '@/components/cms/SectionText';
 export default function ProductBand() {
   const locale = useLocale();
   return localizeTree((
@@ -18,9 +19,9 @@ export default function ProductBand() {
           <h4 className="font-monospace text-[20px] font-bold tracking-[2px] text-mint uppercase">
             DIGIT
           </h4>
-          <h2 className="mt-3 text-[36px] leading-[1.2] font-extrabold text-white">
+          <SectionHeading k="band" className="mt-3 text-[36px] leading-[1.2] font-extrabold text-white">
             محاسبتك أوضح
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 max-w-[520px] text-[17px] leading-[1.7] text-[rgba(244,243,238,.74)]">
             ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.
           </p>

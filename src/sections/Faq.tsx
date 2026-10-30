@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { useState } from "react";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 const QA: { q: string; a: string }[] = [
   { q: "هل هذا نظام ERP عادي؟", a: "لا. Digit منصة عربية بواجهات أوضح وتقارير أقوى وتوطين سعودي أعمق، مصمّمة تحديداً للسوق المحلي." },
@@ -25,9 +26,9 @@ export default function Faq() {
           <div className="mb-2 font-monospace text-[12px] font-bold tracking-[2px] text-primary uppercase">
             الأسئلة الشائعة
           </div>
-          <h2 className="mb-2.5 text-[38px] leading-[1.14] font-bold tracking-[-1px] text-deep max-md:text-[28px]">
+          <SectionHeading k="faq" className="mb-2.5 text-[38px] leading-[1.14] font-bold tracking-[-1px] text-deep max-md:text-[28px]">
             أسئلة قبل أن تقرّر — إجابات مباشرة
-          </h2>
+          </SectionHeading>
           <p className="mb-1.5 text-[18px] leading-[1.8] text-body2">
             أكثر ما يسأل عنه مديرو الشركات قبل اختيار نظام ERP.
           </p>

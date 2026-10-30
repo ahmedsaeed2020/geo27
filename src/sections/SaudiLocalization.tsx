@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { useEffect, useRef } from "react";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 function EmeraldFlow() {
   const locale = useLocale();
@@ -116,9 +117,9 @@ export default function SaudiLocalization() {
             التوطين السعودي
             <span className="inline-block h-[2px] w-[50px] bg-mint" />
           </div>
-          <h2 className="mx-auto mt-4 max-w-[760px] text-[34px] leading-[1.25] font-bold text-white max-md:text-[26px]">
+          <SectionHeading k="saudi" className="mx-auto mt-4 max-w-[760px] text-[34px] leading-[1.25] font-bold text-white max-md:text-[26px]">
             جاهز لفاتورة هيئة الزكاة… من اليوم الأول
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 max-w-[720px] text-[16px] leading-[1.8] text-[#9FB3AA]">
             توطين مُصان داخل المنتج بعقد تحديث دائم — لا عبر شريك خارجي. من الفوترة الإلكترونية إلى مدد والتأمينات والتقويم الهجري.
           </p>

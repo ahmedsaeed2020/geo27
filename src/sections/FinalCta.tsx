@@ -1,4 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
+import { SectionHeading } from '@/components/cms/SectionText';
 export default function FinalCta() {
   const locale = useLocale();
   return localizeTree((
@@ -8,9 +9,9 @@ export default function FinalCta() {
       style={{ background: "linear-gradient(21deg, #0B1F17 42%, #0A8754 95%)" }}
     >
       <div className="mx-auto flex max-w-[1240px] flex-col items-center gap-3.5 text-center">
-        <h2 className="mb-2.5 text-[38px] leading-[1.2] font-bold tracking-[-1px] text-white max-md:text-[28px]">
+        <SectionHeading k="final" className="mb-2.5 text-[38px] leading-[1.2] font-bold tracking-[-1px] text-white max-md:text-[28px]">
           جاهز تشوف كيف يناسب النظام شركتك؟
-        </h2>
+        </SectionHeading>
         <p className="text-[17px] leading-[1.7] text-[rgba(244,243,238,.74)]">
           احجز عرضاً، أو اطلب تحليل جاهزية ERP، أو شاهد جولة داخل النظام — بلا التزام.
         </p>

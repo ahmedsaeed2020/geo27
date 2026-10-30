@@ -1,4 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
+import { SectionHeading } from '@/components/cms/SectionText';
 const MODULES: { title: string; icon: string; bullets: string[]; href: string }[] = [
   { title: "المحاسبة", icon: "/icons/digit-mod-accounts-light-17.svg", bullets: ["قيد يومي", "سند صرف", "تسوية بنكية"], href: "/modules/accounting" },
   { title: "الفوترة الإلكترونية", icon: "/icons/digit-mod-einvoicing-light-5.svg", bullets: ["فاتورة متوافقة", "رمز QR", "ربط فاتورة"], href: "/modules/e-invoicing-zatca" },
@@ -25,9 +26,9 @@ export default function Modules() {
             الموديولات
             <span className="inline-block h-[2px] w-[50px] bg-primary" />
           </div>
-          <h2 className="pt-5 text-center text-[34px] font-bold text-ink max-md:text-[26px]">
+          <SectionHeading k="modules" className="pt-5 text-center text-[34px] font-bold text-ink max-md:text-[26px]">
             منصة واحدة… لكل إدارات شركتك
-          </h2>
+          </SectionHeading>
           <p className="mt-3 max-w-[640px] text-center text-[16px] text-body2">
             كل ما تحتاجه إداراتك في منصة واحدة متصلة — من نفس قاعدة البيانات.
           </p>

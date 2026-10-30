@@ -8,6 +8,7 @@ import { shot } from "@/content/product-shots";
 import { DEMO_HREF, HOME_SHOWCASE, PROOF_COPY } from "@/content/product-proof";
 import { localeHref, useLocale } from "@/lib/i18n";
 import "@/product-proof.css";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 /** Home "شوف النظام من جوّه": one large and two small real screens per tab. */
 export default function ProductShowcase() {
@@ -33,7 +34,7 @@ export default function ProductShowcase() {
       <div className="pp-wrap">
         <div className="pp-intro">
           <span className="pp-eyebrow">{HOME_SHOWCASE.eyebrow[locale]}</span>
-          <h2 className="pp-title" id="pp-home-title">{HOME_SHOWCASE.title[locale]}</h2>
+          <SectionHeading k="showcase" className="pp-title" id="pp-home-title">{HOME_SHOWCASE.title[locale]}</SectionHeading>
           <p className="pp-sub">{HOME_SHOWCASE.sub[locale]}</p>
         </div>
         <div className="pp-tabs" role="tablist" aria-label={HOME_SHOWCASE.eyebrow[locale]}>

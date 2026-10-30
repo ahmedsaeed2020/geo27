@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { ShieldCheck, UserLock, FileSignature, FolderOpen, Gauge, Waypoints } from "lucide-react";
+import { SectionHeading } from '@/components/cms/SectionText';
 
 const CARDS: { title: string; desc: string; icon: React.ReactNode | null }[] = [
   { title: "الأمان · MFA", desc: "مصادقة متعددة العوامل وحماية الوصول لكل حساب.", icon: null },
@@ -26,9 +27,9 @@ export default function Capabilities() {
           <h4 className="font-monospace text-[20px] font-bold tracking-[2px] text-mint uppercase">
             القدرات
           </h4>
-          <h2 className="mt-3 text-[36px] leading-[1.2] font-extrabold text-white">
+          <SectionHeading k="capabilities" className="mt-3 text-[36px] leading-[1.2] font-extrabold text-white">
             قدرات تمتد عبر النظام كله.
-          </h2>
+          </SectionHeading>
           <p className="mx-auto mt-4 max-w-[620px] text-[17px] leading-[1.7] text-[rgba(244,243,238,.74)]">
             ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.
           </p>
