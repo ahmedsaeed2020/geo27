@@ -297,5 +297,5 @@ export const getDraftSiteConfig = createServerFn({ method: 'POST' })
       const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'content' });
       if (!allowed) throw new Error('Forbidden');
     }
-    return { key: data.key, value: parseConfig(data.key, row?.draft ?? row?.published) as Record<string, unknown> };
+    return { key: data.key, value: parseConfig(data.key, row?.draft ?? row?.published) as unknown as Json };
   });

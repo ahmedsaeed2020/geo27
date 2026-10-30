@@ -165,7 +165,7 @@ const DRAFT_SETTING_KEYS = ['forms', 'home', 'pro'] as const;
  * browser after hydration (the session lives there) and never changes what visitors or crawlers receive.
  */
 function useSettingsDraft(): SettingsDraftState {
-  const requested = useRouterState({ select: s => (s.location.search as Record<string, unknown>)['draft_settings'] });
+  const requested = useRouterState({ select: s => String((s.location.search as Record<string, unknown>)['draft_settings'] ?? '') });
   const key = DRAFT_SETTING_KEYS.find(k => k === requested);
   const load = useServerFn(getDraftSiteConfig);
   const [state, setState] = useState<SettingsDraftState>({ status: 'off' });
