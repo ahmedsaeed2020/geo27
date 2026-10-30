@@ -28,6 +28,8 @@ const ACTIONS: Record<string, string> = {
   'role:editor': 'منح صلاحية محرر',
   'role:sales': 'منح صلاحية مبيعات',
   'role:removed': 'إزالة صلاحية',
+  UPDATE: 'تحديث تلقائي',
+  INSERT: 'إنشاء تلقائي',
 };
 const ENTITIES: Record<string, string> = { document: 'صفحة', media: 'صورة', lead: 'طلب', member: 'عضو', redirect: 'تحويل', config: 'إعدادات' };
 

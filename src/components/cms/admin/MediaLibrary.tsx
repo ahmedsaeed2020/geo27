@@ -163,7 +163,10 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
               <span className="cms-focal" style={{ insetInlineStart: `${selected.focal_x}%`, top: `${selected.focal_y}%` }} aria-hidden="true" />
             </div>
             <p className="mt-2 text-xs text-muted-foreground">
-              {selected.width} × {selected.height} · {formatBytes(selected.bytes)} · {((selected.variants as unknown[]) ?? []).length} مقاسات للجوال
+              <span dir="ltr">
+                {selected.width} × {selected.height}
+              </span>{' '}
+              · {formatBytes(selected.bytes)} · {((selected.variants as unknown[]) ?? []).length} مقاسات للجوال
             </p>
             <div className="mt-3 text-sm">
               <p className="font-semibold">مستخدمة في</p>
@@ -304,7 +307,9 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
               <p className="mt-2 text-sm font-bold">{s.caption.ar}</p>
               <p className="flex items-center gap-1 text-xs text-muted-foreground">
                 <ImageIcon size={12} />
-                {s.width} × {s.height}
+                <span dir="ltr">
+                  {s.width} × {s.height}
+                </span>
               </p>
             </article>
           ))}

@@ -75,12 +75,19 @@ export const listChatThreads = createServerFn({ method: 'POST' })
       .order('updated_at', { ascending: false })
       .limit(300);
     if (error) throw new Error('Could not load conversations');
+    const ids = (data ?? []).map(t => t.id);
+    // Untitled threads are labelled with the visitor's first question.
+    const { data: firsts } = ids.length
+      ? await context.supabase.from('chat_messages').select('thread_id, content, created_at').in('thread_id', ids).eq('role', 'user').order('created_at', { ascending: true }).limit(2000)
+      : { data: [] as { thread_id: string; content: string; created_at: string }[] };
+    const first = new Map<string, string>();
+    for (const m of firsts ?? []) if (!first.has(m.thread_id)) first.set(m.thread_id, m.content.slice(0, 140));
     return (data ?? []).map(t => ({
       id: t.id,
       created_at: t.created_at,
       updated_at: t.updated_at,
       locale: t.locale,
-      title: t.title,
+      title: t.title || first.get(t.id) || null,
       messages: (t.chat_messages as unknown as { count: number }[] | null)?.[0]?.count ?? 0,
     }));
   });

@@ -89,11 +89,12 @@ export function errorText(error: unknown, fallback = 'تعذّر تنفيذ ال
 
 export function formatDate(value: string | null | undefined, withTime = true): string {
   if (!value) return '—';
-  return new Date(value).toLocaleString('ar-SA-u-nu-latn', withTime ? { dateStyle: 'medium', timeStyle: 'short' } : { dateStyle: 'medium' });
+  return new Date(value).toLocaleString('ar-SA-u-ca-gregory-nu-latn', withTime ? { dateStyle: 'medium', timeStyle: 'short' } : { dateStyle: 'medium' });
 }
 
 export function NativeSelect({ className = '', ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
-  return <select {...props} className={`h-10 w-full rounded-md border border-input bg-background px-3 text-sm disabled:opacity-60 ${className}`} />;
+  const width = /(^|\s)w-/.test(className) ? '' : 'w-full';
+  return <select {...props} className={`h-10 rounded-md border border-input bg-background px-3 text-sm disabled:opacity-60 ${width} ${className}`} />;
 }
 
 export function Field({ label, hint, children, className = '' }: { label: string; hint?: string | undefined; children: ReactNode; className?: string }) {

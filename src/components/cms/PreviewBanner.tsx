@@ -12,7 +12,7 @@ export default function PreviewBanner() {
   const ar = locale === 'ar';
   const expires =
     preview.status === 'ok'
-      ? new Date(preview.expiresAt).toLocaleString(ar ? 'ar-SA' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short' })
+      ? new Date(preview.expiresAt).toLocaleString(ar ? 'ar-SA-u-ca-gregory-nu-latn' : 'en-GB', { dateStyle: 'medium', timeStyle: 'short' })
       : '';
   return (
     <div role="status" className="cms-preview-banner" data-state={preview.status} dir={ar ? 'rtl' : 'ltr'}>
