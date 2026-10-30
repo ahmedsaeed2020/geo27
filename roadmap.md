@@ -27,7 +27,7 @@
 - [x] Home and Pro section editing: section order/visibility and editable headings with source fallback; signed-in draft preview on the real page. (E2E: draft preview, publish, revert.)
 - [x] Visitor chat: widget reads/writes through visitor-checked server actions; /api/chat saves only into the visitor's own thread, with length and burst limits.
 - [ ] Close direct visitor access to chat tables (drop anon policies/grants on chat_threads/chat_messages) — apply together with the next owner-approved publish, because the live site's current widget still reads them directly.
-- [ ] Stage 5 regressions: editor vs sales permissions, rollback, preview/schedule/redirect E2E, chat isolation; tests kept in src/test.
+- [x] Stage 5 regressions: editor vs sales access checked against the database rules (editor: pages only; sales: requests and chats only; no role: nothing), rollback E2E, preview/schedule/redirect E2E, chat isolation E2E; rules kept as tests in src/test.
 
 - [x] Install uploaded Starter and Pro pages at their existing menu destinations.
 - [x] Verify page content, navigation, FAQ, and narrow-screen layout.
