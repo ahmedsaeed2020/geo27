@@ -1,14 +1,13 @@
 import { createServerFn } from '@tanstack/react-start';
 import { requireSupabaseAuth } from '@/integrations/supabase/auth-middleware';
 import { z } from 'zod';
-import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js';
 import sanitizeHtml from 'sanitize-html';
 import type { Database } from '@/integrations/supabase/types';
 import { cmsContentSchema, safePath, type PublishedRecord } from './cms-schema';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
-
-type Db = SupabaseClient<Database>;
+import { assertPublishAllowed, audit, resolveAccess, type CmsRole, type Db } from './cms-access';
 
 /** Publishable-key client for public reads during SSR; opaque sb_ keys travel only as apikey. */
 function publicClient(): Db {
@@ -97,20 +96,6 @@ export const resolveRedirect = createServerFn({ method: 'GET' })
     return { to: row.to_path, status };
   });
 
-export type CmsRole = 'owner' | 'editor' | 'sales';
-
-async function resolveAccess(supabase: Db, userId: string) {
-  const [content, leads, owner, admin] = await Promise.all([
-    supabase.rpc('cms_access', { scope: 'content' }),
-    supabase.rpc('cms_access', { scope: 'leads' }),
-    supabase.rpc('cms_access', { scope: 'owner' }),
-    supabase.rpc('has_role', { _user_id: userId, _role: 'admin' }),
-  ]);
-  const isOwner = !!admin.data || !!owner.data;
-  const role: CmsRole | null = isOwner ? 'owner' : content.data ? 'editor' : leads.data ? 'sales' : null;
-  return { role, content: !!content.data, leads: !!leads.data, owner: isOwner };
-}
-
 export const cmsWorkspace = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
   .handler(async ({ context }) => {
@@ -171,16 +156,6 @@ export const cmsWorkspace = createServerFn({ method: 'POST' })
 
 export type Workspace = Awaited<ReturnType<typeof cmsWorkspace>>;
 
-/** Owner-only steps honour the "require authenticator app" security switch. */
-export async function assertPublishAllowed(claims: unknown) {
-  const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
-  const { data } = await supabaseAdmin.from('cms_site_config').select('published').eq('key', 'security').maybeSingle();
-  const security = parseConfig('security', data?.published);
-  if (security.requireMfaForPublish && (claims as { aal?: string }).aal !== 'aal2') {
-    throw new Error('Verify your authenticator app before publishing');
-  }
-}
-
 const SANITIZE: sanitizeHtml.IOptions = {
   allowedTags: ['p', 'span', 'strong', 'em', 'br', 'ul', 'ol', 'li', 'h2', 'h3', 'h4', 'a'],
   allowedAttributes: { a: ['href'] },
@@ -208,7 +183,8 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
     if (!access.content) throw new Error('Forbidden');
     const ownerStep = ['publish', 'unpublish', 'rollback', 'schedule', 'unschedule'].includes(data.action);
     if (ownerStep && !access.owner) throw new Error('Publishing requires owner approval');
-    if (ownerStep) await assertPublishAllowed(context.claims);
+    const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
+    if (ownerStep) await assertPublishAllowed(supabaseAdmin, context.claims);
 
     const content = cmsContentSchema.parse(data.content);
     for (const locale of ['ar', 'en'] as const) {
@@ -218,7 +194,6 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
     const goesLive = data.action === 'publish' || data.action === 'rollback' || (data.action === 'schedule' && !!data.publishAt);
     if (goesLive && content.evidence !== 'approved') throw new Error('Evidence approval is required before publishing');
 
-    const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
     const urls = new Set<string>();
     for (const locale of ['ar', 'en'] as const) for (const b of content[locale].blocks) if (b.mediaUrl) urls.add(b.mediaUrl);
     if (content.ogImage.startsWith('/api/public/cms-media/')) urls.add(content.ogImage);
@@ -257,7 +232,7 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
       ? await supabaseAdmin.from('cms_documents').update(updates).eq('id', data.id).eq('version', data.version ?? 0).select().single()
       : await supabaseAdmin.from('cms_documents').insert({ ...updates, path: data.path, kind: data.kind }).select().single();
     if (result.error) throw new Error('Save conflict or invalid document. Refresh before retrying.');
-    await supabaseAdmin.from('cms_audit').insert({ actor_id: context.userId, action: data.action, entity: 'document', entity_id: result.data.id });
+    await audit(supabaseAdmin, context.userId, data.action, 'document', result.data.id);
     return result.data;
   });
 
@@ -291,6 +266,6 @@ export const updateLead = createServerFn({ method: 'POST' })
       .eq('id', data.id);
     if (error) throw new Error('Could not update request');
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
-    await supabaseAdmin.from('cms_audit').insert({ actor_id: context.userId, action: `lead:${data.status}`, entity: 'lead', entity_id: data.id });
+    await audit(supabaseAdmin, context.userId, `lead:${data.status}`, 'lead', data.id);
     return { saved: true };
   });
