@@ -191,7 +191,7 @@ export const saveSiteConfig = createServerFn({ method: 'POST' })
       throw new Error('Verify your authenticator app in this session before requiring it');
     }
     if (data.key === 'branding') {
-      const refs = [value['logoUrl'], value['faviconUrl']].filter((v): v is string => typeof v === 'string' && v !== '');
+      const refs = [value['logoUrl'], value['logoOnDarkUrl'], value['faviconUrl']].filter((v): v is string => typeof v === 'string' && v !== '');
       if (refs.length) {
         const { data: approved } = await supabaseAdmin.from('cms_media').select('url, mime').in('url', refs).eq('approval', 'approved').is('archived_at', null);
         if ((approved ?? []).length !== new Set(refs).size) throw new Error('Use approved library images for the logo and icon');

@@ -28,6 +28,7 @@ export const MIN_ACCENT_CONTRAST = 4.5;
 export const brandingSchema = z
   .object({
     logoUrl: mediaRef.default(''),
+    logoOnDarkUrl: mediaRef.default(''),
     logoAltAr: z.string().trim().max(120).default('Digit'),
     logoAltEn: z.string().trim().max(120).default('Digit'),
     faviconUrl: mediaRef.default(''),
