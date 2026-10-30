@@ -1,25 +1,8 @@
-import { useEffect, useState, type ComponentType } from 'react';
+import { useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useNavigate } from '@tanstack/react-router';
-import {
-  ArrowLeftRight,
-  BookOpen,
-  FileText,
-  Globe,
-  History,
-  Image,
-  Inbox,
-  KeyRound,
-  LayoutDashboard,
-  LogOut,
-  Menu,
-  MessagesSquare,
-  Palette,
-  Shield,
-  SquarePen,
-  Rows3,
-} from 'lucide-react';
+import { LogOut } from 'lucide-react';
 import { cmsWorkspace } from '@/lib/cms.functions';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';

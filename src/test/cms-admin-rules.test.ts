@@ -92,3 +92,16 @@ describe('home and pro section layout', () => {
     expect(nodes.map(n => proSectionIdOf(n))).not.toContain(undefined);
   });
 });
+
+describe('admin sections by role', () => {
+  it('shows sales staff only customer requests, chats and their own account areas', async () => {
+    const { tabsFor } = await import('@/components/cms/admin/tabs');
+    expect(tabsFor('sales').map(t => t.id)).toEqual(['overview', 'leads', 'chats', 'security', 'audit']);
+  });
+  it('keeps customer data, team and branding away from editors', async () => {
+    const { tabsFor } = await import('@/components/cms/admin/tabs');
+    const ids = tabsFor('editor').map(t => t.id);
+    for (const hidden of ['leads', 'chats', 'team', 'branding']) expect(ids).not.toContain(hidden);
+    expect(ids).toContain('home');
+  });
+});
