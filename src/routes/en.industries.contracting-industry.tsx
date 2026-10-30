@@ -9,9 +9,9 @@ const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/industries/contracting-industry")({
  loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/en/industries/contracting-industry", { meta: [
-    { title: page.title + " — Digit" },
+    { title: `${page.title} Industry — Digit` },
     { name: "description", content: page.description },
-    { property: "og:title", content: page.title + " — Digit" },
+    { property: "og:title", content: `${page.title} Industry — Digit` },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

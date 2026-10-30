@@ -7,9 +7,9 @@ import "@/content/site/modules-contracting.css";
 export const Route = createFileRoute("/modules/contracting")({
  loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/modules/contracting", { meta: [
-    { title: page.title + " — Digit" },
+    { title: `نظام ${page.title} — Digit` },
     { name: "description", content: page.description },
-    { property: "og:title", content: page.title + " — Digit" },
+    { property: "og:title", content: `نظام ${page.title} — Digit` },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

@@ -7,9 +7,9 @@ import "@/content/site/industries-contracting-industry.css";
 export const Route = createFileRoute("/industries/contracting-industry")({
  loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/industries/contracting-industry", { meta: [
-    { title: page.title + " — Digit" },
+    { title: `قطاع ${page.title} — Digit` },
     { name: "description", content: page.description },
-    { property: "og:title", content: page.title + " — Digit" },
+    { property: "og:title", content: `قطاع ${page.title} — Digit` },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },

@@ -9,9 +9,9 @@ const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/demo")({
  loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/en/demo", { meta: [
-    { title: page.title + " — Digit" },
+    { title: "Book a Digit Demo | See the system by department" },
     { name: "description", content: page.description },
-    { property: "og:title", content: page.title + " — Digit" },
+    { property: "og:title", content: "Book a Digit Demo | See the system by department" },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
