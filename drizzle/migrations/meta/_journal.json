@@ -36,6 +36,13 @@
       "when": 1793398253062,
       "tag": "0004_cms_schedule_preview_redirects_config",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1793400792425,
+      "tag": "0005_cms_public_media_metadata",
+      "breakpoints": true
     }
   ]
 }

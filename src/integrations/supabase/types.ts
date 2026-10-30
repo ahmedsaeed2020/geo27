@@ -564,6 +564,16 @@ export type Database = {
     Functions: {
       cms_access: { Args: { scope: string }; Returns: boolean }
       cms_apply_schedules: { Args: never; Returns: number }
+      cms_media_public: {
+        Args: never
+        Returns: {
+          focal_x: number
+          focal_y: number
+          height: number
+          url: string
+          width: number
+        }[]
+      }
       cms_published: {
         Args: never
         Returns: {
