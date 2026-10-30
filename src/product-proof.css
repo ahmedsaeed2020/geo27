@@ -12,8 +12,8 @@
 .pp .pp-pain { margin: 14px 0 0; font-size: 15.5px; line-height: 1.85; color: var(--body2); }
 .pp .pp-cta[data-slot], .pp .pp-cta { height: auto; min-height: 46px; padding: 12px 26px; font-size: 15px; font-weight: 600; white-space: normal; text-align: center; color: var(--primary-foreground); }
 .pp .pp-copy .pp-cta { margin-top: 26px; }
-.pp .pp-footnote { display: flex; align-items: center; gap: 8px; margin: 22px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--muted-foreground); }
-.pp .pp-footnote::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); }
+.pp-footnote, .pp .pp-footnote { display: flex; align-items: center; gap: 8px; margin: 22px 0 0; font-size: 12.5px; line-height: 1.6; color: var(--muted-foreground); }
+.pp-footnote::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--mint); }
 
 /* ProductProof block */
 .pp.pp-block { padding-block: 76px; background: var(--paper); }
