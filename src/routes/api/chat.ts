@@ -11,13 +11,29 @@ import { DIGIT_ASSISTANT_INSTRUCTIONS } from "@/lib/chat/knowledge.server";
 const GATEWAY_URL = "https://ai.gateway.lovable.dev/v1";
 const MODEL = "openai/gpt-6-astra";
 
+const MAX_MESSAGES = 60;
+const MAX_BODY_CHARS = 60_000;
+const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+/** Messages per thread in a rolling 10-minute window before the assistant pauses. */
+const THREAD_BURST = 30;
+
+async function ownedThread(threadId: unknown, visitorId: unknown): Promise<string | undefined | "limited"> {
+  if (typeof threadId !== "string" || typeof visitorId !== "string" || !UUID.test(threadId) || !UUID.test(visitorId)) return undefined;
+  const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+  const { data: thread } = await supabaseAdmin.from("chat_threads").select("id").eq("id", threadId).eq("visitor_id", visitorId).maybeSingle();
+  if (!thread) return undefined;
+  const since = new Date(Date.now() - 10 * 60 * 1000).toISOString();
+  const { count } = await supabaseAdmin.from("chat_messages").select("id", { count: "exact", head: true }).eq("thread_id", thread.id).gte("created_at", since);
+  return (count ?? 0) >= THREAD_BURST ? "limited" : thread.id;
+}
+
 async function handleChat(request: Request) {
   const apiKey = process.env["LOVABLE_API_KEY"];
   if (!apiKey) {
     return Response.json({ error: "AI is not configured" }, { status: 500 });
   }
 
-  let body: { messages?: UIMessage[]; threadId?: string; locale?: string };
+  let body: { messages?: UIMessage[]; threadId?: string; visitorId?: string; locale?: string };
   try {
     body = await request.json();
   } catch {
@@ -28,7 +44,14 @@ async function handleChat(request: Request) {
   if (!Array.isArray(messages) || messages.length === 0) {
     return Response.json({ error: "messages are required" }, { status: 400 });
   }
-  const threadId = typeof body.threadId === "string" ? body.threadId : undefined;
+  if (messages.length > MAX_MESSAGES || JSON.stringify(messages).length > MAX_BODY_CHARS) {
+    return Response.json({ error: "Conversation is too long; start a new chat" }, { status: 413 });
+  }
+  // A conversation is saved only when the visitor id owns the thread; others still get an answer, never a write.
+  const threadId = await ownedThread(body.threadId, body.visitorId);
+  if (threadId === "limited") {
+    return Response.json({ error: "Too many messages, please wait a few minutes" }, { status: 429 });
+  }
 
   const runIdFetch = createLovableAiGatewayRunIdFetch(getLovableAiGatewayRunId(request));
   const provider = createOpenAI({

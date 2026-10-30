@@ -108,7 +108,7 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
     return () => {
       cancelled = true;
     };
-  }, [threadId, setMessages]);
+  }, [threadId, setMessages, loadMessages]);
 
   useEffect(() => {
     textareaRef.current?.focus();
