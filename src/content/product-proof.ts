@@ -161,7 +161,7 @@ export const PROBLEM_SHOTS: Record<string, string> = {
 export const PRO_SHOWCASE = {
   eyebrow: PROOF_COPY.eyebrow,
   title: { ar: "ماذا تحصل في DIGIT Pro", en: "What you get in DIGIT Pro" },
-  sub: { ar: "عشر مساحات عمل من النظام الحقيقي، بالترتيب اللي فريقك هيشتغل بيه.", en: "Ten workspaces from the live product, in the order your team will use them." },
+  sub: { ar: "عشر مساحات عمل من النظام الحقيقي، بنفس الشاشات اللي فريقك هيستخدمها.", en: "Ten workspaces from the live product, shown with the same screens your team will use." },
   ctaTitle: { ar: "جاهز تشوفها على بياناتك؟", en: "Ready to see it on your own data?" },
   // The only price on the site (owner prompt 2026-10-30): shown on /pro alone.
   price: { ar: "DIGIT Pro: 9,999 ر.س سنويًا (بدون ضريبة)، أو 12,999 ر.س مع ربط الفوترة الإلكترونية", en: "DIGIT Pro: SAR 9,999 per year (excl. VAT), or SAR 12,999 with e-invoicing integration" },
