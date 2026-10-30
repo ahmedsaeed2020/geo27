@@ -156,6 +156,7 @@ import { Route as EnServicesHostingRouteImport } from './routes/en.services.host
 import { Route as EnServicesImplementationRouteImport } from './routes/en.services.implementation'
 import { Route as EnServicesSupportRouteImport } from './routes/en.services.support'
 import { Route as EnServicesTrainingRouteImport } from './routes/en.services.training'
+import { Route as ApiPublicCmsMediaFileRouteImport } from './routes/api/public/cms-media.$file'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -914,6 +915,11 @@ const EnServicesTrainingRoute = EnServicesTrainingRouteImport.update({
   path: '/training',
   getParentRoute: () => EnServicesRoute,
 } as any)
+const ApiPublicCmsMediaFileRoute = ApiPublicCmsMediaFileRouteImport.update({
+  id: '/api/public/cms-media/$file',
+  path: '/api/public/cms-media/$file',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -1062,6 +1068,7 @@ export interface FileRoutesByFullPath {
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
+  '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -1203,6 +1210,7 @@ export interface FileRoutesByTo {
   '/en/industries': typeof EnIndustriesIndexRoute
   '/en/modules': typeof EnModulesIndexRoute
   '/en/services-3': typeof EnServices3IndexRoute
+  '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1353,6 +1361,7 @@ export interface FileRoutesById {
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
+  '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1503,6 +1512,7 @@ export interface FileRouteTypes {
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
+    | '/api/public/cms-media/$file'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1644,6 +1654,7 @@ export interface FileRouteTypes {
     | '/en/industries'
     | '/en/modules'
     | '/en/services-3'
+    | '/api/public/cms-media/$file'
   id:
     | '__root__'
     | '/'
@@ -1793,6 +1804,7 @@ export interface FileRouteTypes {
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
+    | '/api/public/cms-media/$file'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -1831,6 +1843,7 @@ export interface RootRouteChildren {
   PosSolutionsRestaurantsCafesRoute: typeof PosSolutionsRestaurantsCafesRoute
   PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
   PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
+  ApiPublicCmsMediaFileRoute: typeof ApiPublicCmsMediaFileRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2864,6 +2877,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnServicesTrainingRouteImport
       parentRoute: typeof EnServicesRoute
     }
+    '/api/public/cms-media/$file': {
+      id: '/api/public/cms-media/$file'
+      path: '/api/public/cms-media/$file'
+      fullPath: '/api/public/cms-media/$file'
+      preLoaderRoute: typeof ApiPublicCmsMediaFileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -3225,6 +3245,7 @@ const rootRouteChildren: RootRouteChildren = {
   PosSolutionsRestaurantsCafesRoute: PosSolutionsRestaurantsCafesRoute,
   PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
   PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
+  ApiPublicCmsMediaFileRoute: ApiPublicCmsMediaFileRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
