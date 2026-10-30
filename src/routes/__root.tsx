@@ -11,11 +11,14 @@ import {
   useRouterState,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
+import { useServerFn } from '@tanstack/react-start';
+import { getDraftSiteConfig } from '@/lib/cms-admin.functions';
+import type { SiteConfig } from '@/lib/site-config-schema';
 import ChatWidget from "@/components/chat/ChatWidget";
 import { loadSite, previewTokenFrom } from '@/lib/cms-query';
 import { CmsProvider } from '@/components/cms/CmsContext';
-import PreviewBanner from '@/components/cms/PreviewBanner';
+import PreviewBanner, { SettingsDraftBanner, type SettingsDraftState } from '@/components/cms/PreviewBanner';
 import v3Css from '../v3.css?url';
 
 import appCss from "../styles.css?url";
@@ -155,17 +158,48 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+const DRAFT_SETTING_KEYS = ['forms', 'home', 'pro'] as const;
+
+/**
+ * `?draft_settings=home|pro|forms` shows saved, unpublished settings to a signed-in editor. It runs only in the
+ * browser after hydration (the session lives there) and never changes what visitors or crawlers receive.
+ */
+function useSettingsDraft(): SettingsDraftState {
+  const requested = useRouterState({ select: s => (s.location.search as Record<string, unknown>)['draft_settings'] });
+  const key = DRAFT_SETTING_KEYS.find(k => k === requested);
+  const load = useServerFn(getDraftSiteConfig);
+  const [state, setState] = useState<SettingsDraftState>({ status: 'off' });
+  useEffect(() => {
+    if (!key) {
+      setState({ status: 'off' });
+      return;
+    }
+    let live = true;
+    setState({ status: 'loading', key });
+    load({ data: { key } })
+      .then(r => live && setState({ status: 'ok', key, value: r.value as never }))
+      .catch(() => live && setState({ status: 'denied', key }));
+    return () => {
+      live = false;
+    };
+  }, [key, load]);
+  return state;
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const site = Route.useLoaderData();
   const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
+  const draft = useSettingsDraft();
+  const config: SiteConfig = draft.status === 'ok' ? { ...site.config, [draft.key]: draft.value } : site.config;
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <CmsProvider records={site.records} config={site.config} preview={site.preview}>
+      <CmsProvider records={site.records} config={config} preview={site.preview}>
         <Outlet />
         <PreviewBanner />
+        <SettingsDraftBanner state={draft} />
       </CmsProvider>
       <ClientOnly fallback={null}>
         {!privateArea && <ChatWidget />}
