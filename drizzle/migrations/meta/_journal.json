@@ -22,6 +22,13 @@
       "when": 1793396590749,
       "tag": "0002_cms_publication_and_media_access",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1793397119661,
+      "tag": "0003_enforce_cms_server_mutations",
+      "breakpoints": true
     }
   ]
 }
