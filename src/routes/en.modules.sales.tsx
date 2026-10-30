@@ -1,4 +1,4 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
@@ -7,7 +7,7 @@ import arabicPage from "@/content/site/modules-sales.json";
 import "@/content/site/modules-sales.css";
 const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/modules/sales")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/en/modules/sales", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },

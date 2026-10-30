@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/pos-solutions-electrical-appliances.json";
 import "@/content/site/pos-solutions-electrical-appliances.css";
 export const Route = createFileRoute("/pos-solutions/electrical-appliances")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/pos-solutions/electrical-appliances", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },

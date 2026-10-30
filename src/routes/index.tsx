@@ -1,9 +1,9 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import HomePage from "@/components/HomePage";
 export const Route = createFileRoute("/")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/", {
     meta: [
       { title: "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع" },

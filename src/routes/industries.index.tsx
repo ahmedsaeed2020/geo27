@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/industries.json";
 import "@/content/site/industries.css";
 export const Route = createFileRoute("/industries/")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/industries", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: "حلول Digit للقطاعات السعودية — المقاولات والتجزئة والتوزيع والصناعة والخدمات." },

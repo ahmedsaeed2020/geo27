@@ -1,11 +1,11 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
 import page from "@/content/site/modules-e-invoicing-zatca.json";
 import "@/content/site/modules-e-invoicing-zatca.css";
 export const Route = createFileRoute("/modules/e-invoicing-zatca")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/modules/e-invoicing-zatca", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },

@@ -1,4 +1,4 @@
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
@@ -7,7 +7,7 @@ import arabicNodes from "@/content/starter.json";
 
 const nodes = localizeData(arabicNodes);
 export const Route = createFileRoute("/en/starter")({
- loader: () => getPublishedContent(),
+ loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) => withSeo("/en/starter", { meta: [
     { title: translate("باقة Starter — Digit | الفوترة الإلكترونية") },
     { name: "description", content: translate("باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، مع خيار ربط ZATCA وعرض سعر مخصص.") },

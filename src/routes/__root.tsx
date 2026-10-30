@@ -13,8 +13,9 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 import ChatWidget from "@/components/chat/ChatWidget";
-import { getPublishedContent } from '@/lib/cms.functions';
+import { loadSite, previewTokenFrom } from '@/lib/cms-query';
 import { CmsProvider } from '@/components/cms/CmsContext';
+import PreviewBanner from '@/components/cms/PreviewBanner';
 import v3Css from '../v3.css?url';
 
 import appCss from "../styles.css?url";
@@ -85,8 +86,12 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
 }
 
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  loader: () => getPublishedContent(),
-  head: () => ({
+  loaderDeps: ({ search }) => ({ preview: previewTokenFrom(search) }),
+  loader: ({ context, deps }) => loadSite(context.queryClient, deps),
+  head: ({ loaderData }) => {
+    const branding = loaderData?.config.branding;
+    const icon = branding?.faviconUrl;
+    return {
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
@@ -105,15 +110,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:site_name", content: "Digit" },
+      ...(loaderData?.preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
     ],
+    styles: branding?.primary ? [{ children: `:root{--primary:${branding.primary};--ring:${branding.primary};}` }] : [],
     scripts: [{ type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },
       { rel: 'stylesheet', href: v3Css },
-      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
-      { rel: "apple-touch-icon", href: "/favicon.png" },
+      ...(icon
+        ? [{ rel: "icon", href: icon, type: "image/png" }, { rel: "apple-touch-icon", href: icon }]
+        : [
+            { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+            { rel: "icon", href: "/favicon.png", type: "image/png" },
+            { rel: "apple-touch-icon", href: "/favicon.png" },
+          ]),
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -121,7 +132,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap",
       },
     ],
-  }),
+    };
+  },
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
@@ -145,12 +157,15 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const records = Route.useLoaderData();
+  const site = Route.useLoaderData();
 
   return (
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <CmsProvider records={records}><Outlet /></CmsProvider>
+      <CmsProvider records={site.records} config={site.config} preview={site.preview}>
+        <Outlet />
+        <PreviewBanner />
+      </CmsProvider>
       <ClientOnly fallback={null}>
         <ChatWidget />
       </ClientOnly>
