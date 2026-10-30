@@ -1,5 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { useRef, useState, type ElementType } from "react";
+import { Fragment, useRef, useState, type ElementType } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
 import previewMeta from "@/content/package-preview-meta.json";
@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PageScene from "@/components/PageScene";
+import ProShowcase from "@/components/product/ProShowcase";
 import "@/package-pages.css";
 
 type PackageNode = {
@@ -85,7 +86,9 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
   usePageMotion(mainRef, `${slug}-${locale}`);
+  // Pro shows its real screenshots right after the "what's included" features section.
+  const showcaseAfter = slug === "pro" ? nodes.findIndex(node => node.className.split(" ").includes("features")) : -1;
   return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>
-    {nodes.map((node, index) => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={index === 3} />)}
+    {nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} slug={slug} bodyBackdrop={index === 3} />{index === showcaseAfter && <ProShowcase />}</Fragment>)}
   </main><Footer /></div>, locale);
 }

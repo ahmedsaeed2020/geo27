@@ -1,12 +1,12 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { ShieldCheck, UserLock, FileSignature, FolderOpen, Bot, Waypoints } from "lucide-react";
+import { ShieldCheck, UserLock, FileSignature, FolderOpen, Gauge, Waypoints } from "lucide-react";
 
 const CARDS: { title: string; desc: string; icon: React.ReactNode | null }[] = [
   { title: "الأمان · MFA", desc: "مصادقة متعددة العوامل وحماية الوصول لكل حساب.", icon: null },
   { title: "الصلاحيات والمستخدمون", desc: "أدوار دقيقة لكل فرع ومستخدم، وسجل عمليات كامل.", icon: <UserLock size={25} /> },
   { title: "التوقيع الرقمي", desc: "اعتماد رقمي للمستندات داخل دورة العمل.", icon: <FileSignature size={25} /> },
   { title: "إدارة المستندات", desc: "أرشفة مرتبطة مباشرة بالعمليات والمعاملات.", icon: <FolderOpen size={25} /> },
-  { title: "الذكاء الاصطناعي", desc: "رؤى ومساعدة ذكية ومؤشّرات لحظية للقرار.", icon: <Bot size={25} /> },
+  { title: "الذكاء الاصطناعي", desc: "مؤشرات وتنبيهات لحظية مبنية على بيانات نظامك.", icon: <Gauge size={25} /> },
   { title: "التكاملات", desc: "WooCommerce و API وربط منصاتك الخارجية.", icon: null },
 ];
 
