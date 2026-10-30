@@ -17,5 +17,6 @@ export const uploadCmsMedia=createServerFn({method:'POST'}).middleware([requireS
 export const updateCmsMedia=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({id:z.string().uuid(),altAr:z.string().max(300),altEn:z.string().max(300),approval:z.enum(['draft','approved']),focalX:z.number().int().min(0).max(100),focalY:z.number().int().min(0).max(100)})).handler(async({data,context})=>{
   const {data:allowed}=await context.supabase.rpc('cms_access',{scope:'content'});if(!allowed)throw new Error('Forbidden');
   const {data:owner}=await context.supabase.rpc('cms_access',{scope:'owner'});if(data.approval==='approved'&&!owner)throw new Error('Owner approval required');
-  const {error}=await context.supabase.from('cms_media').update({alt_ar:data.altAr,alt_en:data.altEn,approval:data.approval,focal_x:data.focalX,focal_y:data.focalY}).eq('id',data.id);if(error)throw error;return {saved:true};
+  const {supabaseAdmin}=await import('@/integrations/supabase/client.server');
+  const {error}=await supabaseAdmin.from('cms_media').update({alt_ar:data.altAr,alt_en:data.altEn,approval:data.approval,focal_x:data.focalX,focal_y:data.focalY}).eq('id',data.id);if(error)throw error;return {saved:true};
 });

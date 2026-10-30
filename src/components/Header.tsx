@@ -46,7 +46,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return localizeTree(<header className={`sticky top-0 z-50 transition-all duration-300 ${scrolled ? "bg-light/85 shadow-[0_8px_30px_rgba(11,31,23,0.10)] backdrop-blur-xl" : "bg-light shadow-sm"}`}>
-    <div className={`mx-auto flex max-w-[1600px] items-center gap-8 px-6 transition-all duration-300 max-lg:px-4 ${scrolled ? "h-16 max-lg:h-14" : "h-24 max-lg:h-16"}`}>
+    <div className={`mx-auto flex max-w-[1600px] items-center gap-8 px-6 max-sm:gap-2 transition-all duration-300 max-lg:px-4 ${scrolled ? "h-16 max-lg:h-14" : "h-24 max-lg:h-16"}`}>
       <Link to="/" className="flex items-center gap-2.5" dir="ltr"><DigitMark className={`transition-all duration-300 ${scrolled ? "h-7 w-7" : "h-9 w-9"}`} /><span className="font-archivo text-2xl font-extrabold text-ink max-lg:hidden">DIGIT</span></Link>
       <nav aria-label="القائمة الرئيسية" className="flex items-center gap-7 max-lg:hidden">
         {MENU.map(item => <div key={item.href} className="group relative">
@@ -56,7 +56,7 @@ export default function Header() {
           </div>
         </div>)}
       </nav>
-      <div className="ms-auto flex items-center gap-3"><LanguageSwitch /><Button size="lg" onClick={focusLeadForm}>{locale==='ar'?'احجز ديمو Digit':'Book Digit demo'}</Button><Button variant="ghost" size="icon" className="lg:hidden" aria-label="القائمة" onClick={() => setOpen(true)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M4 7h16M4 12h16M4 17h16" /></svg></Button></div>
+      <div className="ms-auto flex items-center gap-3 max-sm:gap-1"><LanguageSwitch /><Button size="lg" onClick={focusLeadForm}>{locale==='ar'?'احجز ديمو Digit':'Book Digit demo'}</Button><Button variant="ghost" size="icon" className="lg:hidden" aria-label="القائمة" onClick={() => setOpen(true)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M4 7h16M4 12h16M4 17h16" /></svg></Button></div>
     </div>
     {open && <div className="fixed inset-0 z-[60] lg:hidden"><div className="absolute inset-0 bg-ink/40" onClick={() => setOpen(false)} /><div className="absolute inset-y-0 start-0 flex w-80 max-w-[85vw] flex-col overflow-y-auto bg-light p-5 shadow-xl">
       <div className="mb-4 flex items-center justify-between"><DigitMark /><Button variant="ghost" size="icon" aria-label="إغلاق" onClick={() => setOpen(false)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"><path d="M6 6l12 12M18 6L6 18" /></svg></Button></div>

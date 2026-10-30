@@ -39,7 +39,7 @@ export const saveCmsDocument=createServerFn({method:'POST'}).middleware([require
     ...(data.action==='review'?{state:'review'}:{}),
     ...(data.action==='publish'||data.action==='rollback'?{published:content,state:'published',published_at:new Date().toISOString()}:{}),
     ...(data.action==='unpublish'?{published:null,state:'archived'}:{})};
-  const result=data.id?await context.supabase.from('cms_documents').update(updates).eq('id',data.id).eq('version',data.version??0).select().single():await context.supabase.from('cms_documents').insert({...updates,path:data.path,kind:data.kind}).select().single();
+  const result=data.id?await supabaseAdmin.from('cms_documents').update(updates).eq('id',data.id).eq('version',data.version??0).select().single():await supabaseAdmin.from('cms_documents').insert({...updates,path:data.path,kind:data.kind}).select().single();
   if(result.error)throw new Error('Save conflict or invalid document. Refresh before retrying.');
   await supabaseAdmin.from('cms_audit').insert({actor_id:context.userId,action:data.action,entity:'document',entity_id:result.data.id});
   return result.data;
