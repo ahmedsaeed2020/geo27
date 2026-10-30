@@ -10,7 +10,10 @@ export async function blobToBase64(blob: Blob): Promise<string> {
 }
 
 export async function imageSize(file: Blob): Promise<{ width: number; height: number }> {
-  const bitmap = await createImageBitmap(file);
+  // Files that the browser cannot decode as a bitmap (SVG, corrupt or renamed files) are refused before upload.
+  const bitmap = await createImageBitmap(file).catch(() => {
+    throw new Error('Only PNG, JPEG and WebP images are accepted');
+  });
   const size = { width: bitmap.width, height: bitmap.height };
   bitmap.close();
   return size;

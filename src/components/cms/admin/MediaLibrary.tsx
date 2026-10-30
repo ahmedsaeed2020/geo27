@@ -50,8 +50,11 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
     return match && f;
   });
 
+  /** Stores the resized copies and returns their sizes so the open detail panel shows them immediately. */
   async function storeVariants(id: string, file: Blob) {
-    for (const v of await makeVariants(file)) await variant({ data: { id, width: v.width, height: v.height, base64: await blobToBase64(v.blob) } });
+    const made = await makeVariants(file);
+    for (const v of made) await variant({ data: { id, width: v.width, height: v.height, base64: await blobToBase64(v.blob) } });
+    return made.map(v => ({ width: v.width, height: v.height }));
   }
 
   async function onUpload(file: File) {
@@ -63,9 +66,9 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
       const name = file.name.replace(/\.[a-z0-9]+$/i, '');
       const row = await upload({ data: { base64: await blobToBase64(file), title: name, altAr: '', altEn: '', source: 'رفع من لوحة الإدارة', ...size } });
       setBusy('variants');
-      await storeVariants(row.id, file);
+      const variants = await storeVariants(row.id, file);
       await refresh();
-      setSelected(row as Media);
+      setSelected({ ...(row as Media), variants });
       notice('رُفعت الصورة كمسودة. أضف الوصف بالعربية والإنجليزية ثم اعتمدها.');
     } catch (e) {
       setError(errorText(e, 'تعذّر رفع الصورة.'));
@@ -82,9 +85,9 @@ export default function MediaLibrary({ rows, docs, config, owner, notice }: { ro
     try {
       const size = await imageSize(file);
       await replace({ data: { id: selected.id, base64: await blobToBase64(file), ...size } });
-      await storeVariants(selected.id, file);
+      const variants = await storeVariants(selected.id, file);
       await refresh();
-      setSelected({ ...selected, ...size, replaced_at: new Date().toISOString() });
+      setSelected({ ...selected, ...size, variants, replaced_at: new Date().toISOString() });
       notice('استُبدل ملف الصورة. كل الصفحات التي تستخدمها تعرض النسخة الجديدة خلال دقائق.');
     } catch (e) {
       setError(errorText(e, 'تعذّر استبدال الصورة.'));

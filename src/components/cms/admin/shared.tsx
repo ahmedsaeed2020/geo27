@@ -50,6 +50,10 @@ export const REVISION_LABELS: Record<string, string> = {
 
 const ERRORS: [RegExp, string][] = [
   [/^Forbidden$/, 'لا تملك صلاحية هذا الإجراء.'],
+  [/Only PNG, JPEG and WebP/, 'الملف ليس صورة PNG أو JPEG أو WebP صالحة. صور SVG غير مسموحة.'],
+  [/File too large/, 'الحد الأقصى لحجم الصورة 8 ميجابايت.'],
+  [/Owner approval required/, 'هذا الإجراء يتطلب صلاحية المالك.'],
+  [/Image is still used/, 'الصورة مستخدمة في صفحات منشورة؛ أزلها منها أولًا.'],
   [/Publishing requires owner approval/, 'النشر يتطلب صلاحية المالك.'],
   [/Evidence approval is required/, 'اعتمد دليل النشر أولًا (حقل «دليل النشر»).'],
   [/approved library image/, 'استخدم صورة معتمدة وغير مؤرشفة من المكتبة.'],
