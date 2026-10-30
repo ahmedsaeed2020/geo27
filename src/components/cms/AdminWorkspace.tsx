@@ -1,47 +1,215 @@
-import {useState} from 'react';
-import {useQuery} from '@tanstack/react-query';
-import {useServerFn} from '@tanstack/react-start';
-import {useRouter} from '@tanstack/react-router';
-import {Plus,Save,Eye,Upload,ArrowUp,ArrowDown,Trash2,RotateCcw,Check,LogOut,FileText,Image,Inbox,Settings,Shield,History,LayoutDashboard,Globe,Menu,BookOpen} from 'lucide-react';
-import {cmsWorkspace,saveCmsDocument,getCmsHistory,updateLead,setCmsRole} from '@/lib/cms.functions';
-import {uploadCmsMedia,updateCmsMedia} from '@/lib/media.functions';
-import {supabase} from '@/integrations/supabase/client';
-import {Button} from '@/components/ui/button';
-import {Input} from '@/components/ui/input';
-import {Textarea} from '@/components/ui/textarea';
-import CmsBlocks from './CmsBlocks';
-import type {CmsContent} from '@/lib/cms-schema';
-import {cmsContentSchema} from '@/lib/cms-schema';
-import {SHOTS} from '@/content/product-shots';
-import {LEAD_RECIPIENT} from '@/lib/leads-schema';
-type Doc=Awaited<ReturnType<typeof cmsWorkspace>>['docs'][number];
-type Media=Awaited<ReturnType<typeof cmsWorkspace>>['media'][number];
-const empty=():CmsContent=>({ar:{title:'',description:'',blocks:[],sourceEdits:{}},en:{title:'',description:'',blocks:[],sourceEdits:{}},indexable:true,evidence:'pending',formEnabled:true,ogImage:'',canonical:''});
-const NAV=[['overview','نظرة عامة',LayoutDashboard],['pages','الصفحات',FileText],['stories','المنتجات وقصص الميزات',BookOpen],['media','مكتبة الصور',Image],['seo','SEO',Globe],['navigation','القوائم والتذييل',Menu],['branding','الهوية',Settings],['resources','الموارد',BookOpen],['forms','النماذج',FileText],['leads','طلبات العملاء',Inbox],['team','الصلاحيات',Shield],['audit','سجل النشاط',History]] as const;
-export default function AdminWorkspace(){
- const api=useServerFn(cmsWorkspace);const query=useQuery({queryKey:['cms-workspace'],queryFn:()=>api()});const [tab,setTab]=useState('overview');const [active,setActive]=useState<Doc|null>(null);const [notice,setNotice]=useState('');
- const refresh=()=>query.refetch();
- if(query.isPending)return <p className="p-8">جارٍ تحميل لوحة Digit…</p>;if(query.error)return <div className="p-8"><h1 className="text-2xl font-bold">لا يمكن فتح الإدارة</h1><p>{query.error.message}</p></div>;
- const w=query.data;const canContent=w.role!=='sales';const owner=w.role==='owner';const canLeads=w.role!=='editor';
- const available=NAV.filter(([id])=>w.role==='sales'?['overview','leads','audit'].includes(id):w.role==='editor'?!['leads','team','branding','audit'].includes(id):true);
- return <div className="v3-cms-layout font-plex text-foreground" dir="rtl"><aside className="v3-cms-nav"><h1 className="mb-1 text-2xl font-bold">DIGIT <span className="text-primary">CMS</span></h1><p className="mb-6 text-xs text-muted-foreground">{w.role==='owner'?'مالك الموقع':w.role==='editor'?'محرر المحتوى':'فريق المبيعات'}</p><nav className="space-y-1">{available.map(([id,label,Icon])=><Button key={id} variant={tab===id?'default':'ghost'} className="w-full justify-start" onClick={()=>{setTab(id);setActive(null)}}><Icon size={17}/>{label}</Button>)}</nav><Button variant="outline" className="mt-8" onClick={async()=>{await supabase.auth.signOut();window.location.assign('/auth')}}><LogOut size={16}/>خروج</Button></aside><main className="v3-cms-main"><header className="mb-6 flex flex-wrap items-center justify-between gap-3"><h2 className="text-2xl font-bold">{NAV.find(n=>n[0]===tab)?.[1]}</h2><span className="text-sm text-muted-foreground">معاينة فقط · لا نشر على الدومين الحي</span></header>{notice&&<p role="status" className="mb-4 border border-border bg-accent p-3">{notice}</p>}
- {tab==='overview'&&<><div className="grid gap-4 sm:grid-cols-3">{[['صفحات الإدارة',w.docs.length],['الطلبات الجديدة',canLeads?w.leads.filter(l=>l.status==='new').length:'—'],['صور المنتج المحفوظة',Object.keys(SHOTS).length]].map(([label,n])=><article key={label} className="border border-border bg-card p-5"><p className="text-sm text-muted-foreground">{label}</p><p className="text-3xl font-bold">{n}</p></article>)}</div><h3 className="mt-8 font-bold">الإرسال البريدي</h3><p className="mt-2" dir="ltr">{LEAD_RECIPIENT}</p><p className="text-sm text-muted-foreground">غير مفعّل: يلزم إعداد نطاق إرسال والتحقق منه. الطلبات محفوظة في صندوق الإدارة.</p><Audit rows={w.audit}/></>}
- {canContent&&['pages','stories','resources','forms','seo','navigation','branding'].includes(tab)&&(active?<PageEditor doc={active} media={w.media} owner={owner} onBack={()=>setActive(null)} onSaved={async d=>{setActive(d);await refresh();setNotice('تم الحفظ')}}/>:<DocumentList docs={w.docs} tab={tab} onEdit={setActive} onNew={()=>setActive({id:'',path:tab==='navigation'?'/cms-navigation':tab==='branding'?'/cms-branding':'/lp/new-campaign',kind:tab==='resources'?'resource':tab==='navigation'?'navigation':tab==='branding'?'branding':'page',draft:empty(),published:null,state:'draft',version:0,updated_at:new Date().toISOString(),published_at:null,updated_by:null})}/>)}
- {tab==='media'&&canContent&&<MediaLibrary rows={w.media} owner={owner} onSaved={refresh} notice={setNotice}/>}
- {tab==='leads'&&canLeads&&<Leads rows={w.leads} members={w.members} onSaved={refresh} notice={setNotice}/>}
- {tab==='team'&&owner&&<Team rows={w.members} onSaved={refresh} notice={setNotice}/>}
- {tab==='audit'&&<Audit rows={w.audit}/>}</main></div>;
+import { useEffect, useState, type ComponentType } from 'react';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useServerFn } from '@tanstack/react-start';
+import { useNavigate } from '@tanstack/react-router';
+import {
+  ArrowLeftRight,
+  BookOpen,
+  FileText,
+  Globe,
+  History,
+  Image,
+  Inbox,
+  KeyRound,
+  LayoutDashboard,
+  LogOut,
+  Menu,
+  MessagesSquare,
+  Shield,
+} from 'lucide-react';
+import { cmsWorkspace } from '@/lib/cms.functions';
+import { supabase } from '@/integrations/supabase/client';
+import { Button } from '@/components/ui/button';
+import Overview from './admin/Overview';
+import DocumentList, { type ListKind } from './admin/DocumentList';
+import PageEditor, { emptyContent } from './admin/PageEditor';
+import SeoPanel from './admin/SeoPanel';
+import MediaLibrary from './admin/MediaLibrary';
+import Leads from './admin/Leads';
+import Chats from './admin/Chats';
+import Team from './admin/Team';
+import Audit from './admin/Audit';
+import Redirects from './admin/Redirects';
+import SecurityPanel, { MfaChallenge } from './admin/Security';
+import { ROLE_LABELS, WORKSPACE_KEY, type Doc } from './admin/shared';
+
+type Role = 'owner' | 'editor' | 'sales';
+type Tab = { id: string; label: string; icon: ComponentType<{ size?: number }>; roles: Role[]; group: string };
+
+const TABS: Tab[] = [
+  { id: 'overview', label: 'نظرة عامة', icon: LayoutDashboard, roles: ['owner', 'editor', 'sales'], group: '' },
+  { id: 'pages', label: 'الصفحات', icon: FileText, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'stories', label: 'قصص الميزات', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'resources', label: 'الموارد', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'media', label: 'مكتبة الصور', icon: Image, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'navigation', label: 'روابط القائمة', icon: Menu, roles: ['owner', 'editor'], group: 'الموقع' },
+  { id: 'seo', label: 'محركات البحث', icon: Globe, roles: ['owner', 'editor'], group: 'الموقع' },
+  { id: 'redirects', label: 'التحويلات', icon: ArrowLeftRight, roles: ['owner', 'editor'], group: 'الموقع' },
+  { id: 'leads', label: 'طلبات العملاء', icon: Inbox, roles: ['owner', 'sales'], group: 'العملاء' },
+  { id: 'chats', label: 'محادثات المساعد', icon: MessagesSquare, roles: ['owner', 'sales'], group: 'العملاء' },
+  { id: 'team', label: 'الفريق والصلاحيات', icon: Shield, roles: ['owner'], group: 'الإدارة' },
+  { id: 'security', label: 'أمان الحساب', icon: KeyRound, roles: ['owner', 'editor', 'sales'], group: 'الإدارة' },
+  { id: 'audit', label: 'سجل النشاط', icon: History, roles: ['owner', 'editor', 'sales'], group: 'الإدارة' },
+];
+
+const LIST_TABS: Record<string, ListKind> = { pages: 'pages', stories: 'stories', resources: 'resources', navigation: 'navigation' };
+const NEW_DOC: Record<ListKind, { path: string; kind: string }> = {
+  pages: { path: '/lp/new-campaign', kind: 'page' },
+  stories: { path: '/stories/new-story', kind: 'story' },
+  resources: { path: '/resources/new-guide', kind: 'resource' },
+  navigation: { path: '/cms-navigation', kind: 'navigation' },
+};
+
+function newDoc(kind: ListKind): Doc {
+  const base = NEW_DOC[kind];
+  return {
+    id: '',
+    path: base.path,
+    kind: base.kind,
+    draft: emptyContent(),
+    published: null,
+    scheduled: null,
+    publish_at: null,
+    unpublish_at: null,
+    scheduled_by: null,
+    state: 'draft',
+    version: 0,
+    updated_at: new Date().toISOString(),
+    published_at: null,
+    updated_by: null,
+  } as Doc;
 }
-function DocumentList({docs,tab,onEdit,onNew}:{docs:Doc[];tab:string;onEdit:(d:Doc)=>void;onNew:()=>void}){const [q,setQ]=useState('');const relevant=docs.filter(d=>tab==='resources'?d.kind==='resource':tab==='stories'?d.kind==='story':tab==='navigation'?d.kind==='navigation':tab==='branding'?d.kind==='branding':d.kind!=='story');return <><div className="mb-5 flex gap-3"><Input aria-label="بحث الصفحات" placeholder="ابحث بالعنوان أو المسار" value={q} onChange={e=>setQ(e.target.value)}/><Button onClick={onNew}><Plus size={17}/>إنشاء</Button></div><div className="overflow-x-auto"><table className="v3-cms-table"><thead><tr><th>الصفحة</th><th>المسار</th><th>الحالة</th><th>الإصدار</th><th>التعديل</th></tr></thead><tbody>{relevant.filter(d=>JSON.stringify(d.draft).includes(q)||d.path.includes(q)).map(d=>{const c=cmsContentSchema.safeParse(d.draft);return <tr key={d.id}><td>{c.success?c.data.ar.title:d.path}</td><td dir="ltr">{d.path}</td><td>{d.state==='published'?'منشور للمعاينة':d.state==='review'?'للمراجعة':'مسودة'}</td><td>{d.version}</td><td><Button size="sm" variant="outline" onClick={()=>onEdit(d)}>تحرير</Button></td></tr>})}</tbody></table></div>{!relevant.length&&<p className="py-8 text-muted-foreground">لا توجد عناصر بعد.</p>}</>}
-function PageEditor({doc,media,owner,onBack,onSaved}:{doc:Doc;media:Media[];owner:boolean;onBack:()=>void;onSaved:(d:Doc)=>void}){
- const parsed=cmsContentSchema.safeParse(doc.draft);const [c,setC]=useState<CmsContent>(parsed.success?parsed.data:empty());const [path,setPath]=useState(doc.path);const [locale,setLocale]=useState<'ar'|'en'>('ar');const [device,setDevice]=useState('desktop');const [error,setError]=useState('');const [busy,setBusy]=useState(false);const [history,setHistory]=useState<Awaited<ReturnType<typeof getCmsHistory>>>([]);const save=useServerFn(saveCmsDocument);const hist=useServerFn(getCmsHistory);const router=useRouter();
- const local=c[locale];const update=(v:Partial<typeof local>)=>setC({...c,[locale]:{...local,...v}});
- async function act(action:'save'|'review'|'publish'|'unpublish'|'rollback'){setBusy(true);setError('');try{const d=await save({data:{...(doc.id?{id:doc.id}:{}),path,kind:doc.kind,content:c,version:doc.version,action}});onSaved(d);await router.invalidate();}catch(e){setError(e instanceof Error?e.message:'تعذّر الحفظ')}finally{setBusy(false)}}
- return <><div className="mb-5 flex flex-wrap gap-2"><Button variant="ghost" onClick={onBack}>رجوع</Button><Button onClick={()=>act('save')} disabled={busy}><Save size={16}/>حفظ المسودة</Button><Button variant="outline" onClick={()=>act('review')} disabled={busy}>إرسال للمراجعة</Button>{owner&&<><Button onClick={()=>act('publish')} disabled={busy}><Check size={16}/>نشر للمعاينة</Button><Button variant="outline" onClick={()=>act('unpublish')} disabled={busy}>إلغاء النشر</Button></>}<Button variant="outline" onClick={async()=>{if(doc.id)setHistory(await hist({data:doc.id}))}}><History size={16}/>الإصدارات</Button></div>{error&&<p role="alert" className="mb-4 text-destructive">{error}</p>}<div className="mb-5 flex gap-2"><Button variant={locale==='ar'?'default':'outline'} onClick={()=>setLocale('ar')}>العربية</Button><Button variant={locale==='en'?'default':'outline'} onClick={()=>setLocale('en')}>English</Button><select value={device} onChange={e=>setDevice(e.target.value)} className="border border-input bg-background px-3"><option value="desktop">كمبيوتر</option><option value="mobile">جوال</option></select></div><div className="v3-editor-grid"><div className="space-y-4"><label className="block">المسار<Input dir="ltr" value={path} onChange={e=>setPath(e.target.value)} disabled={!!doc.id}/></label><label className="block">العنوان / SEO<Input value={local.title} onChange={e=>update({title:e.target.value})}/></label><label className="block">الوصف / SEO<Textarea value={local.description} onChange={e=>update({description:e.target.value})}/></label><label className="flex gap-2"><input type="checkbox" checked={c.formEnabled} onChange={e=>setC({...c,formEnabled:e.target.checked})}/>إظهار نموذج الطلب</label><label className="flex gap-2"><input type="checkbox" checked={c.indexable} onChange={e=>setC({...c,indexable:e.target.checked})}/>السماح بالفهرسة بعد النشر النهائي</label><label className="block">الرابط الأساسي<Input dir="ltr" value={c.canonical} onChange={e=>setC({...c,canonical:e.target.value})} placeholder={path}/></label><label className="block">صورة المشاركة<select className="w-full border border-input bg-background p-2" value={c.ogImage} onChange={e=>setC({...c,ogImage:e.target.value})}><option value="">بدون صورة</option>{media.filter(m=>m.approval==='approved').map(m=><option key={m.id} value={m.url}>{m.title}</option>)}{Object.values(SHOTS).map(s=><option key={s.id} value={s.src}>{s.caption.ar}</option>)}</select></label><label className="block">دليل النشر<select className="w-full border border-input bg-background p-2" value={c.evidence} disabled={!owner} onChange={e=>setC({...c,evidence:e.target.value as CmsContent['evidence']})}><option value="pending">قيد التحقق — مسودة</option><option value="approved">معتمد من المالك</option></select></label>
- <h3 className="border-t border-border pt-5 font-bold">النصوص الأصلية</h3>{Object.entries(local.sourceEdits).map(([id,text])=><label key={id} className="block text-sm">{id}<Textarea value={text} onChange={e=>update({sourceEdits:{...local.sourceEdits,[id]:e.target.value}})}/></label>)}
- <h3 className="border-t border-border pt-5 font-bold">أقسام الصفحة</h3>{local.blocks.map((b,i)=><div key={b.id} className="border-b border-border pb-5"><div className="flex items-center gap-2"><span className="flex-1 text-sm">{i+1} · {b.type}</span><Button size="icon" variant="ghost" title="أعلى" aria-label="أعلى" onClick={()=>{const a=[...local.blocks];if(i>0){const previous=a[i-1];if(previous){a[i-1]=b;a[i]=previous;update({blocks:a})}}}}><ArrowUp size={16}/></Button><Button size="icon" variant="ghost" title="أسفل" aria-label="أسفل" onClick={()=>{const a=[...local.blocks];const next=a[i+1];if(next){a[i+1]=b;a[i]=next;update({blocks:a})}}}><ArrowDown size={16}/></Button><Button size="icon" variant="ghost" title="حذف القسم" aria-label="حذف القسم" onClick={()=>update({blocks:local.blocks.filter(x=>x.id!==b.id)})}><Trash2 size={16}/></Button></div><label className="block">العنوان<Input value={b.title} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,title:e.target.value}:x)})}/></label><label className="block">المحتوى<Textarea value={b.body} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,body:e.target.value}:x)})}/></label><label className="block">الشاشة الفعلية<select className="w-full border border-input bg-background p-2" value={b.shotId} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,shotId:e.target.value}:x)})}><option value="">بدون شاشة</option>{Object.values(SHOTS).map(s=><option key={s.id} value={s.id}>{s.caption.ar}</option>)}</select></label><label className="block">صورة من المكتبة<select className="w-full border border-input bg-background p-2" value={b.mediaUrl} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,mediaUrl:e.target.value,mediaAlt:media.find(m=>m.url===e.target.value)?.[locale==='ar'?'alt_ar':'alt_en']??''}:x)})}><option value="">بدون صورة</option>{media.filter(m=>m.approval==='approved').map(m=><option key={m.id} value={m.url}>{m.title}</option>)}</select></label><label className="block">رابط مرتبط<Input dir="ltr" value={b.href} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,href:e.target.value}:x)})}/></label><label className="flex gap-2"><input type="checkbox" checked={b.enabled} onChange={e=>update({blocks:local.blocks.map(x=>x.id===b.id?{...x,enabled:e.target.checked}:x)})}/>ظاهر</label></div>)}<div className="flex flex-wrap gap-2">{(['story','workflow','faq','resource','cta'] as const).map(type=><Button key={type} variant="outline" size="sm" onClick={()=>update({blocks:[...local.blocks,{id:crypto.randomUUID(),type,title:'',body:'',shotId:'',mediaUrl:'',mediaAlt:'',href:'',enabled:true}]})}><Plus size={14}/>{type}</Button>)}</div></div><div><div className="v3-cms-preview" data-device={device} dir={locale==='ar'?'rtl':'ltr'}><p className="text-xs text-muted-foreground">معاينة المسودة · {locale.toUpperCase()}</p><h1 className="mt-4 text-3xl font-bold">{local.title}</h1><p>{local.description}</p>{local.blocks.filter(b=>b.enabled).map(b=>{const s=Object.values(SHOTS).find(s=>s.id===b.shotId);return <article key={b.id} className="border-b border-border py-6"><h2 className="text-xl font-bold">{b.title}</h2><p className="whitespace-pre-line">{b.body}</p>{b.mediaUrl&&<img src={b.mediaUrl} alt={b.mediaAlt} width={1200} height={800} className="mt-4 aspect-[3/2] w-full object-contain"/>}{s&&<img src={s.src} alt={s.caption[locale]} width={s.width} height={s.height} className="mt-4 w-full"/>}</article>})}</div></div></div>{history.length>0&&<section className="mt-8"><h3 className="font-bold">الإصدارات السابقة</h3>{history.map(h=><div key={h.id} className="flex justify-between border-b border-border py-3"><span>{h.action} · {new Date(h.created_at).toLocaleString('ar-SA')}</span><Button variant="outline" size="sm" onClick={()=>{const snapshot=h.snapshot as {draft?:unknown;published?:unknown};const restore=cmsContentSchema.safeParse(snapshot.published??snapshot.draft);if(restore.success)setC(restore.data)}}><RotateCcw size={15}/>استعادة للمسودة</Button></div>)}</section>}</>;
+
+export default function AdminWorkspace() {
+  const api = useServerFn(cmsWorkspace);
+  const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const [mfa, setMfa] = useState<'checking' | 'required' | 'ok'>('checking');
+  const query = useQuery({ queryKey: WORKSPACE_KEY, queryFn: () => api(), enabled: mfa === 'ok' });
+  const [tab, setTab] = useState('overview');
+  const [active, setActive] = useState<Doc | null>(null);
+  const [notice, setNotice] = useState('');
+
+  useEffect(() => {
+    void supabase.auth.mfa.getAuthenticatorAssuranceLevel().then(({ data }) => {
+      setMfa(data && data.nextLevel === 'aal2' && data.currentLevel !== 'aal2' ? 'required' : 'ok');
+    });
+  }, []);
+  useEffect(() => {
+    if (!notice) return;
+    const t = window.setTimeout(() => setNotice(''), 6000);
+    return () => window.clearTimeout(t);
+  }, [notice]);
+
+  async function signOut() {
+    await queryClient.cancelQueries();
+    queryClient.clear();
+    await supabase.auth.signOut();
+    void navigate({ to: '/auth', replace: true });
+  }
+
+  if (mfa === 'required') return <MfaChallenge onVerified={() => setMfa('ok')} />;
+  if (mfa === 'checking' || query.isPending)
+    return (
+      <p className="p-8 font-plex" dir="rtl">
+        جارٍ تحميل لوحة Digit…
+      </p>
+    );
+  if (query.error)
+    return (
+      <div className="p-8 font-plex" dir="rtl">
+        <h1 className="text-2xl font-bold">لا يمكن فتح الإدارة</h1>
+        <p className="mt-2 text-muted-foreground">{/Forbidden/.test(query.error.message) ? 'هذا الحساب لا يملك صلاحية على لوحة الإدارة.' : 'تعذّر تحميل البيانات. حدّث الصفحة.'}</p>
+        <Button variant="outline" className="mt-4" onClick={signOut}>
+          <LogOut size={16} />
+          خروج
+        </Button>
+      </div>
+    );
+
+  const w = query.data;
+  const role = w.role as Role;
+  const owner = role === 'owner';
+  const tabs = TABS.filter(t => t.roles.includes(role));
+  const current = tabs.find(t => t.id === tab) ?? tabs[0];
+  const groups = [...new Set(tabs.map(t => t.group))];
+  const open = (id: string) => {
+    setTab(id);
+    setActive(null);
+  };
+  const listKind = LIST_TABS[current?.id ?? ''];
+
+  return (
+    <div className="v3-cms-layout font-plex text-foreground" dir="rtl">
+      <aside className="v3-cms-nav">
+        <h1 className="mb-1 text-2xl font-bold">
+          DIGIT <span className="text-primary">CMS</span>
+        </h1>
+        <p className="mb-6 text-xs text-muted-foreground">{ROLE_LABELS[role]}</p>
+        <nav aria-label="أقسام الإدارة" className="space-y-4">
+          {groups.map(g => (
+            <div key={g || 'main'} className="space-y-1">
+              {g && <p className="px-3 pt-2 text-xs font-semibold text-muted-foreground">{g}</p>}
+              {tabs
+                .filter(t => t.group === g)
+                .map(t => (
+                  <Button key={t.id} variant={current?.id === t.id ? 'default' : 'ghost'} className="w-full justify-start" aria-current={current?.id === t.id ? 'page' : undefined} onClick={() => open(t.id)}>
+                    <t.icon size={17} />
+                    {t.label}
+                  </Button>
+                ))}
+            </div>
+          ))}
+        </nav>
+        <Button variant="outline" className="mt-8 w-full" onClick={signOut}>
+          <LogOut size={16} />
+          خروج
+        </Button>
+      </aside>
+      <main className="v3-cms-main">
+        <header className="mb-6 flex flex-wrap items-center justify-between gap-3">
+          <h2 className="text-2xl font-bold">{current?.label}</h2>
+          <a href="/" target="_blank" rel="noopener" className="text-sm text-primary underline-offset-4 hover:underline">
+            فتح الموقع
+          </a>
+        </header>
+        {notice && (
+          <p role="status" className="mb-4 rounded-md border border-border bg-accent p-3 text-sm">
+            {notice}
+          </p>
+        )}
+
+        {current?.id === 'overview' && <Overview w={w} onOpen={open} />}
+        {listKind &&
+          (active ? (
+            <PageEditor
+              key={active.id || 'new'}
+              doc={active}
+              media={w.media}
+              owner={owner}
+              previews={w.previews}
+              team={w.team}
+              notice={setNotice}
+              onBack={() => setActive(null)}
+              onSaved={setActive}
+            />
+          ) : (
+            <DocumentList docs={w.docs} kind={listKind} onEdit={setActive} onNew={() => setActive(newDoc(listKind))} />
+          ))}
+        {current?.id === 'seo' &&
+          (active ? (
+            <PageEditor key={active.id} doc={active} media={w.media} owner={owner} previews={w.previews} team={w.team} notice={setNotice} onBack={() => setActive(null)} onSaved={setActive} />
+          ) : (
+            <SeoPanel docs={w.docs} onEdit={setActive} />
+          ))}
+        {current?.id === 'media' && <MediaLibrary rows={w.media} docs={w.docs} config={w.config} owner={owner} notice={setNotice} />}
+        {current?.id === 'redirects' && <Redirects rows={w.redirects} docs={w.docs} owner={owner} notice={setNotice} />}
+        {current?.id === 'leads' && <Leads rows={w.leads} team={w.team} notice={setNotice} />}
+        {current?.id === 'chats' && <Chats />}
+        {current?.id === 'team' && <Team rows={w.team} currentUser={w.userId} notice={setNotice} />}
+        {current?.id === 'security' && <SecurityPanel owner={owner} aal={w.aal} config={w.config} notice={setNotice} />}
+        {current?.id === 'audit' && <Audit rows={w.audit} team={w.team} docs={w.docs} />}
+      </main>
+    </div>
+  );
 }
-function MediaLibrary({rows,owner,onSaved,notice}:{rows:Media[];owner:boolean;onSaved:()=>unknown;notice:(s:string)=>void}){const upload=useServerFn(uploadCmsMedia);const update=useServerFn(updateCmsMedia);const [busy,setBusy]=useState(false);const [q,setQ]=useState('');const [selected,setSelected]=useState<Media|null>(null);return <><div className="mb-5 flex gap-3"><Input aria-label="بحث الصور" placeholder="ابحث عن صورة" value={q} onChange={e=>setQ(e.target.value)}/><label className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-border bg-card px-4"><Upload size={16}/>{busy?'رفع…':'رفع صورة'}<input type="file" accept="image/png,image/jpeg,image/webp" className="hidden" disabled={busy} onChange={async e=>{const file=e.target.files?.[0];if(!file)return;setBusy(true);try{if(file.size>8*1024*1024)throw new Error('الحد الأقصى 8 MB');const bitmap=await createImageBitmap(file);const bytes=new Uint8Array(await file.arrayBuffer());let binary='';for(let i=0;i<bytes.length;i++)binary+=String.fromCharCode(bytes[i]??0);await upload({data:{base64:btoa(binary),title:file.name,altAr:file.name,altEn:file.name,source:'Owner upload — approval pending',width:bitmap.width,height:bitmap.height}});await onSaved();notice('رُفعت الصورة كمسودة. موافقة المالك مطلوبة قبل عرضها للعامة.')}catch(err){notice(err instanceof Error?err.message:'تعذّر الرفع')}finally{setBusy(false)}}}/></label></div>{selected&&<section className="mb-6 border border-border p-4"><h3 className="font-bold">{selected.title}</h3><label className="block">النص البديل العربي<Input value={selected.alt_ar} onChange={e=>setSelected({...selected,alt_ar:e.target.value})}/></label><label className="block">English alt<Input value={selected.alt_en} onChange={e=>setSelected({...selected,alt_en:e.target.value})}/></label><label className="block">موضع التركيز الأفقي<input type="range" min="0" max="100" value={selected.focal_x} onChange={e=>setSelected({...selected,focal_x:Number(e.target.value)})}/></label><Button onClick={async()=>{await update({data:{id:selected.id,altAr:selected.alt_ar,altEn:selected.alt_en,approval:owner?'approved':'draft',focalX:selected.focal_x,focalY:selected.focal_y}});setSelected(null);await onSaved();notice('تم حفظ الصورة')}}><Save size={16}/>{owner?'حفظ واعتماد':'حفظ'}</Button></section>}<div className="v3-media-grid">{rows.filter(m=>m.title.includes(q)).map(m=><article key={m.id} className="rounded-md border border-border bg-card p-3">{m.approval==='approved'?<img src={m.url} alt={m.alt_ar} width={m.width??300} height={m.height??200} className="h-40 w-full object-contain"/>:<div className="flex h-40 items-center justify-center bg-muted"><Image size={32}/></div>}<h3 className="mt-2 truncate font-bold">{m.title}</h3><p className="text-xs text-muted-foreground">{m.locked?'أصل منتج مقفل':m.approval}</p><Button size="sm" variant="outline" className="mt-2" onClick={()=>setSelected(m)}>البديل والتركيز</Button></article>)}</div><h3 className="mb-4 mt-8 text-xl font-bold">49 شاشة DIGIT Pro أصلية — محفوظة دون تعديل</h3><div className="v3-media-grid">{Object.values(SHOTS).filter(s=>s.caption.ar.includes(q)||s.id.includes(q)).map(s=><article key={s.id} className="rounded-md border border-border bg-card p-3"><img src={s.src} alt={s.caption.ar} width={s.width} height={s.height} loading="lazy" className="h-36 w-full object-contain"/><p className="mt-2 text-sm font-bold">{s.caption.ar}</p><p className="text-xs text-muted-foreground">أصل مقفل · {s.width} × {s.height}</p></article>)}</div></>}
-function Leads({rows,members,onSaved,notice}:{rows:Awaited<ReturnType<typeof cmsWorkspace>>['leads'];members:Awaited<ReturnType<typeof cmsWorkspace>>['members'];onSaved:()=>unknown;notice:(s:string)=>void}){const [q,setQ]=useState('');const [filter,setFilter]=useState('all');const update=useServerFn(updateLead);const visible=rows.filter(r=>(filter==='all'||r.status===filter)&&`${r.name} ${r.company} ${r.interest}`.includes(q));return <><div className="mb-4 flex flex-wrap gap-3"><Input aria-label="بحث الطلبات" value={q} onChange={e=>setQ(e.target.value)} placeholder="بحث بالاسم أو المنشأة" className="max-w-sm"/><select aria-label="حالة الطلبات" className="border border-input bg-background p-2" value={filter} onChange={e=>setFilter(e.target.value)}><option value="all">كل الحالات</option>{['new','reviewed','qualified','contacted','meeting','opportunity','won','lost','closed'].map(s=><option key={s}>{s}</option>)}</select><Button variant="outline" onClick={()=>{const cols=['name','company','email','phone','interest','status','created_at'];const quote=(v:unknown)=>`"${String(v??'').replace(/^([=+@-])/,'\'$1').replaceAll('"','""')}"`;const csv=[cols.join(','),...visible.map(r=>cols.map(k=>quote(r[k as keyof typeof r])).join(','))].join('\n');const url=URL.createObjectURL(new Blob(['\ufeff'+csv],{type:'text/csv'}));const a=document.createElement('a');a.href=url;a.download='digit-leads.csv';a.click();URL.revokeObjectURL(url)}}>تصدير النتائج</Button></div><p className="mb-5 text-sm">إشعارات الطلبات: <span dir="ltr">{LEAD_RECIPIENT}</span> · لم يُجهّز نطاق الإرسال بعد</p>{visible.map(r=><article key={r.id} className="mb-4 rounded-md border border-border bg-card p-5"><div className="flex flex-wrap items-center justify-between gap-3"><h3 className="font-bold">{r.name} · {r.company}</h3><select aria-label={`حالة ${r.name}`} className="border border-input bg-background p-2" value={r.status} onChange={async e=>{await update({data:{id:r.id,status:e.target.value as 'new'}});await onSaved();notice('تم تحديث حالة الطلب')}}>{['new','reviewed','qualified','contacted','meeting','opportunity','won','lost','closed'].map(s=><option key={s}>{s}</option>)}</select></div><p dir="ltr" className="my-2 text-sm">{r.email} · {r.phone}</p><p>{r.interest} · {r.request_type}</p><p className="whitespace-pre-line">{r.message}</p><p className="mt-2 text-xs text-muted-foreground" dir="ltr">{r.page_path} · {r.locale} · {new Date(r.created_at).toLocaleString()}</p><p className="text-xs text-muted-foreground">حالة البريد: {r.notification_status} · {r.notification_error}</p><label className="mt-2 block text-sm">إسناد إلى<select className="ms-2 border border-input bg-background p-1" value={r.assigned_to??''} onChange={async e=>{await update({data:{id:r.id,status:r.status as 'new',assignedTo:e.target.value||null}});await onSaved()}}><option value="">بدون إسناد</option>{members.map(m=><option key={m.user_id} value={m.user_id}>{m.role} · {m.user_id.slice(0,8)}</option>)}</select></label></article>)}{!visible.length&&<p>لا توجد طلبات مطابقة.</p>}</>}
-function Team({rows,onSaved,notice}:{rows:Awaited<ReturnType<typeof cmsWorkspace>>['members'];onSaved:()=>unknown;notice:(s:string)=>void}){const setRole=useServerFn(setCmsRole);const [id,setId]=useState('');const [role,setR]=useState<'editor'|'sales'>('editor');return <><p className="mb-4 text-muted-foreground">أضف الحساب أولًا من Users، ثم حدّد صلاحية المحتوى أو المبيعات.</p><div className="flex flex-wrap gap-3"><Input aria-label="معرّف المستخدم" placeholder="معرّف المستخدم" value={id} onChange={e=>setId(e.target.value)} className="max-w-md" dir="ltr"/><select className="border border-input bg-background p-2" value={role} onChange={e=>setR(e.target.value as typeof role)}><option value="editor">محرر — لا يرى الطلبات</option><option value="sales">مبيعات — لا ينشر المحتوى</option></select><Button onClick={async()=>{try{await setRole({data:{userId:id,role}});await onSaved();notice('تم حفظ الصلاحية')}catch{notice('تحقق من معرّف الحساب وصلاحيتك')}}}>حفظ الصلاحية</Button></div>{rows.map(r=><p key={r.user_id} className="mt-4 border-b border-border py-2" dir="ltr">{r.user_id} · {r.role}</p>)}</>}
-function Audit({rows}:{rows:Awaited<ReturnType<typeof cmsWorkspace>>['audit']}){return <section className="mt-6"><h3 className="mb-3 font-bold">النشاط الفعلي</h3>{rows.slice(0,40).map(a=><p key={a.id} className="border-b border-border py-2 text-sm">{a.action} · {a.entity} · {new Date(a.created_at).toLocaleString('ar-SA')}</p>)}</section>}
