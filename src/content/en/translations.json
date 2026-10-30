@@ -3109,5 +3109,13 @@
   "الباقة المالية اشتراك سنوي واضح بعرض سعر مخصص يوضّح البنود مسبقًا، ونقاط البيع تُسعّر لكل نقطة.": "The financial package is a clear annual subscription with a custom quote that sets out every item up front, and POS is priced per point.",
   "كيف يُسعَّر النظام؟": "How is the system priced?",
   "هل يدعم حماية الأجور والتأمينات؟": "Does it support wage protection and GOSI?",
-  "تحتسب الرواتب اشتراك التأمينات وتُصدِر ملف حماية الأجور حسب إعداد الوحدة. نؤكّد نطاق الدعم الفعلي لمنشأتك في تحليل الجاهزية.": "Payroll calculates GOSI contributions and exports the wage protection file, depending on module setup. We confirm the actual support scope for your business during the readiness analysis."
+  "تحتسب الرواتب اشتراك التأمينات وتُصدِر ملف حماية الأجور حسب إعداد الوحدة. نؤكّد نطاق الدعم الفعلي لمنشأتك في تحليل الجاهزية.": "Payroll calculates GOSI contributions and exports the wage protection file, depending on module setup. We confirm the actual support scope for your business during the readiness analysis.",
+  "<p>ربط ZATCA اختيار داخل الباقة، ويُوضَّح أثره على السعر في عرض السعر المخصص لمنشأتك.</p>": "<p>ZATCA integration is an option within the package; its effect on price is set out in your custom quote.</p>",
+  "باقة Pro — Digit | النظام المالي والتشغيلي": "DIGIT Pro — Digit | Financial and Operations System",
+  "باقة Pro — Digit": "DIGIT Pro — Digit",
+  "باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد.": "Digit Pro brings accounting, sales, purchasing, inventory, assets and reporting together in one financial and operations system.",
+  "نظام مالي وتشغيلي متكامل لمنشأتك مع Digit Pro. استعرض الموديولات واحجز عرضًا تجريبيًا.": "An integrated financial and operations system for your business with Digit Pro. Explore the modules and book a demo.",
+  "باقة Starter — Digit | الفوترة الإلكترونية": "DIGIT Starter — Digit | E-Invoicing",
+  "باقة Starter — Digit": "DIGIT Starter — Digit",
+  "ابدأ الفوترة الإلكترونية مع Starter، 3 مستخدمين واستضافة ونسخ احتياطي وخيار ربط ZATCA.": "Start e-invoicing with Starter: 3 users, hosting, backups and an optional ZATCA integration."
 }
