@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { useServerFn } from '@tanstack/react-start';
+import { useHydrated } from '@tanstack/react-router';
 import { submitLead } from '@/lib/leads.functions';
 import { leadSchema } from '@/lib/leads-schema';
 import { useLocale } from "@/lib/i18n";
@@ -65,10 +66,12 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [invalid, setInvalid] = useState(false);
   const saveLead = useServerFn(submitLead);
+  // Until hydration the browser would submit natively (GET with the visitor's details in the URL), so the button waits.
+  const hydrated = useHydrated();
   const requireJob = settings.showJobRole && settings.requireJobRole;
   const requireMessage = settings.showMessage && settings.requireMessage;
   const options = settings.interestOptions.map(o => o[locale]);
-  const interestOptions = interest && !options.includes(interest) ? [interest, ...options] : options;
+  const interestOptions = options.length && interest && !options.includes(interest) ? [interest, ...options] : options;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -120,7 +123,7 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
   const optional = (required: boolean) => (required ? '' : t.optional);
 
   return (
-    <form onSubmit={handleSubmit} className="border border-border bg-card p-6" noValidate data-contextual-form={demo ? undefined : true}>
+    <form onSubmit={handleSubmit} method="post" className="border border-border bg-card p-6" noValidate data-contextual-form={demo ? undefined : true}>
       <h2 className="mb-4 text-lg font-bold text-foreground">{settings.heading[locale] || t.heading}</h2>
       <div className="grid gap-3 sm:grid-cols-2">
         <label>{t.name}<Input name="name" autoComplete="name" required maxLength={100} /></label>
@@ -157,7 +160,7 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
       <label className="mt-3 flex items-start gap-2 text-sm"><input type="checkbox" name="consent" required className="mt-1" />{t.consent}</label>
       {invalid && <p role="alert" className="mt-2 text-sm text-destructive">{t.invalid}</p>}
       {state === "error" && <p className="mt-2 text-sm text-destructive">{t.error}</p>}
-      <Button type="submit" className="mt-4" disabled={state === "sending"}>
+      <Button type="submit" className="mt-4" disabled={!hydrated || state === "sending"}>
         {state === "sending" ? t.sending : settings.submit[locale] || t.submit}
       </Button>
     </form>
