@@ -5,7 +5,7 @@ import { createClient } from '@supabase/supabase-js';
 import sanitizeHtml from 'sanitize-html';
 import { cmsContentSchema,safePath,type PublishedRecord } from './cms-schema';
 
-export const getPublishedContent = createServerFn({method:'GET'}).handler(async () => {
+export const getPublishedContent = createServerFn({method:'GET'}).handler(async ():Promise<PublishedRecord[]> => {
   const key=process.env['SUPABASE_PUBLISHABLE_KEY']; const endpoint=process.env['SUPABASE_URL'];
   if (!key || !endpoint) throw new Error('Content service unavailable');
   const client=createClient(endpoint,key,{auth:{persistSession:false},global:{fetch:(input,init)=>{const h=new Headers(init?.headers);if(key.startsWith('sb_') && h.get('Authorization')===`Bearer ${key}`) h.delete('Authorization');h.set('apikey',key);return fetch(input,{...init,headers:h});}}});
