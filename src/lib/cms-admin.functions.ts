@@ -282,3 +282,20 @@ export const revokePreviewLinks = createServerFn({ method: 'POST' })
     await audit(supabaseAdmin, context.userId, 'preview:revoke', 'document', data.documentId);
     return { revoked: true };
   });
+
+/* --------------------------- Draft settings preview -------------------------- */
+
+/** Saved (unpublished) settings for one public key, so an editor can see them on the real page before publishing. */
+export const getDraftSiteConfig = createServerFn({ method: 'POST' })
+  .middleware([requireSupabaseAuth])
+  .inputValidator(z.object({ key: z.enum(['branding', 'forms', 'home', 'pro']) }))
+  .handler(async ({ data, context }) => {
+    // RLS limits draft settings to content roles; an empty result means no access or nothing saved.
+    const { data: row, error } = await context.supabase.from('cms_site_config').select('draft, published').eq('key', data.key).maybeSingle();
+    if (error) throw new Error('Could not load the draft settings');
+    if (!row) {
+      const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'content' });
+      if (!allowed) throw new Error('Forbidden');
+    }
+    return { key: data.key, value: parseConfig(data.key, row?.draft ?? row?.published) as Record<string, unknown> };
+  });
