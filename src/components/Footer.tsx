@@ -67,6 +67,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
 export default function Footer() {
   const locale = useLocale();
   const nav = usePublishedRecords().find(r=>r.kind==='navigation')?.published;
+  const branding = useSiteConfig().branding;
   return localizeTree((
     <footer className="bg-gradient-to-b from-dark to-deep text-[rgba(244,243,238,.66)]">
       <div className="mx-auto max-w-[1240px] px-6 pt-16 pb-8">
