@@ -38,7 +38,7 @@ describe("Real DIGIT Pro screenshots", () => {
       }
     }
     expect(PAGE_PROOFS["modules-accounting"]?.map(block => block.id)).toEqual(["cfo", "collections"]);
-    expect(PAGE_PROOFS.features?.map(block => block.id)).toEqual(["smart-document", "daily-control"]);
+    expect(PAGE_PROOFS["features"]?.map(block => block.id)).toEqual(["smart-document", "daily-control"]);
   });
 
   it("shows the Pro price only in the /pro showcase", () => {
