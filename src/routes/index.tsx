@@ -1,8 +1,10 @@
+import { getPublishedContent } from '@/lib/cms.functions';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import HomePage from "@/components/HomePage";
 export const Route = createFileRoute("/")({
-  head: () => withSeo("/", {
+ loader: () => getPublishedContent(),
+  head: ({ loaderData }) => withSeo("/", {
     meta: [
       { title: "Digit — منصة ERP سعودية | محاسبة، فوترة إلكترونية، نقاط بيع" },
       {
@@ -19,7 +21,7 @@ export const Route = createFileRoute("/")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-  }),
+  }, loaderData),
   component: HomePage,
 });
 

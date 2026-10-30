@@ -1,3 +1,4 @@
+import { getPublishedContent } from '@/lib/cms.functions';
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -8,13 +9,14 @@ import { withSeo } from "@/lib/seo";
 import "@lovable.dev/cloud-auth-js/styles.css";
 
 export const Route = createFileRoute("/auth")({
-  head: () =>
+ loader: () => getPublishedContent(),
+  head: ({ loaderData }) =>
     withSeo("/auth", {
       meta: [
         { title: "تسجيل دخول الإدارة — Digit" },
         { name: "robots", content: "noindex" },
       ],
-    }),
+    }, loaderData),
   component: AuthPage,
 });
 

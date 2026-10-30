@@ -1,17 +1,19 @@
+import { getPublishedContent } from '@/lib/cms.functions';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import PackagePage from "@/components/PackagePage";
 import nodes from "@/content/starter.json";
 
 export const Route = createFileRoute("/starter")({
-  head: () => withSeo("/starter", { meta: [
+ loader: () => getPublishedContent(),
+  head: ({ loaderData }) => withSeo("/starter", { meta: [
     { title: "باقة Starter — Digit | الفوترة الإلكترونية" },
     { name: "description", content: "باقة Digit Starter لإدارة العملاء والأصناف والفواتير الإلكترونية، مع خيار ربط ZATCA وعرض سعر مخصص." },
     { property: "og:title", content: "باقة Starter — Digit" },
     { property: "og:description", content: "ابدأ الفوترة الإلكترونية مع Starter، 3 مستخدمين واستضافة ونسخ احتياطي وخيار ربط ZATCA." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  ] }, loaderData),
   component: StarterPage,
 });
 

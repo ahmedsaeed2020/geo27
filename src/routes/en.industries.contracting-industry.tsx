@@ -1,3 +1,4 @@
+import { getPublishedContent } from '@/lib/cms.functions';
 import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
@@ -6,14 +7,15 @@ import arabicPage from "@/content/site/industries-contracting-industry.json";
 import "@/content/site/industries-contracting-industry.css";
 const page = localizeData(arabicPage);
 export const Route = createFileRoute("/en/industries/contracting-industry")({
-  head: () => withSeo("/en/industries/contracting-industry", { meta: [
+ loader: () => getPublishedContent(),
+  head: ({ loaderData }) => withSeo("/en/industries/contracting-industry", { meta: [
     { title: page.title + " — Digit" },
     { name: "description", content: page.description },
     { property: "og:title", content: page.title + " — Digit" },
     { property: "og:description", content: page.description },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
-  ] }),
+  ] }, loaderData),
   component: Page,
 });
 function Page() { return <ImportedPage page={page} pageKey="industries-contracting-industry" />; }

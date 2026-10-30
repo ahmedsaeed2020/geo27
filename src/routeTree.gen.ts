@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/route'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as About4RouteImport } from './routes/about-4'
@@ -27,9 +28,11 @@ import { Route as ModulesRouteImport } from './routes/modules'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProRouteImport } from './routes/pro'
+import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as Services3RouteImport } from './routes/services-3'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StarterRouteImport } from './routes/starter'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
@@ -51,6 +54,7 @@ import { Route as EnModulesRouteImport } from './routes/en.modules'
 import { Route as EnPartnershipRouteImport } from './routes/en.partnership'
 import { Route as EnPricingRouteImport } from './routes/en.pricing'
 import { Route as EnProRouteImport } from './routes/en.pro'
+import { Route as EnResourcesRouteImport } from './routes/en.resources'
 import { Route as EnSaudiLocalizationRouteImport } from './routes/en.saudi-localization'
 import { Route as EnServicesRouteImport } from './routes/en.services'
 import { Route as EnServices3RouteImport } from './routes/en.services-3'
@@ -163,6 +167,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedRouteRoute = AuthenticatedRouteRouteImport.update({
   id: '/_authenticated',
   getParentRoute: () => rootRouteImport,
@@ -247,6 +256,11 @@ const ProRoute = ProRouteImport.update({
   path: '/pro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SaudiLocalizationRoute = SaudiLocalizationRouteImport.update({
   id: '/saudi-localization',
   path: '/saudi-localization',
@@ -260,6 +274,11 @@ const ServicesRoute = ServicesRouteImport.update({
 const Services3Route = Services3RouteImport.update({
   id: '/services-3',
   path: '/services-3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const StarterRoute = StarterRouteImport.update({
@@ -365,6 +384,11 @@ const EnPricingRoute = EnPricingRouteImport.update({
 const EnProRoute = EnProRouteImport.update({
   id: '/pro',
   path: '/pro',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnResourcesRoute = EnResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
   getParentRoute: () => EnRoute,
 } as any)
 const EnSaudiLocalizationRoute = EnSaudiLocalizationRouteImport.update({
@@ -923,6 +947,7 @@ const ApiPublicCmsMediaFileRoute = ApiPublicCmsMediaFileRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
@@ -939,9 +964,11 @@ export interface FileRoutesByFullPath {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
   '/services-3': typeof Services3RouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
@@ -962,6 +989,7 @@ export interface FileRoutesByFullPath {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
   '/en/services-3': typeof EnServices3RouteWithChildren
@@ -1072,6 +1100,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
@@ -1085,8 +1114,10 @@ export interface FileRoutesByTo {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
@@ -1105,6 +1136,7 @@ export interface FileRoutesByTo {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
   '/en/starter': typeof EnStarterRoute
@@ -1216,6 +1248,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/_authenticated': typeof AuthenticatedRouteRouteWithChildren
+  '/$': typeof SplatRoute
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
@@ -1232,9 +1265,11 @@ export interface FileRoutesById {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
   '/services-3': typeof Services3RouteWithChildren
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
@@ -1255,6 +1290,7 @@ export interface FileRoutesById {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
   '/en/services-3': typeof EnServices3RouteWithChildren
@@ -1367,6 +1403,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/$'
     | '/about'
     | '/about-4'
     | '/auth'
@@ -1383,9 +1420,11 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/resources'
     | '/saudi-localization'
     | '/services'
     | '/services-3'
+    | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
@@ -1406,6 +1445,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
     | '/en/services-3'
@@ -1516,6 +1556,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/$'
     | '/about'
     | '/about-4'
     | '/auth'
@@ -1529,8 +1570,10 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/resources'
     | '/saudi-localization'
     | '/services'
+    | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
@@ -1549,6 +1592,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
     | '/en/starter'
@@ -1659,6 +1703,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/_authenticated'
+    | '/$'
     | '/about'
     | '/about-4'
     | '/auth'
@@ -1675,9 +1720,11 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/resources'
     | '/saudi-localization'
     | '/services'
     | '/services-3'
+    | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
@@ -1698,6 +1745,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
     | '/en/services-3'
@@ -1810,6 +1858,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuthenticatedRouteRoute: typeof AuthenticatedRouteRouteWithChildren
+  SplatRoute: typeof SplatRoute
   AboutRoute: typeof AboutRoute
   About4Route: typeof About4Route
   AuthRoute: typeof AuthRoute
@@ -1826,9 +1875,11 @@ export interface RootRouteChildren {
   PartnershipRoute: typeof PartnershipRoute
   PricingRoute: typeof PricingRoute
   ProRoute: typeof ProRoute
+  ResourcesRoute: typeof ResourcesRoute
   SaudiLocalizationRoute: typeof SaudiLocalizationRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   Services3Route: typeof Services3RouteWithChildren
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StarterRoute: typeof StarterRoute
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
@@ -1853,6 +1904,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/_authenticated': {
@@ -1974,6 +2032,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/saudi-localization': {
       id: '/saudi-localization'
       path: '/saudi-localization'
@@ -1993,6 +2058,13 @@ declare module '@tanstack/react-router' {
       path: '/services-3'
       fullPath: '/services-3'
       preLoaderRoute: typeof Services3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/starter': {
@@ -2140,6 +2212,13 @@ declare module '@tanstack/react-router' {
       path: '/pro'
       fullPath: '/en/pro'
       preLoaderRoute: typeof EnProRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/resources': {
+      id: '/en/resources'
+      path: '/resources'
+      fullPath: '/en/resources'
+      preLoaderRoute: typeof EnResourcesRouteImport
       parentRoute: typeof EnRoute
     }
     '/en/saudi-localization': {
@@ -3034,6 +3113,7 @@ interface EnRouteChildren {
   EnPartnershipRoute: typeof EnPartnershipRoute
   EnPricingRoute: typeof EnPricingRoute
   EnProRoute: typeof EnProRoute
+  EnResourcesRoute: typeof EnResourcesRoute
   EnSaudiLocalizationRoute: typeof EnSaudiLocalizationRoute
   EnServicesRoute: typeof EnServicesRouteWithChildren
   EnServices3Route: typeof EnServices3RouteWithChildren
@@ -3068,6 +3148,7 @@ const EnRouteChildren: EnRouteChildren = {
   EnPartnershipRoute: EnPartnershipRoute,
   EnPricingRoute: EnPricingRoute,
   EnProRoute: EnProRoute,
+  EnResourcesRoute: EnResourcesRoute,
   EnSaudiLocalizationRoute: EnSaudiLocalizationRoute,
   EnServicesRoute: EnServicesRouteWithChildren,
   EnServices3Route: EnServices3RouteWithChildren,
@@ -3212,6 +3293,7 @@ const Services3RouteWithChildren = Services3Route._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuthenticatedRouteRoute: AuthenticatedRouteRouteWithChildren,
+  SplatRoute: SplatRoute,
   AboutRoute: AboutRoute,
   About4Route: About4Route,
   AuthRoute: AuthRoute,
@@ -3228,9 +3310,11 @@ const rootRouteChildren: RootRouteChildren = {
   PartnershipRoute: PartnershipRoute,
   PricingRoute: PricingRoute,
   ProRoute: ProRoute,
+  ResourcesRoute: ResourcesRoute,
   SaudiLocalizationRoute: SaudiLocalizationRoute,
   ServicesRoute: ServicesRouteWithChildren,
   Services3Route: Services3RouteWithChildren,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   StarterRoute: StarterRoute,
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
