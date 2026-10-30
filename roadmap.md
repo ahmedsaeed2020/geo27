@@ -11,15 +11,17 @@
 - [ ] Blocker: new-lead emails require owner sender-domain setup and verification; no sending domain is configured.
 
 # V3 Stage 4/5 completion — build order (started 2026-10-30 "next")
-- [ ] Split the admin into focused panels and restore visitor chat transcripts (lost when the new admin replaced the old one).
-- [ ] Team lifecycle: accounts by email, grant/change/remove roles with last-owner protection, emails in lead assignment; authenticator-app MFA with an owner switch requiring it for publishing.
-- [ ] Expiring, revocable preview links that render the full draft page with a preview banner and noindex.
-- [ ] Scheduled publish and scheduled unpublish, resolved at read time and materialized into revisions.
-- [ ] Redirect manager: 301/302/307/308, loop and chain checks, existing-page warnings, hit counts.
-- [ ] One cached published-content query per navigation instead of two server calls; refresh after publishing.
-- [ ] Form settings editor: visible optional fields, labels, interest options, success messages; server minimums unchanged.
-- [ ] Branding: logo, favicon and accent colour from approved media/presets with contrast checks; draft/publish/history.
-- [ ] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes with srcset.
+- [x] Split the admin into focused panels and restore visitor chat transcripts (lost when the new admin replaced the old one).
+- [x] Team lifecycle: accounts by email, grant/change/remove roles with last-owner protection, emails in lead assignment; authenticator-app MFA with an owner switch requiring it for publishing. (MFA enrolment UI built; not exercised with a real authenticator app.)
+- [x] Expiring, revocable preview links that render the full draft page with a preview banner and noindex. (E2E: create, visitor view, revoke.)
+- [x] Scheduled publish and scheduled unpublish, resolved at read time and materialized into revisions. (E2E: page went live 2 min later.)
+- [x] Redirect manager: 301/302/307/308, loop and chain checks, existing-page warnings, hit counts. (E2E: 301 verified.)
+- [x] One cached published-content query per navigation instead of two server calls; refresh after publishing.
+- [x] Form settings editor: visible optional fields, labels, interest options, success messages; server minimums unchanged. (E2E publish/revert.)
+- [x] Branding: logo, favicon and accent colour from approved media/presets with contrast checks; draft/publish/history. (E2E colour publish/revert; logo/favicon need an approved upload to exercise.)
+- [x] Media: usage map, archive guard, replace file while keeping links, responsive WebP sizes. (srcset on public blocks still to wire — see below.)
+- [ ] Public CMS image blocks use responsive sizes (srcset) and focal points.
+- [ ] Content claims audit: confirm imported pages follow the banned-wording/competitor rules (e.g. third-party platform counts on module pages).
 - [ ] Home and Pro section editing: section order/visibility and editable headings with source fallback.
 - [ ] Stage 5 regressions: editor vs sales permissions, rollback, preview/schedule/redirect E2E, chat isolation; tests kept in src/test.
 
