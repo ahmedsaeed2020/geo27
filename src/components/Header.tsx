@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
 import LanguageSwitch from "@/components/LanguageSwitch";
+import SiteSearch from "@/components/search/SiteSearch";
 import { usePublishedRecords } from './cms/CmsNavigation';
 import { useSiteConfig } from './cms/CmsContext';
 import { DesktopNav, useDemoRequest } from './nav/MegaMenu';
@@ -61,6 +62,7 @@ export default function Header() {
         </Link>
         <DesktopNav extra={extraLinks.map(b => <Link key={b.id} to={localeHref(b.href, locale)} className="mm-extra">{b.title}</Link>)} />
         <div className="site-header-actions">
+          <SiteSearch />
           <LanguageSwitch />
           <Button size="lg" className="site-header-cta" onClick={() => demo()}>{demoLabel}</Button>
           <MobileNav
