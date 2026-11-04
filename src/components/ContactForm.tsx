@@ -1,6 +1,7 @@
 import { useState, type FormEvent } from "react";
 import { useServerFn } from '@tanstack/react-start';
 import { useHydrated } from '@tanstack/react-router';
+import { contextForPath } from '@/content/catalog';
 import { submitLead } from '@/lib/leads.functions';
 import { leadSchema } from '@/lib/leads-schema';
 import { useLocale } from "@/lib/i18n";
@@ -67,7 +68,7 @@ const COPY = {
 } as const;
 
 /** Contextual lead form. Field visibility and copy come from the published form settings; `demo` renders it without submitting. */
-export default function ContactForm({ kind, interest = '', demo = false }: { kind: "contact" | "demo"; interest?: string; demo?: boolean }) {
+export default function ContactForm({ kind, interest = '', demo = false, product, department }: { kind: "contact" | "demo"; interest?: string; demo?: boolean; product?: string; department?: string }) {
   const locale = useLocale();
   const t = COPY[locale];
   const settings = useSiteConfig().forms;
@@ -83,7 +84,12 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const form = new FormData(event.currentTarget);
+    const element = event.currentTarget;
+    const form = new FormData(element);
+    // Product and department come from the page (or a department card that opened the form), never from the visitor.
+    const pageContext = contextForPath(window.location.pathname);
+    const chosenProduct = element.dataset['leadProduct'] ?? product ?? pageContext.product;
+    const chosenDepartment = element.dataset['leadProduct'] !== undefined ? element.dataset['leadDepartment'] ?? '' : department ?? pageContext.department;
     const jobRole = String(form.get('jobRole') ?? '').trim();
     const message = String(form.get('message') ?? '').trim();
     const parsed = leadSchema.safeParse({
@@ -97,6 +103,8 @@ export default function ContactForm({ kind, interest = '', demo = false }: { kin
       jobRole,
       locale,
       pagePath: window.location.pathname,
+      product: chosenProduct,
+      department: chosenDepartment,
       referrer: document.referrer,
       utm: Object.fromEntries([...new URLSearchParams(window.location.search)].filter(([key]) => key.startsWith('utm_'))),
       consent: form.get('consent') === 'on',
