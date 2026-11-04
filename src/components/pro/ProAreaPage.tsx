@@ -87,7 +87,7 @@ export default function ProAreaPage({ config, content }: { config: ProPageConfig
   return (
     <div className="bg-paper font-plex">
       <Header />
-      <main ref={main} className="pv-area" aria-labelledby="pv-hero-title">
+      <main ref={main} className="pv-area pv-root" aria-labelledby="pv-hero-title">
         <AreaHero config={config} />
         <ProPageBody config={config} content={content} />
         <CmsBlocks />

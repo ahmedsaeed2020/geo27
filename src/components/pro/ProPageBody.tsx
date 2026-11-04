@@ -141,12 +141,13 @@ export default function ProPageBody({ config, content, cms: given, nav = true }:
     if (workspaces.length > 1 && r.section.kind === 'intro' && next) out.push(<WorkspaceIndex key="pv-ws-index" items={workspaces} />);
   });
   if (workspaces.length > 1 && !resolved.some(r => r.section.kind === 'intro')) out.unshift(<WorkspaceIndex key="pv-ws-index" items={workspaces} />);
+  // .pv-root scopes the V4 styles above the imported page's own element rules.
   return (
-    <>
+    <div className="pv-root">
       {nav && <ProPagesNav current={config.key} />}
-      <div className="pv-page" data-signature={config.signature} data-pro-page={config.key} lang={locale}>
+      <div className="pv-page" data-signature={config.signature} data-pro-page={config.key}>
         {out}
       </div>
-    </>
+    </div>
   );
 }
