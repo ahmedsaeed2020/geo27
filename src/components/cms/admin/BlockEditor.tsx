@@ -183,9 +183,9 @@ function SourceBlockFields({ block, update, title }: { block: CmsBlock; update: 
   );
 }
 
-export function BlockList({ blocks, onChange, media, locale, department = null }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null }) {
+export function BlockList({ blocks, onChange, media, locale, department = null, sourceSections }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null; sourceSections?: { id: string; title: { ar: string; en: string } }[] | undefined }) {
   const updateBlock = (id: string, v: Partial<CmsBlock>) => onChange(blocks.map(b => (b.id === id ? { ...b, ...v } : b)));
-  const source = department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
+  const source = sourceSections ? { sections: sourceSections } : department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
   return (
     <>
       {blocks.map((b, i) => {
