@@ -45,7 +45,7 @@ const screen = (id: string): HeroProof => {
 };
 
 export const HERO_COPY = {
-  brand: t('DIGIT ERP · لمنشأتك في السعودية', 'DIGIT ERP · For your Saudi business'),
+  brand: t('لمنشأتك في السعودية', 'For your Saudi business'),
   trust: t('أكثر من 50 منشأة سعودية', 'More than 50 Saudi businesses'),
   region: t('منتجات DIGIT', 'DIGIT products'),
   slides: t('اختر المنتج', 'Choose a product'),

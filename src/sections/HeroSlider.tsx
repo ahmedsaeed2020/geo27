@@ -86,7 +86,7 @@ export default function HeroSlider() {
       <div className="hx-inner">
         <div className="hx-copy">
           <div className="hx-top">
-            <h1 className="hx-brand"><span className="hx-mark" aria-hidden="true"><i /><i /><i /></span>{HERO_COPY.brand[l]}</h1>
+            <h1 className="hx-brand"><span className="hx-mark" aria-hidden="true"><i /><i /><i /></span><span className="hx-brand-name">DIGIT ERP</span><span className="hx-brand-sep" aria-hidden="true" /><span>{HERO_COPY.brand[l]}</span></h1>
             <p className="hx-trust"><span className="hx-trust-dot" aria-hidden="true" />{HERO_COPY.trust[l]}</p>
           </div>
 

@@ -42,7 +42,9 @@
 
 /* ---------- Copy ---------- */
 .hx-top { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: clamp(18px, 2.4vw, 30px); }
-.hx-brand { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-family: var(--font-monospace); font-size: .82rem; font-weight: 700; letter-spacing: .08em; color: var(--hs-deep); }
+.hx-brand { display: inline-flex; align-items: center; gap: 10px; margin: 0; font-size: .92rem; font-weight: 700; color: var(--hs-deep); }
+.hx-brand-name { font-family: var(--font-monospace); font-size: .82rem; letter-spacing: .08em; }
+.hx-brand-sep { width: 4px; height: 4px; border-radius: 50%; background: color-mix(in oklab, var(--hs-deep) 40%, transparent); }
 .hx-mark { display: inline-flex; flex-direction: column; gap: 3px; }
 .hx-mark i { display: block; height: 3px; border-radius: 2px; background: var(--hs-accent); }
 .hx-mark i:nth-child(1) { width: 18px; } .hx-mark i:nth-child(2) { width: 12px; } .hx-mark i:nth-child(3) { width: 18px; }
