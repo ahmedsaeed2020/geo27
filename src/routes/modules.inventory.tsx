@@ -2,6 +2,7 @@ import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
+import proInventory from "@/content/pro/pages/inventory";
 import page from "@/content/site/modules-inventory.json";
 import "@/content/site/modules-inventory.css";
 export const Route = createFileRoute("/modules/inventory")({
@@ -16,4 +17,4 @@ export const Route = createFileRoute("/modules/inventory")({
   ] }, loaderData),
   component: Page,
 });
-function Page() { return <ImportedPage page={page} pageKey="modules-inventory" />; }
+function Page() { return <ImportedPage page={page} pageKey="modules-inventory" pro={proInventory} />; }

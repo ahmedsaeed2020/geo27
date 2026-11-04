@@ -2,6 +2,7 @@ import { loadPublished } from '@/lib/cms-query';
 import { withSeo } from "@/lib/seo";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
+import proAccounting from "@/content/pro/pages/accounting";
 import page from "@/content/site/modules-accounting.json";
 import "@/content/site/modules-accounting.css";
 export const Route = createFileRoute("/modules/accounting")({
@@ -16,4 +17,4 @@ export const Route = createFileRoute("/modules/accounting")({
   ] }, loaderData),
   component: Page,
 });
-function Page() { return <ImportedPage page={page} pageKey="modules-accounting" />; }
+function Page() { return <ImportedPage page={page} pageKey="modules-accounting" pro={proAccounting} />; }
