@@ -285,6 +285,28 @@
 .hr-related-grid svg { width: 16px; height: 16px; color: var(--primary); }
 .hr-related-grid [data-overview] a { align-content: center; background: var(--tabactive); }
 
+/* ---------- Character scenes (page-scenes manifest): decorative photos behind the intro and closing CTA ---------- */
+/* Subjects sit on the left of each source photo: that is the inline-end side in Arabic; English mirrors the photo. */
+.hr-scene { position: absolute; z-index: 0; overflow: hidden; pointer-events: none; }
+.hr-scene img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: left 12%; }
+[dir="ltr"] .hr-scene img { transform: scaleX(-1); }
+.hr-scene::after { content: ""; position: absolute; inset: 0; }
+.hr-intro[data-scene], .hr-cta[data-scene] { position: relative; isolation: isolate; overflow: hidden; display: flex; align-items: center; }
+.hr-intro[data-scene] > .dp-wrap, .hr-cta[data-scene] > .dp-wrap { position: relative; z-index: 1; width: 100%; }
+
+.hr-intro[data-scene] { min-height: 540px; padding: 80px 0; background: var(--paper); }
+.hr-intro .hr-scene { inset-block: 0; inset-inline-end: 0; width: 52%; }
+.hr-intro .hr-scene::after { background: linear-gradient(to left, var(--paper) 0%, color-mix(in oklab, var(--paper) 60%, transparent) 12%, transparent 34%), linear-gradient(to top, color-mix(in oklab, var(--paper) 70%, transparent), transparent 22%); }
+[dir="ltr"] .hr-intro .hr-scene::after { background: linear-gradient(to right, var(--paper) 0%, color-mix(in oklab, var(--paper) 60%, transparent) 12%, transparent 34%), linear-gradient(to top, color-mix(in oklab, var(--paper) 70%, transparent), transparent 22%); }
+.hr-intro[data-scene] .hr-intro-grid { grid-template-columns: minmax(0, 1fr); max-width: 50%; gap: 14px; }
+
+.hr-cta[data-scene] { min-height: 440px; padding: 88px 0; }
+.hr-cta .hr-scene { inset: 0; }
+.hr-cta .hr-scene::after { background: linear-gradient(to left, var(--deep) 0%, color-mix(in oklab, var(--deep) 92%, transparent) 36%, color-mix(in oklab, var(--deep) 40%, transparent) 68%, color-mix(in oklab, var(--deep) 12%, transparent) 100%); }
+[dir="ltr"] .hr-cta .hr-scene::after { background: linear-gradient(to right, var(--deep) 0%, color-mix(in oklab, var(--deep) 92%, transparent) 36%, color-mix(in oklab, var(--deep) 40%, transparent) 68%, color-mix(in oklab, var(--deep) 12%, transparent) 100%); }
+.hr-cta[data-scene] .dp-wrap { flex-direction: column; align-items: flex-start; justify-content: center; }
+.hr-cta[data-scene] .dp-wrap > div { max-width: 52%; }
+
 /* ---------- Tablet ---------- */
 @container (max-width: 1060px) {
   .hr-hero-grid { grid-template-columns: minmax(0, 1fr); }
@@ -299,6 +321,9 @@
   .hr-gates li + li { border-inline-start: 0; }
   .hr-gates li { border-bottom: 1px solid var(--dline); }
   .hr-questions { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hr-intro .hr-scene { width: 48%; }
+  .hr-intro[data-scene] .hr-intro-grid { max-width: 54%; }
+  .hr-cta[data-scene] .dp-wrap > div { max-width: 60%; }
 }
 
 /* ---------- Mobile ---------- */
@@ -354,6 +379,15 @@
   .hr-process-branch { margin-inline: 0; }
   .hr-outcomes-grid { grid-template-columns: minmax(0, 1fr); }
   .hr-tab { flex: 1 1 100%; }
+  /* Scenes move above the copy and fade into it, so the people stay visible without covering text. */
+  .hr-intro[data-scene] { display: block; min-height: 0; padding: 250px 0 44px; }
+  .hr-intro .hr-scene { inset-block: 0 auto; inset-inline: 0; width: 100%; height: 290px; }
+  .hr-intro .hr-scene::after, [dir="ltr"] .hr-intro .hr-scene::after { background: linear-gradient(to top, var(--paper) 0%, color-mix(in oklab, var(--paper) 55%, transparent) 26%, transparent 55%); }
+  .hr-intro[data-scene] .hr-intro-grid { max-width: none; }
+  .hr-cta[data-scene] { display: block; min-height: 0; padding: 230px 0 56px; }
+  .hr-cta .hr-scene { inset-block: 0 auto; height: 300px; }
+  .hr-cta .hr-scene::after, [dir="ltr"] .hr-cta .hr-scene::after { background: linear-gradient(to top, var(--deep) 0%, color-mix(in oklab, var(--deep) 60%, transparent) 30%, color-mix(in oklab, var(--deep) 10%, transparent) 70%); }
+  .hr-cta[data-scene] .dp-wrap > div { max-width: none; }
 }
 @container (max-width: 520px) {
   .hr-hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
