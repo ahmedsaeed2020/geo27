@@ -26,13 +26,13 @@ html[lang="en"] .ps-scene { transform: scaleX(-1); }
 .ps-veil {
   position: absolute; inset: 0;
   background:
-    linear-gradient(to top, color-mix(in oklab, var(--dark) 96%, transparent) 0%, color-mix(in oklab, var(--dark) 40%, transparent) 34%, color-mix(in oklab, var(--dark) 72%, transparent) 100%),
-    linear-gradient(270deg, color-mix(in oklab, var(--dark) 94%, transparent) 0%, color-mix(in oklab, var(--dark) 78%, transparent) 42%, color-mix(in oklab, var(--deep) 36%, transparent) 100%);
+    linear-gradient(to top, color-mix(in oklab, var(--dark) 94%, transparent) 0%, color-mix(in oklab, var(--dark) 18%, transparent) 36%, color-mix(in oklab, var(--dark) 12%, transparent) 70%, color-mix(in oklab, var(--dark) 62%, transparent) 100%),
+    linear-gradient(270deg, color-mix(in oklab, var(--dark) 90%, transparent) 0%, color-mix(in oklab, var(--dark) 62%, transparent) 40%, color-mix(in oklab, var(--deep) 8%, transparent) 100%);
 }
 html[lang="en"] .ps-veil {
   background:
-    linear-gradient(to top, color-mix(in oklab, var(--dark) 96%, transparent) 0%, color-mix(in oklab, var(--dark) 40%, transparent) 34%, color-mix(in oklab, var(--dark) 72%, transparent) 100%),
-    linear-gradient(90deg, color-mix(in oklab, var(--dark) 94%, transparent) 0%, color-mix(in oklab, var(--dark) 78%, transparent) 42%, color-mix(in oklab, var(--deep) 36%, transparent) 100%);
+    linear-gradient(to top, color-mix(in oklab, var(--dark) 94%, transparent) 0%, color-mix(in oklab, var(--dark) 18%, transparent) 36%, color-mix(in oklab, var(--dark) 12%, transparent) 70%, color-mix(in oklab, var(--dark) 62%, transparent) 100%),
+    linear-gradient(90deg, color-mix(in oklab, var(--dark) 90%, transparent) 0%, color-mix(in oklab, var(--dark) 62%, transparent) 40%, color-mix(in oklab, var(--deep) 8%, transparent) 100%);
 }
 .ps-glow {
   position: absolute; inset-block: 18% 8%; inset-inline: auto 4%; width: 58%;
@@ -93,9 +93,9 @@ html[lang="en"] .ps-glow { inset-inline: auto 4%; }
 }
 .ps-slide[data-active="true"] .ps-points { opacity: 1; transform: none; filter: none; }
 .ps-num {
-  position: absolute; inset-block-start: -.42em; inset-inline-end: 0; z-index: -1;
+  position: absolute; inset-block-start: -.68em; inset-inline-end: 0; z-index: -1;
   font-family: var(--font-archivo); font-size: clamp(110px, 12vw, 190px); font-weight: 800; line-height: 1;
-  color: transparent; -webkit-text-stroke: 1px color-mix(in oklab, var(--mint) 30%, transparent);
+  color: transparent; -webkit-text-stroke: 1px color-mix(in oklab, var(--mint) 24%, transparent);
   opacity: 0; transform: translate3d(0, 30px, 0); transition: opacity .6s ease, transform 1.1s var(--ps-ease);
 }
 .ps-slide[data-active="true"] .ps-num { opacity: 1; transform: none; transition-delay: .1s; }
@@ -160,7 +160,7 @@ html[lang="ar"] .ps-base span { transform: translateX(50%); }
 /* A second real screen floats over the device corner. */
 .ps-float, .ps-phone { position: absolute; z-index: 2; cursor: zoom-in; text-align: start; }
 .ps-float {
-  inset-block-end: 0; inset-inline-start: -6%; width: min(60%, 440px); padding: 10px; border-radius: 16px;
+  inset-block-end: 0; inset-inline-start: -6%; width: min(54%, 410px); padding: 10px; border-radius: 16px;
   background: color-mix(in oklab, var(--paper2) 94%, transparent); backdrop-filter: blur(10px);
   box-shadow: 0 0 0 1px color-mix(in oklab, var(--dark) 8%, transparent), 0 40px 70px -28px color-mix(in oklab, var(--dark) 85%, transparent);
   opacity: 0; transform: translate3d(0, 28px, 0) scale(.96);
@@ -168,8 +168,9 @@ html[lang="ar"] .ps-base span { transform: translateX(50%); }
 }
 .ps-float-cap { display: flex; align-items: center; gap: 8px; padding: 2px 4px 9px; font-size: 12.5px; font-weight: 700; line-height: 1.4; color: var(--ink); }
 .ps-dot { flex: none; width: 7px; height: 7px; border-radius: 50%; background: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 18%, transparent); }
-.ps-float-img { display: block; overflow: hidden; border-radius: 9px; border: 1px solid var(--dline); background: var(--card); }
-.ps-float-img img { width: 100%; height: 100%; object-fit: cover; object-position: right top; }
+.ps-float-img { display: block; overflow: hidden; direction: rtl; border-radius: 9px; border: 1px solid var(--dline); background: var(--card); }
+.ps-float-img img { display: block; max-width: none; height: auto; min-height: 100%; object-fit: cover; object-position: right top; }
+.ps-float[data-window="true"] { width: min(44%, 340px); }
 .ps-phone {
   inset-block-end: -2%; inset-inline-end: -2%; width: min(25%, 170px); padding: 7px; border-radius: 26px;
   background: linear-gradient(160deg, color-mix(in oklab, var(--ink) 80%, var(--paper2)), var(--dark));
@@ -221,6 +222,8 @@ html[lang="en"] .ps-bar { transform-origin: left center; }
 
 /* Tablets and phones: screen first, copy below, scrolling tab row. */
 @media (max-width: 900px) {
+  .ps-veil, html[lang="en"] .ps-veil { background: linear-gradient(to bottom, color-mix(in oklab, var(--dark) 70%, transparent) 0%, color-mix(in oklab, var(--dark) 40%, transparent) 30%, color-mix(in oklab, var(--dark) 88%, transparent) 55%, color-mix(in oklab, var(--dark) 96%, transparent) 100%); }
+  .ps-float[data-window="true"] { width: 70%; }
   .ps-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px 0; }
   .ps-fact:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; }
   .ps-slide { grid-template-columns: minmax(0, 1fr); gap: 28px; align-items: start; }

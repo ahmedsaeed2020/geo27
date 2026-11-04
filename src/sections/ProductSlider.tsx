@@ -292,10 +292,10 @@ export default function ProductSlider() {
                       {ready && <img src={s.detail.src} width={s.detail.width} height={s.detail.height} alt={s.detail.caption[l]} loading="lazy" decoding="async" />}
                     </button>
                   ) : (
-                    <button type="button" className="ps-float" onClick={() => setZoom({ slide: i, index: 1 })} aria-label={`${SLIDER_COPY.enlarge[l]}: ${s.detail.caption[l]}`}>
+                    <button type="button" className="ps-float" data-window={s.detail.height > s.detail.width * 0.4 ? 'true' : 'false'} onClick={() => setZoom({ slide: i, index: 1 })} aria-label={`${SLIDER_COPY.enlarge[l]}: ${s.detail.caption[l]}`}>
                       <span className="ps-float-cap"><span className="ps-dot" aria-hidden="true" />{s.detail.caption[l]}</span>
-                      <span className="ps-float-img" style={{ aspectRatio: `${s.detail.width} / ${Math.min(s.detail.height, s.detail.width * 0.62)}` }}>
-                        {ready && <img src={s.detail.src} width={s.detail.width} height={s.detail.height} alt={s.detail.caption[l]} loading="lazy" decoding="async" />}
+                      <span className="ps-float-img" style={{ aspectRatio: `${Math.round(s.detail.width / (s.detailZoom ?? 1))} / ${Math.min(s.detail.height, s.detail.width * 0.62)}` }}>
+                        {ready && <img src={s.detail.src} width={s.detail.width} height={s.detail.height} alt={s.detail.caption[l]} loading="lazy" decoding="async" style={{ width: `${(s.detailZoom ?? 1) * 100}%` }} />}
                       </span>
                     </button>
                   )}

@@ -32,6 +32,8 @@ export type HomeSlide = {
   /** A second real screen shown as a floating detail card, or as a phone when `phone` is set. */
   detail: Shot;
   phone?: boolean;
+  /** Magnifies the right-hand (Arabic start) part of a wide detail strip so its text stays legible. */
+  detailZoom?: number;
   /** Tall screens drift slowly inside the device so the lower part is seen too. */
   scroll?: boolean;
   scene: SlideScene;
@@ -85,6 +87,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     metric: { value: REPORTS.length, label: { ar: 'تقريرًا جاهزًا للتشغيل في مركز التقارير', en: 'reports ready to run in the report center' } },
     screen: need('09-rep-03-r6'),
     detail: need('01-cfo-04-f11'),
+    detailZoom: 1.7,
     scene: { large: statements1920, small: statements960 },
     link: { path: '/modules/reports', label: { ar: 'افتح مركز التقارير', en: 'Open the report center' } },
   },
@@ -103,6 +106,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     ],
     screen: need('02-cash-01-f9'),
     detail: need('02-cash-02-sl6'),
+    detailZoom: 1.3,
     scene: { large: collections1920, small: collections960 },
     link: { path: '/modules/accounting', label: { ar: 'استكشف المحاسبة والمالية', en: 'Explore Accounting & Finance' } },
   },
@@ -157,6 +161,7 @@ export const HOME_SLIDES: HomeSlide[] = [
     ],
     screen: need('03-doc-01-d1'),
     detail: need('03-doc-04-d5'),
+    detailZoom: 1.35,
     scroll: true,
     scene: { large: documents1920, small: documents960 },
     link: { path: '/pro/capabilities', label: { ar: 'استكشف القدرات المتقدمة', en: 'Explore advanced capabilities' } },
