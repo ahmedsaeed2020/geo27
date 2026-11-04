@@ -25,7 +25,7 @@
   "handoffAsset": "S01",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s06": {
   "source": "assets/original-screens/S06.png",
@@ -53,7 +53,7 @@
   "handoffAsset": "S06",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s08": {
   "source": "assets/original-screens/S08.png",
@@ -81,7 +81,7 @@
   "handoffAsset": "S08",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s09": {
   "source": "assets/original-screens/S09.png",
@@ -109,7 +109,7 @@
   "handoffAsset": "S09",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s10": {
   "source": "assets/original-screens/S10.png",
@@ -137,7 +137,7 @@
   "handoffAsset": "S10",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s13": {
   "source": "assets/original-screens/S13.png",
@@ -165,7 +165,7 @@
   "handoffAsset": "S13",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s16": {
   "source": "assets/original-screens/S16.png",
@@ -193,7 +193,7 @@
   "handoffAsset": "S16",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s17": {
   "source": "assets/original-screens/S17.png",
@@ -221,7 +221,7 @@
   "handoffAsset": "S17",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s18": {
   "source": "assets/original-screens/S18.png",
@@ -249,7 +249,7 @@
   "handoffAsset": "S18",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s19": {
   "source": "assets/original-screens/S19.png",
@@ -277,7 +277,7 @@
   "handoffAsset": "S19",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s20": {
   "source": "assets/original-screens/S20.png",
@@ -305,7 +305,7 @@
   "handoffAsset": "S20",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s21": {
   "source": "assets/original-screens/S21.png",
@@ -333,7 +333,7 @@
   "handoffAsset": "S21",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s26": {
   "source": "assets/original-screens/S26.png",
@@ -361,7 +361,7 @@
   "handoffAsset": "S26",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s27": {
   "source": "assets/original-screens/S27.png",
@@ -389,7 +389,7 @@
   "handoffAsset": "S27",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s28": {
   "source": "assets/original-screens/S28.png",
@@ -417,7 +417,7 @@
   "handoffAsset": "S28",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  },
  "hr-s29": {
   "source": "assets/original-screens/S29.png",
@@ -445,6 +445,6 @@
   "handoffAsset": "S29",
   "handoffShaMatches": true,
   "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
-  "privacyReview": "pending-owner"
+  "privacyReview": "owner-confirmed-demo-data-2026-11-04"
  }
 }
