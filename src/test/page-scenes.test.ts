@@ -22,7 +22,7 @@ describe("Contextual page scenes", () => {
     for (const m of HR_MODULES) {
       const s = collection[`hr-${m.slug}`];
       expect(s, m.slug).toBeDefined();
-      for (const u of [s.background, s.body, s.backgroundSmall, s.bodySmall]) {
+      for (const u of [s?.background, s?.body, s?.backgroundSmall, s?.bodySmall]) {
         expect(u, m.slug).toMatch(/^\/__l5e\/assets-v1\//);
         urls.add(u!);
       }
