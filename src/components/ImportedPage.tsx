@@ -74,7 +74,7 @@ function RenderSourceNode({ node, pageKey, backdrop = false, bodyBackdrop = fals
   if (node.type === "feature-card") return localizeTree(<article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض التفاصيل ←</Link></Button></article>, locale);
   if (node.type === "button") {
     // A source request button without a destination opens the request form (via /demo) instead of a dead "#".
-    const href = node.href || (isRequestWording(node.text ?? "") ? "/demo" : "#");
+    const href = node.href && node.href !== "#" ? node.href : isRequestWording(node.text ?? "") ? "/demo" : "#";
     return localizeTree(<Button asChild size="lg" className={`${node.className} import-action`} variant={node.text?.includes("واتساب") ? "outline" : "default"}>
       {href.startsWith("/") && !href.includes("#") ? <Link to={href}>{node.text}</Link> : <a href={href} target={node.external ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a>}
     </Button>, locale);
