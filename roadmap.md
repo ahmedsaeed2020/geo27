@@ -12,7 +12,8 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 - [ ] Home targeted additions: three-layer model, six-family explorer, connected stories, role discovery (4 new roles), delivery, contextual demo — Pro/HR home content unchanged.
 - [ ] Contextual lead forms on every new hub/department/service page (product, department/industry, workflow, page, language, UTM) — E2E saved and read back.
 - [ ] SEO/sitemap/hreflang for new routes; drafts noindex; tests for rules; QA desktop/tablet/mobile AR/EN; Pro/HR regression check; screenshots + handoff report.
-- [ ] Owner 2026-11-04 17:54: screenshots showing the old module logos (pink app icon in the side rail) are wrong — remove them from the site (CRM demo screens and any other screen with that rail) and keep a test so they cannot return.
+- [x] Owner 2026-11-04 17:54: screenshots showing the old module logos (pink app icon in the side rail) are wrong — scanned all 67 product screens and 16 profile photos: only the two CRM demo screens had it; removed from pages, stories, menu, editor and storage; CRM pages now show labelled diagrams; test keeps them out.
+- [ ] Owner: recaptured DIGIT CRM screens with the current module logos (deals board, manager workbench) — blocked on owner.
 
 # DIGIT Pro V4 complete product pages (owner brief 2026-11-04 16:51)
 - [x] Phase A: source map — 321 IDs mapped to evidence tiers (available / being verified / scoped), screenshot→feature provenance, 117 runnable reports (2 e-invoicing entries withheld); rules kept as tests.
