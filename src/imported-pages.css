@@ -54,3 +54,7 @@
  .imported-page .import-action{max-width:100%}
 }
 @media(prefers-reduced-motion:reduce){.imported-page .import-reveal{opacity:1;transform:none;transition:none}}
+
+/* Source buttons on the mint background read in deep green: white text on mint is only 1.8:1.
+   Selector list generated from the imported pages' CSS (background var(--import-source-14)). */
+.imported-page :is(.in-105d40c5, .in-1200cdb0, .in-13666b06, .in-158521c, .in-15f321cc, .in-185fe2ee, .in-1a5dd8b4, .in-1cb9be77, .in-23e4c055, .in-2444a11e, .in-24bf7802, .in-24e1afa9, .in-27942fe, .in-28135ca2, .in-2892101d, .in-2b0967a9, .in-2c6b468c, .in-2de3780a, .in-2ec8dcdd, .in-3131377f, .in-3151f951, .in-3299d172, .in-37e89fa9, .in-3a616247, .in-3c3c3d4f, .in-3c813465, .in-3cbeada4, .in-3fe66964, .in-41a1a01b, .in-425fec80, .in-42e608d6, .in-43378c97, .in-48b1cca, .in-48ccd8f1, .in-490abe74, .in-49255d53, .in-4ca0a935, .in-4dfc3954, .in-5081d86d, .in-5248379e, .in-53a18c05, .in-548eff4b, .in-54a2a9f, .in-55aa3d35, .in-5664ea06, .in-5673d687, .in-5689915b, .in-570bf50e, .in-575554ee, .in-58dc678c, .in-5b72815d, .in-5c5de0b8, .in-5f852f40, .in-609cc5e0, .in-62840c80, .in-648d8b7a, .in-69faf5d6, .in-6d971f49, .in-6de4ea4a, .in-6e75208, .in-6f1b5573, .in-704d80ba, .in-76db15e9, .in-79efb41d, .in-7a0b4b43, .in-7b618134, .in-7be57491, .in-7cc33537, .in-7f00edbe, .in-7f42bf, .in-7f81185, .in-8273c59, .in-aadfd3f, .in-df349a9, .in-f3f3678) { color: var(--deep); }

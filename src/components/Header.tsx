@@ -15,7 +15,7 @@ export function DigitMark({ className = "h-8 w-8" }: { className?: string }) {
   return localizeTree((
     <svg viewBox="0 0 100 100" className={className} role="img" aria-label="Digit">
       <rect x="18" y="22.5" width="40" height="13" rx="6.5" fill="var(--ink)" />
-      <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--primary)" />
+      <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--brand-emerald)" />
       <rect x="18" y="43.5" width="64" height="13" rx="6.5" fill="var(--ink)" />
       <rect x="18" y="64.5" width="50" height="13" rx="6.5" fill="var(--ink)" />
     </svg>
