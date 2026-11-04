@@ -31,3 +31,4 @@
 - Editors preview unpublished form/section settings with `?draft_settings=<key>`, loaded only in the browser through an authenticated server function, so visitors and crawlers always receive published settings.
 - Product families, departments and menu groups live only in src/content/catalog.ts; headers, mega/mobile menus, product hubs, breadcrumbs and lead tagging read it through resolveCatalog, so an unpublished CMS department always links to its hub card and never to an empty page.
 - Department pages are CMS documents with `department` meta rendered by the shared DepartmentPage template; departmentPublishIssues gates publishing so thin or screenshot-less pages cannot go live.
+- DIGIT HR module pages keep handoff copy in src/content/hr/modules/*.json (loaded per route) and CMS `source` blocks only reference, reorder, hide or override those sections; HR screenshots live in hr-shots.ts with provenance JSON, so source truth and editorial changes stay separate.
