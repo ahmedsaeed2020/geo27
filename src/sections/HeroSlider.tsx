@@ -73,7 +73,7 @@ export default function HeroSlider() {
   return (
     <section
       ref={show.sectionRef}
-      className="hs"
+      className="hx"
       aria-roledescription={l === 'ar' ? 'عرض شرائح' : 'carousel'}
       aria-label={HERO_COPY.region[l]}
       data-running={running ? 'true' : 'false'}
@@ -81,41 +81,41 @@ export default function HeroSlider() {
       {...show.sectionHandlers}
       onMouseLeave={() => { show.sectionHandlers.onMouseLeave(); resetParallax(); }}
     >
-      <div className="hs-backdrop" aria-hidden="true"><span className="hs-orb" /><span className="hs-orb hs-orb-2" /><span className="hs-lines" /></div>
+      <div className="hx-backdrop" aria-hidden="true"><span className="hx-orb" /><span className="hx-orb hx-orb-2" /><span className="hx-lines" /></div>
 
-      <div className="hs-inner">
-        <div className="hs-copy">
-          <div className="hs-top">
-            <h1 className="hs-brand"><span className="hs-mark" aria-hidden="true"><i /><i /><i /></span>{HERO_COPY.brand[l]}</h1>
-            <p className="hs-trust"><span className="hs-trust-dot" aria-hidden="true" />{HERO_COPY.trust[l]}</p>
+      <div className="hx-inner">
+        <div className="hx-copy">
+          <div className="hx-top">
+            <h1 className="hx-brand"><span className="hx-mark" aria-hidden="true"><i /><i /><i /></span>{HERO_COPY.brand[l]}</h1>
+            <p className="hx-trust"><span className="hx-trust-dot" aria-hidden="true" />{HERO_COPY.trust[l]}</p>
           </div>
 
-          <div className="hs-panels" {...show.swipeHandlers}>
+          <div className="hx-panels" {...show.swipeHandlers}>
             {slides.map((s, i) => {
               const shown = i === active;
               return (
                 <div
                   key={s.id}
-                  id={`hs-slide-${s.id}`}
-                  className="hs-panel"
+                  id={`hx-slide-${s.id}`}
+                  className="hx-panel"
                   role="tabpanel"
                   aria-roledescription={l === 'ar' ? 'شريحة' : 'slide'}
-                  aria-labelledby={`hs-tab-${s.id}`}
+                  aria-labelledby={`hx-tab-${s.id}`}
                   data-active={shown ? 'true' : 'false'}
                   aria-hidden={!shown}
                   inert={!shown}
                 >
-                  <p className="hs-chip hs-in" style={{ '--i': 0 } as CSSProperties}><span className="hs-chip-name">{s.name}</span><span className="hs-chip-tag">{s.tag[l]}</span></p>
-                  <h2 className="hs-title hs-in" style={{ '--i': 1 } as CSSProperties}>{s.title[l]}</h2>
-                  <p className="hs-lead hs-in" style={{ '--i': 2 } as CSSProperties}>{s.lead[l]}</p>
-                  <ul className="hs-points">
+                  <p className="hx-chip hx-in" style={{ '--i': 0 } as CSSProperties}><span className="hx-chip-name">{s.name}</span><span className="hx-chip-tag">{s.tag[l]}</span></p>
+                  <h2 className="hx-title hx-in" style={{ '--i': 1 } as CSSProperties}>{s.title[l]}</h2>
+                  <p className="hx-lead hx-in" style={{ '--i': 2 } as CSSProperties}>{s.lead[l]}</p>
+                  <ul className="hx-points">
                     {s.points.map((point, k) => (
-                      <li key={point.en} className="hs-in" style={{ '--i': 3 + k } as CSSProperties}><span className="hs-tick" aria-hidden="true"><Check size={13} strokeWidth={2.8} /></span>{point[l]}</li>
+                      <li key={point.en} className="hx-in" style={{ '--i': 3 + k } as CSSProperties}><span className="hx-tick" aria-hidden="true"><Check size={13} strokeWidth={2.8} /></span>{point[l]}</li>
                     ))}
                   </ul>
-                  <div className="hs-ctas hs-in" style={{ '--i': 6 } as CSSProperties}>
-                    <Button size="lg" className="hs-demo" onClick={bookDemo}>{HERO_COPY.demo[l]}</Button>
-                    <Link to={localeHref(s.link.path, l)} className="hs-link">{s.link.label[l]}<LinkArrow size={17} aria-hidden="true" /></Link>
+                  <div className="hx-ctas hx-in" style={{ '--i': 6 } as CSSProperties}>
+                    <Button size="lg" className="hx-demo" onClick={bookDemo}>{HERO_COPY.demo[l]}</Button>
+                    <Link to={localeHref(s.link.path, l)} className="hx-link">{s.link.label[l]}<LinkArrow size={17} aria-hidden="true" /></Link>
                   </div>
                 </div>
               );
@@ -123,12 +123,12 @@ export default function HeroSlider() {
           </div>
         </div>
 
-        <div ref={visualRef} className="hs-visual" data-wipe={wipe} onPointerMove={onPointerMove} onPointerLeave={resetParallax} {...show.swipeHandlers}>
-          <span className="hs-frame" aria-hidden="true" />
-          <span className="hs-ring" aria-hidden="true" />
-          <div className="hs-photos">
+        <div ref={visualRef} className="hx-visual" data-wipe={wipe} onPointerMove={onPointerMove} onPointerLeave={resetParallax} {...show.swipeHandlers}>
+          <span className="hx-frame" aria-hidden="true" />
+          <span className="hx-ring" aria-hidden="true" />
+          <div className="hx-photos">
             {slides.map((s, i) => (
-              <div key={s.id} className="hs-photo" data-active={i === active ? 'true' : 'false'} aria-hidden={i !== active}>
+              <div key={s.id} className="hx-photo" data-active={i === active ? 'true' : 'false'} aria-hidden={i !== active}>
                 {(i === 0 || primed || i === active) && (
                   <img
                     src={s.photo.large}
@@ -144,29 +144,29 @@ export default function HeroSlider() {
                 )}
               </div>
             ))}
-            <span className="hs-photo-shade" aria-hidden="true" />
+            <span className="hx-photo-shade" aria-hidden="true" />
           </div>
 
           {slides.map((s, i) => {
             const shown = i === active;
             return (
-              <div key={s.id} className="hs-overlays" data-active={shown ? 'true' : 'false'} aria-hidden={!shown} inert={!shown}>
-                <p className="hs-stat"><strong>{s.stat.value}</strong><span>{s.stat.label[l]}</span></p>
+              <div key={s.id} className="hx-overlays" data-active={shown ? 'true' : 'false'} aria-hidden={!shown} inert={!shown}>
+                <p className="hx-stat"><strong>{s.stat.value}</strong><span>{s.stat.label[l]}</span></p>
                 {s.proof.kind === 'screen' ? (
-                  <figure className="hs-screen">
-                    <div className="hs-screen-bar"><span className="hs-dots" aria-hidden="true"><i /><i /><i /></span><span className="hs-screen-cap">{s.proof.screen.caption[l]}</span></div>
-                    <button type="button" className="hs-screen-btn" onClick={() => setZoom(i)} aria-label={`${HERO_COPY.enlarge[l]}: ${s.proof.screen.caption[l]}`}>
+                  <figure className="hx-screen">
+                    <div className="hx-screen-bar"><span className="hx-dots" aria-hidden="true"><i /><i /><i /></span><span className="hx-screen-cap">{s.proof.screen.caption[l]}</span></div>
+                    <button type="button" className="hx-screen-btn" onClick={() => setZoom(i)} aria-label={`${HERO_COPY.enlarge[l]}: ${s.proof.screen.caption[l]}`}>
                       {(i === 0 || primed || shown) && <img src={s.proof.screen.src} width={s.proof.screen.width} height={s.proof.screen.height} alt={s.proof.screen.caption[l]} loading={i === 0 ? 'eager' : 'lazy'} decoding="async" />}
-                      <span className="hs-zoom" aria-hidden="true"><Maximize2 size={15} /></span>
+                      <span className="hx-zoom" aria-hidden="true"><Maximize2 size={15} /></span>
                     </button>
-                    <figcaption className="hs-real"><span className="hs-live" aria-hidden="true" />{HERO_COPY.real[l]}</figcaption>
+                    <figcaption className="hx-real"><span className="hx-live" aria-hidden="true" />{HERO_COPY.real[l]}</figcaption>
                   </figure>
                 ) : (
-                  <div className="hs-flow">
-                    <p className="hs-flow-label">{s.proof.label[l]}</p>
-                    <ol className="hs-steps">
+                  <div className="hx-flow">
+                    <p className="hx-flow-label">{s.proof.label[l]}</p>
+                    <ol className="hx-steps">
                       {s.proof.steps.map((step, k) => (
-                        <li key={step.en} className="hs-step" style={{ '--i': k } as CSSProperties}><span className="hs-step-no">{pad(k + 1)}</span><span className="hs-step-label">{step[l]}</span></li>
+                        <li key={step.en} className="hx-step" style={{ '--i': k } as CSSProperties}><span className="hx-step-no">{pad(k + 1)}</span><span className="hx-step-label">{step[l]}</span></li>
                       ))}
                     </ol>
                   </div>
@@ -177,33 +177,33 @@ export default function HeroSlider() {
         </div>
       </div>
 
-      <div className="hs-rail">
-        <div ref={show.tabsRef} className="hs-tabs" role="tablist" aria-label={HERO_COPY.slides[l]} onKeyDown={show.onTabsKey}>
+      <div className="hx-rail">
+        <div ref={show.tabsRef} className="hx-tabs" role="tablist" aria-label={HERO_COPY.slides[l]} onKeyDown={show.onTabsKey}>
           {slides.map((s, i) => {
             const selected = i === active;
             return (
               <button
                 key={s.id}
-                id={`hs-tab-${s.id}`}
+                id={`hx-tab-${s.id}`}
                 type="button"
                 role="tab"
                 data-index={i}
                 aria-selected={selected}
-                aria-controls={`hs-slide-${s.id}`}
+                aria-controls={`hx-slide-${s.id}`}
                 tabIndex={selected ? 0 : -1}
-                className="hs-tab"
+                className="hx-tab"
                 onClick={() => go(i)}
               >
-                <span className="hs-tab-no">{pad(i + 1)}</span>
-                <span className="hs-tab-text"><span className="hs-tab-name">{s.name}</span><span className="hs-tab-tag">{s.tag[l]}</span></span>
-                <span className="hs-track" aria-hidden="true">
+                <span className="hx-tab-no">{pad(i + 1)}</span>
+                <span className="hx-tab-text"><span className="hx-tab-name">{s.name}</span><span className="hx-tab-tag">{s.tag[l]}</span></span>
+                <span className="hx-track" aria-hidden="true">
                   {selected && (
                     <span
                       key={`${active}-${cycle}`}
-                      className="hs-bar"
+                      className="hx-bar"
                       data-static={reduced ? 'true' : 'false'}
                       style={{ animationDuration: `${HERO_MS}ms`, animationPlayState: running ? 'running' : 'paused' }}
-                      onAnimationEnd={event => { if (event.animationName === 'hs-progress') go(active + 1, 1); }}
+                      onAnimationEnd={event => { if (event.animationName === 'hx-progress') go(active + 1, 1); }}
                     />
                   )}
                 </span>
@@ -211,13 +211,13 @@ export default function HeroSlider() {
             );
           })}
         </div>
-        <div className="hs-controls">
-          <span className="hs-count"><strong>{pad(active + 1)}</strong> {HERO_COPY.of[l]} {pad(count)}</span>
-          <button type="button" className="hs-ctl" onClick={() => go(active - 1, -1)} aria-label={HERO_COPY.prev[l]}><PrevIcon size={19} /></button>
-          <button type="button" className="hs-ctl" onClick={() => setPlaying(p => !p)} aria-label={playing && !reduced ? HERO_COPY.pause[l] : HERO_COPY.play[l]} aria-pressed={!(playing && !reduced)}>
+        <div className="hx-controls">
+          <span className="hx-count"><strong>{pad(active + 1)}</strong> {HERO_COPY.of[l]} {pad(count)}</span>
+          <button type="button" className="hx-ctl" onClick={() => go(active - 1, -1)} aria-label={HERO_COPY.prev[l]}><PrevIcon size={19} /></button>
+          <button type="button" className="hx-ctl" onClick={() => setPlaying(p => !p)} aria-label={playing && !reduced ? HERO_COPY.pause[l] : HERO_COPY.play[l]} aria-pressed={!(playing && !reduced)}>
             {playing && !reduced ? <Pause size={17} /> : <Play size={17} />}
           </button>
-          <button type="button" className="hs-ctl" onClick={() => go(active + 1, 1)} aria-label={HERO_COPY.next[l]}><NextIcon size={19} /></button>
+          <button type="button" className="hx-ctl" onClick={() => go(active + 1, 1)} aria-label={HERO_COPY.next[l]}><NextIcon size={19} /></button>
         </div>
       </div>
 
