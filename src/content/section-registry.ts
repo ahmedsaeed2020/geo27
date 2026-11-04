@@ -24,6 +24,7 @@ export const HOME_SECTIONS = [
   { id: 'band', label: 'سلايدر المنتجات (محاسبتك أوضح)', heading: { ar: 'محاسبتك أوضح' } },
   { id: 'modules', label: 'الموديولات', heading: { ar: 'منصة واحدة… لكل إدارات شركتك' } },
   { id: 'portfolio', label: 'محفظة الحلول (المنتجات الستة والأدوار)', heading: { ar: 'محفظة حلول واحدة… لا باقة واحدة لكل شيء.', en: 'One solution portfolio… not one bundle for everything.' } },
+  { id: 'blueprint', label: 'صمّم منظومتك (المخطط التفاعلي)', heading: { ar: 'ارسم منظومتك في دقيقة… ثم احجز العرض عليها', en: 'Sketch your system in a minute… then book the demo on it' } },
   { id: 'showcase', label: 'شاشات النظام الحقيقية', heading: HOME_SHOWCASE.title },
   { id: 'capabilities', label: 'القدرات', heading: { ar: 'قدرات تمتد عبر النظام كله.' } },
   { id: 'problems', label: 'مشاكل الأنظمة التقليدية', heading: { ar: 'وداعاً لمشاكل الأنظمة التقليدية' } },

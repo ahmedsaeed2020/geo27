@@ -17,6 +17,7 @@ import CmsBlocks from './cms/CmsBlocks';
 import { useSiteConfig } from './cms/CmsContext';
 import { EditableSections, useSectionOverride } from './cms/SectionText';
 import { arrangeSections, PRO_SECTIONS, proSectionIdOf as packageSectionId } from '@/content/section-registry';
+import { accessibleHtml, withAccessibleHtml } from "@/lib/accessible-html";
 import "@/package-pages.css";
 
 type PackageNode = {
@@ -51,7 +52,7 @@ function PreviewTabs({ node, slug }: { node: PackageNode; slug: "starter" | "pro
           document.getElementById(`${node.id}-tab-${next}`)?.focus();
         }
       }} tabIndex={active === index ? 0 : -1} className="package-tab">
-        <span className="package-tab-icon" dangerouslySetInnerHTML={{ __html: previewMeta[slug][index]?.icon ?? "" }} />
+        <span className="package-tab-icon" aria-hidden="true" dangerouslySetInnerHTML={{ __html: accessibleHtml(previewMeta[slug][index]?.icon ?? "") }} />
         <span className="package-tab-copy"><span className="package-tab-subtitle">{previewMeta[slug][index]?.subtitle}</span><span>{tab.title}</span></span>
       </Button>)}
     </div>
@@ -74,7 +75,13 @@ function PackageHeading({ node }: { node: PackageNode }) {
   return localizeTree(<Tag {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
 }
 
-function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean }) {
+type RenderProps = { node: PackageNode; slug: "starter" | "pro"; bodyBackdrop?: boolean };
+
+function RenderNode(props: RenderProps) {
+  return withAccessibleHtml(RenderSourceNode(props));
+}
+
+function RenderSourceNode({ node, slug, bodyBackdrop = false }: RenderProps) {
   const locale = useLocale();
   const common = { className: node.className, id: node.anchor || undefined };
   if (node.type === "container") {

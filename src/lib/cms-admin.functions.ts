@@ -18,7 +18,7 @@ async function ownerCount(admin: Db): Promise<number> {
 
 export const setCmsRole = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z
       .object({ email: z.string().trim().email().max(255).optional(), userId: z.string().uuid().optional(), role: z.enum(['owner', 'editor', 'sales']) })
       .refine(v => !!v.email || !!v.userId, { message: 'Enter the account email' }),
@@ -47,7 +47,7 @@ export const setCmsRole = createServerFn({ method: 'POST' })
 
 export const removeCmsRole = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ userId: z.string().uuid() }))
+  .validator(z.object({ userId: z.string().uuid() }))
   .handler(async ({ data, context }) => {
     const access = await resolveAccess(context.supabase, context.userId);
     if (!access.owner) throw new Error('Forbidden');
@@ -94,7 +94,7 @@ export const listChatThreads = createServerFn({ method: 'POST' })
 
 export const getChatTranscript = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ threadId: z.string().uuid() }))
+  .validator(z.object({ threadId: z.string().uuid() }))
   .handler(async ({ data, context }) => {
     const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'leads' });
     if (!allowed) throw new Error('Forbidden');
@@ -112,7 +112,7 @@ export const getChatTranscript = createServerFn({ method: 'POST' })
 
 export const saveRedirect = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       id: z.string().uuid().optional(),
       from: z.string().max(600),
@@ -151,7 +151,7 @@ export const saveRedirect = createServerFn({ method: 'POST' })
 
 export const deleteRedirect = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ id: z.string().uuid() }))
+  .validator(z.object({ id: z.string().uuid() }))
   .handler(async ({ data, context }) => {
     const access = await resolveAccess(context.supabase, context.userId);
     if (!access.owner) throw new Error('Only the owner can change redirects');
@@ -166,7 +166,7 @@ export const deleteRedirect = createServerFn({ method: 'POST' })
 
 export const saveSiteConfig = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       key: z.enum(SITE_CONFIG_KEYS),
       value: z.unknown(),
@@ -221,7 +221,7 @@ export const saveSiteConfig = createServerFn({ method: 'POST' })
 
 export const getConfigHistory = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ key: z.enum(SITE_CONFIG_KEYS) }))
+  .validator(z.object({ key: z.enum(SITE_CONFIG_KEYS) }))
   .handler(async ({ data, context }) => {
     const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'content' });
     if (!allowed) throw new Error('Forbidden');
@@ -249,7 +249,7 @@ function randomToken(): string {
 
 export const createPreviewLink = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ documentId: z.string().uuid(), hours: z.number().int().min(1).max(168) }))
+  .validator(z.object({ documentId: z.string().uuid(), hours: z.number().int().min(1).max(168) }))
   .handler(async ({ data, context }) => {
     const access = await resolveAccess(context.supabase, context.userId);
     if (!access.content) throw new Error('Forbidden');
@@ -268,7 +268,7 @@ export const createPreviewLink = createServerFn({ method: 'POST' })
 
 export const revokePreviewLinks = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ documentId: z.string().uuid() }))
+  .validator(z.object({ documentId: z.string().uuid() }))
   .handler(async ({ data, context }) => {
     const access = await resolveAccess(context.supabase, context.userId);
     if (!access.content) throw new Error('Forbidden');
@@ -288,7 +288,7 @@ export const revokePreviewLinks = createServerFn({ method: 'POST' })
 /** Saved (unpublished) settings for one public key, so an editor can see them on the real page before publishing. */
 export const getDraftSiteConfig = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ key: z.enum(['branding', 'forms', 'home', 'pro', 'catalog']) }))
+  .validator(z.object({ key: z.enum(['branding', 'forms', 'home', 'pro', 'catalog']) }))
   .handler(async ({ data, context }) => {
     // RLS limits draft settings to content roles; an empty result means no access or nothing saved.
     const { data: row, error } = await context.supabase.from('cms_site_config').select('draft, published').eq('key', data.key).maybeSingle();

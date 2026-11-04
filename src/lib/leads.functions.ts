@@ -1,9 +1,9 @@
 import { createServerFn } from '@tanstack/react-start';
 import { getRequest } from '@tanstack/react-start/server';
-import { leadCatalogContext, leadSchema, LEAD_RECIPIENT, proLeadTopic } from './leads-schema';
+import { leadCatalogContext, leadSchema, LEAD_RECIPIENT, leadTopic } from './leads-schema';
 import { parseConfig } from './site-config-schema';
 
-export const submitLead = createServerFn({ method: 'POST' }).inputValidator(leadSchema).handler(async ({ data }) => {
+export const submitLead = createServerFn({ method: 'POST' }).validator(leadSchema).handler(async ({ data }) => {
   if (data.website) throw new Error('Invalid submission');
   const request = getRequest();
   const raw = `${request.headers.get('cf-connecting-ip') ?? request.headers.get('x-forwarded-for') ?? 'local'}:${data.email || data.phone}`;
@@ -22,7 +22,7 @@ export const submitLead = createServerFn({ method: 'POST' }).inputValidator(lead
   const catalog = leadCatalogContext(data.product, data.department);
   const { data: row, error } = await supabaseAdmin.from('contact_requests').insert({
     product: catalog.product || null, department: catalog.department || null,
-    topic: catalog.product === 'pro' ? proLeadTopic(data.topic) : '',
+    topic: leadTopic(catalog.product, data.topic),
     name:data.name,company:data.company,email:data.email || null,phone:data.phone || null,
     kind:data.requestType==='demo'?'demo':'contact', request_type:data.requestType,
     message:data.message,job_role:data.jobRole,interest:data.interest,industry:data.industry,

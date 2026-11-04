@@ -145,7 +145,8 @@ export default function ProPageBody({ config, content, cms: given, nav = true }:
   return (
     <div className="pv-root">
       {nav && <ProPagesNav current={config.key} />}
-      <div className="pv-page" data-signature={config.signature} data-pro-page={config.key}>
+      {/* The imported hero's "see it from inside" link targets #inside; the V4 chapters replace that section. */}
+      <div className="pv-page" id={config.replaces?.includes('inside') ? 'inside' : undefined} data-signature={config.signature} data-pro-page={config.key}>
         {out}
       </div>
     </div>

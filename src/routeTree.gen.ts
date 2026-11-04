@@ -15,6 +15,7 @@ import { Route as AuthenticatedRouteRouteImport } from './routes/_authenticated/
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as About4RouteImport } from './routes/about-4'
 import { Route as AuthRouteImport } from './routes/auth'
+import { Route as BlueprintRouteImport } from './routes/blueprint'
 import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as Contact4RouteImport } from './routes/contact-4'
@@ -45,6 +46,7 @@ import { Route as CrmDepartmentRouteImport } from './routes/crm.$department'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
 import { Route as EnAbout4RouteImport } from './routes/en.about-4'
+import { Route as EnBlueprintRouteImport } from './routes/en.blueprint'
 import { Route as EnCareersRouteImport } from './routes/en.careers'
 import { Route as EnContactRouteImport } from './routes/en.contact'
 import { Route as EnContact4RouteImport } from './routes/en.contact-4'
@@ -207,6 +209,11 @@ const AuthRoute = AuthRouteImport.update({
   path: '/auth',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BlueprintRoute = BlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CareersRoute = CareersRouteImport.update({
   id: '/careers',
   path: '/careers',
@@ -355,6 +362,11 @@ const EnAboutRoute = EnAboutRouteImport.update({
 const EnAbout4Route = EnAbout4RouteImport.update({
   id: '/about-4',
   path: '/about-4',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnBlueprintRoute = EnBlueprintRouteImport.update({
+  id: '/blueprint',
+  path: '/blueprint',
   getParentRoute: () => EnRoute,
 } as any)
 const EnCareersRoute = EnCareersRouteImport.update({
@@ -1048,6 +1060,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
+  '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -1076,6 +1089,7 @@ export interface FileRoutesByFullPath {
   '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
+  '/en/blueprint': typeof EnBlueprintRoute
   '/en/careers': typeof EnCareersRoute
   '/en/contact': typeof EnContactRoute
   '/en/contact-4': typeof EnContact4Route
@@ -1217,6 +1231,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
+  '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -1241,6 +1256,7 @@ export interface FileRoutesByTo {
   '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
+  '/en/blueprint': typeof EnBlueprintRoute
   '/en/careers': typeof EnCareersRoute
   '/en/contact': typeof EnContactRoute
   '/en/contact-4': typeof EnContact4Route
@@ -1381,6 +1397,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/about-4': typeof About4Route
   '/auth': typeof AuthRoute
+  '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
@@ -1409,6 +1426,7 @@ export interface FileRoutesById {
   '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
+  '/en/blueprint': typeof EnBlueprintRoute
   '/en/careers': typeof EnCareersRoute
   '/en/contact': typeof EnContactRoute
   '/en/contact-4': typeof EnContact4Route
@@ -1552,6 +1570,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/about-4'
     | '/auth'
+    | '/blueprint'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1580,6 +1599,7 @@ export interface FileRouteTypes {
     | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
+    | '/en/blueprint'
     | '/en/careers'
     | '/en/contact'
     | '/en/contact-4'
@@ -1721,6 +1741,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/about-4'
     | '/auth'
+    | '/blueprint'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1745,6 +1766,7 @@ export interface FileRouteTypes {
     | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
+    | '/en/blueprint'
     | '/en/careers'
     | '/en/contact'
     | '/en/contact-4'
@@ -1884,6 +1906,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/about-4'
     | '/auth'
+    | '/blueprint'
     | '/careers'
     | '/contact'
     | '/contact-4'
@@ -1912,6 +1935,7 @@ export interface FileRouteTypes {
     | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
+    | '/en/blueprint'
     | '/en/careers'
     | '/en/contact'
     | '/en/contact-4'
@@ -2055,6 +2079,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   About4Route: typeof About4Route
   AuthRoute: typeof AuthRoute
+  BlueprintRoute: typeof BlueprintRoute
   CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   Contact4Route: typeof Contact4Route
@@ -2139,6 +2164,13 @@ declare module '@tanstack/react-router' {
       path: '/auth'
       fullPath: '/auth'
       preLoaderRoute: typeof AuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/blueprint': {
+      id: '/blueprint'
+      path: '/blueprint'
+      fullPath: '/blueprint'
+      preLoaderRoute: typeof BlueprintRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/careers': {
@@ -2349,6 +2381,13 @@ declare module '@tanstack/react-router' {
       path: '/about-4'
       fullPath: '/en/about-4'
       preLoaderRoute: typeof EnAbout4RouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/blueprint': {
+      id: '/en/blueprint'
+      path: '/blueprint'
+      fullPath: '/en/blueprint'
+      preLoaderRoute: typeof EnBlueprintRouteImport
       parentRoute: typeof EnRoute
     }
     '/en/careers': {
@@ -3415,6 +3454,7 @@ const EnServices3RouteWithChildren = EnServices3Route._addFileChildren(
 interface EnRouteChildren {
   EnAboutRoute: typeof EnAboutRoute
   EnAbout4Route: typeof EnAbout4Route
+  EnBlueprintRoute: typeof EnBlueprintRoute
   EnCareersRoute: typeof EnCareersRoute
   EnContactRoute: typeof EnContactRoute
   EnContact4Route: typeof EnContact4Route
@@ -3457,6 +3497,7 @@ interface EnRouteChildren {
 const EnRouteChildren: EnRouteChildren = {
   EnAboutRoute: EnAboutRoute,
   EnAbout4Route: EnAbout4Route,
+  EnBlueprintRoute: EnBlueprintRoute,
   EnCareersRoute: EnCareersRoute,
   EnContactRoute: EnContactRoute,
   EnContact4Route: EnContact4Route,
@@ -3627,6 +3668,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   About4Route: About4Route,
   AuthRoute: AuthRoute,
+  BlueprintRoute: BlueprintRoute,
   CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   Contact4Route: Contact4Route,

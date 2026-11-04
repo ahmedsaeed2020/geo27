@@ -4,6 +4,7 @@ import { Link } from "@tanstack/react-router";
 
 import { Button } from "@/components/ui/button";
 import LanguageSwitch from "@/components/LanguageSwitch";
+import SiteSearch from "@/components/search/SiteSearch";
 import { usePublishedRecords } from './cms/CmsNavigation';
 import { useSiteConfig } from './cms/CmsContext';
 import { DesktopNav, useDemoRequest } from './nav/MegaMenu';
@@ -15,7 +16,7 @@ export function DigitMark({ className = "h-8 w-8" }: { className?: string }) {
   return localizeTree((
     <svg viewBox="0 0 100 100" className={className} role="img" aria-label="Digit">
       <rect x="18" y="22.5" width="40" height="13" rx="6.5" fill="var(--ink)" />
-      <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--primary)" />
+      <rect x="63" y="22.5" width="19" height="13" rx="5" fill="var(--brand-emerald)" />
       <rect x="18" y="43.5" width="64" height="13" rx="6.5" fill="var(--ink)" />
       <rect x="18" y="64.5" width="50" height="13" rx="6.5" fill="var(--ink)" />
     </svg>
@@ -61,6 +62,7 @@ export default function Header() {
         </Link>
         <DesktopNav extra={extraLinks.map(b => <Link key={b.id} to={localeHref(b.href, locale)} className="mm-extra">{b.title}</Link>)} />
         <div className="site-header-actions">
+          <SiteSearch />
           <LanguageSwitch />
           <Button size="lg" className="site-header-cta" onClick={() => demo()}>{demoLabel}</Button>
           <MobileNav

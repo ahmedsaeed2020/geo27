@@ -17,6 +17,7 @@ import Industries from "@/sections/Industries";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
+import BlueprintTeaser from "@/components/blueprint/BlueprintTeaser";
 import { DeliveryJourney, PlatformLayers, SpecialistDiscovery } from '@/components/hubs/CorporateStory';
 import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
@@ -35,6 +36,7 @@ const RENDER: Record<HomeSectionId, () => ReactNode> = {
   band: () => <ProductSlider />,
   modules: () => <Modules />,
   portfolio: () => <SpecialistDiscovery />,
+  blueprint: () => <BlueprintTeaser />,
   showcase: () => <ProductShowcase />,
   capabilities: () => <Capabilities />,
   problems: () => <ProblemConveyor />,

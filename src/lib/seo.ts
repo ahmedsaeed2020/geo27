@@ -11,7 +11,12 @@ type Head = { meta?: MetaTag[]; links?: Record<string, string>[]; scripts?: Reco
 const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
   "/": {
     title: "Digit | نظام ERP سعودي للمحاسبة والمبيعات والمخزون",
-    description: "نظام أعمال سعودي سحابي من Digit: محاسبة، مبيعات، مخزون، نقاط بيع وموارد بشرية، مع دعم الربط بمنظومة الفوترة الإلكترونية (فاتورة). يخدم أكثر من 50 منشأة سعودية. احجز عرضًا.",
+    description: "نظام أعمال سعودي سحابي من Digit: محاسبة ومبيعات ومخزون ونقاط بيع وموارد بشرية، مع دعم الربط بمنظومة فاتورة. يخدم أكثر من 50 منشأة سعودية.",
+  },
+  "/blueprint": {
+    title: "صمّم منظومة DIGIT لمنشأتك | مخطط تفاعلي",
+    description: "اختر قطاعك وحجم منشأتك واحتياجك، وشاهد منظومة DIGIT المناسبة: المجالات المترابطة والشاشات الحقيقية وطريق التنفيذ، ثم احجز عرضًا توضيحيًا عليها.",
+    crumb: "صمّم منظومتك",
   },
   "/modules/e-invoicing-zatca": {
     title: "الفوترة الإلكترونية | ربط منظومة فاتورة مع Digit",
@@ -54,6 +59,139 @@ const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?:
     title: "تواصل مع Digit | دعم ومبيعات في السعودية",
     description: "تحدّث مع فريق Digit على +966 59 505 1150 أو a.saeed@digit-erp.com، أو اطلب عرضًا توضيحيًا لمنشأتك. دعم محلي بالعربي.",
   },
+  // Audit 2026-11-04: titles under 15 characters, descriptions under 70 characters or shared between two pages.
+  "/modules": {
+    title: "موديولات Digit | المحاسبة والمبيعات والمخزون والموارد البشرية",
+    description: "استعرض موديولات Digit في منصة واحدة: المحاسبة والمبيعات والمشتريات والمخزون والأصول ونقاط البيع والموارد البشرية والمقاولات وعلاقات العملاء، مترابطة لحظيًا.",
+  },
+  "/services-3": {
+    title: "خدمات Digit | التحليل والتطبيق وترحيل البيانات والتدريب",
+    description: "خدمات Digit لإطلاق نظامك بثقة: جلسة تحليل وتهيئة، تطبيق النظام، ترحيل البيانات، التخصيص، التدريب، تجهيز الفوترة الإلكترونية، الاستضافة والدعم.",
+  },
+  "/services-3/support": {
+    title: "الدعم الفني بالعربي واتفاقية مستوى الخدمة | Digit",
+    description: "خدمة الدعم ضمن تشغيل Digit: اتفاقية مستوى خدمة بأوقات استجابة مكتوبة، قنوات تواصل واضحة، ومتابعة كل طلب حتى إغلاقه مع فريق عربي تعرفه بالاسم.",
+  },
+  "/support": {
+    title: "مركز دعم عملاء Digit | تذاكر وقاعدة معرفة عربية",
+    description: "مركز دعم عملاء Digit: افتح تذكرة من داخل النظام، وتابع أوقات الاستجابة المكتوبة، واستفد من قاعدة المعرفة العربية وفريق دعم تعرفه بالاسم.",
+  },
+  "/resources": {
+    title: "مركز المعرفة وجولات النظام | DIGIT",
+    description: "مركز معرفة Digit: شروحات عملية للمحاسبة والمخزون والتقارير، وجولة في شاشات DIGIT Pro الفعلية تعرّفك على طريقة العمل قبل العرض التوضيحي.",
+  },
+  "/terms": {
+    title: "الشروط والأحكام لاستخدام منصة Digit",
+    description: "الشروط والأحكام المنظمة لاستخدام منصة Digit: الحساب والتسجيل، الاشتراك والباقات والدفع، الترخيص، الاستخدام المقبول، وبيانات العميل والخصوصية.",
+  },
+  "/pos-solutions/florist": {
+    title: "نقاط بيع لمحلات الزهور والهدايا | Digit",
+    description: "بيع الباقات والورود والهدايا، وطلبات مسبقة للمناسبات، وتتبّع مخزون قصير الصلاحية، وتوصيل مع فاتورة مبسطة، وفق إعدادات النظام.",
+  },
+};
+
+/** English counterparts where the imported page title or description was too short or shared with another page. */
+const EN_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
+  "/blueprint": {
+    title: "Design your DIGIT system | Interactive blueprint",
+    description: "Pick your sector, size and needs to see the DIGIT system that fits: connected areas, real screens, a reading path and the road to go-live.",
+    crumb: "Design your system",
+  },
+  "/careers": {
+    title: "Careers at Digit | Build a Saudi Arabic-first ERP",
+    description: "Join the Digit / Trilogy team building an Arabic-first ERP for Saudi businesses. If you master your work and care about impact and clarity, talk to us.",
+    crumb: "Careers",
+  },
+  "/pos-solutions/electrical-appliances": {
+    title: "POS for Electrical Appliance Stores | Digit",
+    description: "Sell appliances and electronics with serial and warranty tracking, delivery and installation, and multi-branch stock, with simplified invoices.",
+    crumb: "Electrical appliances",
+  },
+  "/pos-solutions/florist": {
+    title: "POS for Florists & Gift Shops | Digit",
+    description: "Sell bouquets, flowers and gifts, take pre-orders for occasions, track short-shelf-life stock and manage delivery, with simplified invoices.",
+    crumb: "Florists",
+  },
+  "/pos-solutions/furniture": {
+    title: "POS for Furniture & Furnishing Stores | Digit",
+    description: "Sell furniture by model and material, handle orders, delivery and installation, and manage stock across showrooms and warehouses.",
+    crumb: "Furniture",
+  },
+  "/pos-solutions/optical": {
+    title: "POS for Opticians | Digit",
+    description: "Sell eyeglasses, sunglasses and lenses, track stock by model and colour, and keep a customer file with vision measurements.",
+    crumb: "Opticians",
+  },
+  "/pro/executive-dashboards": {
+    title: "Executive Dashboards | DIGIT Pro",
+    description: "The DIGIT Pro command center: liquidity, exceptions, close and approvals, and how a management board differs from a workspace, on real screens.",
+  },
+  "/pro/capabilities": {
+    title: "Advanced Capabilities | DIGIT Pro",
+    description: "DIGIT Pro capabilities by outcome: 360° views, connected documents, exceptions and approvals, work queues and reporting, each with its evidence status.",
+  },
+  "/services-3": {
+    title: "Digit Services | Discovery, Implementation & Training",
+    description: "Digit services to launch with confidence: discovery workshop, implementation, data migration, customization, training, e-invoicing onboarding, hosting and support.",
+    crumb: "Services",
+  },
+  "/services-3/discovery-workshop": {
+    title: "Discovery Workshop | Digit Services",
+    description: "A structured session on your operations and pain points that ends with a scope, recommendations and a preliminary implementation plan, without commitment.",
+    crumb: "Discovery workshop",
+  },
+  "/services-3/implementation": {
+    title: "Implementation & Delivery | Digit Services",
+    description: "A defined implementation method: clear phases, one point of contact, Arabic training and user acceptance testing before go-live, with no open-ended projects.",
+    crumb: "Implementation",
+  },
+  "/demo": {
+    title: "Book a Digit Demo | See the System by Department",
+    description: "A tailored walkthrough of Digit by role: finance, sales, inventory, point of sale or HR. See how it fits your company and book your session.",
+  },
+  "/modules": {
+    title: "Digit Modules | Accounting, Sales, Inventory, HR and More",
+    description: "Explore Digit modules on one platform: accounting, sales, purchasing, inventory, fixed assets, point of sale, HR, construction and CRM, connected in real time.",
+  },
+  "/modules/crm": {
+    title: "DIGIT CRM | From Lead to Deal for Sales Teams",
+    description: "Clear sales stages, complete communication logs and follow-ups that never get lost, connected to sales and collections in DIGIT.",
+    crumb: "CRM",
+  },
+  "/modules/pos": {
+    title: "Saudi POS System Connected to Inventory | Digit",
+    description: "Every sale automatically becomes a compliant invoice, an accounting entry and an inventory deduction, for retail and restaurants across your branches.",
+    crumb: "POS",
+  },
+  "/modules/sales": {
+    title: "Sales Management from Quote to Collection | Digit",
+    description: "Bilingual quotes, sales orders, compliant invoices and collection tracking, connected to inventory and accounting in Digit.",
+    crumb: "Sales",
+  },
+  "/industries/retail": {
+    title: "Retail POS and Multi-Branch Operations | Digit",
+    description: "Points of sale connected to inventory and accounting across all your branches, with compliant invoicing and no manual reconciliation.",
+  },
+  "/pos-solutions/salons": {
+    title: "POS for Salons and Beauty Centers | Digit",
+    description: "Services and products on one invoice, specialist commissions, packages and repeat customers, and supply inventory, per system settings.",
+  },
+  "/services-3/support": {
+    title: "Arabic Support with a Service Level Agreement | Digit",
+    description: "Support as part of running Digit: a service level agreement with written response times, clear contact channels, and every request followed to closure.",
+  },
+  "/support": {
+    title: "Digit Customer Support Center | Tickets and Arabic Knowledge Base",
+    description: "The Digit customer support center: open tickets from inside the system, follow written response times, and use the Arabic knowledge base and a team you know by name.",
+  },
+  "/resources": {
+    title: "Resources and Product Tours | DIGIT",
+    description: "The Digit knowledge center: practical accounting, inventory and reporting explainers, and a tour of real DIGIT Pro screens before your demo.",
+  },
+  "/terms": {
+    title: "Terms and Conditions for Using Digit",
+    description: "The terms that govern use of the Digit platform: account and registration, subscriptions, plans and payment, licensing, acceptable use, customer data and privacy.",
+  },
 };
 
 const HOME_JSONLD = [
@@ -89,11 +227,29 @@ export const ORGANIZATION_JSONLD = {
 
 const url = (path: string) => SITE_URL + (path === "/" ? "/" : path);
 
+/** Branded 1200×630 share cards (public/og), used when a page has no share image of its own in the CMS. */
+export const SHARE_IMAGES = {
+  ar: { url: `${SITE_URL}/og/digit-share-ar.jpg`, alt: "DIGIT — منشأتك كلها في نظام واحد" },
+  en: { url: `${SITE_URL}/og/digit-share-en.jpg`, alt: "DIGIT — Your whole company on one system" },
+} as const;
+
+function shareImage(own: string | undefined, english: boolean): MetaTag[] {
+  if (own?.startsWith("https://")) return [{ property: "og:image", content: own }, { name: "twitter:image", content: own }];
+  const card = SHARE_IMAGES[english ? "en" : "ar"];
+  return [
+    { property: "og:image", content: card.url },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: card.alt },
+    { name: "twitter:image", content: card.url },
+  ];
+}
+
 export function withSeo(path: string, head: Head = {}, records: import('./cms-schema').PublishedRecord[] = []): Head {
   const english = path === "/en" || path.startsWith("/en/");
   const arPath = english ? path.replace(/^\/en/, "") || "/" : path;
   const enPath = arPath === "/" ? "/en" : "/en" + arPath;
-  const override = english ? undefined : AR_OVERRIDES[arPath];
+  const override = english ? EN_OVERRIDES[arPath] : AR_OVERRIDES[arPath];
   const meta = [...(head.meta ?? [])];
   const get = (key: string) => meta.find(m => m.name === key || m.property === key)?.content;
   const content = records.find(r => r.path===arPath)?.published;
@@ -131,7 +287,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
       ],
     });
   } else if (arPath.startsWith("/modules/")) {
-    const crumb = (english ? (title.split(/[—|]/)[0] ?? title).trim() : override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim());
+    const crumb = override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim();
     jsonld.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
@@ -157,7 +313,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       ...(content?.indexable===false ? [{name:'robots',content:'noindex, nofollow'}] : []),
-      ...(content?.ogImage?.startsWith('https://') ? [{property:'og:image',content:content.ogImage},{name:'twitter:image',content:content.ogImage}] : []),
+      ...shareImage(content?.ogImage, english),
       ...kept,
     ],
     links: [

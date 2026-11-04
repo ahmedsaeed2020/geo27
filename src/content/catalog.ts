@@ -261,6 +261,7 @@ export const EXPLORE_BY_PROBLEM: MenuLink[] = [
 
 export const RESOURCE_LINKS: MenuLink[] = [
   { path: '/resources', label: { ar: 'مركز الموارد', en: 'Resource hub' } },
+  { path: '/blueprint', label: { ar: 'صمّم منظومتك', en: 'Design your system' } },
   { path: '/faq', label: { ar: 'الأسئلة الشائعة', en: 'FAQ' } },
   { path: '/support', label: { ar: 'الدعم', en: 'Support' } },
   { path: '/demo', label: { ar: 'احجز عرضًا توضيحيًا', en: 'Book a demo' } },

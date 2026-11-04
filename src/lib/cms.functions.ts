@@ -66,7 +66,7 @@ export const PREVIEW_TOKEN = /^[A-Za-z0-9_-]{43}$/;
 
 /** Public: the unguessable, expiring token is the credential. Only the draft of the token's own document is returned. */
 export const getPreviewRecord = createServerFn({ method: 'GET' })
-  .inputValidator(z.object({ token: z.string().max(64) }))
+  .validator(z.object({ token: z.string().max(64) }))
   .handler(async ({ data }): Promise<PreviewResult> => {
     if (!PREVIEW_TOKEN.test(data.token)) return { status: 'invalid' };
     const hash = await sha256Hex(data.token);
@@ -86,7 +86,7 @@ export const getPreviewRecord = createServerFn({ method: 'GET' })
 
 /** Public: resolves an owner-managed redirect for an unknown path and counts the hit. */
 export const resolveRedirect = createServerFn({ method: 'GET' })
-  .inputValidator(z.object({ path: z.string().max(600) }))
+  .validator(z.object({ path: z.string().max(600) }))
   .handler(async ({ data }): Promise<{ to: string; status: 301 | 302 | 307 | 308 } | null> => {
     const path = normalizeRedirectSource(data.path);
     if (!path) return null;
@@ -167,7 +167,7 @@ const iso = z.string().datetime({ offset: true });
 
 export const saveCmsDocument = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       id: z.string().uuid().optional(),
       path: safePath,
@@ -263,7 +263,7 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
 
 export const getCmsHistory = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.string().uuid())
+  .validator(z.string().uuid())
   .handler(async ({ data, context }) => {
     const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'content' });
     if (!allowed) throw new Error('Forbidden');
@@ -281,7 +281,7 @@ export const LEAD_STATUSES = ['new', 'reviewed', 'qualified', 'contacted', 'meet
 
 export const updateLead = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ id: z.string().uuid(), status: z.enum(LEAD_STATUSES), assignedTo: z.string().uuid().nullable().optional() }))
+  .validator(z.object({ id: z.string().uuid(), status: z.enum(LEAD_STATUSES), assignedTo: z.string().uuid().nullable().optional() }))
   .handler(async ({ data, context }) => {
     const { data: allowed } = await context.supabase.rpc('cms_access', { scope: 'leads' });
     if (!allowed) throw new Error('Forbidden');

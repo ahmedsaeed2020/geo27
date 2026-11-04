@@ -1,6 +1,6 @@
 /* Interactive stories on the Construction, CRM, POS and FSM + ITM product hubs. Shares tokens with specialist.css. */
 .hs { --sp-accent: var(--primary); --sp-accent-soft: color-mix(in oklab, var(--sp-accent) 12%, var(--paper2)); color: var(--ink); }
-.hs[data-product="construction"] { --sp-accent: oklch(0.6 0.12 70); }
+.hs[data-product="construction"] { --sp-accent: oklch(0.55 0.12 70); }
 .hs[data-product="fsm"] { --sp-accent: oklch(0.55 0.09 215); }
 .hs[data-product="pos"] { --sp-accent: oklch(0.56 0.11 25); }
 .hs h2 { font-size: clamp(25px, 3vw, 38px); font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; text-wrap: balance; }
@@ -50,7 +50,7 @@
 .hs-chain li { position: relative; display: grid; align-content: start; gap: 8px; padding: 18px 16px; border-radius: 16px; background: color-mix(in oklab, var(--sp-accent) calc(8% + var(--i) * 5%), var(--card)); border: 1px solid var(--dline); }
 .hs-chain-no { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--deep); font-family: var(--font-monospace); font-size: 12px; color: var(--paper2); }
 .hs-chain strong { font-size: 17px; }
-.hs-chain span:not(.hs-chain-no) { font-size: 14px; line-height: 1.7; color: var(--body2); }
+.hs-chain span:not(.hs-chain-no) { font-size: 14px; line-height: 1.7; color: color-mix(in oklab, var(--body2) 70%, var(--ink)); }
 .hs-chain-arrow { position: absolute; top: 22px; inset-inline-end: -15px; z-index: 1; width: 16px; height: 16px; color: var(--sp-accent); }
 .hs-measures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .hs-measures li { display: grid; align-content: start; gap: 8px; padding: 18px; border: 1px dashed var(--iconborder); border-radius: 16px; background: var(--card); }
@@ -227,7 +227,7 @@
 .cs-friction { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 44px); align-items: start; }
 .cs-friction-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .cs-friction-points li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--dline); border-radius: 14px; background: var(--card); font-size: 15.5px; font-weight: 700; }
-.cs-friction-points span { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: color-mix(in oklab, var(--destructive) 10%, var(--card)); font-family: var(--font-monospace); font-size: 12.5px; color: var(--destructive); }
+.cs-friction-points span { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: color-mix(in oklab, var(--destructive) 10%, var(--card)); font-family: var(--font-monospace); font-size: 12.5px; color: color-mix(in oklab, var(--destructive) 80%, var(--ink)); }
 .cs-friction-side { display: grid; gap: 4px; }
 .cs-questions { display: grid; gap: 10px; }
 .cs-questions li { padding: 14px 16px; border-inline-start: 3px solid var(--primary); border-radius: 4px; background: var(--card); }
@@ -246,7 +246,7 @@
 .cs-trilogy-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .cs-trilogy-groups h4 { margin-bottom: 8px; font-size: 15px; font-weight: 800; }
 .cs-trilogy-groups h4 span { font-family: var(--font-monospace); font-size: 12px; color: var(--primary); }
-.cs-method { overflow-x: auto; white-space: nowrap; font-family: var(--font-monospace); font-size: 11.5px; letter-spacing: .06em; color: var(--body2); }
+.cs-method { overflow-wrap: anywhere; line-height: 1.7; font-family: var(--font-monospace); font-size: 11.5px; letter-spacing: .06em; color: var(--body2); }
 
 .cs-track { position: relative; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; margin-bottom: 18px; }
 .cs-track::before { content: ""; position: absolute; top: 31px; inset-inline: 8%; height: 2px; background: linear-gradient(90deg, var(--mint), var(--primary)); opacity: .5; }
@@ -274,12 +274,12 @@
 .cs-scope-note { margin-top: 10px; font-size: 13px; color: var(--body2); }
 .cs-next { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 18px 32px; align-items: center; margin-top: clamp(28px, 4vw, 48px); padding: clamp(22px, 3vw, 32px); border-radius: 22px; background: var(--deep); color: var(--paper2); }
 .cs-next .sp-kicker { color: var(--mint); }
-.cs-next h3 { font-size: clamp(20px, 2.2vw, 26px); color: var(--paper2); }
+.cs-next.cs-next h3 { font-size: clamp(20px, 2.2vw, 26px); color: var(--paper2); }
 .cs-next-steps strong { color: var(--paper2); }
 .cs-next .sp-lede { color: color-mix(in oklab, var(--paper2) 80%, transparent); }
 .cs-next-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
 .cs-next-steps li { display: grid; gap: 4px; padding: 14px; border-radius: 14px; background: color-mix(in oklab, var(--paper2) 9%, transparent); }
-.cs-next-steps span { font-family: var(--font-monospace); font-size: 12px; color: var(--mint); }
+.cs-next-steps span { font-family: var(--font-monospace); font-size: 12px; color: color-mix(in oklab, var(--mint) 78%, var(--paper2)); }
 .cs-next-steps strong { font-size: 15.5px; }
 .cs-next-steps p { font-size: 13px; line-height: 1.65; color: color-mix(in oklab, var(--paper2) 78%, transparent); }
 .cs-next-actions { grid-column: 1 / -1; display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px; }
