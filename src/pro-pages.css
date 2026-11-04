@@ -66,6 +66,7 @@
 .pv-root .pv-rail-dot { width: 20px; height: 20px; border: 2px solid var(--dline); border-radius: 50%; background: var(--paper2); }
 .pv-root .pv-rail li[data-on] { color: var(--ink); }
 .pv-root .pv-rail li[data-on] .pv-rail-dot { border-color: var(--primary); background: var(--primary); box-shadow: 0 0 0 5px color-mix(in oklab, var(--primary) 18%, transparent); }
+.pv-root .pv-sec.pv-ws { padding-block: clamp(44px, 6vw, 80px); }
 .pv-root .pv-ws .pv-rail { margin-top: 0; max-width: 520px; }
 .pv-root .pv-ws .pv-rail li { font-size: 12.5px; }
 /* Workspace index */
@@ -98,8 +99,7 @@
 .pv-root .pv-overview-copy > p:first-child { margin: 0 0 24px; font-size: 16px; line-height: 1.9; color: var(--ink); }
 .pv-root .pv-feats { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--dline); }
 .pv-root .pv-feats li { display: grid; gap: 4px; padding: 14px 0 14px; padding-inline-start: 30px; border-bottom: 1px solid var(--dline); position: relative; }
-.pv-root .pv-feats li::before { content: ""; position: absolute; inset-inline-start: 4px; top: 21px; width: 12px; height: 7px; border-inline-start: 2px solid var(--primary); border-bottom: 2px solid var(--primary); rotate: -45deg; }
-[dir="ltr"] .pv-root .pv-feats li::before { rotate: -45deg; }
+.pv-root .pv-feats li::before { content: ""; position: absolute; inset-inline-start: 4px; top: 21px; width: 12px; height: 7px; border-left: 2px solid var(--primary); border-bottom: 2px solid var(--primary); rotate: -45deg; }
 .pv-root .pv-feats strong { font-size: 15px; line-height: 1.6; }
 .pv-root .pv-feats span { font-size: 14px; line-height: 1.75; color: var(--body2); }
 .pv-root .pv-feat-shot { justify-self: start; margin-top: 4px; padding: 0; border: 0; background: none; font: inherit; font-size: 13px; font-weight: 700; color: var(--primary); text-decoration: underline; text-underline-offset: 4px; cursor: zoom-in; }
@@ -130,7 +130,7 @@
 .pv-root .pv-decision .pv-link { margin-top: 10px; color: color-mix(in oklab, var(--paper2) 80%, var(--primary)); }
 .pv-root .pv-ws-foot { display: flex; justify-content: flex-end; margin-top: 28px; }
 /* Flow */
-.pv-root .pv-flow { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+.pv-root .pv-flow { --pv-cols: 3; display: grid; grid-template-columns: repeat(var(--pv-cols), minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
 .pv-root .pv-flow > li { position: relative; display: grid; align-content: start; gap: 8px; padding: 22px; border: 1px solid var(--dline); border-radius: 18px; background: var(--card); }
 .pv-root .pv-flow > li > p { margin: 0; font-size: 14px; line-height: 1.75; color: var(--body2); }
 .pv-root .pv-flow > li .pv-sys { justify-self: start; }

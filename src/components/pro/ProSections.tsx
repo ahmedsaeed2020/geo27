@@ -75,18 +75,26 @@ export function IntroSection({ s, title, lede, eyebrow }: SectionProps<'intro'>)
 
 /* ------------------------------------------------------------------- flow */
 
+/** Even rows: 6 steps sit 3 + 3, 8 steps 4 + 4, never 5 + 1. */
+function flowColumns(n: number) {
+  if (n <= 4) return n;
+  if (n % 4 === 0) return 4;
+  if (n % 3 === 0) return 3;
+  return n === 5 ? 5 : 4;
+}
+
 export function FlowSection({ s, title, lede, eyebrow }: SectionProps<'flow'>) {
   const locale = useLocale();
   const box = useSectionLightbox(s.steps.map(st => st.shot));
   return (
     <SectionShell id={s.id} kind="flow" title={title} eyebrow={eyebrow} lede={lede || s.lede[locale]} tone="soft">
-      <ol className="pv-flow">
+      <ol className="pv-flow" style={{ '--pv-cols': flowColumns(s.steps.length) } as CSSProperties}>
         {s.steps.map((st, i) => (
           <li key={i} data-motion-card="">
             <span className="pv-flow-no" dir="ltr">{n2(i + 1)}</span>
             <h3>{st.title[locale]}</h3>
             <p>{st.body[locale]}</p>
-            {st.doc && <span className="pv-sys" dir="ltr">{st.doc}</span>}
+            {st.doc && locale === 'en' && <span className="pv-sys" dir="ltr">{st.doc}</span>}
             {st.shot && <ProScreen refId={st.shot} size="thumb" caption={false} open={box.open} />}
           </li>
         ))}
