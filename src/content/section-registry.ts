@@ -15,7 +15,7 @@ export type SectionDef = {
 };
 
 export const HOME_SECTIONS = [
-  { id: 'hero', label: 'الواجهة الرئيسية (ثابتة)', locked: true },
+  { id: 'hero', label: 'سلايدر المنتجات الرئيسي (ثابت)', locked: true },
   { id: 'trust', label: 'شريط الثقة' },
   { id: 'layers', label: 'المنصة والتطبيقات والتنفيذ', heading: { ar: 'منصة أعمال. تطبيقات متخصصة. قدرة على التنفيذ.', en: 'A business platform. Specialist applications. The capability to deliver.' } },
   { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
