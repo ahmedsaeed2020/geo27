@@ -1,6 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { Fragment, useEffect, useRef, type ElementType } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown, ExternalLink } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -12,6 +12,9 @@ import CmsBlocks from './cms/CmsBlocks';
 import { useCmsPage } from './cms/CmsContext';
 import { PageProofs } from "@/components/product/ProductProof";
 import { PAGE_PROOFS } from "@/content/product-proof";
+import ProductDepartments from "@/components/catalog/ProductHub";
+import DepartmentPage from "@/components/catalog/DepartmentPage";
+import type { ProductKey } from "@/content/catalog";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
 
@@ -63,8 +66,24 @@ function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: {
   return null;
 }
 
+/** Imported overview pages that double as product hubs get the department selector after their hero and proof band. */
+const HUBS: Record<string, ProductKey> = { "modules-hr-payroll": "hr", "modules-contracting": "construction" };
+
+/**
+ * A published (or previewed) department draft on an existing page route switches it to the shared Department
+ * template; otherwise the imported source page renders with its published overrides.
+ */
 export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: string }) {
   const locale = useLocale();
+  const cms = useCmsPage();
+  const path = useRouterState({ select: s => s.location.pathname.replace(/^\/en(?=\/|$)/, "") || "/" });
+  if (cms?.department && cms[locale].blocks.some(b => b.enabled)) return <DepartmentPage content={cms} path={path} />;
+  return <SourceImportedPage page={page} pageKey={pageKey} />;
+}
+
+function SourceImportedPage({ page, pageKey }: { page: Page; pageKey: string }) {
+  const locale = useLocale();
+  const hub = HUBS[pageKey];
   const mainRef = useRef<HTMLElement>(null);
   usePageMotion(mainRef, `${pageKey}-${locale}`);
   useEffect(() => {
@@ -92,5 +111,5 @@ export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: s
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
 }

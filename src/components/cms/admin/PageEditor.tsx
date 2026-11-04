@@ -1,27 +1,23 @@
 import { useState } from 'react';
 import { useServerFn } from '@tanstack/react-start';
 import { useRouter } from '@tanstack/react-router';
-import { ArrowDown, ArrowUp, CalendarClock, Check, Copy, History, Link2, Plus, RotateCcw, Save, Trash2, XCircle } from 'lucide-react';
+import { CalendarClock, Check, Copy, History, Link2, RotateCcw, Save, XCircle } from 'lucide-react';
 import { getCmsHistory, saveCmsDocument } from '@/lib/cms.functions';
 import { createPreviewLink, revokePreviewLinks } from '@/lib/cms-admin.functions';
-import { cmsContentSchema, type CmsBlock, type CmsContent } from '@/lib/cms-schema';
+import { cmsContentSchema, type CmsContent } from '@/lib/cms-schema';
+import { DepartmentBody } from '@/components/catalog/DepartmentPage';
+import { AddBlockButtons, BlockList, newBlock } from './BlockEditor';
+import DepartmentFields from './DepartmentFields';
 import { SHOTS } from '@/content/product-shots';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { DOC_STATE_LABELS, errorText, Field, formatDate, NativeSelect, REVISION_LABELS, StatusPill, teamName, useRefresh, type Doc, type Media, type PreviewRow, type TeamMember } from './shared';
 
-export const emptyContent = (): CmsContent => ({
-  ar: { title: '', description: '', blocks: [], sourceEdits: {} },
-  en: { title: '', description: '', blocks: [], sourceEdits: {} },
-  indexable: true,
-  evidence: 'pending',
-  formEnabled: true,
-  ogImage: '',
-  canonical: '',
+export const emptyContent = (): CmsContent => cmsContentSchema.parse({
+  ar: { title: '', description: '', blocks: [] },
+  en: { title: '', description: '', blocks: [] },
 });
-
-const BLOCK_TYPES: Record<CmsBlock['type'], string> = { story: 'قصة', workflow: 'رحلة عمل', faq: 'سؤال شائع', resource: 'مورد', cta: 'دعوة ديمو' };
 type Action = 'save' | 'review' | 'publish' | 'unpublish' | 'rollback' | 'schedule' | 'unschedule';
 
 function toLocalInput(iso: string | null | undefined): string {
@@ -79,17 +75,6 @@ export default function PageEditor({
     setDirty(true);
   };
   const update = (v: Partial<typeof local>) => edit({ ...c, [locale]: { ...local, ...v } });
-  const updateBlock = (id: string, v: Partial<CmsBlock>) => update({ blocks: local.blocks.map(b => (b.id === id ? { ...b, ...v } : b)) });
-  const move = (i: number, dir: -1 | 1) => {
-    const a = [...local.blocks];
-    const j = i + dir;
-    const x = a[i];
-    const y = a[j];
-    if (!x || !y) return;
-    a[i] = y;
-    a[j] = x;
-    update({ blocks: a });
-  };
 
   async function act(action: Action) {
     setBusy(true);
@@ -355,97 +340,39 @@ export default function PageEditor({
             </Field>
           ))}
 
+          <DepartmentFields content={c} path={path} locale={locale} media={media} edit={edit} />
+
           <h3 className="border-t border-border pt-5 font-bold">أقسام الصفحة</h3>
-          {local.blocks.map((b, i) => (
-            <div key={b.id} className="space-y-3 rounded-md border border-border p-4">
-              <div className="flex items-center gap-1">
-                <span className="flex-1 text-sm font-semibold">
-                  {i + 1} · {BLOCK_TYPES[b.type]}
-                </span>
-                <Button size="icon" variant="ghost" aria-label="تحريك للأعلى" disabled={i === 0} onClick={() => move(i, -1)}>
-                  <ArrowUp size={16} />
-                </Button>
-                <Button size="icon" variant="ghost" aria-label="تحريك للأسفل" disabled={i === local.blocks.length - 1} onClick={() => move(i, 1)}>
-                  <ArrowDown size={16} />
-                </Button>
-                <Button size="icon" variant="ghost" aria-label="حذف القسم" onClick={() => update({ blocks: local.blocks.filter(x => x.id !== b.id) })}>
-                  <Trash2 size={16} />
-                </Button>
-              </div>
-              <Field label="العنوان">
-                <Input value={b.title} onChange={e => updateBlock(b.id, { title: e.target.value })} />
-              </Field>
-              <Field label="المحتوى">
-                <Textarea rows={4} value={b.body} onChange={e => updateBlock(b.id, { body: e.target.value })} />
-              </Field>
-              <Field label="الشاشة الفعلية">
-                <NativeSelect value={b.shotId} onChange={e => updateBlock(b.id, { shotId: e.target.value })}>
-                  <option value="">بدون شاشة</option>
-                  {Object.values(SHOTS).map(s => (
-                    <option key={s.id} value={s.id}>
-                      {s.caption.ar}
-                    </option>
-                  ))}
-                </NativeSelect>
-              </Field>
-              <Field label="صورة من المكتبة">
-                <NativeSelect
-                  value={b.mediaUrl}
-                  onChange={e => {
-                    const m = approvedMedia.find(x => x.url === e.target.value);
-                    updateBlock(b.id, { mediaUrl: e.target.value, mediaAlt: m ? (locale === 'ar' ? m.alt_ar : m.alt_en) : '' });
-                  }}
-                >
-                  <option value="">بدون صورة</option>
-                  {approvedMedia.map(m => (
-                    <option key={m.id} value={m.url}>
-                      {m.title}
-                    </option>
-                  ))}
-                </NativeSelect>
-              </Field>
-              <Field label="رابط مرتبط">
-                <Input dir="ltr" value={b.href} onChange={e => updateBlock(b.id, { href: e.target.value })} placeholder="/modules/sales" />
-              </Field>
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={b.enabled} onChange={e => updateBlock(b.id, { enabled: e.target.checked })} />
-                ظاهر
-              </label>
-            </div>
-          ))}
-          <div className="flex flex-wrap gap-2">
-            {(Object.keys(BLOCK_TYPES) as CmsBlock['type'][]).map(type => (
-              <Button
-                key={type}
-                variant="outline"
-                size="sm"
-                onClick={() => update({ blocks: [...local.blocks, { id: crypto.randomUUID(), type, title: '', body: '', shotId: '', mediaUrl: '', mediaAlt: '', href: '', enabled: true }] })}
-              >
-                <Plus size={14} />
-                {BLOCK_TYPES[type]}
-              </Button>
-            ))}
-          </div>
+          <BlockList blocks={local.blocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} />
+          <AddBlockButtons department={!!c.department} onAdd={type => update({ blocks: [...local.blocks, newBlock(type)] })} />
         </div>
 
         <div>
           <div className="v3-cms-preview" data-device={device} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <p className="text-xs text-muted-foreground">معاينة المسودة · {locale.toUpperCase()}</p>
-            <h1 className="mt-4 text-3xl font-bold">{local.title}</h1>
-            <p>{local.description}</p>
-            {local.blocks
-              .filter(b => b.enabled)
-              .map(b => {
-                const s = Object.values(SHOTS).find(x => x.id === b.shotId);
-                return (
-                  <article key={b.id} className="border-b border-border py-6">
-                    <h2 className="text-xl font-bold">{b.title}</h2>
-                    <p className="whitespace-pre-line">{b.body}</p>
-                    {b.mediaUrl && <img src={b.mediaUrl} alt={b.mediaAlt} width={1200} height={800} className="mt-4 aspect-[3/2] w-full object-contain" />}
-                    {s && <img src={s.src} alt={s.caption[locale]} width={s.width} height={s.height} className="mt-4 w-full" />}
-                  </article>
-                );
-              })}
+            {c.department ? (
+              <div className="dept-page dept-preview" inert>
+                <DepartmentBody content={c} path={path} locale={locale} />
+              </div>
+            ) : (
+              <>
+                <h1 className="mt-4 text-3xl font-bold">{local.title}</h1>
+                <p>{local.description}</p>
+                {local.blocks
+                  .filter(b => b.enabled)
+                  .map(b => {
+                    const s = Object.values(SHOTS).find(x => x.id === b.shotId);
+                    return (
+                      <article key={b.id} className="border-b border-border py-6">
+                        <h2 className="text-xl font-bold">{b.title}</h2>
+                        <p className="whitespace-pre-line">{b.body}</p>
+                        {b.mediaUrl && <img src={b.mediaUrl} alt={b.mediaAlt} width={1200} height={800} className="mt-4 aspect-[3/2] w-full object-contain" />}
+                        {s && <img src={s.src} alt={s.caption[locale]} width={s.width} height={s.height} className="mt-4 w-full" />}
+                      </article>
+                    );
+                  })}
+              </>
+            )}
           </div>
         </div>
       </div>

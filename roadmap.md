@@ -1,4 +1,16 @@
 # Requested pages
+# Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
+- [x] One product catalog: Pro (5 departments + dashboards/reports/tour), HR (7 groups), Construction (9 departments), POS (existing solutions); existing routes reused, new HR/Construction routes registered.
+- [x] Header and Mega Menu: new top level, multi-column product panels with real Pro screenshot, explore by role/problem, keyboard/Escape/click, mobile accordions, AR/EN; checked at 390, 1280, 1366 and 1440 px.
+- [x] Reusable Department Detail Page driven by the CMS, AR/EN routes, breadcrumbs, SEO; unpublished department URLs return 404 and stay out of the sitemap.
+- [x] Product Hubs: department selector on /pro (financial cycle), HR (lifecycle) and Construction (journeys); menu links highlight the chosen department card.
+- [x] CMS: 16 department drafts registered, department fields and blocks in the page editor, catalog order/visibility with draft preview (E2E: hide/reorder in draft, public unchanged, restored), admin "Products & departments" view.
+- [x] Demo requests carry product, department, page and UTM; shown in Leads and CSV.
+- [x] Representative department draft (Inventory) from existing text and real screenshots; preview link checked in AR/EN. Evidence reset to pending for owner approval.
+- [x] Tests (catalog-rules: 12 rules), AR/EN desktop/mobile screenshots, overflow and link checks, sitemap/404 checks. No live publish.
+- [ ] Owner: review the Inventory draft and approve its evidence before publishing — blocked on owner.
+- [ ] Owner: provide approved content and real screens for the 16 HR/Construction department pages before they can be published — blocked on product evidence.
+
 # DIGIT Website V3 — 2026-10-30
 - [x] Stage 1 foundation: server-saved contextual leads, consent/channel checks, durable rate limit, private inbox and exact approved notification recipient; saved/read-back tested.
 - [x] Stage 2 foundation: real-screen Home, searchable App Explorer by department/role/problem/industry, four-step workflow, contextual header/footer CTA; 49 original assets retained.

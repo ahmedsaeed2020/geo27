@@ -66,6 +66,8 @@ const ERRORS: [RegExp, string][] = [
   [/unpublish time at least one minute ahead/, 'اختر موعد إلغاء نشر بعد دقيقة على الأقل من الآن.'],
   [/Unpublish time must be after/, 'موعد إلغاء النشر يجب أن يكون بعد موعد النشر.'],
   [/valid internal page link/, 'استخدم رابطًا داخليًا صحيحًا مثل /modules/sales.'],
+  [/Department does not match its registered route/, 'بيانات القسم لا تطابق مساره المسجّل في كتالوج المنتجات.'],
+  [/Unknown product screen/, 'اختر شاشة من شاشات المنتج الفعلية.'],
   [/valid old path/, 'أدخل مسارًا قديمًا صحيحًا مثل /old-page.'],
   [/internal path such as/, 'أدخل مسارًا داخليًا مثل /modules/sales أو عنوانًا يبدأ بـ https://.'],
   [/cannot point to itself/, 'لا يمكن أن يحوّل الرابط إلى نفسه.'],
@@ -87,6 +89,8 @@ const ERRORS: [RegExp, string][] = [
 
 export function errorText(error: unknown, fallback = 'تعذّر تنفيذ الإجراء. حاول مرة أخرى.'): string {
   const message = error instanceof Error ? error.message : typeof error === 'string' ? error : '';
+  const notReady = /^Department page is not ready: (.+)$/.exec(message);
+  if (notReady) return `صفحة القسم غير جاهزة للنشر. أكمل: ${notReady[1]}.`;
   for (const [pattern, text] of ERRORS) if (pattern.test(message)) return text;
   return fallback;
 }

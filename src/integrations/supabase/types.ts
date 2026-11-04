@@ -434,6 +434,7 @@ export type Database = {
           company: string | null
           consent: boolean
           created_at: string
+          department: string | null
           email: string | null
           id: string
           industry: string | null
@@ -448,6 +449,7 @@ export type Database = {
           notification_status: string
           page_path: string | null
           phone: string | null
+          product: string | null
           referrer: string | null
           request_type: string
           status: string
@@ -458,6 +460,7 @@ export type Database = {
           company?: string | null
           consent?: boolean
           created_at?: string
+          department?: string | null
           email?: string | null
           id?: string
           industry?: string | null
@@ -472,6 +475,7 @@ export type Database = {
           notification_status?: string
           page_path?: string | null
           phone?: string | null
+          product?: string | null
           referrer?: string | null
           request_type?: string
           status?: string
@@ -482,6 +486,7 @@ export type Database = {
           company?: string | null
           consent?: boolean
           created_at?: string
+          department?: string | null
           email?: string | null
           id?: string
           industry?: string | null
@@ -496,6 +501,7 @@ export type Database = {
           notification_status?: string
           page_path?: string | null
           phone?: string | null
+          product?: string | null
           referrer?: string | null
           request_type?: string
           status?: string

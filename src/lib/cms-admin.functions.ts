@@ -288,7 +288,7 @@ export const revokePreviewLinks = createServerFn({ method: 'POST' })
 /** Saved (unpublished) settings for one public key, so an editor can see them on the real page before publishing. */
 export const getDraftSiteConfig = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ key: z.enum(['branding', 'forms', 'home', 'pro']) }))
+  .inputValidator(z.object({ key: z.enum(['branding', 'forms', 'home', 'pro', 'catalog']) }))
   .handler(async ({ data, context }) => {
     // RLS limits draft settings to content roles; an empty result means no access or nothing saved.
     const { data: row, error } = await context.supabase.from('cms_site_config').select('draft, published').eq('key', data.key).maybeSingle();

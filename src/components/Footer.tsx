@@ -80,7 +80,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            <Button size="lg" onClick={focusLeadForm}>{locale==='ar'?'احجز ديمو Digit':'Book Digit demo'}</Button>
+            <Button size="lg" onClick={() => focusLeadForm()}>{locale==='ar'?'احجز ديمو Digit':'Book Digit demo'}</Button>
             <a
               href="https://wa.me/966595051150"
               className="rounded-[11px] border-[1.5px] border-[rgba(244,243,238,.34)] px-6 py-3 text-[15px] font-bold text-white transition-colors hover:border-mint"

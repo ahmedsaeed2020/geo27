@@ -4,7 +4,9 @@ import { z } from 'zod';
 import { createClient } from '@supabase/supabase-js';
 import sanitizeHtml from 'sanitize-html';
 import type { Database } from '@/integrations/supabase/types';
-import { cmsContentSchema, safePath, type PublishedRecord } from './cms-schema';
+import { cmsContentSchema, departmentPublishIssues, safePath, type PublishedRecord } from './cms-schema';
+import { departmentById } from '@/content/catalog';
+import { SHOTS } from '@/content/product-shots';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
 import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type CmsRole, type Db } from './cms-access';
@@ -185,16 +187,34 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
     if (ownerStep) await assertPublishAllowed(supabaseAdmin, context.claims);
 
     const content = cmsContentSchema.parse(data.content);
+    const urlsFromDepartment = new Set<string>();
     for (const locale of ['ar', 'en'] as const) {
       for (const [id, html] of Object.entries(content[locale].sourceEdits)) content[locale].sourceEdits[id] = sanitizeHtml(html, SANITIZE);
-      for (const b of content[locale].blocks) if (b.href && !safePath.safeParse(b.href).success) throw new Error('Use a valid internal page link');
+      for (const b of content[locale].blocks) {
+        const hrefs = [b.href, ...b.items.map(i => i.href)].filter(Boolean);
+        if (hrefs.some(h => !safePath.safeParse(h).success)) throw new Error('Use a valid internal page link');
+        const shots = [b.shotId, ...b.shots, ...b.items.map(i => i.shotId)].filter(Boolean);
+        if (shots.some(id => !SHOTS[id])) throw new Error('Unknown product screen');
+      }
+    }
+    if (content.department) {
+      // A department document belongs to exactly one registered catalog route.
+      const registered = departmentById(content.department.product, content.department.id);
+      if (!registered || registered.path !== data.path) throw new Error('Department does not match its registered route');
+      if (content.department.heroShot && !SHOTS[content.department.heroShot]) throw new Error('Unknown product screen');
+      if (content.department.heroMedia) urlsFromDepartment.add(content.department.heroMedia);
     }
     const goesLive = data.action === 'publish' || data.action === 'rollback' || (data.action === 'schedule' && !!data.publishAt);
     if (goesLive && content.evidence !== 'approved') throw new Error('Evidence approval is required before publishing');
+    if (goesLive && content.department) {
+      const issues = departmentPublishIssues(content);
+      if (issues.length) throw new Error(`Department page is not ready: ${issues.join('، ')}`);
+    }
 
     const urls = new Set<string>();
     for (const locale of ['ar', 'en'] as const) for (const b of content[locale].blocks) if (b.mediaUrl) urls.add(b.mediaUrl);
     if (content.ogImage.startsWith('/api/public/cms-media/')) urls.add(content.ogImage);
+    urlsFromDepartment.forEach(u => urls.add(u));
     if (urls.size) {
       const { data: approved } = await supabaseAdmin.from('cms_media').select('url').in('url', [...urls]).eq('approval', 'approved').is('archived_at', null);
       const ok = new Set((approved ?? []).map(m => m.url));

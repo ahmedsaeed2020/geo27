@@ -29,3 +29,5 @@
 - CMS media uses a private bucket and a server-validated approval-gated media route; deny SVG and preserve original Pro pointers unchanged.
 - Home and Pro sections are listed in src/content/section-registry.ts and arranged from the `home`/`pro` site settings (order, visibility, plain-text heading overrides with source fallback); heroes are locked so the original first fold never moves or disappears.
 - Editors preview unpublished form/section settings with `?draft_settings=<key>`, loaded only in the browser through an authenticated server function, so visitors and crawlers always receive published settings.
+- Product families, departments and menu groups live only in src/content/catalog.ts; headers, mega/mobile menus, product hubs, breadcrumbs and lead tagging read it through resolveCatalog, so an unpublished CMS department always links to its hub card and never to an empty page.
+- Department pages are CMS documents with `department` meta rendered by the shared DepartmentPage template; departmentPublishIssues gates publishing so thin or screenshot-less pages cannot go live.

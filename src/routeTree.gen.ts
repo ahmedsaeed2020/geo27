@@ -39,6 +39,8 @@ import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TrustSecurityRouteImport } from './routes/trust-security'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as ConstructionIndexRouteImport } from './routes/construction.index'
+import { Route as ConstructionDepartmentRouteImport } from './routes/construction.$department'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
 import { Route as EnAbout4RouteImport } from './routes/en.about-4'
@@ -62,6 +64,8 @@ import { Route as EnStarterRouteImport } from './routes/en.starter'
 import { Route as EnSupportRouteImport } from './routes/en.support'
 import { Route as EnTermsRouteImport } from './routes/en.terms'
 import { Route as EnTrustSecurityRouteImport } from './routes/en.trust-security'
+import { Route as HrIndexRouteImport } from './routes/hr.index'
+import { Route as HrDepartmentRouteImport } from './routes/hr.$department'
 import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
 import { Route as IndustriesContractingIndustryRouteImport } from './routes/industries.contracting-industry'
 import { Route as IndustriesDistributionRouteImport } from './routes/industries.distribution'
@@ -111,6 +115,10 @@ import { Route as ServicesHostingRouteImport } from './routes/services.hosting'
 import { Route as ServicesImplementationRouteImport } from './routes/services.implementation'
 import { Route as ServicesSupportRouteImport } from './routes/services.support'
 import { Route as ServicesTrainingRouteImport } from './routes/services.training'
+import { Route as EnConstructionIndexRouteImport } from './routes/en.construction.index'
+import { Route as EnConstructionDepartmentRouteImport } from './routes/en.construction.$department'
+import { Route as EnHrIndexRouteImport } from './routes/en.hr.index'
+import { Route as EnHrDepartmentRouteImport } from './routes/en.hr.$department'
 import { Route as EnIndustriesIndexRouteImport } from './routes/en.industries.index'
 import { Route as EnIndustriesContractingIndustryRouteImport } from './routes/en.industries.contracting-industry'
 import { Route as EnIndustriesDistributionRouteImport } from './routes/en.industries.distribution'
@@ -311,6 +319,16 @@ const ApiChatRoute = ApiChatRouteImport.update({
   path: '/api/chat',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ConstructionIndexRoute = ConstructionIndexRouteImport.update({
+  id: '/construction/',
+  path: '/construction/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConstructionDepartmentRoute = ConstructionDepartmentRouteImport.update({
+  id: '/construction/$department',
+  path: '/construction/$department',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnIndexRoute = EnIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -425,6 +443,16 @@ const EnTrustSecurityRoute = EnTrustSecurityRouteImport.update({
   id: '/trust-security',
   path: '/trust-security',
   getParentRoute: () => EnRoute,
+} as any)
+const HrIndexRoute = HrIndexRouteImport.update({
+  id: '/hr/',
+  path: '/hr/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HrDepartmentRoute = HrDepartmentRouteImport.update({
+  id: '/hr/$department',
+  path: '/hr/$department',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const IndustriesIndexRoute = IndustriesIndexRouteImport.update({
   id: '/',
@@ -677,6 +705,27 @@ const ServicesTrainingRoute = ServicesTrainingRouteImport.update({
   id: '/training',
   path: '/training',
   getParentRoute: () => ServicesRoute,
+} as any)
+const EnConstructionIndexRoute = EnConstructionIndexRouteImport.update({
+  id: '/construction/',
+  path: '/construction/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnConstructionDepartmentRoute =
+  EnConstructionDepartmentRouteImport.update({
+    id: '/construction/$department',
+    path: '/construction/$department',
+    getParentRoute: () => EnRoute,
+  } as any)
+const EnHrIndexRoute = EnHrIndexRouteImport.update({
+  id: '/hr/',
+  path: '/hr/',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnHrDepartmentRoute = EnHrDepartmentRouteImport.update({
+  id: '/hr/$department',
+  path: '/hr/$department',
+  getParentRoute: () => EnRoute,
 } as any)
 const EnIndustriesIndexRoute = EnIndustriesIndexRouteImport.update({
   id: '/',
@@ -975,6 +1024,7 @@ export interface FileRoutesByFullPath {
   '/trust-security': typeof TrustSecurityRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/construction/$department': typeof ConstructionDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -997,6 +1047,7 @@ export interface FileRoutesByFullPath {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
   '/industries/education': typeof IndustriesEducationRoute
@@ -1043,10 +1094,14 @@ export interface FileRoutesByFullPath {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/construction/': typeof ConstructionIndexRoute
   '/en/': typeof EnIndexRoute
+  '/hr/': typeof HrIndexRoute
   '/industries/': typeof IndustriesIndexRoute
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
+  '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
   '/en/industries/education': typeof EnIndustriesEducationRoute
@@ -1093,6 +1148,8 @@ export interface FileRoutesByFullPath {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/en/construction/': typeof EnConstructionIndexRoute
+  '/en/hr/': typeof EnHrIndexRoute
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
@@ -1124,6 +1181,7 @@ export interface FileRoutesByTo {
   '/trust-security': typeof TrustSecurityRoute
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/construction/$department': typeof ConstructionDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1143,6 +1201,7 @@ export interface FileRoutesByTo {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
   '/industries/education': typeof IndustriesEducationRoute
@@ -1189,10 +1248,14 @@ export interface FileRoutesByTo {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/construction': typeof ConstructionIndexRoute
   '/en': typeof EnIndexRoute
+  '/hr': typeof HrIndexRoute
   '/industries': typeof IndustriesIndexRoute
   '/modules': typeof ModulesIndexRoute
   '/services-3': typeof Services3IndexRoute
+  '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
   '/en/industries/education': typeof EnIndustriesEducationRoute
@@ -1239,6 +1302,8 @@ export interface FileRoutesByTo {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/en/construction': typeof EnConstructionIndexRoute
+  '/en/hr': typeof EnHrIndexRoute
   '/en/industries': typeof EnIndustriesIndexRoute
   '/en/modules': typeof EnModulesIndexRoute
   '/en/services-3': typeof EnServices3IndexRoute
@@ -1276,6 +1341,7 @@ export interface FileRoutesById {
   '/trust-security': typeof TrustSecurityRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
+  '/construction/$department': typeof ConstructionDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1298,6 +1364,7 @@ export interface FileRoutesById {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
   '/industries/education': typeof IndustriesEducationRoute
@@ -1344,10 +1411,14 @@ export interface FileRoutesById {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/construction/': typeof ConstructionIndexRoute
   '/en/': typeof EnIndexRoute
+  '/hr/': typeof HrIndexRoute
   '/industries/': typeof IndustriesIndexRoute
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
+  '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
   '/en/industries/education': typeof EnIndustriesEducationRoute
@@ -1394,6 +1465,8 @@ export interface FileRoutesById {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/en/construction/': typeof EnConstructionIndexRoute
+  '/en/hr/': typeof EnHrIndexRoute
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
@@ -1431,6 +1504,7 @@ export interface FileRouteTypes {
     | '/trust-security'
     | '/admin'
     | '/api/chat'
+    | '/construction/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1453,6 +1527,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
     | '/industries/education'
@@ -1499,10 +1574,14 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/construction/'
     | '/en/'
+    | '/hr/'
     | '/industries/'
     | '/modules/'
     | '/services-3/'
+    | '/en/construction/$department'
+    | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
     | '/en/industries/education'
@@ -1549,6 +1628,8 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/en/construction/'
+    | '/en/hr/'
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
@@ -1580,6 +1661,7 @@ export interface FileRouteTypes {
     | '/trust-security'
     | '/admin'
     | '/api/chat'
+    | '/construction/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1599,6 +1681,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
     | '/industries/education'
@@ -1645,10 +1728,14 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/construction'
     | '/en'
+    | '/hr'
     | '/industries'
     | '/modules'
     | '/services-3'
+    | '/en/construction/$department'
+    | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
     | '/en/industries/education'
@@ -1695,6 +1782,8 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/en/construction'
+    | '/en/hr'
     | '/en/industries'
     | '/en/modules'
     | '/en/services-3'
@@ -1731,6 +1820,7 @@ export interface FileRouteTypes {
     | '/trust-security'
     | '/_authenticated/admin'
     | '/api/chat'
+    | '/construction/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1753,6 +1843,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
     | '/industries/education'
@@ -1799,10 +1890,14 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/construction/'
     | '/en/'
+    | '/hr/'
     | '/industries/'
     | '/modules/'
     | '/services-3/'
+    | '/en/construction/$department'
+    | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
     | '/en/industries/education'
@@ -1849,6 +1944,8 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/en/construction/'
+    | '/en/hr/'
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
@@ -1885,6 +1982,8 @@ export interface RootRouteChildren {
   TermsRoute: typeof TermsRoute
   TrustSecurityRoute: typeof TrustSecurityRoute
   ApiChatRoute: typeof ApiChatRoute
+  ConstructionDepartmentRoute: typeof ConstructionDepartmentRoute
+  HrDepartmentRoute: typeof HrDepartmentRoute
   PosSolutionsElectricalAppliancesRoute: typeof PosSolutionsElectricalAppliancesRoute
   PosSolutionsFloristRoute: typeof PosSolutionsFloristRoute
   PosSolutionsFurnitureRoute: typeof PosSolutionsFurnitureRoute
@@ -1894,6 +1993,8 @@ export interface RootRouteChildren {
   PosSolutionsRestaurantsCafesRoute: typeof PosSolutionsRestaurantsCafesRoute
   PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
   PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
+  ConstructionIndexRoute: typeof ConstructionIndexRoute
+  HrIndexRoute: typeof HrIndexRoute
   ApiPublicCmsMediaFileRoute: typeof ApiPublicCmsMediaFileRoute
 }
 
@@ -2109,6 +2210,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiChatRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/construction/': {
+      id: '/construction/'
+      path: '/construction'
+      fullPath: '/construction/'
+      preLoaderRoute: typeof ConstructionIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/construction/$department': {
+      id: '/construction/$department'
+      path: '/construction/$department'
+      fullPath: '/construction/$department'
+      preLoaderRoute: typeof ConstructionDepartmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en/': {
       id: '/en/'
       path: '/'
@@ -2269,6 +2384,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/en/trust-security'
       preLoaderRoute: typeof EnTrustSecurityRouteImport
       parentRoute: typeof EnRoute
+    }
+    '/hr/': {
+      id: '/hr/'
+      path: '/hr'
+      fullPath: '/hr/'
+      preLoaderRoute: typeof HrIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/hr/$department': {
+      id: '/hr/$department'
+      path: '/hr/$department'
+      fullPath: '/hr/$department'
+      preLoaderRoute: typeof HrDepartmentRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/industries/': {
       id: '/industries/'
@@ -2612,6 +2741,34 @@ declare module '@tanstack/react-router' {
       fullPath: '/services/training'
       preLoaderRoute: typeof ServicesTrainingRouteImport
       parentRoute: typeof ServicesRoute
+    }
+    '/en/construction/': {
+      id: '/en/construction/'
+      path: '/construction'
+      fullPath: '/en/construction/'
+      preLoaderRoute: typeof EnConstructionIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/construction/$department': {
+      id: '/en/construction/$department'
+      path: '/construction/$department'
+      fullPath: '/en/construction/$department'
+      preLoaderRoute: typeof EnConstructionDepartmentRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/hr/': {
+      id: '/en/hr/'
+      path: '/hr'
+      fullPath: '/en/hr/'
+      preLoaderRoute: typeof EnHrIndexRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/hr/$department': {
+      id: '/en/hr/$department'
+      path: '/hr/$department'
+      fullPath: '/en/hr/$department'
+      preLoaderRoute: typeof EnHrDepartmentRouteImport
+      parentRoute: typeof EnRoute
     }
     '/en/industries/': {
       id: '/en/industries/'
@@ -3122,6 +3279,8 @@ interface EnRouteChildren {
   EnTermsRoute: typeof EnTermsRoute
   EnTrustSecurityRoute: typeof EnTrustSecurityRoute
   EnIndexRoute: typeof EnIndexRoute
+  EnConstructionDepartmentRoute: typeof EnConstructionDepartmentRoute
+  EnHrDepartmentRoute: typeof EnHrDepartmentRoute
   EnPosSolutionsElectricalAppliancesRoute: typeof EnPosSolutionsElectricalAppliancesRoute
   EnPosSolutionsFloristRoute: typeof EnPosSolutionsFloristRoute
   EnPosSolutionsFurnitureRoute: typeof EnPosSolutionsFurnitureRoute
@@ -3131,6 +3290,8 @@ interface EnRouteChildren {
   EnPosSolutionsRestaurantsCafesRoute: typeof EnPosSolutionsRestaurantsCafesRoute
   EnPosSolutionsSalonsRoute: typeof EnPosSolutionsSalonsRoute
   EnPosSolutionsSweetsRoute: typeof EnPosSolutionsSweetsRoute
+  EnConstructionIndexRoute: typeof EnConstructionIndexRoute
+  EnHrIndexRoute: typeof EnHrIndexRoute
 }
 
 const EnRouteChildren: EnRouteChildren = {
@@ -3157,6 +3318,8 @@ const EnRouteChildren: EnRouteChildren = {
   EnTermsRoute: EnTermsRoute,
   EnTrustSecurityRoute: EnTrustSecurityRoute,
   EnIndexRoute: EnIndexRoute,
+  EnConstructionDepartmentRoute: EnConstructionDepartmentRoute,
+  EnHrDepartmentRoute: EnHrDepartmentRoute,
   EnPosSolutionsElectricalAppliancesRoute:
     EnPosSolutionsElectricalAppliancesRoute,
   EnPosSolutionsFloristRoute: EnPosSolutionsFloristRoute,
@@ -3167,6 +3330,8 @@ const EnRouteChildren: EnRouteChildren = {
   EnPosSolutionsRestaurantsCafesRoute: EnPosSolutionsRestaurantsCafesRoute,
   EnPosSolutionsSalonsRoute: EnPosSolutionsSalonsRoute,
   EnPosSolutionsSweetsRoute: EnPosSolutionsSweetsRoute,
+  EnConstructionIndexRoute: EnConstructionIndexRoute,
+  EnHrIndexRoute: EnHrIndexRoute,
 }
 
 const EnRouteWithChildren = EnRoute._addFileChildren(EnRouteChildren)
@@ -3320,6 +3485,8 @@ const rootRouteChildren: RootRouteChildren = {
   TermsRoute: TermsRoute,
   TrustSecurityRoute: TrustSecurityRoute,
   ApiChatRoute: ApiChatRoute,
+  ConstructionDepartmentRoute: ConstructionDepartmentRoute,
+  HrDepartmentRoute: HrDepartmentRoute,
   PosSolutionsElectricalAppliancesRoute: PosSolutionsElectricalAppliancesRoute,
   PosSolutionsFloristRoute: PosSolutionsFloristRoute,
   PosSolutionsFurnitureRoute: PosSolutionsFurnitureRoute,
@@ -3329,6 +3496,8 @@ const rootRouteChildren: RootRouteChildren = {
   PosSolutionsRestaurantsCafesRoute: PosSolutionsRestaurantsCafesRoute,
   PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
   PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
+  ConstructionIndexRoute: ConstructionIndexRoute,
+  HrIndexRoute: HrIndexRoute,
   ApiPublicCmsMediaFileRoute: ApiPublicCmsMediaFileRoute,
 }
 export const routeTree = rootRouteImport

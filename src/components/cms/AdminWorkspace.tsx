@@ -19,6 +19,7 @@ import Redirects from './admin/Redirects';
 import FormsEditor from './admin/FormsEditor';
 import BrandingEditor from './admin/BrandingEditor';
 import SectionsEditor from './admin/SectionsEditor';
+import CatalogEditor from './admin/CatalogEditor';
 import SecurityPanel, { MfaChallenge } from './admin/Security';
 import { ROLE_LABELS, WORKSPACE_KEY, type Doc } from './admin/shared';
 import { tabsFor, type Role } from './admin/tabs';
@@ -172,6 +173,12 @@ export default function AdminWorkspace() {
             <PageEditor key={active.id} doc={active} media={w.media} owner={owner} previews={w.previews} team={w.team} notice={setNotice} onBack={() => setActive(null)} onSaved={setActive} />
           ) : (
             <SeoPanel docs={w.docs} onEdit={setActive} />
+          ))}
+        {current?.id === 'catalog' &&
+          (active ? (
+            <PageEditor key={active.id} doc={active} media={w.media} owner={owner} previews={w.previews} team={w.team} notice={setNotice} onBack={() => setActive(null)} onSaved={setActive} />
+          ) : (
+            <CatalogEditor rows={w.config} docs={w.docs} owner={owner} team={w.team} notice={setNotice} onEdit={setActive} />
           ))}
         {current?.id === 'media' && <MediaLibrary rows={w.media} docs={w.docs} config={w.config} owner={owner} notice={setNotice} />}
         {current?.id === 'redirects' && <Redirects rows={w.redirects} docs={w.docs} owner={owner} notice={setNotice} />}

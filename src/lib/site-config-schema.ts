@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 /** Site-wide editable settings. Each key has its own draft/published snapshot in cms_site_config. */
-export const SITE_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'security'] as const;
+export const SITE_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'security', 'catalog'] as const;
 export type SiteConfigKey = (typeof SITE_CONFIG_KEYS)[number];
-export const PUBLIC_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro'] as const;
+export const PUBLIC_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'catalog'] as const;
 
 export const CMS_MEDIA_PREFIX = '/api/public/cms-media/';
 const mediaRef = z
@@ -67,12 +67,23 @@ export type SectionLayoutConfig = z.infer<typeof sectionLayoutSchema>;
 export const securitySchema = z.object({ requireMfaForPublish: z.boolean().default(false) });
 export type SecurityConfig = z.infer<typeof securitySchema>;
 
+/**
+ * Menu order and visibility of departments (and POS solutions) per product family. A registered CMS department
+ * still needs a published page before it can appear, whatever this list says.
+ */
+const orderList = z.array(z.object({ id: z.string().max(60), enabled: z.boolean() })).max(40).default([]);
+export const catalogSchema = z.object({
+  products: z.object({ pro: orderList, hr: orderList, construction: orderList, pos: orderList }).partial().default({}),
+});
+export type CatalogConfig = z.infer<typeof catalogSchema>;
+
 export const CONFIG_SCHEMAS = {
   branding: brandingSchema,
   forms: formsSchema,
   home: sectionLayoutSchema,
   pro: sectionLayoutSchema,
   security: securitySchema,
+  catalog: catalogSchema,
 } as const;
 
 export type SiteConfig = {
@@ -80,6 +91,7 @@ export type SiteConfig = {
   forms: FormsConfig;
   home: SectionLayoutConfig;
   pro: SectionLayoutConfig;
+  catalog: CatalogConfig;
 };
 
 export function parseConfig<K extends SiteConfigKey>(key: K, value: unknown): z.infer<(typeof CONFIG_SCHEMAS)[K]> {
@@ -93,6 +105,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   forms: parseConfig('forms', {}),
   home: parseConfig('home', {}),
   pro: parseConfig('pro', {}),
+  catalog: parseConfig('catalog', {}),
 };
 
 /** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections keep their place at the end. */

@@ -4,7 +4,7 @@ import { useLocale } from '@/lib/i18n';
 import { useCmsPreview } from './CmsContext';
 import type { SiteConfig } from '@/lib/site-config-schema';
 
-type DraftKey = 'forms' | 'home' | 'pro';
+type DraftKey = 'forms' | 'home' | 'pro' | 'catalog';
 export type SettingsDraftState =
   | { status: 'off' }
   | { status: 'loading' | 'denied'; key: DraftKey }
@@ -14,6 +14,7 @@ const DRAFT_LABEL: Record<DraftKey, [string, string]> = {
   home: ['أقسام الصفحة الرئيسية', 'Home page sections'],
   pro: ['أقسام صفحة Pro', 'Pro page sections'],
   forms: ['نموذج الطلب', 'Request form'],
+  catalog: ['ترتيب المنتجات والأقسام', 'Product and department order'],
 };
 
 /** Fixed notice shown whenever a page is opened through a draft preview link. */

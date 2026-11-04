@@ -1,5 +1,7 @@
 // Central SEO layer: every content route wraps its head() with withSeo(path, head)
 // so canonical, og:url, locale, hreflang and JSON-LD stay consistent site-wide.
+import { departmentTrail } from "@/content/catalog";
+
 export const SITE_URL = "https://digit-erp.com";
 
 type MetaTag = { title?: string; name?: string; property?: string; content?: string; charSet?: string };
@@ -101,7 +103,21 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
   const scripts = [...(head.scripts ?? [])];
   const jsonld: object[] = [];
   if (arPath === "/" && !english) jsonld.push(...HOME_JSONLD);
-  if (arPath.startsWith("/modules/")) {
+  const trail = departmentTrail(arPath);
+  if (trail) {
+    // Department pages sit under their product overview: Home › DIGIT Pro › Inventory & Warehouses.
+    const lang = english ? "en" : "ar";
+    const overview = trail.product.overview;
+    jsonld.push({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: english ? "Home" : "الرئيسية", item: url(english ? "/en" : "/") },
+        { "@type": "ListItem", position: 2, name: trail.product.name[lang], item: url(english ? `/en${overview}` : overview) },
+        { "@type": "ListItem", position: 3, name: localized?.navLabel || trail.department.label[lang], item: url(path) },
+      ],
+    });
+  } else if (arPath.startsWith("/modules/")) {
     const crumb = (english ? (title.split(/[—|]/)[0] ?? title).trim() : override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim());
     jsonld.push({
       "@context": "https://schema.org",
