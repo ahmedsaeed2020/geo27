@@ -1,7 +1,8 @@
 import sceneManifest from "@/content/page-scenes.json";
 import "@/page-scenes.css";
 
-type Scene = { background: string; body: string; bodyWidth?: number; bodyHeight?: number; photographicBody?: boolean };
+/** `backgroundSmall` / `bodySmall` are optional 960px-wide variants for small screens. */
+export type Scene = { background: string; body: string; backgroundSmall?: string; bodySmall?: string; bodyWidth?: number; bodyHeight?: number; photographicBody?: boolean };
 const scenes: Record<string, Scene> = sceneManifest;
 
 export function getPageScene(key: string) {
