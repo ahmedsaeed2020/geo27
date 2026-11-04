@@ -5,7 +5,6 @@
 import type { L, SpecialistDepartment } from './types';
 
 const t = (ar: string, en: string): L => ({ ar, en });
-const SHOWN = 'demonstrated' as const;
 const DOC = 'documented' as const;
 const SCOPED = 'scoped' as const;
 
@@ -19,8 +18,8 @@ export const CRM: SpecialistDepartment[] = [
     seoDescription: t('نظرة عامة على DIGIT CRM: لوحة علاقات العملاء وعملي اليوم ومنصة المدير بالعملاء غير المسندين والمتابعات المتأخرة وزمن الاستجابة.', 'DIGIT CRM overview: the CRM board, My day and the manager workbench with unassigned leads, overdue follow-ups and response time.'),
     profilePages: [25, 26],
     photo: 'crm-sales-call',
-    heroShots: ['crm-02-manager'],
-    illustrative: false,
+    heroShots: [],
+    illustrative: true,
     signature: 'matrix',
     sections: [
       {
@@ -35,24 +34,17 @@ export const CRM: SpecialistDepartment[] = [
         ],
       },
       {
-        id: 'screens',
-        kind: 'screens',
-        title: t('منصة المدير كما تظهر في النظام', 'The manager workbench as it appears in the system'),
-        lede: t('شاشة فعلية من بيئة DIGIT CRM التجريبية؛ الأسماء والأرقام بيانات تجريبية.', 'A real screen from the DIGIT CRM demo environment; names and figures are demo data.'),
-        shots: ['crm-02-manager'],
-      },
-      {
         id: 'records',
         kind: 'records',
         title: t('ما تعرضه الشاشة', 'What the screen shows'),
         lede: t('عناصر ظاهرة في الشاشة الفعلية.', 'Elements visible in the real screen.'),
         items: [
-          { name: t('عملاء محتملون غير مسندين', 'Unassigned leads'), body: t('ما لم يُسند لبائع بعد، ليُوزَّع قبل أن يبرد.', 'Leads not yet assigned to a rep, to be distributed before they go cold.'), status: SHOWN },
-          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('المتابعات التي فات موعدها وتلك المستحقة اليوم.', 'Follow-ups past their date and those due today.'), status: SHOWN },
-          { name: t('زمن الاستجابة للعميل المحتمل', 'Lead response time'), body: t('الوقت حتى أول تواصل، مع عدد من ينتظر أول تواصل.', 'Time to first contact, with how many leads still wait for it.'), status: SHOWN },
-          { name: t('خط الأنابيب حسب المندوب', 'Pipeline by rep'), body: t('قيمة الفرص المفتوحة لكل مندوب.', 'Open opportunity value per rep.'), status: SHOWN },
-          { name: t('تحقيق أهداف الفريق', 'Team target attainment'), body: t('نسبة تحقيق كل عضو لهدفه.', 'Each member’s attainment against target.'), status: SHOWN },
-          { name: t('فلتر الفترة والمالك', 'Period and owner filter'), body: t('من/إلى والمالك، مع ذكر أساس التاريخ: تاريخ الإنشاء وسجلاتك المسموح بها فقط.', 'From/to and owner, with the date basis stated: creation date and only the records you may see.'), status: SHOWN },
+          { name: t('عملاء محتملون غير مسندين', 'Unassigned leads'), body: t('ما لم يُسند لبائع بعد، ليُوزَّع قبل أن يبرد.', 'Leads not yet assigned to a rep, to be distributed before they go cold.'), status: DOC },
+          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('المتابعات التي فات موعدها وتلك المستحقة اليوم.', 'Follow-ups past their date and those due today.'), status: DOC },
+          { name: t('زمن الاستجابة للعميل المحتمل', 'Lead response time'), body: t('الوقت حتى أول تواصل، مع عدد من ينتظر أول تواصل.', 'Time to first contact, with how many leads still wait for it.'), status: DOC },
+          { name: t('خط الأنابيب حسب المندوب', 'Pipeline by rep'), body: t('قيمة الفرص المفتوحة لكل مندوب.', 'Open opportunity value per rep.'), status: DOC },
+          { name: t('تحقيق أهداف الفريق', 'Team target attainment'), body: t('نسبة تحقيق كل عضو لهدفه.', 'Each member’s attainment against target.'), status: DOC },
+          { name: t('فلتر الفترة والمالك', 'Period and owner filter'), body: t('من/إلى والمالك، مع ذكر أساس التاريخ: تاريخ الإنشاء وسجلاتك المسموح بها فقط.', 'From/to and owner, with the date basis stated: creation date and only the records you may see.'), status: DOC },
         ],
       },
       {
@@ -98,8 +90,8 @@ export const CRM: SpecialistDepartment[] = [
     seoDescription: t('العملاء المحتملون في DIGIT CRM: مصادر العملاء والإسناد والتأهيل والتحويل إلى عميل وفرصة، مع متابعة زمن الاستجابة.', 'Leads in DIGIT CRM: lead sources, assignment, qualification and conversion to customer and opportunity, with response time tracked.'),
     profilePages: [25],
     photo: 'crm-sales-call',
-    heroShots: ['crm-02-manager'],
-    illustrative: false,
+    heroShots: [],
+    illustrative: true,
     signature: 'timeline',
     sections: [
       {
@@ -135,7 +127,7 @@ export const CRM: SpecialistDepartment[] = [
           { name: t('العميل المحتمل', 'Lead'), code: 'Lead', body: t('الجهة وجهة الاتصال والاهتمام والمصدر.', 'Company, contact, interest and source.'), status: DOC },
           { name: t('مصادر العملاء', 'Lead sources'), code: 'Lead Sources', body: t('قائمة المصادر لقياس ما يأتي بعملاء مؤهلين.', 'The list of sources, to see which bring qualified leads.'), status: DOC },
           { name: t('الإسناد والملكية', 'Assignment and ownership'), code: 'Ownership', body: t('المالك الحالي وتاريخ الإسناد.', 'Current owner and assignment date.'), status: DOC },
-          { name: t('عدد غير المسندين وزمن الاستجابة', 'Unassigned count and response time'), body: t('ظاهران في منصة المدير.', 'Both visible on the manager workbench.'), status: SHOWN },
+          { name: t('عدد غير المسندين وزمن الاستجابة', 'Unassigned count and response time'), body: t('ظاهران في منصة المدير.', 'Both visible on the manager workbench.'), status: DOC },
         ],
       },
       {
@@ -181,8 +173,8 @@ export const CRM: SpecialistDepartment[] = [
     seoDescription: t('الفرص ومسار البيع في DIGIT CRM: لوحة كانبان حسب المرحلة، وقيمة المسار المرجّح ونسبة الفوز، وتنبيهات الصفقات الراكدة وبلا إجراء تالٍ.', 'Opportunities and pipeline in DIGIT CRM: Kanban by stage, weighted pipeline and win rate, and alerts for stalled deals and deals with no next step.'),
     profilePages: [25],
     photo: 'crm-sales-call',
-    heroShots: ['crm-01-deals'],
-    illustrative: false,
+    heroShots: [],
+    illustrative: true,
     signature: 'lanes',
     sections: [
       {
@@ -197,23 +189,16 @@ export const CRM: SpecialistDepartment[] = [
         ],
       },
       {
-        id: 'screens',
-        kind: 'screens',
-        title: t('لوحة الصفقات الفعلية', 'The real deals board'),
-        lede: t('شاشة فعلية من بيئة DIGIT CRM التجريبية؛ القيم بيانات تجريبية.', 'A real screen from the DIGIT CRM demo environment; values are demo data.'),
-        shots: ['crm-01-deals'],
-      },
-      {
         id: 'records',
         kind: 'records',
         title: t('ما تعرضه لوحة الصفقات', 'What the deals board shows'),
         lede: t('عناصر ظاهرة في الشاشة الفعلية.', 'Elements visible in the real screen.'),
         items: [
-          { name: t('كانبان حسب المرحلة', 'Kanban by stage'), code: 'Kanban', body: t('بطاقة لكل صفقة بالمنشأة والقيمة والنسبة والمالك وآخر نشاط.', 'A card per deal with organization, value, probability, owner and last activity.'), status: SHOWN },
-          { name: t('مؤشرات المسار', 'Pipeline indicators'), body: t('إجمالي المسار المفتوح، والمسار المرجّح، ونسبة الفوز، وإيراد الصفقات الرابحة.', 'Total open pipeline, weighted pipeline, win rate and won revenue.'), status: SHOWN },
-          { name: t('تنبيهات الصفقات', 'Deal alerts'), body: t('راكدة، بلا إجراء تالٍ، تجاوزت تاريخ الإغلاق، قيمة عالية بلا متابعة.', 'Stalled, no next step, past close date, high value without follow-up.'), status: SHOWN },
-          { name: t('عرض القائمة أو كانبان', 'List or Kanban view'), body: t('تجميع حسب الحقل، وفرز، وحفظ طريقة العرض.', 'Group by field, sort, and save the view.'), status: SHOWN },
-          { name: t('الصفقة والمنشأة', 'Deal and organization'), code: 'DEAL · ORG', body: t('رقم الصفقة ورقم المنشأة على كل بطاقة.', 'Deal and organization numbers on each card.'), status: SHOWN },
+          { name: t('كانبان حسب المرحلة', 'Kanban by stage'), code: 'Kanban', body: t('بطاقة لكل صفقة بالمنشأة والقيمة والنسبة والمالك وآخر نشاط.', 'A card per deal with organization, value, probability, owner and last activity.'), status: DOC },
+          { name: t('مؤشرات المسار', 'Pipeline indicators'), body: t('إجمالي المسار المفتوح، والمسار المرجّح، ونسبة الفوز، وإيراد الصفقات الرابحة.', 'Total open pipeline, weighted pipeline, win rate and won revenue.'), status: DOC },
+          { name: t('تنبيهات الصفقات', 'Deal alerts'), body: t('راكدة، بلا إجراء تالٍ، تجاوزت تاريخ الإغلاق، قيمة عالية بلا متابعة.', 'Stalled, no next step, past close date, high value without follow-up.'), status: DOC },
+          { name: t('عرض القائمة أو كانبان', 'List or Kanban view'), body: t('تجميع حسب الحقل، وفرز، وحفظ طريقة العرض.', 'Group by field, sort, and save the view.'), status: DOC },
+          { name: t('الصفقة والمنشأة', 'Deal and organization'), code: 'DEAL · ORG', body: t('رقم الصفقة ورقم المنشأة على كل بطاقة.', 'Deal and organization numbers on each card.'), status: DOC },
         ],
       },
       {
@@ -259,8 +244,8 @@ export const CRM: SpecialistDepartment[] = [
     seoDescription: t('الأنشطة والمهام في DIGIT CRM: المكالمات والاجتماعات والمهام المرتبطة بالعميل والصفقة، والمتابعات المستحقة والمتأخرة.', 'Activities and tasks in DIGIT CRM: calls, meetings and tasks linked to the customer and the deal, with due and overdue follow-ups.'),
     profilePages: [25, 26],
     photo: 'crm-sales-call',
-    heroShots: ['crm-02-manager'],
-    illustrative: false,
+    heroShots: [],
+    illustrative: true,
     signature: 'timeline',
     sections: [
       {
@@ -295,8 +280,8 @@ export const CRM: SpecialistDepartment[] = [
           { name: t('المكالمات', 'Calls'), code: 'Calls', body: t('من اتصل ومتى وما النتيجة.', 'Who called, when and the outcome.'), status: DOC },
           { name: t('الاجتماعات', 'Meetings'), code: 'Meetings', body: t('الحضور والموضوع والقرار.', 'Attendees, topic and decision.'), status: DOC },
           { name: t('المهام', 'Tasks'), code: 'Tasks', body: t('الإجراء والموعد والمالك.', 'Action, due date and owner.'), status: DOC },
-          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('عدادان ظاهران في منصة المدير.', 'Two counters visible on the manager workbench.'), status: SHOWN },
-          { name: t('جدولة الإجراء التالي', 'Schedule the next action'), body: t('زر ظاهر في منصة المدير.', 'A button visible on the manager workbench.'), status: SHOWN },
+          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('عدادان ظاهران في منصة المدير.', 'Two counters visible on the manager workbench.'), status: DOC },
+          { name: t('جدولة الإجراء التالي', 'Schedule the next action'), body: t('زر ظاهر في منصة المدير.', 'A button visible on the manager workbench.'), status: DOC },
         ],
       },
       {
@@ -420,8 +405,8 @@ export const CRM: SpecialistDepartment[] = [
     seoDescription: t('إدارة المبيعات في DIGIT CRM: أهداف الفريق وعمر المرحلة ونشاط البيع والتحويل والمسار المرجّح وتقارير الفرص والنشاط.', 'Sales management in DIGIT CRM: team targets, stage ageing, sales activity, conversion, weighted pipeline and opportunity and activity reports.'),
     profilePages: [26],
     photo: 'crm-sales-call',
-    heroShots: ['crm-02-manager'],
-    illustrative: false,
+    heroShots: [],
+    illustrative: true,
     signature: 'ledger',
     sections: [
       {
@@ -441,11 +426,11 @@ export const CRM: SpecialistDepartment[] = [
         title: t('مؤشرات القسم', 'Department indicators'),
         lede: t('ظاهرة في منصة المدير، ولكل مؤشر رمز يعرّفه.', 'Visible on the manager workbench, each with a code that defines it.'),
         items: [
-          { name: t('نسبة تغطية خط الأنابيب', 'Pipeline coverage ratio'), body: t('المسار المفتوح مقابل الهدف.', 'Open pipeline against target.'), status: SHOWN },
-          { name: t('متابعات متأخرة', 'Overdue follow-ups'), body: t('عدد المتابعات التي فات موعدها.', 'Count of follow-ups past their date.'), status: SHOWN },
-          { name: t('قائمة الاعتمادات', 'Approvals queue'), body: t('ما ينتظر اعتماد المدير.', 'What is waiting for the manager’s approval.'), status: SHOWN },
-          { name: t('صافي حركة خط الأنابيب', 'Net pipeline movement'), body: t('الداخل ناقص الخارج من المسار.', 'In minus out of the pipeline.'), status: SHOWN },
-          { name: t('تخصيص المؤشرات', 'Customize indicators'), body: t('زر ظاهر بجانب مؤشرات القسم.', 'A button next to the department indicators.'), status: SHOWN },
+          { name: t('نسبة تغطية خط الأنابيب', 'Pipeline coverage ratio'), body: t('المسار المفتوح مقابل الهدف.', 'Open pipeline against target.'), status: DOC },
+          { name: t('متابعات متأخرة', 'Overdue follow-ups'), body: t('عدد المتابعات التي فات موعدها.', 'Count of follow-ups past their date.'), status: DOC },
+          { name: t('قائمة الاعتمادات', 'Approvals queue'), body: t('ما ينتظر اعتماد المدير.', 'What is waiting for the manager’s approval.'), status: DOC },
+          { name: t('صافي حركة خط الأنابيب', 'Net pipeline movement'), body: t('الداخل ناقص الخارج من المسار.', 'In minus out of the pipeline.'), status: DOC },
+          { name: t('تخصيص المؤشرات', 'Customize indicators'), body: t('زر ظاهر بجانب مؤشرات القسم.', 'A button next to the department indicators.'), status: DOC },
         ],
       },
       {
@@ -454,8 +439,8 @@ export const CRM: SpecialistDepartment[] = [
         title: t('تقارير المتابعة', 'Follow-up reports'),
         lede: t('تقارير الفرص والنشاط من مصادر ووظيفة محددة، ضمن ما يتيحه الإصدار.', 'Opportunity and activity reports from defined sources, within what the edition provides.'),
         items: [
-          { name: t('خط الأنابيب حسب المندوب', 'Pipeline by rep'), purpose: t('قيمة المسار المفتوح لكل مندوب.', 'Open pipeline value per rep.'), status: SHOWN },
-          { name: t('تحقيق أهداف الفريق', 'Team target attainment'), purpose: t('نسبة كل عضو.', 'Each member’s percentage.'), status: SHOWN },
+          { name: t('خط الأنابيب حسب المندوب', 'Pipeline by rep'), purpose: t('قيمة المسار المفتوح لكل مندوب.', 'Open pipeline value per rep.'), status: DOC },
+          { name: t('تحقيق أهداف الفريق', 'Team target attainment'), purpose: t('نسبة كل عضو.', 'Each member’s percentage.'), status: DOC },
           { name: t('عمر المرحلة', 'Stage ageing'), purpose: t('الصفقات حسب مدة بقائها في المرحلة.', 'Deals by how long they have been in the stage.'), status: DOC },
           { name: t('نشاط البيع والتحويل', 'Sales activity and conversion'), purpose: t('الأنشطة ونسب التحويل بين المراحل.', 'Activities and conversion between stages.'), status: DOC },
         ],
@@ -522,8 +507,8 @@ export const CRM: SpecialistDepartment[] = [
         title: t('ما يُدار هنا', 'What is managed here'),
         lede: t('إعدادات تؤثر في كل المجالات.', 'Settings that affect every area.'),
         items: [
-          { name: t('مؤشرات حسب الصلاحية', 'Indicators by permission'), body: t('عبارة «سجلاتك المسموح بها فقط» ظاهرة في الشاشة.', '“Only the records you may see” is stated on screen.'), status: SHOWN },
-          { name: t('شريط البيئة التجريبية', 'Demo environment banner'), body: t('«بيئة تجريبية معزولة · بيانات محاكاة» ظاهر أعلى الشاشات.', '“Isolated demo environment · simulated data” shown at the top of the screens.'), status: SHOWN },
+          { name: t('مؤشرات حسب الصلاحية', 'Indicators by permission'), body: t('عبارة «سجلاتك المسموح بها فقط» ظاهرة في الشاشة.', '“Only the records you may see” is stated on screen.'), status: DOC },
+          { name: t('شريط البيئة التجريبية', 'Demo environment banner'), body: t('«بيئة تجريبية معزولة · بيانات محاكاة» ظاهر أعلى الشاشات.', '“Isolated demo environment · simulated data” shown at the top of the screens.'), status: DOC },
           { name: t('الأدوار', 'Roles'), code: 'Roles', body: t('ما يراه ويفعله كل دور.', 'What each role sees and does.'), status: DOC },
           { name: t('مراحل البيع', 'Sales stages'), code: 'Deal Stages', body: t('المراحل ونسب الاحتمال.', 'Stages and probabilities.'), status: DOC },
           { name: t('الأهداف', 'Targets'), body: t('أهداف الأفراد والفريق.', 'Individual and team targets.'), status: DOC },
