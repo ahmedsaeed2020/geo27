@@ -20,5 +20,5 @@
 .po-list{display:none}
 @keyframes po-spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
 @keyframes po-pulse{50%{box-shadow:0 0 80px 18px oklch(0.7 0.14 160/.55),0 0 180px 60px oklch(0.6 0.12 160/.25)}}
-@media (max-width:860px){.po-wrap{grid-template-columns:1fr;text-align:center}.po-lead{margin-inline:auto}.po-stage{max-width:300px}.po-orbit{display:none}.po-stage{--r:120px;aspect-ratio:auto;height:280px}.po-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;list-style:none;margin:0;padding:0}.po-chip{min-width:0}}
+@media (max-width:860px){.po-wrap{grid-template-columns:1fr;text-align:center}.po-lead{margin-inline:auto}.po-stage{max-width:300px}.po-orbit{display:none}.po-stage{--r:90px;aspect-ratio:auto;height:200px}.po-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;list-style:none;margin:0;padding:0}.po-chip{min-width:0}}
 @media (prefers-reduced-motion:reduce){.po-ring,.po-rays,.po-core{animation:none}}
