@@ -30,7 +30,9 @@ export function useDemoRequest() {
   const navigate = useNavigate();
   const locale = useLocale();
   return (product?: string, department?: string) => {
-    if (!focusLeadForm({ product: product ?? '', department: department ?? '' })) void navigate({ to: localeHref('/demo', locale) });
+    // Without an explicit product the form keeps the page's own product/department context.
+    const context = product === undefined ? undefined : { product, department: department ?? '' };
+    if (!focusLeadForm(context)) void navigate({ to: localeHref('/demo', locale) });
   };
 }
 
@@ -263,7 +265,7 @@ function TopItem({
   };
   return (
     <div className="mm-item" data-compact={compact ? '' : undefined} data-open={open ? '' : undefined} data-active={active ? '' : undefined} onMouseEnter={onOpen}>
-      <NavLink path={path} className="mm-top" aria-current={undefined}>
+      <NavLink path={path} className="mm-top">
         {eyebrow && (
           <span className="mm-top-eyebrow" dir="ltr">
             {eyebrow}

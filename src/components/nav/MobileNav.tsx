@@ -126,7 +126,7 @@ export function MobileNav({ extra, demoLabel }: { extra?: (close: () => void) =>
               onClick={() => {
                 close();
                 // Let the sheet release focus and scrolling before moving to the form.
-                window.setTimeout(() => demo(active || undefined), 60);
+                window.setTimeout(() => demo(), 60);
               }}
             >
               {demoLabel}

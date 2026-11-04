@@ -9,8 +9,6 @@ import { useSiteConfig } from './cms/CmsContext';
 import { DesktopNav, useDemoRequest } from './nav/MegaMenu';
 import { MobileNav } from './nav/MobileNav';
 import { NAV_COPY } from './nav/nav-links';
-import { contextForPath } from '@/content/catalog';
-import { useRouterState } from '@tanstack/react-router';
 
 export function DigitMark({ className = "h-8 w-8" }: { className?: string }) {
   const locale = useLocale();
@@ -45,7 +43,6 @@ export default function Header() {
   const logoAlt = locale === 'ar' ? branding.logoAltAr : branding.logoAltEn;
   const extraLinks = nav?.[locale].blocks.filter(b => b.enabled && b.href) ?? [];
   const demoLabel = brand?.[locale].title || NAV_COPY.demo[locale];
-  const pathname = useRouterState({ select: s => s.location.pathname });
   const demo = useDemoRequest();
   const [scrolled, setScrolled] = useState(false);
   useEffect(() => {
@@ -65,7 +62,7 @@ export default function Header() {
         <DesktopNav extra={extraLinks.map(b => <Link key={b.id} to={localeHref(b.href, locale)} className="mm-extra">{b.title}</Link>)} />
         <div className="site-header-actions">
           <LanguageSwitch />
-          <Button size="lg" className="site-header-cta" onClick={() => demo(contextForPath(pathname).product || undefined)}>{demoLabel}</Button>
+          <Button size="lg" className="site-header-cta" onClick={() => demo()}>{demoLabel}</Button>
           <MobileNav
             demoLabel={demoLabel}
             extra={close => extraLinks.map(b => <Link key={b.id} to={localeHref(b.href, locale)} onClick={close} className="mnav-extra">{b.title}</Link>)}
