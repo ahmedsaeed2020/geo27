@@ -1,7 +1,8 @@
 // Real DIGIT Pro screenshots (owner upload 2026-10-30). Pixel sizes come from the
 // manifest so every frame reserves its space before the image loads.
 export type L = { ar: string; en: string };
-export type Shot = { id: string; src: string; width: number; height: number; theme: number; caption: L };
+/** `full`: optional higher-resolution derivative for the lightbox; `src` stays the inline image. */
+export type Shot = { id: string; src: string; width: number; height: number; theme: number; caption: L; full?: { src: string; width: number; height: number } };
 export type Theme = { no: number; key: string; chip: L; title: L; hook: L; shots: string[] };
 
 const pointers = import.meta.glob<{ url: string }>("/src/assets/product/*.asset.json", { eager: true, import: "default" });
