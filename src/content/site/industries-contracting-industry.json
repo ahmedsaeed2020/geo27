@@ -1,666 +1,666 @@
 {
- "title": "المقاولات",
- "description": "تكلفة كل مشروع، مقاولون من الباطن، مستخلصات ومحتجزات، ومشتريات — مرتبطة بمحاسبتك. (المتقدّم حسب نطاق التنفيذ.)",
- "sourceUrl": "https://digit-erp.com/industries/contracting-industry/",
- "nodes": [
-  {
-   "id": "56f8bd11",
-   "type": "container",
-   "className": "in-56f8bd11 digit band-crumb",
-   "anchor": "",
-   "children": [
+  "title": "المقاولات",
+  "description": "تكلفة كل مشروع، مقاولون من الباطن، مستخلصات ومحتجزات، ومشتريات — مرتبطة بمحاسبتك. (المتقدّم حسب نطاق التنفيذ.)",
+  "sourceUrl": "https://digit-erp.com/industries/contracting-industry/",
+  "nodes": [
     {
-     "id": "6c3c4a1c",
-     "type": "text-editor",
-     "className": "in-6c3c4a1c ",
-     "anchor": "",
-     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">المقاولات</span>"
-    }
-   ]
-  },
-  {
-   "id": "5f8f24ce",
-   "type": "container",
-   "className": "in-5f8f24ce digit hero",
-   "anchor": "",
-   "children": [
-    {
-     "id": "6e8b1a52",
-     "type": "container",
-     "className": "in-6e8b1a52 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "439298f",
-       "type": "container",
-       "className": "in-439298f ",
-       "anchor": "",
-       "children": [
+      "id": "56f8bd11",
+      "type": "container",
+      "className": "in-56f8bd11 digit band-crumb",
+      "anchor": "",
+      "children": [
         {
-         "id": "4abcc66",
-         "type": "text-editor",
-         "className": "in-4abcc66 ",
-         "anchor": "",
-         "html": "<span class=\"is-7\">● قطاع · المقاولات</span>"
-        },
-        {
-         "id": "55ab113f",
-         "type": "heading",
-         "className": "in-55ab113f ",
-         "anchor": "",
-         "html": "تحكّم في تكاليف مشاريعك… <em class=\"is-9\">قطاع المقاولات</em>",
-         "tag": "h1"
-        },
-        {
-         "id": "35fec115",
-         "type": "text-editor",
-         "className": "in-35fec115 ",
-         "anchor": "",
-         "html": "تكلفة كل مشروع، مقاولون من الباطن، مستخلصات ومحتجزات، ومشتريات — مرتبطة بمحاسبتك. (المتقدّم حسب نطاق التنفيذ.)"
-        },
-        {
-         "id": "277082fe",
-         "type": "container",
-         "className": "in-277082fe ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "41f47d7a",
-           "type": "button",
-           "className": "in-41f47d7a btn solid",
-           "anchor": "",
-           "text": "احجز عرضًا تجريبيًا",
-           "href": "/demo",
-           "external": true
-          },
-          {
-           "id": "9ce9981",
-           "type": "button",
-           "className": "in-9ce9981 btn ghost",
-           "anchor": "",
-           "text": "واتساب المبيعات",
-           "href": "https://wa.me/966591909277",
-           "external": true
-          }
-         ]
+          "id": "6c3c4a1c",
+          "type": "text-editor",
+          "className": "in-6c3c4a1c ",
+          "anchor": "",
+          "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">المقاولات</span>"
         }
-       ]
-      },
-      {
-       "id": "2bd67562",
-       "type": "container",
-       "className": "in-2bd67562 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "1cd7b1b4",
-         "type": "image-slot",
-         "className": "in-1cd7b1b4 ",
-         "anchor": "",
-         "src": "/__l5e/assets-v1/7e1ebc50-9ded-42c2-af53-45b877d15843/industry-contracting.jpg",
-         "alt": "المقاولات"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "2e2dbc9f",
-   "type": "container",
-   "className": "in-2e2dbc9f digit benefits",
-   "anchor": "",
-   "children": [
-    {
-     "id": "1420a5ff",
-     "type": "container",
-     "className": "in-1420a5ff ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "444949b0",
-       "type": "text-editor",
-       "className": "in-444949b0 ",
-       "anchor": "",
-       "html": "تحديات القطاع"
-      },
-      {
-       "id": "64175e79",
-       "type": "heading",
-       "className": "in-64175e79 ",
-       "anchor": "",
-       "html": "ما يربك شركات المقاولات",
-       "tag": "h2"
-      },
-      {
-       "id": "7532a435",
-       "type": "text-editor",
-       "className": "in-7532a435 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "5c6b6a93",
-     "type": "container",
-     "className": "in-5c6b6a93 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "473ecb18",
-       "type": "container",
-       "className": "in-473ecb18 ",
-       "anchor": "",
-       "children": [
+      "id": "5f8f24ce",
+      "type": "container",
+      "className": "in-5f8f24ce digit hero",
+      "anchor": "",
+      "children": [
         {
-         "id": "603cd026",
-         "type": "heading",
-         "className": "in-603cd026 ",
-         "anchor": "",
-         "html": "تكلفة المشروع",
-         "tag": "h3"
-        },
-        {
-         "id": "431c0294",
-         "type": "text-editor",
-         "className": "in-431c0294 ",
-         "anchor": "",
-         "html": "تجميع المواد والعمالة والباطن لكل مشروع."
+          "id": "6e8b1a52",
+          "type": "container",
+          "className": "in-6e8b1a52 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "439298f",
+              "type": "container",
+              "className": "in-439298f ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "4abcc66",
+                  "type": "text-editor",
+                  "className": "in-4abcc66 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-7\">● قطاع · المقاولات</span>"
+                },
+                {
+                  "id": "55ab113f",
+                  "type": "heading",
+                  "className": "in-55ab113f ",
+                  "anchor": "",
+                  "html": "تحكّم في تكاليف مشاريعك… <em class=\"is-9\">قطاع المقاولات</em>",
+                  "tag": "h1"
+                },
+                {
+                  "id": "35fec115",
+                  "type": "text-editor",
+                  "className": "in-35fec115 ",
+                  "anchor": "",
+                  "html": "تكلفة كل مشروع، مقاولون من الباطن، مستخلصات ومحتجزات، ومشتريات — مرتبطة بمحاسبتك. (المتقدّم حسب نطاق التنفيذ.)"
+                },
+                {
+                  "id": "277082fe",
+                  "type": "container",
+                  "className": "in-277082fe ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "41f47d7a",
+                      "type": "button",
+                      "className": "in-41f47d7a btn solid",
+                      "anchor": "",
+                      "text": "احجز عرضًا توضيحيًا",
+                      "href": "/demo",
+                      "external": false
+                    },
+                    {
+                      "id": "9ce9981",
+                      "type": "button",
+                      "className": "in-9ce9981 btn ghost",
+                      "anchor": "",
+                      "text": "واتساب المبيعات",
+                      "href": "https://wa.me/966591909277",
+                      "external": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "2bd67562",
+              "type": "container",
+              "className": "in-2bd67562 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1cd7b1b4",
+                  "type": "image-slot",
+                  "className": "in-1cd7b1b4 ",
+                  "anchor": "",
+                  "src": "/__l5e/assets-v1/7e1ebc50-9ded-42c2-af53-45b877d15843/industry-contracting.jpg",
+                  "alt": "المقاولات"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "c250472",
-       "type": "container",
-       "className": "in-c250472 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "410bda79",
-         "type": "heading",
-         "className": "in-410bda79 ",
-         "anchor": "",
-         "html": "المستخلصات",
-         "tag": "h3"
-        },
-        {
-         "id": "1ce6b400",
-         "type": "text-editor",
-         "className": "in-1ce6b400 ",
-         "anchor": "",
-         "html": "مستخلصات تقدّم ومحتجزات (حسب التنفيذ)."
-        }
-       ]
-      },
-      {
-       "id": "7149f77c",
-       "type": "container",
-       "className": "in-7149f77c ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "59c5a19a",
-         "type": "heading",
-         "className": "in-59c5a19a ",
-         "anchor": "",
-         "html": "المشتريات",
-         "tag": "h3"
-        },
-        {
-         "id": "10c80c24",
-         "type": "text-editor",
-         "className": "in-10c80c24 ",
-         "anchor": "",
-         "html": "مشتريات المشروع واعتماداتها."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "3f50ddc9",
-   "type": "container",
-   "className": "in-3f50ddc9 digit inside",
-   "anchor": "inside",
-   "children": [
-    {
-     "id": "22d15829",
-     "type": "container",
-     "className": "in-22d15829 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "6dea454e",
-       "type": "text-editor",
-       "className": "in-6dea454e ",
-       "anchor": "",
-       "html": "لقطة من النظام"
-      },
-      {
-       "id": "40134ebe",
-       "type": "heading",
-       "className": "in-40134ebe ",
-       "anchor": "",
-       "html": "هكذا تبدو المشاريع داخل Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "4dd46c6e",
-       "type": "text-editor",
-       "className": "in-4dd46c6e ",
-       "anchor": "",
-       "html": "تكاليف ومشتريات وربحية لكل مشروع مقاولات."
-      }
-     ]
+      ]
     },
     {
-     "id": "743a7f19",
-     "type": "html",
-     "className": "in-743a7f19 ",
-     "anchor": "",
-     "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / projects</span></div><div class=\"is-43\">لقطة توضيحية · بيانات تجريبية</div></div>"
-    }
-   ]
-  },
-  {
-   "id": "15d80aa8",
-   "type": "container",
-   "className": "in-15d80aa8 digit sec",
-   "anchor": "",
-   "children": [
-    {
-     "id": "4e8e4e54",
-     "type": "container",
-     "className": "in-4e8e4e54 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "3f84f308",
-       "type": "text-editor",
-       "className": "in-3f84f308 ",
-       "anchor": "",
-       "html": "موديولات تهمّك"
-      },
-      {
-       "id": "c94c2bf",
-       "type": "heading",
-       "className": "in-c94c2bf ",
-       "anchor": "",
-       "html": "ما يحتاجه المقاولات من Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "201f02d0",
-       "type": "text-editor",
-       "className": "in-201f02d0 ",
-       "anchor": "",
-       "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
-      }
-     ]
+      "id": "2e2dbc9f",
+      "type": "container",
+      "className": "in-2e2dbc9f digit benefits",
+      "anchor": "",
+      "children": [
+        {
+          "id": "1420a5ff",
+          "type": "container",
+          "className": "in-1420a5ff ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "444949b0",
+              "type": "text-editor",
+              "className": "in-444949b0 ",
+              "anchor": "",
+              "html": "تحديات القطاع"
+            },
+            {
+              "id": "64175e79",
+              "type": "heading",
+              "className": "in-64175e79 ",
+              "anchor": "",
+              "html": "ما يربك شركات المقاولات",
+              "tag": "h2"
+            },
+            {
+              "id": "7532a435",
+              "type": "text-editor",
+              "className": "in-7532a435 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "5c6b6a93",
+          "type": "container",
+          "className": "in-5c6b6a93 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "473ecb18",
+              "type": "container",
+              "className": "in-473ecb18 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "603cd026",
+                  "type": "heading",
+                  "className": "in-603cd026 ",
+                  "anchor": "",
+                  "html": "تكلفة المشروع",
+                  "tag": "h3"
+                },
+                {
+                  "id": "431c0294",
+                  "type": "text-editor",
+                  "className": "in-431c0294 ",
+                  "anchor": "",
+                  "html": "تجميع المواد والعمالة والباطن لكل مشروع."
+                }
+              ]
+            },
+            {
+              "id": "c250472",
+              "type": "container",
+              "className": "in-c250472 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "410bda79",
+                  "type": "heading",
+                  "className": "in-410bda79 ",
+                  "anchor": "",
+                  "html": "المستخلصات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1ce6b400",
+                  "type": "text-editor",
+                  "className": "in-1ce6b400 ",
+                  "anchor": "",
+                  "html": "مستخلصات تقدّم ومحتجزات (حسب التنفيذ)."
+                }
+              ]
+            },
+            {
+              "id": "7149f77c",
+              "type": "container",
+              "className": "in-7149f77c ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "59c5a19a",
+                  "type": "heading",
+                  "className": "in-59c5a19a ",
+                  "anchor": "",
+                  "html": "المشتريات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "10c80c24",
+                  "type": "text-editor",
+                  "className": "in-10c80c24 ",
+                  "anchor": "",
+                  "html": "مشتريات المشروع واعتماداتها."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-     "id": "6700fee9",
-     "type": "container",
-     "className": "in-6700fee9 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "1cc28167",
-       "type": "container",
-       "className": "in-1cc28167 ",
-       "anchor": "",
-       "children": [
+      "id": "3f50ddc9",
+      "type": "container",
+      "className": "in-3f50ddc9 digit inside",
+      "anchor": "inside",
+      "children": [
         {
-         "id": "7902a9a5",
-         "type": "html",
-         "className": "in-7902a9a5 ",
-         "anchor": "",
-         "html": "<span class=\"is-52\"><svg aria-label=\"projects\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"11\" rx=\"5.5\" width=\"38\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-54\" height=\"11\" rx=\"5.5\" width=\"40\" x=\"40\" y=\"45\"></rect>\n<rect class=\"iv-55\" height=\"11\" rx=\"5.5\" width=\"34\" x=\"30\" y=\"62\"></rect>\n</svg></span>"
+          "id": "22d15829",
+          "type": "container",
+          "className": "in-22d15829 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "6dea454e",
+              "type": "text-editor",
+              "className": "in-6dea454e ",
+              "anchor": "",
+              "html": "لقطة من النظام"
+            },
+            {
+              "id": "40134ebe",
+              "type": "heading",
+              "className": "in-40134ebe ",
+              "anchor": "",
+              "html": "هكذا تبدو المشاريع داخل Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "4dd46c6e",
+              "type": "text-editor",
+              "className": "in-4dd46c6e ",
+              "anchor": "",
+              "html": "تكاليف ومشتريات وربحية لكل مشروع مقاولات."
+            }
+          ]
         },
         {
-         "id": "2fbe1a0c",
-         "type": "heading",
-         "className": "in-2fbe1a0c ",
-         "anchor": "",
-         "html": "المقاولات",
-         "tag": "h3"
-        },
-        {
-         "id": "6158da25",
-         "type": "text-editor",
-         "className": "in-6158da25 ",
-         "anchor": "",
-         "html": "<a class=\"is-58\" href=\"/modules/contracting\">عرض الموديول ←</a>"
+          "id": "743a7f19",
+          "type": "html",
+          "className": "in-743a7f19 ",
+          "anchor": "",
+          "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / projects</span></div><div class=\"is-43\">لقطة توضيحية</div></div>"
         }
-       ]
-      },
-      {
-       "id": "4ab41e01",
-       "type": "container",
-       "className": "in-4ab41e01 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "6a0737ee",
-         "type": "html",
-         "className": "in-6a0737ee ",
-         "anchor": "",
-         "html": "<span class=\"is-61\"><svg aria-label=\"projects\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-62\" height=\"11\" rx=\"5.5\" width=\"38\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-63\" height=\"11\" rx=\"5.5\" width=\"40\" x=\"40\" y=\"45\"></rect>\n<rect class=\"iv-64\" height=\"11\" rx=\"5.5\" width=\"34\" x=\"30\" y=\"62\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "63b0c6f1",
-         "type": "heading",
-         "className": "in-63b0c6f1 ",
-         "anchor": "",
-         "html": "المشاريع",
-         "tag": "h3"
-        },
-        {
-         "id": "1076dc54",
-         "type": "text-editor",
-         "className": "in-1076dc54 ",
-         "anchor": "",
-         "html": "<a class=\"is-67\" href=\"/modules/projects\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "4f2155bc",
-       "type": "container",
-       "className": "in-4f2155bc ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "679a9f96",
-         "type": "html",
-         "className": "in-679a9f96 ",
-         "anchor": "",
-         "html": "<span class=\"is-70\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-71\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-72\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-73\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "69ad3d01",
-         "type": "heading",
-         "className": "in-69ad3d01 ",
-         "anchor": "",
-         "html": "المشتريات",
-         "tag": "h3"
-        },
-        {
-         "id": "78bf3f9b",
-         "type": "text-editor",
-         "className": "in-78bf3f9b ",
-         "anchor": "",
-         "html": "<a class=\"is-76\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "531f6741",
-       "type": "container",
-       "className": "in-531f6741 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "4749ce0",
-         "type": "html",
-         "className": "in-4749ce0 ",
-         "anchor": "",
-         "html": "<span class=\"is-79\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-80\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-81\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-82\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-83\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "272b8d7b",
-         "type": "heading",
-         "className": "in-272b8d7b ",
-         "anchor": "",
-         "html": "المحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "6389dac4",
-         "type": "text-editor",
-         "className": "in-6389dac4 ",
-         "anchor": "",
-         "html": "<a class=\"is-86\" href=\"/modules/accounting\">عرض الموديول ←</a>"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "26dde113",
-   "type": "container",
-   "className": "in-26dde113 digit demo",
-   "anchor": "",
-   "children": [
-    {
-     "id": "5b24352",
-     "type": "container",
-     "className": "in-5b24352 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "728a940",
-       "type": "text-editor",
-       "className": "in-728a940 ",
-       "anchor": "",
-       "html": "لماذا Digit لقطاعك"
-      },
-      {
-       "id": "4fdccabc",
-       "type": "heading",
-       "className": "in-4fdccabc ",
-       "anchor": "",
-       "html": "لماذا Digit للمقاولات",
-       "tag": "h2"
-      },
-      {
-       "id": "68bd2038",
-       "type": "text-editor",
-       "className": "in-68bd2038 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "6b270bc4",
-     "type": "container",
-     "className": "in-6b270bc4 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "27365f7f",
-       "type": "container",
-       "className": "in-27365f7f ",
-       "anchor": "",
-       "children": [
+      "id": "15d80aa8",
+      "type": "container",
+      "className": "in-15d80aa8 digit sec",
+      "anchor": "",
+      "children": [
         {
-         "id": "465996a9",
-         "type": "heading",
-         "className": "in-465996a9 ",
-         "anchor": "",
-         "html": "تكلفة دقيقة",
-         "tag": "h3"
+          "id": "4e8e4e54",
+          "type": "container",
+          "className": "in-4e8e4e54 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "3f84f308",
+              "type": "text-editor",
+              "className": "in-3f84f308 ",
+              "anchor": "",
+              "html": "موديولات تهمّك"
+            },
+            {
+              "id": "c94c2bf",
+              "type": "heading",
+              "className": "in-c94c2bf ",
+              "anchor": "",
+              "html": "ما يحتاجه المقاولات من Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "201f02d0",
+              "type": "text-editor",
+              "className": "in-201f02d0 ",
+              "anchor": "",
+              "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
+            }
+          ]
         },
         {
-         "id": "5a35cc5c",
-         "type": "text-editor",
-         "className": "in-5a35cc5c ",
-         "anchor": "",
-         "html": "لكل مشروع ومرحلة."
+          "id": "6700fee9",
+          "type": "container",
+          "className": "in-6700fee9 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "1cc28167",
+              "type": "container",
+              "className": "in-1cc28167 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "7902a9a5",
+                  "type": "html",
+                  "className": "in-7902a9a5 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-52\"><svg aria-label=\"projects\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"11\" rx=\"5.5\" width=\"38\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-54\" height=\"11\" rx=\"5.5\" width=\"40\" x=\"40\" y=\"45\"></rect>\n<rect class=\"iv-55\" height=\"11\" rx=\"5.5\" width=\"34\" x=\"30\" y=\"62\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "2fbe1a0c",
+                  "type": "heading",
+                  "className": "in-2fbe1a0c ",
+                  "anchor": "",
+                  "html": "المقاولات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6158da25",
+                  "type": "text-editor",
+                  "className": "in-6158da25 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-58\" href=\"/modules/contracting\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "4ab41e01",
+              "type": "container",
+              "className": "in-4ab41e01 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "6a0737ee",
+                  "type": "html",
+                  "className": "in-6a0737ee ",
+                  "anchor": "",
+                  "html": "<span class=\"is-61\"><svg aria-label=\"projects\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-62\" height=\"11\" rx=\"5.5\" width=\"38\" x=\"22\" y=\"28\"></rect>\n<rect class=\"iv-63\" height=\"11\" rx=\"5.5\" width=\"40\" x=\"40\" y=\"45\"></rect>\n<rect class=\"iv-64\" height=\"11\" rx=\"5.5\" width=\"34\" x=\"30\" y=\"62\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "63b0c6f1",
+                  "type": "heading",
+                  "className": "in-63b0c6f1 ",
+                  "anchor": "",
+                  "html": "المشاريع",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1076dc54",
+                  "type": "text-editor",
+                  "className": "in-1076dc54 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-67\" href=\"/modules/projects\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "4f2155bc",
+              "type": "container",
+              "className": "in-4f2155bc ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "679a9f96",
+                  "type": "html",
+                  "className": "in-679a9f96 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-70\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-71\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-72\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-73\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "69ad3d01",
+                  "type": "heading",
+                  "className": "in-69ad3d01 ",
+                  "anchor": "",
+                  "html": "المشتريات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "78bf3f9b",
+                  "type": "text-editor",
+                  "className": "in-78bf3f9b ",
+                  "anchor": "",
+                  "html": "<a class=\"is-76\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "531f6741",
+              "type": "container",
+              "className": "in-531f6741 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "4749ce0",
+                  "type": "html",
+                  "className": "in-4749ce0 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-79\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-80\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-81\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-82\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-83\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "272b8d7b",
+                  "type": "heading",
+                  "className": "in-272b8d7b ",
+                  "anchor": "",
+                  "html": "المحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6389dac4",
+                  "type": "text-editor",
+                  "className": "in-6389dac4 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-86\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "7d926d0e",
-       "type": "container",
-       "className": "in-7d926d0e ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "8169248",
-         "type": "heading",
-         "className": "in-8169248 ",
-         "anchor": "",
-         "html": "ربط كامل",
-         "tag": "h3"
-        },
-        {
-         "id": "1f54de6",
-         "type": "text-editor",
-         "className": "in-1f54de6 ",
-         "anchor": "",
-         "html": "مشاريع ومشتريات ومحاسبة معًا."
-        }
-       ]
-      },
-      {
-       "id": "2e6d7a4f",
-       "type": "container",
-       "className": "in-2e6d7a4f ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "413f89e5",
-         "type": "heading",
-         "className": "in-413f89e5 ",
-         "anchor": "",
-         "html": "رؤية الربحية",
-         "tag": "h3"
-        },
-        {
-         "id": "53fe5120",
-         "type": "text-editor",
-         "className": "in-53fe5120 ",
-         "anchor": "",
-         "html": "ربحية كل مشروع بوضوح."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "16b3a5d9",
-   "type": "container",
-   "className": "in-16b3a5d9 digit faq",
-   "anchor": "",
-   "children": [
-    {
-     "id": "599f18d6",
-     "type": "container",
-     "className": "in-599f18d6 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "99f8e0b",
-       "type": "text-editor",
-       "className": "in-99f8e0b ",
-       "anchor": "",
-       "html": "أسئلة متكررة"
-      },
-      {
-       "id": "713b42a9",
-       "type": "heading",
-       "className": "in-713b42a9 ",
-       "anchor": "",
-       "html": "أسئلة المقاولات",
-       "tag": "h2"
-      },
-      {
-       "id": "1196f4d2",
-       "type": "text-editor",
-       "className": "in-1196f4d2 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "1b591c30",
-     "type": "accordion",
-     "className": "in-1b591c30 qa",
-     "anchor": "",
-     "tabs": [
-      {
-       "title": "هل يحسب تكلفة كل مشروع؟",
-       "html": "<p>نعم، مواد وعمالة ومقاولون من الباطن.</p>"
-      },
-      {
-       "title": "هل يدعم المستخلصات والمحتجزات؟",
-       "html": "<p>حسب نطاق التنفيذ؛ تواصل لتأكيد التفاصيل.</p>"
-      },
-      {
-       "title": "هل يرتبط بالمحاسبة؟",
-       "html": "<p>نعم، التكاليف تنعكس في القيود تلقائيًا.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "249cccb0",
-   "type": "container",
-   "className": "in-249cccb0 digit cta",
-   "anchor": "cta",
-   "children": [
-    {
-     "id": "670880d6",
-     "type": "container",
-     "className": "in-670880d6 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "1a124914",
-       "type": "heading",
-       "className": "in-1a124914 ",
-       "anchor": "",
-       "html": "عندك مشاريع مقاولات؟ نحلّلها معك",
-       "tag": "h2"
-      },
-      {
-       "id": "915675a",
-       "type": "text-editor",
-       "className": "in-915675a ",
-       "anchor": "",
-       "html": "عرض تجريبي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
-      },
-      {
-       "id": "7f828c40",
-       "type": "container",
-       "className": "in-7f828c40 ",
-       "anchor": "",
-       "children": [
+      "id": "26dde113",
+      "type": "container",
+      "className": "in-26dde113 digit demo",
+      "anchor": "",
+      "children": [
         {
-         "id": "54a2a9f",
-         "type": "button",
-         "className": "in-54a2a9f btn mint",
-         "anchor": "",
-         "text": "احجز عرضًا تجريبيًا",
-         "href": "/demo",
-         "external": true
+          "id": "5b24352",
+          "type": "container",
+          "className": "in-5b24352 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "728a940",
+              "type": "text-editor",
+              "className": "in-728a940 ",
+              "anchor": "",
+              "html": "لماذا Digit لقطاعك"
+            },
+            {
+              "id": "4fdccabc",
+              "type": "heading",
+              "className": "in-4fdccabc ",
+              "anchor": "",
+              "html": "لماذا Digit للمقاولات",
+              "tag": "h2"
+            },
+            {
+              "id": "68bd2038",
+              "type": "text-editor",
+              "className": "in-68bd2038 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
         },
         {
-         "id": "4dd7921",
-         "type": "button",
-         "className": "in-4dd7921 btn light",
-         "anchor": "",
-         "text": "واتساب المبيعات",
-         "href": "https://wa.me/966591909277",
-         "external": true
+          "id": "6b270bc4",
+          "type": "container",
+          "className": "in-6b270bc4 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "27365f7f",
+              "type": "container",
+              "className": "in-27365f7f ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "465996a9",
+                  "type": "heading",
+                  "className": "in-465996a9 ",
+                  "anchor": "",
+                  "html": "تكلفة دقيقة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "5a35cc5c",
+                  "type": "text-editor",
+                  "className": "in-5a35cc5c ",
+                  "anchor": "",
+                  "html": "لكل مشروع ومرحلة."
+                }
+              ]
+            },
+            {
+              "id": "7d926d0e",
+              "type": "container",
+              "className": "in-7d926d0e ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "8169248",
+                  "type": "heading",
+                  "className": "in-8169248 ",
+                  "anchor": "",
+                  "html": "ربط كامل",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1f54de6",
+                  "type": "text-editor",
+                  "className": "in-1f54de6 ",
+                  "anchor": "",
+                  "html": "مشاريع ومشتريات ومحاسبة معًا."
+                }
+              ]
+            },
+            {
+              "id": "2e6d7a4f",
+              "type": "container",
+              "className": "in-2e6d7a4f ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "413f89e5",
+                  "type": "heading",
+                  "className": "in-413f89e5 ",
+                  "anchor": "",
+                  "html": "رؤية الربحية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "53fe5120",
+                  "type": "text-editor",
+                  "className": "in-53fe5120 ",
+                  "anchor": "",
+                  "html": "ربحية كل مشروع بوضوح."
+                }
+              ]
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "id": "16b3a5d9",
+      "type": "container",
+      "className": "in-16b3a5d9 digit faq",
+      "anchor": "",
+      "children": [
+        {
+          "id": "599f18d6",
+          "type": "container",
+          "className": "in-599f18d6 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "99f8e0b",
+              "type": "text-editor",
+              "className": "in-99f8e0b ",
+              "anchor": "",
+              "html": "أسئلة متكررة"
+            },
+            {
+              "id": "713b42a9",
+              "type": "heading",
+              "className": "in-713b42a9 ",
+              "anchor": "",
+              "html": "أسئلة المقاولات",
+              "tag": "h2"
+            },
+            {
+              "id": "1196f4d2",
+              "type": "text-editor",
+              "className": "in-1196f4d2 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "1b591c30",
+          "type": "accordion",
+          "className": "in-1b591c30 qa",
+          "anchor": "",
+          "tabs": [
+            {
+              "title": "هل يحسب تكلفة كل مشروع؟",
+              "html": "<p>نعم، مواد وعمالة ومقاولون من الباطن.</p>"
+            },
+            {
+              "title": "هل يدعم المستخلصات والمحتجزات؟",
+              "html": "<p>حسب نطاق التنفيذ؛ تواصل لتأكيد التفاصيل.</p>"
+            },
+            {
+              "title": "هل يرتبط بالمحاسبة؟",
+              "html": "<p>نعم، التكاليف تنعكس في القيود تلقائيًا.</p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "249cccb0",
+      "type": "container",
+      "className": "in-249cccb0 digit cta",
+      "anchor": "cta",
+      "children": [
+        {
+          "id": "670880d6",
+          "type": "container",
+          "className": "in-670880d6 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "1a124914",
+              "type": "heading",
+              "className": "in-1a124914 ",
+              "anchor": "",
+              "html": "عندك مشاريع مقاولات؟ نحلّلها معك",
+              "tag": "h2"
+            },
+            {
+              "id": "915675a",
+              "type": "text-editor",
+              "className": "in-915675a ",
+              "anchor": "",
+              "html": "عرض توضيحي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+            },
+            {
+              "id": "7f828c40",
+              "type": "container",
+              "className": "in-7f828c40 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "54a2a9f",
+                  "type": "button",
+                  "className": "in-54a2a9f btn mint",
+                  "anchor": "",
+                  "text": "احجز عرضًا توضيحيًا",
+                  "href": "/demo",
+                  "external": false
+                },
+                {
+                  "id": "4dd7921",
+                  "type": "button",
+                  "className": "in-4dd7921 btn light",
+                  "anchor": "",
+                  "text": "واتساب المبيعات",
+                  "href": "https://wa.me/966591909277",
+                  "external": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

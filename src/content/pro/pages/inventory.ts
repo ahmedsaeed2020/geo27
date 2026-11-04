@@ -44,8 +44,8 @@ const page: ProPageContent = {
       ],
       support: [{ id: '04-360-03-in2', focus: { x: 50, y: 30, zoom: 1.9 } }],
       note: {
-        ar: 'الأرقام في الشاشة بيانات شركة تجريبية. المستخدم غير المخوّل يرى رسالة رفض صريحة، لا صفرًا وهميًا.',
-        en: 'The figures on screen are from a demo company. A user without permission sees an explicit denial, never a fake zero.',
+        ar: 'الأرقام في الشاشة توضيحية. المستخدم غير المخوّل يرى رسالة رفض صريحة، لا صفرًا وهميًا.',
+        en: 'The figures on screen are illustrative. A user without permission sees an explicit denial, never a fake zero.',
       },
     },
     {

@@ -1,666 +1,666 @@
 {
- "title": "التعليم",
- "description": "إدارة الرسوم والأقساط والرواتب والمشتريات والتقارير لمدارس ومعاهد وحضانات — بالعربية وبفوترة متوافقة.",
- "sourceUrl": "https://digit-erp.com/industries/education/",
- "nodes": [
-  {
-   "id": "4d37cedd",
-   "type": "container",
-   "className": "in-4d37cedd digit band-crumb",
-   "anchor": "",
-   "children": [
+  "title": "التعليم",
+  "description": "إدارة الرسوم والأقساط والرواتب والمشتريات والتقارير لمدارس ومعاهد وحضانات — بالعربية وبفوترة متوافقة.",
+  "sourceUrl": "https://digit-erp.com/industries/education/",
+  "nodes": [
     {
-     "id": "7b0b43b0",
-     "type": "text-editor",
-     "className": "in-7b0b43b0 ",
-     "anchor": "",
-     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">التعليم</span>"
-    }
-   ]
-  },
-  {
-   "id": "5d32f192",
-   "type": "container",
-   "className": "in-5d32f192 digit hero",
-   "anchor": "",
-   "children": [
-    {
-     "id": "66fc7ef0",
-     "type": "container",
-     "className": "in-66fc7ef0 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "6cd22aee",
-       "type": "container",
-       "className": "in-6cd22aee ",
-       "anchor": "",
-       "children": [
+      "id": "4d37cedd",
+      "type": "container",
+      "className": "in-4d37cedd digit band-crumb",
+      "anchor": "",
+      "children": [
         {
-         "id": "250bcc0",
-         "type": "text-editor",
-         "className": "in-250bcc0 ",
-         "anchor": "",
-         "html": "<span class=\"is-7\">● قطاع · التعليم</span>"
-        },
-        {
-         "id": "3d4ce821",
-         "type": "heading",
-         "className": "in-3d4ce821 ",
-         "anchor": "",
-         "html": "نظام إداري ومالي… <em class=\"is-9\">لمنشآت التعليم</em>",
-         "tag": "h1"
-        },
-        {
-         "id": "4e54568b",
-         "type": "text-editor",
-         "className": "in-4e54568b ",
-         "anchor": "",
-         "html": "إدارة الرسوم والأقساط والرواتب والمشتريات والتقارير لمدارس ومعاهد وحضانات — بالعربية وبفوترة متوافقة."
-        },
-        {
-         "id": "67a52c6",
-         "type": "container",
-         "className": "in-67a52c6 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "251cb749",
-           "type": "button",
-           "className": "in-251cb749 btn solid",
-           "anchor": "",
-           "text": "احجز عرضًا تجريبيًا",
-           "href": "/demo",
-           "external": true
-          },
-          {
-           "id": "39caa1bc",
-           "type": "button",
-           "className": "in-39caa1bc btn ghost",
-           "anchor": "",
-           "text": "واتساب المبيعات",
-           "href": "https://wa.me/966591909277",
-           "external": true
-          }
-         ]
+          "id": "7b0b43b0",
+          "type": "text-editor",
+          "className": "in-7b0b43b0 ",
+          "anchor": "",
+          "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">التعليم</span>"
         }
-       ]
-      },
-      {
-       "id": "69da7e37",
-       "type": "container",
-       "className": "in-69da7e37 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "b5209b1",
-         "type": "image-slot",
-         "className": "in-b5209b1 ",
-         "anchor": "",
-         "src": "/__l5e/assets-v1/f70ca338-6aa1-4d85-a67d-4e65ab5daaa0/services-workshop.jpg",
-         "alt": "التعليم"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "550d334",
-   "type": "container",
-   "className": "in-550d334 digit benefits",
-   "anchor": "",
-   "children": [
-    {
-     "id": "1ded6f75",
-     "type": "container",
-     "className": "in-1ded6f75 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "3ffb5d14",
-       "type": "text-editor",
-       "className": "in-3ffb5d14 ",
-       "anchor": "",
-       "html": "تحديات القطاع"
-      },
-      {
-       "id": "73432057",
-       "type": "heading",
-       "className": "in-73432057 ",
-       "anchor": "",
-       "html": "ما يرهق إدارة المنشأة التعليمية",
-       "tag": "h2"
-      },
-      {
-       "id": "584eecb8",
-       "type": "text-editor",
-       "className": "in-584eecb8 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "5fcc7062",
-     "type": "container",
-     "className": "in-5fcc7062 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "d4ab29",
-       "type": "container",
-       "className": "in-d4ab29 ",
-       "anchor": "",
-       "children": [
+      "id": "5d32f192",
+      "type": "container",
+      "className": "in-5d32f192 digit hero",
+      "anchor": "",
+      "children": [
         {
-         "id": "669cf3ea",
-         "type": "heading",
-         "className": "in-669cf3ea ",
-         "anchor": "",
-         "html": "تحصيل الأقساط",
-         "tag": "h3"
-        },
-        {
-         "id": "61418f2a",
-         "type": "text-editor",
-         "className": "in-61418f2a ",
-         "anchor": "",
-         "html": "متابعة أقساط متعددة وأولياء أمور دون فوضى."
+          "id": "66fc7ef0",
+          "type": "container",
+          "className": "in-66fc7ef0 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "6cd22aee",
+              "type": "container",
+              "className": "in-6cd22aee ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "250bcc0",
+                  "type": "text-editor",
+                  "className": "in-250bcc0 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-7\">● قطاع · التعليم</span>"
+                },
+                {
+                  "id": "3d4ce821",
+                  "type": "heading",
+                  "className": "in-3d4ce821 ",
+                  "anchor": "",
+                  "html": "نظام إداري ومالي… <em class=\"is-9\">لمنشآت التعليم</em>",
+                  "tag": "h1"
+                },
+                {
+                  "id": "4e54568b",
+                  "type": "text-editor",
+                  "className": "in-4e54568b ",
+                  "anchor": "",
+                  "html": "إدارة الرسوم والأقساط والرواتب والمشتريات والتقارير لمدارس ومعاهد وحضانات — بالعربية وبفوترة متوافقة."
+                },
+                {
+                  "id": "67a52c6",
+                  "type": "container",
+                  "className": "in-67a52c6 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "251cb749",
+                      "type": "button",
+                      "className": "in-251cb749 btn solid",
+                      "anchor": "",
+                      "text": "احجز عرضًا توضيحيًا",
+                      "href": "/demo",
+                      "external": false
+                    },
+                    {
+                      "id": "39caa1bc",
+                      "type": "button",
+                      "className": "in-39caa1bc btn ghost",
+                      "anchor": "",
+                      "text": "واتساب المبيعات",
+                      "href": "https://wa.me/966591909277",
+                      "external": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "69da7e37",
+              "type": "container",
+              "className": "in-69da7e37 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "b5209b1",
+                  "type": "image-slot",
+                  "className": "in-b5209b1 ",
+                  "anchor": "",
+                  "src": "/__l5e/assets-v1/f70ca338-6aa1-4d85-a67d-4e65ab5daaa0/services-workshop.jpg",
+                  "alt": "التعليم"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "abd33ed",
-       "type": "container",
-       "className": "in-abd33ed ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "136ecfc0",
-         "type": "heading",
-         "className": "in-136ecfc0 ",
-         "anchor": "",
-         "html": "رواتب الكادر",
-         "tag": "h3"
-        },
-        {
-         "id": "31eb4c2a",
-         "type": "text-editor",
-         "className": "in-31eb4c2a ",
-         "anchor": "",
-         "html": "احتساب رواتب المعلمين والإداريين والتأمينات."
-        }
-       ]
-      },
-      {
-       "id": "3d966f56",
-       "type": "container",
-       "className": "in-3d966f56 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "514a6134",
-         "type": "heading",
-         "className": "in-514a6134 ",
-         "anchor": "",
-         "html": "مصروفات وتقارير",
-         "tag": "h3"
-        },
-        {
-         "id": "7c71e82f",
-         "type": "text-editor",
-         "className": "in-7c71e82f ",
-         "anchor": "",
-         "html": "مصروفات تشغيلية وتقارير مالية واضحة للإدارة."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "3eed15b2",
-   "type": "container",
-   "className": "in-3eed15b2 digit inside",
-   "anchor": "inside",
-   "children": [
-    {
-     "id": "74da3db9",
-     "type": "container",
-     "className": "in-74da3db9 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "30d0f0d5",
-       "type": "text-editor",
-       "className": "in-30d0f0d5 ",
-       "anchor": "",
-       "html": "لقطة من النظام"
-      },
-      {
-       "id": "48fdbf07",
-       "type": "heading",
-       "className": "in-48fdbf07 ",
-       "anchor": "",
-       "html": "هكذا تبدو المالية داخل Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "150d1c5c",
-       "type": "text-editor",
-       "className": "in-150d1c5c ",
-       "anchor": "",
-       "html": "محاسبة وتقارير عربية لرسوم وأقساط ومصروفات المنشأة."
-      }
-     ]
+      ]
     },
     {
-     "id": "3ef39915",
-     "type": "html",
-     "className": "in-3ef39915 ",
-     "anchor": "",
-     "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / accounting</span></div><div class=\"is-43\">لقطة توضيحية · بيانات تجريبية</div></div>"
-    }
-   ]
-  },
-  {
-   "id": "55cf75b6",
-   "type": "container",
-   "className": "in-55cf75b6 digit sec",
-   "anchor": "",
-   "children": [
-    {
-     "id": "60f1d491",
-     "type": "container",
-     "className": "in-60f1d491 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "687415df",
-       "type": "text-editor",
-       "className": "in-687415df ",
-       "anchor": "",
-       "html": "موديولات تهمّك"
-      },
-      {
-       "id": "47a54757",
-       "type": "heading",
-       "className": "in-47a54757 ",
-       "anchor": "",
-       "html": "ما يحتاجه التعليم من Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "58e69972",
-       "type": "text-editor",
-       "className": "in-58e69972 ",
-       "anchor": "",
-       "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
-      }
-     ]
+      "id": "550d334",
+      "type": "container",
+      "className": "in-550d334 digit benefits",
+      "anchor": "",
+      "children": [
+        {
+          "id": "1ded6f75",
+          "type": "container",
+          "className": "in-1ded6f75 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "3ffb5d14",
+              "type": "text-editor",
+              "className": "in-3ffb5d14 ",
+              "anchor": "",
+              "html": "تحديات القطاع"
+            },
+            {
+              "id": "73432057",
+              "type": "heading",
+              "className": "in-73432057 ",
+              "anchor": "",
+              "html": "ما يرهق إدارة المنشأة التعليمية",
+              "tag": "h2"
+            },
+            {
+              "id": "584eecb8",
+              "type": "text-editor",
+              "className": "in-584eecb8 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "5fcc7062",
+          "type": "container",
+          "className": "in-5fcc7062 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "d4ab29",
+              "type": "container",
+              "className": "in-d4ab29 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "669cf3ea",
+                  "type": "heading",
+                  "className": "in-669cf3ea ",
+                  "anchor": "",
+                  "html": "تحصيل الأقساط",
+                  "tag": "h3"
+                },
+                {
+                  "id": "61418f2a",
+                  "type": "text-editor",
+                  "className": "in-61418f2a ",
+                  "anchor": "",
+                  "html": "متابعة أقساط متعددة وأولياء أمور دون فوضى."
+                }
+              ]
+            },
+            {
+              "id": "abd33ed",
+              "type": "container",
+              "className": "in-abd33ed ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "136ecfc0",
+                  "type": "heading",
+                  "className": "in-136ecfc0 ",
+                  "anchor": "",
+                  "html": "رواتب الكادر",
+                  "tag": "h3"
+                },
+                {
+                  "id": "31eb4c2a",
+                  "type": "text-editor",
+                  "className": "in-31eb4c2a ",
+                  "anchor": "",
+                  "html": "احتساب رواتب المعلمين والإداريين والتأمينات."
+                }
+              ]
+            },
+            {
+              "id": "3d966f56",
+              "type": "container",
+              "className": "in-3d966f56 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "514a6134",
+                  "type": "heading",
+                  "className": "in-514a6134 ",
+                  "anchor": "",
+                  "html": "مصروفات وتقارير",
+                  "tag": "h3"
+                },
+                {
+                  "id": "7c71e82f",
+                  "type": "text-editor",
+                  "className": "in-7c71e82f ",
+                  "anchor": "",
+                  "html": "مصروفات تشغيلية وتقارير مالية واضحة للإدارة."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-     "id": "25d3641d",
-     "type": "container",
-     "className": "in-25d3641d ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "6adc2a4a",
-       "type": "container",
-       "className": "in-6adc2a4a ",
-       "anchor": "",
-       "children": [
+      "id": "3eed15b2",
+      "type": "container",
+      "className": "in-3eed15b2 digit inside",
+      "anchor": "inside",
+      "children": [
         {
-         "id": "5c562e1e",
-         "type": "html",
-         "className": "in-5c562e1e ",
-         "anchor": "",
-         "html": "<span class=\"is-52\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-54\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-55\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-56\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+          "id": "74da3db9",
+          "type": "container",
+          "className": "in-74da3db9 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "30d0f0d5",
+              "type": "text-editor",
+              "className": "in-30d0f0d5 ",
+              "anchor": "",
+              "html": "لقطة من النظام"
+            },
+            {
+              "id": "48fdbf07",
+              "type": "heading",
+              "className": "in-48fdbf07 ",
+              "anchor": "",
+              "html": "هكذا تبدو المالية داخل Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "150d1c5c",
+              "type": "text-editor",
+              "className": "in-150d1c5c ",
+              "anchor": "",
+              "html": "محاسبة وتقارير عربية لرسوم وأقساط ومصروفات المنشأة."
+            }
+          ]
         },
         {
-         "id": "385b0f5a",
-         "type": "heading",
-         "className": "in-385b0f5a ",
-         "anchor": "",
-         "html": "المحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "69463576",
-         "type": "text-editor",
-         "className": "in-69463576 ",
-         "anchor": "",
-         "html": "<a class=\"is-59\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+          "id": "3ef39915",
+          "type": "html",
+          "className": "in-3ef39915 ",
+          "anchor": "",
+          "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / accounting</span></div><div class=\"is-43\">لقطة توضيحية</div></div>"
         }
-       ]
-      },
-      {
-       "id": "7b585a4",
-       "type": "container",
-       "className": "in-7b585a4 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "1f3f925c",
-         "type": "html",
-         "className": "in-1f3f925c ",
-         "anchor": "",
-         "html": "<span class=\"is-62\"><svg aria-label=\"financial\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-63\" height=\"11\" rx=\"5.5\" width=\"52\" x=\"24\" y=\"26\"></rect>\n<rect class=\"iv-64\" height=\"11\" rx=\"5.5\" width=\"36\" x=\"24\" y=\"42\"></rect>\n<rect class=\"iv-65\" height=\"11\" rx=\"5.5\" width=\"44\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-66\" height=\"8\" rx=\"4\" width=\"52\" x=\"24\" y=\"75\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "5674ac98",
-         "type": "heading",
-         "className": "in-5674ac98 ",
-         "anchor": "",
-         "html": "الموارد البشرية",
-         "tag": "h3"
-        },
-        {
-         "id": "668dda36",
-         "type": "text-editor",
-         "className": "in-668dda36 ",
-         "anchor": "",
-         "html": "<a class=\"is-69\" href=\"/modules/hr-payroll\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "18d51538",
-       "type": "container",
-       "className": "in-18d51538 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "256b623e",
-         "type": "html",
-         "className": "in-256b623e ",
-         "anchor": "",
-         "html": "<span class=\"is-72\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-73\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-74\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-75\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "75c8be21",
-         "type": "heading",
-         "className": "in-75c8be21 ",
-         "anchor": "",
-         "html": "المشتريات",
-         "tag": "h3"
-        },
-        {
-         "id": "4e1ef826",
-         "type": "text-editor",
-         "className": "in-4e1ef826 ",
-         "anchor": "",
-         "html": "<a class=\"is-78\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "27df1ae6",
-       "type": "container",
-       "className": "in-27df1ae6 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3a3dc93f",
-         "type": "html",
-         "className": "in-3a3dc93f ",
-         "anchor": "",
-         "html": "<span class=\"is-81\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-82\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-83\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-84\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-85\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "5282c01f",
-         "type": "heading",
-         "className": "in-5282c01f ",
-         "anchor": "",
-         "html": "التقارير",
-         "tag": "h3"
-        },
-        {
-         "id": "7d155f53",
-         "type": "text-editor",
-         "className": "in-7d155f53 ",
-         "anchor": "",
-         "html": "<a class=\"is-88\" href=\"/modules/reports\">عرض الموديول ←</a>"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "5aabd0e",
-   "type": "container",
-   "className": "in-5aabd0e digit demo",
-   "anchor": "",
-   "children": [
-    {
-     "id": "d0d8135",
-     "type": "container",
-     "className": "in-d0d8135 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "44689a41",
-       "type": "text-editor",
-       "className": "in-44689a41 ",
-       "anchor": "",
-       "html": "لماذا Digit لقطاعك"
-      },
-      {
-       "id": "5d6ea74f",
-       "type": "heading",
-       "className": "in-5d6ea74f ",
-       "anchor": "",
-       "html": "لماذا Digit للتعليم",
-       "tag": "h2"
-      },
-      {
-       "id": "70ba79e4",
-       "type": "text-editor",
-       "className": "in-70ba79e4 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "5cea8308",
-     "type": "container",
-     "className": "in-5cea8308 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "71a94dad",
-       "type": "container",
-       "className": "in-71a94dad ",
-       "anchor": "",
-       "children": [
+      "id": "55cf75b6",
+      "type": "container",
+      "className": "in-55cf75b6 digit sec",
+      "anchor": "",
+      "children": [
         {
-         "id": "1bb03d5",
-         "type": "heading",
-         "className": "in-1bb03d5 ",
-         "anchor": "",
-         "html": "عربي وسعودي",
-         "tag": "h3"
+          "id": "60f1d491",
+          "type": "container",
+          "className": "in-60f1d491 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "687415df",
+              "type": "text-editor",
+              "className": "in-687415df ",
+              "anchor": "",
+              "html": "موديولات تهمّك"
+            },
+            {
+              "id": "47a54757",
+              "type": "heading",
+              "className": "in-47a54757 ",
+              "anchor": "",
+              "html": "ما يحتاجه التعليم من Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "58e69972",
+              "type": "text-editor",
+              "className": "in-58e69972 ",
+              "anchor": "",
+              "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
+            }
+          ]
         },
         {
-         "id": "1291b540",
-         "type": "text-editor",
-         "className": "in-1291b540 ",
-         "anchor": "",
-         "html": "واجهة وتقارير عربية وفوترة متوافقة."
+          "id": "25d3641d",
+          "type": "container",
+          "className": "in-25d3641d ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "6adc2a4a",
+              "type": "container",
+              "className": "in-6adc2a4a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "5c562e1e",
+                  "type": "html",
+                  "className": "in-5c562e1e ",
+                  "anchor": "",
+                  "html": "<span class=\"is-52\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-54\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-55\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-56\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "385b0f5a",
+                  "type": "heading",
+                  "className": "in-385b0f5a ",
+                  "anchor": "",
+                  "html": "المحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "69463576",
+                  "type": "text-editor",
+                  "className": "in-69463576 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-59\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "7b585a4",
+              "type": "container",
+              "className": "in-7b585a4 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1f3f925c",
+                  "type": "html",
+                  "className": "in-1f3f925c ",
+                  "anchor": "",
+                  "html": "<span class=\"is-62\"><svg aria-label=\"financial\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-63\" height=\"11\" rx=\"5.5\" width=\"52\" x=\"24\" y=\"26\"></rect>\n<rect class=\"iv-64\" height=\"11\" rx=\"5.5\" width=\"36\" x=\"24\" y=\"42\"></rect>\n<rect class=\"iv-65\" height=\"11\" rx=\"5.5\" width=\"44\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-66\" height=\"8\" rx=\"4\" width=\"52\" x=\"24\" y=\"75\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "5674ac98",
+                  "type": "heading",
+                  "className": "in-5674ac98 ",
+                  "anchor": "",
+                  "html": "الموارد البشرية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "668dda36",
+                  "type": "text-editor",
+                  "className": "in-668dda36 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-69\" href=\"/modules/hr-payroll\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "18d51538",
+              "type": "container",
+              "className": "in-18d51538 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "256b623e",
+                  "type": "html",
+                  "className": "in-256b623e ",
+                  "anchor": "",
+                  "html": "<span class=\"is-72\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-73\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-74\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-75\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "75c8be21",
+                  "type": "heading",
+                  "className": "in-75c8be21 ",
+                  "anchor": "",
+                  "html": "المشتريات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "4e1ef826",
+                  "type": "text-editor",
+                  "className": "in-4e1ef826 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-78\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "27df1ae6",
+              "type": "container",
+              "className": "in-27df1ae6 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3a3dc93f",
+                  "type": "html",
+                  "className": "in-3a3dc93f ",
+                  "anchor": "",
+                  "html": "<span class=\"is-81\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-82\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-83\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-84\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-85\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "5282c01f",
+                  "type": "heading",
+                  "className": "in-5282c01f ",
+                  "anchor": "",
+                  "html": "التقارير",
+                  "tag": "h3"
+                },
+                {
+                  "id": "7d155f53",
+                  "type": "text-editor",
+                  "className": "in-7d155f53 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-88\" href=\"/modules/reports\">عرض الموديول ←</a>"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "b4f94a0",
-       "type": "container",
-       "className": "in-b4f94a0 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "6289ae0d",
-         "type": "heading",
-         "className": "in-6289ae0d ",
-         "anchor": "",
-         "html": "منصة واحدة",
-         "tag": "h3"
-        },
-        {
-         "id": "e400d2b",
-         "type": "text-editor",
-         "className": "in-e400d2b ",
-         "anchor": "",
-         "html": "مالية ورواتب ومشتريات في نظام واحد."
-        }
-       ]
-      },
-      {
-       "id": "43f66f3",
-       "type": "container",
-       "className": "in-43f66f3 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "609f99bf",
-         "type": "heading",
-         "className": "in-609f99bf ",
-         "anchor": "",
-         "html": "تقارير للإدارة",
-         "tag": "h3"
-        },
-        {
-         "id": "100c32e1",
-         "type": "text-editor",
-         "className": "in-100c32e1 ",
-         "anchor": "",
-         "html": "مؤشرات مالية وإدارية لحظة بلحظة."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "13adc4fa",
-   "type": "container",
-   "className": "in-13adc4fa digit faq",
-   "anchor": "",
-   "children": [
-    {
-     "id": "6359f599",
-     "type": "container",
-     "className": "in-6359f599 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "128a8c31",
-       "type": "text-editor",
-       "className": "in-128a8c31 ",
-       "anchor": "",
-       "html": "أسئلة متكررة"
-      },
-      {
-       "id": "2e813e1a",
-       "type": "heading",
-       "className": "in-2e813e1a ",
-       "anchor": "",
-       "html": "أسئلة التعليم",
-       "tag": "h2"
-      },
-      {
-       "id": "2d1d25f7",
-       "type": "text-editor",
-       "className": "in-2d1d25f7 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "519c08d4",
-     "type": "accordion",
-     "className": "in-519c08d4 qa",
-     "anchor": "",
-     "tabs": [
-      {
-       "title": "هل يدير الأقساط والرسوم؟",
-       "html": "<p>نعم، عبر المبيعات والمحاسبة مع متابعة التحصيل.</p>"
-      },
-      {
-       "title": "هل يحسب رواتب الكادر؟",
-       "html": "<p>نعم، عبر وحدة الموارد البشرية والرواتب (حسب الباقة).</p>"
-      },
-      {
-       "title": "هل الفوترة متوافقة؟",
-       "html": "<p>نعم، متوافقة مع المرحلة الثانية.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "4ae47d0b",
-   "type": "container",
-   "className": "in-4ae47d0b digit cta",
-   "anchor": "cta",
-   "children": [
-    {
-     "id": "2abba66b",
-     "type": "container",
-     "className": "in-2abba66b ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "97d759b",
-       "type": "heading",
-       "className": "in-97d759b ",
-       "anchor": "",
-       "html": "جاهز تنظّم ماليّة منشأتك التعليمية؟",
-       "tag": "h2"
-      },
-      {
-       "id": "4317a7d4",
-       "type": "text-editor",
-       "className": "in-4317a7d4 ",
-       "anchor": "",
-       "html": "عرض تجريبي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
-      },
-      {
-       "id": "1458f329",
-       "type": "container",
-       "className": "in-1458f329 ",
-       "anchor": "",
-       "children": [
+      "id": "5aabd0e",
+      "type": "container",
+      "className": "in-5aabd0e digit demo",
+      "anchor": "",
+      "children": [
         {
-         "id": "5689915b",
-         "type": "button",
-         "className": "in-5689915b btn mint",
-         "anchor": "",
-         "text": "احجز عرضًا تجريبيًا",
-         "href": "/demo",
-         "external": true
+          "id": "d0d8135",
+          "type": "container",
+          "className": "in-d0d8135 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "44689a41",
+              "type": "text-editor",
+              "className": "in-44689a41 ",
+              "anchor": "",
+              "html": "لماذا Digit لقطاعك"
+            },
+            {
+              "id": "5d6ea74f",
+              "type": "heading",
+              "className": "in-5d6ea74f ",
+              "anchor": "",
+              "html": "لماذا Digit للتعليم",
+              "tag": "h2"
+            },
+            {
+              "id": "70ba79e4",
+              "type": "text-editor",
+              "className": "in-70ba79e4 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
         },
         {
-         "id": "8a2d14",
-         "type": "button",
-         "className": "in-8a2d14 btn light",
-         "anchor": "",
-         "text": "واتساب المبيعات",
-         "href": "https://wa.me/966591909277",
-         "external": true
+          "id": "5cea8308",
+          "type": "container",
+          "className": "in-5cea8308 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "71a94dad",
+              "type": "container",
+              "className": "in-71a94dad ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1bb03d5",
+                  "type": "heading",
+                  "className": "in-1bb03d5 ",
+                  "anchor": "",
+                  "html": "عربي وسعودي",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1291b540",
+                  "type": "text-editor",
+                  "className": "in-1291b540 ",
+                  "anchor": "",
+                  "html": "واجهة وتقارير عربية وفوترة متوافقة."
+                }
+              ]
+            },
+            {
+              "id": "b4f94a0",
+              "type": "container",
+              "className": "in-b4f94a0 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "6289ae0d",
+                  "type": "heading",
+                  "className": "in-6289ae0d ",
+                  "anchor": "",
+                  "html": "منصة واحدة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "e400d2b",
+                  "type": "text-editor",
+                  "className": "in-e400d2b ",
+                  "anchor": "",
+                  "html": "مالية ورواتب ومشتريات في نظام واحد."
+                }
+              ]
+            },
+            {
+              "id": "43f66f3",
+              "type": "container",
+              "className": "in-43f66f3 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "609f99bf",
+                  "type": "heading",
+                  "className": "in-609f99bf ",
+                  "anchor": "",
+                  "html": "تقارير للإدارة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "100c32e1",
+                  "type": "text-editor",
+                  "className": "in-100c32e1 ",
+                  "anchor": "",
+                  "html": "مؤشرات مالية وإدارية لحظة بلحظة."
+                }
+              ]
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "id": "13adc4fa",
+      "type": "container",
+      "className": "in-13adc4fa digit faq",
+      "anchor": "",
+      "children": [
+        {
+          "id": "6359f599",
+          "type": "container",
+          "className": "in-6359f599 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "128a8c31",
+              "type": "text-editor",
+              "className": "in-128a8c31 ",
+              "anchor": "",
+              "html": "أسئلة متكررة"
+            },
+            {
+              "id": "2e813e1a",
+              "type": "heading",
+              "className": "in-2e813e1a ",
+              "anchor": "",
+              "html": "أسئلة التعليم",
+              "tag": "h2"
+            },
+            {
+              "id": "2d1d25f7",
+              "type": "text-editor",
+              "className": "in-2d1d25f7 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "519c08d4",
+          "type": "accordion",
+          "className": "in-519c08d4 qa",
+          "anchor": "",
+          "tabs": [
+            {
+              "title": "هل يدير الأقساط والرسوم؟",
+              "html": "<p>نعم، عبر المبيعات والمحاسبة مع متابعة التحصيل.</p>"
+            },
+            {
+              "title": "هل يحسب رواتب الكادر؟",
+              "html": "<p>نعم، عبر وحدة الموارد البشرية والرواتب (حسب الباقة).</p>"
+            },
+            {
+              "title": "هل الفوترة متوافقة؟",
+              "html": "<p>نعم، متوافقة مع المرحلة الثانية.</p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4ae47d0b",
+      "type": "container",
+      "className": "in-4ae47d0b digit cta",
+      "anchor": "cta",
+      "children": [
+        {
+          "id": "2abba66b",
+          "type": "container",
+          "className": "in-2abba66b ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "97d759b",
+              "type": "heading",
+              "className": "in-97d759b ",
+              "anchor": "",
+              "html": "جاهز تنظّم ماليّة منشأتك التعليمية؟",
+              "tag": "h2"
+            },
+            {
+              "id": "4317a7d4",
+              "type": "text-editor",
+              "className": "in-4317a7d4 ",
+              "anchor": "",
+              "html": "عرض توضيحي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+            },
+            {
+              "id": "1458f329",
+              "type": "container",
+              "className": "in-1458f329 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "5689915b",
+                  "type": "button",
+                  "className": "in-5689915b btn mint",
+                  "anchor": "",
+                  "text": "احجز عرضًا توضيحيًا",
+                  "href": "/demo",
+                  "external": false
+                },
+                {
+                  "id": "8a2d14",
+                  "type": "button",
+                  "className": "in-8a2d14 btn light",
+                  "anchor": "",
+                  "text": "واتساب المبيعات",
+                  "href": "https://wa.me/966591909277",
+                  "external": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

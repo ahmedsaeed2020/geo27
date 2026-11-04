@@ -26,7 +26,7 @@ const C = {
   legend: { ar: 'كيف نصف كل قدرة', en: 'How each capability is labelled' },
   diagram: { ar: 'رسم توضيحي للمسار — ليس شاشة من النظام', en: 'Process diagram — not a system screen' },
   noScreen: { ar: 'لا توجد لقطة شاشة فعلية لهذا المجال بعد؛ الرسوم في الصفحة توضح المسار فقط، وتُعرض الشاشات في جلسة الديمو حسب الإصدار والنطاق.', en: 'There is no real screenshot of this area yet; the diagrams on this page explain the process only, and the screens are shown in a demo session per edition and scope.' },
-  demoData: { ar: 'شاشات فعلية من بيئة تجريبية؛ الأسماء والأرقام بيانات تجريبية.', en: 'Real screens from a demo environment; names and figures are demo data.' },
+  demoData: { ar: 'شاشات فعلية من النظام؛ الأسماء والأرقام توضيحية.', en: 'Real screens from the system; names and figures are illustrative.' },
   step: { ar: 'الخطوة', en: 'Step' },
   record: { ar: 'السجل', en: 'Record' },
   owner: { ar: 'المسؤول', en: 'Owner' },

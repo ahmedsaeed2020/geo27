@@ -91,8 +91,8 @@ const page: ProPageContent = {
       id: 'cta',
       kind: 'cta',
       body: {
-        ar: 'اختر القدرة التي تريد رؤيتها، ونعرضها في عرض توضيحي على شركة تجريبية.',
-        en: 'Pick the capability you want to see, and we will show it in a walkthrough on a demo company.',
+        ar: 'اختر القدرة التي تريد رؤيتها، ونعرضها في عرض توضيحي مباشر.',
+        en: 'Pick the capability you want to see, and we will show it in a live walkthrough.',
       },
       interest: { ar: 'القدرات المتقدمة', en: 'Advanced capabilities' },
     },

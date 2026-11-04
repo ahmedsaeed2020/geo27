@@ -80,8 +80,8 @@ const page: ProPageContent = {
       id: 'cta',
       kind: 'cta',
       body: {
-        ar: 'نراجع معك الأدوار والاعتمادات وحدود الصلاحية التي تحتاجها منشأتك، ونعرضها على شركة تجريبية.',
-        en: 'We review with you the roles, approvals and authority limits your company needs, and show them on a demo company.',
+        ar: 'نراجع معك الأدوار والاعتمادات وحدود الصلاحية التي تحتاجها منشأتك، ونعرضها في عرض مباشر.',
+        en: 'We review with you the roles, approvals and authority limits your company needs, and show them in a live walkthrough.',
       },
       interest: { ar: 'الإعدادات والحوكمة', en: 'Settings & governance' },
     },

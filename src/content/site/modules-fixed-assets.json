@@ -1,1111 +1,1111 @@
 {
- "title": "الأصول الثابتة",
- "description": "سجل أصول كامل، جداول إهلاك تلقائية، ومعالجة بيع/استبعاد — مرتبطة بالقيود المحاسبية.",
- "sourceUrl": "https://digit-erp.com/modules/fixed-assets/",
- "nodes": [
-  {
-   "id": "23f8367",
-   "type": "container",
-   "className": "in-23f8367 digit band-crumb",
-   "anchor": "",
-   "children": [
+  "title": "الأصول الثابتة",
+  "description": "سجل أصول كامل، جداول إهلاك تلقائية، ومعالجة بيع/استبعاد — مرتبطة بالقيود المحاسبية.",
+  "sourceUrl": "https://digit-erp.com/modules/fixed-assets/",
+  "nodes": [
     {
-     "id": "84c1d90",
-     "type": "text-editor",
-     "className": "in-84c1d90 ",
-     "anchor": "",
-     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">الأصول الثابتة</span>"
-    }
-   ]
-  },
-  {
-   "id": "4ac954c5",
-   "type": "container",
-   "className": "in-4ac954c5 digit hero",
-   "anchor": "",
-   "children": [
-    {
-     "id": "a3ae258",
-     "type": "container",
-     "className": "in-a3ae258 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "7a7072d8",
-       "type": "container",
-       "className": "in-7a7072d8 ",
-       "anchor": "",
-       "children": [
+      "id": "23f8367",
+      "type": "container",
+      "className": "in-23f8367 digit band-crumb",
+      "anchor": "",
+      "children": [
         {
-         "id": "750b1573",
-         "type": "container",
-         "className": "in-750b1573 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "4b66887f",
-           "type": "html",
-           "className": "in-4b66887f ",
-           "anchor": "",
-           "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"Assets\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"30\" rx=\"6\" width=\"36\" x=\"32\" y=\"26\"></rect>\n<rect class=\"iv-10\" height=\"14\" rx=\"4\" width=\"20\" x=\"40\" y=\"34\"></rect>\n<rect class=\"iv-11\" height=\"13\" rx=\"6.5\" width=\"60\" x=\"20\" y=\"64\"></rect>\n</svg></span>"
-          },
-          {
-           "id": "41f8fd86",
-           "type": "text-editor",
-           "className": "in-41f8fd86 ",
-           "anchor": "",
-           "html": "موديول · الأصول الثابتة"
-          }
-         ]
-        },
-        {
-         "id": "4dc7b340",
-         "type": "heading",
-         "className": "in-4dc7b340 ",
-         "anchor": "",
-         "html": "أصولك الثابتة… <em class=\"is-14\">مسجّلة ومُهلَكة تلقائيًا</em>",
-         "tag": "h1"
-        },
-        {
-         "id": "4e6c9934",
-         "type": "text-editor",
-         "className": "in-4e6c9934 ",
-         "anchor": "",
-         "html": "سجل أصول كامل، جداول إهلاك تلقائية، ومعالجة بيع/استبعاد — مرتبطة بالقيود المحاسبية."
-        },
-        {
-         "id": "139b6b42",
-         "type": "container",
-         "className": "in-139b6b42 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "48f0f446",
-           "type": "button",
-           "className": "in-48f0f446 btn solid",
-           "anchor": "",
-           "text": "اعرف إدارة الأصول",
-           "href": "#cta",
-           "external": false
-          },
-          {
-           "id": "7dc9def",
-           "type": "button",
-           "className": "in-7dc9def btn ghost",
-           "anchor": "",
-           "text": "شاهدها من الداخل",
-           "href": "#inside",
-           "external": false
-          }
-         ]
-        },
-        {
-         "id": "6ad725d7",
-         "type": "text-editor",
-         "className": "in-6ad725d7 ",
-         "anchor": "",
-         "html": "<span class=\"is-20\">سجل أصول</span><span class=\"is-21\">إهلاك تلقائي</span><span class=\"is-22\">بيع واستبعاد</span>"
+          "id": "84c1d90",
+          "type": "text-editor",
+          "className": "in-84c1d90 ",
+          "anchor": "",
+          "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">الأصول الثابتة</span>"
         }
-       ]
-      },
-      {
-       "id": "6b9a101a",
-       "type": "container",
-       "className": "in-6b9a101a ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "1a9c187a",
-         "type": "html",
-         "className": "in-1a9c187a ",
-         "anchor": "",
-         "html": "<div class=\"is-25\"><span class=\"is-26\"><i class=\"is-27\"></i><i class=\"is-28\"></i><i class=\"is-29\"></i></span><span class=\"is-30\">digit-erp.com / app / assets</span></div>"
-        },
-        {
-         "id": "924774b",
-         "type": "image-slot",
-         "className": "in-924774b ",
-         "anchor": "",
-         "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
-         "alt": "الأصول الثابتة"
-        },
-        {
-         "id": "c74cc2e",
-         "type": "text-editor",
-         "className": "in-c74cc2e ",
-         "anchor": "",
-         "html": "معاينة واجهة · بيانات تجريبية"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "5c4e146f",
-   "type": "container",
-   "className": "in-5c4e146f digit proof",
-   "anchor": "",
-   "children": [
-    {
-     "id": "30e744b",
-     "type": "container",
-     "className": "in-30e744b ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "25c7d89",
-       "type": "container",
-       "className": "in-25c7d89 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "21216f51",
-         "type": "heading",
-         "className": "in-21216f51 ",
-         "anchor": "",
-         "html": "سجل أصول",
-         "tag": "h3"
-        },
-        {
-         "id": "3b9155c4",
-         "type": "text-editor",
-         "className": "in-3b9155c4 ",
-         "anchor": "",
-         "html": "كامل ومنظّم"
-        },
-        {
-         "id": "2814e57b",
-         "type": "text-editor",
-         "className": "in-2814e57b ",
-         "anchor": "",
-         "html": "فئات وأعمار"
-        }
-       ]
-      },
-      {
-       "id": "6402a53b",
-       "type": "container",
-       "className": "in-6402a53b ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "406b0e7c",
-         "type": "heading",
-         "className": "in-406b0e7c ",
-         "anchor": "",
-         "html": "إهلاك",
-         "tag": "h3"
-        },
-        {
-         "id": "4f5e7343",
-         "type": "text-editor",
-         "className": "in-4f5e7343 ",
-         "anchor": "",
-         "html": "جداول تلقائية"
-        },
-        {
-         "id": "37b03d35",
-         "type": "text-editor",
-         "className": "in-37b03d35 ",
-         "anchor": "",
-         "html": "وفق السياسة"
-        }
-       ]
-      },
-      {
-       "id": "1c648f5a",
-       "type": "container",
-       "className": "in-1c648f5a ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "604686e4",
-         "type": "heading",
-         "className": "in-604686e4 ",
-         "anchor": "",
-         "html": "بيع/استبعاد",
-         "tag": "h3"
-        },
-        {
-         "id": "374d5179",
-         "type": "text-editor",
-         "className": "in-374d5179 ",
-         "anchor": "",
-         "html": "معالجة محاسبية"
-        },
-        {
-         "id": "301007af",
-         "type": "text-editor",
-         "className": "in-301007af ",
-         "anchor": "",
-         "html": "ربح/خسارة"
-        }
-       ]
-      },
-      {
-       "id": "7f71fe54",
-       "type": "container",
-       "className": "in-7f71fe54 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "1be2030f",
-         "type": "heading",
-         "className": "in-1be2030f ",
-         "anchor": "",
-         "html": "مرتبط",
-         "tag": "h3"
-        },
-        {
-         "id": "746ea4f8",
-         "type": "text-editor",
-         "className": "in-746ea4f8 ",
-         "anchor": "",
-         "html": "بالقيود"
-        },
-        {
-         "id": "359ff01d",
-         "type": "text-editor",
-         "className": "in-359ff01d ",
-         "anchor": "",
-         "html": "تلقائيًا"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "74b550f3",
-   "type": "container",
-   "className": "in-74b550f3 digit benefits",
-   "anchor": "",
-   "children": [
-    {
-     "id": "7275966d",
-     "type": "container",
-     "className": "in-7275966d ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "551da6e8",
-       "type": "text-editor",
-       "className": "in-551da6e8 ",
-       "anchor": "",
-       "html": "لماذا أصول Digit"
-      },
-      {
-       "id": "1f46d56b",
-       "type": "heading",
-       "className": "in-1f46d56b ",
-       "anchor": "",
-       "html": "أصولك تحت السيطرة… بلا إكسل",
-       "tag": "h2"
-      },
-      {
-       "id": "48718473",
-       "type": "text-editor",
-       "className": "in-48718473 ",
-       "anchor": "",
-       "html": "ست قدرات تنظّم دورة حياة الأصل من الشراء إلى الاستبعاد."
-      }
-     ]
+      ]
     },
     {
-     "id": "16c396f6",
-     "type": "container",
-     "className": "in-16c396f6 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "23d8b8e0",
-       "type": "container",
-       "className": "in-23d8b8e0 ",
-       "anchor": "",
-       "children": [
+      "id": "4ac954c5",
+      "type": "container",
+      "className": "in-4ac954c5 digit hero",
+      "anchor": "",
+      "children": [
         {
-         "id": "2f0d1c52",
-         "type": "html",
-         "className": "in-2f0d1c52 ",
-         "anchor": "",
-         "html": "<span class=\"is-59\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-60\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-61\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "733fc5c4",
-         "type": "heading",
-         "className": "in-733fc5c4 ",
-         "anchor": "",
-         "html": "سجل الأصول",
-         "tag": "h3"
-        },
-        {
-         "id": "7fde784b",
-         "type": "text-editor",
-         "className": "in-7fde784b ",
-         "anchor": "",
-         "html": "كل أصل ببياناته وموقعه وفئته."
+          "id": "a3ae258",
+          "type": "container",
+          "className": "in-a3ae258 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "7a7072d8",
+              "type": "container",
+              "className": "in-7a7072d8 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "750b1573",
+                  "type": "container",
+                  "className": "in-750b1573 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "4b66887f",
+                      "type": "html",
+                      "className": "in-4b66887f ",
+                      "anchor": "",
+                      "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"Assets\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"30\" rx=\"6\" width=\"36\" x=\"32\" y=\"26\"></rect>\n<rect class=\"iv-10\" height=\"14\" rx=\"4\" width=\"20\" x=\"40\" y=\"34\"></rect>\n<rect class=\"iv-11\" height=\"13\" rx=\"6.5\" width=\"60\" x=\"20\" y=\"64\"></rect>\n</svg></span>"
+                    },
+                    {
+                      "id": "41f8fd86",
+                      "type": "text-editor",
+                      "className": "in-41f8fd86 ",
+                      "anchor": "",
+                      "html": "موديول · الأصول الثابتة"
+                    }
+                  ]
+                },
+                {
+                  "id": "4dc7b340",
+                  "type": "heading",
+                  "className": "in-4dc7b340 ",
+                  "anchor": "",
+                  "html": "أصولك الثابتة… <em class=\"is-14\">مسجّلة ومُهلَكة تلقائيًا</em>",
+                  "tag": "h1"
+                },
+                {
+                  "id": "4e6c9934",
+                  "type": "text-editor",
+                  "className": "in-4e6c9934 ",
+                  "anchor": "",
+                  "html": "سجل أصول كامل، جداول إهلاك تلقائية، ومعالجة بيع/استبعاد — مرتبطة بالقيود المحاسبية."
+                },
+                {
+                  "id": "139b6b42",
+                  "type": "container",
+                  "className": "in-139b6b42 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "48f0f446",
+                      "type": "button",
+                      "className": "in-48f0f446 btn solid",
+                      "anchor": "",
+                      "text": "اعرف إدارة الأصول",
+                      "href": "#cta",
+                      "external": false
+                    },
+                    {
+                      "id": "7dc9def",
+                      "type": "button",
+                      "className": "in-7dc9def btn ghost",
+                      "anchor": "",
+                      "text": "شاهدها من الداخل",
+                      "href": "#inside",
+                      "external": false
+                    }
+                  ]
+                },
+                {
+                  "id": "6ad725d7",
+                  "type": "text-editor",
+                  "className": "in-6ad725d7 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-20\">سجل أصول</span><span class=\"is-21\">إهلاك تلقائي</span><span class=\"is-22\">بيع واستبعاد</span>"
+                }
+              ]
+            },
+            {
+              "id": "6b9a101a",
+              "type": "container",
+              "className": "in-6b9a101a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1a9c187a",
+                  "type": "html",
+                  "className": "in-1a9c187a ",
+                  "anchor": "",
+                  "html": "<div class=\"is-25\"><span class=\"is-26\"><i class=\"is-27\"></i><i class=\"is-28\"></i><i class=\"is-29\"></i></span><span class=\"is-30\">digit-erp.com / app / assets</span></div>"
+                },
+                {
+                  "id": "924774b",
+                  "type": "image-slot",
+                  "className": "in-924774b ",
+                  "anchor": "",
+                  "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
+                  "alt": "الأصول الثابتة"
+                },
+                {
+                  "id": "c74cc2e",
+                  "type": "text-editor",
+                  "className": "in-c74cc2e ",
+                  "anchor": "",
+                  "html": "مثال توضيحي للواجهة"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "5872a6d2",
-       "type": "container",
-       "className": "in-5872a6d2 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "23547259",
-         "type": "html",
-         "className": "in-23547259 ",
-         "anchor": "",
-         "html": "<span class=\"is-66\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-68\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
-        },
-        {
-         "id": "22775d3",
-         "type": "heading",
-         "className": "in-22775d3 ",
-         "anchor": "",
-         "html": "فئات وأعمار إنتاجية",
-         "tag": "h3"
-        },
-        {
-         "id": "58d46eeb",
-         "type": "text-editor",
-         "className": "in-58d46eeb ",
-         "anchor": "",
-         "html": "سياسات إهلاك حسب فئة الأصل."
-        }
-       ]
-      },
-      {
-       "id": "4075ce2e",
-       "type": "container",
-       "className": "in-4075ce2e ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "2eaac446",
-         "type": "html",
-         "className": "in-2eaac446 ",
-         "anchor": "",
-         "html": "<span class=\"is-73\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-74\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "7f1bc1af",
-         "type": "heading",
-         "className": "in-7f1bc1af ",
-         "anchor": "",
-         "html": "إهلاك تلقائي",
-         "tag": "h3"
-        },
-        {
-         "id": "6f66cc0a",
-         "type": "text-editor",
-         "className": "in-6f66cc0a ",
-         "anchor": "",
-         "html": "جداول إهلاك دورية تلقائية وفق السياسة."
-        }
-       ]
-      },
-      {
-       "id": "165d5ef9",
-       "type": "container",
-       "className": "in-165d5ef9 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "c8e29b3",
-         "type": "html",
-         "className": "in-c8e29b3 ",
-         "anchor": "",
-         "html": "<span class=\"is-80\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-81\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-82\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-83\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-84\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "44ce3a73",
-         "type": "heading",
-         "className": "in-44ce3a73 ",
-         "anchor": "",
-         "html": "الصيانة",
-         "tag": "h3"
-        },
-        {
-         "id": "7ef8a14",
-         "type": "text-editor",
-         "className": "in-7ef8a14 ",
-         "anchor": "",
-         "html": "متابعة صيانة الأصول ومواعيدها."
-        }
-       ]
-      },
-      {
-       "id": "2ae1914d",
-       "type": "container",
-       "className": "in-2ae1914d ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "d2dc1e",
-         "type": "html",
-         "className": "in-d2dc1e ",
-         "anchor": "",
-         "html": "<span class=\"is-89\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-90\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-93\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-94\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
-        },
-        {
-         "id": "1faa67ae",
-         "type": "heading",
-         "className": "in-1faa67ae ",
-         "anchor": "",
-         "html": "بيع واستبعاد",
-         "tag": "h3"
-        },
-        {
-         "id": "21588818",
-         "type": "text-editor",
-         "className": "in-21588818 ",
-         "anchor": "",
-         "html": "معالجة البيع والاستبعاد مع ربح/خسارة."
-        }
-       ]
-      },
-      {
-       "id": "2b44f3fb",
-       "type": "container",
-       "className": "in-2b44f3fb ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "7aa0ce31",
-         "type": "html",
-         "className": "in-7aa0ce31 ",
-         "anchor": "",
-         "html": "<span class=\"is-101\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-102\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-103\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-104\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-105\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "853044a",
-         "type": "heading",
-         "className": "in-853044a ",
-         "anchor": "",
-         "html": "ربط بالمحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "6f4082e1",
-         "type": "text-editor",
-         "className": "in-6f4082e1 ",
-         "anchor": "",
-         "html": "كل حركة أصل تُنشئ قيدها المحاسبي."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "50ccb1f5",
-   "type": "container",
-   "className": "in-50ccb1f5 digit inside",
-   "anchor": "inside",
-   "children": [
-    {
-     "id": "6d6ed3d2",
-     "type": "container",
-     "className": "in-6d6ed3d2 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "225ba561",
-       "type": "container",
-       "className": "in-225ba561 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "624b7cf",
-         "type": "text-editor",
-         "className": "in-624b7cf ",
-         "anchor": "",
-         "html": "من الداخل"
-        },
-        {
-         "id": "6be9f954",
-         "type": "heading",
-         "className": "in-6be9f954 ",
-         "anchor": "",
-         "html": "دورة حياة الأصل… منظّمة",
-         "tag": "h2"
-        },
-        {
-         "id": "7b8454fa",
-         "type": "text-editor",
-         "className": "in-7b8454fa ",
-         "anchor": "",
-         "html": "من الشراء إلى الإهلاك إلى الاستبعاد، كل خطوة موثّقة ومرتبطة بالقيود."
-        },
-        {
-         "id": "3dabf4ea",
-         "type": "text-editor",
-         "className": "in-3dabf4ea ",
-         "anchor": "",
-         "html": "<ul class=\"is-115\"><li class=\"is-116\"><span class=\"is-117\">✓</span><span>سجل أصول بالفئات</span></li><li class=\"is-118\"><span class=\"is-119\">✓</span><span>جداول إهلاك تلقائية</span></li><li class=\"is-120\"><span class=\"is-121\">✓</span><span>صيانة الأصول</span></li><li class=\"is-122\"><span class=\"is-123\">✓</span><span>بيع واستبعاد</span></li><li class=\"is-124\"><span class=\"is-125\">✓</span><span>قيود محاسبية تلقائية</span></li></ul>"
-        }
-       ]
-      },
-      {
-       "id": "662f8df",
-       "type": "container",
-       "className": "in-662f8df ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "19e072df",
-         "type": "html",
-         "className": "in-19e072df ",
-         "anchor": "",
-         "html": "<div class=\"is-128\"><span class=\"is-129\"><i class=\"is-130\"></i><i class=\"is-131\"></i><i class=\"is-132\"></i></span><span class=\"is-133\">digit-erp.com / app / assets</span></div>"
-        },
-        {
-         "id": "e669afe",
-         "type": "image-slot",
-         "className": "in-e669afe ",
-         "anchor": ""
-        },
-        {
-         "id": "22c9f53a",
-         "type": "text-editor",
-         "className": "in-22c9f53a ",
-         "anchor": "",
-         "html": "معاينة واجهة · بيانات تجريبية"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "2a08b824",
-   "type": "container",
-   "className": "in-2a08b824 digit sec",
-   "anchor": "",
-   "children": [
-    {
-     "id": "3f61e064",
-     "type": "container",
-     "className": "in-3f61e064 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "791ed403",
-       "type": "container",
-       "className": "in-791ed403 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "4989a57",
-         "type": "text-editor",
-         "className": "in-4989a57 ",
-         "anchor": "",
-         "html": "ربط محاسبي"
-        },
-        {
-         "id": "4c5b2ff0",
-         "type": "heading",
-         "className": "in-4c5b2ff0 ",
-         "anchor": "",
-         "html": "الأصول متصلة بدفاترك",
-         "tag": "h2"
-        },
-        {
-         "id": "fdd809b",
-         "type": "text-editor",
-         "className": "in-fdd809b ",
-         "anchor": "",
-         "html": "الإهلاك والبيع والاستبعاد تُنشئ قيودها تلقائيًا — لا إدخال يدوي ولا إكسل."
-        }
-       ]
-      },
-      {
-       "id": "11884532",
-       "type": "container",
-       "className": "in-11884532 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "684c1bf3",
-         "type": "container",
-         "className": "in-684c1bf3 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "46fb369d",
-           "type": "heading",
-           "className": "in-46fb369d ",
-           "anchor": "",
-           "html": "الشراء",
-           "tag": "h3"
-          },
-          {
-           "id": "257b7388",
-           "type": "text-editor",
-           "className": "in-257b7388 ",
-           "anchor": "",
-           "html": "تسجيل الأصل"
-          }
-         ]
-        },
-        {
-         "id": "5613bbf1",
-         "type": "container",
-         "className": "in-5613bbf1 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "21f58ec5",
-           "type": "heading",
-           "className": "in-21f58ec5 ",
-           "anchor": "",
-           "html": "الإهلاك",
-           "tag": "h3"
-          },
-          {
-           "id": "2f81c97c",
-           "type": "text-editor",
-           "className": "in-2f81c97c ",
-           "anchor": "",
-           "html": "دوري تلقائي"
-          }
-         ]
-        },
-        {
-         "id": "5f882acd",
-         "type": "container",
-         "className": "in-5f882acd ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "4d48c52",
-           "type": "heading",
-           "className": "in-4d48c52 ",
-           "anchor": "",
-           "html": "الصيانة",
-           "tag": "h3"
-          },
-          {
-           "id": "3858ae50",
-           "type": "text-editor",
-           "className": "in-3858ae50 ",
-           "anchor": "",
-           "html": "مواعيد وتكلفة"
-          }
-         ]
-        },
-        {
-         "id": "214cd81",
-         "type": "container",
-         "className": "in-214cd81 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "36c5f3b3",
-           "type": "heading",
-           "className": "in-36c5f3b3 ",
-           "anchor": "",
-           "html": "الاستبعاد",
-           "tag": "h3"
-          },
-          {
-           "id": "31cc14f5",
-           "type": "text-editor",
-           "className": "in-31cc14f5 ",
-           "anchor": "",
-           "html": "ربح/خسارة"
-          }
-         ]
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "2680d21b",
-   "type": "container",
-   "className": "in-2680d21b digit demo",
-   "anchor": "",
-   "children": [
-    {
-     "id": "2719e16b",
-     "type": "container",
-     "className": "in-2719e16b ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "252ea396",
-       "type": "container",
-       "className": "in-252ea396 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "a54ac6",
-         "type": "text-editor",
-         "className": "in-a54ac6 ",
-         "anchor": "",
-         "html": "سيناريو حيّ"
-        },
-        {
-         "id": "6c6ee1f1",
-         "type": "heading",
-         "className": "in-6c6ee1f1 ",
-         "anchor": "",
-         "html": "من شراء الأصل… إلى استبعاده",
-         "tag": "h2"
-        },
-        {
-         "id": "2c6ae125",
-         "type": "html",
-         "className": "in-2c6ae125 ",
-         "anchor": "",
-         "html": "<div class=\"is-161\"><span class=\"is-162\">تسجيل أصل</span><span class=\"is-163\">←</span><span class=\"is-164\">جدول إهلاك</span><span class=\"is-165\">←</span><span class=\"is-166\">قيد إهلاك</span><span class=\"is-167\">←</span><span class=\"is-168\">صيانة</span><span class=\"is-169\">←</span><span class=\"is-170\">بيع/استبعاد</span></div>"
-        }
-       ]
-      },
-      {
-       "id": "4f5445c1",
-       "type": "container",
-       "className": "in-4f5445c1 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "f3f3678",
-         "type": "button",
-         "className": "in-f3f3678 btn mint",
-         "anchor": "",
-         "text": "اعرف إدارة الأصول",
-         "href": "#cta",
-         "external": false
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "577c2ed1",
-   "type": "container",
-   "className": "in-577c2ed1 digit faq",
-   "anchor": "",
-   "children": [
-    {
-     "id": "208a6fe6",
-     "type": "container",
-     "className": "in-208a6fe6 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "4646a341",
-       "type": "text-editor",
-       "className": "in-4646a341 ",
-       "anchor": "",
-       "html": "أسئلة متكررة"
-      },
-      {
-       "id": "1c6c9270",
-       "type": "heading",
-       "className": "in-1c6c9270 ",
-       "anchor": "",
-       "html": "أسئلة الإدارة المالية",
-       "tag": "h2"
-      },
-      {
-       "id": "22c6a8cf",
-       "type": "text-editor",
-       "className": "in-22c6a8cf ",
-       "anchor": "",
-       "html": "إجابات عن الإهلاك والربط المحاسبي."
-      }
-     ]
+      ]
     },
     {
-     "id": "7338d4a0",
-     "type": "accordion",
-     "className": "in-7338d4a0 qa",
-     "anchor": "",
-     "tabs": [
-      {
-       "title": "هل الإهلاك تلقائي؟",
-       "html": "<p>نعم، جداول إهلاك دورية تلقائية وفق سياسة كل فئة.</p>"
-      },
-      {
-       "title": "هل يعالج البيع والاستبعاد؟",
-       "html": "<p>نعم، مع احتساب الربح أو الخسارة وقيوده.</p>"
-      },
-      {
-       "title": "هل يتابع الصيانة؟",
-       "html": "<p>نعم، مواعيد وتكاليف صيانة الأصول.</p>"
-      },
-      {
-       "title": "هل يرتبط بالمحاسبة؟",
-       "html": "<p>نعم، كل حركة أصل تُنشئ قيدها تلقائيًا.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "73b8de0e",
-   "type": "container",
-   "className": "in-73b8de0e digit related",
-   "anchor": "",
-   "children": [
-    {
-     "id": "1adcba35",
-     "type": "container",
-     "className": "in-1adcba35 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "282bc1e4",
-       "type": "text-editor",
-       "className": "in-282bc1e4 ",
-       "anchor": "",
-       "html": "موديولات مترابطة"
-      },
-      {
-       "id": "6d468b57",
-       "type": "heading",
-       "className": "in-6d468b57 ",
-       "anchor": "",
-       "html": "الأصول جزء من محاسبتك",
-       "tag": "h2"
-      },
-      {
-       "id": "22419bff",
-       "type": "text-editor",
-       "className": "in-22419bff ",
-       "anchor": "",
-       "html": "نفس قاعدة البيانات — الشراء والإهلاك والاستبعاد تنعكس في الدفاتر."
-      }
-     ]
+      "id": "5c4e146f",
+      "type": "container",
+      "className": "in-5c4e146f digit proof",
+      "anchor": "",
+      "children": [
+        {
+          "id": "30e744b",
+          "type": "container",
+          "className": "in-30e744b ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "25c7d89",
+              "type": "container",
+              "className": "in-25c7d89 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "21216f51",
+                  "type": "heading",
+                  "className": "in-21216f51 ",
+                  "anchor": "",
+                  "html": "سجل أصول",
+                  "tag": "h3"
+                },
+                {
+                  "id": "3b9155c4",
+                  "type": "text-editor",
+                  "className": "in-3b9155c4 ",
+                  "anchor": "",
+                  "html": "كامل ومنظّم"
+                },
+                {
+                  "id": "2814e57b",
+                  "type": "text-editor",
+                  "className": "in-2814e57b ",
+                  "anchor": "",
+                  "html": "فئات وأعمار"
+                }
+              ]
+            },
+            {
+              "id": "6402a53b",
+              "type": "container",
+              "className": "in-6402a53b ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "406b0e7c",
+                  "type": "heading",
+                  "className": "in-406b0e7c ",
+                  "anchor": "",
+                  "html": "إهلاك",
+                  "tag": "h3"
+                },
+                {
+                  "id": "4f5e7343",
+                  "type": "text-editor",
+                  "className": "in-4f5e7343 ",
+                  "anchor": "",
+                  "html": "جداول تلقائية"
+                },
+                {
+                  "id": "37b03d35",
+                  "type": "text-editor",
+                  "className": "in-37b03d35 ",
+                  "anchor": "",
+                  "html": "وفق السياسة"
+                }
+              ]
+            },
+            {
+              "id": "1c648f5a",
+              "type": "container",
+              "className": "in-1c648f5a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "604686e4",
+                  "type": "heading",
+                  "className": "in-604686e4 ",
+                  "anchor": "",
+                  "html": "بيع/استبعاد",
+                  "tag": "h3"
+                },
+                {
+                  "id": "374d5179",
+                  "type": "text-editor",
+                  "className": "in-374d5179 ",
+                  "anchor": "",
+                  "html": "معالجة محاسبية"
+                },
+                {
+                  "id": "301007af",
+                  "type": "text-editor",
+                  "className": "in-301007af ",
+                  "anchor": "",
+                  "html": "ربح/خسارة"
+                }
+              ]
+            },
+            {
+              "id": "7f71fe54",
+              "type": "container",
+              "className": "in-7f71fe54 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1be2030f",
+                  "type": "heading",
+                  "className": "in-1be2030f ",
+                  "anchor": "",
+                  "html": "مرتبط",
+                  "tag": "h3"
+                },
+                {
+                  "id": "746ea4f8",
+                  "type": "text-editor",
+                  "className": "in-746ea4f8 ",
+                  "anchor": "",
+                  "html": "بالقيود"
+                },
+                {
+                  "id": "359ff01d",
+                  "type": "text-editor",
+                  "className": "in-359ff01d ",
+                  "anchor": "",
+                  "html": "تلقائيًا"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-     "id": "78e7db71",
-     "type": "container",
-     "className": "in-78e7db71 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "580411db",
-       "type": "container",
-       "className": "in-580411db ",
-       "anchor": "",
-       "children": [
+      "id": "74b550f3",
+      "type": "container",
+      "className": "in-74b550f3 digit benefits",
+      "anchor": "",
+      "children": [
         {
-         "id": "45f282a5",
-         "type": "html",
-         "className": "in-45f282a5 ",
-         "anchor": "",
-         "html": "<span class=\"is-187\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-188\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-189\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-190\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-191\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+          "id": "7275966d",
+          "type": "container",
+          "className": "in-7275966d ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "551da6e8",
+              "type": "text-editor",
+              "className": "in-551da6e8 ",
+              "anchor": "",
+              "html": "لماذا أصول Digit"
+            },
+            {
+              "id": "1f46d56b",
+              "type": "heading",
+              "className": "in-1f46d56b ",
+              "anchor": "",
+              "html": "أصولك تحت السيطرة… بلا إكسل",
+              "tag": "h2"
+            },
+            {
+              "id": "48718473",
+              "type": "text-editor",
+              "className": "in-48718473 ",
+              "anchor": "",
+              "html": "ست قدرات تنظّم دورة حياة الأصل من الشراء إلى الاستبعاد."
+            }
+          ]
         },
         {
-         "id": "2bd136ad",
-         "type": "heading",
-         "className": "in-2bd136ad ",
-         "anchor": "",
-         "html": "المحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "7abdbef",
-         "type": "text-editor",
-         "className": "in-7abdbef ",
-         "anchor": "",
-         "html": "إهلاك وقيود"
-        },
-        {
-         "id": "dd1f7cc",
-         "type": "text-editor",
-         "className": "in-dd1f7cc ",
-         "anchor": "",
-         "html": "<a class=\"is-195\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+          "id": "16c396f6",
+          "type": "container",
+          "className": "in-16c396f6 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "23d8b8e0",
+              "type": "container",
+              "className": "in-23d8b8e0 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2f0d1c52",
+                  "type": "html",
+                  "className": "in-2f0d1c52 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-59\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-60\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-61\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "733fc5c4",
+                  "type": "heading",
+                  "className": "in-733fc5c4 ",
+                  "anchor": "",
+                  "html": "سجل الأصول",
+                  "tag": "h3"
+                },
+                {
+                  "id": "7fde784b",
+                  "type": "text-editor",
+                  "className": "in-7fde784b ",
+                  "anchor": "",
+                  "html": "كل أصل ببياناته وموقعه وفئته."
+                }
+              ]
+            },
+            {
+              "id": "5872a6d2",
+              "type": "container",
+              "className": "in-5872a6d2 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "23547259",
+                  "type": "html",
+                  "className": "in-23547259 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-66\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-68\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
+                },
+                {
+                  "id": "22775d3",
+                  "type": "heading",
+                  "className": "in-22775d3 ",
+                  "anchor": "",
+                  "html": "فئات وأعمار إنتاجية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "58d46eeb",
+                  "type": "text-editor",
+                  "className": "in-58d46eeb ",
+                  "anchor": "",
+                  "html": "سياسات إهلاك حسب فئة الأصل."
+                }
+              ]
+            },
+            {
+              "id": "4075ce2e",
+              "type": "container",
+              "className": "in-4075ce2e ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2eaac446",
+                  "type": "html",
+                  "className": "in-2eaac446 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-73\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-74\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "7f1bc1af",
+                  "type": "heading",
+                  "className": "in-7f1bc1af ",
+                  "anchor": "",
+                  "html": "إهلاك تلقائي",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6f66cc0a",
+                  "type": "text-editor",
+                  "className": "in-6f66cc0a ",
+                  "anchor": "",
+                  "html": "جداول إهلاك دورية تلقائية وفق السياسة."
+                }
+              ]
+            },
+            {
+              "id": "165d5ef9",
+              "type": "container",
+              "className": "in-165d5ef9 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "c8e29b3",
+                  "type": "html",
+                  "className": "in-c8e29b3 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-80\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-81\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-82\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-83\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-84\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "44ce3a73",
+                  "type": "heading",
+                  "className": "in-44ce3a73 ",
+                  "anchor": "",
+                  "html": "الصيانة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "7ef8a14",
+                  "type": "text-editor",
+                  "className": "in-7ef8a14 ",
+                  "anchor": "",
+                  "html": "متابعة صيانة الأصول ومواعيدها."
+                }
+              ]
+            },
+            {
+              "id": "2ae1914d",
+              "type": "container",
+              "className": "in-2ae1914d ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "d2dc1e",
+                  "type": "html",
+                  "className": "in-d2dc1e ",
+                  "anchor": "",
+                  "html": "<span class=\"is-89\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-90\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-93\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-94\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
+                },
+                {
+                  "id": "1faa67ae",
+                  "type": "heading",
+                  "className": "in-1faa67ae ",
+                  "anchor": "",
+                  "html": "بيع واستبعاد",
+                  "tag": "h3"
+                },
+                {
+                  "id": "21588818",
+                  "type": "text-editor",
+                  "className": "in-21588818 ",
+                  "anchor": "",
+                  "html": "معالجة البيع والاستبعاد مع ربح/خسارة."
+                }
+              ]
+            },
+            {
+              "id": "2b44f3fb",
+              "type": "container",
+              "className": "in-2b44f3fb ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "7aa0ce31",
+                  "type": "html",
+                  "className": "in-7aa0ce31 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-101\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-102\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-103\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-104\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-105\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "853044a",
+                  "type": "heading",
+                  "className": "in-853044a ",
+                  "anchor": "",
+                  "html": "ربط بالمحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6f4082e1",
+                  "type": "text-editor",
+                  "className": "in-6f4082e1 ",
+                  "anchor": "",
+                  "html": "كل حركة أصل تُنشئ قيدها المحاسبي."
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "502e9b41",
-       "type": "container",
-       "className": "in-502e9b41 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3aee1634",
-         "type": "html",
-         "className": "in-3aee1634 ",
-         "anchor": "",
-         "html": "<span class=\"is-198\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-199\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-200\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-201\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "6375db67",
-         "type": "heading",
-         "className": "in-6375db67 ",
-         "anchor": "",
-         "html": "المشتريات",
-         "tag": "h3"
-        },
-        {
-         "id": "60ee6680",
-         "type": "text-editor",
-         "className": "in-60ee6680 ",
-         "anchor": "",
-         "html": "شراء الأصول"
-        },
-        {
-         "id": "404a97d",
-         "type": "text-editor",
-         "className": "in-404a97d ",
-         "anchor": "",
-         "html": "<a class=\"is-205\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "7d2033cf",
-       "type": "container",
-       "className": "in-7d2033cf ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "5ea857bd",
-         "type": "html",
-         "className": "in-5ea857bd ",
-         "anchor": "",
-         "html": "<span class=\"is-208\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-209\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-210\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-211\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-212\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "7430a58",
-         "type": "heading",
-         "className": "in-7430a58 ",
-         "anchor": "",
-         "html": "التقارير",
-         "tag": "h3"
-        },
-        {
-         "id": "41565f8c",
-         "type": "text-editor",
-         "className": "in-41565f8c ",
-         "anchor": "",
-         "html": "تقارير الأصول"
-        },
-        {
-         "id": "53f7834",
-         "type": "text-editor",
-         "className": "in-53f7834 ",
-         "anchor": "",
-         "html": "<a class=\"is-216\" href=\"/modules/reports\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "431456b8",
-       "type": "container",
-       "className": "in-431456b8 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3e9d97d1",
-         "type": "html",
-         "className": "in-3e9d97d1 ",
-         "anchor": "",
-         "html": "<span class=\"is-219\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-220\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-221\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-222\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-223\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "7594cb1a",
-         "type": "heading",
-         "className": "in-7594cb1a ",
-         "anchor": "",
-         "html": "المخزون",
-         "tag": "h3"
-        },
-        {
-         "id": "36b143ac",
-         "type": "text-editor",
-         "className": "in-36b143ac ",
-         "anchor": "",
-         "html": "أصول وعهد"
-        },
-        {
-         "id": "366d7709",
-         "type": "text-editor",
-         "className": "in-366d7709 ",
-         "anchor": "",
-         "html": "<a class=\"is-227\" href=\"/modules/inventory\">عرض الموديول ←</a>"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "5151cca6",
-   "type": "container",
-   "className": "in-5151cca6 digit cta",
-   "anchor": "cta",
-   "children": [
+      ]
+    },
     {
-     "id": "6b7e3a97",
-     "type": "container",
-     "className": "in-6b7e3a97 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "42504c19",
-       "type": "heading",
-       "className": "in-42504c19 ",
-       "anchor": "",
-       "html": "جاهز تنظّم أصولك وإهلاكها؟",
-       "tag": "h2"
-      },
-      {
-       "id": "4e07d255",
-       "type": "text-editor",
-       "className": "in-4e07d255 ",
-       "anchor": "",
-       "html": "عرض تجريبي لإدارة الأصول الثابتة — 30 دقيقة، بدون التزام."
-      },
-      {
-       "id": "b409fdd",
-       "type": "container",
-       "className": "in-b409fdd ",
-       "anchor": "",
-       "children": [
+      "id": "50ccb1f5",
+      "type": "container",
+      "className": "in-50ccb1f5 digit inside",
+      "anchor": "inside",
+      "children": [
         {
-         "id": "58dc678c",
-         "type": "button",
-         "className": "in-58dc678c btn mint",
-         "anchor": "",
-         "text": "اعرف إدارة الأصول",
-         "href": "/demo",
-         "external": false
+          "id": "6d6ed3d2",
+          "type": "container",
+          "className": "in-6d6ed3d2 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "225ba561",
+              "type": "container",
+              "className": "in-225ba561 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "624b7cf",
+                  "type": "text-editor",
+                  "className": "in-624b7cf ",
+                  "anchor": "",
+                  "html": "من الداخل"
+                },
+                {
+                  "id": "6be9f954",
+                  "type": "heading",
+                  "className": "in-6be9f954 ",
+                  "anchor": "",
+                  "html": "دورة حياة الأصل… منظّمة",
+                  "tag": "h2"
+                },
+                {
+                  "id": "7b8454fa",
+                  "type": "text-editor",
+                  "className": "in-7b8454fa ",
+                  "anchor": "",
+                  "html": "من الشراء إلى الإهلاك إلى الاستبعاد، كل خطوة موثّقة ومرتبطة بالقيود."
+                },
+                {
+                  "id": "3dabf4ea",
+                  "type": "text-editor",
+                  "className": "in-3dabf4ea ",
+                  "anchor": "",
+                  "html": "<ul class=\"is-115\"><li class=\"is-116\"><span class=\"is-117\">✓</span><span>سجل أصول بالفئات</span></li><li class=\"is-118\"><span class=\"is-119\">✓</span><span>جداول إهلاك تلقائية</span></li><li class=\"is-120\"><span class=\"is-121\">✓</span><span>صيانة الأصول</span></li><li class=\"is-122\"><span class=\"is-123\">✓</span><span>بيع واستبعاد</span></li><li class=\"is-124\"><span class=\"is-125\">✓</span><span>قيود محاسبية تلقائية</span></li></ul>"
+                }
+              ]
+            },
+            {
+              "id": "662f8df",
+              "type": "container",
+              "className": "in-662f8df ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "19e072df",
+                  "type": "html",
+                  "className": "in-19e072df ",
+                  "anchor": "",
+                  "html": "<div class=\"is-128\"><span class=\"is-129\"><i class=\"is-130\"></i><i class=\"is-131\"></i><i class=\"is-132\"></i></span><span class=\"is-133\">digit-erp.com / app / assets</span></div>"
+                },
+                {
+                  "id": "e669afe",
+                  "type": "image-slot",
+                  "className": "in-e669afe ",
+                  "anchor": ""
+                },
+                {
+                  "id": "22c9f53a",
+                  "type": "text-editor",
+                  "className": "in-22c9f53a ",
+                  "anchor": "",
+                  "html": "مثال توضيحي للواجهة"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2a08b824",
+      "type": "container",
+      "className": "in-2a08b824 digit sec",
+      "anchor": "",
+      "children": [
+        {
+          "id": "3f61e064",
+          "type": "container",
+          "className": "in-3f61e064 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "791ed403",
+              "type": "container",
+              "className": "in-791ed403 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "4989a57",
+                  "type": "text-editor",
+                  "className": "in-4989a57 ",
+                  "anchor": "",
+                  "html": "ربط محاسبي"
+                },
+                {
+                  "id": "4c5b2ff0",
+                  "type": "heading",
+                  "className": "in-4c5b2ff0 ",
+                  "anchor": "",
+                  "html": "الأصول متصلة بدفاترك",
+                  "tag": "h2"
+                },
+                {
+                  "id": "fdd809b",
+                  "type": "text-editor",
+                  "className": "in-fdd809b ",
+                  "anchor": "",
+                  "html": "الإهلاك والبيع والاستبعاد تُنشئ قيودها تلقائيًا — لا إدخال يدوي ولا إكسل."
+                }
+              ]
+            },
+            {
+              "id": "11884532",
+              "type": "container",
+              "className": "in-11884532 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "684c1bf3",
+                  "type": "container",
+                  "className": "in-684c1bf3 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "46fb369d",
+                      "type": "heading",
+                      "className": "in-46fb369d ",
+                      "anchor": "",
+                      "html": "الشراء",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "257b7388",
+                      "type": "text-editor",
+                      "className": "in-257b7388 ",
+                      "anchor": "",
+                      "html": "تسجيل الأصل"
+                    }
+                  ]
+                },
+                {
+                  "id": "5613bbf1",
+                  "type": "container",
+                  "className": "in-5613bbf1 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "21f58ec5",
+                      "type": "heading",
+                      "className": "in-21f58ec5 ",
+                      "anchor": "",
+                      "html": "الإهلاك",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "2f81c97c",
+                      "type": "text-editor",
+                      "className": "in-2f81c97c ",
+                      "anchor": "",
+                      "html": "دوري تلقائي"
+                    }
+                  ]
+                },
+                {
+                  "id": "5f882acd",
+                  "type": "container",
+                  "className": "in-5f882acd ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "4d48c52",
+                      "type": "heading",
+                      "className": "in-4d48c52 ",
+                      "anchor": "",
+                      "html": "الصيانة",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "3858ae50",
+                      "type": "text-editor",
+                      "className": "in-3858ae50 ",
+                      "anchor": "",
+                      "html": "مواعيد وتكلفة"
+                    }
+                  ]
+                },
+                {
+                  "id": "214cd81",
+                  "type": "container",
+                  "className": "in-214cd81 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "36c5f3b3",
+                      "type": "heading",
+                      "className": "in-36c5f3b3 ",
+                      "anchor": "",
+                      "html": "الاستبعاد",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "31cc14f5",
+                      "type": "text-editor",
+                      "className": "in-31cc14f5 ",
+                      "anchor": "",
+                      "html": "ربح/خسارة"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2680d21b",
+      "type": "container",
+      "className": "in-2680d21b digit demo",
+      "anchor": "",
+      "children": [
+        {
+          "id": "2719e16b",
+          "type": "container",
+          "className": "in-2719e16b ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "252ea396",
+              "type": "container",
+              "className": "in-252ea396 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "a54ac6",
+                  "type": "text-editor",
+                  "className": "in-a54ac6 ",
+                  "anchor": "",
+                  "html": "سيناريو حيّ"
+                },
+                {
+                  "id": "6c6ee1f1",
+                  "type": "heading",
+                  "className": "in-6c6ee1f1 ",
+                  "anchor": "",
+                  "html": "من شراء الأصل… إلى استبعاده",
+                  "tag": "h2"
+                },
+                {
+                  "id": "2c6ae125",
+                  "type": "html",
+                  "className": "in-2c6ae125 ",
+                  "anchor": "",
+                  "html": "<div class=\"is-161\"><span class=\"is-162\">تسجيل أصل</span><span class=\"is-163\">←</span><span class=\"is-164\">جدول إهلاك</span><span class=\"is-165\">←</span><span class=\"is-166\">قيد إهلاك</span><span class=\"is-167\">←</span><span class=\"is-168\">صيانة</span><span class=\"is-169\">←</span><span class=\"is-170\">بيع/استبعاد</span></div>"
+                }
+              ]
+            },
+            {
+              "id": "4f5445c1",
+              "type": "container",
+              "className": "in-4f5445c1 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "f3f3678",
+                  "type": "button",
+                  "className": "in-f3f3678 btn mint",
+                  "anchor": "",
+                  "text": "اعرف إدارة الأصول",
+                  "href": "#cta",
+                  "external": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "577c2ed1",
+      "type": "container",
+      "className": "in-577c2ed1 digit faq",
+      "anchor": "",
+      "children": [
+        {
+          "id": "208a6fe6",
+          "type": "container",
+          "className": "in-208a6fe6 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "4646a341",
+              "type": "text-editor",
+              "className": "in-4646a341 ",
+              "anchor": "",
+              "html": "أسئلة متكررة"
+            },
+            {
+              "id": "1c6c9270",
+              "type": "heading",
+              "className": "in-1c6c9270 ",
+              "anchor": "",
+              "html": "أسئلة الإدارة المالية",
+              "tag": "h2"
+            },
+            {
+              "id": "22c6a8cf",
+              "type": "text-editor",
+              "className": "in-22c6a8cf ",
+              "anchor": "",
+              "html": "إجابات عن الإهلاك والربط المحاسبي."
+            }
+          ]
         },
         {
-         "id": "6babcd07",
-         "type": "button",
-         "className": "in-6babcd07 btn light",
-         "anchor": "",
-         "text": "واتساب المبيعات",
-         "href": "https://wa.me/966591909277",
-         "external": true
+          "id": "7338d4a0",
+          "type": "accordion",
+          "className": "in-7338d4a0 qa",
+          "anchor": "",
+          "tabs": [
+            {
+              "title": "هل الإهلاك تلقائي؟",
+              "html": "<p>نعم، جداول إهلاك دورية تلقائية وفق سياسة كل فئة.</p>"
+            },
+            {
+              "title": "هل يعالج البيع والاستبعاد؟",
+              "html": "<p>نعم، مع احتساب الربح أو الخسارة وقيوده.</p>"
+            },
+            {
+              "title": "هل يتابع الصيانة؟",
+              "html": "<p>نعم، مواعيد وتكاليف صيانة الأصول.</p>"
+            },
+            {
+              "title": "هل يرتبط بالمحاسبة؟",
+              "html": "<p>نعم، كل حركة أصل تُنشئ قيدها تلقائيًا.</p>"
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "id": "73b8de0e",
+      "type": "container",
+      "className": "in-73b8de0e digit related",
+      "anchor": "",
+      "children": [
+        {
+          "id": "1adcba35",
+          "type": "container",
+          "className": "in-1adcba35 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "282bc1e4",
+              "type": "text-editor",
+              "className": "in-282bc1e4 ",
+              "anchor": "",
+              "html": "موديولات مترابطة"
+            },
+            {
+              "id": "6d468b57",
+              "type": "heading",
+              "className": "in-6d468b57 ",
+              "anchor": "",
+              "html": "الأصول جزء من محاسبتك",
+              "tag": "h2"
+            },
+            {
+              "id": "22419bff",
+              "type": "text-editor",
+              "className": "in-22419bff ",
+              "anchor": "",
+              "html": "نفس قاعدة البيانات — الشراء والإهلاك والاستبعاد تنعكس في الدفاتر."
+            }
+          ]
+        },
+        {
+          "id": "78e7db71",
+          "type": "container",
+          "className": "in-78e7db71 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "580411db",
+              "type": "container",
+              "className": "in-580411db ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "45f282a5",
+                  "type": "html",
+                  "className": "in-45f282a5 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-187\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-188\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-189\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-190\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-191\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "2bd136ad",
+                  "type": "heading",
+                  "className": "in-2bd136ad ",
+                  "anchor": "",
+                  "html": "المحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "7abdbef",
+                  "type": "text-editor",
+                  "className": "in-7abdbef ",
+                  "anchor": "",
+                  "html": "إهلاك وقيود"
+                },
+                {
+                  "id": "dd1f7cc",
+                  "type": "text-editor",
+                  "className": "in-dd1f7cc ",
+                  "anchor": "",
+                  "html": "<a class=\"is-195\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "502e9b41",
+              "type": "container",
+              "className": "in-502e9b41 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3aee1634",
+                  "type": "html",
+                  "className": "in-3aee1634 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-198\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-199\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-200\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-201\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "6375db67",
+                  "type": "heading",
+                  "className": "in-6375db67 ",
+                  "anchor": "",
+                  "html": "المشتريات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "60ee6680",
+                  "type": "text-editor",
+                  "className": "in-60ee6680 ",
+                  "anchor": "",
+                  "html": "شراء الأصول"
+                },
+                {
+                  "id": "404a97d",
+                  "type": "text-editor",
+                  "className": "in-404a97d ",
+                  "anchor": "",
+                  "html": "<a class=\"is-205\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "7d2033cf",
+              "type": "container",
+              "className": "in-7d2033cf ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "5ea857bd",
+                  "type": "html",
+                  "className": "in-5ea857bd ",
+                  "anchor": "",
+                  "html": "<span class=\"is-208\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-209\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-210\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-211\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-212\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "7430a58",
+                  "type": "heading",
+                  "className": "in-7430a58 ",
+                  "anchor": "",
+                  "html": "التقارير",
+                  "tag": "h3"
+                },
+                {
+                  "id": "41565f8c",
+                  "type": "text-editor",
+                  "className": "in-41565f8c ",
+                  "anchor": "",
+                  "html": "تقارير الأصول"
+                },
+                {
+                  "id": "53f7834",
+                  "type": "text-editor",
+                  "className": "in-53f7834 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-216\" href=\"/modules/reports\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "431456b8",
+              "type": "container",
+              "className": "in-431456b8 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3e9d97d1",
+                  "type": "html",
+                  "className": "in-3e9d97d1 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-219\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-220\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-221\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-222\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-223\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "7594cb1a",
+                  "type": "heading",
+                  "className": "in-7594cb1a ",
+                  "anchor": "",
+                  "html": "المخزون",
+                  "tag": "h3"
+                },
+                {
+                  "id": "36b143ac",
+                  "type": "text-editor",
+                  "className": "in-36b143ac ",
+                  "anchor": "",
+                  "html": "أصول وعهد"
+                },
+                {
+                  "id": "366d7709",
+                  "type": "text-editor",
+                  "className": "in-366d7709 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-227\" href=\"/modules/inventory\">عرض الموديول ←</a>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5151cca6",
+      "type": "container",
+      "className": "in-5151cca6 digit cta",
+      "anchor": "cta",
+      "children": [
+        {
+          "id": "6b7e3a97",
+          "type": "container",
+          "className": "in-6b7e3a97 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "42504c19",
+              "type": "heading",
+              "className": "in-42504c19 ",
+              "anchor": "",
+              "html": "جاهز تنظّم أصولك وإهلاكها؟",
+              "tag": "h2"
+            },
+            {
+              "id": "4e07d255",
+              "type": "text-editor",
+              "className": "in-4e07d255 ",
+              "anchor": "",
+              "html": "عرض توضيحي لإدارة الأصول الثابتة — 30 دقيقة، بدون التزام."
+            },
+            {
+              "id": "b409fdd",
+              "type": "container",
+              "className": "in-b409fdd ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "58dc678c",
+                  "type": "button",
+                  "className": "in-58dc678c btn mint",
+                  "anchor": "",
+                  "text": "اعرف إدارة الأصول",
+                  "href": "/demo",
+                  "external": false
+                },
+                {
+                  "id": "6babcd07",
+                  "type": "button",
+                  "className": "in-6babcd07 btn light",
+                  "anchor": "",
+                  "text": "واتساب المبيعات",
+                  "href": "https://wa.me/966591909277",
+                  "external": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

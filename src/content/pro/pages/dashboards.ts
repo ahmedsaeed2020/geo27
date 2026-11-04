@@ -118,8 +118,8 @@ const page: ProPageContent = {
       id: 'cta',
       kind: 'cta',
       body: {
-        ar: 'نعرض لك لوحات الإدارة على بيانات شركة تجريبية، ثم نحدد المؤشرات التي تحتاجها إدارتك أولًا.',
-        en: 'We show you the management boards on a demo company, then agree which indicators your management needs first.',
+        ar: 'نعرض لك لوحات الإدارة في عرض مباشر، ثم نحدد المؤشرات التي تحتاجها إدارتك أولًا.',
+        en: 'We show you the management boards in a live walkthrough, then agree which indicators your management needs first.',
       },
       interest: { ar: 'لوحات الإدارة التنفيذية', en: 'Executive dashboards' },
     },

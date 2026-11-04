@@ -58,7 +58,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
       { label: "الأسئلة الشائعة", href: "/faq/" },
       { label: "الشروط", href: "/terms/" },
       { label: "تواصل معنا", href: "/contact-4/" },
-      { label: "احجز عرضًا تجريبيًا", href: "/demo-3/" },
+      { label: "احجز عرضًا توضيحيًا", href: "/demo-3/" },
       { label: "الشراكة", href: "/partnership/" },
     ],
   },

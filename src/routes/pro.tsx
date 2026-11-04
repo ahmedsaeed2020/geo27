@@ -10,7 +10,7 @@ export const Route = createFileRoute("/pro")({
     { title: "باقة Pro — Digit | النظام المالي والتشغيلي" },
     { name: "description", content: "باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد." },
     { property: "og:title", content: "باقة Pro — Digit" },
-    { property: "og:description", content: "نظام مالي وتشغيلي متكامل لمنشأتك مع Digit Pro. استعرض الموديولات واحجز عرضًا تجريبيًا." },
+    { property: "og:description", content: "نظام مالي وتشغيلي متكامل لمنشأتك مع Digit Pro. استعرض الموديولات واحجز عرضًا توضيحيًا." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }, loaderData),

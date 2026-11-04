@@ -1,1115 +1,1115 @@
 {
- "title": "المشتريات",
- "description": "طلب شراء، ثم مقارنة عروض الموردين، ثم موافقات متعددة المستويات، ثم استلام وفاتورة مورد مرتبطة بالمخزون والمحاسبة.",
- "sourceUrl": "https://digit-erp.com/modules/purchasing/",
- "nodes": [
-  {
-   "id": "5f410a4b",
-   "type": "container",
-   "className": "in-5f410a4b digit band-crumb",
-   "anchor": "",
-   "children": [
+  "title": "المشتريات",
+  "description": "طلب شراء، ثم مقارنة عروض الموردين، ثم موافقات متعددة المستويات، ثم استلام وفاتورة مورد مرتبطة بالمخزون والمحاسبة.",
+  "sourceUrl": "https://digit-erp.com/modules/purchasing/",
+  "nodes": [
     {
-     "id": "3c5fc22c",
-     "type": "text-editor",
-     "className": "in-3c5fc22c ",
-     "anchor": "",
-     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">المشتريات</span>"
-    }
-   ]
-  },
-  {
-   "id": "16f3ce0c",
-   "type": "container",
-   "className": "in-16f3ce0c digit hero",
-   "anchor": "",
-   "children": [
-    {
-     "id": "715200d1",
-     "type": "container",
-     "className": "in-715200d1 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "385eeec4",
-       "type": "container",
-       "className": "in-385eeec4 ",
-       "anchor": "",
-       "children": [
+      "id": "5f410a4b",
+      "type": "container",
+      "className": "in-5f410a4b digit band-crumb",
+      "anchor": "",
+      "children": [
         {
-         "id": "1f2286de",
-         "type": "container",
-         "className": "in-1f2286de ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "ed26a36",
-           "type": "html",
-           "className": "in-ed26a36 ",
-           "anchor": "",
-           "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-10\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-11\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
-          },
-          {
-           "id": "796418e7",
-           "type": "text-editor",
-           "className": "in-796418e7 ",
-           "anchor": "",
-           "html": "موديول · المشتريات"
-          }
-         ]
-        },
-        {
-         "id": "77feac60",
-         "type": "heading",
-         "className": "in-77feac60 ",
-         "anchor": "",
-         "html": "مشترياتك تحت السيطرة… <em class=\"is-14\">من الطلب إلى الاستلام</em>",
-         "tag": "h1"
-        },
-        {
-         "id": "4e414799",
-         "type": "text-editor",
-         "className": "in-4e414799 ",
-         "anchor": "",
-         "html": "طلب شراء، ثم مقارنة عروض الموردين، ثم موافقات متعددة المستويات، ثم استلام وفاتورة مورد مرتبطة بالمخزون والمحاسبة."
-        },
-        {
-         "id": "754df30f",
-         "type": "container",
-         "className": "in-754df30f ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "7617ecb9",
-           "type": "button",
-           "className": "in-7617ecb9 btn solid",
-           "anchor": "",
-           "text": "شاهد دورة المشتريات",
-           "href": "/demo",
-           "external": false
-          },
-          {
-           "id": "23b47f71",
-           "type": "button",
-           "className": "in-23b47f71 btn ghost",
-           "anchor": "",
-           "text": "شاهدها من الداخل",
-           "href": "#inside",
-           "external": false
-          }
-         ]
-        },
-        {
-         "id": "53009515",
-         "type": "text-editor",
-         "className": "in-53009515 ",
-         "anchor": "",
-         "html": "<span class=\"is-20\">مسار مرئي</span><span class=\"is-21\">موافقات من الجوال</span><span class=\"is-22\">مطابقة ثلاثية</span>"
+          "id": "3c5fc22c",
+          "type": "text-editor",
+          "className": "in-3c5fc22c ",
+          "anchor": "",
+          "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/modules\">الموديولات</a> › <span class=\"is-2\">المشتريات</span>"
         }
-       ]
-      },
-      {
-       "id": "739f8d71",
-       "type": "container",
-       "className": "in-739f8d71 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "af578cd",
-         "type": "html",
-         "className": "in-af578cd ",
-         "anchor": "",
-         "html": "<div class=\"is-25\"><span class=\"is-26\"><i class=\"is-27\"></i><i class=\"is-28\"></i><i class=\"is-29\"></i></span><span class=\"is-30\">digit-erp.com / app / buying</span></div>"
-        },
-        {
-         "id": "b592c58",
-         "type": "image-slot",
-         "className": "in-b592c58 ",
-         "anchor": "",
-         "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
-         "alt": "المشتريات"
-        },
-        {
-         "id": "6850a3a3",
-         "type": "text-editor",
-         "className": "in-6850a3a3 ",
-         "anchor": "",
-         "html": "معاينة واجهة · بيانات تجريبية"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "1a669dfa",
-   "type": "container",
-   "className": "in-1a669dfa digit proof",
-   "anchor": "",
-   "children": [
-    {
-     "id": "18b467dd",
-     "type": "container",
-     "className": "in-18b467dd ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "49e11a3",
-       "type": "container",
-       "className": "in-49e11a3 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "38b69d22",
-         "type": "heading",
-         "className": "in-38b69d22 ",
-         "anchor": "",
-         "html": "6 مراحل",
-         "tag": "h3"
-        },
-        {
-         "id": "36e006ad",
-         "type": "text-editor",
-         "className": "in-36e006ad ",
-         "anchor": "",
-         "html": "مسار شراء مرئي"
-        },
-        {
-         "id": "4bab3012",
-         "type": "text-editor",
-         "className": "in-4bab3012 ",
-         "anchor": "",
-         "html": "من الطلب إلى الفاتورة"
-        }
-       ]
-      },
-      {
-       "id": "633fa961",
-       "type": "container",
-       "className": "in-633fa961 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "54ce8794",
-         "type": "heading",
-         "className": "in-54ce8794 ",
-         "anchor": "",
-         "html": "من الجوال",
-         "tag": "h3"
-        },
-        {
-         "id": "337e53c",
-         "type": "text-editor",
-         "className": "in-337e53c ",
-         "anchor": "",
-         "html": "موافقات أسرع"
-        },
-        {
-         "id": "1e98a687",
-         "type": "text-editor",
-         "className": "in-1e98a687 ",
-         "anchor": "",
-         "html": "وافق أينما كنت"
-        }
-       ]
-      },
-      {
-       "id": "7ee7a2e6",
-       "type": "container",
-       "className": "in-7ee7a2e6 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "1d6f92e2",
-         "type": "heading",
-         "className": "in-1d6f92e2 ",
-         "anchor": "",
-         "html": "مقارنة",
-         "tag": "h3"
-        },
-        {
-         "id": "1b3236c",
-         "type": "text-editor",
-         "className": "in-1b3236c ",
-         "anchor": "",
-         "html": "عروض الموردين"
-        },
-        {
-         "id": "49513acb",
-         "type": "text-editor",
-         "className": "in-49513acb ",
-         "anchor": "",
-         "html": "اختر الأفضل بوضوح"
-        }
-       ]
-      },
-      {
-       "id": "5a7a3ade",
-       "type": "container",
-       "className": "in-5a7a3ade ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "63eac20f",
-         "type": "heading",
-         "className": "in-63eac20f ",
-         "anchor": "",
-         "html": "3-طرفية",
-         "tag": "h3"
-        },
-        {
-         "id": "3d57e314",
-         "type": "text-editor",
-         "className": "in-3d57e314 ",
-         "anchor": "",
-         "html": "مطابقة قبل الدفع"
-        },
-        {
-         "id": "2757250a",
-         "type": "text-editor",
-         "className": "in-2757250a ",
-         "anchor": "",
-         "html": "طلب·استلام·فاتورة"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "c665f8",
-   "type": "container",
-   "className": "in-c665f8 digit benefits",
-   "anchor": "",
-   "children": [
-    {
-     "id": "1ae4c5e0",
-     "type": "container",
-     "className": "in-1ae4c5e0 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "3070b554",
-       "type": "text-editor",
-       "className": "in-3070b554 ",
-       "anchor": "",
-       "html": "لماذا مشتريات Digit"
-      },
-      {
-       "id": "f3a7212",
-       "type": "heading",
-       "className": "in-f3a7212 ",
-       "anchor": "",
-       "html": "مشتريات واضحة… بلا بريد متناثر",
-       "tag": "h2"
-      },
-      {
-       "id": "1de0ad7c",
-       "type": "text-editor",
-       "className": "in-1de0ad7c ",
-       "anchor": "",
-       "html": "ست قدرات تحوّل المشتريات من رسائل وإكسل إلى مسار مرئي بموافقات وضوابط."
-      }
-     ]
+      ]
     },
     {
-     "id": "2c0e621",
-     "type": "container",
-     "className": "in-2c0e621 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "3dd30e4a",
-       "type": "container",
-       "className": "in-3dd30e4a ",
-       "anchor": "",
-       "children": [
+      "id": "16f3ce0c",
+      "type": "container",
+      "className": "in-16f3ce0c digit hero",
+      "anchor": "",
+      "children": [
         {
-         "id": "11f16f20",
-         "type": "html",
-         "className": "in-11f16f20 ",
-         "anchor": "",
-         "html": "<span class=\"is-59\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-60\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-61\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "f4f6d8d",
-         "type": "heading",
-         "className": "in-f4f6d8d ",
-         "anchor": "",
-         "html": "مسار طلب ← أمر شراء",
-         "tag": "h3"
-        },
-        {
-         "id": "62f753d1",
-         "type": "text-editor",
-         "className": "in-62f753d1 ",
-         "anchor": "",
-         "html": "خط أنابيب مرئي بالحالات من طلب الشراء حتى فاتورة المورد."
+          "id": "715200d1",
+          "type": "container",
+          "className": "in-715200d1 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "385eeec4",
+              "type": "container",
+              "className": "in-385eeec4 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1f2286de",
+                  "type": "container",
+                  "className": "in-1f2286de ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "ed26a36",
+                      "type": "html",
+                      "className": "in-ed26a36 ",
+                      "anchor": "",
+                      "html": "<span class=\"is-8\" role=\"img\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-9\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-10\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-11\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+                    },
+                    {
+                      "id": "796418e7",
+                      "type": "text-editor",
+                      "className": "in-796418e7 ",
+                      "anchor": "",
+                      "html": "موديول · المشتريات"
+                    }
+                  ]
+                },
+                {
+                  "id": "77feac60",
+                  "type": "heading",
+                  "className": "in-77feac60 ",
+                  "anchor": "",
+                  "html": "مشترياتك تحت السيطرة… <em class=\"is-14\">من الطلب إلى الاستلام</em>",
+                  "tag": "h1"
+                },
+                {
+                  "id": "4e414799",
+                  "type": "text-editor",
+                  "className": "in-4e414799 ",
+                  "anchor": "",
+                  "html": "طلب شراء، ثم مقارنة عروض الموردين، ثم موافقات متعددة المستويات، ثم استلام وفاتورة مورد مرتبطة بالمخزون والمحاسبة."
+                },
+                {
+                  "id": "754df30f",
+                  "type": "container",
+                  "className": "in-754df30f ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "7617ecb9",
+                      "type": "button",
+                      "className": "in-7617ecb9 btn solid",
+                      "anchor": "",
+                      "text": "شاهد دورة المشتريات",
+                      "href": "/demo",
+                      "external": false
+                    },
+                    {
+                      "id": "23b47f71",
+                      "type": "button",
+                      "className": "in-23b47f71 btn ghost",
+                      "anchor": "",
+                      "text": "شاهدها من الداخل",
+                      "href": "#inside",
+                      "external": false
+                    }
+                  ]
+                },
+                {
+                  "id": "53009515",
+                  "type": "text-editor",
+                  "className": "in-53009515 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-20\">مسار مرئي</span><span class=\"is-21\">موافقات من الجوال</span><span class=\"is-22\">مطابقة ثلاثية</span>"
+                }
+              ]
+            },
+            {
+              "id": "739f8d71",
+              "type": "container",
+              "className": "in-739f8d71 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "af578cd",
+                  "type": "html",
+                  "className": "in-af578cd ",
+                  "anchor": "",
+                  "html": "<div class=\"is-25\"><span class=\"is-26\"><i class=\"is-27\"></i><i class=\"is-28\"></i><i class=\"is-29\"></i></span><span class=\"is-30\">digit-erp.com / app / buying</span></div>"
+                },
+                {
+                  "id": "b592c58",
+                  "type": "image-slot",
+                  "className": "in-b592c58 ",
+                  "anchor": "",
+                  "src": "/__l5e/assets-v1/7bcc72a3-dccf-4643-9b6f-94b9e2b90669/module-accounting.jpg",
+                  "alt": "المشتريات"
+                },
+                {
+                  "id": "6850a3a3",
+                  "type": "text-editor",
+                  "className": "in-6850a3a3 ",
+                  "anchor": "",
+                  "html": "مثال توضيحي للواجهة"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "41416362",
-       "type": "container",
-       "className": "in-41416362 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "77a2e968",
-         "type": "html",
-         "className": "in-77a2e968 ",
-         "anchor": "",
-         "html": "<span class=\"is-66\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-68\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
-        },
-        {
-         "id": "4ccfc6fb",
-         "type": "heading",
-         "className": "in-4ccfc6fb ",
-         "anchor": "",
-         "html": "مقارنة عروض الموردين",
-         "tag": "h3"
-        },
-        {
-         "id": "5df879e0",
-         "type": "text-editor",
-         "className": "in-5df879e0 ",
-         "anchor": "",
-         "html": "قارن العروض في جدول واحد واختر الأفضل سعرًا وشروطًا."
-        }
-       ]
-      },
-      {
-       "id": "27a5b5f0",
-       "type": "container",
-       "className": "in-27a5b5f0 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "602d2251",
-         "type": "html",
-         "className": "in-602d2251 ",
-         "anchor": "",
-         "html": "<span class=\"is-73\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-74\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "66efa438",
-         "type": "heading",
-         "className": "in-66efa438 ",
-         "anchor": "",
-         "html": "موافقات من الجوال",
-         "tag": "h3"
-        },
-        {
-         "id": "6951106d",
-         "type": "text-editor",
-         "className": "in-6951106d ",
-         "anchor": "",
-         "html": "سلسلة موافقات متعددة المستويات تُعتمد من الجوال."
-        }
-       ]
-      },
-      {
-       "id": "71e31c1b",
-       "type": "container",
-       "className": "in-71e31c1b ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "185ad0f6",
-         "type": "html",
-         "className": "in-185ad0f6 ",
-         "anchor": "",
-         "html": "<span class=\"is-80\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-81\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-82\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-83\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-84\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "57973652",
-         "type": "heading",
-         "className": "in-57973652 ",
-         "anchor": "",
-         "html": "تقييم الموردين",
-         "tag": "h3"
-        },
-        {
-         "id": "9f03e97",
-         "type": "text-editor",
-         "className": "in-9f03e97 ",
-         "anchor": "",
-         "html": "تابع أداء المورّدين في الالتزام والجودة والسعر."
-        }
-       ]
-      },
-      {
-       "id": "46aafaf6",
-       "type": "container",
-       "className": "in-46aafaf6 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3d8e0acc",
-         "type": "html",
-         "className": "in-3d8e0acc ",
-         "anchor": "",
-         "html": "<span class=\"is-89\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-90\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-93\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-94\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
-        },
-        {
-         "id": "160e43a7",
-         "type": "heading",
-         "className": "in-160e43a7 ",
-         "anchor": "",
-         "html": "تنبيهات التأخير",
-         "tag": "h3"
-        },
-        {
-         "id": "4e5134f3",
-         "type": "text-editor",
-         "className": "in-4e5134f3 ",
-         "anchor": "",
-         "html": "تنبيه للطلبات والأوامر المتأخرة قبل أن تؤثر على التشغيل."
-        }
-       ]
-      },
-      {
-       "id": "210dee11",
-       "type": "container",
-       "className": "in-210dee11 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "2ef40594",
-         "type": "html",
-         "className": "in-2ef40594 ",
-         "anchor": "",
-         "html": "<span class=\"is-101\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-102\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-103\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-104\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-105\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "299295f7",
-         "type": "heading",
-         "className": "in-299295f7 ",
-         "anchor": "",
-         "html": "مطابقة ثلاثية",
-         "tag": "h3"
-        },
-        {
-         "id": "eab8c66",
-         "type": "text-editor",
-         "className": "in-eab8c66 ",
-         "anchor": "",
-         "html": "طابِق الطلب والاستلام والفاتورة قبل اعتماد الدفع."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "7363df60",
-   "type": "container",
-   "className": "in-7363df60 digit inside",
-   "anchor": "inside",
-   "children": [
-    {
-     "id": "392e9428",
-     "type": "container",
-     "className": "in-392e9428 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "409484be",
-       "type": "container",
-       "className": "in-409484be ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "214071d7",
-         "type": "text-editor",
-         "className": "in-214071d7 ",
-         "anchor": "",
-         "html": "من الداخل"
-        },
-        {
-         "id": "89fcd19",
-         "type": "heading",
-         "className": "in-89fcd19 ",
-         "anchor": "",
-         "html": "مسار شراء واضح… بالحالات",
-         "tag": "h2"
-        },
-        {
-         "id": "f9bd1b7",
-         "type": "text-editor",
-         "className": "in-f9bd1b7 ",
-         "anchor": "",
-         "html": "كل طلب تعرف مكانه في الخط: بانتظار موافقة، أمر شراء، استلام، أو فاتورة — لا بحث ولا بريد."
-        },
-        {
-         "id": "55ed96c7",
-         "type": "text-editor",
-         "className": "in-55ed96c7 ",
-         "anchor": "",
-         "html": "<ul class=\"is-115\"><li class=\"is-116\"><span class=\"is-117\">✓</span><span>طلب شراء وطلب عروض (RFQ)</span></li><li class=\"is-118\"><span class=\"is-119\">✓</span><span>مقارنة عروض الموردين</span></li><li class=\"is-120\"><span class=\"is-121\">✓</span><span>أمر شراء واستلام</span></li><li class=\"is-122\"><span class=\"is-123\">✓</span><span>فاتورة مورد مرتبطة</span></li><li class=\"is-124\"><span class=\"is-125\">✓</span><span>مطابقة ثلاثية قبل الدفع</span></li></ul>"
-        }
-       ]
-      },
-      {
-       "id": "55f76f04",
-       "type": "container",
-       "className": "in-55f76f04 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "2ba8c42e",
-         "type": "html",
-         "className": "in-2ba8c42e ",
-         "anchor": "",
-         "html": "<div class=\"is-128\"><span class=\"is-129\"><i class=\"is-130\"></i><i class=\"is-131\"></i><i class=\"is-132\"></i></span><span class=\"is-133\">digit-erp.com / app / buying</span></div>"
-        },
-        {
-         "id": "22e1a4e",
-         "type": "image-slot",
-         "className": "in-22e1a4e ",
-         "anchor": ""
-        },
-        {
-         "id": "3bfe3a51",
-         "type": "text-editor",
-         "className": "in-3bfe3a51 ",
-         "anchor": "",
-         "html": "معاينة واجهة · بيانات تجريبية"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "180b3a3a",
-   "type": "container",
-   "className": "in-180b3a3a digit sec",
-   "anchor": "",
-   "children": [
-    {
-     "id": "3f68a7f",
-     "type": "container",
-     "className": "in-3f68a7f ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "139c837a",
-       "type": "container",
-       "className": "in-139c837a ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3849386b",
-         "type": "text-editor",
-         "className": "in-3849386b ",
-         "anchor": "",
-         "html": "مراحل المسار"
-        },
-        {
-         "id": "3481b88f",
-         "type": "heading",
-         "className": "in-3481b88f ",
-         "anchor": "",
-         "html": "من الطلب إلى الفاتورة… ست مراحل",
-         "tag": "h2"
-        },
-        {
-         "id": "2682b77b",
-         "type": "text-editor",
-         "className": "in-2682b77b ",
-         "anchor": "",
-         "html": "مسار المشتريات مقسّم لمراحل واضحة، كل مرحلة لها مسؤول وحالة وتنبيه."
-        }
-       ]
-      },
-      {
-       "id": "2ba3e330",
-       "type": "container",
-       "className": "in-2ba3e330 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "6554856",
-         "type": "container",
-         "className": "in-6554856 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "3b7291e8",
-           "type": "heading",
-           "className": "in-3b7291e8 ",
-           "anchor": "",
-           "html": "طلب شراء",
-           "tag": "h3"
-          },
-          {
-           "id": "69dc942d",
-           "type": "text-editor",
-           "className": "in-69dc942d ",
-           "anchor": "",
-           "html": "يبدأ الاحتياج"
-          }
-         ]
-        },
-        {
-         "id": "35d23517",
-         "type": "container",
-         "className": "in-35d23517 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "2224f595",
-           "type": "heading",
-           "className": "in-2224f595 ",
-           "anchor": "",
-           "html": "عروض الموردين",
-           "tag": "h3"
-          },
-          {
-           "id": "72ef6e28",
-           "type": "text-editor",
-           "className": "in-72ef6e28 ",
-           "anchor": "",
-           "html": "قارن واختر"
-          }
-         ]
-        },
-        {
-         "id": "3557aad9",
-         "type": "container",
-         "className": "in-3557aad9 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "4f7f1211",
-           "type": "heading",
-           "className": "in-4f7f1211 ",
-           "anchor": "",
-           "html": "أمر شراء",
-           "tag": "h3"
-          },
-          {
-           "id": "6eb7f104",
-           "type": "text-editor",
-           "className": "in-6eb7f104 ",
-           "anchor": "",
-           "html": "بعد الموافقة"
-          }
-         ]
-        },
-        {
-         "id": "304e3a57",
-         "type": "container",
-         "className": "in-304e3a57 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "12ae529",
-           "type": "heading",
-           "className": "in-12ae529 ",
-           "anchor": "",
-           "html": "استلام وفاتورة",
-           "tag": "h3"
-          },
-          {
-           "id": "1ea06d88",
-           "type": "text-editor",
-           "className": "in-1ea06d88 ",
-           "anchor": "",
-           "html": "مطابقة ودفع"
-          }
-         ]
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "7f94d26f",
-   "type": "container",
-   "className": "in-7f94d26f digit demo",
-   "anchor": "",
-   "children": [
-    {
-     "id": "16b7c114",
-     "type": "container",
-     "className": "in-16b7c114 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "396769cc",
-       "type": "container",
-       "className": "in-396769cc ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3834f31",
-         "type": "text-editor",
-         "className": "in-3834f31 ",
-         "anchor": "",
-         "html": "سيناريو حيّ"
-        },
-        {
-         "id": "684a73b7",
-         "type": "heading",
-         "className": "in-684a73b7 ",
-         "anchor": "",
-         "html": "من طلب الشراء… إلى فاتورة المورد",
-         "tag": "h2"
-        },
-        {
-         "id": "599383f5",
-         "type": "html",
-         "className": "in-599383f5 ",
-         "anchor": "",
-         "html": "<div class=\"is-161\"><span class=\"is-162\">طلب شراء</span><span class=\"is-163\">←</span><span class=\"is-164\">عروض الموردين</span><span class=\"is-165\">←</span><span class=\"is-166\">موافقة</span><span class=\"is-167\">←</span><span class=\"is-168\">أمر شراء</span><span class=\"is-169\">←</span><span class=\"is-170\">استلام</span><span class=\"is-171\">←</span><span class=\"is-172\">فاتورة مورد</span></div>"
-        }
-       ]
-      },
-      {
-       "id": "658c21da",
-       "type": "container",
-       "className": "in-658c21da ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "2892101d",
-         "type": "button",
-         "className": "in-2892101d btn mint",
-         "anchor": "",
-         "text": "شاهد دورة المشتريات",
-         "href": "/demo",
-         "external": false
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "2fa80f76",
-   "type": "container",
-   "className": "in-2fa80f76 digit faq",
-   "anchor": "",
-   "children": [
-    {
-     "id": "620e4b15",
-     "type": "container",
-     "className": "in-620e4b15 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "77578f61",
-       "type": "text-editor",
-       "className": "in-77578f61 ",
-       "anchor": "",
-       "html": "أسئلة متكررة"
-      },
-      {
-       "id": "3b053508",
-       "type": "heading",
-       "className": "in-3b053508 ",
-       "anchor": "",
-       "html": "أسئلة فريق المشتريات",
-       "tag": "h2"
-      },
-      {
-       "id": "7ffbcf87",
-       "type": "text-editor",
-       "className": "in-7ffbcf87 ",
-       "anchor": "",
-       "html": "إجابات عن الموافقات والمقارنة والمطابقة."
-      }
-     ]
+      ]
     },
     {
-     "id": "31aaef5d",
-     "type": "accordion",
-     "className": "in-31aaef5d qa",
-     "anchor": "",
-     "tabs": [
-      {
-       "title": "كيف تتم الموافقات؟",
-       "html": "<p>عبر سلسلة موافقات متعددة المستويات يمكن اعتمادها من الجوال حسب الصلاحيات.</p>"
-      },
-      {
-       "title": "هل أقارن عروض الموردين؟",
-       "html": "<p>نعم، تُعرض العروض في جدول مقارنة لاختيار الأنسب.</p>"
-      },
-      {
-       "title": "هل يدعم المطابقة الثلاثية؟",
-       "html": "<p>نعم، يطابق الطلب والاستلام والفاتورة قبل اعتماد الدفع.</p>"
-      },
-      {
-       "title": "هل أوافق من الجوال؟",
-       "html": "<p>نعم، الموافقات متاحة من الجوال للمعتمدين.</p>"
-      },
-      {
-       "title": "هل يرتبط بالمخزون والمحاسبة؟",
-       "html": "<p>نعم، الاستلام يحدّث المخزون والفاتورة تُنشئ القيد تلقائيًا.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "191e9b00",
-   "type": "container",
-   "className": "in-191e9b00 digit related",
-   "anchor": "",
-   "children": [
-    {
-     "id": "4e47f3b4",
-     "type": "container",
-     "className": "in-4e47f3b4 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "112a77a3",
-       "type": "text-editor",
-       "className": "in-112a77a3 ",
-       "anchor": "",
-       "html": "موديولات مترابطة"
-      },
-      {
-       "id": "7febc211",
-       "type": "heading",
-       "className": "in-7febc211 ",
-       "anchor": "",
-       "html": "المشتريات متصلة بشركتك",
-       "tag": "h2"
-      },
-      {
-       "id": "3d5a3955",
-       "type": "text-editor",
-       "className": "in-3d5a3955 ",
-       "anchor": "",
-       "html": "نفس قاعدة البيانات — الاستلام يغذّي المخزون والفاتورة تغذّي المحاسبة."
-      }
-     ]
+      "id": "1a669dfa",
+      "type": "container",
+      "className": "in-1a669dfa digit proof",
+      "anchor": "",
+      "children": [
+        {
+          "id": "18b467dd",
+          "type": "container",
+          "className": "in-18b467dd ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "49e11a3",
+              "type": "container",
+              "className": "in-49e11a3 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "38b69d22",
+                  "type": "heading",
+                  "className": "in-38b69d22 ",
+                  "anchor": "",
+                  "html": "6 مراحل",
+                  "tag": "h3"
+                },
+                {
+                  "id": "36e006ad",
+                  "type": "text-editor",
+                  "className": "in-36e006ad ",
+                  "anchor": "",
+                  "html": "مسار شراء مرئي"
+                },
+                {
+                  "id": "4bab3012",
+                  "type": "text-editor",
+                  "className": "in-4bab3012 ",
+                  "anchor": "",
+                  "html": "من الطلب إلى الفاتورة"
+                }
+              ]
+            },
+            {
+              "id": "633fa961",
+              "type": "container",
+              "className": "in-633fa961 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "54ce8794",
+                  "type": "heading",
+                  "className": "in-54ce8794 ",
+                  "anchor": "",
+                  "html": "من الجوال",
+                  "tag": "h3"
+                },
+                {
+                  "id": "337e53c",
+                  "type": "text-editor",
+                  "className": "in-337e53c ",
+                  "anchor": "",
+                  "html": "موافقات أسرع"
+                },
+                {
+                  "id": "1e98a687",
+                  "type": "text-editor",
+                  "className": "in-1e98a687 ",
+                  "anchor": "",
+                  "html": "وافق أينما كنت"
+                }
+              ]
+            },
+            {
+              "id": "7ee7a2e6",
+              "type": "container",
+              "className": "in-7ee7a2e6 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "1d6f92e2",
+                  "type": "heading",
+                  "className": "in-1d6f92e2 ",
+                  "anchor": "",
+                  "html": "مقارنة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1b3236c",
+                  "type": "text-editor",
+                  "className": "in-1b3236c ",
+                  "anchor": "",
+                  "html": "عروض الموردين"
+                },
+                {
+                  "id": "49513acb",
+                  "type": "text-editor",
+                  "className": "in-49513acb ",
+                  "anchor": "",
+                  "html": "اختر الأفضل بوضوح"
+                }
+              ]
+            },
+            {
+              "id": "5a7a3ade",
+              "type": "container",
+              "className": "in-5a7a3ade ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "63eac20f",
+                  "type": "heading",
+                  "className": "in-63eac20f ",
+                  "anchor": "",
+                  "html": "3-طرفية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "3d57e314",
+                  "type": "text-editor",
+                  "className": "in-3d57e314 ",
+                  "anchor": "",
+                  "html": "مطابقة قبل الدفع"
+                },
+                {
+                  "id": "2757250a",
+                  "type": "text-editor",
+                  "className": "in-2757250a ",
+                  "anchor": "",
+                  "html": "طلب·استلام·فاتورة"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-     "id": "1558d9ab",
-     "type": "container",
-     "className": "in-1558d9ab ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "5b772f1a",
-       "type": "container",
-       "className": "in-5b772f1a ",
-       "anchor": "",
-       "children": [
+      "id": "c665f8",
+      "type": "container",
+      "className": "in-c665f8 digit benefits",
+      "anchor": "",
+      "children": [
         {
-         "id": "348c4bb3",
-         "type": "html",
-         "className": "in-348c4bb3 ",
-         "anchor": "",
-         "html": "<span class=\"is-189\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-190\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-191\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-192\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-193\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+          "id": "1ae4c5e0",
+          "type": "container",
+          "className": "in-1ae4c5e0 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "3070b554",
+              "type": "text-editor",
+              "className": "in-3070b554 ",
+              "anchor": "",
+              "html": "لماذا مشتريات Digit"
+            },
+            {
+              "id": "f3a7212",
+              "type": "heading",
+              "className": "in-f3a7212 ",
+              "anchor": "",
+              "html": "مشتريات واضحة… بلا بريد متناثر",
+              "tag": "h2"
+            },
+            {
+              "id": "1de0ad7c",
+              "type": "text-editor",
+              "className": "in-1de0ad7c ",
+              "anchor": "",
+              "html": "ست قدرات تحوّل المشتريات من رسائل وإكسل إلى مسار مرئي بموافقات وضوابط."
+            }
+          ]
         },
         {
-         "id": "580cd6d9",
-         "type": "heading",
-         "className": "in-580cd6d9 ",
-         "anchor": "",
-         "html": "المخزون",
-         "tag": "h3"
-        },
-        {
-         "id": "5cf4b515",
-         "type": "text-editor",
-         "className": "in-5cf4b515 ",
-         "anchor": "",
-         "html": "استلام يحدّث الرصيد"
-        },
-        {
-         "id": "3f48b417",
-         "type": "text-editor",
-         "className": "in-3f48b417 ",
-         "anchor": "",
-         "html": "<a class=\"is-197\" href=\"/inventory\">عرض الموديول ←</a>"
+          "id": "2c0e621",
+          "type": "container",
+          "className": "in-2c0e621 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "3dd30e4a",
+              "type": "container",
+              "className": "in-3dd30e4a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "11f16f20",
+                  "type": "html",
+                  "className": "in-11f16f20 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-59\" role=\"img\"><svg aria-label=\"documents\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-60\" height=\"12\" rx=\"5\" width=\"26\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-61\" height=\"38\" rx=\"7\" width=\"56\" x=\"22\" y=\"40\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "f4f6d8d",
+                  "type": "heading",
+                  "className": "in-f4f6d8d ",
+                  "anchor": "",
+                  "html": "مسار طلب ← أمر شراء",
+                  "tag": "h3"
+                },
+                {
+                  "id": "62f753d1",
+                  "type": "text-editor",
+                  "className": "in-62f753d1 ",
+                  "anchor": "",
+                  "html": "خط أنابيب مرئي بالحالات من طلب الشراء حتى فاتورة المورد."
+                }
+              ]
+            },
+            {
+              "id": "41416362",
+              "type": "container",
+              "className": "in-41416362 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "77a2e968",
+                  "type": "html",
+                  "className": "in-77a2e968 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-66\" role=\"img\"><svg aria-label=\"multicurrency\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-67\" cx=\"40\" cy=\"46\" r=\"18\"></circle>\n<circle class=\"iv-68\" cx=\"62\" cy=\"56\" r=\"18\"></circle>\n</svg></span>"
+                },
+                {
+                  "id": "4ccfc6fb",
+                  "type": "heading",
+                  "className": "in-4ccfc6fb ",
+                  "anchor": "",
+                  "html": "مقارنة عروض الموردين",
+                  "tag": "h3"
+                },
+                {
+                  "id": "5df879e0",
+                  "type": "text-editor",
+                  "className": "in-5df879e0 ",
+                  "anchor": "",
+                  "html": "قارن العروض في جدول واحد واختر الأفضل سعرًا وشروطًا."
+                }
+              ]
+            },
+            {
+              "id": "27a5b5f0",
+              "type": "container",
+              "className": "in-27a5b5f0 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "602d2251",
+                  "type": "html",
+                  "className": "in-602d2251 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-73\" role=\"img\"><svg aria-label=\"bilingual\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-74\" height=\"12\" rx=\"6\" width=\"52\" x=\"24\" y=\"32\"></rect>\n<rect class=\"iv-75\" height=\"12\" rx=\"6\" width=\"40\" x=\"36\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "66efa438",
+                  "type": "heading",
+                  "className": "in-66efa438 ",
+                  "anchor": "",
+                  "html": "موافقات من الجوال",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6951106d",
+                  "type": "text-editor",
+                  "className": "in-6951106d ",
+                  "anchor": "",
+                  "html": "سلسلة موافقات متعددة المستويات تُعتمد من الجوال."
+                }
+              ]
+            },
+            {
+              "id": "71e31c1b",
+              "type": "container",
+              "className": "in-71e31c1b ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "185ad0f6",
+                  "type": "html",
+                  "className": "in-185ad0f6 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-80\" role=\"img\"><svg aria-label=\"permissions\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-81\" cx=\"40\" cy=\"38\" r=\"11\"></circle>\n<rect class=\"iv-82\" height=\"20\" rx=\"10\" width=\"32\" x=\"24\" y=\"56\"></rect>\n<circle class=\"iv-83\" cx=\"66\" cy=\"42\" r=\"8\"></circle>\n<rect class=\"iv-84\" height=\"16\" rx=\"8\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "57973652",
+                  "type": "heading",
+                  "className": "in-57973652 ",
+                  "anchor": "",
+                  "html": "تقييم الموردين",
+                  "tag": "h3"
+                },
+                {
+                  "id": "9f03e97",
+                  "type": "text-editor",
+                  "className": "in-9f03e97 ",
+                  "anchor": "",
+                  "html": "تابع أداء المورّدين في الالتزام والجودة والسعر."
+                }
+              ]
+            },
+            {
+              "id": "46aafaf6",
+              "type": "container",
+              "className": "in-46aafaf6 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3d8e0acc",
+                  "type": "html",
+                  "className": "in-3d8e0acc ",
+                  "anchor": "",
+                  "html": "<span class=\"is-89\" role=\"img\"><svg aria-label=\"integrations\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-90\" height=\"6\" rx=\"3\" width=\"12\" x=\"30\" y=\"47\"></rect>\n<rect class=\"iv-91\" height=\"6\" rx=\"3\" width=\"12\" x=\"58\" y=\"47\"></rect>\n<rect class=\"iv-92\" height=\"12\" rx=\"3\" width=\"6\" x=\"47\" y=\"30\"></rect>\n<circle class=\"iv-93\" cx=\"22\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-94\" cx=\"78\" cy=\"50\" r=\"8\"></circle>\n<circle class=\"iv-95\" cx=\"50\" cy=\"22\" r=\"8\"></circle>\n<circle class=\"iv-96\" cx=\"50\" cy=\"50\" r=\"11\"></circle>\n</svg></span>"
+                },
+                {
+                  "id": "160e43a7",
+                  "type": "heading",
+                  "className": "in-160e43a7 ",
+                  "anchor": "",
+                  "html": "تنبيهات التأخير",
+                  "tag": "h3"
+                },
+                {
+                  "id": "4e5134f3",
+                  "type": "text-editor",
+                  "className": "in-4e5134f3 ",
+                  "anchor": "",
+                  "html": "تنبيه للطلبات والأوامر المتأخرة قبل أن تؤثر على التشغيل."
+                }
+              ]
+            },
+            {
+              "id": "210dee11",
+              "type": "container",
+              "className": "in-210dee11 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2ef40594",
+                  "type": "html",
+                  "className": "in-2ef40594 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-101\" role=\"img\"><svg aria-label=\"cloud\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<circle class=\"iv-102\" cx=\"38\" cy=\"42\" r=\"12\"></circle>\n<circle class=\"iv-103\" cx=\"60\" cy=\"40\" r=\"14\"></circle>\n<rect class=\"iv-104\" height=\"20\" rx=\"11\" width=\"48\" x=\"26\" y=\"34\"></rect>\n<rect class=\"iv-105\" height=\"9\" rx=\"4.5\" width=\"36\" x=\"32\" y=\"64\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "299295f7",
+                  "type": "heading",
+                  "className": "in-299295f7 ",
+                  "anchor": "",
+                  "html": "مطابقة ثلاثية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "eab8c66",
+                  "type": "text-editor",
+                  "className": "in-eab8c66 ",
+                  "anchor": "",
+                  "html": "طابِق الطلب والاستلام والفاتورة قبل اعتماد الدفع."
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "2af273b4",
-       "type": "container",
-       "className": "in-2af273b4 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "65717294",
-         "type": "html",
-         "className": "in-65717294 ",
-         "anchor": "",
-         "html": "<span class=\"is-200\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-201\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-202\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-203\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-204\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "7bfe62b4",
-         "type": "heading",
-         "className": "in-7bfe62b4 ",
-         "anchor": "",
-         "html": "المحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "2dc76d17",
-         "type": "text-editor",
-         "className": "in-2dc76d17 ",
-         "anchor": "",
-         "html": "فاتورة تُنشئ القيد"
-        },
-        {
-         "id": "5140d5ef",
-         "type": "text-editor",
-         "className": "in-5140d5ef ",
-         "anchor": "",
-         "html": "<a class=\"is-208\" href=\"/accounting\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "6eb2b7f2",
-       "type": "container",
-       "className": "in-6eb2b7f2 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "5052e4a1",
-         "type": "html",
-         "className": "in-5052e4a1 ",
-         "anchor": "",
-         "html": "<span class=\"is-211\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-212\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-213\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-214\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "596bd492",
-         "type": "heading",
-         "className": "in-596bd492 ",
-         "anchor": "",
-         "html": "المبيعات",
-         "tag": "h3"
-        },
-        {
-         "id": "4afc9e3",
-         "type": "text-editor",
-         "className": "in-4afc9e3 ",
-         "anchor": "",
-         "html": "من العرض للتحصيل"
-        },
-        {
-         "id": "5318a929",
-         "type": "text-editor",
-         "className": "in-5318a929 ",
-         "anchor": "",
-         "html": "<a class=\"is-218\" href=\"/sales\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "63b37e60",
-       "type": "container",
-       "className": "in-63b37e60 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "24b3ac4f",
-         "type": "html",
-         "className": "in-24b3ac4f ",
-         "anchor": "",
-         "html": "<span class=\"is-221\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-222\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-223\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-224\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-225\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "42842ca5",
-         "type": "heading",
-         "className": "in-42842ca5 ",
-         "anchor": "",
-         "html": "التقارير",
-         "tag": "h3"
-        },
-        {
-         "id": "17d00ef0",
-         "type": "text-editor",
-         "className": "in-17d00ef0 ",
-         "anchor": "",
-         "html": "تقارير مشتريات"
-        },
-        {
-         "id": "7ba23340",
-         "type": "text-editor",
-         "className": "in-7ba23340 ",
-         "anchor": "",
-         "html": "<a class=\"is-229\" href=\"/reports\">عرض الموديول ←</a>"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "3687c3a5",
-   "type": "container",
-   "className": "in-3687c3a5 digit cta",
-   "anchor": "cta",
-   "children": [
+      ]
+    },
     {
-     "id": "d515890",
-     "type": "container",
-     "className": "in-d515890 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "4896f207",
-       "type": "heading",
-       "className": "in-4896f207 ",
-       "anchor": "",
-       "html": "جاهز تتحكّم في مشترياتك؟",
-       "tag": "h2"
-      },
-      {
-       "id": "11d5f1b8",
-       "type": "text-editor",
-       "className": "in-11d5f1b8 ",
-       "anchor": "",
-       "html": "عرض تجريبي يوضّح المسار والموافقات — 30 دقيقة، بدون التزام."
-      },
-      {
-       "id": "1047731d",
-       "type": "container",
-       "className": "in-1047731d ",
-       "anchor": "",
-       "children": [
+      "id": "7363df60",
+      "type": "container",
+      "className": "in-7363df60 digit inside",
+      "anchor": "inside",
+      "children": [
         {
-         "id": "4dfc3954",
-         "type": "button",
-         "className": "in-4dfc3954 btn mint",
-         "anchor": "",
-         "text": "شاهد دورة المشتريات",
-         "href": "/demo",
-         "external": false
+          "id": "392e9428",
+          "type": "container",
+          "className": "in-392e9428 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "409484be",
+              "type": "container",
+              "className": "in-409484be ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "214071d7",
+                  "type": "text-editor",
+                  "className": "in-214071d7 ",
+                  "anchor": "",
+                  "html": "من الداخل"
+                },
+                {
+                  "id": "89fcd19",
+                  "type": "heading",
+                  "className": "in-89fcd19 ",
+                  "anchor": "",
+                  "html": "مسار شراء واضح… بالحالات",
+                  "tag": "h2"
+                },
+                {
+                  "id": "f9bd1b7",
+                  "type": "text-editor",
+                  "className": "in-f9bd1b7 ",
+                  "anchor": "",
+                  "html": "كل طلب تعرف مكانه في الخط: بانتظار موافقة، أمر شراء، استلام، أو فاتورة — لا بحث ولا بريد."
+                },
+                {
+                  "id": "55ed96c7",
+                  "type": "text-editor",
+                  "className": "in-55ed96c7 ",
+                  "anchor": "",
+                  "html": "<ul class=\"is-115\"><li class=\"is-116\"><span class=\"is-117\">✓</span><span>طلب شراء وطلب عروض (RFQ)</span></li><li class=\"is-118\"><span class=\"is-119\">✓</span><span>مقارنة عروض الموردين</span></li><li class=\"is-120\"><span class=\"is-121\">✓</span><span>أمر شراء واستلام</span></li><li class=\"is-122\"><span class=\"is-123\">✓</span><span>فاتورة مورد مرتبطة</span></li><li class=\"is-124\"><span class=\"is-125\">✓</span><span>مطابقة ثلاثية قبل الدفع</span></li></ul>"
+                }
+              ]
+            },
+            {
+              "id": "55f76f04",
+              "type": "container",
+              "className": "in-55f76f04 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2ba8c42e",
+                  "type": "html",
+                  "className": "in-2ba8c42e ",
+                  "anchor": "",
+                  "html": "<div class=\"is-128\"><span class=\"is-129\"><i class=\"is-130\"></i><i class=\"is-131\"></i><i class=\"is-132\"></i></span><span class=\"is-133\">digit-erp.com / app / buying</span></div>"
+                },
+                {
+                  "id": "22e1a4e",
+                  "type": "image-slot",
+                  "className": "in-22e1a4e ",
+                  "anchor": ""
+                },
+                {
+                  "id": "3bfe3a51",
+                  "type": "text-editor",
+                  "className": "in-3bfe3a51 ",
+                  "anchor": "",
+                  "html": "مثال توضيحي للواجهة"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "180b3a3a",
+      "type": "container",
+      "className": "in-180b3a3a digit sec",
+      "anchor": "",
+      "children": [
+        {
+          "id": "3f68a7f",
+          "type": "container",
+          "className": "in-3f68a7f ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "139c837a",
+              "type": "container",
+              "className": "in-139c837a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3849386b",
+                  "type": "text-editor",
+                  "className": "in-3849386b ",
+                  "anchor": "",
+                  "html": "مراحل المسار"
+                },
+                {
+                  "id": "3481b88f",
+                  "type": "heading",
+                  "className": "in-3481b88f ",
+                  "anchor": "",
+                  "html": "من الطلب إلى الفاتورة… ست مراحل",
+                  "tag": "h2"
+                },
+                {
+                  "id": "2682b77b",
+                  "type": "text-editor",
+                  "className": "in-2682b77b ",
+                  "anchor": "",
+                  "html": "مسار المشتريات مقسّم لمراحل واضحة، كل مرحلة لها مسؤول وحالة وتنبيه."
+                }
+              ]
+            },
+            {
+              "id": "2ba3e330",
+              "type": "container",
+              "className": "in-2ba3e330 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "6554856",
+                  "type": "container",
+                  "className": "in-6554856 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "3b7291e8",
+                      "type": "heading",
+                      "className": "in-3b7291e8 ",
+                      "anchor": "",
+                      "html": "طلب شراء",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "69dc942d",
+                      "type": "text-editor",
+                      "className": "in-69dc942d ",
+                      "anchor": "",
+                      "html": "يبدأ الاحتياج"
+                    }
+                  ]
+                },
+                {
+                  "id": "35d23517",
+                  "type": "container",
+                  "className": "in-35d23517 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "2224f595",
+                      "type": "heading",
+                      "className": "in-2224f595 ",
+                      "anchor": "",
+                      "html": "عروض الموردين",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "72ef6e28",
+                      "type": "text-editor",
+                      "className": "in-72ef6e28 ",
+                      "anchor": "",
+                      "html": "قارن واختر"
+                    }
+                  ]
+                },
+                {
+                  "id": "3557aad9",
+                  "type": "container",
+                  "className": "in-3557aad9 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "4f7f1211",
+                      "type": "heading",
+                      "className": "in-4f7f1211 ",
+                      "anchor": "",
+                      "html": "أمر شراء",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "6eb7f104",
+                      "type": "text-editor",
+                      "className": "in-6eb7f104 ",
+                      "anchor": "",
+                      "html": "بعد الموافقة"
+                    }
+                  ]
+                },
+                {
+                  "id": "304e3a57",
+                  "type": "container",
+                  "className": "in-304e3a57 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "12ae529",
+                      "type": "heading",
+                      "className": "in-12ae529 ",
+                      "anchor": "",
+                      "html": "استلام وفاتورة",
+                      "tag": "h3"
+                    },
+                    {
+                      "id": "1ea06d88",
+                      "type": "text-editor",
+                      "className": "in-1ea06d88 ",
+                      "anchor": "",
+                      "html": "مطابقة ودفع"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "7f94d26f",
+      "type": "container",
+      "className": "in-7f94d26f digit demo",
+      "anchor": "",
+      "children": [
+        {
+          "id": "16b7c114",
+          "type": "container",
+          "className": "in-16b7c114 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "396769cc",
+              "type": "container",
+              "className": "in-396769cc ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3834f31",
+                  "type": "text-editor",
+                  "className": "in-3834f31 ",
+                  "anchor": "",
+                  "html": "سيناريو حيّ"
+                },
+                {
+                  "id": "684a73b7",
+                  "type": "heading",
+                  "className": "in-684a73b7 ",
+                  "anchor": "",
+                  "html": "من طلب الشراء… إلى فاتورة المورد",
+                  "tag": "h2"
+                },
+                {
+                  "id": "599383f5",
+                  "type": "html",
+                  "className": "in-599383f5 ",
+                  "anchor": "",
+                  "html": "<div class=\"is-161\"><span class=\"is-162\">طلب شراء</span><span class=\"is-163\">←</span><span class=\"is-164\">عروض الموردين</span><span class=\"is-165\">←</span><span class=\"is-166\">موافقة</span><span class=\"is-167\">←</span><span class=\"is-168\">أمر شراء</span><span class=\"is-169\">←</span><span class=\"is-170\">استلام</span><span class=\"is-171\">←</span><span class=\"is-172\">فاتورة مورد</span></div>"
+                }
+              ]
+            },
+            {
+              "id": "658c21da",
+              "type": "container",
+              "className": "in-658c21da ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2892101d",
+                  "type": "button",
+                  "className": "in-2892101d btn mint",
+                  "anchor": "",
+                  "text": "شاهد دورة المشتريات",
+                  "href": "/demo",
+                  "external": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2fa80f76",
+      "type": "container",
+      "className": "in-2fa80f76 digit faq",
+      "anchor": "",
+      "children": [
+        {
+          "id": "620e4b15",
+          "type": "container",
+          "className": "in-620e4b15 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "77578f61",
+              "type": "text-editor",
+              "className": "in-77578f61 ",
+              "anchor": "",
+              "html": "أسئلة متكررة"
+            },
+            {
+              "id": "3b053508",
+              "type": "heading",
+              "className": "in-3b053508 ",
+              "anchor": "",
+              "html": "أسئلة فريق المشتريات",
+              "tag": "h2"
+            },
+            {
+              "id": "7ffbcf87",
+              "type": "text-editor",
+              "className": "in-7ffbcf87 ",
+              "anchor": "",
+              "html": "إجابات عن الموافقات والمقارنة والمطابقة."
+            }
+          ]
         },
         {
-         "id": "3c514181",
-         "type": "button",
-         "className": "in-3c514181 btn light",
-         "anchor": "",
-         "text": "واتساب المبيعات",
-         "href": "https://wa.me/966591909277",
-         "external": true
+          "id": "31aaef5d",
+          "type": "accordion",
+          "className": "in-31aaef5d qa",
+          "anchor": "",
+          "tabs": [
+            {
+              "title": "كيف تتم الموافقات؟",
+              "html": "<p>عبر سلسلة موافقات متعددة المستويات يمكن اعتمادها من الجوال حسب الصلاحيات.</p>"
+            },
+            {
+              "title": "هل أقارن عروض الموردين؟",
+              "html": "<p>نعم، تُعرض العروض في جدول مقارنة لاختيار الأنسب.</p>"
+            },
+            {
+              "title": "هل يدعم المطابقة الثلاثية؟",
+              "html": "<p>نعم، يطابق الطلب والاستلام والفاتورة قبل اعتماد الدفع.</p>"
+            },
+            {
+              "title": "هل أوافق من الجوال؟",
+              "html": "<p>نعم، الموافقات متاحة من الجوال للمعتمدين.</p>"
+            },
+            {
+              "title": "هل يرتبط بالمخزون والمحاسبة؟",
+              "html": "<p>نعم، الاستلام يحدّث المخزون والفاتورة تُنشئ القيد تلقائيًا.</p>"
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "id": "191e9b00",
+      "type": "container",
+      "className": "in-191e9b00 digit related",
+      "anchor": "",
+      "children": [
+        {
+          "id": "4e47f3b4",
+          "type": "container",
+          "className": "in-4e47f3b4 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "112a77a3",
+              "type": "text-editor",
+              "className": "in-112a77a3 ",
+              "anchor": "",
+              "html": "موديولات مترابطة"
+            },
+            {
+              "id": "7febc211",
+              "type": "heading",
+              "className": "in-7febc211 ",
+              "anchor": "",
+              "html": "المشتريات متصلة بشركتك",
+              "tag": "h2"
+            },
+            {
+              "id": "3d5a3955",
+              "type": "text-editor",
+              "className": "in-3d5a3955 ",
+              "anchor": "",
+              "html": "نفس قاعدة البيانات — الاستلام يغذّي المخزون والفاتورة تغذّي المحاسبة."
+            }
+          ]
+        },
+        {
+          "id": "1558d9ab",
+          "type": "container",
+          "className": "in-1558d9ab ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "5b772f1a",
+              "type": "container",
+              "className": "in-5b772f1a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "348c4bb3",
+                  "type": "html",
+                  "className": "in-348c4bb3 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-189\" role=\"img\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-190\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-191\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-192\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-193\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "580cd6d9",
+                  "type": "heading",
+                  "className": "in-580cd6d9 ",
+                  "anchor": "",
+                  "html": "المخزون",
+                  "tag": "h3"
+                },
+                {
+                  "id": "5cf4b515",
+                  "type": "text-editor",
+                  "className": "in-5cf4b515 ",
+                  "anchor": "",
+                  "html": "استلام يحدّث الرصيد"
+                },
+                {
+                  "id": "3f48b417",
+                  "type": "text-editor",
+                  "className": "in-3f48b417 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-197\" href=\"/inventory\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "2af273b4",
+              "type": "container",
+              "className": "in-2af273b4 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "65717294",
+                  "type": "html",
+                  "className": "in-65717294 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-200\" role=\"img\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-201\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-202\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-203\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-204\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "7bfe62b4",
+                  "type": "heading",
+                  "className": "in-7bfe62b4 ",
+                  "anchor": "",
+                  "html": "المحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "2dc76d17",
+                  "type": "text-editor",
+                  "className": "in-2dc76d17 ",
+                  "anchor": "",
+                  "html": "فاتورة تُنشئ القيد"
+                },
+                {
+                  "id": "5140d5ef",
+                  "type": "text-editor",
+                  "className": "in-5140d5ef ",
+                  "anchor": "",
+                  "html": "<a class=\"is-208\" href=\"/accounting\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "6eb2b7f2",
+              "type": "container",
+              "className": "in-6eb2b7f2 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "5052e4a1",
+                  "type": "html",
+                  "className": "in-5052e4a1 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-211\" role=\"img\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-212\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-213\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-214\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "596bd492",
+                  "type": "heading",
+                  "className": "in-596bd492 ",
+                  "anchor": "",
+                  "html": "المبيعات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "4afc9e3",
+                  "type": "text-editor",
+                  "className": "in-4afc9e3 ",
+                  "anchor": "",
+                  "html": "من العرض للتحصيل"
+                },
+                {
+                  "id": "5318a929",
+                  "type": "text-editor",
+                  "className": "in-5318a929 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-218\" href=\"/sales\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "63b37e60",
+              "type": "container",
+              "className": "in-63b37e60 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "24b3ac4f",
+                  "type": "html",
+                  "className": "in-24b3ac4f ",
+                  "anchor": "",
+                  "html": "<span class=\"is-221\" role=\"img\"><svg aria-label=\"reports\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-222\" height=\"10\" rx=\"5\" width=\"56\" x=\"22\" y=\"24\"></rect>\n<rect class=\"iv-223\" height=\"36\" rx=\"6\" width=\"26\" x=\"22\" y=\"40\"></rect>\n<rect class=\"iv-224\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"40\"></rect>\n<rect class=\"iv-225\" height=\"16\" rx=\"5\" width=\"24\" x=\"54\" y=\"60\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "42842ca5",
+                  "type": "heading",
+                  "className": "in-42842ca5 ",
+                  "anchor": "",
+                  "html": "التقارير",
+                  "tag": "h3"
+                },
+                {
+                  "id": "17d00ef0",
+                  "type": "text-editor",
+                  "className": "in-17d00ef0 ",
+                  "anchor": "",
+                  "html": "تقارير مشتريات"
+                },
+                {
+                  "id": "7ba23340",
+                  "type": "text-editor",
+                  "className": "in-7ba23340 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-229\" href=\"/reports\">عرض الموديول ←</a>"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "3687c3a5",
+      "type": "container",
+      "className": "in-3687c3a5 digit cta",
+      "anchor": "cta",
+      "children": [
+        {
+          "id": "d515890",
+          "type": "container",
+          "className": "in-d515890 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "4896f207",
+              "type": "heading",
+              "className": "in-4896f207 ",
+              "anchor": "",
+              "html": "جاهز تتحكّم في مشترياتك؟",
+              "tag": "h2"
+            },
+            {
+              "id": "11d5f1b8",
+              "type": "text-editor",
+              "className": "in-11d5f1b8 ",
+              "anchor": "",
+              "html": "عرض توضيحي يوضّح المسار والموافقات — 30 دقيقة، بدون التزام."
+            },
+            {
+              "id": "1047731d",
+              "type": "container",
+              "className": "in-1047731d ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "4dfc3954",
+                  "type": "button",
+                  "className": "in-4dfc3954 btn mint",
+                  "anchor": "",
+                  "text": "شاهد دورة المشتريات",
+                  "href": "/demo",
+                  "external": false
+                },
+                {
+                  "id": "3c514181",
+                  "type": "button",
+                  "className": "in-3c514181 btn light",
+                  "anchor": "",
+                  "text": "واتساب المبيعات",
+                  "href": "https://wa.me/966591909277",
+                  "external": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

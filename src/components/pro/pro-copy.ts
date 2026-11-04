@@ -25,7 +25,7 @@ export const PRO_COPY = {
   diagram: { ar: 'مخطط توضيحي للمسار، وليس لقطة من النظام', en: 'A diagram of the path, not a system screen' },
   magnified: { ar: 'تكبير لجزء من الشاشة نفسها', en: 'A close-up of the same screen' },
   realScreen: { ar: 'شاشة حقيقية من DIGIT Pro', en: 'A real DIGIT Pro screen' },
-  demoData: { ar: 'بيانات شركة تجريبية', en: 'Demo company data' },
+  demoData: { ar: 'أرقام توضيحية', en: 'Illustrative figures' },
   sequence: { ar: 'تسلسل المستندات', en: 'Document sequence' },
   roles: { ar: 'الأدوار', en: 'Roles' },
   stage: { ar: 'المرحلة', en: 'Stage' },
@@ -62,8 +62,8 @@ export const PRO_COPY = {
   departments: { ar: 'الإدارات', en: 'Departments' },
   crossDept: { ar: 'عبر الإدارات', en: 'Across departments' },
   home: { ar: 'الرئيسية', en: 'Home' },
-  heroNote: { ar: 'شاشة حقيقية من DIGIT Pro · بيانات شركة تجريبية', en: 'A real DIGIT Pro screen · demo company data' },
-  ctaTitle: { ar: 'شاهدها على شركة تجريبية', en: 'See it on a demo company' },
+  heroNote: { ar: 'شاشة حقيقية من DIGIT Pro · أرقام توضيحية', en: 'A real DIGIT Pro screen · illustrative figures' },
+  ctaTitle: { ar: 'شاهدها في عرض مباشر', en: 'See it in a live walkthrough' },
 } satisfies Record<string, L>;
 
 export const TIER_LABEL = {
