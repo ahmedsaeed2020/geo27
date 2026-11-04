@@ -9,6 +9,6 @@ export const Route = createFileRoute('/en/hr/$department')({
 });
 
 function Page() {
-  const { path } = Route.useLoaderData();
-  return <DepartmentRouteView path={path} />;
+  const { path, hr } = Route.useLoaderData();
+  return <DepartmentRouteView path={path} hr={hr} />;
 }
