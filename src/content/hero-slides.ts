@@ -2,7 +2,7 @@
 // Saudi characters (text-free, no logos, no readable screens). Proof is either a registered real screen (Pro, HR) or
 // the journey stages the product hub already publishes (Construction, CRM, POS) — never a reconstructed screen.
 import type { L, Shot } from '@/content/product-shots';
-import type { ProductKey } from '@/content/catalog';
+import { productByKey, type ProductKey } from '@/content/catalog';
 import { screenById } from '@/content/screens';
 import { REPORTS } from '@/content/pro/reports';
 import { CONSTRUCTION_JOURNEY, CRM_JOURNEY } from '@/content/specialist/stories';
@@ -155,7 +155,7 @@ export const HERO_SLIDES: HeroSlide[] = [
       t('خصم المخزون لحظة البيع', 'Stock deducted at the moment of sale'),
       t('قيد محاسبي تلقائي لكل عملية', 'An automatic accounting entry for every sale'),
     ],
-    stat: { value: '9', label: t('أنشطة بحلول جاهزة', 'trades with ready solutions') },
+    stat: { value: String(productByKey('pos')?.solutions.length ?? 0), label: t('أنشطة بحلول جاهزة', 'trades with ready solutions') },
     photo: { large: posRetail960, small: posRetail640, alt: t('موظف مبيعات سعودي يسلّم طلب عميل في متجر', 'A Saudi sales associate handing over an order in a boutique') },
     proof: { kind: 'flow', label: t('من البيع إلى الدفاتر', 'From the till to the books'), steps: [t('بيع على الكاشير', 'Sale at the till'), t('فاتورة مبسطة + QR', 'Simplified invoice + QR'), t('قيد محاسبي', 'Accounting entry'), t('خصم مخزون', 'Stock deduction')] },
     link: { path: '/modules/pos', label: t('استكشف DIGIT POS', 'Explore DIGIT POS') },
