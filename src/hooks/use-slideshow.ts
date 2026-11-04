@@ -50,12 +50,12 @@ export function useSlideshow({ count, locale, paused = false, threshold = 0.35 }
     return () => { observer.disconnect(); document.removeEventListener('visibilitychange', onVisibility); };
   }, [threshold]);
 
+  const activeRef = useRef(0);
   const go = useCallback((target: number, step?: 1 | -1) => {
-    setActive(current => {
-      const next = (target + count) % count;
-      setDirection(step ?? (next >= current ? 1 : -1));
-      return next;
-    });
+    const next = (target + count) % count;
+    setDirection(step ?? (next >= activeRef.current ? 1 : -1));
+    activeRef.current = next;
+    setActive(next);
     setCycle(c => c + 1);
   }, [count]);
 
