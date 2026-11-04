@@ -192,7 +192,7 @@ export function BlockList({ blocks, onChange, media, locale, department = null, 
   // Explicit source sections are DIGIT Pro V4 pages; otherwise an HR module's handoff sections.
   const deptSource = department ? departmentSource(department.product, department.id) : undefined;
   const source: { sections: SourceSectionInfo[] } | undefined = sourceSections ? { sections: sourceSections } : deptSource?.config;
-  const group: ShotGroup | undefined = sourceSections ? 'DIGIT Pro' : department?.product === 'hr' ? 'DIGIT HR' : department?.product === 'crm' ? 'DIGIT CRM' : undefined;
+  const group: ShotGroup | undefined = sourceSections ? 'DIGIT Pro' : department?.product === 'hr' ? 'DIGIT HR' : undefined;
   return (
     <>
       {blocks.map((b, i) => {
