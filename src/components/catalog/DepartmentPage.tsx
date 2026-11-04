@@ -10,7 +10,10 @@ import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/nav/nav-links';
 import { useCatalog } from './useCatalog';
 import { departmentByPath, departmentById, productByKey, type L } from '@/content/catalog';
-import { SHOTS, type Shot } from '@/content/product-shots';
+import type { Shot } from '@/content/product-shots';
+import { screenById } from '@/content/screens';
+import { hrModuleBySlug, type HrModuleContent } from '@/content/hr/hr-modules';
+import HrModuleBody, { useHrSource } from '@/components/hr/HrModuleBody';
 import type { CmsBlock, CmsContent } from '@/lib/cms-schema';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { usePageMotion } from '@/hooks/use-page-motion';
@@ -31,7 +34,7 @@ const COPY = {
   screens: { ar: 'شاشات القسم', en: 'Department screens' },
 } satisfies Record<string, L>;
 
-const known = (id: string): Shot | undefined => (id ? SHOTS[id] : undefined);
+const known = (id: string): Shot | undefined => screenById(id);
 
 function useLightbox(shots: Shot[]) {
   const [index, setIndex] = useState<number | null>(null);
@@ -379,6 +382,9 @@ function Block({ block, locale, index, product, department }: { block: CmsBlock;
     case 'related':
       body = <ItemsWithShots block={block} locale={locale} variant={block.type} />;
       break;
+    case 'source':
+      // Placed by a source-backed template (DIGIT HR modules); meaningless elsewhere.
+      return null;
   }
   return (
     <section className="dp-block" data-type={block.type} id={block.id}>
@@ -388,7 +394,31 @@ function Block({ block, locale, index, product, department }: { block: CmsBlock;
 }
 
 /** Shared Department Detail template: breadcrumbs, hero with a real screen, department switcher and CMS-ordered content regions. */
-export function DepartmentBody({ content, path, locale }: { content: CmsContent; path: string; locale: Locale }) {
+export function DepartmentBody({ content, path, locale, hr = null }: { content: CmsContent; path: string; locale: Locale; hr?: HrModuleContent | null }) {
+  const meta = content.department;
+  const registered = departmentByPath(path) ?? (meta ? departmentById(meta.product, meta.id) : undefined);
+  const productKey = registered?.product ?? meta?.product ?? 'pro';
+  const deptId = registered?.id ?? meta?.id ?? '';
+  const hrConfig = productKey === 'hr' ? hrModuleBySlug(deptId) : undefined;
+  if (hrConfig) return <HrDepartmentBody content={content} locale={locale} config={hrConfig} initial={hr} />;
+  return <GenericDepartmentBody content={content} path={path} locale={locale} />;
+}
+
+function HrDepartmentBody({ content, locale, config, initial }: { content: CmsContent; locale: Locale; config: NonNullable<ReturnType<typeof hrModuleBySlug>>; initial: HrModuleContent | null }) {
+  const source = useHrSource(config.slug, initial);
+  if (!source) return <div className="hr-loading" aria-busy="true" />;
+  return (
+    <HrModuleBody
+      content={content}
+      locale={locale}
+      config={config}
+      source={source}
+      renderBlock={(b, i) => <Block key={b.id} block={b} locale={locale} index={i} product="hr" department={config.slug} />}
+    />
+  );
+}
+
+function GenericDepartmentBody({ content, path, locale }: { content: CmsContent; path: string; locale: Locale }) {
   const meta = content.department;
   const local = content[locale];
   const families = useCatalog();
@@ -500,7 +530,7 @@ export function DepartmentBody({ content, path, locale }: { content: CmsContent;
   );
 }
 
-export default function DepartmentPage({ content, path }: { content: CmsContent; path: string }) {
+export default function DepartmentPage({ content, path, hr = null }: { content: CmsContent; path: string; hr?: HrModuleContent | null }) {
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
   usePageMotion(mainRef, `dept-${path}-${locale}`);
@@ -513,7 +543,7 @@ export default function DepartmentPage({ content, path }: { content: CmsContent;
     <div className="bg-paper font-plex">
       <Header />
       <main ref={mainRef} className="dept-page" aria-label={title}>
-        <DepartmentBody content={content} path={path} locale={locale} />
+        <DepartmentBody content={content} path={path} locale={locale} hr={hr} />
         {content.formEnabled && <LeadCapturePanel interest={title} product={product} department={department} />}
       </main>
       <Footer />
