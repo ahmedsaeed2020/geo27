@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef, useState, type CSSProperties, type FocusEvent, type KeyboardEvent, type PointerEvent } from 'react';
+import { useEffect, useRef, useState, type CSSProperties, type PointerEvent } from 'react';
+import { useSlideshow } from '@/hooks/use-slideshow';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, Check, ChevronLeft, ChevronRight, Maximize2, Pause, Play } from 'lucide-react';
 import { useLocale, localeHref } from '@/lib/i18n';
@@ -12,18 +13,6 @@ import '@/home-slider.css';
 /** Time each slide stays on screen while autoplay runs. */
 export const SLIDE_MS = 8000;
 const pad = (n: number) => String(n).padStart(2, '0');
-
-function useReducedMotion() {
-  const [reduced, setReduced] = useState(false);
-  useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const sync = () => setReduced(query.matches);
-    sync();
-    query.addEventListener('change', sync);
-    return () => query.removeEventListener('change', sync);
-  }, []);
-  return reduced;
-}
 
 /** Counts up once when the slider first comes into view; server and no-motion renders keep the final figure. */
 function CountUp({ value, start, reduced }: { value: number; start: boolean; reduced: boolean }) {
@@ -48,41 +37,13 @@ function CountUp({ value, start, reduced }: { value: number; start: boolean; red
 export default function ProductSlider() {
   const l = useLocale();
   const navigate = useNavigate();
-  const reduced = useReducedMotion();
   const slides = HOME_SLIDES;
   const count = slides.length;
-  const sectionRef = useRef<HTMLElement>(null);
   const stageRef = useRef<HTMLDivElement>(null);
-  const tabsRef = useRef<HTMLDivElement>(null);
-  const swipe = useRef<{ x: number; y: number } | null>(null);
-  const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState<1 | -1>(1);
-  const [cycle, setCycle] = useState(0);
-  const [playing, setPlaying] = useState(true);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
-  const [inView, setInView] = useState(false);
-  const [seen, setSeen] = useState(false);
-  const [pageVisible, setPageVisible] = useState(true);
   const [primed, setPrimed] = useState<ReadonlySet<number>>(() => new Set([0]));
   const [zoom, setZoom] = useState<{ slide: number; index: number } | null>(null);
-
-  // Visitors who prefer less motion start paused; they can still press play.
-  useEffect(() => { if (reduced) setPlaying(false); }, [reduced]);
-
-  useEffect(() => {
-    const node = sectionRef.current;
-    if (!node) return;
-    const observer = new IntersectionObserver(([entry]) => {
-      const visible = Boolean(entry?.isIntersecting);
-      setInView(visible);
-      if (visible) setSeen(true);
-    }, { threshold: 0.35 });
-    observer.observe(node);
-    const onVisibility = () => setPageVisible(document.visibilityState === 'visible');
-    document.addEventListener('visibilitychange', onVisibility);
-    return () => { observer.disconnect(); document.removeEventListener('visibilitychange', onVisibility); };
-  }, []);
+  const show = useSlideshow({ count, locale: l, paused: zoom !== null });
+  const { active, direction, cycle, go, playing, setPlaying, reduced, seen, running } = show;
 
   // Images load only for the shown slide and the next one, once the slider is close to the viewport.
   useEffect(() => {
@@ -95,68 +56,10 @@ export default function ProductSlider() {
     });
   }, [active, seen, count]);
 
-  const go = useCallback((target: number, step?: 1 | -1) => {
-    const next = (target + count) % count;
-    setDirection(step ?? (next >= active ? 1 : -1));
-    setActive(next);
-    setCycle(c => c + 1);
-  }, [active, count]);
-
-  // Keep the active tab in view when the tab row scrolls (phones), without moving the page.
-  useEffect(() => {
-    const row = tabsRef.current;
-    const tab = row?.querySelector<HTMLElement>(`[data-index="${active}"]`);
-    if (!row || !tab || row.scrollWidth <= row.clientWidth + 1) return;
-    const rowBox = row.getBoundingClientRect();
-    const tabBox = tab.getBoundingClientRect();
-    row.scrollBy({ left: tabBox.left + tabBox.width / 2 - (rowBox.left + rowBox.width / 2), behavior: reduced ? 'auto' : 'smooth' });
-  }, [active, reduced]);
-
-  const running = playing && !reduced && inView && !hovered && !focused && pageVisible && zoom === null;
   const slide = slides[active]!;
-  const forwardKey = l === 'ar' ? 'ArrowLeft' : 'ArrowRight';
-  const backKey = l === 'ar' ? 'ArrowRight' : 'ArrowLeft';
   const PrevIcon = l === 'ar' ? ChevronRight : ChevronLeft;
   const NextIcon = l === 'ar' ? ChevronLeft : ChevronRight;
   const LinkArrow = l === 'ar' ? ArrowLeft : ArrowRight;
-
-  const onTabsKey = (event: KeyboardEvent<HTMLDivElement>) => {
-    let target: number | null = null;
-    if (event.key === forwardKey) target = active + 1;
-    else if (event.key === backKey) target = active - 1;
-    else if (event.key === 'Home') target = 0;
-    else if (event.key === 'End') target = count - 1;
-    if (target === null) return;
-    event.preventDefault();
-    const next = (target + count) % count;
-    go(next, event.key === backKey || event.key === 'Home' ? -1 : 1);
-    tabsRef.current?.querySelector<HTMLElement>(`[data-index="${next}"]`)?.focus();
-  };
-
-  // Pause for keyboard users only; a mouse click on a tab should not freeze autoplay.
-  const onFocusIn = (event: FocusEvent<HTMLElement>) => {
-    const target = event.target as HTMLElement;
-    if (target.matches(':focus-visible')) setFocused(true);
-  };
-  const onFocusOut = (event: FocusEvent<HTMLElement>) => {
-    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setFocused(false);
-  };
-
-  const onPointerDown = (event: PointerEvent<HTMLDivElement>) => {
-    if (event.pointerType === 'mouse') return;
-    swipe.current = { x: event.clientX, y: event.clientY };
-  };
-  const onPointerUp = (event: PointerEvent<HTMLDivElement>) => {
-    const from = swipe.current;
-    swipe.current = null;
-    if (!from) return;
-    const dx = event.clientX - from.x;
-    const dy = event.clientY - from.y;
-    if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy) * 1.4) return;
-    // Arabic reads right to left, so the next slide arrives with a rightward swipe.
-    const forward = l === 'ar' ? dx > 0 : dx < 0;
-    go(active + (forward ? 1 : -1), forward ? 1 : -1);
-  };
 
   // Gentle device tilt that follows a fine pointer; written to CSS variables to avoid re-rendering.
   const frame = useRef(0);
@@ -189,16 +92,14 @@ export default function ProductSlider() {
 
   return (
     <section
-      ref={sectionRef}
+      ref={show.sectionRef}
       id="product-band"
       className="ps"
       aria-roledescription={l === 'ar' ? 'عرض شرائح' : 'carousel'}
       aria-label={SLIDER_COPY.region[l]}
       data-running={running ? 'true' : 'false'}
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => { setHovered(false); resetTilt(); }}
-      onFocus={onFocusIn}
-      onBlur={onFocusOut}
+      {...show.sectionHandlers}
+      onMouseLeave={() => { show.sectionHandlers.onMouseLeave(); resetTilt(); }}
     >
       <div className="ps-scenes" aria-hidden="true">
         {slides.map((s, i) => (
@@ -235,9 +136,7 @@ export default function ProductSlider() {
           className="ps-stage"
           data-direction={direction === 1 ? 'forward' : 'back'}
           aria-live={running ? 'off' : 'polite'}
-          onPointerDown={onPointerDown}
-          onPointerUp={onPointerUp}
-          onPointerCancel={() => { swipe.current = null; }}
+          {...show.swipeHandlers}
           onPointerMove={onPointerMove}
           onPointerLeave={resetTilt}
         >
@@ -307,7 +206,7 @@ export default function ProductSlider() {
         </div>
 
         <div className="ps-nav">
-          <div ref={tabsRef} className="ps-tabs" role="tablist" aria-label={SLIDER_COPY.slides[l]} onKeyDown={onTabsKey}>
+          <div ref={show.tabsRef} className="ps-tabs" role="tablist" aria-label={SLIDER_COPY.slides[l]} onKeyDown={show.onTabsKey}>
             {slides.map((s, i) => {
               const selected = i === active;
               return (
