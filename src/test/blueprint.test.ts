@@ -6,13 +6,14 @@ import {
   SECTORS,
   blueprintSearch,
   blueprintTopic,
+  blueprintTopicLabel,
   parseBlueprint,
   startPoint,
   type NeedId,
 } from '@/content/blueprint';
 import { BP } from '@/components/blueprint/copy';
 import { screenById } from '@/content/screens';
-import { leadSchema } from '@/lib/leads-schema';
+import { leadSchema, leadTopic } from '@/lib/leads-schema';
 import { RESOURCE_LINKS } from '@/content/catalog';
 import { HOME_SECTIONS } from '@/content/section-registry';
 
@@ -61,8 +62,18 @@ describe('Design-your-system blueprint', () => {
 
   it('tags the demo request with a topic the request form accepts', () => {
     const topic = blueprintTopic({ sector: 'field-service', employees: '500+', branches: '6+', needs: ['field'] });
-    expect(topic).toBe('BP-field-service-500p-6p');
+    expect(topic).toBe('BP-field-service-E4-B3');
     const lead = { name: 'Ahmed', company: 'Test Co', email: 'a@example.com', phone: '', interest: 'DIGIT', requestType: 'demo', jobRole: '', message: '', locale: 'ar', pagePath: '/blueprint', consent: true, topic };
     expect(leadSchema.safeParse(lead).success).toBe(true);
+  });
+
+  it('keeps the blueprint on the saved request and labels it for admins', () => {
+    const topic = blueprintTopic({ sector: 'retail', employees: '1-20', branches: '2-5', needs: ['pos'] });
+    expect(topic).toBe('BP-retail-E1-B2');
+    expect(leadTopic('pos', topic)).toBe(topic);
+    expect(leadTopic('pro', topic)).toBe(topic);
+    expect(blueprintTopicLabel(topic)).toBe('مخطط: التجزئة والمتاجر · حتى 20 موظفًا · 2 – 5 فروع');
+    expect(leadTopic('pos', 'BP-nowhere-E9')).toBe('');
+    expect(blueprintTopicLabel('ACC-OPS')).toBe('');
   });
 });

@@ -203,8 +203,41 @@ export function startPoint(bp: Blueprint): StartPoint {
   return { id: 'pro', reasons };
 }
 
-/** Compact, form-safe topic code (letters, digits and dashes, at most 40 characters). */
+/**
+ * Compact, form-safe topic code (letters, digits and dashes, at most 40 characters), e.g. BP-retail-E1-B2: the sector
+ * id, then the employee and branch bands by position. Admins read it back with {@link blueprintTopicLabel}.
+ */
 export function blueprintTopic(bp: Blueprint): string {
-  const parts = ['BP', bp.sector ?? 'any', (bp.employees ?? '').replace('+', 'p'), (bp.branches ?? '').replace('+', 'p')].filter(Boolean);
-  return parts.join('-').replace(/[^A-Za-z0-9-]/g, '').slice(0, 40);
+  const e = bp.employees ? EMPLOYEES.findIndex(x => x.id === bp.employees) + 1 : 0;
+  const b = bp.branches ? BRANCHES.findIndex(x => x.id === bp.branches) + 1 : 0;
+  return ['BP', bp.sector ?? 'any', e ? `E${e}` : '', b ? `B${b}` : ''].filter(Boolean).join('-').slice(0, 40);
+}
+
+const TOPIC = /^BP-([a-z-]+?)(?:-E([1-4]))?(?:-B([1-3]))?$/;
+
+/** The blueprint a stored topic code describes, or undefined for anything that isn't a valid blueprint code. */
+export function parseBlueprintTopic(topic: string | null | undefined): Pick<Blueprint, 'sector' | 'employees' | 'branches'> | undefined {
+  const m = TOPIC.exec(topic ?? '');
+  if (!m) return undefined;
+  const sector = m[1] === 'any' ? undefined : SECTORS.find(s => s.id === m[1])?.id;
+  if (m[1] !== 'any' && !sector) return undefined;
+  const out: Pick<Blueprint, 'sector' | 'employees' | 'branches'> = {};
+  if (sector) out.sector = sector;
+  const employees = m[2] ? EMPLOYEES[Number(m[2]) - 1]?.id : undefined;
+  if (employees) out.employees = employees;
+  const branches = m[3] ? BRANCHES[Number(m[3]) - 1]?.id : undefined;
+  if (branches) out.branches = branches;
+  return out;
+}
+
+/** Arabic admin label of a stored blueprint topic: «مخطط: القطاع · الموظفون · الفروع». */
+export function blueprintTopicLabel(topic: string | null | undefined): string {
+  const bp = parseBlueprintTopic(topic);
+  if (!bp) return '';
+  const parts = [
+    SECTORS.find(s => s.id === bp.sector)?.label.ar ?? 'بدون قطاع',
+    EMPLOYEES.find(e => e.id === bp.employees)?.label.ar,
+    BRANCHES.find(b => b.id === bp.branches)?.label.ar,
+  ].filter(Boolean);
+  return `مخطط: ${parts.join(' · ')}`;
 }

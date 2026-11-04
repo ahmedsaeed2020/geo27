@@ -5,6 +5,7 @@ import { updateLead, LEAD_STATUSES } from '@/lib/cms.functions';
 import { LEAD_RECIPIENT } from '@/lib/leads-schema';
 import { productByKey } from '@/content/catalog';
 import { proTopicLabel } from '@/content/pro/pro-pages';
+import { blueprintTopicLabel } from '@/content/blueprint';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState, errorText, formatDate, NativeSelect, STATUS_LABELS, StatusPill, teamName, useRefresh, type Lead, type TeamMember } from './shared';
@@ -168,6 +169,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
             <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
               {leadContextLabel(r.product, r.department) && <StatusPill tone="info">{leadContextLabel(r.product, r.department)}</StatusPill>}
               {proTopicLabel(r.topic) && <StatusPill tone="info">{proTopicLabel(r.topic)}</StatusPill>}
+              {blueprintTopicLabel(r.topic) && <StatusPill tone="info">{blueprintTopicLabel(r.topic)}</StatusPill>}
               <span dir="ltr">{r.page_path}</span>
               <span>{r.locale === 'en' ? 'English' : 'العربية'}</span>
               <span>{formatDate(r.created_at)}</span>

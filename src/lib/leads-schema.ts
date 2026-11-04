@@ -1,6 +1,14 @@
 import { z } from 'zod';
 import { productByKey } from '@/content/catalog';
 export { proLeadTopic } from '@/content/pro/pro-pages';
+import { proLeadTopic } from '@/content/pro/pro-pages';
+import { parseBlueprintTopic } from '@/content/blueprint';
+
+/** The topic kept on a saved request: a known Pro workspace/question for Pro requests, or a valid blueprint code. */
+export function leadTopic(product: string, topic: string): string {
+  if (parseBlueprintTopic(topic)) return topic;
+  return product === 'pro' ? proLeadTopic(topic) : '';
+}
 export const LEAD_RECIPIENT = 'a.saeed@trilogy.com.sa';
 export const leadSchema = z.object({
   name: z.string().trim().min(2).max(100), company: z.string().trim().min(2).max(160),
