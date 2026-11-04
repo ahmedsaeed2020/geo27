@@ -173,6 +173,24 @@ export const ORGANIZATION_JSONLD = {
 
 const url = (path: string) => SITE_URL + (path === "/" ? "/" : path);
 
+/** Branded 1200×630 share cards (public/og), used when a page has no share image of its own in the CMS. */
+export const SHARE_IMAGES = {
+  ar: { url: `${SITE_URL}/og/digit-share-ar.jpg`, alt: "DIGIT — منشأتك كلها في نظام واحد" },
+  en: { url: `${SITE_URL}/og/digit-share-en.jpg`, alt: "DIGIT — Your whole company on one system" },
+} as const;
+
+function shareImage(own: string | undefined, english: boolean): MetaTag[] {
+  if (own?.startsWith("https://")) return [{ property: "og:image", content: own }, { name: "twitter:image", content: own }];
+  const card = SHARE_IMAGES[english ? "en" : "ar"];
+  return [
+    { property: "og:image", content: card.url },
+    { property: "og:image:width", content: "1200" },
+    { property: "og:image:height", content: "630" },
+    { property: "og:image:alt", content: card.alt },
+    { name: "twitter:image", content: card.url },
+  ];
+}
+
 export function withSeo(path: string, head: Head = {}, records: import('./cms-schema').PublishedRecord[] = []): Head {
   const english = path === "/en" || path.startsWith("/en/");
   const arPath = english ? path.replace(/^\/en/, "") || "/" : path;
@@ -241,7 +259,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
       { name: "twitter:title", content: title },
       { name: "twitter:description", content: description },
       ...(content?.indexable===false ? [{name:'robots',content:'noindex, nofollow'}] : []),
-      ...(content?.ogImage?.startsWith('https://') ? [{property:'og:image',content:content.ogImage},{name:'twitter:image',content:content.ogImage}] : []),
+      ...shareImage(content?.ogImage, english),
       ...kept,
     ],
     links: [
