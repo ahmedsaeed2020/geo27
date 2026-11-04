@@ -80,11 +80,11 @@ export const HOME_SLIDES: HomeSlide[] = [
     points: [
       { ar: 'ثلاث قوائم في شاشة واحدة: الأرباح والخسائر، المركز المالي، التدفق النقدي', en: 'Three statements on one screen: profit & loss, financial position, cash flow' },
       { ar: 'مرشحات الفترة والشركة ومركز التكلفة', en: 'Filters for period, company and cost center' },
-      { ar: 'كل كارت معاه تعريفه ومصدره', en: 'Every card carries its definition and source' },
+      { ar: 'قائمة إقفال الفترة ومراجعة الفروقات قبل الإقفال', en: 'Period-close checklist with variance review before closing' },
     ],
     metric: { value: REPORTS.length, label: { ar: 'تقريرًا جاهزًا للتشغيل في مركز التقارير', en: 'reports ready to run in the report center' } },
     screen: need('09-rep-03-r6'),
-    detail: need('01-cfo-05-r7'),
+    detail: need('01-cfo-04-f11'),
     scene: { large: statements1920, small: statements960 },
     link: { path: '/modules/reports', label: { ar: 'افتح مركز التقارير', en: 'Open the report center' } },
   },
