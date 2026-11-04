@@ -13,7 +13,7 @@ const KIND_FILTER: Record<ListKind, (d: Doc) => boolean> = {
   resources: d => d.kind === 'resource',
   navigation: d => d.kind === 'navigation',
 };
-const KIND_LABELS: Record<string, string> = { page: 'صفحة', module: 'موديول', industry: 'قطاع', product: 'باقة', story: 'قصة', resource: 'مورد', navigation: 'قائمة' };
+const KIND_LABELS: Record<string, string> = { page: 'صفحة', module: 'موديول', industry: 'قطاع', product: 'باقة', story: 'قصة', resource: 'مورد', navigation: 'قائمة', department: 'قسم منتج' };
 
 export function docTitle(d: Doc): string {
   const c = cmsContentSchema.safeParse(d.draft);

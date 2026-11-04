@@ -8,6 +8,7 @@ import {
   Image,
   Inbox,
   KeyRound,
+  Boxes,
   LayoutDashboard,
   Menu,
   MessagesSquare,
@@ -23,6 +24,7 @@ type Tab = { id: string; label: string; icon: ComponentType<{ size?: number }>; 
 export const TABS: Tab[] = [
   { id: 'overview', label: 'نظرة عامة', icon: LayoutDashboard, roles: ['owner', 'editor', 'sales'], group: '' },
   { id: 'pages', label: 'الصفحات', icon: FileText, roles: ['owner', 'editor'], group: 'المحتوى' },
+  { id: 'catalog', label: 'المنتجات والأقسام', icon: Boxes, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'stories', label: 'قصص الميزات', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'resources', label: 'الموارد', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'media', label: 'مكتبة الصور', icon: Image, roles: ['owner', 'editor'], group: 'المحتوى' },
