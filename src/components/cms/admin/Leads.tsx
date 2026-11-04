@@ -3,11 +3,20 @@ import { useServerFn } from '@tanstack/react-start';
 import { Download, Mail, Phone } from 'lucide-react';
 import { updateLead, LEAD_STATUSES } from '@/lib/cms.functions';
 import { LEAD_RECIPIENT } from '@/lib/leads-schema';
+import { productByKey } from '@/content/catalog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState, errorText, formatDate, NativeSelect, STATUS_LABELS, StatusPill, teamName, useRefresh, type Lead, type TeamMember } from './shared';
 
 const REQUEST_TYPES: Record<string, string> = { demo: 'ديمو', consultation: 'استشارة', scope: 'نطاق عمل' };
+
+/** Product and department names (Arabic) for a request's catalog context. */
+export function leadContextLabel(product: string | null | undefined, department: string | null | undefined): string {
+  const family = product ? productByKey(product) : undefined;
+  if (!family) return '';
+  const dept = department ? family.departments.find(d => d.id === department) : undefined;
+  return dept ? `${family.name.ar} · ${dept.label.ar}` : family.name.ar;
+}
 
 export function leadsToCsv(rows: Lead[], team: TeamMember[]): string {
   const cols: [string, (r: Lead) => unknown][] = [
@@ -18,6 +27,8 @@ export function leadsToCsv(rows: Lead[], team: TeamMember[]): string {
     ['interest', r => r.interest],
     ['request_type', r => r.request_type],
     ['job_role', r => r.job_role],
+    ['product', r => r.product],
+    ['department', r => r.department],
     ['status', r => r.status],
     ['assigned_to', r => (r.assigned_to ? teamName(team, r.assigned_to) : '')],
     ['page_path', r => r.page_path],
@@ -34,6 +45,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
   const [q, setQ] = useState('');
   const [status, setStatus] = useState('all');
   const [owner, setOwner] = useState('all');
+  const [product, setProduct] = useState('all');
   const update = useServerFn(updateLead);
   const refresh = useRefresh();
   const assignable = team.filter(t => t.role !== 'editor');
@@ -43,9 +55,11 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
       r =>
         (status === 'all' || r.status === status) &&
         (owner === 'all' || (owner === 'none' ? !r.assigned_to : r.assigned_to === owner)) &&
+        (product === 'all' || (product === 'none' ? !r.product : r.product === product)) &&
         (!needle || `${r.name} ${r.company ?? ''} ${r.email ?? ''} ${r.phone ?? ''} ${r.interest ?? ''}`.toLowerCase().includes(needle)),
     );
-  }, [rows, q, status, owner]);
+  }, [rows, q, status, owner, product]);
+  const products = useMemo(() => [...new Set(rows.map(r => r.product).filter((p): p is string => !!p))], [rows]);
   const counts = useMemo(() => Object.fromEntries(LEAD_STATUSES.map(s => [s, rows.filter(r => r.status === s).length])), [rows]);
 
   async function change(r: Lead, patch: { status?: string; assignedTo?: string | null }) {
@@ -95,6 +109,15 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
             </option>
           ))}
         </NativeSelect>
+        <NativeSelect aria-label="المنتج" className="max-w-[14rem]" value={product} onChange={e => setProduct(e.target.value)}>
+          <option value="all">كل المنتجات</option>
+          <option value="none">بدون منتج</option>
+          {products.map(p => (
+            <option key={p} value={p}>
+              {productByKey(p)?.name.ar ?? p}
+            </option>
+          ))}
+        </NativeSelect>
         <Button variant="outline" onClick={exportCsv} disabled={!visible.length}>
           <Download size={16} />
           تصدير {visible.length} طلب
@@ -141,6 +164,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
             </div>
             {r.message && <p className="whitespace-pre-line text-sm">{r.message}</p>}
             <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              {leadContextLabel(r.product, r.department) && <StatusPill tone="info">{leadContextLabel(r.product, r.department)}</StatusPill>}
               <span dir="ltr">{r.page_path}</span>
               <span>{r.locale === 'en' ? 'English' : 'العربية'}</span>
               <span>{formatDate(r.created_at)}</span>
