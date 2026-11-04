@@ -1,4 +1,12 @@
 # Requested pages
+# DIGIT Pro V4 complete product pages (owner brief 2026-11-04 16:51)
+- [ ] Phase A: source map — V4 pack (41 pages, 321 IDs, 135 reports, 12 executive questions) reconciled with the 49 real screens; evidence classes (available / being verified / scoped) and screenshot→feature provenance kept in code and tested.
+- [ ] Phase B: five department pages (/modules/accounting, sales, purchasing, inventory, fixed-assets) expanded in place: 4 workspaces each with Overview · Documents & Work · Full Reports tabs, distinct visual mechanism per department, journeys, decisions, cross-links, FAQ, contextual demo; AR/EN.
+- [ ] Phase C: /modules/reports report center (featured reports + searchable directory), plus new CMS-managed draft pages: Executive Dashboards, Settings & Governance, Advanced Capabilities.
+- [ ] Phase D: CFO Intelligence page (question rail over the 12 executive questions with evidence status, five finance chapters).
+- [ ] /pro hub upgrade: five-department explorer, connected cycle, executive proof, document connections, role discovery, report intro, cross-department areas; editable from the existing Pro section settings.
+- [ ] CMS: Pro pages use source sections the admin can reorder/hide/override (same as HR); drafts registered for the four new pages; demo requests carry department/area + interest.
+- [ ] Phase E: tests for evidence rules, AR/EN desktop/mobile screenshots, links, SEO, console; preview links; report to owner. No live publish.
 # Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
 - [x] One product catalog: Pro (5 departments + dashboards/reports/tour), HR (7 groups), Construction (9 departments), POS (existing solutions); existing routes reused, new HR/Construction routes registered.
 - [x] Header and Mega Menu: new top level, multi-column product panels with real Pro screenshot, explore by role/problem, keyboard/Escape/click, mobile accordions, AR/EN; checked at 390, 1280, 1366 and 1440 px.
