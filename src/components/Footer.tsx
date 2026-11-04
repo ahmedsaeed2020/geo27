@@ -53,7 +53,7 @@ const COLS: { title: string; links: { label: string; href: string }[] }[] = [
     title: "روابط مهمة",
     links: [
       { label: "الدخول للنظام", href: "https://pro.digit-erp.com/login" },
-      { label: "الدعم الفني", href: "http://digit-erp.com/support" },
+      { label: "الدعم الفني", href: "/support" },
       { label: "الوظائف", href: "/careers/" },
       { label: "الأسئلة الشائعة", href: "/faq/" },
       { label: "الشروط", href: "/terms/" },
