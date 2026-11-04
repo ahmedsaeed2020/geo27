@@ -8,7 +8,7 @@ const family = (key: string) => resolveCatalog(undefined, []).find(f => f.key ==
 const block = (title: string, type = 'capability') => ({ id: title, type, title, body: 'Body' });
 const side = (blocks: ReturnType<typeof block>[]) => ({ title: 'SEO title', description: 'SEO description', headline: 'Headline', lede: 'Lede', blocks });
 const departmentDraft = (blocks: ReturnType<typeof block>[], heroShot = '07-inv-01-in1') =>
-  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'construction', id: 'projects', heroShot } });
+  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'pro', id: 'inventory', heroShot } });
 
 describe('Product menu and department rules', () => {
   it('lists the six products in menu order: Pro, HR, Construction, CRM, FSM + ITM, POS', () => {
