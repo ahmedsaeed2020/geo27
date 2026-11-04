@@ -6,6 +6,7 @@ import { SHOTS, type Shot } from '@/content/product-shots';
 import type { ShotRef } from '@/content/pro/types';
 import { useLocale } from '@/lib/i18n';
 import { PRO_COPY as C } from './pro-copy';
+import '@/product-proof.css';
 
 export const shotOf = (id: string | undefined): Shot | undefined => (id ? SHOTS[id] : undefined);
 
