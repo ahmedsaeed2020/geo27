@@ -65,13 +65,14 @@ function FocusShot({ shot, focus, locale, onOpen }: { shot: Shot; focus: CmsBloc
     <div className="dp-focus" data-has-lens={focus ? '' : undefined}>
       <div className="dp-focus-main">
         <ShotFrame shot={shot} size="lead" onOpen={onOpen} />
-        {focus && <span className="dp-focus-ring" aria-hidden="true" style={{ insetInlineStart: undefined, left: `${focus.x}%`, top: `calc(34px + (100% - 34px - 3.2em) * ${focus.y / 100})` } as CSSProperties} />}
       </div>
       {focus && (
         <figure className="dp-lens">
-          <span className="dp-lens-view" aria-hidden="true">
-            <img src={shot.src} alt="" width={shot.width} height={shot.height} loading="lazy" style={{ transform: `scale(${focus.zoom})`, transformOrigin: `${focus.x}% ${focus.y}%` }} />
-          </span>
+          <span
+            className="dp-lens-view"
+            aria-hidden="true"
+            style={{ backgroundImage: `url("${shot.src}")`, backgroundSize: `${focus.zoom * 100}% auto`, backgroundPosition: `${focus.x}% ${focus.y}%` } as CSSProperties}
+          />
           <figcaption>
             <Search aria-hidden="true" />
             {COPY.magnified[locale]}
