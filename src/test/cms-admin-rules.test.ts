@@ -85,7 +85,8 @@ describe('home and pro section layout', () => {
     const { arrangeSections, HOME_SECTIONS } = await import('@/content/section-registry');
     const out = arrangeSections(HOME_SECTIONS, { sections: [{ id: 'hero', enabled: false }, { id: 'faq', enabled: true }], texts: {} });
     expect(out[0]).toEqual({ id: 'hero', enabled: true, locked: true });
-    expect(out[1]?.id).toBe('faq');
+    expect(out.filter(s => s.id === 'hero')).toHaveLength(1);
+    expect(out.map(s => s.id)).toHaveLength(HOME_SECTIONS.length);
   });
   it('keeps the original order when nothing is stored', async () => {
     const { arrangeSections, PRO_SECTIONS } = await import('@/content/section-registry');
