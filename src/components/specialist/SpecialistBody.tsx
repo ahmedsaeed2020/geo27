@@ -265,7 +265,8 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
           </div>
         </div>
         <dl className="sp-legend" aria-label={C.legend[locale]}>
-          {(Object.keys(STATUS) as EvidenceStatus[]).map(s => (
+          {/* "Shown in a real screen" is only explained on a page that actually shows one. */}
+          {(Object.keys(STATUS) as EvidenceStatus[]).filter(s => s !== 'demonstrated' || dept.heroShots.length > 0).map(s => (
             <div key={s}>
               <dt>
                 <StatusChip status={s} locale={locale} />
