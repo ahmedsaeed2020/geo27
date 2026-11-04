@@ -368,4 +368,5 @@
 @media (prefers-reduced-motion: reduce) {
   .pv-root .pv-panel, .pv-root .pv-exec-panel { animation: none; }
   .pv-root .pv-tab::after, .pv-root .pv-ws-index-nav a, .pv-root .pv-link svg { transition: none; }
-}
+}/* Wide UI rows (strip captures) keep a shallow frame in cards instead of floating in a 16:10 canvas. */
+.pv-root .pp-shot:not([data-size="lead"]) .pp-frame[data-mode="strip"] .pp-frame-body { aspect-ratio: 3; }
