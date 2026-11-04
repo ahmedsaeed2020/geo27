@@ -1,0 +1,1151 @@
+{
+ "slug": "payroll-rewards",
+ "module": "04",
+ "name": {
+  "ar": "الرواتب والمكافآت والمزايا",
+  "en": "Payroll & Rewards"
+ },
+ "hero": {
+  "title": {
+   "ar": "الرواتب عملية مراجعة قبل أن تكون كشفًا",
+   "en": "Payroll is a review process before it is a register"
+  },
+  "subtitle": {
+   "ar": "من جاهزية بيانات المسير إلى حساب الاستحقاقات والاستثناءات والاعتماد وأثر الصرف، دون خلط المراحل.",
+   "en": "From payroll run data readiness to accrual calculations, exceptions, approval and disbursement impact, with each stage kept distinct."
+  },
+  "center": null,
+  "nodes": [
+   {
+    "ar": "جاهزية الفترة",
+    "en": "Period readiness"
+   },
+   {
+    "ar": "حساب المسير",
+    "en": "Payroll run calculation"
+   },
+   {
+    "ar": "مراجعة الفروقات",
+    "en": "Variance review"
+   },
+   {
+    "ar": "الاعتماد",
+    "en": "Approval"
+   },
+   {
+    "ar": "حالة الصرف",
+    "en": "Disbursement status"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "مدخلات",
+    "en": "Inputs"
+   },
+   {
+    "ar": "مسير",
+    "en": "Payroll run"
+   },
+   {
+    "ar": "فروقات",
+    "en": "Variances"
+   },
+   {
+    "ar": "اعتماد",
+    "en": "Approval"
+   },
+   {
+    "ar": "صرف موثق",
+    "en": "Documented disbursement"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "اجعل الرواتب قابلة للمراجعة لا مجرد رقم",
+   "en": "Make payroll reviewable, not just a number"
+  },
+  "body": {
+   "ar": "البيانات والسياسات والفترة والاعتماد والأثر المالي مراحل منفصلة، ولكل واحدة سجل ومسؤول.",
+   "en": "Data, policies, the payroll period, approval and financial impact are separate stages, each with its own record and owner."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "جاهزية الفترة",
+    "en": "Period readiness"
+   },
+   {
+    "ar": "حساب المسير",
+    "en": "Payroll run calculation"
+   },
+   {
+    "ar": "مراجعة الفروقات",
+    "en": "Variance review"
+   },
+   {
+    "ar": "الاعتماد",
+    "en": "Approval"
+   },
+   {
+    "ar": "حالة الصرف",
+    "en": "Disbursement status"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "مسؤول الرواتب",
+    "en": "Payroll officer"
+   },
+   {
+    "ar": "المدير المالي",
+    "en": "CFO"
+   },
+   {
+    "ar": "مدير الموارد البشرية",
+    "en": "HR director"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "Payroll Entry",
+    "en": "Payroll Entry"
+   },
+   {
+    "ar": "Salary Slip",
+    "en": "Salary Slip"
+   },
+   {
+    "ar": "سجل حالة الصرف ووثائق المطابقة عند توافر تنفيذها",
+    "en": "Disbursement status log and reconciliation documents, where implemented"
+   },
+   {
+    "ar": "سجلات مراجعة وأدلة داخلية",
+    "en": "Review records and internal evidence"
+   },
+   {
+    "ar": "تكامل أو ملف رسمي فقط بإثبات مستقل",
+    "en": "Integration or official file only with independent evidence"
+   },
+   {
+    "ar": "تعديل تعويض معتمد",
+    "en": "Approved compensation adjustment"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "جاهزية الرواتب",
+    "en": "Payroll readiness"
+   },
+   {
+    "ar": "الفروقات",
+    "en": "Variances"
+   },
+   {
+    "ar": "مستحقات الرواتب مقابل المدفوعات المثبتة",
+    "en": "Payroll amounts due versus verified payments"
+   },
+   {
+    "ar": "العالق",
+    "en": "Pending items"
+   },
+   {
+    "ar": "قائمة متابعة المتطلبات الناقصة والأدلة والأحداث",
+    "en": "Tracking list for missing requirements, evidence and events"
+   },
+   {
+    "ar": "الميزانيات والتغيرات والزيادات المقترحة مقابل المعتمدة",
+    "en": "Proposed versus approved budgets, changes and increases"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "موظف غير مؤهل",
+    "en": "Ineligible employee"
+   },
+   {
+    "ar": "قسيمة صدرت دون حوالة",
+    "en": "Payslip issued without a transfer"
+   },
+   {
+    "ar": "قاعدة غير معتمدة",
+    "en": "Unapproved rule"
+   },
+   {
+    "ar": "تغيير أجر بدون تفويض",
+    "en": "Unauthorized pay change"
+   },
+   {
+    "ar": "مرفق ناقص",
+    "en": "Missing attachment"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "04.1",
+   "title": {
+    "ar": "دورات وتجهيز الرواتب",
+    "en": "Payroll cycles and preparation"
+   },
+   "problem": {
+    "ar": "أخطاء بيانات الموظفين لا ينبغي اكتشافها بعد اعتماد الرواتب.",
+    "en": "Employee data errors should not be discovered after payroll approval."
+   },
+   "how": {
+    "ar": "نبدأ بفحص الجاهزية، ثم الحساب ومعالجة الاستثناءات ومراجعة الفروقات، مع فصل الاعتماد عن الصرف.",
+    "en": "We start with a readiness check, then calculate payroll, handle exceptions and review variances, keeping approval separate from disbursement."
+   },
+   "outcome": {
+    "ar": "دورة رواتب قابلة للتدقيق ومفهومة المسؤوليات.",
+    "en": "An auditable payroll cycle with clear responsibilities."
+   },
+   "decision": {
+    "ar": "فحص يسبق المسير ويربط الأرقام بالمستندات والتغييرات",
+    "en": "A pre-run check linking figures to documents and changes"
+   },
+   "narrative": {
+    "ar": "الراتب النهائي هو نتيجة سلسلة اعتماد، لا زر تشغيل واحد. تبدأ الدورة من فترة الرواتب وبيانات الموظف وهيكل الأجر والوقت والإجازة والمتغيرات، ثم تمر بفحص الجاهزية وحساب النتائج ومراجعة الفروقات والاستثناءات وتوثيق الاعتماد. تظهر اللوحات الموظفين غير الجاهزين ومصادر الاختلاف والمقارنة مع الفترات السابقة. وتُعرض قسيمة الراتب والقيود المالية بوصفها سجلات مميزة؛ فلا يُفترض أن المراجعة أو الاعتماد أثبتا الصرف البنكي.",
+    "en": "Final pay is the result of an approval chain, not a single button click. The cycle starts with the payroll period, employee data, pay structure, time, leave and variable inputs, then moves through readiness checks, calculation, variance and exception review, and approval documentation. Dashboards show employees who are not ready for payroll, sources of discrepancies and comparisons with previous periods. Payslips and financial entries are presented as distinct records; neither review nor approval is assumed to prove bank disbursement."
+   },
+   "inputs": [
+    {
+     "ar": "فترة مسير",
+     "en": "Payroll run period"
+    },
+    {
+     "ar": "Salary Structure/Assignment",
+     "en": "Salary Structure/Assignment"
+    },
+    {
+     "ar": "الحضور",
+     "en": "Attendance"
+    },
+    {
+     "ar": "الإجازات",
+     "en": "Leave"
+    },
+    {
+     "ar": "الخصومات/الإضافات",
+     "en": "Deductions/additions"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "Payroll Entry",
+     "en": "Payroll Entry"
+    },
+    {
+     "ar": "Salary Slip",
+     "en": "Salary Slip"
+    },
+    {
+     "ar": "نتائج مراجعة قبل اعتماد المسير",
+     "en": "Review results before payroll run approval"
+    },
+    {
+     "ar": "قيد وفق المسار الأصلي إن تحقق",
+     "en": "Accounting entry through the original workflow, if completed"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "موظف غير مؤهل",
+     "en": "Ineligible employee"
+    },
+    {
+     "ar": "تغير راتب غير مفسر",
+     "en": "Unexplained salary change"
+    },
+    {
+     "ar": "فروقات غير معتمدة",
+     "en": "Unapproved variances"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "جاهزية الرواتب",
+     "en": "Payroll readiness"
+    },
+    {
+     "ar": "الفروقات",
+     "en": "Variances"
+    },
+    {
+     "ar": "الاستثناءات",
+     "en": "Exceptions"
+    },
+    {
+     "ar": "إجماليات ومراكز تكلفة",
+     "en": "Totals and cost centers"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Payroll Controller",
+     "en": "Payroll Controller"
+    },
+    {
+     "ar": "HR Finance",
+     "en": "HR Finance"
+    },
+    {
+     "ar": "CFO",
+     "en": "CFO"
+    }
+   ],
+   "features": [
+    "PAY-01",
+    "PAY-02",
+    "PAY-03",
+    "PAY-04",
+    "PAY-05",
+    "PAY-06",
+    "PAY-07",
+    "PAY-08",
+    "PAY-10",
+    "PAY-11",
+    "PAY-13",
+    "PAY-15",
+    "PAY-16",
+    "CMP-01"
+   ],
+   "screens": [
+    "P-01",
+    "P-02",
+    "P-03",
+    "P-04",
+    "P-05",
+    "P-06",
+    "P-07",
+    "P-08",
+    "P-09"
+   ]
+  },
+  {
+   "id": "04.2",
+   "title": {
+    "ar": "صرف الرواتب",
+    "en": "Payroll disbursement"
+   },
+   "problem": {
+    "ar": "احتساب القسائم لا يثبت أن الموظفين تلقوا رواتبهم.",
+    "en": "Calculating payslips does not prove that employees have received their salaries."
+   },
+   "how": {
+    "ar": "نفصل اعتماد الرواتب عن إنشاء أدلة الصرف والمطابقة والحالات المعلقة.",
+    "en": "We keep payroll approval separate from creating disbursement evidence, reconciliation and pending statuses."
+   },
+   "outcome": {
+    "ar": "رؤية دقيقة لحالة التسوية من دون ادعاء دفع غير مثبت.",
+    "en": "An accurate view of settlement status without unverified payment claims."
+   },
+   "decision": {
+    "ar": "الفصل بين احتساب الراتب وإثبات دفعه فعليًا",
+    "en": "Separate salary calculation from proof of actual payment"
+   },
+   "narrative": {
+    "ar": "هناك فرق محاسبي وتشغيلي بين استحقاق الراتب وصرفه. يمكن إصدار Salary Slip وتسجيل مديونية مستحقة دون أن يكون المال قد انتقل إلى البنك. يشرح القسم سلسلة الإثبات المطلوبة بعد اعتماد المسير: مرجع الدفع إن وُجد، المستند المالي، حالة التسوية، وأي فروقات. لا تظهر عبارة «تم تحويل الرواتب» في مادة العميل إلا بدليل تحويل مطابق ومؤكد.",
+    "en": "There is an accounting and operational distinction between salary accrual and disbursement. A Salary Slip can be issued and a payable recorded without funds having been transferred to the bank. This section explains the evidence chain required after payroll run approval: a payment reference, if available, the financial document, settlement status and any variances. The phrase \"Salaries have been transferred\" appears in customer-facing material only with matching, confirmed transfer evidence."
+   },
+   "inputs": [
+    {
+     "ar": "مسير معتمد",
+     "en": "Approved payroll run"
+    },
+    {
+     "ar": "مستند صرف",
+     "en": "Disbursement document"
+    },
+    {
+     "ar": "مرجع تحويل أو إثبات بنك عند وجوده",
+     "en": "Transfer reference or bank evidence, where available"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سجل حالة الصرف ووثائق المطابقة عند توافر تنفيذها",
+     "en": "Disbursement status log and reconciliation documents, where implemented"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "قسيمة صدرت دون حوالة",
+     "en": "Payslip issued without a transfer"
+    },
+    {
+     "ar": "اختلاف مبالغ",
+     "en": "Amount discrepancies"
+    },
+    {
+     "ar": "غياب إثبات بنك",
+     "en": "Missing bank evidence"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "مستحقات الرواتب مقابل المدفوعات المثبتة",
+     "en": "Payroll amounts due versus verified payments"
+    },
+    {
+     "ar": "العالق",
+     "en": "Pending items"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Payroll Officer",
+     "en": "Payroll Officer"
+    },
+    {
+     "ar": "Finance",
+     "en": "Finance"
+    }
+   ],
+   "features": [
+    "PAY-09",
+    "PAY-14"
+   ],
+   "screens": [
+    "P-10"
+   ],
+   "regulated": true
+  },
+  {
+   "id": "04.3",
+   "title": {
+    "ar": "التوطين والامتثال السعودي",
+    "en": "Saudization and Saudi compliance"
+   },
+   "problem": {
+    "ar": "القواعد التنظيمية تتغير، ولا يكفي وجود نموذج لتأكيد الالتزام.",
+    "en": "Regulations change, and having a form is not enough to confirm compliance."
+   },
+   "how": {
+    "ar": "نجمع الإعدادات والأدلة والمخرجات التنظيمية حسب النسخة وتاريخ السريان.",
+    "en": "We bring together settings, evidence and regulatory outputs by version and effective date."
+   },
+   "outcome": {
+    "ar": "متابعة للجاهزية والمستندات المطلوبة دون شهادة امتثال غير مثبتة.",
+    "en": "Tracking readiness and required documents without unverified compliance certification."
+   },
+   "decision": {
+    "ar": "لا تُعلن مطابقة رسمية قبل وجود حزمة قواعد وتكامل مثبت",
+    "en": "Do not claim official compliance without a rule package and verified integration"
+   },
+   "narrative": {
+    "ar": "البيئة السعودية تتطلب بيانات وسياسات وقواعد مرتبطة بالتواريخ والجهات الرسمية. لكن وجود قوائم تسمي GOSI أو WPS أو نهاية الخدمة لا يساوي تنفيذًا معتمدًا للقواعد أو اتصالًا فعالًا بالمنصات الحكومية. يشرح القسم ما يستلزمه التوطين من ضبط إصدار القاعدة ومراجعة المصدر والتكامل والدليل، ثم يحدد بوضوح ما هو منجز ومختبر وما يزال في نطاق التهيئة أو التطوير.",
+    "en": "The Saudi environment requires data, policies and rules tied to dates and official authorities. But having lists that mention GOSI, WPS or end-of-service does not amount to an approved implementation of the rules or an active connection to government platforms. This section explains the rule version control, source review, integration and evidence required for Saudization, then clearly identifies what is complete and tested and what remains in configuration or development."
+   },
+   "inputs": [
+    {
+     "ar": "ملفات سياسات سعودية مؤرخة",
+     "en": "Dated Saudi policy files"
+    },
+    {
+     "ar": "بيانات عمل/اشتراك",
+     "en": "Employment/subscription data"
+    },
+    {
+     "ar": "متطلبات WPS/GOSI عند اعتمادها",
+     "en": "WPS/GOSI requirements, when approved"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سجلات مراجعة وأدلة داخلية",
+     "en": "Review records and internal evidence"
+    },
+    {
+     "ar": "تكامل أو ملف رسمي فقط بإثبات مستقل",
+     "en": "Integration or official file only with independent evidence"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "قاعدة غير معتمدة",
+     "en": "Unapproved rule"
+    },
+    {
+     "ar": "إصدار ساري مجهول",
+     "en": "Unknown effective version"
+    },
+    {
+     "ar": "اتصال خارجي غير موجود",
+     "en": "Missing external connection"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "قائمة متابعة المتطلبات الناقصة والأدلة والأحداث",
+     "en": "Tracking list for missing requirements, evidence and events"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Compliance HR",
+     "en": "Compliance HR"
+    },
+    {
+     "ar": "Payroll",
+     "en": "Payroll"
+    }
+   ],
+   "features": [
+    "COR-07",
+    "LEV-04",
+    "PAY-12",
+    "KSA-02"
+   ],
+   "screens": [
+    "SA-01",
+    "SA-02",
+    "SA-03",
+    "SA-04",
+    "SA-05"
+   ],
+   "regulated": true
+  },
+  {
+   "id": "04.4",
+   "title": {
+    "ar": "التعويضات والمزايا",
+    "en": "Compensation and benefits"
+   },
+   "problem": {
+    "ar": "التعويضات والمزايا تحتاج ميزانية وعدالة واعتمادات منفصلة.",
+    "en": "Compensation and benefits require a budget, equity and separate approvals."
+   },
+   "how": {
+    "ar": "نربط عناصر الأجر والبدلات وخطط التعويض بالمراجعة والموافقة وأثرها على الموظف.",
+    "en": "We link pay components, allowances and compensation plans to review, approval and their impact on the employee."
+   },
+   "outcome": {
+    "ar": "قرارات تعويض موثقة ومقروءة في الملف الوظيفي.",
+    "en": "Documented compensation decisions clearly presented in the employment record."
+   },
+   "decision": {
+    "ar": "التعويض قرار محكوم بدرجة ووثيقة وسريان",
+    "en": "Compensation decisions governed by grade, documentation and effective dates"
+   },
+   "narrative": {
+    "ar": "تحتاج قرارات الأجر والمزايا إلى مرجع وظيفي وميزانية وسلطة اعتماد وتاريخ سريان. لا تُعرض الزيادة كبند مجرد؛ ترتبط بالدرجة والموظف وسجل التغيير. يستطيع المسؤول مقارنة المقترح والمعتمد ومراجعة مخصصات التعويض، لكن عرض التقرير لا يعني صدور موافقة أو تحديث رواتب دون مسار أصلي مثبت.",
+    "en": "Pay and benefits decisions require a job reference, a budget, approval authority and an effective date. An increase is not shown as an isolated item; it is linked to the grade, employee and change log. Administrators can compare proposed and approved amounts and review compensation allocations, but viewing a report does not mean approval has been granted or payroll updated without a verified underlying workflow."
+   },
+   "inputs": [
+    {
+     "ar": "درجات ورواتب",
+     "en": "Grades and salaries"
+    },
+    {
+     "ar": "صلاحيات مراجعة",
+     "en": "Review permissions"
+    },
+    {
+     "ar": "مخصصات",
+     "en": "Allocations"
+    },
+    {
+     "ar": "برامج مزايا",
+     "en": "Benefits programs"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "تعديل تعويض معتمد",
+     "en": "Approved compensation adjustment"
+    },
+    {
+     "ar": "هيكل راتب/استحقاق",
+     "en": "Salary/accrual structure"
+    },
+    {
+     "ar": "مراجعة عرض",
+     "en": "Offer review"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تغيير أجر بدون تفويض",
+     "en": "Unauthorized pay change"
+    },
+    {
+     "ar": "ازدواجية مزايا",
+     "en": "Duplicate benefits"
+    },
+    {
+     "ar": "قرار بلا سبب",
+     "en": "Decision without a reason"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "الميزانيات والتغيرات والزيادات المقترحة مقابل المعتمدة",
+     "en": "Budgets, changes and proposed versus approved increases"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Compensation Manager",
+     "en": "Compensation Manager"
+    },
+    {
+     "ar": "Finance",
+     "en": "Finance"
+    }
+   ],
+   "features": [
+    "CMP-02",
+    "CMP-03",
+    "CMP-04",
+    "CMP-05",
+    "CMP-06",
+    "CMP-07",
+    "BEN-01",
+    "BEN-02",
+    "BEN-03",
+    "BEN-04",
+    "BEN-05"
+   ],
+   "screens": [
+    "B-01",
+    "B-02",
+    "B-05"
+   ]
+  },
+  {
+   "id": "04.5",
+   "title": {
+    "ar": "السلف والمطالبات والقروض",
+    "en": "Advances, claims and loans"
+   },
+   "problem": {
+    "ar": "السلف والمصروفات إذا لم ترتبط بالاعتماد والصرف تتعطل التسوية.",
+    "en": "Settlement stalls when advances and expenses are not linked to approval and disbursement."
+   },
+   "how": {
+    "ar": "الموظف يقدم المطالبة، المسؤول يراجع، ثم نتابع الرصيد والنتيجة والقيود المتعلقة.",
+    "en": "The employee submits the claim, the responsible reviewer checks it, and we then track the balance, outcome and related accounting entries."
+   },
+   "outcome": {
+    "ar": "متابعة المبالغ والحالات دون محركات مالية مكررة.",
+    "en": "Tracking amounts and statuses without duplicate financial engines."
+   },
+   "decision": {
+    "ar": "رحلة مالية مفهومة دون افتراض ترحيل أو صرف تلقائي",
+    "en": "A clear financial journey without assuming automatic posting or disbursement"
+   },
+   "narrative": {
+    "ar": "تبدأ السلفة أو المطالبة من صاحب الطلب والمبلغ والمرفقات والسبب، ثم تنتقل إلى المراجعة والتفويض وربطها بالسجل المالي. يؤكد التصميم ضرورة تفسير الحالة: طلب مرسل، طلب معتمد، مستند محاسبي، تسوية أو دفع. وهذه ليست حالات متكافئة؛ فاعتماد مطالبة لا يعني تلقائيًا صرفها أو ترحيلها.",
+    "en": "An advance or claim starts with the requester, amount, attachments and reason, then moves to review, authorization and linking to the financial record. The design emphasizes the need to explain each status: submitted request, approved request, accounting document, settlement or payment. These statuses are not equivalent; approving a claim does not automatically mean it has been disbursed or posted."
+   },
+   "inputs": [
+    {
+     "ar": "Employee Advance",
+     "en": "Employee Advance"
+    },
+    {
+     "ar": "Expense Claim",
+     "en": "Expense Claim"
+    },
+    {
+     "ar": "المستندات والتفويضات",
+     "en": "Documents and authorizations"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "طلب معتمد/مرفوض",
+     "en": "Approved/rejected request"
+    },
+    {
+     "ar": "تسوية حسب التدفق المحاسبي الأصلي إن ثبت",
+     "en": "Settlement through the underlying accounting workflow, if verified"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مرفق ناقص",
+     "en": "Missing attachment"
+    },
+    {
+     "ar": "طلب مكرر",
+     "en": "Duplicate request"
+    },
+    {
+     "ar": "تسوية غير مثبتة",
+     "en": "Unverified settlement"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "الطلبات المتأخرة",
+     "en": "Overdue requests"
+    },
+    {
+     "ar": "السلف القائمة",
+     "en": "Outstanding advances"
+    },
+    {
+     "ar": "المطالبات حسب الحالة",
+     "en": "Claims by status"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Employee",
+     "en": "Employee"
+    },
+    {
+     "ar": "HR Finance",
+     "en": "HR Finance"
+    }
+   ],
+   "features": [
+    "EXP-01"
+   ],
+   "screens": [
+    "B-03",
+    "B-04"
+   ]
+  }
+ ],
+ "features": {
+  "PAY-01": {
+   "text": {
+    "ar": "معالجة رواتب موجهة بخطوات وحالات ملونة",
+    "en": "Guided payroll processing with steps and color-coded statuses"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-02": {
+   "text": {
+    "ar": "معاينة قسيمة غير نهائية",
+    "en": "Non-final payslip preview"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-03": {
+   "text": {
+    "ar": "مراجعة فروقات الفترات",
+    "en": "Period variance review"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-04": {
+   "text": {
+    "ar": "إغلاق الرواتب وإعادة فتح مضبوط",
+    "en": "Payroll closing and controlled reopening"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-05": {
+   "text": {
+    "ar": "مركز تحكم مستمر في الرواتب بتنبيهات وسياسات",
+    "en": "Continuous payroll control center with alerts and policies"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-06": {
+   "text": {
+    "ar": "بطاقات مؤشرات الرواتب",
+    "en": "Payroll KPI cards"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-07": {
+   "text": {
+    "ar": "رواتب تجريبية وإعادة تشغيل الموظفين الخطأ",
+    "en": "Trial payroll runs and reruns for employees with errors"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-08": {
+   "text": {
+    "ar": "خارج الدورة + إدخالات سريعة + شيكات يدوية + نماذج نهاية السنة",
+    "en": "Off-cycle payroll + quick entries + manual checks + year-end forms"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-10": {
+   "text": {
+    "ar": "إعداد فترات الرواتب",
+    "en": "Payroll period setup"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-11": {
+   "text": {
+    "ar": "استعلام الرواتب",
+    "en": "Payroll inquiry"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-13": {
+   "text": {
+    "ar": "الأجر عند الطلب",
+    "en": "On-demand pay"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-15": {
+   "text": {
+    "ar": "تحقق مستقل واعتماد بشخص تاني (أربع عيون) قبل اعتماد الرواتب",
+    "en": "Independent verification and second-person approval (four-eyes principle) before payroll approval"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-16": {
+   "text": {
+    "ar": "مطابقة الرواتب مع مراكز التكلفة والمشاريع",
+    "en": "Payroll reconciliation with cost centers and projects"
+   },
+   "sections": [
+    "04.1",
+    "06.3"
+   ]
+  },
+  "CMP-01": {
+   "text": {
+    "ar": "الدرجات والخطوات وسلالم الترقي",
+    "en": "Grades, steps and promotion scales"
+   },
+   "sections": [
+    "04.1"
+   ]
+  },
+  "PAY-09": {
+   "text": {
+    "ar": "تصدير/استيراد، قيود الأستاذ العام، ملف البنك، إلغاء وتدقيق",
+    "en": "Export/import, general ledger entries, bank file, cancellation and audit"
+   },
+   "sections": [
+    "04.2"
+   ]
+  },
+  "PAY-14": {
+   "text": {
+    "ar": "قيد البنك وصرف المحجوز من الرواتب الأصلية مع إثبات التسوية",
+    "en": "Bank entry and release of withheld pay from the original payroll, with settlement evidence"
+   },
+   "sections": [
+    "04.2"
+   ]
+  },
+  "COR-07": {
+   "text": {
+    "ar": "مركز موضوعات الامتثال",
+    "en": "Compliance topics center"
+   },
+   "sections": [
+    "04.3"
+   ]
+  },
+  "LEV-04": {
+   "text": {
+    "ar": "قواعد الاستحقاق: منح دورية، تبرع، صرف وشراء رصيد",
+    "en": "Entitlement rules: periodic grants, donation, cash-out and balance purchase"
+   },
+   "sections": [
+    "03.1",
+    "04.3"
+   ]
+  },
+  "PAY-12": {
+   "text": {
+    "ar": "رواتب الخليج: نهاية الخدمة ومدخلات التأمينات وتقارير نظامية",
+    "en": "Gulf payroll: end-of-service, GOSI contribution inputs and statutory reports"
+   },
+   "sections": [
+    "04.3"
+   ]
+  },
+  "KSA-02": {
+   "text": {
+    "ar": "مركز أدلة الامتثال: حالة «غير مُهيّأ» بدل أي ادعاء امتثال، وقواعد قبل/بعد تاريخ السريان",
+    "en": "Compliance evidence center: \"Not configured\" status instead of any compliance claim, and rules before/after the effective date"
+   },
+   "sections": [
+    "04.3"
+   ]
+  },
+  "CMP-02": {
+   "text": {
+    "ar": "دورات التعويض: أهلية، ميزانية، أوراق عمل، تجميع هرمي، مسار اعتماد",
+    "en": "Compensation cycles: eligibility, budget, worksheets, hierarchical roll-up and approval workflow"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "CMP-03": {
+   "text": {
+    "ar": "ترحيل التعويض المعتمد إلى HR والرواتب",
+    "en": "Posting approved compensation to HR and payroll"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "CMP-04": {
+   "text": {
+    "ar": "كشف التعويض الكلي وصفحة تعويض الموظف",
+    "en": "Total compensation statement and employee compensation page"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "CMP-05": {
+   "text": {
+    "ar": "مقارنة الأجور بالسوق",
+    "en": "Market pay benchmarking"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "CMP-06": {
+   "text": {
+    "ar": "خطابات المكافأة",
+    "en": "Reward letters"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "CMP-07": {
+   "text": {
+    "ar": "شفافية حصة صاحب العمل (التأمينات وغيرها) في قسيمة الموظف وكشف التعويض",
+    "en": "Employer contribution transparency (GOSI contributions and others) on employee payslips and compensation statements"
+   },
+   "sections": [
+    "04.4",
+    "05.1"
+   ]
+  },
+  "BEN-01": {
+   "text": {
+    "ar": "بطاقات الخطط \"أنت وعائلتك\" بالمساهمة + اختيار/رفض + إقرار",
+    "en": "\"You and your family\" plan cards with contributions + select/decline + acknowledgment"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "BEN-02": {
+   "text": {
+    "ar": "مقارنة الخطط جنبًا لجنب",
+    "en": "Side-by-side plan comparison"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "BEN-03": {
+   "text": {
+    "ar": "إدارة فترة التسجيل المفتوح وتمديدها",
+    "en": "Open enrollment period management and extension"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "BEN-04": {
+   "text": {
+    "ar": "طلبات تغيير المزايا وتدقيقها",
+    "en": "Benefit change requests and audit"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "BEN-05": {
+   "text": {
+    "ar": "مصمم الأقساط بحساب لحظي",
+    "en": "Premium designer with real-time calculation"
+   },
+   "sections": [
+    "04.4"
+   ]
+  },
+  "EXP-01": {
+   "text": {
+    "ar": "المصروفات: تقديم واعتماد وصرف",
+    "en": "Expenses: submission, approval and disbursement"
+   },
+   "sections": [
+    "04.5"
+   ]
+  }
+ },
+ "screens": {
+  "P-01": {
+   "title": {
+    "ar": "مركز تحكم الرواتب",
+    "en": "Payroll control center"
+   },
+   "role": "Executive cockpit"
+  },
+  "P-02": {
+   "title": {
+    "ar": "مكونات وهياكل الرواتب",
+    "en": "Salary components and structures"
+   },
+   "role": "Operational register"
+  },
+  "P-03": {
+   "title": {
+    "ar": "تعيينات هيكل الرواتب",
+    "en": "Salary structure assignments"
+   },
+   "role": "Operational register"
+  },
+  "P-04": {
+   "title": {
+    "ar": "سجل مسيرات الرواتب",
+    "en": "Payroll run log"
+   },
+   "role": "Operational register"
+  },
+  "P-05": {
+   "title": {
+    "ar": "مراجعة قسائم الرواتب",
+    "en": "Payslip review"
+   },
+   "role": "360 record workspace"
+  },
+  "P-06": {
+   "title": {
+    "ar": "فحص ما قبل المسير",
+    "en": "Pre-run check"
+   },
+   "role": "Operational register"
+  },
+  "P-07": {
+   "title": {
+    "ar": "فروقات ومطابقة الرواتب",
+    "en": "Payroll variances and reconciliation"
+   },
+   "role": "Analytical report"
+  },
+  "P-08": {
+   "title": {
+    "ar": "الإضافيات والمتأخرات والتصحيحات",
+    "en": "Additions, arrears and corrections"
+   },
+   "role": "Operational register"
+  },
+  "P-09": {
+   "title": {
+    "ar": "استحقاق الرواتب ومطابقة الأستاذ",
+    "en": "Payroll accrual and ledger reconciliation"
+   },
+   "role": "Operational register"
+  },
+  "P-10": {
+   "title": {
+    "ar": "صرف الأجور وحماية الأجور",
+    "en": "Wage disbursement and Wage Protection (WPS)"
+   },
+   "role": "Operational register"
+  },
+  "SA-01": {
+   "title": {
+    "ar": "القواعد السعودية وإصداراتها",
+    "en": "Saudi rules and versions"
+   },
+   "role": "Configuration workbench"
+  },
+  "SA-02": {
+   "title": {
+    "ar": "حسابات التأمينات وتدقيقها",
+    "en": "GOSI contribution calculations and audit"
+   },
+   "role": "Operational register"
+  },
+  "SA-03": {
+   "title": {
+    "ar": "تدقيق ملف حماية الأجور",
+    "en": "Wage Protection (WPS) file audit"
+   },
+   "role": "Operational register"
+  },
+  "SA-04": {
+   "title": {
+    "ar": "مستحقات نهاية الخدمة",
+    "en": "End-of-service benefits"
+   },
+   "role": "Operational register"
+  },
+  "SA-05": {
+   "title": {
+    "ar": "مراجعة الالتزام السعودي",
+    "en": "Saudi compliance review"
+   },
+   "role": "Analytical report"
+  },
+  "B-01": {
+   "title": {
+    "ar": "مراجعة التعويضات",
+    "en": "Compensation review"
+   },
+   "role": "Operational register"
+  },
+  "B-02": {
+   "title": {
+    "ar": "خطط البدلات والمزايا",
+    "en": "Allowance and benefit plans"
+   },
+   "role": "Operational register"
+  },
+  "B-05": {
+   "title": {
+    "ar": "تحليل البدلات والمزايا",
+    "en": "Allowance and benefit analysis"
+   },
+   "role": "Analytical report"
+  },
+  "B-03": {
+   "title": {
+    "ar": "السلف والمصروفات",
+    "en": "Advances and expenses"
+   },
+   "role": "Operational register"
+  },
+  "B-04": {
+   "title": {
+    "ar": "قروض الموظفين",
+    "en": "Employee loans"
+   },
+   "role": "Operational register"
+  }
+ }
+}

@@ -1,0 +1,668 @@
+{
+ "slug": "employee-experience",
+ "module": "05",
+ "name": {
+  "ar": "تجربة الموظف والمدير",
+  "en": "Employee & Manager Experience"
+ },
+ "hero": {
+  "title": {
+   "ar": "الطلب لا ينتهي عند الضغط على إرسال",
+   "en": "A request does not end when you hit submit"
+  },
+  "subtitle": {
+   "ar": "خدمة ذاتية واضحة، موافقة من مسؤول معلوم، وحالة يمكن للموظف متابعتها حتى الإغلاق.",
+   "en": "Clear self-service, approval by a clearly identified owner, and a status employees can track through to closure."
+  },
+  "center": {
+   "ar": "الموظف في قلب التجربة",
+   "en": "The employee at the heart of the experience"
+  },
+  "nodes": [
+   {
+    "ar": "طلب",
+    "en": "Request"
+   },
+   {
+    "ar": "مراجعة",
+    "en": "Review"
+   },
+   {
+    "ar": "قرار",
+    "en": "Decision"
+   },
+   {
+    "ar": "متابعة",
+    "en": "Follow-up"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "موظف",
+    "en": "Employee"
+   },
+   {
+    "ar": "طلب",
+    "en": "Request"
+   },
+   {
+    "ar": "مسؤول",
+    "en": "Owner"
+   },
+   {
+    "ar": "قرار",
+    "en": "Decision"
+   },
+   {
+    "ar": "حالة واضحة",
+    "en": "Clear status"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "تجربة موظف ومدير قائمة على عمل حقيقي",
+   "en": "An employee and manager experience built around real work"
+  },
+  "body": {
+   "ar": "الخدمة الذاتية ليست بوابة ألوان؛ الطلب والموافقة والحالة والمستند هي التجربة نفسها.",
+   "en": "Self-service is not a colorful portal; the request, approval, status and document are the experience itself."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "طلب من الموظف",
+    "en": "Employee request"
+   },
+   {
+    "ar": "تحقق الصلاحية",
+    "en": "Permission check"
+   },
+   {
+    "ar": "مراجعة المدير",
+    "en": "Manager review"
+   },
+   {
+    "ar": "تنفيذ الإجراء",
+    "en": "Action execution"
+   },
+   {
+    "ar": "إغلاق وتتبّع",
+    "en": "Closure and tracking"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "الموظف",
+    "en": "Employee"
+   },
+   {
+    "ar": "المدير المباشر",
+    "en": "Line manager"
+   },
+   {
+    "ar": "مسؤول خدمات HR",
+    "en": "HR services officer"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "طلب ذاتي",
+    "en": "Self-service request"
+   },
+   {
+    "ar": "تتبع حالة",
+    "en": "Status tracking"
+   },
+   {
+    "ar": "قرار مدير مسبب",
+    "en": "Manager decision with rationale"
+   },
+   {
+    "ar": "قائمة مهام فريقه",
+    "en": "Team task list"
+   },
+   {
+    "ar": "HR Service Case",
+    "en": "HR Service Case"
+   },
+   {
+    "ar": "تعيين مسؤول",
+    "en": "Owner assignment"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "طلباتي المفتوحة",
+    "en": "My open requests"
+   },
+   {
+    "ar": "ما يتطلب إجراء مني",
+    "en": "Items requiring my action"
+   },
+   {
+    "ar": "طابور الموافقات",
+    "en": "Approval queue"
+   },
+   {
+    "ar": "الغياب المجدول للفريق",
+    "en": "Scheduled team absences"
+   },
+   {
+    "ar": "قضايا حسب الحالة والمدة والمالك",
+    "en": "Cases by status, age and owner"
+   },
+   {
+    "ar": "أوقات المعالجة",
+    "en": "Processing times"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "طلب بلا حالة",
+    "en": "Request without a status"
+   },
+   {
+    "ar": "سجل خارج نطاق الفريق",
+    "en": "Record outside team scope"
+   },
+   {
+    "ar": "حالة مجهولة المالك",
+    "en": "Case with an unknown owner"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "05.1",
+   "title": {
+    "ar": "الخدمة الذاتية للموظف",
+    "en": "Employee Self-Service"
+   },
+   "problem": {
+    "ar": "الموظف لا يريد التنقل بين عشر قوائم لإتمام طلب بسيط.",
+    "en": "Employees do not want to navigate ten menus to complete a simple request."
+   },
+   "how": {
+    "ar": "نبدأ من «طلباتي»: إنشاء طلب، متابعة الموافقة، رؤية الرصيد والنتيجة، ثم العودة للمستند.",
+    "en": "We start with \"My requests\": create a request, track approval, view the balance and outcome, then return to the document."
+   },
+   "outcome": {
+    "ar": "خدمة ذاتية واضحة تقلل الاستفسارات عن الحالة.",
+    "en": "Clear self-service that reduces status inquiries."
+   },
+   "decision": {
+    "ar": "الموظف يرى ما يخصه والمرحلة التالية",
+    "en": "Employees see what concerns them and what comes next"
+   },
+   "narrative": {
+    "ar": "تكون الخدمة الذاتية ذات قيمة حين يستطيع الموظف إتمام طلب حقيقي ومعرفة حالته دون الاعتماد على الاتصال اليدوي. تعرض التجربة بياناته المصرح بها وطلباته وأرصدة الإجازات ومستندات الرواتب، مع مسار واضح للمراجعة والاعتماد. يجب أن تبقى خصوصية الموظفين الآخرين محمية في الواجهة وفي الخادم معًا.",
+    "en": "Self-service delivers value when employees can complete a real request and check its status without relying on manual contact. The experience shows their authorized data, requests, leave balances and payroll documents, with a clear path for review and approval. Other employees' privacy must remain protected in both the interface and the server."
+   },
+   "inputs": [
+    {
+     "ar": "هوية مستخدم مصرح",
+     "en": "Authorized user identity"
+    },
+    {
+     "ar": "طلب إجازة",
+     "en": "Leave request"
+    },
+    {
+     "ar": "معلومات شخصية",
+     "en": "Personal information"
+    },
+    {
+     "ar": "مستند راتب",
+     "en": "Salary document"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "طلب ذاتي",
+     "en": "Self-service request"
+    },
+    {
+     "ar": "تتبع حالة",
+     "en": "Status tracking"
+    },
+    {
+     "ar": "وصول إلى المستندات وفق الصلاحية",
+     "en": "Document access based on permissions"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "طلب بلا حالة",
+     "en": "Request without a status"
+    },
+    {
+     "ar": "رؤية بيانات آخرين",
+     "en": "Visibility of others' data"
+    },
+    {
+     "ar": "استخدام معقد على الهاتف",
+     "en": "Difficult mobile use"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "طلباتي المفتوحة",
+     "en": "My open requests"
+    },
+    {
+     "ar": "ما يتطلب إجراء مني",
+     "en": "Items requiring my action"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Employee",
+     "en": "Employee"
+    }
+   ],
+   "features": [
+    "POR-02",
+    "POR-04",
+    "CMP-07"
+   ],
+   "screens": [
+    "S-01",
+    "S-02",
+    "S-03"
+   ]
+  },
+  {
+   "id": "05.2",
+   "title": {
+    "ar": "الخدمة الذاتية للمدير",
+    "en": "Manager Self-Service"
+   },
+   "problem": {
+    "ar": "المدير يحتاج رؤية فريقه وماذا ينتظر قراره، لا كل الشركة.",
+    "en": "Managers need visibility into their team and what awaits their decision, not the entire company."
+   },
+   "how": {
+    "ar": "نعرض طلبات الفريق وأسبابها وأهليتها ثم اعتمادًا أو رفضًا عبر المصدر الأصلي.",
+    "en": "We display team requests, their reasons and eligibility, followed by approval or rejection through the original source."
+   },
+   "outcome": {
+    "ar": "قرارات فورية ضمن الصلاحيات وحماية نطاق الفريق.",
+    "en": "Immediate decisions within permissions, with team scope protected."
+   },
+   "decision": {
+    "ar": "أقل تنقل بين الشاشات وأوضح سياق لاتخاذ القرار",
+    "en": "Less switching between screens and clearer context for decisions"
+   },
+   "narrative": {
+    "ar": "يريد المدير أن يعرف ما الذي ينتظر قراره داخل فريقه، لا أن يبحث في كل مستندات HR. تجمع مساحة المدير الطلبات المعلقة وسياق الموظف والوردية والغياب عند الحاجة، مع إجراءات تسمح بها صلاحياته فقط. لا تتحول حدود الفريق إلى مجرد فلتر قابل للتغيير لتصفح أشخاص خارج مسؤوليته.",
+    "en": "Managers want to know what awaits their decision within their team, not search through every HR document. The manager workspace brings together pending requests and context on employees, shifts and absences when needed, with only the actions their permissions allow. Team boundaries must not become a mere adjustable filter for browsing people outside their responsibility."
+   },
+   "inputs": [
+    {
+     "ar": "فريق تابع فعلي",
+     "en": "Actual reporting team"
+    },
+    {
+     "ar": "طلبات موافقة",
+     "en": "Approval requests"
+    },
+    {
+     "ar": "تقويم ووردية",
+     "en": "Calendar and shift"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "قرار مدير مسبب",
+     "en": "Manager decision with rationale"
+    },
+    {
+     "ar": "قائمة مهام فريقه",
+     "en": "Team task list"
+    },
+    {
+     "ar": "سجل اعتماد",
+     "en": "Approval log"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "سجل خارج نطاق الفريق",
+     "en": "Record outside team scope"
+    },
+    {
+     "ar": "موافقة بلا بيانات",
+     "en": "Approval without data"
+    },
+    {
+     "ar": "تعارض التغطية",
+     "en": "Coverage conflict"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "طابور الموافقات",
+     "en": "Approval queue"
+    },
+    {
+     "ar": "الغياب المجدول للفريق",
+     "en": "Scheduled team absences"
+    },
+    {
+     "ar": "تأخيرات المتابعة",
+     "en": "Follow-up delays"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Line Manager",
+     "en": "Line manager"
+    }
+   ],
+   "features": [
+    "ONB-03",
+    "POR-02"
+   ],
+   "screens": [
+    "S-04",
+    "S-05"
+   ]
+  },
+  {
+   "id": "05.3",
+   "title": {
+    "ar": "مركز الخدمات والعلاقات والسياسات",
+    "en": "Services, relations and policies center"
+   },
+   "problem": {
+    "ar": "قضايا الموظفين تضيع إذا تداولتها الأقسام بلا مالك أو زمن.",
+    "en": "Employee cases get lost when departments pass them around without an owner or a timeframe."
+   },
+   "how": {
+    "ar": "نسجل الحالة، نصنفها، نسند المسؤول، نتابع SLA والتحويل والقرار وتاريخ التواصل.",
+    "en": "We log the case, classify it, assign an owner, and track the SLA, transfers, decision and communication history."
+   },
+   "outcome": {
+    "ar": "خدمة يمكن قياس وقت الاستجابة وجودة الحل فيها.",
+    "en": "A service with measurable response times and resolution quality."
+   },
+   "decision": {
+    "ar": "كل سؤال أو مشكلة لها مالك وحالة وتاريخ",
+    "en": "Every question or issue has an owner, a status and a history"
+   },
+   "narrative": {
+    "ar": "حين يرسل الموظف استفسارًا ولا يعرف من يملكه أو متى يُغلق، تضعف الثقة في خدمة الموارد البشرية. يقدم تصميم HR Service Case سجلًا للطلب والتصنيف والتعيين والرد والإغلاق، ويعرض تاريخ الإجراءات والأسباب. أما التحليلات فتشرح عدد القضايا وأعمارها وأماكن التعطل، مع عدم تحويل وجود كتالوج خدمات إلى وعد بوجود حل آلي لكل سؤال.",
+    "en": "When employees submit an inquiry without knowing who owns it or when it will be closed, trust in HR service weakens. The HR Service Case design provides a record of the request, classification, assignment, response and closure, and displays the history of actions and reasons. Analytics explain case volumes, ages and bottlenecks, without turning the existence of a service catalog into a promise of an automated solution for every question."
+   },
+   "inputs": [
+    {
+     "ar": "طلب خدمة",
+     "en": "Service request"
+    },
+    {
+     "ar": "موضوع",
+     "en": "Subject"
+    },
+    {
+     "ar": "هوية مقدم",
+     "en": "Requester identity"
+    },
+    {
+     "ar": "مستند داعم",
+     "en": "Supporting document"
+    },
+    {
+     "ar": "تصنيف",
+     "en": "Classification"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "HR Service Case",
+     "en": "HR Service Case"
+    },
+    {
+     "ar": "تعيين مسؤول",
+     "en": "Owner assignment"
+    },
+    {
+     "ar": "بدء/حل/إغلاق مع سبب",
+     "en": "Initiation/resolution/closure with a reason"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "حالة مجهولة المالك",
+     "en": "Case with an unknown owner"
+    },
+    {
+     "ar": "طلب مكرر",
+     "en": "Duplicate request"
+    },
+    {
+     "ar": "خصوصية ناقصة",
+     "en": "Insufficient privacy"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "قضايا حسب الحالة والمدة والمالك",
+     "en": "Cases by status, duration and owner"
+    },
+    {
+     "ar": "أوقات المعالجة",
+     "en": "Processing times"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Service Agent",
+     "en": "HR Service Agent"
+    },
+    {
+     "ar": "Employee",
+     "en": "Employee"
+    }
+   ],
+   "features": [
+    "POR-01",
+    "POR-03",
+    "CAS-01",
+    "CAS-02",
+    "CAS-03",
+    "CAS-04",
+    "CAS-05",
+    "CAS-06"
+   ],
+   "screens": [
+    "H-01",
+    "H-02",
+    "H-03",
+    "H-04"
+   ]
+  }
+ ],
+ "features": {
+  "POR-02": {
+   "text": {
+    "ar": "قائمة العمل: مهامي مقابل نشاط فريقي (+ مهام أنظمة خارجية)",
+    "en": "Worklist: My tasks vs. my team's activity (+ external system tasks)"
+   },
+   "sections": [
+    "05.1",
+    "05.2"
+   ]
+  },
+  "POR-04": {
+   "text": {
+    "ar": "نماذج خدمة ذاتية (مثل الحساب البنكي)",
+    "en": "Self-service forms (e.g., bank account details)"
+   },
+   "sections": [
+    "05.1"
+   ]
+  },
+  "CMP-07": {
+   "text": {
+    "ar": "شفافية حصة صاحب العمل (التأمينات وغيرها) في قسيمة الموظف وكشف التعويض",
+    "en": "Employer contribution transparency (GOSI contributions and others) on employee payslips and compensation statements"
+   },
+   "sections": [
+    "04.4",
+    "05.1"
+   ]
+  },
+  "ONB-03": {
+   "text": {
+    "ar": "ويدجت اليوم الأول والجاهزية",
+    "en": "Day-one and readiness widget"
+   },
+   "sections": [
+    "02.2",
+    "05.2"
+   ]
+  },
+  "POR-01": {
+   "text": {
+    "ar": "بوابة مساعدة الموظف",
+    "en": "Employee help portal"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "POR-03": {
+   "text": {
+    "ar": "كتالوج الخدمات بالفئات والأهلية وتصنيف المواضيع",
+    "en": "Service catalog with categories, eligibility and topic classification"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-01": {
+   "text": {
+    "ar": "مساحة وكيل HR بالطوابير + المسند لي + SLA",
+    "en": "HR agent workspace with queues + assigned to me + SLA"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-02": {
+   "text": {
+    "ar": "إنشاء قضية: تحقق من الموظف، معالج خطوتين، اختيار النوع، قنوات متعددة، تحذير التكرار، إنشاء جماعي",
+    "en": "Case creation: Employee verification, two-step wizard, type selection, multiple channels, duplicate warning, bulk creation"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-03": {
+   "text": {
+    "ar": "سجل القضية: نشاط، مهام وقضايا فرعية، تعليق مع إيقاف SLA، إغلاق وقبول وإعادة فتح",
+    "en": "Case record: Activity, tasks and subcases, on-hold status with SLA pause, closure, acceptance and reopening"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-04": {
+   "text": {
+    "ar": "التوجيه: مطابقة آلية للوكيل، تحويل وتصعيد، أولوية VIP",
+    "en": "Routing: Automatic agent matching, transfer and escalation, VIP priority"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-05": {
+   "text": {
+    "ar": "قضايا علاقات الموظفين السرية وتعارض المصالح",
+    "en": "Confidential employee relations cases and conflicts of interest"
+   },
+   "sections": [
+    "05.3"
+   ]
+  },
+  "CAS-06": {
+   "text": {
+    "ar": "تقارير القضايا + مؤشرات الحل الذاتي + استبيان الرضا",
+    "en": "Case reports + self-resolution KPIs + satisfaction survey"
+   },
+   "sections": [
+    "05.3",
+    "06.3"
+   ]
+  }
+ },
+ "screens": {
+  "S-01": {
+   "title": {
+    "ar": "البوابة الذاتية للموظف",
+    "en": "Employee Self-Service portal"
+   },
+   "role": "Self-service portal"
+  },
+  "S-02": {
+   "title": {
+    "ar": "ملفي ومستنداتي",
+    "en": "My profile and documents"
+   },
+   "role": "360 record workspace"
+  },
+  "S-03": {
+   "title": {
+    "ar": "طلباتي وإجازاتي",
+    "en": "My requests and leave"
+   },
+   "role": "Operational register"
+  },
+  "S-04": {
+   "title": {
+    "ar": "لوحة مدير الفريق",
+    "en": "Team manager dashboard"
+   },
+   "role": "Self-service portal"
+  },
+  "S-05": {
+   "title": {
+    "ar": "تخطيط الفريق وموافقاته",
+    "en": "Team planning and approvals"
+   },
+   "role": "Workforce planner"
+  },
+  "H-01": {
+   "title": {
+    "ar": "مركز خدمات الموظفين",
+    "en": "Employee services center"
+   },
+   "role": "Exception / approval queue"
+  },
+  "H-02": {
+   "title": {
+    "ar": "متابعة الطلب الخدمي",
+    "en": "Service request tracking"
+   },
+   "role": "360 record workspace"
+  },
+  "H-03": {
+   "title": {
+    "ar": "علاقات الموظفين والشكاوى",
+    "en": "Employee relations and grievances"
+   },
+   "role": "Operational register"
+  },
+  "H-04": {
+   "title": {
+    "ar": "المعرفة والسياسات",
+    "en": "Knowledge and policies"
+   },
+   "role": "Operational register"
+  }
+ }
+}

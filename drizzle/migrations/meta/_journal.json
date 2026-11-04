@@ -71,6 +71,13 @@
       "when": 1793792407715,
       "tag": "0009_inventory_draft_english_terms",
       "breakpoints": true
+    },
+    {
+      "idx": 10,
+      "version": "7",
+      "when": 1793795008889,
+      "tag": "0010_hr_handoff_module_routes",
+      "breakpoints": true
     }
   ]
 }

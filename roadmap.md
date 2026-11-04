@@ -9,7 +9,11 @@
 - [x] Representative department draft (Inventory) from existing text and real screenshots; preview link checked in AR/EN. Evidence reset to pending for owner approval.
 - [x] Tests (catalog-rules: 12 rules), AR/EN desktop/mobile screenshots, overflow and link checks, sitemap/404 checks. No live publish.
 - [ ] Owner: review the Inventory draft and approve its evidence before publishing — blocked on owner.
-- [ ] Owner: provide approved content and real screens for the 16 HR/Construction department pages before they can be published — blocked on product evidence.
+- [x] HR 7-module handoff: seven bilingual HR pages (30 sections, 147 features, 16 real screens, 7 distinct heroes) built as unpublished drafts with 7-day private preview links; CMS can reorder/hide/override sections.
+- [ ] Owner: approve the HR handoff features (all marked product vision / not approved), confirm employee names in the 16 HR screenshots are demo data, and approve the evidence guide before any HR page is published — blocked on owner.
+- [ ] Owner: provide approved content and real screens for the 9 Construction department pages before they can be published — blocked on product evidence.
+- [ ] Owner: Employee & Manager Experience has no real screenshot yet (shows a labelled diagram) — needs a real capture.
+- [x] Area switchers on all department pages fade at the hidden edge and centre the current area.
 
 # DIGIT Website V3 — 2026-10-30
 - [x] Stage 1 foundation: server-saved contextual leads, consent/channel checks, durable rate limit, private inbox and exact approved notification recipient; saved/read-back tested.

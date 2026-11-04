@@ -1,0 +1,839 @@
+{
+ "slug": "people-intelligence",
+ "module": "06",
+ "name": {
+  "ar": "ذكاء الموارد البشرية والتخطيط",
+  "en": "People Intelligence & Planning"
+ },
+ "hero": {
+  "title": {
+   "ar": "كل مؤشر يبدأ بسؤال وينتهي بمصدر",
+   "en": "Every indicator starts with a question and ends with a source"
+  },
+  "subtitle": {
+   "ar": "مراكز قيادة، تخطيط للوظائف والتكاليف، وتحليلات قابلة للتصفية والرجوع إلى سجلاتها.",
+   "en": "Command centers, job and cost planning, and analytics that can be filtered and traced back to their records."
+  },
+  "center": null,
+  "nodes": [
+   {
+    "ar": "سؤال العمل",
+    "en": "Business question"
+   },
+   {
+    "ar": "تحديد نطاق البيانات",
+    "en": "Data scope definition"
+   },
+   {
+    "ar": "تقرير ومؤشر",
+    "en": "Report and indicator"
+   },
+   {
+    "ar": "تفسير الانحراف",
+    "en": "Variance interpretation"
+   },
+   {
+    "ar": "قرار قابل للتتبع",
+    "en": "Traceable decision"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "سؤال الإدارة",
+    "en": "Management question"
+   },
+   {
+    "ar": "المؤشر",
+    "en": "Indicator"
+   },
+   {
+    "ar": "التفسير",
+    "en": "Interpretation"
+   },
+   {
+    "ar": "المصدر",
+    "en": "Source"
+   },
+   {
+    "ar": "القرار",
+    "en": "Decision"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "من البيانات إلى قرارات يمكن تفسيرها",
+   "en": "From data to decisions you can explain"
+  },
+  "body": {
+   "ar": "ابدأ بسؤال الإدارة ثم عرّف المؤشر والمصدر والفلتر ومراجعة الحالة.",
+   "en": "Start with management's question, then define the indicator, source, filter and status review."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "سؤال العمل",
+    "en": "Business question"
+   },
+   {
+    "ar": "تحديد نطاق البيانات",
+    "en": "Data scope definition"
+   },
+   {
+    "ar": "تقرير ومؤشر",
+    "en": "Report and indicator"
+   },
+   {
+    "ar": "تفسير الانحراف",
+    "en": "Variance interpretation"
+   },
+   {
+    "ar": "قرار قابل للتتبع",
+    "en": "Traceable decision"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "المدير التنفيذي",
+    "en": "Chief executive officer"
+   },
+   {
+    "ar": "HR Director",
+    "en": "HR director"
+   },
+   {
+    "ar": "مسؤول التخطيط",
+    "en": "Planning officer"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "مساحة عمل بحسب الدور",
+    "en": "Role-based workspace"
+   },
+   {
+    "ar": "رابط إلى سجل/إجراء أصلي",
+    "en": "Link to original record/action"
+   },
+   {
+    "ar": "سيناريو احتياج",
+    "en": "Staffing needs scenario"
+   },
+   {
+    "ar": "مقارنة مخطط/فعلي",
+    "en": "Planned vs. actual comparison"
+   },
+   {
+    "ar": "تقرير",
+    "en": "Report"
+   },
+   {
+    "ar": "Dashboard",
+    "en": "Dashboard"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "لوحات HR/Manager/Employee بحسب ما يثبت تنفيذه",
+    "en": "HR/manager/employee dashboards, subject to verified implementation"
+   },
+   {
+    "ar": "فجوة العدد",
+    "en": "Headcount gap"
+   },
+   {
+    "ar": "سيناريوهات متاحة مقابل معتمدة",
+    "en": "Available vs. approved scenarios"
+   },
+   {
+    "ar": "Headcount",
+    "en": "Headcount"
+   },
+   {
+    "ar": "hires/exits",
+    "en": "Hires/exits"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "مؤشر بلا مصدر",
+    "en": "Indicator without a source"
+   },
+   {
+    "ar": "سيناريو عومل كميزانية",
+    "en": "Scenario treated as a budget"
+   },
+   {
+    "ar": "مؤشر بلا مقام/تعريف",
+    "en": "Indicator without a denominator/definition"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "06.1",
+   "title": {
+    "ar": "مراكز قيادة الموارد البشرية",
+    "en": "HR command centers"
+   },
+   "problem": {
+    "ar": "تكدّس الأرقام بلا تعريف لا يساعد المدير على اتخاذ قرار.",
+    "en": "Piles of numbers without definitions do not help managers make decisions."
+   },
+   "how": {
+    "ar": "نبدأ بأسئلة الإدارة والمهام الحرجة، ثم المؤشرات ذات المصادر والـDrill إلى السجلات.",
+    "en": "We start with management questions and critical tasks, then move to indicators with sources and Drill access to records."
+   },
+   "outcome": {
+    "ar": "لوحة قيادة عملية تربط الإشارة بالفعل.",
+    "en": "A practical dashboard that connects signals to action."
+   },
+   "decision": {
+    "ar": "بدء اليوم من القرارات المطلوب حسمها لا من قائمة التقارير",
+    "en": "Start the day with decisions to resolve, not a list of reports"
+   },
+   "narrative": {
+    "ar": "تكون لوحة القيادة نافعة حين تبدأ بالعمل المطلوب اليوم: استثناء يحتاج معالجة، طلب موافقة، مستند تنتهي صلاحيته أو تقرير يستدعي الفحص. تُختلف مكونات الشاشة بحسب الدور والشركة وصلاحية الاطلاع، وتربط كل إشارة بمصدر أو طابور يمكن فتحه. المؤشر بلا تعريف ولا رابط إلى بياناته يظل عنصرًا شكليًا، لا دليل إدارة.",
+    "en": "A dashboard is useful when it starts with today's work: an exception to resolve, an approval request, an expiring document or a report that needs examination. Screen components vary by role, company and viewing permissions, linking each signal to a source or queue that can be opened. An indicator without a definition or a link to its data remains decorative, not a basis for management decisions."
+   },
+   "inputs": [
+    {
+     "ar": "شركة/دور/فترة",
+     "en": "Company/role/period"
+    },
+    {
+     "ar": "طوابير العمل",
+     "en": "Work queues"
+    },
+    {
+     "ar": "سجل أحداث",
+     "en": "Event log"
+    },
+    {
+     "ar": "مؤشرات مصدرية",
+     "en": "Source-based indicators"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "مساحة عمل بحسب الدور",
+     "en": "Role-based workspace"
+    },
+    {
+     "ar": "رابط إلى سجل/إجراء أصلي",
+     "en": "Link to original record/action"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مؤشر بلا مصدر",
+     "en": "Indicator without a source"
+    },
+    {
+     "ar": "طابور غير مصرح",
+     "en": "Queue without access authorization"
+    },
+    {
+     "ar": "حالة فارغة مضللة",
+     "en": "Misleading empty state"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "لوحات HR/Manager/Employee بحسب ما يثبت تنفيذه",
+     "en": "HR/manager/employee dashboards, subject to verified implementation"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Director",
+     "en": "HR director"
+    },
+    {
+     "ar": "HR Operations",
+     "en": "HR operations"
+    },
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    }
+   ],
+   "features": [
+    "SHL-01",
+    "SHL-02",
+    "SHL-03",
+    "SHL-04",
+    "SHL-05",
+    "SHL-06",
+    "SHL-07",
+    "SHL-08",
+    "SHL-09",
+    "SHL-10",
+    "COR-06",
+    "ANL-03"
+   ],
+   "screens": [
+    "C-01",
+    "C-02",
+    "C-03",
+    "C-04",
+    "C-05"
+   ]
+  },
+  {
+   "id": "06.2",
+   "title": {
+    "ar": "تخطيط القوى العاملة والتكاليف",
+    "en": "Workforce and cost planning"
+   },
+   "problem": {
+    "ar": "احتياج التوظيف لا يُفهم دون أثر العدد والمناصب والتكلفة.",
+    "en": "Hiring needs cannot be understood without considering the impact on headcount, positions and cost."
+   },
+   "how": {
+    "ar": "نقارن الوضع الحالي بالخطة والسيناريوهات وشواغرها وتواريخ تأثيرها.",
+    "en": "We compare the current state with the plan and scenarios, their vacancies and effective dates."
+   },
+   "outcome": {
+    "ar": "قرارات تخطيط قابلة للمقارنة قبل التنفيذ.",
+    "en": "Planning decisions that can be compared before implementation."
+   },
+   "decision": {
+    "ar": "فصل الافتراض عن القرار المنفذ",
+    "en": "Separate assumptions from implemented decisions"
+   },
+   "narrative": {
+    "ar": "خطة القوى العاملة يجب أن تفرق بين العدد الفعلي والاحتياج المقترح والمناصب المعتمدة. يستطيع المسؤول دراسة سيناريو توظيف أو إعادة توزيع وتكلفة متوقعة مع ذكر افتراضاته. لكن السيناريو ليس موازنة معتمدة ولا حركة موظف منفذة؛ يفصل العرض بوضوح بين التحليل والقرار.",
+    "en": "A workforce plan must distinguish between actual headcount, proposed staffing needs and approved positions. The person responsible can study a hiring or redeployment scenario and its expected cost, stating the assumptions used. But a scenario is neither an approved budget nor an executed employee movement; the view clearly separates analysis from decisions."
+   },
+   "inputs": [
+    {
+     "ar": "عدد الموظفين الفعلي",
+     "en": "Actual headcount"
+    },
+    {
+     "ar": "مناصب معتمدة",
+     "en": "Approved positions"
+    },
+    {
+     "ar": "خطة وظائف",
+     "en": "Job plan"
+    },
+    {
+     "ar": "سيناريو تكلفة",
+     "en": "Cost scenario"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سيناريو احتياج",
+     "en": "Staffing needs scenario"
+    },
+    {
+     "ar": "مقارنة مخطط/فعلي",
+     "en": "Planned vs. actual comparison"
+    },
+    {
+     "ar": "قرار اعتماد منفصل",
+     "en": "Separate approval decision"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "سيناريو عومل كميزانية",
+     "en": "Scenario treated as a budget"
+    },
+    {
+     "ar": "نقص افتراضات",
+     "en": "Missing assumptions"
+    },
+    {
+     "ar": "تعارض منصب",
+     "en": "Position conflict"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "فجوة العدد",
+     "en": "Headcount gap"
+    },
+    {
+     "ar": "سيناريوهات متاحة مقابل معتمدة",
+     "en": "Available vs. approved scenarios"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Workforce Planner",
+     "en": "Workforce planner"
+    },
+    {
+     "ar": "HR Director",
+     "en": "HR director"
+    },
+    {
+     "ar": "Finance",
+     "en": "Finance"
+    }
+   ],
+   "features": [
+    "ORG-07"
+   ],
+   "screens": [
+    "W-01",
+    "W-02",
+    "W-03",
+    "W-04"
+   ]
+  },
+  {
+   "id": "06.3",
+   "title": {
+    "ar": "التحليلات والتقارير",
+    "en": "Analytics and reports"
+   },
+   "problem": {
+    "ar": "اختلاف تعريف التقرير عن لوحة المؤشرات يهدم الثقة في الأرقام.",
+    "en": "Inconsistent definitions between reports and KPI dashboards undermine trust in the numbers."
+   },
+   "how": {
+    "ar": "نستخدم تعريف تقرير واحد ومرشحات محفوظة، ثم نفتح نفس السجل من أي Dashboard.",
+    "en": "We use a single report definition and saved filters, then open the same record from any Dashboard."
+   },
+   "outcome": {
+    "ar": "معلومات متسقة، مفهومة المصدر وقابلة للتدقيق.",
+    "en": "Consistent, auditable information with clear sources."
+   },
+   "decision": {
+    "ar": "كل رقم يشرح طريقة حسابه ومصدره وحالة تحديثه",
+    "en": "Every number explains its calculation, source and update status"
+   },
+   "narrative": {
+    "ar": "ليس السؤال الأهم كم رسمًا بيانيًا يوجد؛ وإنما كيف حُسب الرقم ومتى حُدّث ومن يحق له فتح تفاصيله. يرتبط كل KPI بتعريف وعدد ومقام وفلاتر ومصدر بيانات، ويتيح التقرير فتح السجل الأصلي عند توفر الوظيفة. إذا كانت البيانات أو الصلاحيات غير متاحة يجب أن تظهر الحالة بوصفها غير مقيمة، لا صفرًا يوحي بأن النشاط لم يحدث.",
+    "en": "The most important question is not how many charts there are, but how a number was calculated, when it was updated and who is allowed to open its details. Each KPI is linked to a definition, numerator, denominator, filters and data source, and the report allows the original record to be opened where this functionality is available. If data or permissions are unavailable, the status must appear as not evaluated, not as a zero suggesting that no activity occurred."
+   },
+   "inputs": [
+    {
+     "ar": "مصادر بيانات",
+     "en": "Data sources"
+    },
+    {
+     "ar": "تعريفات KPI",
+     "en": "KPI definitions"
+    },
+    {
+     "ar": "فلاتر",
+     "en": "Filters"
+    },
+    {
+     "ar": "صلاحيات",
+     "en": "Permissions"
+    },
+    {
+     "ar": "تاريخ مرجعي",
+     "en": "Reference date"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "تقرير",
+     "en": "Report"
+    },
+    {
+     "ar": "Dashboard",
+     "en": "Dashboard"
+    },
+    {
+     "ar": "Drill إلى سجل المصدر عند دعمه",
+     "en": "Drill to source record where supported"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مؤشر بلا مقام/تعريف",
+     "en": "KPI without a denominator/definition"
+    },
+    {
+     "ar": "أرقام غير متصالحة",
+     "en": "Unreconciled figures"
+    },
+    {
+     "ar": "صلاحية مفقودة",
+     "en": "Missing permission"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "Headcount",
+     "en": "Headcount"
+    },
+    {
+     "ar": "hires/exits",
+     "en": "Hires/exits"
+    },
+    {
+     "ar": "time-to-fill",
+     "en": "Time-to-fill"
+    },
+    {
+     "ar": "attendance exceptions وفق التحقق",
+     "en": "Attendance exceptions subject to verification"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Analyst",
+     "en": "HR Analyst"
+    },
+    {
+     "ar": "CHRO",
+     "en": "CHRO"
+    }
+   ],
+   "features": [
+    "REC-12",
+    "CAS-06",
+    "PAY-16",
+    "ANL-01",
+    "ANL-02",
+    "ANL-04",
+    "ANL-05",
+    "ANL-06",
+    "ANL-07",
+    "ANL-08",
+    "ANL-09"
+   ],
+   "screens": [
+    "A-01",
+    "A-02",
+    "A-03",
+    "A-04",
+    "A-05"
+   ]
+  }
+ ],
+ "features": {
+  "SHL-01": {
+   "text": {
+    "ar": "تنقل مساحة العمل: قائمة جانبية + لوحة مهام",
+    "en": "Workspace navigation: sidebar + task dashboard"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-02": {
+   "text": {
+    "ar": "صفحة رئيسية حسب الدور (تحية، بلاطات، طوابير العمل، اختصارات)",
+    "en": "Role-based home page (greeting, tiles, work queues, shortcuts)"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-03": {
+   "text": {
+    "ar": "بحث شامل عن موظف / إجراء / مهمة إعداد",
+    "en": "Global search for an employee / action / setup task"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-04": {
+   "text": {
+    "ar": "حوارات تأكيد قبل الحفظ + حالة فارغة بزر إضافة",
+    "en": "Confirmation dialogs before saving + empty state with an add button"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-05": {
+   "text": {
+    "ar": "قواعد تجربة الاستخدام: حفظ السياق عند الرجوع، حالات فارغ/خطأ/مرفوض، عربي RTL، موبايل",
+    "en": "UX rules: context preserved when navigating back, empty/error/rejected states, Arabic RTL, mobile"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-06": {
+   "text": {
+    "ar": "تسجيل الدخول واستعادة كلمة المرور",
+    "en": "Sign-in and password recovery"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-07": {
+   "text": {
+    "ar": "جولات إرشادية داخل النظام (نقاط مضيئة + لوحة جانبية)",
+    "en": "In-app guided tours (spotlights + side panel)"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-08": {
+   "text": {
+    "ar": "توثيق المنتج بالإصدار + ما الجديد",
+    "en": "Version-specific product documentation + what's new"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-09": {
+   "text": {
+    "ar": "انتهاء الجلسة أو طلب التحقق ما يضيعش الشغل: حفظ المسودة والرجوع لنفس الخطوة",
+    "en": "No work lost on session expiry or verification requests: draft saved and return to the same step"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "SHL-10": {
+   "text": {
+    "ar": "محرك إجراءات جماعية بوضعين: ذري (الكل أو لا شيء) ونتيجة لكل سجل",
+    "en": "Bulk action engine with two modes: atomic (all or nothing) and per-record results"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "COR-06": {
+   "text": {
+    "ar": "البيانات الناقصة: تنبيه داخل الشاشة + لوحة جودة البيانات",
+    "en": "Missing data: on-screen alert + data quality dashboard"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "ANL-03": {
+   "text": {
+    "ar": "لوحات ذاتية البناء + لوحة فرعية + نمط عام/تفصيلي + بلاطات أعداد",
+    "en": "Build-your-own dashboards + sub-dashboard + overview/detail mode + count tiles"
+   },
+   "sections": [
+    "06.1"
+   ]
+  },
+  "ORG-07": {
+   "text": {
+    "ar": "سيناريوهات تخطيط القوى العاملة",
+    "en": "Workforce planning scenarios"
+   },
+   "sections": [
+    "06.2"
+   ]
+  },
+  "REC-12": {
+   "text": {
+    "ar": "تحليلات التوظيف: لوحة، نسب العبور بين المراحل، نشاط الوظيفة",
+    "en": "Recruitment analytics: dashboard, stage conversion rates, job activity"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "CAS-06": {
+   "text": {
+    "ar": "تقارير القضايا + مؤشرات الحل الذاتي + استبيان الرضا",
+    "en": "Case reports + self-resolution KPIs + satisfaction survey"
+   },
+   "sections": [
+    "05.3",
+    "06.3"
+   ]
+  },
+  "PAY-16": {
+   "text": {
+    "ar": "مطابقة الرواتب مع مراكز التكلفة والمشاريع",
+    "en": "Payroll reconciliation with cost centers and projects"
+   },
+   "sections": [
+    "04.1",
+    "06.3"
+   ]
+  },
+  "ANL-01": {
+   "text": {
+    "ar": "كتالوج التقارير بمجلدات مشتركة ومراكز النماذج/المستندات",
+    "en": "Report catalog with shared folders and form/document centers"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-02": {
+   "text": {
+    "ar": "معالج التقرير بمعاينة حية + قاموس الحقول + منشئ استعلام مرئي + أعمدة محسوبة وتاريخ مرجعي",
+    "en": "Report wizard with live preview + field dictionary + visual query builder + calculated columns and reference date"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-04": {
+   "text": {
+    "ar": "لوحات الأدوار + لوحة القوى العاملة + ملف الفريق",
+    "en": "Role-based dashboards + workforce dashboard + team profile"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-05": {
+   "text": {
+    "ar": "جدولة وتوزيع ومشاركة التقارير",
+    "en": "Report scheduling, distribution and sharing"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-06": {
+   "text": {
+    "ar": "تخصيص أعمدة القوائم",
+    "en": "List column customization"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-07": {
+   "text": {
+    "ar": "تعريف المؤشرات كعقد + التنقل من المؤشر للسجلات",
+    "en": "KPI definitions as contracts + navigation from KPIs to records"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-08": {
+   "text": {
+    "ar": "تحليل العدد في تاريخ معين / بالحدث",
+    "en": "Headcount analysis as of a specific date / by event"
+   },
+   "sections": [
+    "06.3"
+   ]
+  },
+  "ANL-09": {
+   "text": {
+    "ar": "مساعد تحليل بالذكاء الاصطناعي",
+    "en": "AI analytics assistant"
+   },
+   "sections": [
+    "06.3"
+   ],
+   "withheld": "ai-claim"
+  }
+ },
+ "screens": {
+  "C-01": {
+   "title": {
+    "ar": "لوحة المدير التنفيذي للموارد البشرية",
+    "en": "CHRO dashboard"
+   },
+   "role": "Executive cockpit"
+  },
+  "C-02": {
+   "title": {
+    "ar": "مركز عمليات الموارد البشرية",
+    "en": "HR operations center"
+   },
+   "role": "Exception / approval queue"
+  },
+  "C-03": {
+   "title": {
+    "ar": "صندوق الموافقات",
+    "en": "Approvals inbox"
+   },
+   "role": "Exception / approval queue"
+  },
+  "C-04": {
+   "title": {
+    "ar": "التنبيهات والاستثناءات",
+    "en": "Alerts and exceptions"
+   },
+   "role": "Exception / approval queue"
+  },
+  "C-05": {
+   "title": {
+    "ar": "مساحة عملي",
+    "en": "My workspace"
+   },
+   "role": "Executive cockpit"
+  },
+  "W-01": {
+   "title": {
+    "ar": "مركز تخطيط القوى العاملة",
+    "en": "Workforce planning center"
+   },
+   "role": "Executive cockpit"
+  },
+  "W-02": {
+   "title": {
+    "ar": "سيناريوهات القوى العاملة",
+    "en": "Workforce scenarios"
+   },
+   "role": "Operational register"
+  },
+  "W-03": {
+   "title": {
+    "ar": "أعداد الموظفين والشواغر",
+    "en": "Headcount and vacancies"
+   },
+   "role": "Analytical report"
+  },
+  "W-04": {
+   "title": {
+    "ar": "تخطيط تكلفة القوى العاملة",
+    "en": "Workforce cost planning"
+   },
+   "role": "Analytical report"
+  },
+  "A-01": {
+   "title": {
+    "ar": "تحليلات الموارد البشرية",
+    "en": "HR analytics"
+   },
+   "role": "Analytical report"
+  },
+  "A-02": {
+   "title": {
+    "ar": "تحليل الرواتب والتكلفة",
+    "en": "Payroll and cost analysis"
+   },
+   "role": "Analytical report"
+  },
+  "A-03": {
+   "title": {
+    "ar": "تحليلات الحضور والغياب",
+    "en": "Attendance and absence analytics"
+   },
+   "role": "Analytical report"
+  },
+  "A-04": {
+   "title": {
+    "ar": "تحليلات التوظيف",
+    "en": "Recruitment analytics"
+   },
+   "role": "Analytical report"
+  },
+  "A-05": {
+   "title": {
+    "ar": "تقارير الالتزام والتدقيق",
+    "en": "Compliance and audit reports"
+   },
+   "role": "Analytical report"
+  }
+ }
+}

@@ -1,6 +1,7 @@
 import { ArrowDown, ArrowUp, Plus, Trash2 } from 'lucide-react';
-import { BLOCK_TYPES, type CmsBlock, type CmsBlockItem } from '@/lib/cms-schema';
-import { SHOTS } from '@/content/product-shots';
+import { BLOCK_TYPES, type CmsBlock, type CmsBlockItem, type DepartmentMeta } from '@/lib/cms-schema';
+import { ALL_SHOTS as SHOTS, SHOT_GROUPS } from '@/content/screens';
+import { hrModuleBySlug } from '@/content/hr/hr-modules';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -21,6 +22,7 @@ export const BLOCK_INFO: Record<CmsBlock['type'], { label: string; hint: string 
   report: { label: 'لوحات وتقارير', hint: 'لوحة وتقرير جنبًا إلى جنب، مع مؤشرات مختصرة كعناصر.' },
   usecase: { label: 'حالات استخدام', hint: 'سيناريوهات عملية موثّقة؛ كل عنصر سيناريو ونتيجته.' },
   related: { label: 'أقسام مرتبطة', hint: 'روابط لأقسام أو صفحات أخرى، مع شاشة اختيارية.' },
+  source: { label: 'قسم من محتوى المصدر', hint: 'يعرض أحد أقسام المصدر بمدخلاته ومخرجاته واستثناءاته ووظائفه. الحقول الفارغة تعرض نص المصدر؛ أخفِ القسم بدل حذفه.' },
 };
 
 const WITH_ITEMS: CmsBlock['type'][] = ['workflow', 'faq', 'resource', 'roles', 'capability', 'document', 'profile', 'report', 'usecase', 'related'];
@@ -29,18 +31,22 @@ const WITH_SHOTS: CmsBlock['type'][] = ['theater', 'report'];
 const shotOptions = Object.values(SHOTS);
 
 export function newBlock(type: CmsBlock['type']): CmsBlock {
-  return { id: crypto.randomUUID(), type, title: '', body: '', shotId: '', mediaUrl: '', mediaAlt: '', href: '', enabled: true, eyebrow: '', items: [], shots: [], focus: null };
+  return { id: crypto.randomUUID(), type, title: '', body: '', shotId: '', mediaUrl: '', mediaAlt: '', href: '', enabled: true, eyebrow: '', items: [], shots: [], focus: null, ref: '' };
 }
 
-function ShotSelect({ value, onChange, label = 'الشاشة الفعلية' }: { value: string; onChange: (v: string) => void; label?: string }) {
+function ShotSelect({ value, onChange, label = 'الشاشة الفعلية', empty = 'بدون شاشة' }: { value: string; onChange: (v: string) => void; label?: string; empty?: string }) {
   return (
     <Field label={label}>
       <NativeSelect value={value} onChange={e => onChange(e.target.value)}>
-        <option value="">بدون شاشة</option>
-        {shotOptions.map(s => (
-          <option key={s.id} value={s.id}>
-            {s.caption.ar}
-          </option>
+        <option value="">{empty}</option>
+        {SHOT_GROUPS.map(g => (
+          <optgroup key={g.label} label={g.label}>
+            {g.shots.map(s => (
+              <option key={s.id} value={s.id}>
+                {s.caption.ar}
+              </option>
+            ))}
+          </optgroup>
         ))}
       </NativeSelect>
     </Field>
@@ -156,12 +162,57 @@ function FocusEditor({ block, update }: { block: CmsBlock; update: (v: Partial<C
   );
 }
 
-export function BlockList({ blocks, onChange, media, locale }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en' }) {
+/** Editor for a `source` block: placement and visibility plus optional overrides; empty fields keep the source copy. */
+function SourceBlockFields({ block, update, title }: { block: CmsBlock; update: (v: Partial<CmsBlock>) => void; title: string }) {
+  return (
+    <>
+      <p className="rounded-md bg-muted/40 p-2 text-xs">
+        <span className="font-semibold">القسم {block.ref}</span> · {title || 'قسم غير معروف'}
+      </p>
+      <Field label="عنوان صغير فوق العنوان" hint="فارغ = اسم المجال">
+        <Input value={block.eyebrow} onChange={e => update({ eyebrow: e.target.value })} />
+      </Field>
+      <Field label="العنوان" hint={`فارغ = ${title}`}>
+        <Input value={block.title} placeholder={title} onChange={e => update({ title: e.target.value })} />
+      </Field>
+      <Field label="النص التمهيدي" hint="فارغ = سرد القسم من المصدر">
+        <Textarea rows={3} value={block.body} onChange={e => update({ body: e.target.value })} />
+      </Field>
+      <ShotSelect value={block.shotId} onChange={v => update({ shotId: v })} label="الشاشة الفعلية" empty="شاشة المصدر (إن وُجدت)" />
+    </>
+  );
+}
+
+export function BlockList({ blocks, onChange, media, locale, department = null }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null }) {
   const updateBlock = (id: string, v: Partial<CmsBlock>) => onChange(blocks.map(b => (b.id === id ? { ...b, ...v } : b)));
+  const source = department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
   return (
     <>
       {blocks.map((b, i) => {
         const update = (v: Partial<CmsBlock>) => updateBlock(b.id, v);
+        if (b.type === 'source') {
+          return (
+            <div key={b.id} className="space-y-3 rounded-md border border-border p-4" data-block-type={b.type}>
+              <div className="flex items-center gap-1">
+                <span className="flex-1 text-sm font-semibold">
+                  {i + 1} · {BLOCK_INFO.source.label}
+                </span>
+                <Button size="icon" variant="ghost" aria-label="تحريك للأعلى" disabled={i === 0} onClick={() => onChange(swap(blocks, i, -1))}>
+                  <ArrowUp size={16} />
+                </Button>
+                <Button size="icon" variant="ghost" aria-label="تحريك للأسفل" disabled={i === blocks.length - 1} onClick={() => onChange(swap(blocks, i, 1))}>
+                  <ArrowDown size={16} />
+                </Button>
+              </div>
+              <p className="text-xs text-muted-foreground">{BLOCK_INFO.source.hint}</p>
+              <SourceBlockFields block={b} update={update} title={source?.sections.find(s => s.id === b.ref)?.title[locale] ?? ''} />
+              <label className="flex items-center gap-2 text-sm">
+                <input type="checkbox" checked={b.enabled} onChange={e => update({ enabled: e.target.checked })} />
+                ظاهر
+              </label>
+            </div>
+          );
+        }
         return (
           <div key={b.id} className="space-y-3 rounded-md border border-border p-4" data-block-type={b.type}>
             <div className="flex items-center gap-1">
@@ -227,7 +278,8 @@ export function BlockList({ blocks, onChange, media, locale }: { blocks: CmsBloc
 }
 
 export function AddBlockButtons({ onAdd, department }: { onAdd: (type: CmsBlock['type']) => void; department: boolean }) {
-  const types = department ? BLOCK_TYPES : (['story', 'workflow', 'faq', 'resource', 'cta'] as const);
+  // Source sections are placed by the page's source content, never added by hand.
+  const types = department ? BLOCK_TYPES.filter(t => t !== 'source') : (['story', 'workflow', 'faq', 'resource', 'cta'] as const);
   return (
     <div className="flex flex-wrap gap-2">
       {types.map(type => (

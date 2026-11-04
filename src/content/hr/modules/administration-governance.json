@@ -1,0 +1,762 @@
+{
+ "slug": "administration-governance",
+ "module": "07",
+ "name": {
+  "ar": "الإعدادات والحوكمة",
+  "en": "Administration & Governance"
+ },
+ "hero": {
+  "title": {
+   "ar": "الثقة تبدأ من حدود الصلاحية",
+   "en": "Trust starts with clear permission boundaries"
+  },
+  "subtitle": {
+   "ar": "التأسيس والخصوصية وسياق الوصول والإشعارات والمراقبة؛ عناصر تحمي صحة العمل وثقة المستخدم.",
+   "en": "Setup, privacy, access context, notifications and monitoring protect operational integrity and user trust."
+  },
+  "center": null,
+  "nodes": [
+   {
+    "ar": "من يستطيع الاطلاع؟",
+    "en": "Who can view it?"
+   },
+   {
+    "ar": "على أي سجل؟",
+    "en": "Which record?"
+   },
+   {
+    "ar": "ما القرار المسموح؟",
+    "en": "What decision is permitted?"
+   },
+   {
+    "ar": "أين أثر الإجراء؟",
+    "en": "Where is the action's trace?"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "إعداد",
+    "en": "Setup"
+   },
+   {
+    "ar": "نطاق",
+    "en": "Scope"
+   },
+   {
+    "ar": "صلاحية",
+    "en": "Permission"
+   },
+   {
+    "ar": "إشعار",
+    "en": "Notification"
+   },
+   {
+    "ar": "مراقبة",
+    "en": "Monitoring"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "حوكمة تجعل نطاق النظام واضحًا",
+   "en": "Governance that clarifies the system's scope"
+  },
+  "body": {
+   "ar": "الإعدادات والخصوصية والإشعارات والتكاملات ليست تفاصيل تقنية هامشية؛ هي شروط الثقة في الاستخدام.",
+   "en": "Settings, privacy, notifications and integrations are not minor technical details; they are essential to trusted use."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "تعريف السياسات",
+    "en": "Policy definition"
+   },
+   {
+    "ar": "ضبط الأدوار",
+    "en": "Role configuration"
+   },
+   {
+    "ar": "نطاق الوصول",
+    "en": "Access scope"
+   },
+   {
+    "ar": "إدارة الإشعار",
+    "en": "Notification management"
+   },
+   {
+    "ar": "مراقبة الاتصالات",
+    "en": "Connection monitoring"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "مسؤول النظام",
+    "en": "System administrator"
+   },
+   {
+    "ar": "HR Administrator",
+    "en": "HR Administrator"
+   },
+   {
+    "ar": "مسؤول الامتثال الداخلي",
+    "en": "Internal compliance officer"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "إعدادات صالحة للكيانات",
+    "en": "Valid entity settings"
+   },
+   {
+    "ar": "مهام تأسيس مكتملة",
+    "en": "Completed setup tasks"
+   },
+   {
+    "ar": "قرار سماح/رفض",
+    "en": "Allow/deny decision"
+   },
+   {
+    "ar": "سجل مراجعة صلاحيات حسب النظام الأصلي",
+    "en": "Permissions review log as provided by the original system"
+   },
+   {
+    "ar": "إشعار مُرسل فقط إذا ثبت محرك التنفيذ",
+    "en": "Sent notification only if the execution engine is verified"
+   },
+   {
+    "ar": "حالة فشل/نجاح",
+    "en": "Failure/success status"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "قائمة الجاهزية والعناصر الناقصة",
+    "en": "Readiness checklist and missing items"
+   },
+   {
+    "ar": "مراجعة الأدوار والتراخيص وسجلات الوصول المتاحة",
+    "en": "Review of roles, licenses and available access logs"
+   },
+   {
+    "ar": "قوالب فعالة",
+    "en": "Active templates"
+   },
+   {
+    "ar": "حالات إرسال/فشل إن ثبتت",
+    "en": "Sent/failed statuses, if verified"
+   },
+   {
+    "ar": "حالة الاتصالات/آخر محاولة/الأخطاء المعروفة",
+    "en": "Connection status/last attempt/known errors"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "سياسة بلا نطاق",
+    "en": "Policy without a scope"
+   },
+   {
+    "ar": "عرض رواتب لغير المخوّل",
+    "en": "Salary data visible to unauthorized users"
+   },
+   {
+    "ar": "إشعار مكرر",
+    "en": "Duplicate notification"
+   },
+   {
+    "ar": "مفتاح غير صالح",
+    "en": "Invalid key"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "07.1",
+   "title": {
+    "ar": "إعدادات النظام والتأسيس",
+    "en": "System settings and setup"
+   },
+   "problem": {
+    "ar": "إعداد ناقص للسياسات قد يجعل المستندات تبدو معطلة.",
+    "en": "Incomplete policy configuration can make documents appear nonfunctional."
+   },
+   "how": {
+    "ar": "نوجّه مسؤول النظام لإنهاء المتطلبات الأساسية، حسب الشركة والدور.",
+    "en": "We guide the system administrator through completing prerequisites by company and role."
+   },
+   "outcome": {
+    "ar": "تقليل أخطاء التهيئة ووضوح ما يلزم قبل التشغيل.",
+    "en": "Fewer onboarding errors and clarity on what is needed before operation."
+   },
+   "decision": {
+    "ar": "التشغيل يبدأ من إعداد منضبط وليس افتراضات",
+    "en": "Operations start with disciplined setup, not assumptions"
+   },
+   "narrative": {
+    "ar": "النظام الذي يبدو مكتمل الواجهة قد يتعطل تشغيله إذا لم تُعرّف الشركات والسياسات والورديات والفترات والصلاحيات. يبدأ تأسيس المنتج بقائمة واضحة للمطلوب وملاك الإعداد والعناصر الناقصة. تُستعرض الجاهزية كحالة قابلة للفحص، لا كنسبة نجاح موضوعة لأغراض تصميمية.",
+    "en": "A system with a seemingly complete interface may fail to operate if companies, policies, shifts, periods and permissions have not been defined. Product setup starts with a clear list of requirements, setup owners and missing items. Readiness is presented as a verifiable status, not a success percentage added for design purposes."
+   },
+   "inputs": [
+    {
+     "ar": "شركات",
+     "en": "Companies"
+    },
+    {
+     "ar": "سياسات",
+     "en": "Policies"
+    },
+    {
+     "ar": "أدوار",
+     "en": "Roles"
+    },
+    {
+     "ar": "تقاويم",
+     "en": "Calendars"
+    },
+    {
+     "ar": "فترات ودلائل إعداد",
+     "en": "Periods and setup guides"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "إعدادات صالحة للكيانات",
+     "en": "Valid entity settings"
+    },
+    {
+     "ar": "مهام تأسيس مكتملة",
+     "en": "Completed setup tasks"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "سياسة بلا نطاق",
+     "en": "Policy without a scope"
+    },
+    {
+     "ar": "متطلب أساسي غير منشأ",
+     "en": "Prerequisite not created"
+    },
+    {
+     "ar": "شركة غير معرّفة",
+     "en": "Undefined company"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "قائمة الجاهزية والعناصر الناقصة",
+     "en": "Readiness checklist and missing items"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR System Admin",
+     "en": "HR System Admin"
+    }
+   ],
+   "features": [
+    "SET-01",
+    "SET-05",
+    "SET-06",
+    "APR-01",
+    "APR-02"
+   ],
+   "screens": [
+    "X-01",
+    "X-02"
+   ]
+  },
+  {
+   "id": "07.2",
+   "title": {
+    "ar": "الصلاحيات والخصوصية والتدقيق",
+    "en": "Permissions, privacy and audit"
+   },
+   "problem": {
+    "ar": "صلاحية عامة قد تظهر بيانات موظف أو راتب لشخص غير مخوّل.",
+    "en": "A broad permission may expose employee or salary data to an unauthorized person."
+   },
+   "how": {
+    "ar": "نُظهر الأدوار ونطاق السجل والحقل والرفض وأدلة التدقيق.",
+    "en": "We show roles, record- and field-level scope, access denials and audit evidence."
+   },
+   "outcome": {
+    "ar": "وصول مضبوط وواضح دون بيانات حساسة خارجة عن النطاق.",
+    "en": "Clear, controlled access without exposing sensitive data outside the permitted scope."
+   },
+   "decision": {
+    "ar": "الخصوصية تُحكم من الخادم والدور وليس إخفاء عناصر الواجهة فقط",
+    "en": "Privacy is enforced through the server and roles, not just by hiding interface elements"
+   },
+   "narrative": {
+    "ar": "بيانات الموظف والراتب والوثائق تحتاج تحديدًا دقيقًا من يقرأها ومن يغيّرها وفي أي شركة أو دور. يوضح القسم العلاقة بين مصفوفة الدور وحدود السجل والإجراءات المسموحة وسجلات التدقيق المتاحة. ظهور البيانات في صفحة مصرح بها لا يثبت سلامة الخصوصية إلا بعد فحص الصلاحيات الحقيقية وسلوك الخادم.",
+    "en": "Employee data, salary data and documents require precise definitions of who can read or change them, and within which company or role. This section explains the relationship between the role matrix, record boundaries, permitted actions and available audit logs. Displaying data on an authorized page does not establish that privacy is protected until actual permissions and server behavior have been checked."
+   },
+   "inputs": [
+    {
+     "ar": "دور مستخدم",
+     "en": "User role"
+    },
+    {
+     "ar": "شركة",
+     "en": "Company"
+    },
+    {
+     "ar": "ملكية سجل",
+     "en": "Record ownership"
+    },
+    {
+     "ar": "نطاق بيانات",
+     "en": "Data scope"
+    },
+    {
+     "ar": "طلب اطلاع",
+     "en": "View request"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "قرار سماح/رفض",
+     "en": "Allow/deny decision"
+    },
+    {
+     "ar": "سجل مراجعة صلاحيات حسب النظام الأصلي",
+     "en": "Permissions review log as provided by the original system"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "عرض رواتب لغير المخوّل",
+     "en": "Salary data visible to unauthorized users"
+    },
+    {
+     "ar": "تخطي قاعدة الشركة",
+     "en": "Company rule bypass"
+    },
+    {
+     "ar": "صلاحية افتراضية",
+     "en": "Default permission"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "مراجعة الأدوار والتراخيص وسجلات الوصول المتاحة",
+     "en": "Review of roles, licenses and available access logs"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "IT Admin",
+     "en": "IT Admin"
+    },
+    {
+     "ar": "HR Security",
+     "en": "HR Security"
+    }
+   ],
+   "features": [
+    "REC-14",
+    "SEC-01",
+    "SEC-02",
+    "SEC-03",
+    "SEC-04",
+    "SEC-05",
+    "PLT-02",
+    "PLT-03",
+    "PLT-05",
+    "SEC-06"
+   ],
+   "screens": [
+    "X-03"
+   ]
+  },
+  {
+   "id": "07.3",
+   "title": {
+    "ar": "القوالب والإشعارات",
+    "en": "Templates and notifications"
+   },
+   "problem": {
+    "ar": "تشتت القوالب والإشعارات يضعف اتساق التواصل.",
+    "en": "Fragmented templates and notifications undermine communication consistency."
+   },
+   "how": {
+    "ar": "نربط قوالب المستندات وإخطاراتها بحدث التشغيل وتاريخ الإرسال.",
+    "en": "We link document templates and their notifications to the triggering event and send date."
+   },
+   "outcome": {
+    "ar": "مراسلات أكثر انتظامًا وقابلة للمراجعة.",
+    "en": "More consistent, reviewable correspondence."
+   },
+   "decision": {
+    "ar": "كل رسالة مرتبطة بحدث وسجل تحقق",
+    "en": "Every message is linked to an event and a verification record"
+   },
+   "narrative": {
+    "ar": "الإشعار المفيد يأتي بعد حدث معلوم، ويصل لمتلقي مصرح له، ويحفظ حالة الإرسال. يشرح القسم القوالب واللغة والقناة وشروط التفعيل ومراجعة الإخفاقات. مجرد وجود نموذج Notification لا يثبت تنفيذ الإرسال إلى المستخدمين أو الأنظمة الخارجية دون اختبار.",
+    "en": "A useful notification follows a known event, reaches an authorized recipient and retains its send status. This section explains templates, language, channels, activation conditions and failure reviews. The mere existence of a Notification model does not prove that messages are sent to users or external systems without testing."
+   },
+   "inputs": [
+    {
+     "ar": "حدث عمل",
+     "en": "Business event"
+    },
+    {
+     "ar": "قالب إشعار",
+     "en": "Notification template"
+    },
+    {
+     "ar": "لغة",
+     "en": "Language"
+    },
+    {
+     "ar": "متلقٍ",
+     "en": "Recipient"
+    },
+    {
+     "ar": "قناة معتمدة",
+     "en": "Approved channel"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "إشعار مُرسل فقط إذا ثبت محرك التنفيذ",
+     "en": "Sent notification only if the execution engine is verified"
+    },
+    {
+     "ar": "حالة فشل/نجاح",
+     "en": "Failure/success status"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "إشعار مكرر",
+     "en": "Duplicate notification"
+    },
+    {
+     "ar": "معلومة حساسة",
+     "en": "Sensitive information"
+    },
+    {
+     "ar": "رسالة لم تُرسل",
+     "en": "Unsent message"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "قوالب فعالة",
+     "en": "Active templates"
+    },
+    {
+     "ar": "حالات إرسال/فشل إن ثبتت",
+     "en": "Send/failure statuses, if verified"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Admin",
+     "en": "HR Admin"
+    }
+   ],
+   "features": [
+    "APR-03"
+   ],
+   "screens": [
+    "X-04"
+   ]
+  },
+  {
+   "id": "07.4",
+   "title": {
+    "ar": "التكاملات والمراقبة",
+    "en": "Integrations and monitoring"
+   },
+   "problem": {
+    "ar": "المزامنة الفاشلة قد تجعل الأرقام متأخرة دون أن يلاحظ أحد.",
+    "en": "Failed synchronization can leave figures outdated without anyone noticing."
+   },
+   "how": {
+    "ar": "نراقب واجهات التكامل والمهام الخلفية وأسباب الإخفاق وحالة الإعادة.",
+    "en": "We monitor integration interfaces, background tasks, failure causes and retry status."
+   },
+   "outcome": {
+    "ar": "تشغيل يمكن مراقبته وتحديد مشاكله بسرعة.",
+    "en": "Operations that can be monitored, with issues identified quickly."
+   },
+   "decision": {
+    "ar": "الفرق بين إمكانية الربط وتكامل حي عامل",
+    "en": "The difference between connectivity potential and a working live integration"
+   },
+   "narrative": {
+    "ar": "الربط بين الأنظمة لا يقاس بعدد الشعارات في لوحة التكامل. يجب معرفة مصدر البيانات، وطريقة المطابقة، والتكرار، وسجل النجاح أو الفشل وآلية إعادة المحاولة المصرح بها. وكل ما لم يُختبر من اتصال أو API يبقى إمكانية أو متطلبًا، لا تكاملًا جاريًا يُعلن عنه للعميل.",
+    "en": "Connectivity between systems is not measured by the number of logos on an integration dashboard. The data source, matching method, frequency, success or failure log, and authorized retry mechanism must be known. Any connection or API that has not been tested remains a possibility or requirement, not an active integration to advertise to customers."
+   },
+   "inputs": [
+    {
+     "ar": "مصدر خارجي",
+     "en": "External source"
+    },
+    {
+     "ar": "بيانات ربط مصرح بها",
+     "en": "Authorized connection details"
+    },
+    {
+     "ar": "مهمة معالجة",
+     "en": "Processing task"
+    },
+    {
+     "ar": "سجل طلب/استجابة",
+     "en": "Request/response log"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سجل صحة اتصال وأخطاء",
+     "en": "Connection health and error log"
+    },
+    {
+     "ar": "نتيجة تكامل فقط عندما يحدث فعليًا",
+     "en": "Integration result only when integration actually occurs"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مفتاح غير صالح",
+     "en": "Invalid key"
+    },
+    {
+     "ar": "سجل مكرر",
+     "en": "Duplicate record"
+    },
+    {
+     "ar": "اتصال غير موجود",
+     "en": "Missing connection"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "حالة الاتصالات/آخر محاولة/الأخطاء المعروفة",
+     "en": "Connection status / last attempt / known errors"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "IT Integration Admin",
+     "en": "IT Integration Admin"
+    }
+   ],
+   "features": [
+    "PLT-01",
+    "PLT-04"
+   ],
+   "screens": [
+    "X-05"
+   ]
+  }
+ ],
+ "features": {
+  "SET-01": {
+   "text": {
+    "ar": "قائمة مهام الإعداد / مشروع التطبيق + Go to Task + خريطة جاهزية الإعداد",
+    "en": "Setup task list / implementation project + Go to Task + setup readiness map"
+   },
+   "sections": [
+    "07.1"
+   ]
+  },
+  "SET-05": {
+   "text": {
+    "ar": "تحميل بيانات جماعي",
+    "en": "Bulk data upload"
+   },
+   "sections": [
+    "03.4",
+    "07.1"
+   ]
+  },
+  "SET-06": {
+   "text": {
+    "ar": "ملفات سياسات لكل كيان قانوني (إجازات، حضور، رواتب، عطلات) بدون تسرب بين الشركات",
+    "en": "Policy profiles for each legal entity (leave, attendance, payroll, holidays), with no spillover between companies"
+   },
+   "sections": [
+    "07.1"
+   ]
+  },
+  "APR-01": {
+   "text": {
+    "ar": "اعتمادات ببدلاء عند غياب المعتمد + تفويض وتدقيق",
+    "en": "Approvals with alternates when approvers are absent + delegation and audit"
+   },
+   "sections": [
+    "07.1"
+   ]
+  },
+  "APR-02": {
+   "text": {
+    "ar": "موافقات متوازية بمجموعات وبدلاء مع سجل من وافق ومتى",
+    "en": "Parallel approvals with groups and alternates, with a log of who approved and when"
+   },
+   "sections": [
+    "07.1"
+   ]
+  },
+  "REC-14": {
+   "text": {
+    "ar": "الخصوصية: الاحتفاظ والموافقة وإخفاء الهوية",
+    "en": "Privacy: retention, consent and anonymization"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-01": {
+   "text": {
+    "ar": "سياسة وصول بالنطاق + أداة اختبار الوصول",
+    "en": "Scope-based access policy + access testing tool"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-02": {
+   "text": {
+    "ar": "إنشاء المستخدم وتعيين الأدوار",
+    "en": "User creation and role assignment"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-03": {
+   "text": {
+    "ar": "إخفاء البيانات الحساسة",
+    "en": "Sensitive data masking"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-04": {
+   "text": {
+    "ar": "لوحة استخدام النظام",
+    "en": "System usage dashboard"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-05": {
+   "text": {
+    "ar": "مزامنة مزود الهوية + سجل MFA",
+    "en": "Identity provider synchronization + MFA log"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "PLT-02": {
+   "text": {
+    "ar": "منشئ تطبيقات/نماذج بدون كود",
+    "en": "No-code app/form builder"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "PLT-03": {
+   "text": {
+    "ar": "أداء التحميل وعزل البيانات عند تبديل الحساب (كاش بالدور والشركة، إلغاء الطلبات القديمة)",
+    "en": "Loading performance and data isolation when switching accounts (caching by role and company, cancellation of outdated requests)"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "PLT-05": {
+   "text": {
+    "ar": "اختبار تراجع لتخصيصات DIGIT مع كل تحديث للمنصة قبل النشر",
+    "en": "Regression testing of DIGIT customizations with every platform update before deployment"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "SEC-06": {
+   "text": {
+    "ar": "البحث والتصدير والمرفقات يحترموا الصلاحيات على مستوى الصف والحقل",
+    "en": "Search, exports and attachments that respect row- and field-level permissions"
+   },
+   "sections": [
+    "07.2"
+   ]
+  },
+  "APR-03": {
+   "text": {
+    "ar": "إرشاد داخل الحقل حسب الحالة + سجل إصدارات الـ workflows والقوالب",
+    "en": "Status-based in-field guidance + workflow and template version history"
+   },
+   "sections": [
+    "07.3"
+   ]
+  },
+  "PLT-01": {
+   "text": {
+    "ar": "API و Webhooks للتكامل",
+    "en": "API and Webhooks for integration"
+   },
+   "sections": [
+    "07.4"
+   ]
+  },
+  "PLT-04": {
+   "text": {
+    "ar": "مراقبة التكاملات وإعادة محاولة آمنة بدون تكرار المعالجة",
+    "en": "Integration monitoring and safe retries without duplicate processing"
+   },
+   "sections": [
+    "07.4"
+   ]
+  }
+ },
+ "screens": {
+  "X-01": {
+   "title": {
+    "ar": "إعدادات الموارد البشرية",
+    "en": "HR settings"
+   },
+   "role": "Configuration workbench"
+  },
+  "X-02": {
+   "title": {
+    "ar": "مصمم الموافقات",
+    "en": "Approval designer"
+   },
+   "role": "Configuration workbench"
+  },
+  "X-03": {
+   "title": {
+    "ar": "صلاحيات وخصوصية HR",
+    "en": "HR permissions and privacy"
+   },
+   "role": "Configuration workbench"
+  },
+  "X-04": {
+   "title": {
+    "ar": "قوالب المستندات والإشعارات",
+    "en": "Document and notification templates"
+   },
+   "role": "Configuration workbench"
+  },
+  "X-05": {
+   "title": {
+    "ar": "التكامل والمهام المجدولة",
+    "en": "Integration and scheduled tasks"
+   },
+   "role": "Operational register"
+  }
+ }
+}

@@ -1,6 +1,7 @@
 // Canonical product-and-department registry. Header, Mega Menu, Product Hubs, department pages, breadcrumbs,
 // lead context and the admin catalog all read from here, so a department exists in exactly one place.
 // Labels come from the owner's product brief (2026-11-04); summaries reuse copy already approved on the site.
+import { HR_INDEX } from './hr/hr-index';
 export type L = { ar: string; en: string };
 export type ProductKey = 'pro' | 'hr' | 'construction' | 'pos';
 
@@ -72,7 +73,8 @@ const pro: ProductFamily = {
   solutions: [],
 };
 
-const hrDept = (id: string, ar: string, en: string): Department => ({ id, product: 'hr', path: `/hr/${id}`, source: 'cms', label: { ar, en } });
+// The seven DIGIT HR modules come from the owner's HR handoff (route slugs, names and summaries); see src/content/hr.
+const hrDepartments = (): Department[] => HR_INDEX.map(m => ({ id: m.slug, product: 'hr', path: `/hr/${m.slug}`, source: 'cms', label: m.label, summary: m.summary }));
 const hr: ProductFamily = {
   key: 'hr',
   base: '/hr',
@@ -82,16 +84,7 @@ const hr: ProductFamily = {
   overview: '/modules/hr-payroll',
   summary: { ar: 'دورة الموظف والقوى العاملة في نظام واحد، من الهيكل التنظيمي حتى الحوكمة.', en: 'The employee and workforce lifecycle in one system, from organization structure to governance.' },
   groupLabel: { ar: 'مجالات DIGIT HR', en: 'DIGIT HR areas' },
-  departments: [
-    hrDept('core-hr', 'الموارد البشرية الأساسية والهيكل التنظيمي', 'Core HR & Organization'),
-    hrDept('talent', 'المواهب والتوظيف والتطوير', 'Human Capital & Talent'),
-    hrDept('workforce', 'الحضور والإجازات والورديات', 'Workforce Management'),
-    // The brief's Arabic label adds «المعتمدة»; it is held back pending owner confirmation (approval wording rule).
-    hrDept('payroll', 'الرواتب والتعويضات والعمليات السعودية', 'Payroll, Rewards & Saudi Operations'),
-    hrDept('self-service', 'الخدمة الذاتية وتجربة الموظف والمدير', 'Employee & Manager Experience'),
-    hrDept('people-analytics', 'التحليلات وتخطيط القوى العاملة', 'People Intelligence & Planning'),
-    hrDept('administration', 'الإعدادات والحوكمة', 'Administration & Governance'),
-  ],
+  departments: hrDepartments(),
   extras: [],
   solutions: [],
 };

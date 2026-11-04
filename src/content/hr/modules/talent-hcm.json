@@ -1,0 +1,1218 @@
+{
+ "slug": "talent-hcm",
+ "module": "02",
+ "name": {
+  "ar": "المواهب ورأس المال البشري",
+  "en": "Talent & Human Capital"
+ },
+ "hero": {
+  "title": {
+   "ar": "الموهبة رحلة، وليست ملف مرشح",
+   "en": "Talent is a journey, not a candidate file"
+  },
+  "subtitle": {
+   "ar": "من طلب الاحتياج والاستقطاب إلى المقابلة والعرض والتهيئة والأداء والتعلم والتعاقب الوظيفي.",
+   "en": "From staffing requests and sourcing to interviews, offers, onboarding, performance, learning and succession."
+  },
+  "center": null,
+  "nodes": [
+   {
+    "ar": "طلب احتياج",
+    "en": "Staffing request"
+   },
+   {
+    "ar": "استقطاب وتقييم",
+    "en": "Sourcing and assessment"
+   },
+   {
+    "ar": "عرض وتهيئة",
+    "en": "Offer and onboarding"
+   },
+   {
+    "ar": "أهداف وأداء",
+    "en": "Goals and performance"
+   },
+   {
+    "ar": "تعلم وتعاقب",
+    "en": "Learning and succession"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "احتياج",
+    "en": "Staffing need"
+   },
+   {
+    "ar": "مرشح",
+    "en": "Candidate"
+   },
+   {
+    "ar": "عرض",
+    "en": "Offer"
+   },
+   {
+    "ar": "تهيئة",
+    "en": "Onboarding"
+   },
+   {
+    "ar": "أداء",
+    "en": "Performance"
+   },
+   {
+    "ar": "نمو",
+    "en": "Growth"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "من احتياج العمل إلى تنمية المواهب",
+   "en": "From business needs to talent development"
+  },
+  "body": {
+   "ar": "القرار يبدأ بطلب توظيف ويستمر عبر اختيار المرشح وتهيئته وتقييمه وتنمية مهاراته.",
+   "en": "Decision-making starts with a job requisition and continues through candidate selection, onboarding, assessment and skills development."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "طلب احتياج",
+    "en": "Staffing request"
+   },
+   {
+    "ar": "استقطاب وتقييم",
+    "en": "Sourcing and assessment"
+   },
+   {
+    "ar": "عرض وتهيئة",
+    "en": "Offer and onboarding"
+   },
+   {
+    "ar": "أهداف وأداء",
+    "en": "Goals and performance"
+   },
+   {
+    "ar": "تعلم وتعاقب",
+    "en": "Learning and succession"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "مسؤول التوظيف",
+    "en": "Recruiter"
+   },
+   {
+    "ar": "مدير الموارد البشرية",
+    "en": "HR manager"
+   },
+   {
+    "ar": "المدير المباشر",
+    "en": "Line manager"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "سجل مرشحين",
+    "en": "Candidate register"
+   },
+   {
+    "ar": "قرار مرحلة",
+    "en": "Stage decision"
+   },
+   {
+    "ar": "خطة Onboarding",
+    "en": "Onboarding plan"
+   },
+   {
+    "ar": "مهمة جاهزية",
+    "en": "Readiness task"
+   },
+   {
+    "ar": "تقييم معتمد أو مسودة",
+    "en": "Approved or draft assessment"
+   },
+   {
+    "ar": "ملاحظات",
+    "en": "Notes"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "Funnel المتقدمين",
+    "en": "Applicant funnel"
+   },
+   {
+    "ar": "عمر الطلب",
+    "en": "Requisition age"
+   },
+   {
+    "ar": "جاهزية اليوم الأول",
+    "en": "Day-one readiness"
+   },
+   {
+    "ar": "المهام المفتوحة",
+    "en": "Open tasks"
+   },
+   {
+    "ar": "إتمام التقييمات",
+    "en": "Assessment completion"
+   },
+   {
+    "ar": "الأهداف المتأخرة",
+    "en": "Overdue goals"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "طلب متأخر",
+    "en": "Overdue requisition"
+   },
+   {
+    "ar": "مهمة متأخرة",
+    "en": "Overdue task"
+   },
+   {
+    "ar": "تقييم متأخر",
+    "en": "Overdue assessment"
+   },
+   {
+    "ar": "تدريب بلا نتيجة",
+    "en": "Training without an outcome"
+   },
+   {
+    "ar": "منصب حرج بلا بديل",
+    "en": "Critical position without a successor"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "02.1",
+   "title": {
+    "ar": "التوظيف والاستقطاب",
+    "en": "Recruitment and sourcing"
+   },
+   "problem": {
+    "ar": "من دون Pipeline واضحة تضيع الطلبات والمقابلات ويتأخر القرار.",
+    "en": "Without a clear Pipeline, requisitions and interviews fall through the cracks, delaying decisions."
+   },
+   "how": {
+    "ar": "نتابع الطلب الوظيفي ثم المرشح والمقابلات والتقييم والعرض؛ كل مرحلة تربط بالمستند السابق واللاحق.",
+    "en": "We track the job requisition, then the candidate, interviews, assessment and offer; each stage is linked to the preceding and following documents."
+   },
+   "outcome": {
+    "ar": "قياس معدل التحويل والزمن ومعرفة أسباب التأخير.",
+    "en": "Measure conversion rates and elapsed time, and identify reasons for delays."
+   },
+   "decision": {
+    "ar": "كل مرشح معروف المرحلة والمالك والقرار التالي",
+    "en": "Every candidate has a known stage, owner and next decision"
+   },
+   "narrative": {
+    "ar": "تبدأ عملية التوظيف من احتياج معرّف، لا من صندوق بريد للسير الذاتية. يربط التصميم بين طلب الوظيفة والمنصب والمرشحين والمراحل والمقابلات والتقييم والعرض الوظيفي؛ وفي كل مرحلة نعرف من المسؤول وما المستند التالي المطلوب. تُقاس جودة المسار من عمر الطلب ونسب المرور بين المراحل وأسباب التأخير، مع الاحتفاظ بقرارات الرفض والقبول ضمن حدود الخصوصية.",
+    "en": "Recruitment starts with a defined need, not an inbox full of CVs. The design links the job requisition, position, candidates, stages, interviews, assessment and job offer; at every stage, the responsible person and the next required document are clear. Process quality is measured by requisition age, stage-to-stage conversion rates and reasons for delays, while rejection and acceptance decisions are retained within privacy boundaries."
+   },
+   "inputs": [
+    {
+     "ar": "طلب احتياج",
+     "en": "Staffing request"
+    },
+    {
+     "ar": "منصب/شاغر",
+     "en": "Position/vacancy"
+    },
+    {
+     "ar": "مصادر المرشحين",
+     "en": "Candidate sources"
+    },
+    {
+     "ar": "السيرة",
+     "en": "CV"
+    },
+    {
+     "ar": "مقابلات",
+     "en": "Interviews"
+    },
+    {
+     "ar": "تقييمات",
+     "en": "Assessments"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سجل مرشحين",
+     "en": "Candidate register"
+    },
+    {
+     "ar": "قرار مرحلة",
+     "en": "Stage decision"
+    },
+    {
+     "ar": "عرض وظيفي",
+     "en": "Job offer"
+    },
+    {
+     "ar": "مرشح صالح للتهيئة",
+     "en": "Candidate eligible for onboarding"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "طلب متأخر",
+     "en": "Overdue requisition"
+    },
+    {
+     "ar": "مرشح بلا قرار",
+     "en": "Candidate without a decision"
+    },
+    {
+     "ar": "مقابلة غير مكتملة",
+     "en": "Incomplete interview"
+    },
+    {
+     "ar": "نقص موافقة",
+     "en": "Missing approval"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "Funnel المتقدمين",
+     "en": "Applicant funnel"
+    },
+    {
+     "ar": "عمر الطلب",
+     "en": "Requisition age"
+    },
+    {
+     "ar": "المقابلات القادمة",
+     "en": "Upcoming interviews"
+    },
+    {
+     "ar": "مصادر الاستقطاب",
+     "en": "Sourcing channels"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Recruiter",
+     "en": "Recruiter"
+    },
+    {
+     "ar": "Hiring Manager",
+     "en": "Hiring manager"
+    }
+   ],
+   "features": [
+    "ORG-06",
+    "ORG-08",
+    "REC-01",
+    "REC-02",
+    "REC-03",
+    "REC-04",
+    "REC-05",
+    "REC-06",
+    "REC-07",
+    "REC-08",
+    "REC-09",
+    "REC-10",
+    "REC-11",
+    "REC-13"
+   ],
+   "screens": [
+    "R-01",
+    "R-02",
+    "R-03",
+    "R-04",
+    "R-05",
+    "R-06",
+    "R-07"
+   ]
+  },
+  {
+   "id": "02.2",
+   "title": {
+    "ar": "التعيين والتهيئة",
+    "en": "Hiring and onboarding"
+   },
+   "problem": {
+    "ar": "قبول العرض لا يعني أن الموظف جاهز لأول يوم.",
+    "en": "Accepting an offer does not mean the employee is ready for day one."
+   },
+   "how": {
+    "ar": "نحوّل العرض المقبول إلى رحلة تهيئة بمهام ومسؤولين ومواعيد وصولًا لملف الموظف.",
+    "en": "We turn the accepted offer into an onboarding journey with tasks, owners and deadlines, leading to an employee file."
+   },
+   "outcome": {
+    "ar": "جاهزية أول يوم ومسؤولية واضحة عن المتطلبات الناقصة.",
+    "en": "Day-one readiness and clear accountability for outstanding requirements."
+   },
+   "decision": {
+    "ar": "أول يوم مرتبط بمهام وملاك وإثبات تنفيذ",
+    "en": "Day one is linked to tasks, owners and proof of completion"
+   },
+   "narrative": {
+    "ar": "قبول العرض الوظيفي لا يعني أن الموظف جاهز في أول يوم. تُحوَّل متطلبات التهيئة إلى قائمة ذات مسؤولين ومواعيد ومستندات وتسليمات، بحيث يعرف الموظف والمدير وHR ما أُنجز وما تأخر. وعندما يحين إنشاء سجل العمل يُراجع اتصال المرشح بالموظف ويُمنع تكرار السجلات. إرسال الدعوات أو منح صلاحيات أنظمة خارجية أعمال منفصلة لا تُعامل كوظائف متاحة دون تحقق.",
+    "en": "Accepting a job offer does not mean the employee is ready for day one. Onboarding requirements become a checklist with owners, deadlines, documents and handovers, so the employee, manager and HR know what is complete and what is overdue. When it is time to create the employment record, the link between candidate and employee is reviewed and duplicate records are prevented. Sending invitations or granting permissions in external systems are separate activities and are not treated as available features without verification."
+   },
+   "inputs": [
+    {
+     "ar": "عرض مقبول",
+     "en": "Accepted offer"
+    },
+    {
+     "ar": "ملف المرشح",
+     "en": "Candidate file"
+    },
+    {
+     "ar": "تاريخ مباشرة",
+     "en": "Start date"
+    },
+    {
+     "ar": "مهام وقوالب وتكليفات",
+     "en": "Tasks, templates and assignments"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "خطة Onboarding",
+     "en": "Onboarding plan"
+    },
+    {
+     "ar": "مهمة جاهزية",
+     "en": "Readiness task"
+    },
+    {
+     "ar": "سجل تسليم/استلام",
+     "en": "Handover/receipt record"
+    },
+    {
+     "ar": "ملف موظف عند التنفيذ",
+     "en": "Employee file upon execution"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مهمة متأخرة",
+     "en": "Overdue task"
+    },
+    {
+     "ar": "مستند ناقص",
+     "en": "Missing document"
+    },
+    {
+     "ar": "ازدواجية تحويل المرشح",
+     "en": "Duplicate candidate conversion"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "جاهزية اليوم الأول",
+     "en": "Day-one readiness"
+    },
+    {
+     "ar": "المهام المفتوحة",
+     "en": "Open tasks"
+    },
+    {
+     "ar": "حالات التأخير",
+     "en": "Delayed cases"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Operations",
+     "en": "HR operations"
+    },
+    {
+     "ar": "المدير المباشر",
+     "en": "Line manager"
+    },
+    {
+     "ar": "Employee",
+     "en": "Employee"
+    }
+   ],
+   "features": [
+    "HIR-01",
+    "HIR-02",
+    "HIR-03",
+    "HIR-04",
+    "ONB-01",
+    "ONB-02",
+    "ONB-03",
+    "ONB-04",
+    "ONB-05",
+    "ONB-06"
+   ],
+   "screens": [
+    "R-08"
+   ]
+  },
+  {
+   "id": "02.3",
+   "title": {
+    "ar": "الأهداف وتقييم الأداء",
+    "en": "Goals and performance reviews"
+   },
+   "problem": {
+    "ar": "التقييمات المنفصلة عن الأهداف يصعب تحويلها إلى قرارات.",
+    "en": "Reviews disconnected from goals are difficult to turn into decisions."
+   },
+   "how": {
+    "ar": "نربط الهدف بالدورة والتقييم والتغذية الراجعة وتاريخ المتابعة.",
+    "en": "We link each goal to the cycle, evaluation, feedback and follow-up date."
+   },
+   "outcome": {
+    "ar": "تقييم قابل للتفسير وخطوات تطوير مرتبطة بالأداء.",
+    "en": "An explainable evaluation and development steps linked to performance."
+   },
+   "decision": {
+    "ar": "إمكانية تفسير التقييم بمعايير وسجلات لا بانطباع منفصل",
+    "en": "Evaluations explained through criteria and records, not isolated impressions"
+   },
+   "narrative": {
+    "ar": "إذا اختلف تعريف الهدف أو معايير التقييم بين الإدارات، يصعب تفسير النتائج أو ربطها بخطة تطوير. تبدأ الرحلة من أهداف ومؤشرات ودورة مراجعة ومقيّمين معلومين، ثم تنتقل إلى الملاحظات والاعتماد والنتيجة المسجلة. تعرض لوحة الإدارة ما اكتمل وما تأخر وأين تتطلب المرحلة إجراء، دون تحويل توزيع الدرجات وحده إلى حكم عن جودة الموظفين.",
+    "en": "When goal definitions or evaluation criteria differ across departments, results become difficult to explain or link to a development plan. The journey starts with goals, KPIs, a review cycle and designated evaluators, then moves to feedback, approval and the recorded result. The management dashboard shows what is complete, what is overdue and where a stage requires action, without treating score distribution alone as a judgment of employee quality."
+   },
+   "inputs": [
+    {
+     "ar": "دورة تقييم",
+     "en": "Evaluation cycle"
+    },
+    {
+     "ar": "أهداف",
+     "en": "Goals"
+    },
+    {
+     "ar": "مستهدفات",
+     "en": "Targets"
+    },
+    {
+     "ar": "مراجعون",
+     "en": "Reviewers"
+    },
+    {
+     "ar": "نموذج التقييم",
+     "en": "Evaluation form"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "تقييم معتمد أو مسودة",
+     "en": "Approved or draft evaluation"
+    },
+    {
+     "ar": "ملاحظات",
+     "en": "Feedback"
+    },
+    {
+     "ar": "خطة تطوير مرتبطة",
+     "en": "Linked development plan"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تقييم متأخر",
+     "en": "Overdue evaluation"
+    },
+    {
+     "ar": "هدف بلا مقياس",
+     "en": "Goal without a metric"
+    },
+    {
+     "ar": "مراجعة غير معتمدة",
+     "en": "Unapproved review"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "إتمام التقييمات",
+     "en": "Evaluation completion"
+    },
+    {
+     "ar": "الأهداف المتأخرة",
+     "en": "Overdue goals"
+    },
+    {
+     "ar": "توزيع النتائج",
+     "en": "Results distribution"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    },
+    {
+     "ar": "Performance HR",
+     "en": "Performance HR"
+    }
+   ],
+   "features": [
+    "PRF-01",
+    "PRF-02",
+    "PRF-03",
+    "ENG-01"
+   ],
+   "screens": [
+    "F-01",
+    "F-02",
+    "F-03",
+    "F-04",
+    "F-05"
+   ]
+  },
+  {
+   "id": "02.4",
+   "title": {
+    "ar": "التعلم والمهارات والمسارات",
+    "en": "Learning, skills and pathways"
+   },
+   "problem": {
+    "ar": "الدورات التدريبية دون ربط بالمهارات تخلق نشاطًا لا أثرًا.",
+    "en": "Training courses that are not linked to skills create activity, not impact."
+   },
+   "how": {
+    "ar": "نربط المهارة المطلوبة بالبرنامج والتسجيل والنتيجة والشهادة.",
+    "en": "We link the required skill to the program, enrollment, result and certificate."
+   },
+   "outcome": {
+    "ar": "رؤية للفجوة المهارية وإكمال التدريب.",
+    "en": "Visibility into skills gaps and training completion."
+   },
+   "decision": {
+    "ar": "يرتبط التطوير بفجوة محددة وتوثيق التعلم",
+    "en": "Development linked to a specific gap and documented learning"
+   },
+   "narrative": {
+    "ar": "التدريب له قيمة حين يبدأ بفجوة مهارية موثقة وينتهي بنتيجة قابلة للمراجعة. يجمع هذا القسم برامج التعلم والتسجيل والإنجاز والمهارات المرتبطة بالوظيفة أو خطة التطوير. يفرّق التقرير بين الحضور والإكمال واكتساب المهارة؛ فلا تُنسب كفاءة جديدة إلى الموظف لمجرد وجود برنامج تدريبي في ملفه.",
+    "en": "Training delivers value when it starts with a documented skills gap and ends with a result that can be reviewed. This section brings together learning programs, enrollment, achievement and skills linked to the job or development plan. The report distinguishes between attendance, completion and skill acquisition; employees are not credited with a new competency simply because a training program appears in their record."
+   },
+   "inputs": [
+    {
+     "ar": "احتياج مهاري",
+     "en": "Skill requirement"
+    },
+    {
+     "ar": "سجل مهارات",
+     "en": "Skills record"
+    },
+    {
+     "ar": "برنامج تدريبي",
+     "en": "Training program"
+    },
+    {
+     "ar": "تسجيل حضور/نتيجة",
+     "en": "Attendance/result recording"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "خطة تعلم",
+     "en": "Learning plan"
+    },
+    {
+     "ar": "نشاط تدريبي",
+     "en": "Training activity"
+    },
+    {
+     "ar": "نتائج واكتمال",
+     "en": "Results and completion"
+    },
+    {
+     "ar": "تحديثات مهارية عند تحققها",
+     "en": "Skills updates when verified"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تدريب بلا نتيجة",
+     "en": "Training without a result"
+    },
+    {
+     "ar": "حاجة غير مغطاة",
+     "en": "Unmet need"
+    },
+    {
+     "ar": "نسبة إكمال غير معروفة",
+     "en": "Unknown completion rate"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "التدريب المكتمل/المتأخر",
+     "en": "Completed/overdue training"
+    },
+    {
+     "ar": "فجوات المهارات",
+     "en": "Skills gaps"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Learning HR",
+     "en": "Learning HR"
+    },
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    }
+   ],
+   "features": [
+    "TAL-03",
+    "LRN-01"
+   ],
+   "screens": [
+    "L-01",
+    "L-02",
+    "L-03",
+    "L-04",
+    "L-05"
+   ]
+  },
+  {
+   "id": "02.5",
+   "title": {
+    "ar": "المواهب والتعاقب",
+    "en": "Talent and succession"
+   },
+   "problem": {
+    "ar": "المناصب الحرجة تصبح مخاطرة عندما لا توجد خطط خلافة.",
+    "en": "Critical positions become a risk when there are no succession plans."
+   },
+   "how": {
+    "ar": "نربط تقييم الإمكانات والأداء بالمواهب المحتملة والبدائل وخطط التطوير.",
+    "en": "We link potential and performance assessments to prospective talent, successors and development plans."
+   },
+   "outcome": {
+    "ar": "جاهزية تعاقب مدروسة بدل قرارات فردية.",
+    "en": "Well-considered succession readiness rather than individual decisions."
+   },
+   "decision": {
+    "ar": "تقليل المفاجآت عند شغور منصب محوري",
+    "en": "Fewer surprises when a key position becomes vacant"
+   },
+   "narrative": {
+    "ar": "عندما يعتمد دور حرج على شخص واحد دون بديل محتمل، تتعرض المؤسسة لمفاجأة عند غيابه أو انتقاله. يساعد تصميم التعاقب على تسجيل المناصب المهمة والمرشحين الداخليين وخطط الجاهزية. ينبغي أن تظهر أسباب اختيار المرشح واحتياجاته التطويرية، لا أن يتحول تصنيف «جاهز» إلى حكم آلي غير مبرر.",
+    "en": "When a critical role depends on one person with no potential successor, their absence or move can catch the organization off guard. Succession planning helps document key positions, internal candidates and readiness plans. The reasons for selecting a candidate and their development needs should be visible, rather than allowing a \"ready\" rating to become an unjustified automated judgment."
+   },
+   "inputs": [
+    {
+     "ar": "وظائف حرجة",
+     "en": "Critical jobs"
+    },
+    {
+     "ar": "مرشحون داخليون",
+     "en": "Internal candidates"
+    },
+    {
+     "ar": "جاهزية محتملة",
+     "en": "Potential readiness"
+    },
+    {
+     "ar": "خطة تطوير",
+     "en": "Development plan"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "خطة تعاقب",
+     "en": "Succession plan"
+    },
+    {
+     "ar": "Talent Pool",
+     "en": "Talent pool"
+    },
+    {
+     "ar": "احتياجات تطوير معتمدة",
+     "en": "Approved development needs"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "منصب حرج بلا بديل",
+     "en": "Critical position without a successor"
+    },
+    {
+     "ar": "تقييم جاهزية بلا دليل",
+     "en": "Readiness assessment without evidence"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "تغطية المناصب الحرجة",
+     "en": "Critical position coverage"
+    },
+    {
+     "ar": "المرشحون حسب مستوى الجاهزية",
+     "en": "Candidates by readiness level"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Talent Manager",
+     "en": "Talent Manager"
+    },
+    {
+     "ar": "HR Director",
+     "en": "HR Director"
+    }
+   ],
+   "features": [
+    "TAL-01",
+    "TAL-02"
+   ],
+   "screens": [
+    "U-01",
+    "U-02",
+    "U-03"
+   ]
+  }
+ ],
+ "features": {
+  "ORG-06": {
+   "text": {
+    "ar": "الانتقال منصب › طلب توظيف › شاغر",
+    "en": "Transition: position → job requisition → vacancy"
+   },
+   "sections": [
+    "01.3",
+    "02.1"
+   ]
+  },
+  "ORG-08": {
+   "text": {
+    "ar": "وضوح المفاهيم: المنصب ≠ الوظيفة ≠ الشاغر ≠ طلب التوظيف، بتعريف ظاهر وروابط بينهم",
+    "en": "Clear concepts: position ≠ job ≠ vacancy ≠ job requisition, with visible definitions and links between them"
+   },
+   "sections": [
+    "01.3",
+    "02.1"
+   ]
+  },
+  "REC-01": {
+   "text": {
+    "ar": "طلبات التوظيف: سجل + تفاصيل + معالج إنشاء وظيفة + محرر الإعلان",
+    "en": "Job requisitions: register + details + job creation wizard + job ad editor"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-02": {
+   "text": {
+    "ar": "سجل الطلبات والمرشحين بفلاتر سريعة ومراحل وطابور مراجعة",
+    "en": "Application and candidate register with quick filters, stages and a review queue"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-03": {
+   "text": {
+    "ar": "ملف المرشح + سجل النشاط + نماذج تُرسل آليًا حسب المرحلة",
+    "en": "Candidate profile + activity log + forms sent automatically by stage"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-04": {
+   "text": {
+    "ar": "تحليل السيرة الذاتية مع المعاينة",
+    "en": "Resume parsing with preview"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-05": {
+   "text": {
+    "ar": "النشر في مواقع التوظيف",
+    "en": "Posting to job sites"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-06": {
+   "text": {
+    "ar": "مراسلة المتقدمين من طلب التوظيف",
+    "en": "Applicant messaging from the job requisition"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-07": {
+   "text": {
+    "ar": "جدولة المقابلات + حجز المرشح لموعده",
+    "en": "Interview scheduling + candidate self-booking"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-08": {
+   "text": {
+    "ar": "مساحة المقابلة: أسئلة لكل مقيّم + تقييم منظم بالكفاءات + حمل المقيّمين",
+    "en": "Interview workspace: questions for each evaluator + structured competency-based assessment + evaluator workload"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-09": {
+   "text": {
+    "ar": "تسجيل وتلخيص المقابلة بالذكاء الاصطناعي بموافقة المرشح",
+    "en": "AI interview recording and summarization with candidate consent"
+   },
+   "sections": [
+    "02.1"
+   ],
+   "withheld": "ai-claim"
+  },
+  "REC-10": {
+   "text": {
+    "ar": "العرض الوظيفي وتتبعه",
+    "en": "Job offer and tracking"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-11": {
+   "text": {
+    "ar": "الاستقطاب: إضافة لينكدإن + مشاريع المواهب",
+    "en": "Sourcing: LinkedIn extension + talent projects"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "REC-13": {
+   "text": {
+    "ar": "جودة التعيين (تقييم المدير بعد البدء)",
+    "en": "Quality of hire (manager assessment after the start date)"
+   },
+   "sections": [
+    "02.1"
+   ]
+  },
+  "HIR-01": {
+   "text": {
+    "ar": "اختيار نوع الإضافة + معالج التعيين متعدد الخطوات",
+    "en": "Addition type selection + multistep hiring wizard"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "HIR-02": {
+   "text": {
+    "ar": "لوحة التحقق من جاهزية التعيين",
+    "en": "Hiring readiness verification dashboard"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "HIR-03": {
+   "text": {
+    "ar": "العامل المعلّق وتحويله لموظف",
+    "en": "Pending worker and conversion to employee"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "HIR-04": {
+   "text": {
+    "ar": "دعوة الموظف الجديد لإدخال بياناته",
+    "en": "New employee invitation to enter their details"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "ONB-01": {
+   "text": {
+    "ar": "رحلة الإلحاق / دورة حياة الموظف بالمهام",
+    "en": "Task-based onboarding journey / employee lifecycle"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "ONB-02": {
+   "text": {
+    "ar": "ملفات قوالب الإلحاق",
+    "en": "Onboarding template files"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "ONB-03": {
+   "text": {
+    "ar": "ويدجت اليوم الأول والجاهزية",
+    "en": "Day-one and readiness widget"
+   },
+   "sections": [
+    "02.2",
+    "05.2"
+   ]
+  },
+  "ONB-04": {
+   "text": {
+    "ar": "تنفيذ مهام القائمة من صفوف التقرير مباشرة",
+    "en": "Checklist task execution directly from report rows"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "ONB-05": {
+   "text": {
+    "ar": "فيديو تعلم ونماذج حكومية داخل الإلحاق",
+    "en": "Learning video and government forms within onboarding"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "ONB-06": {
+   "text": {
+    "ar": "منح وسحب صلاحيات الأنظمة آليًا",
+    "en": "Automatic granting and revocation of system permissions"
+   },
+   "sections": [
+    "02.2"
+   ]
+  },
+  "PRF-01": {
+   "text": {
+    "ar": "نتائج التقييم بالدرجة النهائية/المتوسطة",
+    "en": "Evaluation results by final/average score"
+   },
+   "sections": [
+    "02.3"
+   ]
+  },
+  "PRF-02": {
+   "text": {
+    "ar": "الأهداف",
+    "en": "Goals"
+   },
+   "sections": [
+    "02.3"
+   ]
+  },
+  "PRF-03": {
+   "text": {
+    "ar": "تغذية راجعة مستمرة على الكفاءات",
+    "en": "Continuous competency feedback"
+   },
+   "sections": [
+    "02.3"
+   ]
+  },
+  "ENG-01": {
+   "text": {
+    "ar": "منشورات وتقدير الزملاء",
+    "en": "Posts and peer recognition"
+   },
+   "sections": [
+    "02.3"
+   ]
+  },
+  "TAL-03": {
+   "text": {
+    "ar": "الملف والمستكشف المهني",
+    "en": "Career profile and explorer"
+   },
+   "sections": [
+    "02.4"
+   ]
+  },
+  "LRN-01": {
+   "text": {
+    "ar": "الدورات وتقدم التدريب",
+    "en": "Courses and training progress"
+   },
+   "sections": [
+    "02.4"
+   ]
+  },
+  "TAL-01": {
+   "text": {
+    "ar": "الأداء مقابل الإمكانات (9-box) ومخاطر الفقد",
+    "en": "Performance vs. potential (9-box) and retention risks"
+   },
+   "sections": [
+    "02.5"
+   ]
+  },
+  "TAL-02": {
+   "text": {
+    "ar": "خطط التعاقب مع السجل",
+    "en": "Succession plans with history"
+   },
+   "sections": [
+    "02.5"
+   ]
+  }
+ },
+ "screens": {
+  "R-01": {
+   "title": {
+    "ar": "مركز التوظيف",
+    "en": "Recruitment center"
+   },
+   "role": "Executive cockpit"
+  },
+  "R-02": {
+   "title": {
+    "ar": "طلبات احتياج التوظيف",
+    "en": "Job requisitions"
+   },
+   "role": "Operational register"
+  },
+  "R-03": {
+   "title": {
+    "ar": "الوظائف المفتوحة",
+    "en": "Open jobs"
+   },
+   "role": "Operational register"
+  },
+  "R-04": {
+   "title": {
+    "ar": "مسار المرشحين",
+    "en": "Candidate pipeline"
+   },
+   "role": "Stage-based work board"
+  },
+  "R-05": {
+   "title": {
+    "ar": "ملف المرشح",
+    "en": "Candidate profile"
+   },
+   "role": "360 record workspace"
+  },
+  "R-06": {
+   "title": {
+    "ar": "المقابلات والتقييم",
+    "en": "Interviews and assessment"
+   },
+   "role": "Operational register"
+  },
+  "R-07": {
+   "title": {
+    "ar": "العروض الوظيفية",
+    "en": "Job offers"
+   },
+   "role": "Operational register"
+  },
+  "R-08": {
+   "title": {
+    "ar": "رحلة التهيئة والتعيين",
+    "en": "Onboarding and hiring journey"
+   },
+   "role": "Operational register"
+  },
+  "F-01": {
+   "title": {
+    "ar": "الأهداف ونتائجها",
+    "en": "Goals and results"
+   },
+   "role": "Operational register"
+  },
+  "F-02": {
+   "title": {
+    "ar": "تقييم الأداء",
+    "en": "Performance appraisal"
+   },
+   "role": "360 record workspace"
+  },
+  "F-03": {
+   "title": {
+    "ar": "دورات التقييم",
+    "en": "Appraisal cycles"
+   },
+   "role": "Operational register"
+  },
+  "F-04": {
+   "title": {
+    "ar": "معايرة التقييمات",
+    "en": "Rating calibration"
+   },
+   "role": "Operational register"
+  },
+  "F-05": {
+   "title": {
+    "ar": "مشاركة الموظفين والتغذية الراجعة",
+    "en": "Employee engagement and feedback"
+   },
+   "role": "Operational register"
+  },
+  "L-01": {
+   "title": {
+    "ar": "مركز التعلم",
+    "en": "Learning center"
+   },
+   "role": "Executive cockpit"
+  },
+  "L-02": {
+   "title": {
+    "ar": "دليل التدريب والدورات",
+    "en": "Training and course catalog"
+   },
+   "role": "Operational register"
+  },
+  "L-03": {
+   "title": {
+    "ar": "تكليف التعلم وإنجازه",
+    "en": "Learning assignments and completion"
+   },
+   "role": "Operational register"
+  },
+  "L-04": {
+   "title": {
+    "ar": "مصفوفة المهارات",
+    "en": "Skills matrix"
+   },
+   "role": "Matrix / 9-box"
+  },
+  "L-05": {
+   "title": {
+    "ar": "التطوير والمسار الوظيفي",
+    "en": "Development and career path"
+   },
+   "role": "360 record workspace"
+  },
+  "U-01": {
+   "title": {
+    "ar": "التعاقب الوظيفي",
+    "en": "Succession"
+   },
+   "role": "Operational register"
+  },
+  "U-02": {
+   "title": {
+    "ar": "قائمة المواهب",
+    "en": "Talent list"
+   },
+   "role": "Operational register"
+  },
+  "U-03": {
+   "title": {
+    "ar": "جاهزية الخلفاء",
+    "en": "Successor readiness"
+   },
+   "role": "360 record workspace"
+  }
+ }
+}

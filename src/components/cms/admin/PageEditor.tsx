@@ -343,7 +343,7 @@ export default function PageEditor({
           <DepartmentFields content={c} path={path} locale={locale} media={media} edit={edit} />
 
           <h3 className="border-t border-border pt-5 font-bold">أقسام الصفحة</h3>
-          <BlockList blocks={local.blocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} />
+          <BlockList blocks={local.blocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} department={c.department} />
           <AddBlockButtons department={!!c.department} onAdd={type => update({ blocks: [...local.blocks, newBlock(type)] })} />
         </div>
 

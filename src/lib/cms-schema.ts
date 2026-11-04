@@ -1,8 +1,13 @@
 import { z } from 'zod';
+import { hrModuleBySlug, type HrModuleConfig } from '@/content/hr/hr-modules';
 export const safePath = z.string().regex(/^\/(?:[a-z0-9][a-z0-9/-]*)?$/).max(240).refine(v => !/^\/(admin|auth|api|lovable|_)/.test(v));
 
-/** Generic blocks plus the department content regions (roles, capabilities, product theater, documents, 360 profiles, reports, use cases, cross-department links). */
-export const BLOCK_TYPES = ['story', 'workflow', 'faq', 'resource', 'cta', 'roles', 'capability', 'theater', 'document', 'profile', 'report', 'usecase', 'related'] as const;
+/**
+ * Generic blocks plus the department content regions (roles, capabilities, product theater, documents, 360 profiles,
+ * reports, use cases, cross-department links). `source` places one section of a source-backed page (DIGIT HR modules)
+ * by its `ref`; its text fields are optional overrides of the source copy.
+ */
+export const BLOCK_TYPES = ['story', 'workflow', 'faq', 'resource', 'cta', 'roles', 'capability', 'theater', 'document', 'profile', 'report', 'usecase', 'related', 'source'] as const;
 export type BlockType = (typeof BLOCK_TYPES)[number];
 
 export const blockItemSchema = z.object({
@@ -28,6 +33,8 @@ export const blockSchema = z.object({
   items: z.array(blockItemSchema).max(24).default([]),
   shots: z.array(z.string().max(100)).max(12).default([]),
   focus: focusSchema.nullable().default(null),
+  /** Source section id for `source` blocks, e.g. 01.4. */
+  ref: z.string().max(20).default(''),
 });
 export const localeSchema = z.object({
   title: z.string().max(200),
@@ -80,8 +87,10 @@ export function departmentPublishIssues(c: CmsContent): string[] {
   if (!c.department) return [];
   const issues: string[] = [];
   const names = { ar: 'العربية', en: 'English' } as const;
+  // Source-backed pages (DIGIT HR modules) are judged on what they render: CMS overrides with source fallback.
+  const source = c.department.product === 'hr' ? hrModuleBySlug(c.department.id) : undefined;
   for (const l of ['ar', 'en'] as const) {
-    const x = c[l];
+    const x = source ? resolveSourceLocale(c, l, source) : { ...c[l], blocks: c[l].blocks.filter(b => b.type !== 'source') };
     if (!x.title.trim()) issues.push(`${names[l]}: عنوان SEO`);
     if (!x.description.trim()) issues.push(`${names[l]}: وصف SEO`);
     if (!x.headline.trim()) issues.push(`${names[l]}: عنوان الصفحة الرئيسي`);
@@ -89,7 +98,32 @@ export function departmentPublishIssues(c: CmsContent): string[] {
     const content = x.blocks.filter(b => b.enabled && b.type !== 'cta');
     if (content.length < DEPARTMENT_MIN_BLOCKS) issues.push(`${names[l]}: ${DEPARTMENT_MIN_BLOCKS} أقسام محتوى على الأقل (الموجود ${content.length})`);
     if (content.some(b => !b.title.trim())) issues.push(`${names[l]}: كل قسم ظاهر يحتاج عنوانًا`);
+    if (source && c[l].blocks.some(b => b.type === 'source' && !source.sections.some(s => s.id === b.ref))) issues.push(`${names[l]}: قسم مصدر غير معروف`);
   }
-  if (!c.department.heroShot && !c.department.heroMedia) issues.push('شاشة أو صورة حقيقية للواجهة');
+  const sourceScreen = !!source && (source.heroShots.length > 0 || !!source.illustrative);
+  if (!c.department.heroShot && !c.department.heroMedia && !sourceScreen) issues.push('شاشة أو صورة حقيقية للواجهة');
   return issues;
 }
+
+/**
+ * One language of a source-backed department as it renders: empty SEO/hero fields fall back to the source copy,
+ * `source` blocks take their section title when not overridden, and source sections the document does not place
+ * are appended in source order so no section silently disappears.
+ */
+export function resolveSourceLocale(c: CmsContent, l: 'ar' | 'en', source: HrModuleConfig) {
+  const x = c[l];
+  const titleOf = (ref: string) => source.sections.find(s => s.id === ref)?.title[l] ?? '';
+  const placed = new Set(x.blocks.filter(b => b.type === 'source').map(b => b.ref));
+  const blocks: CmsBlock[] = x.blocks.map(b => (b.type === 'source' ? { ...b, title: b.title.trim() || titleOf(b.ref) } : b));
+  for (const s of source.sections) if (!placed.has(s.id)) blocks.push(sourceBlock(s.id, s.title[l]));
+  return {
+    ...x,
+    title: x.title.trim() || `${source.label[l]} | DIGIT HR`,
+    description: x.description.trim() || source.seoDescription[l],
+    headline: x.headline.trim() || source.headline[l],
+    lede: x.lede.trim() || source.seoDescription[l],
+    blocks,
+  };
+}
+
+export const sourceBlock = (ref: string, title = ''): CmsBlock => ({ id: `src-${ref.replace('.', '-')}`, type: 'source', ref, title, body: '', shotId: '', mediaUrl: '', mediaAlt: '', href: '', enabled: true, eyebrow: '', items: [], shots: [], focus: null });
