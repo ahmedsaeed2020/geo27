@@ -191,8 +191,9 @@ export type SourceSectionInfo = { id: string; title: { ar: string; en: string };
 export function BlockList({ blocks, onChange, media, locale, department = null, sourceSections }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null; sourceSections?: SourceSectionInfo[] | undefined }) {
   const updateBlock = (id: string, v: Partial<CmsBlock>) => onChange(blocks.map(b => (b.id === id ? { ...b, ...v } : b)));
   // Explicit source sections are DIGIT Pro V4 pages; otherwise an HR module's handoff sections.
-  const source: { sections: SourceSectionInfo[] } | undefined = sourceSections ? { sections: sourceSections } : department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
-  const group: ShotGroup | undefined = sourceSections ? 'DIGIT Pro' : department?.product === 'hr' ? 'DIGIT HR' : undefined;
+  const deptSource = department ? departmentSource(department.product, department.id) : undefined;
+  const source: { sections: SourceSectionInfo[] } | undefined = sourceSections ? { sections: sourceSections } : deptSource?.config;
+  const group: ShotGroup | undefined = sourceSections ? 'DIGIT Pro' : department?.product === 'hr' ? 'DIGIT HR' : department?.product === 'crm' ? 'DIGIT CRM' : undefined;
   return (
     <>
       {blocks.map((b, i) => {

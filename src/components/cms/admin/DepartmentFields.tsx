@@ -33,7 +33,8 @@ export default function DepartmentFields({ content, path, locale, media, edit }:
   const issues = departmentPublishIssues(content);
   const approved = media.filter(m => m.approval === 'approved' && !m.archived_at);
   const dept = departmentById(meta.product, meta.id);
-  const source = meta.product === 'hr' ? hrModuleBySlug(meta.id) : undefined;
+  const found = departmentSource(meta.product, meta.id);
+  const source = found?.config;
   return (
     <section className="space-y-4 rounded-md border border-border bg-muted/30 p-4" aria-label="قالب صفحة القسم">
       <div>
@@ -43,7 +44,7 @@ export default function DepartmentFields({ content, path, locale, media, edit }:
         <p className="text-xs text-muted-foreground">العنوان والوصف أعلاه لمحركات البحث؛ هذه الحقول تظهر على الصفحة نفسها.</p>
         {source && (
           <p className="mt-2 rounded-md bg-card p-2 text-xs text-muted-foreground">
-            صفحة مبنية من محتوى DIGIT HR المعتمد للمراجعة ({source.sections.length} أقسام). أي حقل فارغ يعرض نص المصدر؛ اكتب نصًا لاستبداله، ورتّب الأقسام أو أخفها من قائمة الأقسام أدناه.
+            صفحة مبنية من محتوى {found?.suffix} المعتمد للمراجعة ({source.sections.length} أقسام). أي حقل فارغ يعرض نص المصدر؛ اكتب نصًا لاستبداله، ورتّب الأقسام أو أخفها من قائمة الأقسام أدناه.
             {source.illustrative && ' لا توجد شاشة فعلية لهذا المجال بعد؛ تعرض الصفحة رسمًا توضيحيًا معلَّمًا بذلك.'}
           </p>
         )}
