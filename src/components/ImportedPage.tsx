@@ -1,7 +1,7 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { Fragment, useEffect, useRef, type ElementType } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
-import { ChevronDown, ExternalLink } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -65,7 +65,8 @@ function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: {
       {href.startsWith("/") && !href.includes("#") ? <Link to={href}>{node.text}</Link> : <a href={href} target={node.external ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a>}
     </Button>, locale);
   }
-  if (node.type === "hosted-form") return localizeTree(<div {...props} className={`${node.className} import-hosted`}><Button asChild size="lg"><a href={node.href} target="_blank" rel="noopener noreferrer">فتح النموذج على موقع Digit<ExternalLink /></a></Button></div>, locale);
+  // The old hosted WordPress form is replaced in place by the site's own request form.
+  if (node.type === "hosted-form") return <div {...props} className={`${node.className} import-hosted`}><ContactForm kind={pageKey === "partnership" ? "contact" : "demo"} interest={pageKey === "partnership" ? (locale === "ar" ? "برنامج الشركاء" : "Partner programme") : ""} /></div>;
   if (node.type === "accordion") return localizeTree(<div {...props} className={`${node.className} import-faq`}>{node.tabs?.map((tab, i) => <details key={i}><summary>{tab.title}<ChevronDown size={18} /></summary><div dangerouslySetInnerHTML={{ __html: tab.html }} /></details>)}</div>, locale);
   return null;
 }
@@ -85,6 +86,8 @@ export default function ImportedPage({ page, pageKey, pro }: { page: Page; pageK
   if (!pro && cms?.department && cms[locale].blocks.some(b => b.enabled)) return <DepartmentPage content={cms} path={path} />;
   return <SourceImportedPage page={page} pageKey={pageKey} {...(pro ? { pro } : {})} />;
 }
+
+const holdsHostedForm = (nodes: Node[] | undefined): boolean => (nodes ?? []).some(n => n.type === "hosted-form" || holdsHostedForm(n.children));
 
 const hasClass = (className: string, names: string[]) => names.some(n => new RegExp(`(?:^|\\s)${n}(?:\\s|$)`).test(className));
 
@@ -122,5 +125,5 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
 }

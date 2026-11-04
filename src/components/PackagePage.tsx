@@ -1,7 +1,10 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
 import { Fragment, useRef, useState, type ElementType, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
-import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink } from "lucide-react";
+import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
+import { useNavigate } from "@tanstack/react-router";
+import ContactForm from "@/components/ContactForm";
+import { localeHref } from "@/lib/i18n";
 import previewMeta from "@/content/package-preview-meta.json";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
@@ -10,7 +13,7 @@ import PageScene from "@/components/PageScene";
 import ProShowcase from "@/components/product/ProShowcase";
 import ProductDepartments from "@/components/catalog/ProductHub";
 import ProHubPaths from "@/components/pro/ProHubPaths";
-import LeadCapturePanel from './LeadCapturePanel';
+import LeadCapturePanel, { focusLeadForm } from './LeadCapturePanel';
 import CmsBlocks from './cms/CmsBlocks';
 import { useSiteConfig } from './cms/CmsContext';
 import { EditableSections, useSectionOverride } from './cms/SectionText';
@@ -82,17 +85,33 @@ function RenderNode({ node, slug, bodyBackdrop = false }: { node: PackageNode; s
   if (node.type === "heading") return <PackageHeading node={node} />;
   if (node.type === "text-editor" || node.type === "html") return localizeTree(<div {...common} dangerouslySetInnerHTML={{ __html: node.html ?? "" }} />, locale);
   if (node.type === "button") {
-    const href = node.href === "#final" ? (slug === "starter" ? "#starter-form" : "#pro") : node.href;
+    const href = node.href === "#final" ? (slug === "starter" ? "#Checkout" : "#pro") : node.href;
     return localizeTree(<Button asChild size="lg" variant={node.text?.includes("واتساب") ? "outline" : "default"} className={`${node.className} package-action`}><a href={href} target={node.external && !href?.startsWith("#") ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a></Button>, locale);
   }
-  if (node.type === "hosted-form") return localizeTree(<div {...common} className={`${node.className} package-hosted-form`}>
-    <Button asChild size="lg"><a href={`https://digit-erp.com/${slug}/#${node.checkout ? (slug === "starter" ? "Checkout" : "pro") : "starter-form"}`} target="_blank" rel="noopener noreferrer">{node.checkout ? "متابعة الاشتراك على موقع Digit" : "فتح نموذج التجربة المجانية"}<ExternalLink /></a></Button>
-  </div>, locale);
+  // The old hosted subscription/trial forms are replaced by the site's own request form: the closing section holds
+  // the form itself, and the price cards' button opens it with the package named.
+  if (node.type === "hosted-form") return <HostedFormReplacement node={node} slug={slug} />;
   if (node.type === "bdt-interactive-tabs") return localizeTree(<PreviewTabs node={node} slug={slug} />, locale);
   if (node.type === "accordion") return localizeTree(<div {...common} className={`${node.className} package-faq`}>
     {node.tabs?.map(tab => <details key={tab.title}><summary>{tab.title}<ChevronDown size={18} /></summary><div dangerouslySetInnerHTML={{ __html: tab.html }} /></details>)}
   </div>, locale);
   return null;
+}
+
+const PACKAGE_NAME = { starter: "DIGIT Starter", pro: "DIGIT Pro" } as const;
+
+/** True when a source subtree holds the closing subscription form (rendered as the inline request form). */
+function holdsCheckout(nodes: PackageNode[] | undefined): boolean {
+  return (nodes ?? []).some(n => (n.type === "hosted-form" && n.checkout) || holdsCheckout(n.children));
+}
+
+function HostedFormReplacement({ node, slug }: { node: PackageNode; slug: "starter" | "pro" }) {
+  const locale = useLocale();
+  const navigate = useNavigate();
+  const name = PACKAGE_NAME[slug];
+  if (node.checkout) return <div className={`${node.className} package-hosted-form package-inline-form`} id={node.anchor || undefined}><ContactForm kind="demo" interest={name} /></div>;
+  const openForm = () => { if (!focusLeadForm({ interest: `${name} — ${locale === "ar" ? "عرض سعر" : "Quote"}` })) void navigate({ to: localeHref("/demo", locale) }); };
+  return <div className={`${node.className} package-hosted-form`} id={node.anchor || undefined}><Button size="lg" onClick={openForm}>{locale === "ar" ? "اطلب عرض سعر" : "Request a quote"}</Button></div>;
 }
 
 export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slug: "starter" | "pro" }) {
@@ -102,16 +121,19 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
   // The scene backdrop belongs to the fourth source container wherever the layout moves it.
   const backdropId = nodes[3]?.id;
   const lead = <LeadCapturePanel interest={`DIGIT ${slug === 'pro' ? 'Pro' : 'Starter'}`} />;
+  // One request form per page: when the closing section (with its inline form) is shown, the extra panel is not.
+  const checkoutNode = nodes.find(node => holdsCheckout([node]));
   let body: ReactNode;
   if (slug === "pro") {
     const byId = new Map(nodes.map(node => [packageSectionId(node), node]));
     const sections = arrangeSections(PRO_SECTIONS, pro).filter(s => s.enabled);
+    const checkoutShown = Boolean(checkoutNode && sections.some(s => byId.get(s.id) === checkoutNode));
     body = <EditableSections page="pro">{sections.map(s => {
       if (s.id === "showcase") return <ProShowcase key={s.id} />;
       if (s.id === "departments") return <ProductDepartments key={s.id} product="pro" />;
       if (s.id === "paths") return <ProHubPaths key={s.id} />;
       if (s.id === "cms") return <CmsBlocks key={s.id} />;
-      if (s.id === "lead") return <Fragment key={s.id}>{lead}</Fragment>;
+      if (s.id === "lead") return checkoutShown ? null : <Fragment key={s.id}>{lead}</Fragment>;
       const node = byId.get(s.id);
       return node ? <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={node.id === backdropId} /> : null;
     })}</EditableSections>;
@@ -119,7 +141,7 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
     const unknown = nodes.filter(node => !packageSectionId(node));
     if (unknown.length) body = <>{body}{unknown.map(node => <RenderNode key={node.id} node={node} slug={slug} />)}</>;
   } else {
-    body = <>{nodes.map(node => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={node.id === backdropId} />)}<CmsBlocks />{lead}</>;
+    body = <>{nodes.map(node => <RenderNode key={node.id} node={node} slug={slug} bodyBackdrop={node.id === backdropId} />)}<CmsBlocks />{!checkoutNode && lead}</>;
   }
   usePageMotion(mainRef, `${slug}-${locale}-${slug === "pro" ? pro.sections.map(s => `${s.id}${s.enabled ? "" : "-"}`).join(".") : ""}`);
   return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`package-page package-${slug}`}>{body}</main><Footer /></div>, locale);
