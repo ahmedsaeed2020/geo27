@@ -480,7 +480,7 @@ export const CRM: SpecialistDepartment[] = [
     product: 'crm',
     slug: 'administration',
     label: t('الإدارة والحوكمة', 'Administration & Governance'),
-    summary: t('الأدوار والصلاحيات والمراحل والمصادر والأهداف، وبيئة تجريبية معزولة للتدريب.', 'Roles, permissions, stages, sources and targets, plus an isolated demo environment for training.'),
+    summary: t('الأدوار والصلاحيات ومراحل البيع ومصادر العملاء والأهداف.', 'Roles, permissions, sales stages, lead sources and targets.'),
     headline: t('كل مستخدم يرى ما يخصه… ويعمل بالمراحل التي اعتمدتها', 'Each user sees what is theirs… and works with the stages you approved'),
     seoDescription: t('الإدارة والحوكمة في DIGIT CRM: الأدوار والصلاحيات ومراحل البيع والمصادر والأهداف، والمؤشرات محسوبة على السجلات المسموح بها فقط.', 'Administration and governance in DIGIT CRM: roles, permissions, sales stages, sources and targets, with indicators counted only on permitted records.'),
     profilePages: [26],
@@ -497,7 +497,7 @@ export const CRM: SpecialistDepartment[] = [
         points: [
           { title: t('أدوار وصلاحيات', 'Roles and permissions'), body: t('بائع ومدير ومسؤول نظام.', 'Rep, manager and administrator.') },
           { title: t('مراحل ومصادر', 'Stages and sources'), body: t('مراحل البيع ونسبها ومصادر العملاء.', 'Sales stages, their probabilities and lead sources.') },
-          { title: t('بيئة تجريبية معزولة', 'Isolated demo environment'), body: t('للتدريب: بيانات محاكاة بلا إرسال فعلي أو ترحيل مالي.', 'For training: simulated data, no real sending or financial posting.') },
+          { title: t('الأهداف', 'Targets'), body: t('أهداف الأفراد والفريق التي يقيس عليها المدير.', 'Individual and team targets the manager measures against.') },
         ],
       },
       {

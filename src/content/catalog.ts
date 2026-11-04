@@ -122,7 +122,6 @@ const crm: ProductFamily = {
   overview: '/modules/crm',
   summary: { ar: 'من العميل المحتمل إلى الصفقة: مسؤول وخطوة تالية لكل عميل، واستثناءات يتصرف فيها المدير.', en: 'From lead to deal: an owner and a next step for every customer, and exceptions the manager can act on.' },
   groupLabel: { ar: 'مجالات DIGIT CRM', en: 'DIGIT CRM areas' },
-  shot: 'crm-01-deals',
   departments: specialistDepartments('crm'),
   extras: [],
   solutions: [],

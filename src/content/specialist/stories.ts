@@ -98,8 +98,7 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('تسجيل المصدر', 'Record the source'), t('الإسناد لبائع', 'Assign to a rep')],
     outcome: t('عميل محتمل له مصدر ومالك.', 'A lead with a source and an owner.'),
     dept: '/crm/leads',
-    shot: { id: 'crm-02-manager', focus: { x: 78, y: 11, zoom: 3 } },
-    status: 'demonstrated',
+    status: 'documented',
   },
   {
     id: 'qualification',
@@ -108,8 +107,7 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('أول تواصل', 'First contact'), t('قرار مؤهل أو غير مؤهل بسبب', 'Qualified or not, with a reason')],
     outcome: t('قرار تأهيل موثّق وزمن استجابة معروف.', 'A recorded qualification decision and a known response time.'),
     dept: '/crm/leads',
-    shot: { id: 'crm-02-manager', focus: { x: 0, y: 11, zoom: 3 } },
-    status: 'demonstrated',
+    status: 'documented',
   },
   {
     id: 'account',
@@ -127,8 +125,7 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('تحديد القيمة والاحتمال', 'Set value and probability'), t('تحديد تاريخ الإغلاق المتوقع', 'Set the expected close date')],
     outcome: t('صفقة في مرحلة واضحة بقيمة مرجحة.', 'A deal in a clear stage with a weighted value.'),
     dept: '/crm/opportunities',
-    shot: { id: 'crm-01-deals', focus: { x: 50, y: 100, zoom: 2 } },
-    status: 'demonstrated',
+    status: 'documented',
   },
   {
     id: 'follow-up',
@@ -137,8 +134,7 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('جدولة الإجراء التالي', 'Schedule the next action'), t('تسجيل النتيجة', 'Record the outcome')],
     outcome: t('لا صفقة بلا خطوة تالية؛ الراكد يظهر كتنبيه.', 'No deal without a next step; stalled deals show as alerts.'),
     dept: '/crm/activities',
-    shot: { id: 'crm-01-deals', focus: { x: 72, y: 62, zoom: 2.5 } },
-    status: 'demonstrated',
+    status: 'documented',
   },
   {
     id: 'handoff',
@@ -154,12 +150,12 @@ export const CRM_JOURNEY: CrmStage[] = [
 export type WorkbenchItem = { id: string; label: L; decision: L; owner: L; source: L; status: EvidenceStatus; shot?: { id: string; focus: Focus } };
 
 export const CRM_WORKBENCH: WorkbenchItem[] = [
-  { id: 'unassigned', label: t('عملاء محتملون غير مسندين', 'Unassigned leads'), decision: t('لمن يُسند كل عميل قبل أن يبرد؟', 'Who takes each lead before it goes cold?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('سجل العميل المحتمل ومالكه', 'Lead record and owner'), status: 'demonstrated', shot: { id: 'crm-02-manager', focus: { x: 78, y: 11, zoom: 3 } } },
-  { id: 'overdue', label: t('متابعات متأخرة', 'Overdue follow-ups'), decision: t('من يحتاج تدخلًا اليوم؟', 'Who needs help today?'), owner: t('مدير المبيعات مع البائع', 'Sales manager with the rep'), source: t('المهام والأنشطة المستحقة', 'Due tasks and activities'), status: 'demonstrated', shot: { id: 'crm-02-manager', focus: { x: 51, y: 49, zoom: 3 } } },
+  { id: 'unassigned', label: t('عملاء محتملون غير مسندين', 'Unassigned leads'), decision: t('لمن يُسند كل عميل قبل أن يبرد؟', 'Who takes each lead before it goes cold?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('سجل العميل المحتمل ومالكه', 'Lead record and owner'), status: 'documented' },
+  { id: 'overdue', label: t('متابعات متأخرة', 'Overdue follow-ups'), decision: t('من يحتاج تدخلًا اليوم؟', 'Who needs help today?'), owner: t('مدير المبيعات مع البائع', 'Sales manager with the rep'), source: t('المهام والأنشطة المستحقة', 'Due tasks and activities'), status: 'documented' },
   { id: 'ageing', label: t('عمر المرحلة', 'Stage ageing'), decision: t('أي الصفقات بقيت طويلًا في مرحلتها؟', 'Which deals have sat too long in their stage?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('تاريخ دخول الصفقة للمرحلة', 'Date the deal entered its stage'), status: 'documented' },
   { id: 'activity', label: t('نشاط البيع', 'Sales activity'), decision: t('هل يكفي نشاط الفريق لتحقيق الهدف؟', 'Is team activity enough to hit the target?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('المكالمات والاجتماعات والمهام', 'Calls, meetings and tasks'), status: 'documented' },
-  { id: 'stalled', label: t('صفقات راكدة', 'Stalled opportunities'), decision: t('نعيد تنشيطها أم نغلقها كخسارة؟', 'Revive them or close them as lost?'), owner: t('البائع ثم المدير', 'The rep, then the manager'), source: t('تنبيه «راكدة» على لوحة الصفقات', 'The “stalled” alert on the deals board'), status: 'demonstrated', shot: { id: 'crm-01-deals', focus: { x: 72, y: 62, zoom: 2.5 } } },
-  { id: 'next', label: t('الإجراءات التالية', 'Next actions'), decision: t('ما الصفقات التي لا خطوة تالية لها؟', 'Which deals have no next step?'), owner: t('البائع', 'Sales rep'), source: t('تنبيه «بلا إجراء تالٍ» وزر جدولة الإجراء', 'The “no next step” alert and the schedule button'), status: 'demonstrated', shot: { id: 'crm-01-deals', focus: { x: 72, y: 62, zoom: 2.5 } } },
+  { id: 'stalled', label: t('صفقات راكدة', 'Stalled opportunities'), decision: t('نعيد تنشيطها أم نغلقها كخسارة؟', 'Revive them or close them as lost?'), owner: t('البائع ثم المدير', 'The rep, then the manager'), source: t('تنبيه «راكدة» على الصفقة', 'The “stalled” alert on the deal'), status: 'documented' },
+  { id: 'next', label: t('الإجراءات التالية', 'Next actions'), decision: t('ما الصفقات التي لا خطوة تالية لها؟', 'Which deals have no next step?'), owner: t('البائع', 'Sales rep'), source: t('تنبيه «بلا إجراء تالٍ» على الصفقة', 'The “no next step” alert on the deal'), status: 'documented' },
 ];
 
 /* ---------- POS: chapters and the twelve-sector explorer (pp. 27–28) ---------- */
