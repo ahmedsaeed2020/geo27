@@ -12,10 +12,10 @@
 - [x] HR 7-module handoff: seven bilingual HR pages (30 sections, 147 features, 16 real screens, 7 distinct heroes) built as unpublished drafts with 7-day private preview links; CMS can reorder/hide/override sections.
 - [x] Owner approved all HR handoff features (incl. REC-09/ANL-09) and confirmed the 16 HR screenshot employee names are demo data (2026-11-04); HR drafts marked evidence-approved, still unpublished.
 # Imagery pass (owner 2026-11-04: supplied Saudi characters, no uncovered hair, generate all needed images)
-- [ ] Replace the 6 visible page photos showing women with uncovered hair (pro ×2, demo-3 ×2, contact-4, ERPNext service) with corrected versions.
-- [ ] Generate two character scenes for each of the 7 HR pages (intro background + closing CTA background) from the supplied characters; wire through the scene manifest.
-- [ ] Visual QA of every new/edited image (identity, hijab, no text/UI/logos) and HR pages AR/EN desktop/mobile.
-- [ ] Owner: real Employee & Manager Experience screenshot and Construction department screens/content — requested from owner.
+- [x] Audited all 170 non-product site photos; replaced the 6 visible ones showing women with uncovered hair (pro ×2, demo-3 ×2, contact-4, ERPNext service) with hijab-corrected versions; 9 more were already unused. Rule kept as a test.
+- [x] Generated two character scenes for each of the 7 HR pages (intro + closing CTA) from the supplied characters, with phone-size versions; wired through the scene manifest.
+- [x] Visual QA of every new/edited image (identity, hijab, no text/UI/logos) and all 7 HR pages AR/EN at 1280 and 390 px via temporary preview links (revoked after).
+- [ ] Owner: real Employee & Manager Experience screenshots (S-01…S-05, H-01…H-04) and Construction department screens/content — requested from owner.
 - [ ] Owner: provide approved content and real screens for the 9 Construction department pages before they can be published — blocked on product evidence.
 - [ ] Owner: Employee & Manager Experience has no real screenshot yet (shows a labelled diagram) — needs a real capture.
 - [x] Area switchers on all department pages fade at the hidden edge and centre the current area.
