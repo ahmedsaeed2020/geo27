@@ -20,8 +20,9 @@
 .hr-flow li + li::before { content: "→"; margin-inline: 10px; color: var(--primary); }
 [dir="rtl"] .hr-flow li + li::before { content: "←"; }
 /* HR screens are wide desktop captures: show each one whole and edge to edge at its own aspect ratio. */
-.hr-page .pp-frame .pp-frame-body { aspect-ratio: auto; padding: 0; background: var(--card); }
-.hr-page .pp-frame .pp-frame-body img { width: 100%; height: auto; max-width: none; max-height: none; object-fit: initial; border-radius: 0; box-shadow: none; }
+.hr-page .pp-shot[data-size] .pp-frame[data-mode] .pp-frame-body { aspect-ratio: auto; padding: 0; background: var(--card); container-type: normal; direction: inherit; }
+.hr-page .pp-shot[data-size] .pp-frame[data-mode] .pp-frame-body::after { content: none; }
+.hr-page .pp-shot[data-size] .pp-frame[data-mode] .pp-frame-body img { width: 100%; height: auto; max-width: none; max-height: none; margin: 0; object-fit: initial; border-radius: 0; box-shadow: none; -webkit-mask-image: none; mask-image: none; }
 .hr-art { position: relative; min-width: 0; }
 .hr-art .pp-shot { margin: 0; }
 .hr-art-lead { position: relative; }
