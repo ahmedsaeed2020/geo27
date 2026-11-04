@@ -83,6 +83,7 @@ import { Route as ModulesContractingRouteImport } from './routes/modules.contrac
 import { Route as ModulesCrmRouteImport } from './routes/modules.crm'
 import { Route as ModulesEInvoicingZatcaRouteImport } from './routes/modules.e-invoicing-zatca'
 import { Route as ModulesFixedAssetsRouteImport } from './routes/modules.fixed-assets'
+import { Route as ModulesFsmItmRouteImport } from './routes/modules.fsm-itm'
 import { Route as ModulesHrPayrollRouteImport } from './routes/modules.hr-payroll'
 import { Route as ModulesInventoryRouteImport } from './routes/modules.inventory'
 import { Route as ModulesManufacturingRouteImport } from './routes/modules.manufacturing'
@@ -139,6 +140,7 @@ import { Route as EnModulesContractingRouteImport } from './routes/en.modules.co
 import { Route as EnModulesCrmRouteImport } from './routes/en.modules.crm'
 import { Route as EnModulesEInvoicingZatcaRouteImport } from './routes/en.modules.e-invoicing-zatca'
 import { Route as EnModulesFixedAssetsRouteImport } from './routes/en.modules.fixed-assets'
+import { Route as EnModulesFsmItmRouteImport } from './routes/en.modules.fsm-itm'
 import { Route as EnModulesHrPayrollRouteImport } from './routes/en.modules.hr-payroll'
 import { Route as EnModulesInventoryRouteImport } from './routes/en.modules.inventory'
 import { Route as EnModulesManufacturingRouteImport } from './routes/en.modules.manufacturing'
@@ -548,6 +550,11 @@ const ModulesFixedAssetsRoute = ModulesFixedAssetsRouteImport.update({
   path: '/fixed-assets',
   getParentRoute: () => ModulesRoute,
 } as any)
+const ModulesFsmItmRoute = ModulesFsmItmRouteImport.update({
+  id: '/fsm-itm',
+  path: '/fsm-itm',
+  getParentRoute: () => ModulesRoute,
+} as any)
 const ModulesHrPayrollRoute = ModulesHrPayrollRouteImport.update({
   id: '/hr-payroll',
   path: '/hr-payroll',
@@ -838,6 +845,11 @@ const EnModulesFixedAssetsRoute = EnModulesFixedAssetsRouteImport.update({
   path: '/fixed-assets',
   getParentRoute: () => EnModulesRoute,
 } as any)
+const EnModulesFsmItmRoute = EnModulesFsmItmRouteImport.update({
+  id: '/fsm-itm',
+  path: '/fsm-itm',
+  getParentRoute: () => EnModulesRoute,
+} as any)
 const EnModulesHrPayrollRoute = EnModulesHrPayrollRouteImport.update({
   id: '/hr-payroll',
   path: '/hr-payroll',
@@ -1099,6 +1111,7 @@ export interface FileRoutesByFullPath {
   '/modules/crm': typeof ModulesCrmRoute
   '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
   '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/fsm-itm': typeof ModulesFsmItmRoute
   '/modules/hr-payroll': typeof ModulesHrPayrollRoute
   '/modules/inventory': typeof ModulesInventoryRoute
   '/modules/manufacturing': typeof ModulesManufacturingRoute
@@ -1156,6 +1169,7 @@ export interface FileRoutesByFullPath {
   '/en/modules/crm': typeof EnModulesCrmRoute
   '/en/modules/e-invoicing-zatca': typeof EnModulesEInvoicingZatcaRoute
   '/en/modules/fixed-assets': typeof EnModulesFixedAssetsRoute
+  '/en/modules/fsm-itm': typeof EnModulesFsmItmRoute
   '/en/modules/hr-payroll': typeof EnModulesHrPayrollRoute
   '/en/modules/inventory': typeof EnModulesInventoryRoute
   '/en/modules/manufacturing': typeof EnModulesManufacturingRoute
@@ -1259,6 +1273,7 @@ export interface FileRoutesByTo {
   '/modules/crm': typeof ModulesCrmRoute
   '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
   '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/fsm-itm': typeof ModulesFsmItmRoute
   '/modules/hr-payroll': typeof ModulesHrPayrollRoute
   '/modules/inventory': typeof ModulesInventoryRoute
   '/modules/manufacturing': typeof ModulesManufacturingRoute
@@ -1316,6 +1331,7 @@ export interface FileRoutesByTo {
   '/en/modules/crm': typeof EnModulesCrmRoute
   '/en/modules/e-invoicing-zatca': typeof EnModulesEInvoicingZatcaRoute
   '/en/modules/fixed-assets': typeof EnModulesFixedAssetsRoute
+  '/en/modules/fsm-itm': typeof EnModulesFsmItmRoute
   '/en/modules/hr-payroll': typeof EnModulesHrPayrollRoute
   '/en/modules/inventory': typeof EnModulesInventoryRoute
   '/en/modules/manufacturing': typeof EnModulesManufacturingRoute
@@ -1428,6 +1444,7 @@ export interface FileRoutesById {
   '/modules/crm': typeof ModulesCrmRoute
   '/modules/e-invoicing-zatca': typeof ModulesEInvoicingZatcaRoute
   '/modules/fixed-assets': typeof ModulesFixedAssetsRoute
+  '/modules/fsm-itm': typeof ModulesFsmItmRoute
   '/modules/hr-payroll': typeof ModulesHrPayrollRoute
   '/modules/inventory': typeof ModulesInventoryRoute
   '/modules/manufacturing': typeof ModulesManufacturingRoute
@@ -1485,6 +1502,7 @@ export interface FileRoutesById {
   '/en/modules/crm': typeof EnModulesCrmRoute
   '/en/modules/e-invoicing-zatca': typeof EnModulesEInvoicingZatcaRoute
   '/en/modules/fixed-assets': typeof EnModulesFixedAssetsRoute
+  '/en/modules/fsm-itm': typeof EnModulesFsmItmRoute
   '/en/modules/hr-payroll': typeof EnModulesHrPayrollRoute
   '/en/modules/inventory': typeof EnModulesInventoryRoute
   '/en/modules/manufacturing': typeof EnModulesManufacturingRoute
@@ -1597,6 +1615,7 @@ export interface FileRouteTypes {
     | '/modules/crm'
     | '/modules/e-invoicing-zatca'
     | '/modules/fixed-assets'
+    | '/modules/fsm-itm'
     | '/modules/hr-payroll'
     | '/modules/inventory'
     | '/modules/manufacturing'
@@ -1654,6 +1673,7 @@ export interface FileRouteTypes {
     | '/en/modules/crm'
     | '/en/modules/e-invoicing-zatca'
     | '/en/modules/fixed-assets'
+    | '/en/modules/fsm-itm'
     | '/en/modules/hr-payroll'
     | '/en/modules/inventory'
     | '/en/modules/manufacturing'
@@ -1757,6 +1777,7 @@ export interface FileRouteTypes {
     | '/modules/crm'
     | '/modules/e-invoicing-zatca'
     | '/modules/fixed-assets'
+    | '/modules/fsm-itm'
     | '/modules/hr-payroll'
     | '/modules/inventory'
     | '/modules/manufacturing'
@@ -1814,6 +1835,7 @@ export interface FileRouteTypes {
     | '/en/modules/crm'
     | '/en/modules/e-invoicing-zatca'
     | '/en/modules/fixed-assets'
+    | '/en/modules/fsm-itm'
     | '/en/modules/hr-payroll'
     | '/en/modules/inventory'
     | '/en/modules/manufacturing'
@@ -1925,6 +1947,7 @@ export interface FileRouteTypes {
     | '/modules/crm'
     | '/modules/e-invoicing-zatca'
     | '/modules/fixed-assets'
+    | '/modules/fsm-itm'
     | '/modules/hr-payroll'
     | '/modules/inventory'
     | '/modules/manufacturing'
@@ -1982,6 +2005,7 @@ export interface FileRouteTypes {
     | '/en/modules/crm'
     | '/en/modules/e-invoicing-zatca'
     | '/en/modules/fixed-assets'
+    | '/en/modules/fsm-itm'
     | '/en/modules/hr-payroll'
     | '/en/modules/inventory'
     | '/en/modules/manufacturing'
@@ -2593,6 +2617,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModulesFixedAssetsRouteImport
       parentRoute: typeof ModulesRoute
     }
+    '/modules/fsm-itm': {
+      id: '/modules/fsm-itm'
+      path: '/fsm-itm'
+      fullPath: '/modules/fsm-itm'
+      preLoaderRoute: typeof ModulesFsmItmRouteImport
+      parentRoute: typeof ModulesRoute
+    }
     '/modules/hr-payroll': {
       id: '/modules/hr-payroll'
       path: '/hr-payroll'
@@ -2985,6 +3016,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnModulesFixedAssetsRouteImport
       parentRoute: typeof EnModulesRoute
     }
+    '/en/modules/fsm-itm': {
+      id: '/en/modules/fsm-itm'
+      path: '/fsm-itm'
+      fullPath: '/en/modules/fsm-itm'
+      preLoaderRoute: typeof EnModulesFsmItmRouteImport
+      parentRoute: typeof EnModulesRoute
+    }
     '/en/modules/hr-payroll': {
       id: '/en/modules/hr-payroll'
       path: '/hr-payroll'
@@ -3286,6 +3324,7 @@ interface EnModulesRouteChildren {
   EnModulesCrmRoute: typeof EnModulesCrmRoute
   EnModulesEInvoicingZatcaRoute: typeof EnModulesEInvoicingZatcaRoute
   EnModulesFixedAssetsRoute: typeof EnModulesFixedAssetsRoute
+  EnModulesFsmItmRoute: typeof EnModulesFsmItmRoute
   EnModulesHrPayrollRoute: typeof EnModulesHrPayrollRoute
   EnModulesInventoryRoute: typeof EnModulesInventoryRoute
   EnModulesManufacturingRoute: typeof EnModulesManufacturingRoute
@@ -3303,6 +3342,7 @@ const EnModulesRouteChildren: EnModulesRouteChildren = {
   EnModulesCrmRoute: EnModulesCrmRoute,
   EnModulesEInvoicingZatcaRoute: EnModulesEInvoicingZatcaRoute,
   EnModulesFixedAssetsRoute: EnModulesFixedAssetsRoute,
+  EnModulesFsmItmRoute: EnModulesFsmItmRoute,
   EnModulesHrPayrollRoute: EnModulesHrPayrollRoute,
   EnModulesInventoryRoute: EnModulesInventoryRoute,
   EnModulesManufacturingRoute: EnModulesManufacturingRoute,
@@ -3493,6 +3533,7 @@ interface ModulesRouteChildren {
   ModulesCrmRoute: typeof ModulesCrmRoute
   ModulesEInvoicingZatcaRoute: typeof ModulesEInvoicingZatcaRoute
   ModulesFixedAssetsRoute: typeof ModulesFixedAssetsRoute
+  ModulesFsmItmRoute: typeof ModulesFsmItmRoute
   ModulesHrPayrollRoute: typeof ModulesHrPayrollRoute
   ModulesInventoryRoute: typeof ModulesInventoryRoute
   ModulesManufacturingRoute: typeof ModulesManufacturingRoute
@@ -3510,6 +3551,7 @@ const ModulesRouteChildren: ModulesRouteChildren = {
   ModulesCrmRoute: ModulesCrmRoute,
   ModulesEInvoicingZatcaRoute: ModulesEInvoicingZatcaRoute,
   ModulesFixedAssetsRoute: ModulesFixedAssetsRoute,
+  ModulesFsmItmRoute: ModulesFsmItmRoute,
   ModulesHrPayrollRoute: ModulesHrPayrollRoute,
   ModulesInventoryRoute: ModulesInventoryRoute,
   ModulesManufacturingRoute: ModulesManufacturingRoute,
