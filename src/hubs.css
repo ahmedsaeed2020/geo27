@@ -183,3 +183,4 @@
   .hs-floor, .hs-link svg { transition: none; }
   .hs-floor[aria-selected="true"] { transform: none; }
 }
+.hs-panel > .sp-status { margin-top: 16px; }
