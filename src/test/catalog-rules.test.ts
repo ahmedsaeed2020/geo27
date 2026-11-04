@@ -8,7 +8,7 @@ const family = (key: string) => resolveCatalog(undefined, []).find(f => f.key ==
 const block = (title: string, type = 'capability') => ({ id: title, type, title, body: 'Body' });
 const side = (blocks: ReturnType<typeof block>[]) => ({ title: 'SEO title', description: 'SEO description', headline: 'Headline', lede: 'Lede', blocks });
 const departmentDraft = (blocks: ReturnType<typeof block>[], heroShot = '07-inv-01-in1') =>
-  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'hr', id: 'payroll', heroShot } });
+  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'construction', id: 'projects', heroShot } });
 
 describe('Product menu and department rules', () => {
   it('lists the four products in menu order: Pro, HR, Construction, POS', () => {
@@ -21,17 +21,29 @@ describe('Product menu and department rules', () => {
     expect(productByKey('construction')!.departments).toHaveLength(9);
   });
 
+  it('uses the seven HR module routes from the owner handoff', () => {
+    expect(productByKey('hr')!.departments.map(d => d.path)).toEqual([
+      '/hr/core-hr',
+      '/hr/talent-hcm',
+      '/hr/workforce-management',
+      '/hr/payroll-rewards',
+      '/hr/employee-experience',
+      '/hr/people-intelligence',
+      '/hr/administration-governance',
+    ]);
+  });
+
   it('points an unpublished HR department to its card on the HR overview', () => {
-    const payroll = family('hr').departments.find(d => d.id === 'payroll')!;
+    const payroll = family('hr').departments.find(d => d.id === 'payroll-rewards')!;
     expect(payroll.live).toBe(false);
     expect(payroll.href).toBe('/modules/hr-payroll');
-    expect(payroll.hash).toBe(departmentAnchor('payroll'));
+    expect(payroll.hash).toBe(departmentAnchor('payroll-rewards'));
   });
 
   it('links a department to its own page once that page is published', () => {
-    const payroll = resolveCatalog(undefined, ['/hr/payroll']).find(f => f.key === 'hr')!.departments.find(d => d.id === 'payroll')!;
+    const payroll = resolveCatalog(undefined, ['/hr/payroll-rewards']).find(f => f.key === 'hr')!.departments.find(d => d.id === 'payroll-rewards')!;
     expect(payroll.live).toBe(true);
-    expect(payroll.href).toBe('/hr/payroll');
+    expect(payroll.href).toBe('/hr/payroll-rewards');
   });
 
   it('keeps existing Pro department pages live', () => {
@@ -45,8 +57,8 @@ describe('Product menu and department rules', () => {
   });
 
   it('drops a hidden department and applies the saved order', () => {
-    const hr = resolveCatalog({ products: { hr: [{ id: 'payroll', enabled: true }, { id: 'core-hr', enabled: false }] } }, []).find(f => f.key === 'hr')!;
-    expect(hr.departments[0]!.id).toBe('payroll');
+    const hr = resolveCatalog({ products: { hr: [{ id: 'payroll-rewards', enabled: true }, { id: 'core-hr', enabled: false }] } }, []).find(f => f.key === 'hr')!;
+    expect(hr.departments[0]!.id).toBe('payroll-rewards');
     expect(hr.departments.some(d => d.id === 'core-hr')).toBe(false);
     expect(hr.departments).toHaveLength(6);
   });
@@ -57,7 +69,7 @@ describe('Product menu and department rules', () => {
   });
 
   it('stores only a known product and one of its own departments on a lead', () => {
-    expect(leadCatalogContext('hr', 'payroll')).toEqual({ product: 'hr', department: 'payroll' });
+    expect(leadCatalogContext('hr', 'payroll-rewards')).toEqual({ product: 'hr', department: 'payroll-rewards' });
     expect(leadCatalogContext('hr', 'inventory')).toEqual({ product: 'hr', department: '' });
     expect(leadCatalogContext('erp', 'payroll')).toEqual({ product: '', department: '' });
   });
