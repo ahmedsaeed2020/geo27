@@ -1,6 +1,6 @@
 # Digit — نظام ERP سعودي سحابي / Saudi Cloud ERP
 
-> Digit (ديجيت) is a Saudi cloud ERP platform for SMEs: accounting, ZATCA e-invoicing (Fatoora) integration, sales, purchasing, inventory, fixed assets, POS, HR & payroll, contracting, CRM, projects, and manufacturing. Arabic-first, fully bilingual. Cloud or on-premise. Trusted by 50+ Saudi businesses. Contact: +966 59 505 1150, a.saeed@digit-erp.com.
+> Digit (ديجيت) is a Saudi cloud ERP platform for SMEs: accounting, ZATCA e-invoicing (Fatoora) integration, sales, purchasing, inventory, fixed assets, POS, HR & payroll, construction, CRM, field service & inspection (FSM + ITM), projects, and manufacturing. DIGIT is the business-applications track of Trilogy Information Technology; implementation is a scoped engagement. Arabic-first, fully bilingual. Cloud or on-premise. Trusted by 50+ Saudi businesses. Contact: +966 59 505 1150, a.saeed@digit-erp.com.
 
 ## Pricing
 - Starter (e-invoicing, 3 users), Pro (accounting, sales, purchasing, inventory, assets; 10 users; training included), POS add-on, and Enterprise — all via custom quote. Contact the team or book a demo for pricing.
@@ -16,6 +16,9 @@
 - [Inventory](https://digit-erp.com/modules/inventory): إدارة المخزون والمشتريات
 - [HR & Payroll](https://digit-erp.com/modules/hr-payroll): الموارد البشرية والرواتب
 - [Contracting](https://digit-erp.com/modules/contracting): نظام المقاولات — مستخلصات ومحتجزات
+- [CRM](https://digit-erp.com/modules/crm): DIGIT CRM — من العميل المحتمل إلى الخطوة التالية / from lead to next action
+- [FSM + ITM](https://digit-erp.com/modules/fsm-itm): DIGIT FSM + ITM — الخدمة الميدانية والفحص والصيانة / field service, inspection, testing & maintenance
+- [Implementation](https://digit-erp.com/services-3/implementation): التنفيذ والتسليم — اكتشاف، نطاق، بيانات، تهيئة، تدريب، إطلاق مع قبول
 - [Industries](https://digit-erp.com/industries): القطاعات
 - [Services](https://digit-erp.com/services-3): التنفيذ والتدريب والدعم ونقل البيانات
 - [About](https://digit-erp.com/about-4): عن Digit

@@ -4,10 +4,9 @@ import { z } from 'zod';
 import { createClient } from '@supabase/supabase-js';
 import sanitizeHtml from 'sanitize-html';
 import type { Database } from '@/integrations/supabase/types';
-import { cmsContentSchema, departmentPublishIssues, safePath, type PublishedRecord } from './cms-schema';
+import { cmsContentSchema, departmentPublishIssues, departmentSource, safePath, type PublishedRecord } from './cms-schema';
 import { departmentById } from '@/content/catalog';
 import { ALL_SHOTS as SHOTS } from '@/content/screens';
-import { hrModuleBySlug } from '@/content/hr/hr-modules';
 import { proPageByPath } from '@/content/pro/pro-pages';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
@@ -198,8 +197,9 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
         const shots = [b.shotId, ...b.shots, ...b.items.map(i => i.shotId)].filter(Boolean);
         if (shots.some(id => !SHOTS[id])) throw new Error('Unknown product screen');
         if (b.type === 'source') {
-          // Source sections belong to an HR module (by its department) or to a DIGIT Pro V4 page (by its route).
-          const source = content.department?.product === 'hr' ? hrModuleBySlug(content.department.id) : proPageByPath(data.path);
+          // Source sections belong to a source-backed department (HR, Construction, CRM, FSM + ITM) or to a DIGIT
+          // Pro V4 page (by its route).
+          const source = content.department ? (departmentSource(content.department.product, content.department.id)?.config ?? proPageByPath(data.path)) : proPageByPath(data.path);
           if (!source?.sections.some(s => s.id === b.ref)) throw new Error('Unknown source section');
         }
       }

@@ -6,6 +6,7 @@ import {
   contextForPath,
   EXPLORE_BY_PROBLEM,
   EXPLORE_BY_ROLE,
+  EXPLORE_BY_ROLE_SPECIALIST,
   INDUSTRIES,
   MORE_SYSTEMS,
   PACKAGES,
@@ -24,6 +25,9 @@ import { useCatalog } from '@/components/catalog/useCatalog';
 import { NAV_COPY, NavLink } from './nav-links';
 
 type TopKey = 'about' | ProductKey | 'systems' | 'resources';
+
+/** Specialist applications share one explore-by-role row (the DIGIT Pro row stays as it was). */
+const SPECIALIST = new Set<ProductKey>(['construction', 'crm', 'fsm', 'pos']);
 
 /** Opens the page's demo form with the product context, or the demo page when this page has none. */
 export function useDemoRequest() {
@@ -177,6 +181,11 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
         <div className="mm-foot">
           <ExploreRow title={NAV_COPY.byRole[locale]} links={EXPLORE_BY_ROLE} close={close} />
           <ExploreRow title={NAV_COPY.byProblem[locale]} links={EXPLORE_BY_PROBLEM} close={close} />
+        </div>
+      )}
+      {SPECIALIST.has(family.key) && (
+        <div className="mm-foot">
+          <ExploreRow title={NAV_COPY.byRole[locale]} links={EXPLORE_BY_ROLE_SPECIALIST} close={close} />
         </div>
       )}
     </div>

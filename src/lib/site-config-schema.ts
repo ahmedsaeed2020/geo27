@@ -73,7 +73,7 @@ export type SecurityConfig = z.infer<typeof securitySchema>;
  */
 const orderList = z.array(z.object({ id: z.string().max(60), enabled: z.boolean() })).max(40).default([]);
 export const catalogSchema = z.object({
-  products: z.object({ pro: orderList, hr: orderList, construction: orderList, pos: orderList }).partial().default({}),
+  products: z.object({ pro: orderList, hr: orderList, construction: orderList, crm: orderList, fsm: orderList, pos: orderList }).partial().default({}),
 });
 export type CatalogConfig = z.infer<typeof catalogSchema>;
 
@@ -108,7 +108,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   catalog: parseConfig('catalog', {}),
 };
 
-/** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections keep their place at the end. */
+/** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections are placed after the section that precedes them in the source order. */
 export function orderSections<T extends string>(source: readonly T[], layout: SectionLayoutConfig): { id: T; enabled: boolean }[] {
   const known = new Set<string>(source);
   const seen = new Set<string>();
@@ -118,6 +118,20 @@ export function orderSections<T extends string>(source: readonly T[], layout: Se
     seen.add(s.id);
     out.push({ id: s.id as T, enabled: s.enabled });
   }
-  for (const id of source) if (!seen.has(id)) out.push({ id, enabled: true });
+  // A source section the stored layout doesn't know yet goes right after the nearest section that precedes it in the
+  // source order, so a newly added section appears where it was designed instead of after the closing call to action.
+  source.forEach((id, i) => {
+    if (seen.has(id)) return;
+    let at = 0;
+    for (let j = i - 1; j >= 0; j--) {
+      const k = out.findIndex(o => o.id === source[j]);
+      if (k >= 0) {
+        at = k + 1;
+        break;
+      }
+    }
+    out.splice(at, 0, { id, enabled: true });
+    seen.add(id);
+  });
   return out;
 }

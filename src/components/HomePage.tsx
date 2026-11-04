@@ -16,6 +16,7 @@ import Industries from "@/sections/Industries";
 import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
+import { DeliveryJourney, PlatformLayers, SpecialistDiscovery } from '@/components/hubs/CorporateStory';
 import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { useLocale } from "@/lib/i18n";
@@ -26,16 +27,19 @@ import { arrangeSections, HOME_SECTIONS, type HomeSectionId } from '@/content/se
 const RENDER: Record<HomeSectionId, () => ReactNode> = {
   hero: () => <ProductHeroV3 />,
   trust: () => <TrustStrip />,
+  layers: () => <PlatformLayers variant="home" />,
   explorer: () => <AppExplorer />,
   journey: () => <WorkflowJourney />,
   chaos: () => <ChaosToControl />,
   band: () => <ProductBand />,
   modules: () => <Modules />,
+  portfolio: () => <SpecialistDiscovery />,
   showcase: () => <ProductShowcase />,
   capabilities: () => <Capabilities />,
   problems: () => <ProblemConveyor />,
   industries: () => <Industries />,
   saudi: () => <SaudiLocalization />,
+  delivery: () => <DeliveryJourney variant="home" />,
   faq: () => <Faq />,
   cms: () => <CmsBlocks />,
   lead: () => <LeadCapturePanel interest="DIGIT Pro" />,

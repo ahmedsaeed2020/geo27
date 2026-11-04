@@ -14,6 +14,9 @@ import type { Shot } from '@/content/product-shots';
 import { screenById } from '@/content/screens';
 import { hrModuleBySlug, type HrModuleContent } from '@/content/hr/hr-modules';
 import HrModuleBody, { useHrSource } from '@/components/hr/HrModuleBody';
+import SpecialistBody, { useSpecialistSource } from '@/components/specialist/SpecialistBody';
+import { specialistBySlug, type SpecialistIndexEntry } from '@/content/specialist/registry';
+import type { SpecialistDepartment } from '@/content/specialist/types';
 import type { CmsBlock, CmsContent } from '@/lib/cms-schema';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { usePageMotion } from '@/hooks/use-page-motion';
@@ -395,13 +398,15 @@ function Block({ block, locale, index, product, department }: { block: CmsBlock;
 }
 
 /** Shared Department Detail template: breadcrumbs, hero with a real screen, department switcher and CMS-ordered content regions. */
-export function DepartmentBody({ content, path, locale, hr = null }: { content: CmsContent; path: string; locale: Locale; hr?: HrModuleContent | null }) {
+export function DepartmentBody({ content, path, locale, hr = null, specialist = null }: { content: CmsContent; path: string; locale: Locale; hr?: HrModuleContent | null; specialist?: SpecialistDepartment | null }) {
   const meta = content.department;
   const registered = departmentByPath(path) ?? (meta ? departmentById(meta.product, meta.id) : undefined);
   const productKey = registered?.product ?? meta?.product ?? 'pro';
   const deptId = registered?.id ?? meta?.id ?? '';
   const hrConfig = productKey === 'hr' ? hrModuleBySlug(deptId) : undefined;
   if (hrConfig) return <HrDepartmentBody content={content} locale={locale} config={hrConfig} initial={hr} />;
+  const entry = specialistBySlug(productKey, deptId);
+  if (entry) return <SpecialistDepartmentBody content={content} locale={locale} entry={entry} initial={specialist} />;
   return <GenericDepartmentBody content={content} path={path} locale={locale} />;
 }
 
@@ -417,6 +422,12 @@ function HrDepartmentBody({ content, locale, config, initial }: { content: CmsCo
       renderBlock={(b, i) => <Block key={b.id} block={b} locale={locale} index={i} product="hr" department={config.slug} />}
     />
   );
+}
+
+function SpecialistDepartmentBody({ content, locale, entry, initial }: { content: CmsContent; locale: Locale; entry: SpecialistIndexEntry; initial: SpecialistDepartment | null }) {
+  const source = useSpecialistSource(entry.product, entry.slug, initial);
+  if (!source) return <div className="sp-loading" aria-busy="true" />;
+  return <SpecialistBody content={content} locale={locale} entry={entry} source={source} renderBlock={(b, i) => <Block key={b.id} block={b} locale={locale} index={i} product={entry.product} department={entry.slug} />} />;
 }
 
 function GenericDepartmentBody({ content, path, locale }: { content: CmsContent; path: string; locale: Locale }) {
@@ -532,7 +543,7 @@ function GenericDepartmentBody({ content, path, locale }: { content: CmsContent;
   );
 }
 
-export default function DepartmentPage({ content, path, hr = null }: { content: CmsContent; path: string; hr?: HrModuleContent | null }) {
+export default function DepartmentPage({ content, path, hr = null, specialist = null }: { content: CmsContent; path: string; hr?: HrModuleContent | null; specialist?: SpecialistDepartment | null }) {
   const locale = useLocale();
   const mainRef = useRef<HTMLElement>(null);
   usePageMotion(mainRef, `dept-${path}-${locale}`);
@@ -545,7 +556,7 @@ export default function DepartmentPage({ content, path, hr = null }: { content: 
     <div className="bg-paper font-plex">
       <Header />
       <main ref={mainRef} className="dept-page" aria-label={title}>
-        <DepartmentBody content={content} path={path} locale={locale} hr={hr} />
+        <DepartmentBody content={content} path={path} locale={locale} hr={hr} specialist={specialist} />
         {content.formEnabled && <LeadCapturePanel interest={title} product={product} department={department} />}
       </main>
       <Footer />

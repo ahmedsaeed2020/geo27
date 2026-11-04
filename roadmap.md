@@ -1,4 +1,23 @@
 # Requested pages
+# DIGIT Website V4 — remaining products & corporate experience (owner brief 2026-11-04 17:07)
+Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate profile = content authority, current site = design authority; no live publish.
+- [x] Phase 1: source map — profile pages mapped to pages/images (report); Construction 9, CRM 7, FSM+ITM 9 groups; p.31 roadmap and p.35 historical logos deliberately not published.
+- [x] Catalog + Mega Menu: six families (Pro, HR, Construction, CRM, FSM+ITM, POS) in the one registry; no second nav; role row on specialist panels; all nine top groups fit at 1280–1920 px AR/EN (brand eyebrow dropped below 1680 px).
+- [x] Construction hub: Project 360 journey (BOQ → Contract → Execution → Claim → Collection), five-stage money chain, four separate cost measures, change impact; nine area pages as unpublished CMS drafts (private preview checked AR/EN 1280/390).
+- [x] CRM hub: Lead-to-Deal explorer, Sales Manager workbench; seven area pages (CMS drafts); distinct from Pro Selling; no screenshots until recaptured.
+- [x] POS hub: selling / store operations / connected operations chapters; 12-segment searchable industry explorer with generated store photos (no people/logos); industry demo request E2E saved product + interest, test row deleted.
+- [x] FSM+ITM hub (new /modules/fsm-itm AR/EN route, sitemap) with 11-step service journey and inspection loop (failed retest reopens the deficiency); nine area pages (CMS drafts).
+- [x] About: interactive three layers (platform / specialist apps / technology & delivery), friction between departments, DIGIT ↔ Trilogy services band (scoped separately); AR/EN 1280/390 checked.
+- [x] Implementation & delivery page: six-stage stepper (Discovery → Go-live/acceptance) with outputs and participants; package entitlements vs separately scoped vs Trilogy services; next-step band with discovery booking.
+- [x] Home targeted additions (editable/hideable home sections): three-layer model, six-family portfolio explorer with connected stories and real Pro/HR screens, four new roles, delivery band, contextual demo — existing sections unchanged; new sections slot in after their design predecessor.
+- [x] Contextual lead forms on every new hub/department/service page (product, department/industry, page, language, UTM) — E2E on POS industry and CRM Leads draft saved and read back, test rows deleted.
+- [x] SEO/sitemap/hreflang/llms.txt for new routes; drafts noindex + 404 without link; 98 tests; 180 AR/EN views at 390–1920 px incl. Pro/HR regression; screenshots + report in Files (digit-v4-remaining).
+- [ ] Owner: real screenshots for Construction, FSM + ITM and POS (pages show labelled diagrams until then) — blocked on owner.
+- [ ] Owner: approve the 25 Construction/CRM/FSM area drafts and the new home/About/Implementation sections before publishing — blocked on owner.
+- [ ] Owner: set up the email sending domain so new-request notifications reach a.saeed@trilogy.com.sa — blocked on owner.
+- [x] Owner 2026-11-04 17:54: screenshots showing the old module logos (pink app icon in the side rail) are wrong — scanned all 67 product screens and 16 profile photos: only the two CRM demo screens had it; removed from pages, stories, menu, editor and storage; CRM pages now show labelled diagrams; test keeps them out.
+- [ ] Owner: recaptured DIGIT CRM screens with the current module logos (deals board, manager workbench) — blocked on owner.
+
 # DIGIT Pro V4 complete product pages (owner brief 2026-11-04 16:51)
 - [x] Phase A: source map — 321 IDs mapped to evidence tiers (available / being verified / scoped), screenshot→feature provenance, 117 runnable reports (2 e-invoicing entries withheld); rules kept as tests.
 - [x] Phase B: five department pages expanded in place (4 workspaces each with Overview · Documents & Work · Reports tabs, distinct visual signature, journeys, decisions, cross-links, contextual demo); original hero, proof band, FAQ and CTA kept; AR/EN.

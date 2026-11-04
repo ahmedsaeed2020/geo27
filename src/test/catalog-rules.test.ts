@@ -8,17 +8,19 @@ const family = (key: string) => resolveCatalog(undefined, []).find(f => f.key ==
 const block = (title: string, type = 'capability') => ({ id: title, type, title, body: 'Body' });
 const side = (blocks: ReturnType<typeof block>[]) => ({ title: 'SEO title', description: 'SEO description', headline: 'Headline', lede: 'Lede', blocks });
 const departmentDraft = (blocks: ReturnType<typeof block>[], heroShot = '07-inv-01-in1') =>
-  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'construction', id: 'projects', heroShot } });
+  cmsContentSchema.parse({ ar: side(blocks), en: side(blocks), department: { product: 'pos', id: 'retail', heroShot } });
 
 describe('Product menu and department rules', () => {
-  it('lists the four products in menu order: Pro, HR, Construction, POS', () => {
-    expect(PRODUCTS.map(p => p.key)).toEqual(['pro', 'hr', 'construction', 'pos']);
+  it('lists the six products in menu order: Pro, HR, Construction, CRM, FSM + ITM, POS', () => {
+    expect(PRODUCTS.map(p => p.key)).toEqual(['pro', 'hr', 'construction', 'crm', 'fsm', 'pos']);
   });
 
-  it('gives Pro 5 departments, HR 7 and Construction 9', () => {
+  it('gives Pro 5 departments, HR 7, Construction 9, CRM 7 and FSM + ITM 9', () => {
     expect(productByKey('pro')!.departments).toHaveLength(5);
     expect(productByKey('hr')!.departments).toHaveLength(7);
     expect(productByKey('construction')!.departments).toHaveLength(9);
+    expect(productByKey('crm')!.departments).toHaveLength(7);
+    expect(productByKey('fsm')!.departments).toHaveLength(9);
   });
 
   it('uses the seven HR module routes from the owner handoff', () => {

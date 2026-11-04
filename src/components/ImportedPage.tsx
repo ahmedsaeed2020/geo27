@@ -13,6 +13,7 @@ import { useCmsPage } from './cms/CmsContext';
 import { PageProofs } from "@/components/product/ProductProof";
 import { PAGE_PROOFS } from "@/content/product-proof";
 import ProductDepartments from "@/components/catalog/ProductHub";
+import { HUB_STORIES } from "@/components/hubs/HubStories";
 import DepartmentPage from "@/components/catalog/DepartmentPage";
 import type { ProductKey } from "@/content/catalog";
 import ProPageBody from "@/components/pro/ProPageBody";
@@ -70,7 +71,7 @@ function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: {
 }
 
 /** Imported overview pages that double as product hubs get the department selector after their hero and proof band. */
-const HUBS: Record<string, ProductKey> = { "modules-hr-payroll": "hr", "modules-contracting": "construction" };
+const HUBS: Record<string, ProductKey> = { "modules-hr-payroll": "hr", "modules-contracting": "construction", "modules-crm": "crm" };
 
 /**
  * A published (or previewed) department draft on an existing page route switches it to the shared Department
@@ -93,6 +94,7 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   const page = proConfig?.replaces ? { ...source, nodes: source.nodes.filter(node => !hasClass(node.className, proConfig.replaces!)) } : source;
   const locale = useLocale();
   const hub = HUBS[pageKey];
+  const story = HUB_STORIES[pageKey];
   const mainRef = useRef<HTMLElement>(null);
   usePageMotion(mainRef, `${pageKey}-${locale}`);
   useEffect(() => {
@@ -120,5 +122,5 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
 }

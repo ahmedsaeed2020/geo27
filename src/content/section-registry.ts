@@ -17,16 +17,19 @@ export type SectionDef = {
 export const HOME_SECTIONS = [
   { id: 'hero', label: 'الواجهة الرئيسية (ثابتة)', locked: true },
   { id: 'trust', label: 'شريط الثقة' },
+  { id: 'layers', label: 'المنصة والتطبيقات والتنفيذ', heading: { ar: 'منصة أعمال. تطبيقات متخصصة. قدرة على التنفيذ.', en: 'A business platform. Specialist applications. The capability to deliver.' } },
   { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
   { id: 'journey', label: 'رحلة العمل', heading: { ar: 'نفس العمل. أربع زوايا أوضح.', en: 'One operation. Four clearer perspectives.' } },
   { id: 'chaos', label: 'من الفوضى إلى التحكّم', heading: { ar: 'من الفوضى… إلى التحكّم' } },
   { id: 'band', label: 'شريط المحاسبة', heading: { ar: 'محاسبتك أوضح' } },
   { id: 'modules', label: 'الموديولات', heading: { ar: 'منصة واحدة… لكل إدارات شركتك' } },
+  { id: 'portfolio', label: 'محفظة الحلول (المنتجات الستة والأدوار)', heading: { ar: 'محفظة حلول واحدة… لا باقة واحدة لكل شيء.', en: 'One solution portfolio… not one bundle for everything.' } },
   { id: 'showcase', label: 'شاشات النظام الحقيقية', heading: HOME_SHOWCASE.title },
   { id: 'capabilities', label: 'القدرات', heading: { ar: 'قدرات تمتد عبر النظام كله.' } },
   { id: 'problems', label: 'مشاكل الأنظمة التقليدية', heading: { ar: 'وداعاً لمشاكل الأنظمة التقليدية' } },
   { id: 'industries', label: 'القطاعات', heading: { ar: 'مصمَّم لقطاع عملك' } },
   { id: 'saudi', label: 'التوطين السعودي', heading: { ar: 'جاهز لفاتورة هيئة الزكاة… من اليوم الأول' } },
+  { id: 'delivery', label: 'التنفيذ والتسليم', heading: { ar: 'التنفيذ ليس تثبيتًا… بل تشغيل مقبول.', en: 'Implementation isn’t an install… it’s accepted operation.' } },
   { id: 'faq', label: 'الأسئلة الشائعة', heading: { ar: 'أسئلة قبل أن تقرّر — إجابات مباشرة' } },
   { id: 'cms', label: 'أقسام مضافة من الإدارة' },
   { id: 'lead', label: 'نموذج الطلب' },
@@ -58,7 +61,7 @@ export type ProSectionId = (typeof PRO_SECTIONS)[number]['id'];
 
 export const sectionIds = <T extends readonly SectionDef[]>(defs: T) => defs.map(d => d.id) as unknown as readonly T[number]['id'][];
 
-/** Locked sections stay first and visible; the rest follow the stored order, with new source sections appended. */
+/** Locked sections stay first and visible; the rest follow the stored order, with new source sections inserted after their source predecessor. */
 export function arrangeSections<T extends readonly SectionDef[]>(defs: T, layout: SectionLayoutConfig): { id: T[number]['id']; enabled: boolean; locked: boolean }[] {
   const locked = defs.filter(d => d.locked).map(d => ({ id: d.id as T[number]['id'], enabled: true, locked: true }));
   const movable = orderSections(defs.filter(d => !d.locked).map(d => d.id as T[number]['id']), layout).map(s => ({ ...s, locked: false }));

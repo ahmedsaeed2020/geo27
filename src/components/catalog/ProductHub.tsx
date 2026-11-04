@@ -24,6 +24,10 @@ const COPY = {
   hrTitle: { ar: 'مجالات مترابطة… في دورة الموظف والقوى العاملة', en: 'Connected areas… across the employee and workforce lifecycle' },
   conEyebrow: { ar: 'أقسام DIGIT Construction', en: 'DIGIT Construction departments' },
   conTitle: { ar: 'أقسام مترابطة… في رحلات المشروع والعقود والتكلفة', en: 'Connected departments… across project, contract and cost journeys' },
+  crmEyebrow: { ar: 'مجالات DIGIT CRM', en: 'DIGIT CRM areas' },
+  crmTitle: { ar: 'سبعة مجالات… من العميل المحتمل إلى الخطوة التالية', en: 'Seven areas… from lead to next action' },
+  fsmEyebrow: { ar: 'مجالات DIGIT FSM + ITM', en: 'DIGIT FSM + ITM areas' },
+  fsmTitle: { ar: 'تسعة مجالات… من العقد إلى الإغلاق المؤكد', en: 'Nine areas… from agreement to verified closure' },
   explore: { ar: 'تفاصيل القسم', en: 'Explore the department' },
   exploreArea: { ar: 'تفاصيل المجال', en: 'Explore the area' },
   walkthrough: { ar: 'اطلب جولة على هذا القسم', en: 'Request a walkthrough of this department' },
@@ -36,9 +40,9 @@ const COPY = {
 
 /** Construction journeys: commercial set-up, site execution and supply, then cost control and close. */
 const CONSTRUCTION_LANES: { id: string; label: L; ids: string[] }[] = [
-  { id: 'commercial', label: { ar: 'التخطيط والتعاقد', en: 'Plan and contract' }, ids: ['portfolio', 'estimating', 'contracts-claims'] },
-  { id: 'execution', label: { ar: 'التنفيذ والتوريد', en: 'Execute and supply' }, ids: ['projects', 'subcontractors', 'procurement', 'resources'] },
-  { id: 'control', label: { ar: 'التكلفة والإقفال', en: 'Control cost and close' }, ids: ['budget-cost', 'financial-closeout'] },
+  { id: 'commercial', label: { ar: 'التخطيط والتعاقد', en: 'Plan and contract' }, ids: ['portfolio', 'estimating', 'contracts'] },
+  { id: 'execution', label: { ar: 'التنفيذ والتوريد', en: 'Execute and supply' }, ids: ['projects', 'subcontractors', 'procurement'] },
+  { id: 'control', label: { ar: 'المستخلصات والتكلفة والإقفال', en: 'Claims, cost and close' }, ids: ['claims', 'budget-cost', 'financial-closeout'] },
 ];
 
 function DeptAction({ family, d, locale, area = false }: { family: ResolvedFamily; d: ResolvedDepartment; locale: Locale; area?: boolean }) {
@@ -194,6 +198,23 @@ function HrLifecycle({ family, locale }: { family: ResolvedFamily; locale: Local
   );
 }
 
+/** CRM and FSM + ITM areas: a numbered grid in journey order, each a hash target from the menu. */
+function AreaGrid({ family, locale }: { family: ResolvedFamily; locale: Locale }) {
+  const target = useTargetId();
+  return (
+    <ol role="list" className="ph-areas">
+      {family.departments.map((d, i) => (
+        <li key={d.id} id={departmentAnchor(d.id)} className="ph-area" data-motion-card data-target={target === departmentAnchor(d.id) ? '' : undefined}>
+          <span className="ph-no" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+          <strong>{d.label[locale]}</strong>
+          {d.summary && <p>{d.summary[locale]}</p>}
+          <DeptAction family={family} d={d} locale={locale} area />
+        </li>
+      ))}
+    </ol>
+  );
+}
+
 function ConstructionJourneys({ family, locale }: { family: ResolvedFamily; locale: Locale }) {
   const target = useTargetId();
   const placed = new Set(CONSTRUCTION_LANES.flatMap(l => l.ids));
@@ -237,8 +258,14 @@ export default function ProductDepartments({ product }: { product: ProductKey })
   const locale = useLocale();
   const family = useCatalog().find(f => f.key === product);
   if (!family || !family.departments.length) return null;
-  const eyebrow = product === 'pro' ? COPY.proEyebrow : product === 'hr' ? COPY.hrEyebrow : COPY.conEyebrow;
-  const title = product === 'pro' ? COPY.proTitle : product === 'hr' ? COPY.hrTitle : COPY.conTitle;
+  const heads: Partial<Record<ProductKey, [L, L]>> = {
+    pro: [COPY.proEyebrow, COPY.proTitle],
+    hr: [COPY.hrEyebrow, COPY.hrTitle],
+    construction: [COPY.conEyebrow, COPY.conTitle],
+    crm: [COPY.crmEyebrow, COPY.crmTitle],
+    fsm: [COPY.fsmEyebrow, COPY.fsmTitle],
+  };
+  const [eyebrow, title] = heads[product] ?? [COPY.conEyebrow, COPY.conTitle];
   return (
     <section className="ph" data-product={product} aria-labelledby={`ph-title-${product}`} lang={locale}>
       <div className="ph-wrap">
@@ -254,6 +281,7 @@ export default function ProductDepartments({ product }: { product: ProductKey })
         {product === 'pro' && <ProCycle family={family} locale={locale} />}
         {product === 'hr' && <HrLifecycle family={family} locale={locale} />}
         {product === 'construction' && <ConstructionJourneys family={family} locale={locale} />}
+        {(product === 'crm' || product === 'fsm') && <AreaGrid family={family} locale={locale} />}
       </div>
     </section>
   );

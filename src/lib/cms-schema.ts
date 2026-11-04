@@ -1,6 +1,7 @@
 import { z } from 'zod';
-import { hrModuleBySlug, type HrModuleConfig } from '@/content/hr/hr-modules';
+import { hrModuleBySlug } from '@/content/hr/hr-modules';
 import { proPageByKey } from '@/content/pro/pro-pages';
+import { SPECIALIST_META, specialistBySlug } from '@/content/specialist/registry';
 export const safePath = z.string().regex(/^\/(?:[a-z0-9][a-z0-9/-]*)?$/).max(240).refine(v => !/^\/(admin|auth|api|lovable|_)/.test(v));
 
 /**
@@ -49,7 +50,7 @@ export const localeSchema = z.object({
   navLabel: z.string().max(80).default(''),
 });
 
-export const DEPARTMENT_PRODUCTS = ['pro', 'hr', 'construction', 'pos'] as const;
+export const DEPARTMENT_PRODUCTS = ['pro', 'hr', 'construction', 'crm', 'fsm', 'pos'] as const;
 export const departmentSchema = z.object({
   product: z.enum(DEPARTMENT_PRODUCTS),
   id: z.string().regex(/^[a-z0-9-]{2,60}$/),
@@ -90,10 +91,12 @@ export function departmentPublishIssues(c: CmsContent): string[] {
   if (c.department.product === 'pro' && proPageByKey(c.department.id)) return [];
   const issues: string[] = [];
   const names = { ar: 'العربية', en: 'English' } as const;
-  // Source-backed pages (DIGIT HR modules) are judged on what they render: CMS overrides with source fallback.
-  const source = c.department.product === 'hr' ? hrModuleBySlug(c.department.id) : undefined;
+  // Source-backed pages (DIGIT HR modules and the Construction, CRM and FSM + ITM pages) are judged on what they
+  // render: CMS overrides with source fallback.
+  const found = departmentSource(c.department.product, c.department.id);
+  const source = found?.config;
   for (const l of ['ar', 'en'] as const) {
-    const x = source ? resolveSourceLocale(c, l, source) : { ...c[l], blocks: c[l].blocks.filter(b => b.type !== 'source') };
+    const x = found ? resolveSourceLocale(c, l, found.config, found.suffix) : { ...c[l], blocks: c[l].blocks.filter(b => b.type !== 'source') };
     if (!x.title.trim()) issues.push(`${names[l]}: عنوان SEO`);
     if (!x.description.trim()) issues.push(`${names[l]}: وصف SEO`);
     if (!x.headline.trim()) issues.push(`${names[l]}: عنوان الصفحة الرئيسي`);
@@ -113,7 +116,21 @@ export function departmentPublishIssues(c: CmsContent): string[] {
  * `source` blocks take their section title when not overridden, and source sections the document does not place
  * are appended in source order so no section silently disappears.
  */
-export function resolveSourceLocale(c: CmsContent, l: 'ar' | 'en', source: HrModuleConfig) {
+type SourceL = { ar: string; en: string };
+/** What a source-backed department page offers the CMS: its section list and source SEO/hero copy. */
+export type SourceConfig = { label: SourceL; headline: SourceL; seoDescription: SourceL; sections: { id: string; title: SourceL }[]; heroShots: string[]; illustrative?: unknown };
+
+/** The source copy behind a department document, if its page is source-backed, with the product name for titles. */
+export function departmentSource(product: string, id: string): { config: SourceConfig; suffix: string } | undefined {
+  if (product === 'hr') {
+    const hr = hrModuleBySlug(id);
+    return hr ? { config: hr, suffix: 'DIGIT HR' } : undefined;
+  }
+  const s = specialistBySlug(product, id);
+  return s ? { config: s, suffix: SPECIALIST_META[s.product].name } : undefined;
+}
+
+export function resolveSourceLocale(c: CmsContent, l: 'ar' | 'en', source: SourceConfig, suffix = 'DIGIT HR') {
   const x = c[l];
   const titleOf = (ref: string) => source.sections.find(s => s.id === ref)?.title[l] ?? '';
   const placed = new Set(x.blocks.filter(b => b.type === 'source').map(b => b.ref));
@@ -121,7 +138,7 @@ export function resolveSourceLocale(c: CmsContent, l: 'ar' | 'en', source: HrMod
   for (const s of source.sections) if (!placed.has(s.id)) blocks.push(sourceBlock(s.id, s.title[l]));
   return {
     ...x,
-    title: x.title.trim() || `${source.label[l]} | DIGIT HR`,
+    title: x.title.trim() || `${source.label[l]} | ${suffix}`,
     description: x.description.trim() || source.seoDescription[l],
     headline: x.headline.trim() || source.headline[l],
     lede: x.lede.trim() || source.seoDescription[l],

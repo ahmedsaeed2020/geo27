@@ -1,5 +1,6 @@
-// Every real product screen a CMS document may reference: the 49 DIGIT Pro shots plus the 16 DIGIT HR shots.
-// Pro surfaces keep reading SHOTS directly; editors, department pages and server validation use this union.
+// Every real product screen a CMS document may reference: the 49 DIGIT Pro shots and the 16 DIGIT HR shots. Pro
+// surfaces keep reading SHOTS directly; editors, department pages and server validation use this union. Screens that
+// show the old module logos (the pink app icon in the side rail) are withdrawn and must never be registered here.
 import { SHOTS, type Shot } from '@/content/product-shots';
 import { HR_SHOTS } from '@/content/hr/hr-shots';
 

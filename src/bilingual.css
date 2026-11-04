@@ -6,5 +6,5 @@ html[lang="en"] .digit :is(h1,h2,h3,h4,p,li) { letter-spacing: 0; overflow-wrap:
 html[lang="en"] .digit :is(.btn,.import-action,.package-action) { white-space: normal; height: auto; min-height: 44px; text-align: center; }
 html[lang="en"] .digit :is(.hero,.pos-hero) { --scene-heading-wash: linear-gradient(270deg, color-mix(in oklab, var(--paper2) 6%, transparent) 0%, color-mix(in oklab, var(--paper2) 64%, transparent) 38%, var(--paper2) 72%); }
 html[lang="en"] .page-scene-background img { object-position: right center; }
-html[lang="en"] header nav { gap: 20px; }
+html[lang="en"] header nav:not(.mm-nav) { gap: 20px; }
 html[lang="en"] .digit :is(input,textarea,select) { direction: ltr; text-align: start; }
