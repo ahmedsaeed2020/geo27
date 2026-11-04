@@ -187,6 +187,15 @@
 .ph-pro-stage { min-width: 0; }
 .ph-pro-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; }
 .ph-pro-foot p { font-size: 15px; line-height: 1.7; color: var(--body2); }
+.ph-ws { margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--dline); }
+.ph-ws ol { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; margin: 10px 0 0; padding: 0; list-style: none; }
+.ph-ws li { margin: 0; }
+.ph-ws-link { display: flex; align-items: center; gap: 10px; height: 100%; padding: 12px 14px; border: 1px solid var(--dline); border-radius: 12px; background: var(--card); font-size: 14px; font-weight: 700; line-height: 1.5; color: var(--ink); transition: border-color 200ms ease, translate 200ms ease; }
+.ph-ws-link:hover { border-color: var(--primary); translate: 0 -2px; }
+.ph-ws-link:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+.ph-ws-link .ph-no { flex: none; }
+@media (max-width: 900px) { .ph-ws ol { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .ph-ws-link { transition: none; } }
 .ph-across { margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--dline); }
 .ph-across ul { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .ph-across-card { display: flex; align-items: center; gap: 14px; height: 100%; padding: 12px; border: 1px solid var(--dline); border-radius: 14px; background: var(--card); color: var(--ink); transition: border-color 160ms ease; }

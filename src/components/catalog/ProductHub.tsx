@@ -7,6 +7,7 @@ import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { NavLink } from '@/components/nav/nav-links';
 import { departmentAnchor, type L, type ProductKey, type ResolvedDepartment, type ResolvedFamily } from '@/content/catalog';
 import { SHOTS, type Shot } from '@/content/product-shots';
+import { proWorkspacesOf } from '@/content/pro/pro-pages';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { useCatalog } from './useCatalog';
 import '@/product-proof.css';
@@ -30,6 +31,7 @@ const COPY = {
   across: { ar: 'عبر الأقسام', en: 'Across departments' },
   foundation: { ar: 'الأساس المشترك', en: 'Shared foundation' },
   screens: { ar: 'اختر القسم', en: 'Choose a department' },
+  workspaces: { ar: 'مساحات العمل في هذا القسم', en: 'Workspaces in this department' },
 } satisfies Record<string, L>;
 
 /** Construction journeys: commercial set-up, site execution and supply, then cost control and close. */
@@ -52,6 +54,27 @@ function DeptAction({ family, d, locale, area = false }: { family: ResolvedFamil
     <button type="button" className="ph-link" onClick={() => focusLeadForm({ product: family.key, department: d.id })}>
       {(area ? COPY.walkthroughArea : COPY.walkthrough)[locale]}
     </button>
+  );
+}
+
+/** Deep links to the department page's workspaces, so the hub maps all 5 × 4 Pro workspaces. */
+function DeptWorkspaces({ path, locale }: { path: string; locale: Locale }) {
+  const spaces = proWorkspacesOf(path);
+  if (!spaces.length) return null;
+  return (
+    <nav className="ph-ws" aria-label={COPY.workspaces[locale]}>
+      <p className="ph-label">{COPY.workspaces[locale]}</p>
+      <ol role="list">
+        {spaces.map((w, i) => (
+          <li key={w.id}>
+            <NavLink path={path} hash={`pv-${w.id}`} className="ph-ws-link">
+              <span className="ph-no" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+              <span>{w.title[locale]}</span>
+            </NavLink>
+          </li>
+        ))}
+      </ol>
+    </nav>
   );
 }
 
@@ -113,6 +136,7 @@ function ProCycle({ family, locale }: { family: ResolvedFamily; locale: Locale }
             <p>{current.summary?.[locale]}</p>
             <DeptAction family={family} d={current} locale={locale} />
           </div>
+          {current.live && <DeptWorkspaces path={current.path} locale={locale} />}
         </div>
       </div>
       {extras.length > 0 && (

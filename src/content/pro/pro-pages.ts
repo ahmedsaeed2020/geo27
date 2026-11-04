@@ -296,6 +296,10 @@ export const PRO_LEAD_TOPICS: ReadonlySet<string> = new Set([
 ]);
 export const proLeadTopic = (topic: string): string => (PRO_LEAD_TOPICS.has(topic) ? topic : '');
 
+/** The four workspaces of an operational department page (for the /pro hub map and menus). */
+export const proWorkspacesOf = (path: string): { id: string; title: L }[] =>
+  proPageByPath(path)?.sections.filter(s => WORKSPACE_ID.test(s.id)) ?? [];
+
 /** Arabic label of a stored lead topic, for the admin inbox: page › workspace, or the executive question code. */
 export function proTopicLabel(topic: string | null | undefined): string {
   if (!topic || !PRO_LEAD_TOPICS.has(topic)) return '';

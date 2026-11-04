@@ -6,7 +6,7 @@
 .pv-root .pv-siblings ul { margin: 0; padding: 0; list-style: none; }
 .pv-root .pv-page :is(ul, ol)[role="list"], .pv-root .pv-page ol { padding-inline-start: 0; list-style: none; }
 .pv-root .pv-page { --pv-gap: clamp(20px, 3vw, 36px); color: var(--ink); }
-.pv-root .pv-sec { position: relative; padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--dline); }
+.pv-root .pv-sec { scroll-margin-top: 132px; position: relative; padding-block: clamp(56px, 8vw, 104px); border-top: 1px solid var(--dline); }
 .pv-root .pv-sec[data-tone="soft"] { background: var(--paper2); }
 .pv-root .pv-sec[data-tone="deep"] { background: var(--deep); color: var(--paper2); border-top-color: transparent; }
 .pv-root .pv-head { display: grid; gap: 14px; max-width: 760px; margin-bottom: clamp(28px, 4vw, 48px); }
