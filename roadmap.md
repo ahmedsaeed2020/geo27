@@ -2,6 +2,7 @@
 - [x] Home: replaced the old laptop band image with a luxury product slider (6 real-screen slides, generated text-free scenes, autoplay timeline, tilt/float motion, verified figures, per-slide demo context, lightbox), hero unchanged; AR/EN 1440/390 + keyboard/reduced-motion checked.
 - [ ] Whole site: every demo/subscribe/trial button opens the site's own request form (no external hosted subscription pages).
 - [ ] Whole site: remove "تجريبي/مؤقت/demo data/placeholder"-style wording from visible copy so it reads as a live site (AR + EN).
+- [ ] Home hero (owner 2026-11-04 19:57): turn the first fold into a product slider — one slide each for Pro, HR, Construction, CRM, POS; luxury motion; real screens where registered, generated scenes (Saudi characters, no uncovered-hair women, no fake UI) elsewhere; demo CTA per product.
 
 # Requested pages
 # DIGIT Website V4 — remaining products & corporate experience (owner brief 2026-11-04 17:07)
