@@ -1,3 +1,10 @@
+# Home slider & site-wide CTA pass (owner 2026-11-04 19:26 / 19:39)
+- [x] Home: replaced the old laptop band image with a luxury product slider (6 real-screen slides, generated text-free scenes, autoplay timeline, tilt/float motion, verified figures, per-slide demo context, lightbox), hero unchanged; AR/EN 1440/390 + keyboard/reduced-motion checked.
+- [x] Whole site: every demo/quote/subscribe/trial button opens the site's own request form (hosted forms on Pro/Starter/Demo/Partnership replaced in place, one form per page, old absolute links made local); 128 AR/EN pages crawled: 200, form present, no outside hosted links, no errors.
+- [x] Whole site: removed "تجريبي/مؤقت/demo data/before publishing"-style wording from visible copy (AR + EN, incl. Pro status labels); crawl clean apart from legitimate UAT/regression-testing service steps. Product screenshots still show the demo tenant's "(تجريبي)" names — needs owner recaptures (pixels untouched).
+- [x] Home hero (owner 2026-11-04 19:57): first fold is now a five-product slider (Pro, HR, Construction, CRM, POS) with the supplied Saudi characters, real Pro/HR screens, published journey steps for Construction/CRM/POS, per-product demo CTA (form gets the product), autoplay with hover/off-screen/reduced-motion pauses, keyboard tabs, lightbox; AR/EN 1440 and 390 checked, 128-page crawl clean.
+- [ ] Owner: real current screens for Construction, CRM and POS so their hero slides can show a system screen instead of the journey card — blocked on owner.
+
 # Requested pages
 # DIGIT Website V4 — remaining products & corporate experience (owner brief 2026-11-04 17:07)
 Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate profile = content authority, current site = design authority; no live publish.

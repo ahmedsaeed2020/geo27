@@ -131,8 +131,8 @@ const page: ProPageContent = {
       id: 'cta',
       kind: 'cta',
       body: {
-        ar: 'اختر ثلاثة أسئلة من الاثني عشر، ونعرض لك إجاباتها على شركة تجريبية ثم نناقش بياناتك.',
-        en: 'Pick three of the twelve questions, and we will show you their answers on a demo company, then discuss your data.',
+        ar: 'اختر ثلاثة أسئلة من الاثني عشر، ونعرض لك إجاباتها في عرض مباشر ثم نناقش بياناتك.',
+        en: 'Pick three of the twelve questions, and we will show you their answers in a live walkthrough, then discuss your data.',
       },
       interest: { ar: 'قرارات المدير المالي', en: 'CFO decisions' },
     },

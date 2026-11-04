@@ -12,7 +12,7 @@ export const Route = createFileRoute("/en/pro")({
     { title: translate("باقة Pro — Digit | النظام المالي والتشغيلي") },
     { name: "description", content: translate("باقة Digit Pro تجمع المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد.") },
     { property: "og:title", content: translate("باقة Pro — Digit") },
-    { property: "og:description", content: translate("نظام مالي وتشغيلي متكامل لمنشأتك مع Digit Pro. استعرض الموديولات واحجز عرضًا تجريبيًا.") },
+    { property: "og:description", content: translate("نظام مالي وتشغيلي متكامل لمنشأتك مع Digit Pro. استعرض الموديولات واحجز عرضًا توضيحيًا.") },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
   ] }, loaderData),

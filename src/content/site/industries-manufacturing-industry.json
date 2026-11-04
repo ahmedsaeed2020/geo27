@@ -1,666 +1,666 @@
 {
- "title": "التصنيع",
- "description": "قوائم مواد وأوامر تشغيل وتكلفة إنتاج ومخزون مرتبط — لرؤية تكلفة وربحية كل أمر إنتاج.",
- "sourceUrl": "https://digit-erp.com/industries/manufacturing-industry/",
- "nodes": [
-  {
-   "id": "2d4e5fa2",
-   "type": "container",
-   "className": "in-2d4e5fa2 digit band-crumb",
-   "anchor": "",
-   "children": [
+  "title": "التصنيع",
+  "description": "قوائم مواد وأوامر تشغيل وتكلفة إنتاج ومخزون مرتبط — لرؤية تكلفة وربحية كل أمر إنتاج.",
+  "sourceUrl": "https://digit-erp.com/industries/manufacturing-industry/",
+  "nodes": [
     {
-     "id": "8ece81a",
-     "type": "text-editor",
-     "className": "in-8ece81a ",
-     "anchor": "",
-     "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">التصنيع</span>"
-    }
-   ]
-  },
-  {
-   "id": "5148ec70",
-   "type": "container",
-   "className": "in-5148ec70 digit hero",
-   "anchor": "",
-   "children": [
-    {
-     "id": "31c6ee68",
-     "type": "container",
-     "className": "in-31c6ee68 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "4109bc1f",
-       "type": "container",
-       "className": "in-4109bc1f ",
-       "anchor": "",
-       "children": [
+      "id": "2d4e5fa2",
+      "type": "container",
+      "className": "in-2d4e5fa2 digit band-crumb",
+      "anchor": "",
+      "children": [
         {
-         "id": "2b55f584",
-         "type": "text-editor",
-         "className": "in-2b55f584 ",
-         "anchor": "",
-         "html": "<span class=\"is-7\">● قطاع · التصنيع</span>"
-        },
-        {
-         "id": "199a60cf",
-         "type": "heading",
-         "className": "in-199a60cf ",
-         "anchor": "",
-         "html": "من قائمة المواد إلى المنتج… <em class=\"is-9\">قطاع التصنيع</em>",
-         "tag": "h1"
-        },
-        {
-         "id": "49fb0216",
-         "type": "text-editor",
-         "className": "in-49fb0216 ",
-         "anchor": "",
-         "html": "قوائم مواد وأوامر تشغيل وتكلفة إنتاج ومخزون مرتبط — لرؤية تكلفة وربحية كل أمر إنتاج."
-        },
-        {
-         "id": "70014e44",
-         "type": "container",
-         "className": "in-70014e44 ",
-         "anchor": "",
-         "children": [
-          {
-           "id": "1e7c0dbd",
-           "type": "button",
-           "className": "in-1e7c0dbd btn solid",
-           "anchor": "",
-           "text": "احجز عرضًا تجريبيًا",
-           "href": "/demo",
-           "external": true
-          },
-          {
-           "id": "64dd3f35",
-           "type": "button",
-           "className": "in-64dd3f35 btn ghost",
-           "anchor": "",
-           "text": "واتساب المبيعات",
-           "href": "https://wa.me/966591909277",
-           "external": true
-          }
-         ]
+          "id": "8ece81a",
+          "type": "text-editor",
+          "className": "in-8ece81a ",
+          "anchor": "",
+          "html": "<a href=\"/\">الرئيسية</a> › <a href=\"/industries\">القطاعات</a> › <span class=\"is-2\">التصنيع</span>"
         }
-       ]
-      },
-      {
-       "id": "12588639",
-       "type": "container",
-       "className": "in-12588639 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "5284b7b7",
-         "type": "image-slot",
-         "className": "in-5284b7b7 ",
-         "anchor": "",
-         "src": "/__l5e/assets-v1/482e95a7-1faf-4690-b9a4-7e0d5fa23847/module-inventory.jpg",
-         "alt": "التصنيع"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "17af09d2",
-   "type": "container",
-   "className": "in-17af09d2 digit benefits",
-   "anchor": "",
-   "children": [
-    {
-     "id": "418da559",
-     "type": "container",
-     "className": "in-418da559 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "235d2809",
-       "type": "text-editor",
-       "className": "in-235d2809 ",
-       "anchor": "",
-       "html": "تحديات القطاع"
-      },
-      {
-       "id": "2f36233e",
-       "type": "heading",
-       "className": "in-2f36233e ",
-       "anchor": "",
-       "html": "ما يربك المصنّعين",
-       "tag": "h2"
-      },
-      {
-       "id": "49706c45",
-       "type": "text-editor",
-       "className": "in-49706c45 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "74bdd288",
-     "type": "container",
-     "className": "in-74bdd288 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "6b76835f",
-       "type": "container",
-       "className": "in-6b76835f ",
-       "anchor": "",
-       "children": [
+      "id": "5148ec70",
+      "type": "container",
+      "className": "in-5148ec70 digit hero",
+      "anchor": "",
+      "children": [
         {
-         "id": "616f4fa4",
-         "type": "heading",
-         "className": "in-616f4fa4 ",
-         "anchor": "",
-         "html": "التكلفة",
-         "tag": "h3"
-        },
-        {
-         "id": "3a8fd945",
-         "type": "text-editor",
-         "className": "in-3a8fd945 ",
-         "anchor": "",
-         "html": "معرفة تكلفة كل أمر إنتاج بدقة."
+          "id": "31c6ee68",
+          "type": "container",
+          "className": "in-31c6ee68 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "4109bc1f",
+              "type": "container",
+              "className": "in-4109bc1f ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "2b55f584",
+                  "type": "text-editor",
+                  "className": "in-2b55f584 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-7\">● قطاع · التصنيع</span>"
+                },
+                {
+                  "id": "199a60cf",
+                  "type": "heading",
+                  "className": "in-199a60cf ",
+                  "anchor": "",
+                  "html": "من قائمة المواد إلى المنتج… <em class=\"is-9\">قطاع التصنيع</em>",
+                  "tag": "h1"
+                },
+                {
+                  "id": "49fb0216",
+                  "type": "text-editor",
+                  "className": "in-49fb0216 ",
+                  "anchor": "",
+                  "html": "قوائم مواد وأوامر تشغيل وتكلفة إنتاج ومخزون مرتبط — لرؤية تكلفة وربحية كل أمر إنتاج."
+                },
+                {
+                  "id": "70014e44",
+                  "type": "container",
+                  "className": "in-70014e44 ",
+                  "anchor": "",
+                  "children": [
+                    {
+                      "id": "1e7c0dbd",
+                      "type": "button",
+                      "className": "in-1e7c0dbd btn solid",
+                      "anchor": "",
+                      "text": "احجز عرضًا توضيحيًا",
+                      "href": "/demo",
+                      "external": false
+                    },
+                    {
+                      "id": "64dd3f35",
+                      "type": "button",
+                      "className": "in-64dd3f35 btn ghost",
+                      "anchor": "",
+                      "text": "واتساب المبيعات",
+                      "href": "https://wa.me/966591909277",
+                      "external": true
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "12588639",
+              "type": "container",
+              "className": "in-12588639 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "5284b7b7",
+                  "type": "image-slot",
+                  "className": "in-5284b7b7 ",
+                  "anchor": "",
+                  "src": "/__l5e/assets-v1/482e95a7-1faf-4690-b9a4-7e0d5fa23847/module-inventory.jpg",
+                  "alt": "التصنيع"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "415c65ae",
-       "type": "container",
-       "className": "in-415c65ae ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "34a08e8c",
-         "type": "heading",
-         "className": "in-34a08e8c ",
-         "anchor": "",
-         "html": "المواد",
-         "tag": "h3"
-        },
-        {
-         "id": "1aa98069",
-         "type": "text-editor",
-         "className": "in-1aa98069 ",
-         "anchor": "",
-         "html": "استهلاك المواد وربطه بالمخزون."
-        }
-       ]
-      },
-      {
-       "id": "4a036545",
-       "type": "container",
-       "className": "in-4a036545 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "48bf34cb",
-         "type": "heading",
-         "className": "in-48bf34cb ",
-         "anchor": "",
-         "html": "التخطيط",
-         "tag": "h3"
-        },
-        {
-         "id": "1b9d55fa",
-         "type": "text-editor",
-         "className": "in-1b9d55fa ",
-         "anchor": "",
-         "html": "تخطيط المواد حسب الطلبات."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "a72b3ad",
-   "type": "container",
-   "className": "in-a72b3ad digit inside",
-   "anchor": "inside",
-   "children": [
-    {
-     "id": "50ac224f",
-     "type": "container",
-     "className": "in-50ac224f ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "1f26e958",
-       "type": "text-editor",
-       "className": "in-1f26e958 ",
-       "anchor": "",
-       "html": "لقطة من النظام"
-      },
-      {
-       "id": "23432021",
-       "type": "heading",
-       "className": "in-23432021 ",
-       "anchor": "",
-       "html": "هكذا يبدو التصنيع داخل Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "29cdba23",
-       "type": "text-editor",
-       "className": "in-29cdba23 ",
-       "anchor": "",
-       "html": "قوائم مواد وأوامر تشغيل وتكلفة لكل أمر."
-      }
-     ]
+      ]
     },
     {
-     "id": "1d369bd2",
-     "type": "html",
-     "className": "in-1d369bd2 ",
-     "anchor": "",
-     "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / manufacturing</span></div><div class=\"is-43\">لقطة توضيحية · بيانات تجريبية</div></div>"
-    }
-   ]
-  },
-  {
-   "id": "3a2876b0",
-   "type": "container",
-   "className": "in-3a2876b0 digit sec",
-   "anchor": "",
-   "children": [
-    {
-     "id": "6e4ac3d6",
-     "type": "container",
-     "className": "in-6e4ac3d6 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "41e47368",
-       "type": "text-editor",
-       "className": "in-41e47368 ",
-       "anchor": "",
-       "html": "موديولات تهمّك"
-      },
-      {
-       "id": "4f5637b7",
-       "type": "heading",
-       "className": "in-4f5637b7 ",
-       "anchor": "",
-       "html": "ما يحتاجه التصنيع من Digit",
-       "tag": "h2"
-      },
-      {
-       "id": "65fb4927",
-       "type": "text-editor",
-       "className": "in-65fb4927 ",
-       "anchor": "",
-       "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
-      }
-     ]
+      "id": "17af09d2",
+      "type": "container",
+      "className": "in-17af09d2 digit benefits",
+      "anchor": "",
+      "children": [
+        {
+          "id": "418da559",
+          "type": "container",
+          "className": "in-418da559 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "235d2809",
+              "type": "text-editor",
+              "className": "in-235d2809 ",
+              "anchor": "",
+              "html": "تحديات القطاع"
+            },
+            {
+              "id": "2f36233e",
+              "type": "heading",
+              "className": "in-2f36233e ",
+              "anchor": "",
+              "html": "ما يربك المصنّعين",
+              "tag": "h2"
+            },
+            {
+              "id": "49706c45",
+              "type": "text-editor",
+              "className": "in-49706c45 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "74bdd288",
+          "type": "container",
+          "className": "in-74bdd288 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "6b76835f",
+              "type": "container",
+              "className": "in-6b76835f ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "616f4fa4",
+                  "type": "heading",
+                  "className": "in-616f4fa4 ",
+                  "anchor": "",
+                  "html": "التكلفة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "3a8fd945",
+                  "type": "text-editor",
+                  "className": "in-3a8fd945 ",
+                  "anchor": "",
+                  "html": "معرفة تكلفة كل أمر إنتاج بدقة."
+                }
+              ]
+            },
+            {
+              "id": "415c65ae",
+              "type": "container",
+              "className": "in-415c65ae ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "34a08e8c",
+                  "type": "heading",
+                  "className": "in-34a08e8c ",
+                  "anchor": "",
+                  "html": "المواد",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1aa98069",
+                  "type": "text-editor",
+                  "className": "in-1aa98069 ",
+                  "anchor": "",
+                  "html": "استهلاك المواد وربطه بالمخزون."
+                }
+              ]
+            },
+            {
+              "id": "4a036545",
+              "type": "container",
+              "className": "in-4a036545 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "48bf34cb",
+                  "type": "heading",
+                  "className": "in-48bf34cb ",
+                  "anchor": "",
+                  "html": "التخطيط",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1b9d55fa",
+                  "type": "text-editor",
+                  "className": "in-1b9d55fa ",
+                  "anchor": "",
+                  "html": "تخطيط المواد حسب الطلبات."
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
-     "id": "3c3f467a",
-     "type": "container",
-     "className": "in-3c3f467a ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "64b8742",
-       "type": "container",
-       "className": "in-64b8742 ",
-       "anchor": "",
-       "children": [
+      "id": "a72b3ad",
+      "type": "container",
+      "className": "in-a72b3ad digit inside",
+      "anchor": "inside",
+      "children": [
         {
-         "id": "ad06025",
-         "type": "html",
-         "className": "in-ad06025 ",
-         "anchor": "",
-         "html": "<span class=\"is-52\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-54\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-55\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-56\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+          "id": "50ac224f",
+          "type": "container",
+          "className": "in-50ac224f ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "1f26e958",
+              "type": "text-editor",
+              "className": "in-1f26e958 ",
+              "anchor": "",
+              "html": "لقطة من النظام"
+            },
+            {
+              "id": "23432021",
+              "type": "heading",
+              "className": "in-23432021 ",
+              "anchor": "",
+              "html": "هكذا يبدو التصنيع داخل Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "29cdba23",
+              "type": "text-editor",
+              "className": "in-29cdba23 ",
+              "anchor": "",
+              "html": "قوائم مواد وأوامر تشغيل وتكلفة لكل أمر."
+            }
+          ]
         },
         {
-         "id": "3b802bb6",
-         "type": "heading",
-         "className": "in-3b802bb6 ",
-         "anchor": "",
-         "html": "المخزون",
-         "tag": "h3"
-        },
-        {
-         "id": "5d2f984d",
-         "type": "text-editor",
-         "className": "in-5d2f984d ",
-         "anchor": "",
-         "html": "<a class=\"is-59\" href=\"/modules/inventory\">عرض الموديول ←</a>"
+          "id": "1d369bd2",
+          "type": "html",
+          "className": "in-1d369bd2 ",
+          "anchor": "",
+          "html": "<div class=\"is-37\"><div class=\"is-38\"><i class=\"is-39\"></i><i class=\"is-40\"></i><i class=\"is-41\"></i><span class=\"is-42\">digit-erp.com / app / manufacturing</span></div><div class=\"is-43\">لقطة توضيحية</div></div>"
         }
-       ]
-      },
-      {
-       "id": "5321dc4",
-       "type": "container",
-       "className": "in-5321dc4 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "221ef495",
-         "type": "html",
-         "className": "in-221ef495 ",
-         "anchor": "",
-         "html": "<span class=\"is-62\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-63\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-64\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-65\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "495476bc",
-         "type": "heading",
-         "className": "in-495476bc ",
-         "anchor": "",
-         "html": "المشتريات",
-         "tag": "h3"
-        },
-        {
-         "id": "3db9a216",
-         "type": "text-editor",
-         "className": "in-3db9a216 ",
-         "anchor": "",
-         "html": "<a class=\"is-68\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "743c8a34",
-       "type": "container",
-       "className": "in-743c8a34 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "31120977",
-         "type": "html",
-         "className": "in-31120977 ",
-         "anchor": "",
-         "html": "<span class=\"is-71\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-72\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-73\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-74\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "573898e5",
-         "type": "heading",
-         "className": "in-573898e5 ",
-         "anchor": "",
-         "html": "المبيعات",
-         "tag": "h3"
-        },
-        {
-         "id": "1484343d",
-         "type": "text-editor",
-         "className": "in-1484343d ",
-         "anchor": "",
-         "html": "<a class=\"is-77\" href=\"/modules/sales\">عرض الموديول ←</a>"
-        }
-       ]
-      },
-      {
-       "id": "10b220ee",
-       "type": "container",
-       "className": "in-10b220ee ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "74f6d23e",
-         "type": "html",
-         "className": "in-74f6d23e ",
-         "anchor": "",
-         "html": "<span class=\"is-80\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-81\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-82\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-83\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-84\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
-        },
-        {
-         "id": "45e6ba45",
-         "type": "heading",
-         "className": "in-45e6ba45 ",
-         "anchor": "",
-         "html": "المحاسبة",
-         "tag": "h3"
-        },
-        {
-         "id": "6f8e42dc",
-         "type": "text-editor",
-         "className": "in-6f8e42dc ",
-         "anchor": "",
-         "html": "<a class=\"is-87\" href=\"/modules/accounting\">عرض الموديول ←</a>"
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "adcdaeb",
-   "type": "container",
-   "className": "in-adcdaeb digit demo",
-   "anchor": "",
-   "children": [
-    {
-     "id": "4c38fbee",
-     "type": "container",
-     "className": "in-4c38fbee ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "5fd73d81",
-       "type": "text-editor",
-       "className": "in-5fd73d81 ",
-       "anchor": "",
-       "html": "لماذا Digit لقطاعك"
-      },
-      {
-       "id": "3b66bc0d",
-       "type": "heading",
-       "className": "in-3b66bc0d ",
-       "anchor": "",
-       "html": "لماذا Digit للتصنيع",
-       "tag": "h2"
-      },
-      {
-       "id": "26d7881e",
-       "type": "text-editor",
-       "className": "in-26d7881e ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "4bc71ac3",
-     "type": "container",
-     "className": "in-4bc71ac3 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "57a90acb",
-       "type": "container",
-       "className": "in-57a90acb ",
-       "anchor": "",
-       "children": [
+      "id": "3a2876b0",
+      "type": "container",
+      "className": "in-3a2876b0 digit sec",
+      "anchor": "",
+      "children": [
         {
-         "id": "3ad0b422",
-         "type": "heading",
-         "className": "in-3ad0b422 ",
-         "anchor": "",
-         "html": "تكلفة فعلية",
-         "tag": "h3"
+          "id": "6e4ac3d6",
+          "type": "container",
+          "className": "in-6e4ac3d6 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "41e47368",
+              "type": "text-editor",
+              "className": "in-41e47368 ",
+              "anchor": "",
+              "html": "موديولات تهمّك"
+            },
+            {
+              "id": "4f5637b7",
+              "type": "heading",
+              "className": "in-4f5637b7 ",
+              "anchor": "",
+              "html": "ما يحتاجه التصنيع من Digit",
+              "tag": "h2"
+            },
+            {
+              "id": "65fb4927",
+              "type": "text-editor",
+              "className": "in-65fb4927 ",
+              "anchor": "",
+              "html": "نفس المنصة — الموديولات تعمل معًا على قاعدة بيانات واحدة."
+            }
+          ]
         },
         {
-         "id": "10a9a718",
-         "type": "text-editor",
-         "className": "in-10a9a718 ",
-         "anchor": "",
-         "html": "مواد وتشغيل لكل أمر."
+          "id": "3c3f467a",
+          "type": "container",
+          "className": "in-3c3f467a ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "64b8742",
+              "type": "container",
+              "className": "in-64b8742 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "ad06025",
+                  "type": "html",
+                  "className": "in-ad06025 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-52\"><svg aria-label=\"Inventory\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-53\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"24\"></rect>\n<rect class=\"iv-54\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"24\"></rect>\n<rect class=\"iv-55\" height=\"26\" rx=\"5\" width=\"26\" x=\"24\" y=\"56\"></rect>\n<rect class=\"iv-56\" height=\"26\" rx=\"5\" width=\"26\" x=\"56\" y=\"56\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "3b802bb6",
+                  "type": "heading",
+                  "className": "in-3b802bb6 ",
+                  "anchor": "",
+                  "html": "المخزون",
+                  "tag": "h3"
+                },
+                {
+                  "id": "5d2f984d",
+                  "type": "text-editor",
+                  "className": "in-5d2f984d ",
+                  "anchor": "",
+                  "html": "<a class=\"is-59\" href=\"/modules/inventory\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "5321dc4",
+              "type": "container",
+              "className": "in-5321dc4 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "221ef495",
+                  "type": "html",
+                  "className": "in-221ef495 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-62\"><svg aria-label=\"Purchases\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-63\" height=\"48\" rx=\"5\" width=\"14\" x=\"24\" y=\"30\"></rect>\n<rect class=\"iv-64\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-65\" height=\"20\" rx=\"5\" width=\"14\" x=\"62\" y=\"58\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "495476bc",
+                  "type": "heading",
+                  "className": "in-495476bc ",
+                  "anchor": "",
+                  "html": "المشتريات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "3db9a216",
+                  "type": "text-editor",
+                  "className": "in-3db9a216 ",
+                  "anchor": "",
+                  "html": "<a class=\"is-68\" href=\"/modules/purchasing\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "743c8a34",
+              "type": "container",
+              "className": "in-743c8a34 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "31120977",
+                  "type": "html",
+                  "className": "in-31120977 ",
+                  "anchor": "",
+                  "html": "<span class=\"is-71\"><svg aria-label=\"Sales\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-72\" height=\"20\" rx=\"5\" width=\"14\" x=\"24\" y=\"58\"></rect>\n<rect class=\"iv-73\" height=\"32\" rx=\"5\" width=\"14\" x=\"43\" y=\"46\"></rect>\n<rect class=\"iv-74\" height=\"48\" rx=\"5\" width=\"14\" x=\"62\" y=\"30\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "573898e5",
+                  "type": "heading",
+                  "className": "in-573898e5 ",
+                  "anchor": "",
+                  "html": "المبيعات",
+                  "tag": "h3"
+                },
+                {
+                  "id": "1484343d",
+                  "type": "text-editor",
+                  "className": "in-1484343d ",
+                  "anchor": "",
+                  "html": "<a class=\"is-77\" href=\"/modules/sales\">عرض الموديول ←</a>"
+                }
+              ]
+            },
+            {
+              "id": "10b220ee",
+              "type": "container",
+              "className": "in-10b220ee ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "74f6d23e",
+                  "type": "html",
+                  "className": "in-74f6d23e ",
+                  "anchor": "",
+                  "html": "<span class=\"is-80\"><svg aria-label=\"Accounts\" height=\"24\" role=\"img\" viewbox=\"0 0 100 100\" width=\"24\" xmlns=\"http://www.w3.org/2000/svg\">\n<rect class=\"iv-81\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"34\"></rect>\n<rect class=\"iv-82\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"34\"></rect>\n<rect class=\"iv-83\" height=\"12\" rx=\"6\" width=\"44\" x=\"22\" y=\"54\"></rect>\n<rect class=\"iv-84\" height=\"12\" rx=\"5\" width=\"14\" x=\"70\" y=\"54\"></rect>\n</svg></span>"
+                },
+                {
+                  "id": "45e6ba45",
+                  "type": "heading",
+                  "className": "in-45e6ba45 ",
+                  "anchor": "",
+                  "html": "المحاسبة",
+                  "tag": "h3"
+                },
+                {
+                  "id": "6f8e42dc",
+                  "type": "text-editor",
+                  "className": "in-6f8e42dc ",
+                  "anchor": "",
+                  "html": "<a class=\"is-87\" href=\"/modules/accounting\">عرض الموديول ←</a>"
+                }
+              ]
+            }
+          ]
         }
-       ]
-      },
-      {
-       "id": "3f64c88a",
-       "type": "container",
-       "className": "in-3f64c88a ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "3a51c65a",
-         "type": "heading",
-         "className": "in-3a51c65a ",
-         "anchor": "",
-         "html": "مخزون مرتبط",
-         "tag": "h3"
-        },
-        {
-         "id": "24607667",
-         "type": "text-editor",
-         "className": "in-24607667 ",
-         "anchor": "",
-         "html": "صرف وإضافة تلقائية."
-        }
-       ]
-      },
-      {
-       "id": "7b061b26",
-       "type": "container",
-       "className": "in-7b061b26 ",
-       "anchor": "",
-       "children": [
-        {
-         "id": "51091a4f",
-         "type": "heading",
-         "className": "in-51091a4f ",
-         "anchor": "",
-         "html": "رؤية الربحية",
-         "tag": "h3"
-        },
-        {
-         "id": "3c8abe91",
-         "type": "text-editor",
-         "className": "in-3c8abe91 ",
-         "anchor": "",
-         "html": "لكل منتج وأمر."
-        }
-       ]
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "7472f3a4",
-   "type": "container",
-   "className": "in-7472f3a4 digit faq",
-   "anchor": "",
-   "children": [
-    {
-     "id": "5bf44a68",
-     "type": "container",
-     "className": "in-5bf44a68 ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "50f17864",
-       "type": "text-editor",
-       "className": "in-50f17864 ",
-       "anchor": "",
-       "html": "أسئلة متكررة"
-      },
-      {
-       "id": "660fd920",
-       "type": "heading",
-       "className": "in-660fd920 ",
-       "anchor": "",
-       "html": "أسئلة التصنيع",
-       "tag": "h2"
-      },
-      {
-       "id": "71414c52",
-       "type": "text-editor",
-       "className": "in-71414c52 ",
-       "anchor": "",
-       "html": "—"
-      }
-     ]
+      ]
     },
     {
-     "id": "6c69eea8",
-     "type": "accordion",
-     "className": "in-6c69eea8 qa",
-     "anchor": "",
-     "tabs": [
-      {
-       "title": "هل يحسب تكلفة الإنتاج؟",
-       "html": "<p>نعم، تكلفة المواد والتشغيل لكل أمر.</p>"
-      },
-      {
-       "title": "هل يرتبط بالمخزون؟",
-       "html": "<p>نعم، الاستهلاك يخصم والمنتج يُضاف تلقائيًا.</p>"
-      },
-      {
-       "title": "هل يدعم قوائم المواد؟",
-       "html": "<p>نعم، قوائم مواد بمستويات.</p>"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "id": "377fd3d6",
-   "type": "container",
-   "className": "in-377fd3d6 digit cta",
-   "anchor": "cta",
-   "children": [
-    {
-     "id": "67a29dce",
-     "type": "container",
-     "className": "in-67a29dce ",
-     "anchor": "",
-     "children": [
-      {
-       "id": "6be72510",
-       "type": "heading",
-       "className": "in-6be72510 ",
-       "anchor": "",
-       "html": "جاهز تتحكّم في إنتاجك وتكلفته؟",
-       "tag": "h2"
-      },
-      {
-       "id": "17e00648",
-       "type": "text-editor",
-       "className": "in-17e00648 ",
-       "anchor": "",
-       "html": "عرض تجريبي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
-      },
-      {
-       "id": "63fdd11",
-       "type": "container",
-       "className": "in-63fdd11 ",
-       "anchor": "",
-       "children": [
+      "id": "adcdaeb",
+      "type": "container",
+      "className": "in-adcdaeb digit demo",
+      "anchor": "",
+      "children": [
         {
-         "id": "570bf50e",
-         "type": "button",
-         "className": "in-570bf50e btn mint",
-         "anchor": "",
-         "text": "احجز عرضًا تجريبيًا",
-         "href": "/demo",
-         "external": true
+          "id": "4c38fbee",
+          "type": "container",
+          "className": "in-4c38fbee ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "5fd73d81",
+              "type": "text-editor",
+              "className": "in-5fd73d81 ",
+              "anchor": "",
+              "html": "لماذا Digit لقطاعك"
+            },
+            {
+              "id": "3b66bc0d",
+              "type": "heading",
+              "className": "in-3b66bc0d ",
+              "anchor": "",
+              "html": "لماذا Digit للتصنيع",
+              "tag": "h2"
+            },
+            {
+              "id": "26d7881e",
+              "type": "text-editor",
+              "className": "in-26d7881e ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
         },
         {
-         "id": "539e71e6",
-         "type": "button",
-         "className": "in-539e71e6 btn light",
-         "anchor": "",
-         "text": "واتساب المبيعات",
-         "href": "https://wa.me/966591909277",
-         "external": true
+          "id": "4bc71ac3",
+          "type": "container",
+          "className": "in-4bc71ac3 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "57a90acb",
+              "type": "container",
+              "className": "in-57a90acb ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3ad0b422",
+                  "type": "heading",
+                  "className": "in-3ad0b422 ",
+                  "anchor": "",
+                  "html": "تكلفة فعلية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "10a9a718",
+                  "type": "text-editor",
+                  "className": "in-10a9a718 ",
+                  "anchor": "",
+                  "html": "مواد وتشغيل لكل أمر."
+                }
+              ]
+            },
+            {
+              "id": "3f64c88a",
+              "type": "container",
+              "className": "in-3f64c88a ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "3a51c65a",
+                  "type": "heading",
+                  "className": "in-3a51c65a ",
+                  "anchor": "",
+                  "html": "مخزون مرتبط",
+                  "tag": "h3"
+                },
+                {
+                  "id": "24607667",
+                  "type": "text-editor",
+                  "className": "in-24607667 ",
+                  "anchor": "",
+                  "html": "صرف وإضافة تلقائية."
+                }
+              ]
+            },
+            {
+              "id": "7b061b26",
+              "type": "container",
+              "className": "in-7b061b26 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "51091a4f",
+                  "type": "heading",
+                  "className": "in-51091a4f ",
+                  "anchor": "",
+                  "html": "رؤية الربحية",
+                  "tag": "h3"
+                },
+                {
+                  "id": "3c8abe91",
+                  "type": "text-editor",
+                  "className": "in-3c8abe91 ",
+                  "anchor": "",
+                  "html": "لكل منتج وأمر."
+                }
+              ]
+            }
+          ]
         }
-       ]
-      }
-     ]
+      ]
+    },
+    {
+      "id": "7472f3a4",
+      "type": "container",
+      "className": "in-7472f3a4 digit faq",
+      "anchor": "",
+      "children": [
+        {
+          "id": "5bf44a68",
+          "type": "container",
+          "className": "in-5bf44a68 ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "50f17864",
+              "type": "text-editor",
+              "className": "in-50f17864 ",
+              "anchor": "",
+              "html": "أسئلة متكررة"
+            },
+            {
+              "id": "660fd920",
+              "type": "heading",
+              "className": "in-660fd920 ",
+              "anchor": "",
+              "html": "أسئلة التصنيع",
+              "tag": "h2"
+            },
+            {
+              "id": "71414c52",
+              "type": "text-editor",
+              "className": "in-71414c52 ",
+              "anchor": "",
+              "html": "—"
+            }
+          ]
+        },
+        {
+          "id": "6c69eea8",
+          "type": "accordion",
+          "className": "in-6c69eea8 qa",
+          "anchor": "",
+          "tabs": [
+            {
+              "title": "هل يحسب تكلفة الإنتاج؟",
+              "html": "<p>نعم، تكلفة المواد والتشغيل لكل أمر.</p>"
+            },
+            {
+              "title": "هل يرتبط بالمخزون؟",
+              "html": "<p>نعم، الاستهلاك يخصم والمنتج يُضاف تلقائيًا.</p>"
+            },
+            {
+              "title": "هل يدعم قوائم المواد؟",
+              "html": "<p>نعم، قوائم مواد بمستويات.</p>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "377fd3d6",
+      "type": "container",
+      "className": "in-377fd3d6 digit cta",
+      "anchor": "cta",
+      "children": [
+        {
+          "id": "67a29dce",
+          "type": "container",
+          "className": "in-67a29dce ",
+          "anchor": "",
+          "children": [
+            {
+              "id": "6be72510",
+              "type": "heading",
+              "className": "in-6be72510 ",
+              "anchor": "",
+              "html": "جاهز تتحكّم في إنتاجك وتكلفته؟",
+              "tag": "h2"
+            },
+            {
+              "id": "17e00648",
+              "type": "text-editor",
+              "className": "in-17e00648 ",
+              "anchor": "",
+              "html": "عرض توضيحي ببيانات قطاعك — 30 دقيقة، بدون التزام. نرد خلال 4 ساعات عمل."
+            },
+            {
+              "id": "63fdd11",
+              "type": "container",
+              "className": "in-63fdd11 ",
+              "anchor": "",
+              "children": [
+                {
+                  "id": "570bf50e",
+                  "type": "button",
+                  "className": "in-570bf50e btn mint",
+                  "anchor": "",
+                  "text": "احجز عرضًا توضيحيًا",
+                  "href": "/demo",
+                  "external": false
+                },
+                {
+                  "id": "539e71e6",
+                  "type": "button",
+                  "className": "in-539e71e6 btn light",
+                  "anchor": "",
+                  "text": "واتساب المبيعات",
+                  "href": "https://wa.me/966591909277",
+                  "external": true
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
-   ]
-  }
- ]
+  ]
 }

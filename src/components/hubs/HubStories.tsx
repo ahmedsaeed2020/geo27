@@ -42,7 +42,7 @@ const C = {
   outcome: { ar: 'الناتج', en: 'Outcome' },
   decision: { ar: 'القرار المطلوب', en: 'Decision needed' },
   source: { ar: 'السجل الذي يثبت ذلك', en: 'Source record' },
-  zoom: { ar: 'تفصيل مكبّر من شاشة فعلية (بيانات تجريبية)', en: 'Magnified detail from a real screen (demo data)' },
+  zoom: { ar: 'تفصيل مكبّر من شاشة فعلية', en: 'Magnified detail from a real screen' },
   full: { ar: 'عرض الشاشة كاملة', en: 'View the full screen' },
   noShot: { ar: 'لا توجد شاشة فعلية لهذه الخطوة على الموقع؛ تُعرض في جلسة الديمو.', en: 'No real screen of this step on the site; it is shown in a demo session.' },
   record: { ar: 'السجل', en: 'Record' },

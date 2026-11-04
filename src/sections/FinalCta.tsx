@@ -20,7 +20,7 @@ export default function FinalCta() {
             href="/demo"
             className="rounded-[11px] bg-mint px-[26px] py-[13px] text-[15px] font-bold text-ink transition-colors hover:bg-[#54e0a8]"
           >
-            احجز عرضاً تجريبياً
+            احجز عرضًا توضيحيًا
           </a>
           <a
             href="/demo"

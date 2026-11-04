@@ -247,7 +247,7 @@ export const PRO_PAGES: ProPageConfig[] = [
     sections: [
       s('explorer', 'مستكشف القدرات', 'Capability explorer'),
       s('document', 'المستند ليس نموذج حقول فقط', 'A document is more than a form'),
-      s('tiers', 'متاح الآن، وقيد التحقق، وحسب التهيئة', 'Available now, being verified, defined at set-up'),
+      s('tiers', 'متاح الآن، ونؤكده في عرضك، وحسب التهيئة', 'Available now, confirmed in your demo, defined at set-up'),
       s('cta', 'اختر القدرة التي تريد رؤيتها', 'Pick the capability you want to see'),
     ],
   },

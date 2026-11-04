@@ -1,13 +1,13 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import ProductHeroV3 from '@/sections/ProductHeroV3';
+import HeroSlider from '@/sections/HeroSlider';
 import AppExplorer from '@/sections/AppExplorer';
 import WorkflowJourney from '@/sections/WorkflowJourney';
 import LeadCapturePanel from '@/components/LeadCapturePanel';
 import CmsBlocks from '@/components/cms/CmsBlocks';
 import TrustStrip from "@/sections/TrustStrip";
 import ChaosToControl from "@/sections/ChaosToControl";
-import ProductBand from "@/sections/ProductBand";
+import ProductSlider from "@/sections/ProductSlider";
 import Modules from "@/sections/Modules";
 import ProductShowcase from "@/sections/ProductShowcase";
 import Capabilities from "@/sections/Capabilities";
@@ -25,13 +25,13 @@ import { EditableSections } from '@/components/cms/SectionText';
 import { arrangeSections, HOME_SECTIONS, type HomeSectionId } from '@/content/section-registry';
 
 const RENDER: Record<HomeSectionId, () => ReactNode> = {
-  hero: () => <ProductHeroV3 />,
+  hero: () => <HeroSlider />,
   trust: () => <TrustStrip />,
   layers: () => <PlatformLayers variant="home" />,
   explorer: () => <AppExplorer />,
   journey: () => <WorkflowJourney />,
   chaos: () => <ChaosToControl />,
-  band: () => <ProductBand />,
+  band: () => <ProductSlider />,
   modules: () => <Modules />,
   portfolio: () => <SpecialistDiscovery />,
   showcase: () => <ProductShowcase />,

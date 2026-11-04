@@ -16,6 +16,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { getDraftSiteConfig } from '@/lib/cms-admin.functions';
 import type { SiteConfig } from '@/lib/site-config-schema';
 import ChatWidget from "@/components/chat/ChatWidget";
+import FormCtaRouting from "@/components/FormCtaRouting";
 import { loadSite, previewTokenFrom } from '@/lib/cms-query';
 import { CmsProvider } from '@/components/cms/CmsContext';
 import PreviewBanner, { SettingsDraftBanner, type SettingsDraftState } from '@/components/cms/PreviewBanner';
@@ -205,6 +206,7 @@ function RootComponent() {
       </CmsProvider>
       <ClientOnly fallback={null}>
         {!privateArea && <ChatWidget />}
+        {!privateArea && <FormCtaRouting />}
       </ClientOnly>
     </QueryClientProvider>
   );

@@ -15,13 +15,13 @@ export type SectionDef = {
 };
 
 export const HOME_SECTIONS = [
-  { id: 'hero', label: 'الواجهة الرئيسية (ثابتة)', locked: true },
+  { id: 'hero', label: 'سلايدر المنتجات الرئيسي (ثابت)', locked: true },
   { id: 'trust', label: 'شريط الثقة' },
   { id: 'layers', label: 'المنصة والتطبيقات والتنفيذ', heading: { ar: 'منصة أعمال. تطبيقات متخصصة. قدرة على التنفيذ.', en: 'A business platform. Specialist applications. The capability to deliver.' } },
   { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
   { id: 'journey', label: 'رحلة العمل', heading: { ar: 'نفس العمل. أربع زوايا أوضح.', en: 'One operation. Four clearer perspectives.' } },
   { id: 'chaos', label: 'من الفوضى إلى التحكّم', heading: { ar: 'من الفوضى… إلى التحكّم' } },
-  { id: 'band', label: 'شريط المحاسبة', heading: { ar: 'محاسبتك أوضح' } },
+  { id: 'band', label: 'سلايدر المنتجات (محاسبتك أوضح)', heading: { ar: 'محاسبتك أوضح' } },
   { id: 'modules', label: 'الموديولات', heading: { ar: 'منصة واحدة… لكل إدارات شركتك' } },
   { id: 'portfolio', label: 'محفظة الحلول (المنتجات الستة والأدوار)', heading: { ar: 'محفظة حلول واحدة… لا باقة واحدة لكل شيء.', en: 'One solution portfolio… not one bundle for everything.' } },
   { id: 'showcase', label: 'شاشات النظام الحقيقية', heading: HOME_SHOWCASE.title },

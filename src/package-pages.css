@@ -71,6 +71,8 @@
 .package-faq details[open] summary svg { transform: rotate(180deg); }
 .package-faq details > div { padding: 0 20px 22px; max-width: 1000px; animation: package-preview-fade 250ms ease; }
 .package-hosted-form { padding-block: 24px; }
+.package-inline-form { text-align: start; }
+.package-inline-form > form { max-width: 760px; margin-inline: auto; }
 .package-hosted-form a { white-space: normal; height: auto; min-height: 44px; text-align: center; }
 .package-page .cta > div { padding: 50px 32px; align-items: center; text-align: center; gap: 0; border-radius: 22px; }
 .package-page .cta h2 { color: var(--primary-foreground); font-size: 28px; margin-bottom: 10px; }
