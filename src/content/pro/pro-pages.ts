@@ -295,6 +295,17 @@ export const PRO_LEAD_TOPICS: ReadonlySet<string> = new Set([
   ...Array.from({ length: 12 }, (_, i) => `EXE-${String(i + 1).padStart(2, '0')}`),
 ]);
 export const proLeadTopic = (topic: string): string => (PRO_LEAD_TOPICS.has(topic) ? topic : '');
+
+/** Arabic label of a stored lead topic, for the admin inbox: page › workspace, or the executive question code. */
+export function proTopicLabel(topic: string | null | undefined): string {
+  if (!topic || !PRO_LEAD_TOPICS.has(topic)) return '';
+  if (topic.startsWith('EXE-')) return `${proPageByKey('cfo')?.label.ar ?? ''} · ${topic}`;
+  const page = proPageByKey(topic);
+  if (page) return page.label.ar;
+  const owner = PRO_PAGES.find(p => p.sections.some(s => s.id === topic));
+  const section = owner?.sections.find(s => s.id === topic);
+  return owner && section ? `${owner.label.ar} · ${section.title.ar}` : topic;
+}
 const bare = (path: string) => (path.replace(/^\/en(?=\/|$)/, '') || '/').replace(/\/$/, '') || '/';
 export const proPageByPath = (path: string): ProPageConfig | undefined => PRO_PAGES.find(p => p.path === bare(path));
 

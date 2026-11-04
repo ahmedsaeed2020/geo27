@@ -4,6 +4,7 @@ import { Download, Mail, Phone } from 'lucide-react';
 import { updateLead, LEAD_STATUSES } from '@/lib/cms.functions';
 import { LEAD_RECIPIENT } from '@/lib/leads-schema';
 import { productByKey } from '@/content/catalog';
+import { proTopicLabel } from '@/content/pro/pro-pages';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { EmptyState, errorText, formatDate, NativeSelect, STATUS_LABELS, StatusPill, teamName, useRefresh, type Lead, type TeamMember } from './shared';
@@ -29,6 +30,7 @@ export function leadsToCsv(rows: Lead[], team: TeamMember[]): string {
     ['job_role', r => r.job_role],
     ['product', r => r.product],
     ['department', r => r.department],
+    ['topic', r => r.topic],
     ['status', r => r.status],
     ['assigned_to', r => (r.assigned_to ? teamName(team, r.assigned_to) : '')],
     ['page_path', r => r.page_path],
@@ -165,6 +167,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
             {r.message && <p className="whitespace-pre-line text-sm">{r.message}</p>}
             <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
               {leadContextLabel(r.product, r.department) && <StatusPill tone="info">{leadContextLabel(r.product, r.department)}</StatusPill>}
+              {proTopicLabel(r.topic) && <StatusPill tone="info">{proTopicLabel(r.topic)}</StatusPill>}
               <span dir="ltr">{r.page_path}</span>
               <span>{r.locale === 'en' ? 'English' : 'العربية'}</span>
               <span>{formatDate(r.created_at)}</span>
