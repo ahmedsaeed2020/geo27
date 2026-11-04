@@ -61,7 +61,7 @@ export type ProSectionId = (typeof PRO_SECTIONS)[number]['id'];
 
 export const sectionIds = <T extends readonly SectionDef[]>(defs: T) => defs.map(d => d.id) as unknown as readonly T[number]['id'][];
 
-/** Locked sections stay first and visible; the rest follow the stored order, with new source sections appended. */
+/** Locked sections stay first and visible; the rest follow the stored order, with new source sections inserted after their source predecessor. */
 export function arrangeSections<T extends readonly SectionDef[]>(defs: T, layout: SectionLayoutConfig): { id: T[number]['id']; enabled: boolean; locked: boolean }[] {
   const locked = defs.filter(d => d.locked).map(d => ({ id: d.id as T[number]['id'], enabled: true, locked: true }));
   const movable = orderSections(defs.filter(d => !d.locked).map(d => d.id as T[number]['id']), layout).map(s => ({ ...s, locked: false }));

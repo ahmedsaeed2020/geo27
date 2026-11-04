@@ -108,7 +108,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   catalog: parseConfig('catalog', {}),
 };
 
-/** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections keep their place at the end. */
+/** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections are placed after the section that precedes them in the source order. */
 export function orderSections<T extends string>(source: readonly T[], layout: SectionLayoutConfig): { id: T; enabled: boolean }[] {
   const known = new Set<string>(source);
   const seen = new Set<string>();
