@@ -161,13 +161,12 @@
 }
 @media (max-width: 900px) {
   .hx { min-height: 0; }
-  .hx-inner { grid-template-columns: minmax(0, 1fr); padding-top: 26px; gap: 34px; }
+  .hx-inner { grid-template-columns: minmax(0, 1fr); padding-top: 14px; gap: 34px; }
   .hx-visual { width: min(100% - 28px, 460px); max-height: none; aspect-ratio: 5 / 5.4; margin-bottom: 26px; }
   .hx-screen, .hx-flow { inset-inline-end: -14px; width: 84%; }
   .hx-points { display: none; }
   /* On narrow screens the product picker moves above the copy so every product is one tap from the first fold. */
   .hx-rail { order: -1; padding: 12px 16px 0; gap: 10px; }
-  .hx-inner { padding-top: 14px; }
   .hx-controls .hx-ctl:not([aria-pressed]) { display: none; }
   .hx-tabs { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 4px; }
   .hx-tabs::-webkit-scrollbar { display: none; }
