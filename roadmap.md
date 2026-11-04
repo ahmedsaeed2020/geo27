@@ -1,4 +1,18 @@
 # Requested pages
+# DIGIT Website V4 — remaining products & corporate experience (owner brief 2026-11-04 17:07)
+Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate profile = content authority, current site = design authority; no live publish.
+- [ ] Phase 1: source map — 36-page profile (pp. 1–5, 21–36) to pages/images; reconcile Construction 9 groups; CRM 7, FSM+ITM 9; evidence gaps recorded.
+- [ ] Catalog + Mega Menu: six families (Pro, HR, Construction, CRM, FSM+ITM, POS) in the one registry; no second nav.
+- [ ] Construction hub: Project 360 journey (BOQ → Contract → Execution → Claim → Collection), portfolio explorer, change-impact and claims/cost stories; nine department pages (CMS drafts).
+- [ ] CRM hub: Lead-to-Deal explorer, Sales Manager workbench; seven group pages (CMS drafts); distinct from Pro Selling.
+- [ ] POS hub: selling / store operations / connected operations chapters; 12-segment searchable industry explorer (no thin pages).
+- [ ] FSM+ITM hub (new route) with service journey and inspection story (retest-fail stays open); nine group pages (CMS drafts).
+- [ ] About: three layers (platform / specialist apps / technology & delivery), DIGIT ↔ TRILOGY relationship.
+- [ ] Implementation & delivery page: Discovery → Scope → Data → Configuration → Training → Go-live; included vs separately scoped.
+- [ ] Home targeted additions: three-layer model, six-family explorer, connected stories, role discovery (4 new roles), delivery, contextual demo — Pro/HR home content unchanged.
+- [ ] Contextual lead forms on every new hub/department/service page (product, department/industry, workflow, page, language, UTM) — E2E saved and read back.
+- [ ] SEO/sitemap/hreflang for new routes; drafts noindex; tests for rules; QA desktop/tablet/mobile AR/EN; Pro/HR regression check; screenshots + handoff report.
+
 # DIGIT Pro V4 complete product pages (owner brief 2026-11-04 16:51)
 - [x] Phase A: source map — 321 IDs mapped to evidence tiers (available / being verified / scoped), screenshot→feature provenance, 117 runnable reports (2 e-invoicing entries withheld); rules kept as tests.
 - [x] Phase B: five department pages expanded in place (4 workspaces each with Overview · Documents & Work · Reports tabs, distinct visual signature, journeys, decisions, cross-links, contextual demo); original hero, proof band, FAQ and CTA kept; AR/EN.
