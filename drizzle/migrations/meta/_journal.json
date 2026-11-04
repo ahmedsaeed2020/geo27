@@ -50,6 +50,13 @@
       "when": 1793790473094,
       "tag": "0006_product_catalog_departments",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1793790494596,
+      "tag": "0007_inventory_draft_drop_unverified_zoom",
+      "breakpoints": true
     }
   ]
 }
