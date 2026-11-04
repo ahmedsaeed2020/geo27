@@ -11,8 +11,8 @@ export type LeadContext = { product?: string; department?: string };
 export function focusLeadForm(context?: LeadContext): boolean {
   const form = document.querySelector<HTMLFormElement>('[data-contextual-form]');
   if (!form) return false;
-  if (context) {
-    form.dataset['leadProduct'] = context.product ?? '';
+  if (context && typeof context.product === 'string') {
+    form.dataset['leadProduct'] = context.product;
     form.dataset['leadDepartment'] = context.department ?? '';
   }
   form.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center' });
