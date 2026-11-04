@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from 'react';
+import { useEffect, useState, type CSSProperties, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { NavLink } from '@/components/nav/nav-links';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
@@ -120,7 +120,7 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
         <div className="dp-wrap">
           <p className="hr-kicker">{C.journeyEyebrow[locale]}</p>
           <h2 id="hr-journey-title">{C.journeyTitle[locale]}</h2>
-          <ol role="list" className="hr-journey-rail" style={{ '--hr-steps': String(source.journey.steps.length) } as React.CSSProperties}>
+          <ol role="list" className="hr-journey-rail" style={{ '--hr-steps': String(source.journey.steps.length) } as CSSProperties}>
             {source.journey.steps.map((s, i) => (
               <li key={i} data-motion-step>
                 <span className="hr-journey-no" aria-hidden="true">
