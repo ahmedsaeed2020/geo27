@@ -1,7 +1,7 @@
 import { CheckCircle2, CircleAlert } from 'lucide-react';
 import { departmentById, departmentByPath, productByKey } from '@/content/catalog';
 import { SHOT_GROUPS } from '@/content/screens';
-import { hrModuleBySlug } from '@/content/hr/hr-modules';
+import { departmentSource } from '@/lib/cms-schema';
 import { departmentPublishIssues, type CmsContent } from '@/lib/cms-schema';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
