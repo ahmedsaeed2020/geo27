@@ -223,7 +223,7 @@
   },
   "services-3-erpnext-service": {
     "background": "/__l5e/assets-v1/0c35f687-c6fb-447c-b443-7106b67887c6/services-3-erpnext-service-background.jpg",
-    "body": "/__l5e/assets-v1/6beee3e0-4808-4e37-98ba-7bc5b998064e/services-3-erpnext-service-body.jpg"
+    "body": "/__l5e/assets-v1/c400a4eb-3a0a-43a7-bef3-f40e3656c9b6/services-3-erpnext-service-body-modest.jpg"
   },
   "services-3-hosting": {
     "background": "/__l5e/assets-v1/5b007b4f-b718-4361-995d-da9ffb76d6df/services-3-hosting-background.jpg",
@@ -277,7 +277,7 @@
     "photographicBody": true
   },
   "contact-4": {
-    "background": "/__l5e/assets-v1/dac6c66a-263b-4b2e-8420-b45674e34047/contact-4-background.jpg",
+    "background": "/__l5e/assets-v1/d3209060-54f6-4e2a-b41b-654481bd50e5/contact-4-background-modest.jpg",
     "body": "/__l5e/assets-v1/48a2003b-877a-45de-a9c7-b35bbacbcebd/contact-4-body.jpg"
   },
   "industries": {
@@ -300,8 +300,8 @@
     "body": "/__l5e/assets-v1/19d01e25-be50-4438-86a3-1640fad1c5ee/saudi-localization-body.jpg"
   },
   "demo-3": {
-    "background": "/__l5e/assets-v1/b7a6ca30-8c38-419a-936e-2f08ac3f5472/demo-3-background.jpg",
-    "body": "/__l5e/assets-v1/35042483-302b-4773-8336-75e5eb5c2338/demo-3-body.jpg"
+    "background": "/__l5e/assets-v1/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
+    "body": "/__l5e/assets-v1/984f2de0-4f9f-4abc-a0c4-193752ac8b10/demo-3-body-modest.jpg"
   },
   "services-3": {
     "background": "/__l5e/assets-v1/f99f0f3f-539b-4099-8ddf-a224b4c72fe9/services-3-background.jpg",
@@ -323,11 +323,67 @@
     "body": "/__l5e/assets-v1/28bb8a6f-5a88-4409-bc3a-2fa52d8129d6/terms-body.jpg"
   },
   "pro": {
-    "background": "/__l5e/assets-v1/3866e5da-d656-439f-832b-3b8b23255b04/pro-background.jpg",
-    "body": "/__l5e/assets-v1/0fd70429-34c7-4dc4-ba46-ad25314c1a74/pro-body.jpg"
+    "background": "/__l5e/assets-v1/4e7e1e72-e817-4f5a-8a5b-1d849252163a/pro-background-modest.jpg",
+    "body": "/__l5e/assets-v1/839b6757-3de9-4f14-84e1-41b190f32c2f/pro-body-modest.jpg"
   },
   "trust-security": {
     "background": "/__l5e/assets-v1/555ad65f-16cb-4700-be23-b724405d6730/trust-security-background.jpg",
     "body": "/__l5e/assets-v1/88028e41-0ed0-40af-a881-43d64a794a44/trust-security-body.jpg"
+  },
+  "hr-core-hr": {
+    "background": "/__l5e/assets-v1/83f3e044-0739-45c8-ab1e-86c1a6c83d2f/hr-core-hr-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
+    "body": "/__l5e/assets-v1/2956fe78-6de4-4edf-952c-5be9eba7e9bb/hr-core-hr-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/e8370aa3-1dff-451a-9301-9973f0fb46ff/hr-core-hr-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-talent-hcm": {
+    "background": "/__l5e/assets-v1/f83e5714-4326-45f3-923c-83cfab068f0d/hr-talent-hcm-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/895e9de5-9a96-48bd-b664-13b05f0925b0/hr-talent-hcm-intro-960.webp",
+    "body": "/__l5e/assets-v1/18fde4d5-5b75-49e7-ae53-71e21e9ba6c9/hr-talent-hcm-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/2216633b-ba9e-497c-8e74-c852baf7e7b0/hr-talent-hcm-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-workforce-management": {
+    "background": "/__l5e/assets-v1/f3121dac-84a3-4138-ad38-e1af3a04ce35/hr-workforce-management-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/4399c7d5-224c-4243-977e-bc6ac26bec19/hr-workforce-management-intro-960.webp",
+    "body": "/__l5e/assets-v1/4bf8f6e1-08c9-4f38-b33f-970b3d296586/hr-workforce-management-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/61dfd884-5802-4069-9a35-6fe21a2542ff/hr-workforce-management-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-payroll-rewards": {
+    "background": "/__l5e/assets-v1/149c22f8-c720-43d4-8b79-635ac94052ad/hr-payroll-rewards-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/1494b459-9ee3-43dc-8f29-6cc43b3a2266/hr-payroll-rewards-intro-960.webp",
+    "body": "/__l5e/assets-v1/78d7858b-666d-4848-9bee-5efdad9829c6/hr-payroll-rewards-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/c8caa0dd-d214-4dc6-bbd8-1a1fcdcffdb4/hr-payroll-rewards-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-employee-experience": {
+    "background": "/__l5e/assets-v1/a2e68dd7-3e97-4f5a-94c2-7ee92f10b73a/hr-employee-experience-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
+    "body": "/__l5e/assets-v1/b5e7a794-f359-4c26-add8-4e842e2226da/hr-employee-experience-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/6e9fa563-ae2d-4496-b45d-281347609ce8/hr-employee-experience-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-people-intelligence": {
+    "background": "/__l5e/assets-v1/c4fb8b17-9255-443e-b7a7-a45845c1cfd2/hr-people-intelligence-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/18cee6cf-6328-4892-a4d8-f5d3faed27ff/hr-people-intelligence-intro-960.webp",
+    "body": "/__l5e/assets-v1/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/e9565384-ee6a-48f8-b069-3e9004dfe8b9/hr-people-intelligence-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-administration-governance": {
+    "background": "/__l5e/assets-v1/cb791d9e-329f-4445-a0db-ba1e6dcb8cab/hr-administration-governance-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/bf4c3869-2ced-43ab-8a79-25afa2cb423f/hr-administration-governance-intro-960.webp",
+    "body": "/__l5e/assets-v1/23cdc153-89bc-45cf-be40-263cab0ffba6/hr-administration-governance-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/7384c7ea-634a-4886-8e75-a5b9ec183d03/hr-administration-governance-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
   }
 }

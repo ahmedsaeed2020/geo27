@@ -13,6 +13,7 @@ import { resolveSourceLocale, type CmsBlock, type CmsContent } from '@/lib/cms-s
 import type { Locale } from '@/lib/i18n';
 import HrCapability, { capVariants } from './HrCapability';
 import HrHero from './HrHero';
+import HrScene, { hasHrScene } from './HrScene';
 import type { ResolvedScreen } from './HrScreens';
 import { HR_COPY as C } from './hr-copy';
 import '@/hr-modules.css';
@@ -71,6 +72,7 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
   const Arrow = locale === 'ar' ? ArrowLeft : ArrowRight;
   const siblings = family?.departments.filter(d => d.id !== config.slug) ?? [];
   const siblingsRef = useScrollEdges<HTMLDivElement>();
+  const scene = hasHrScene(config.slug) ? '' : undefined;
   let splitCount = 0;
 
   return (
@@ -105,7 +107,8 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
         </nav>
       )}
 
-      <section className="hr-intro" aria-labelledby="hr-intro-title">
+      <section className="hr-intro" aria-labelledby="hr-intro-title" data-scene={scene}>
+        <HrScene slug={config.slug} kind="intro" />
         <div className="dp-wrap">
           <p className="hr-kicker">{C.problemEyebrow[locale]}</p>
           <div className="hr-intro-grid">
@@ -246,7 +249,8 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
         </div>
       </section>
 
-      <section className="hr-cta" aria-labelledby="hr-cta-title">
+      <section className="hr-cta" aria-labelledby="hr-cta-title" data-scene={scene}>
+        <HrScene slug={config.slug} kind="cta" />
         <div className="dp-wrap">
           <div>
             <p className="hr-kicker">{C.ctaEyebrow[locale]}</p>
