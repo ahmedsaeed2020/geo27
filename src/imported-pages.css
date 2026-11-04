@@ -63,6 +63,7 @@
 /* Industry "why Digit" bands sit on the dark brand green: lift the eyebrow to mint and body text to soft white. */
 [class*="import-industries-"] .digit.demo { --import-source-7: var(--import-source-14); --import-source-1: var(--import-source-13); }
 /* Pharmacy "the path" band is light: its heading was white and its eyebrow pale mint. */
-.import-pos-solutions-pharmacies .digit.pos-flow { --import-source-8: var(--import-source-2); --import-source-14: var(--import-source-7); }
+.import-pos-solutions-pharmacies .digit.pos-flow { --import-source-8: var(--import-source-2); }
+.import-pos-solutions-pharmacies .in-2b3f67c0 { color: var(--import-source-7); }
 /* Partnership "register now" eyebrow above the form was white on the light page. */
 .import-partnership .is-173 { color: var(--import-source-7); }
