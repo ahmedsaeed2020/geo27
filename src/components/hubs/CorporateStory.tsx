@@ -17,6 +17,7 @@ import {
   PRODUCT_STORIES,
   TRILOGY,
 } from "@/content/corporate";
+import { screenById } from "@/content/screens";
 import { photo as photoOf } from "@/content/specialist/photos";
 import { useLocale, type Locale } from "@/lib/i18n";
 import { Head, useTabs } from "./story-kit";
@@ -387,11 +388,15 @@ export function SpecialistDiscovery() {
   const base = useId();
   const families = useCatalog();
   const demo = useDemoRequest();
-  const { active: index, tabProps } = useTabs(families.length, locale);
+  // Opens on DIGIT Construction: Pro and HR already have their own sections further down the home page.
+  const start = Math.max(0, families.findIndex((f) => f.key === "construction"));
+  const { active: index, tabProps } = useTabs(families.length, locale, false, start);
   const family = families[index];
   if (!family) return null;
   const story = PRODUCT_STORIES[family.key];
   const pic = story ? photoOf(story.photo) : undefined;
+  // Pro and HR show one of their real product screens (never a generated or withdrawn screen).
+  const screen = story ? undefined : screenById(family.shot ?? family.departments.find((d) => d.shot)?.shot ?? "");
   return (
     <section className="hs hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
