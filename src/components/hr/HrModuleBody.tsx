@@ -14,7 +14,7 @@ import HrCapability, { capVariants } from './HrCapability';
 import HrHero from './HrHero';
 import type { ResolvedScreen } from './HrScreens';
 import { HR_COPY as C } from './hr-copy';
-import '@/hr-modules.css';
+import '../../hr-modules.css';
 
 /** Page copy for a module: loader data on routes (SSR-safe), loaded on demand in the admin preview. */
 export function useHrSource(slug: string, initial: HrModuleContent | null): HrModuleContent | null {
