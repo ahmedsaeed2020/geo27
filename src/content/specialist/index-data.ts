@@ -719,8 +719,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    "en": "The CRM board, “My day” and the manager workbench: what waits for each rep and what needs the manager’s decision."
   },
   "headline": {
-   "ar": "يوم البائع وقرار المدير… في شاشتين واضحتين",
-   "en": "The rep’s day and the manager’s decision… on two clear screens"
+   "ar": "يوم البائع وقرار المدير… كل منهما يبدأ من الخطوة التالية",
+   "en": "The rep’s day and the manager’s decision… each starts from the next step"
   },
   "seoDescription": {
    "ar": "نظرة عامة على DIGIT CRM: لوحة علاقات العملاء وعملي اليوم ومنصة المدير بالعملاء غير المسندين والمتابعات المتأخرة وزمن الاستجابة.",
@@ -731,10 +731,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [
-   "crm-02-manager"
-  ],
-  "illustrative": false,
+  "heroShots": [],
+  "illustrative": true,
   "signature": "matrix",
   "sections": [
    {
@@ -745,24 +743,17 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     }
    },
    {
-    "id": "screens",
-    "title": {
-     "ar": "منصة المدير كما تظهر في النظام",
-     "en": "The manager workbench as it appears in the system"
-    }
-   },
-   {
     "id": "records",
     "title": {
-     "ar": "ما تعرضه الشاشة",
-     "en": "What the screen shows"
+     "ar": "ما تعرضه منصة المدير",
+     "en": "What the manager workbench shows"
     }
    },
    {
     "id": "roles",
     "title": {
-     "ar": "دوران وشاشتان",
-     "en": "Two roles, two screens"
+     "ar": "دوران… ونقطتا بداية",
+     "en": "Two roles… two starting points"
     }
    },
    {
@@ -804,10 +795,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    25
   ],
   "photo": "crm-sales-call",
-  "heroShots": [
-   "crm-02-manager"
-  ],
-  "illustrative": false,
+  "heroShots": [],
+  "illustrative": true,
   "signature": "timeline",
   "sections": [
    {
@@ -877,10 +866,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    25
   ],
   "photo": "crm-sales-call",
-  "heroShots": [
-   "crm-01-deals"
-  ],
-  "illustrative": false,
+  "heroShots": [],
+  "illustrative": true,
   "signature": "lanes",
   "sections": [
    {
@@ -888,13 +875,6 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "كل صفقة لها مرحلة وخطوة تالية",
      "en": "Every deal has a stage and a next step"
-    }
-   },
-   {
-    "id": "screens",
-    "title": {
-     "ar": "لوحة الصفقات الفعلية",
-     "en": "The real deals board"
     }
    },
    {
@@ -951,10 +931,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [
-   "crm-02-manager"
-  ],
-  "illustrative": false,
+  "heroShots": [],
+  "illustrative": true,
   "signature": "timeline",
   "sections": [
    {
@@ -1095,10 +1073,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [
-   "crm-02-manager"
-  ],
-  "illustrative": false,
+  "heroShots": [],
+  "illustrative": true,
   "signature": "ledger",
   "sections": [
    {
@@ -1153,8 +1129,8 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    "en": "Administration & Governance"
   },
   "summary": {
-   "ar": "الأدوار والصلاحيات والمراحل والمصادر والأهداف، وبيئة تجريبية معزولة للتدريب.",
-   "en": "Roles, permissions, stages, sources and targets, plus an isolated demo environment for training."
+   "ar": "الأدوار والصلاحيات ومراحل البيع ومصادر العملاء والأهداف.",
+   "en": "Roles, permissions, sales stages, lead sources and targets."
   },
   "headline": {
    "ar": "كل مستخدم يرى ما يخصه… ويعمل بالمراحل التي اعتمدتها",
