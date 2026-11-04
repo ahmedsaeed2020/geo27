@@ -389,14 +389,19 @@ export function SpecialistDiscovery() {
   const families = useCatalog();
   const demo = useDemoRequest();
   // Opens on DIGIT Construction: Pro and HR already have their own sections further down the home page.
-  const start = Math.max(0, families.findIndex((f) => f.key === "construction"));
+  const start = Math.max(
+    0,
+    families.findIndex((f) => f.key === "construction"),
+  );
   const { active: index, tabProps } = useTabs(families.length, locale, false, start);
   const family = families[index];
   if (!family) return null;
   const story = PRODUCT_STORIES[family.key];
   const pic = story ? photoOf(story.photo) : undefined;
   // Pro and HR show one of their real product screens (never a generated or withdrawn screen).
-  const screen = story ? undefined : screenById(family.shot ?? family.departments.find((d) => d.shot)?.shot ?? "");
+  const screen = story
+    ? undefined
+    : screenById(family.shot ?? family.departments.find((d) => d.shot)?.shot ?? "");
   return (
     <section className="hs hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
@@ -489,6 +494,18 @@ export function SpecialistDiscovery() {
               loading="lazy"
               decoding="async"
             />
+          ) : screen ? (
+            <figure className="cs-family-screen">
+              <img
+                src={screen.src}
+                width={screen.width}
+                height={screen.height}
+                alt={screen.caption[locale]}
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>{screen.caption[locale]}</figcaption>
+            </figure>
           ) : (
             <div className="cs-family-mark" aria-hidden="true">
               <span dir="ltr">{family.name.en}</span>
