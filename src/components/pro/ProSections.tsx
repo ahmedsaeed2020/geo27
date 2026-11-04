@@ -94,7 +94,7 @@ export function FlowSection({ s, title, lede, eyebrow }: SectionProps<'flow'>) {
             <span className="pv-flow-no" dir="ltr">{n2(i + 1)}</span>
             <h3>{st.title[locale]}</h3>
             <p>{st.body[locale]}</p>
-            {st.doc && locale === 'en' && <span className="pv-sys" dir="ltr">{st.doc}</span>}
+            {st.doc && locale === 'ar' && <span className="pv-sys" dir="ltr">{st.doc}</span>}
             {st.shot && <ProScreen refId={st.shot} size="thumb" caption={false} open={box.open} />}
           </li>
         ))}
