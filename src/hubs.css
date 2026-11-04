@@ -239,8 +239,10 @@
 .cs-trilogy-digit p { font-size: 15.5px; line-height: 1.85; }
 .cs-trilogy-digit .hs-link { color: var(--mint); }
 .cs-trilogy-mark { font-family: var(--font-archivo); font-size: 34px; font-weight: 800; letter-spacing: .02em; }
-.cs-trilogy-services { display: grid; gap: 14px; padding: 22px; border: 1px solid var(--dline); border-radius: 20px; background: var(--card); }
-.cs-photo-wide { aspect-ratio: 21 / 8; }
+.cs-trilogy-services { display: grid; grid-template-columns: minmax(170px, 3fr) minmax(0, 7fr); gap: 20px; align-items: start; padding: 22px; border: 1px solid var(--dline); border-radius: 20px; background: var(--card); }
+.cs-trilogy-body { display: grid; gap: 14px; min-width: 0; }
+/* The profile photo carries an empty wall on its right; a square crop from the left keeps the two specialists in frame. */
+.cs-photo-side { height: 100%; min-height: 260px; aspect-ratio: auto; object-position: 0% 50%; }
 .cs-trilogy-groups { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
 .cs-trilogy-groups h4 { margin-bottom: 8px; font-size: 15px; font-weight: 800; }
 .cs-trilogy-groups h4 span { font-family: var(--font-monospace); font-size: 12px; color: var(--primary); }
@@ -317,7 +319,8 @@
 }
 @media (max-width: 900px) {
   .cs-layers-head, .cs-layers-grid, .cs-friction, .cs-trilogy, .cs-stage, .cs-next, .cs-family-panel { grid-template-columns: minmax(0, 1fr); }
-  .cs-scope-cols, .cs-trilogy-groups { grid-template-columns: minmax(0, 1fr); }
+  .cs-scope-cols, .cs-trilogy-groups, .cs-trilogy-services { grid-template-columns: minmax(0, 1fr); }
+  .cs-photo-side { height: auto; min-height: 0; aspect-ratio: 1; max-height: 340px; }
   .cs-track { display: flex; overflow-x: auto; padding-bottom: 6px; scroll-snap-type: x proximity; }
   .cs-track::before { display: none; }
   .cs-track-step { flex: none; min-width: 120px; scroll-snap-align: start; }

@@ -1,29 +1,51 @@
-import { useId } from 'react';
-import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
-import { NavLink } from '@/components/nav/nav-links';
-import { useDemoRequest } from '@/components/nav/MegaMenu';
-import { useCatalog } from '@/components/catalog/useCatalog';
-import { Button } from '@/components/ui/button';
-import { EXPLORE_BY_ROLE_SPECIALIST } from '@/content/catalog';
-import { CORPORATE, CORPORATE_LAYERS, DELIVERY, DELIVERY_SCOPE, DELIVERY_STAGES, FRICTION, NEXT_STEPS, PORTFOLIO, PRODUCT_STORIES, TRILOGY } from '@/content/corporate';
-import { photo as photoOf } from '@/content/specialist/photos';
-import { useLocale, type Locale } from '@/lib/i18n';
-import { Head, useTabs } from './story-kit';
-import '@/specialist.css';
-import '@/hubs.css';
+import { useId } from "react";
+import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { NavLink } from "@/components/nav/nav-links";
+import { useDemoRequest } from "@/components/nav/MegaMenu";
+import { useCatalog } from "@/components/catalog/useCatalog";
+import { Button } from "@/components/ui/button";
+import { EXPLORE_BY_ROLE_SPECIALIST } from "@/content/catalog";
+import {
+  CORPORATE,
+  CORPORATE_LAYERS,
+  DELIVERY,
+  DELIVERY_SCOPE,
+  DELIVERY_STAGES,
+  FRICTION,
+  NEXT_STEPS,
+  PORTFOLIO,
+  PRODUCT_STORIES,
+  TRILOGY,
+} from "@/content/corporate";
+import { photo as photoOf } from "@/content/specialist/photos";
+import { useLocale, type Locale } from "@/lib/i18n";
+import { Head, useTabs } from "./story-kit";
+import "@/specialist.css";
+import "@/hubs.css";
 
-const ArrowFor = ({ locale }: { locale: Locale }) => (locale === 'ar' ? <ArrowLeft aria-hidden="true" /> : <ArrowRight aria-hidden="true" />);
+const ArrowFor = ({ locale }: { locale: Locale }) =>
+  locale === "ar" ? <ArrowLeft aria-hidden="true" /> : <ArrowRight aria-hidden="true" />;
 
 function Photo({ name, locale, className }: { name: string; locale: Locale; className: string }) {
   const p = photoOf(name);
   if (!p?.src) return null;
-  return <img className={className} src={p.src} width={p.width} height={p.height} alt={p.alt[locale]} loading="lazy" decoding="async" />;
+  return (
+    <img
+      className={className}
+      src={p.src}
+      width={p.width}
+      height={p.height}
+      alt={p.alt[locale]}
+      loading="lazy"
+      decoding="async"
+    />
+  );
 }
 
 /* ------------------------------ Platform → Applications → Delivery ------------------------------ */
 
 /** The three DIGIT layers as an interactive stack: choose a layer to see what it covers and who is responsible. */
-export function PlatformLayers({ variant = 'about' }: { variant?: 'about' | 'home' }) {
+export function PlatformLayers({ variant = "about" }: { variant?: "about" | "home" }) {
   const locale = useLocale();
   const base = useId();
   const { active, tabProps } = useTabs(CORPORATE_LAYERS.length, locale, true);
@@ -32,23 +54,44 @@ export function PlatformLayers({ variant = 'about' }: { variant?: 'about' | 'hom
     <section className="hs hs-block cs-layers" aria-labelledby={`${base}-t`} data-variant={variant}>
       <div className="dp-wrap">
         <div className="cs-layers-head">
-          <Head kicker={CORPORATE.kicker[locale]} title={CORPORATE.title[locale]} lede={CORPORATE.relation[locale]} id={`${base}-t`} />
+          <Head
+            kicker={CORPORATE.kicker[locale]}
+            title={CORPORATE.title[locale]}
+            lede={CORPORATE.relation[locale]}
+            id={`${base}-t`}
+          />
           <blockquote className="cs-quote">
             <p>{CORPORATE.philosophy[locale]}</p>
           </blockquote>
         </div>
         <div className="cs-layers-grid">
-          <div role="tablist" aria-orientation="vertical" aria-label={CORPORATE.layersLabel[locale]} className="cs-stack">
-            {[...CORPORATE_LAYERS].reverse().map(l => {
+          <div
+            role="tablist"
+            aria-orientation="vertical"
+            aria-label={CORPORATE.layersLabel[locale]}
+            className="cs-stack"
+          >
+            {[...CORPORATE_LAYERS].reverse().map((l) => {
               const i = CORPORATE_LAYERS.indexOf(l);
               return (
-                <button key={l.id} {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)} className="cs-slab" data-layer={l.id}>
-                  <span className="cs-slab-no" dir="ltr">LAYER {l.no}</span>
+                <button
+                  key={l.id}
+                  {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)}
+                  className="cs-slab"
+                  data-layer={l.id}
+                >
+                  <span className="cs-slab-no" dir="ltr">
+                    LAYER {l.no}
+                  </span>
                   <strong>{l.label[locale]}</strong>
-                  {locale === 'ar' && <span className="cs-slab-en" dir="ltr">{l.en}</span>}
-                  {l.id === 'apps' && (
+                  {locale === "ar" && (
+                    <span className="cs-slab-en" dir="ltr">
+                      {l.en}
+                    </span>
+                  )}
+                  {l.id === "apps" && (
                     <span className="cs-slab-apps" dir="ltr" aria-hidden="true">
-                      {['Pro', 'HR', 'Construction', 'CRM', 'POS', 'FSM + ITM'].map(a => (
+                      {["Pro", "HR", "Construction", "CRM", "POS", "FSM + ITM"].map((a) => (
                         <span key={a}>{a}</span>
                       ))}
                     </span>
@@ -57,8 +100,16 @@ export function PlatformLayers({ variant = 'about' }: { variant?: 'about' | 'hom
               );
             })}
           </div>
-          <div role="tabpanel" id={`${base}-p`} aria-labelledby={`${base}-tab-${active}`} className="hs-panel cs-layer-panel" key={layer.id}>
-            <p className="hs-panel-step" dir="ltr">LAYER {layer.no} · {layer.en}</p>
+          <div
+            role="tabpanel"
+            id={`${base}-p`}
+            aria-labelledby={`${base}-tab-${active}`}
+            className="hs-panel cs-layer-panel"
+            key={layer.id}
+          >
+            <p className="hs-panel-step" dir="ltr">
+              LAYER {layer.no} · {layer.en}
+            </p>
             <h3>{layer.label[locale]}</h3>
             <p className="hs-panel-lead">{layer.body[locale]}</p>
             <h4 className="cs-mini">{CORPORATE.includes[locale]}</h4>
@@ -75,7 +126,7 @@ export function PlatformLayers({ variant = 'about' }: { variant?: 'about' | 'hom
               {layer.owner[locale]}
             </p>
             <ul role="list" className="cs-links">
-              {layer.links.map(l => (
+              {layer.links.map((l) => (
                 <li key={l.path}>
                   <NavLink path={l.path} className="cs-chiplink">
                     {l.label[locale]}
@@ -108,7 +159,7 @@ export function FrictionBand() {
           <ol role="list" className="cs-friction-points">
             {FRICTION.points.map((p, i) => (
               <li key={i}>
-                <span dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+                <span dir="ltr">{String(i + 1).padStart(2, "0")}</span>
                 {p[locale]}
               </li>
             ))}
@@ -139,10 +190,17 @@ export function TrilogyBand() {
   return (
     <section className="hs hs-block" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
-        <Head kicker={TRILOGY.kicker[locale]} title={TRILOGY.title[locale]} lede={TRILOGY.body[locale]} id={`${base}-t`} />
+        <Head
+          kicker={TRILOGY.kicker[locale]}
+          title={TRILOGY.title[locale]}
+          lede={TRILOGY.body[locale]}
+          id={`${base}-t`}
+        />
         <div className="cs-trilogy">
           <div className="cs-trilogy-digit">
-            <span className="cs-trilogy-mark" dir="ltr">DIGIT</span>
+            <span className="cs-trilogy-mark" dir="ltr">
+              DIGIT
+            </span>
             <p>{TRILOGY.digitBody[locale]}</p>
             <NavLink path="/services-3/implementation" className="hs-link">
               {DELIVERY.more[locale]}
@@ -150,26 +208,34 @@ export function TrilogyBand() {
             </NavLink>
           </div>
           <div className="cs-trilogy-services">
-            <Photo name="trilogy-infrastructure" locale={locale} className="cs-photo cs-photo-wide" />
-            <h3>{TRILOGY.trilogy[locale]}</h3>
-            <div className="cs-trilogy-groups">
-              {TRILOGY.groups.map((g, i) => (
-                <div key={i}>
-                  <h4>
-                    <span dir="ltr">{String(i + 1).padStart(2, '0')}</span> {g.label[locale]}
-                  </h4>
-                  <ul role="list" className="hs-codes" dir="ltr">
-                    {g.items.map(x => (
-                      <li key={x}>
-                        <code>{x}</code>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+            <Photo
+              name="trilogy-infrastructure"
+              locale={locale}
+              className="cs-photo cs-photo-side"
+            />
+            <div className="cs-trilogy-body">
+              <h3>{TRILOGY.trilogy[locale]}</h3>
+              <div className="cs-trilogy-groups">
+                {TRILOGY.groups.map((g, i) => (
+                  <div key={i}>
+                    <h4>
+                      <span dir="ltr">{String(i + 1).padStart(2, "0")}</span> {g.label[locale]}
+                    </h4>
+                    <ul role="list" className="hs-codes" dir="ltr">
+                      {g.items.map((x) => (
+                        <li key={x}>
+                          <code>{x}</code>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+              <p className="hs-panel-note">{TRILOGY.note[locale]}</p>
+              <p className="cs-method" dir="ltr">
+                {TRILOGY.method}
+              </p>
             </div>
-            <p className="hs-panel-note">{TRILOGY.note[locale]}</p>
-            <p className="cs-method" dir="ltr">{TRILOGY.method}</p>
           </div>
         </div>
       </div>
@@ -180,27 +246,54 @@ export function TrilogyBand() {
 /* ------------------------------ Delivery ------------------------------ */
 
 /** Discovery → Scope → Data → Configuration → Training → Go-live, with package / scoped / Trilogy separation. */
-export function DeliveryJourney({ variant = 'service' }: { variant?: 'service' | 'home' }) {
+export function DeliveryJourney({ variant = "service" }: { variant?: "service" | "home" }) {
   const locale = useLocale();
   const base = useId();
   const demo = useDemoRequest();
   const { active, tabProps } = useTabs(DELIVERY_STAGES.length, locale);
   const stage = DELIVERY_STAGES[active]!;
-  const home = variant === 'home';
+  const home = variant === "home";
   return (
-    <section className="hs hs-block cs-delivery" data-alt={home ? '' : undefined} aria-labelledby={`${base}-t`} data-variant={variant}>
+    <section
+      className="hs hs-block cs-delivery"
+      data-alt={home ? "" : undefined}
+      aria-labelledby={`${base}-t`}
+      data-variant={variant}
+    >
       <div className="dp-wrap">
-        <Head kicker={DELIVERY.kicker[locale]} title={DELIVERY.title[locale]} lede={DELIVERY.lede[locale]} id={`${base}-t`} />
+        <Head
+          kicker={DELIVERY.kicker[locale]}
+          title={DELIVERY.title[locale]}
+          lede={DELIVERY.lede[locale]}
+          id={`${base}-t`}
+        />
         <div role="tablist" aria-label={DELIVERY.stagesLabel[locale]} className="cs-track">
           {DELIVERY_STAGES.map((s, i) => (
-            <button key={s.id} {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)} className="cs-track-step" data-done={i < active ? '' : undefined}>
-              <span className="cs-track-dot" dir="ltr">{String(i + 1).padStart(2, '0')}</span>
+            <button
+              key={s.id}
+              {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)}
+              className="cs-track-step"
+              data-done={i < active ? "" : undefined}
+            >
+              <span className="cs-track-dot" dir="ltr">
+                {String(i + 1).padStart(2, "0")}
+              </span>
               <strong>{s.label[locale]}</strong>
-              {locale === 'ar' && <span className="cs-slab-en" dir="ltr">{s.en}</span>}
+              {locale === "ar" && (
+                <span className="cs-slab-en" dir="ltr">
+                  {s.en}
+                </span>
+              )}
             </button>
           ))}
         </div>
-        <div role="tabpanel" id={`${base}-p`} aria-labelledby={`${base}-tab-${active}`} className="hs-panel cs-stage" key={stage.id}>
+        <div
+          role="tabpanel"
+          id={`${base}-p`}
+          aria-labelledby={`${base}-tab-${active}`}
+          className="hs-panel cs-stage"
+          key={stage.id}
+        >
           <div className="cs-stage-main">
             <p className="hs-panel-step">
               {DELIVERY.step[locale]} {active + 1} {DELIVERY.of[locale]} {DELIVERY_STAGES.length}
@@ -230,12 +323,14 @@ export function DeliveryJourney({ variant = 'service' }: { variant?: 'service' |
 
         <div className="cs-scope">
           <div className="cs-scope-head">
-            <p className="sp-kicker" dir="ltr">{DELIVERY.scopeKicker[locale]}</p>
+            <p className="sp-kicker" dir="ltr">
+              {DELIVERY.scopeKicker[locale]}
+            </p>
             <h3>{DELIVERY.scopeTitle[locale]}</h3>
             <p className="cs-scope-clear">{DELIVERY.scopeClear[locale]}</p>
           </div>
           <ul role="list" className="cs-scope-cols">
-            {DELIVERY_SCOPE.map(c => (
+            {DELIVERY_SCOPE.map((c) => (
               <li key={c.id} data-scope={c.id}>
                 <strong>{c.title[locale]}</strong>
                 <p>{c.body[locale]}</p>
@@ -259,7 +354,7 @@ export function DeliveryJourney({ variant = 'service' }: { variant?: 'service' |
             {!home && <p className="sp-lede">{DELIVERY.nextLede[locale]}</p>}
           </div>
           <ol role="list" className="cs-next-steps">
-            {NEXT_STEPS.map(s => (
+            {NEXT_STEPS.map((s) => (
               <li key={s.no}>
                 <span dir="ltr">{s.no}</span>
                 <strong>{s.label[locale]}</strong>
@@ -300,18 +395,39 @@ export function SpecialistDiscovery() {
   return (
     <section className="hs hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
-        <Head kicker={PORTFOLIO.kicker[locale]} title={PORTFOLIO.title[locale]} lede={PORTFOLIO.lede[locale]} id={`${base}-t`} />
+        <Head
+          kicker={PORTFOLIO.kicker[locale]}
+          title={PORTFOLIO.title[locale]}
+          lede={PORTFOLIO.lede[locale]}
+          id={`${base}-t`}
+        />
         <div role="tablist" aria-label={PORTFOLIO.families[locale]} className="cs-families">
           {families.map((f, i) => (
-            <button key={f.key} {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)} className="cs-family" data-product={f.key}>
-              <span className="cs-family-name" dir="ltr">{f.name.en}</span>
+            <button
+              key={f.key}
+              {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)}
+              className="cs-family"
+              data-product={f.key}
+            >
+              <span className="cs-family-name" dir="ltr">
+                {f.name.en}
+              </span>
               <strong>{f.area[locale]}</strong>
             </button>
           ))}
         </div>
-        <div role="tabpanel" id={`${base}-p`} aria-labelledby={`${base}-tab-${index}`} className="cs-family-panel" key={family.key} data-product={family.key}>
+        <div
+          role="tabpanel"
+          id={`${base}-p`}
+          aria-labelledby={`${base}-tab-${index}`}
+          className="cs-family-panel"
+          key={family.key}
+          data-product={family.key}
+        >
           <div className="cs-family-copy">
-            <p className="hs-panel-step" dir="ltr">{family.name.en}</p>
+            <p className="hs-panel-step" dir="ltr">
+              {family.name.en}
+            </p>
             <h3>{family.name[locale]}</h3>
             <p className="hs-panel-lead">{family.summary[locale]}</p>
             {story ? (
@@ -327,7 +443,9 @@ export function SpecialistDiscovery() {
                     </li>
                   ))}
                 </ol>
-                {family.key === 'pos' && <p className="cs-mini-note">{PORTFOLIO.industries[locale]}</p>}
+                {family.key === "pos" && (
+                  <p className="cs-mini-note">{PORTFOLIO.industries[locale]}</p>
+                )}
               </>
             ) : (
               <>
@@ -335,7 +453,7 @@ export function SpecialistDiscovery() {
                   {PORTFOLIO.areas[locale]} ({family.departments.length})
                 </h4>
                 <ul role="list" className="cs-dept-chips">
-                  {family.departments.map(d => (
+                  {family.departments.map((d) => (
                     <li key={d.id}>
                       <NavLink path={d.href} hash={d.hash} className="cs-chiplink">
                         {d.label[locale]}
@@ -357,7 +475,15 @@ export function SpecialistDiscovery() {
             </div>
           </div>
           {pic?.src ? (
-            <img className="cs-family-photo" src={pic.src} width={pic.width} height={pic.height} alt={pic.alt[locale]} loading="lazy" decoding="async" />
+            <img
+              className="cs-family-photo"
+              src={pic.src}
+              width={pic.width}
+              height={pic.height}
+              alt={pic.alt[locale]}
+              loading="lazy"
+              decoding="async"
+            />
           ) : (
             <div className="cs-family-mark" aria-hidden="true">
               <span dir="ltr">{family.name.en}</span>
@@ -370,7 +496,7 @@ export function SpecialistDiscovery() {
         <div className="cs-roles">
           <h3 className="cs-mini">{PORTFOLIO.roles[locale]}</h3>
           <ul role="list">
-            {EXPLORE_BY_ROLE_SPECIALIST.map(r => (
+            {EXPLORE_BY_ROLE_SPECIALIST.map((r) => (
               <li key={r.path}>
                 <NavLink path={r.path} className="cs-role">
                   <strong>{r.label[locale]}</strong>
