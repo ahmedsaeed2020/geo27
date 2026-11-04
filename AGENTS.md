@@ -11,7 +11,7 @@
 
 - Render imported Elementor package pages through one shared React renderer with extracted content and scoped CSS so both pages preserve their source layout without WordPress dependencies.
 - Keep published preview metadata alongside extracted package content and implement motion in the shared renderer so both packages retain their original interactive layout without loading WordPress scripts.
-- Every demo, trial and subscribe call to action opens the site's own contextual request form (on-page form or /demo), which saves a real request; never link visitors to external hosted subscription pages or simulate payments.
+- Every demo, quote, trial and subscribe call to action opens the site's own request form (on-page form, else /demo) via the one rule set in src/lib/form-cta.ts and the root click router; imported hosted-form nodes render the real form in place, so visitors never leave for hosted subscription pages and no payment is simulated.
 - Render menu-linked WordPress pages through a shared React renderer with extracted per-page JSON and scoped source CSS; this preserves source layouts without executing WordPress scripts.
 - Keep every imported content page in its own file-based route and preserve legacy menu URL aliases with redirects; this prevents broken published links and isolates page metadata.
 - Keep contextual background and body images in one page-keyed scene manifest consumed by shared renderers; this gives every Arabic page distinct imagery without modifying extracted source content or hosted forms.
