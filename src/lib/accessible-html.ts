@@ -8,9 +8,9 @@ import { cloneElement, isValidElement, type ReactElement, type ReactNode } from 
 const START_TAG = /<([a-zA-Z][\w-]*)(\s[^<>]*?)?(\/?)>/g;
 
 const hasName = (attrs: string, rest: string, tag: string) =>
-  /\saria-label="[^"]*\S[^"]*"/.test(attrs) ||
+  /\saria-label="[^"]*[^"\s][^"]*"/.test(attrs) ||
   /\saria-labelledby="[^"]+"/.test(attrs) ||
-  /\stitle="[^"]*\S[^"]*"/.test(attrs) ||
+  /\stitle="[^"]*[^"\s][^"]*"/.test(attrs) ||
   (tag === "svg" && /^\s*<title[\s>]/i.test(rest));
 
 export function accessibleHtml(html: string): string {
