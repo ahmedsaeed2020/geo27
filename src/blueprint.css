@@ -210,7 +210,7 @@
 }
 @media print {
   .bp-root { --bp-canvas: #fff; }
-  header, footer, .bp-panel, .bp-actions, .bp-reset, .bp-sector-link, #lead, [data-lead-panel], .chat-widget { display: none !important; }
+  header, footer, .bp-panel, .bp-actions, .bp-reset, .bp-sector-link, #digit-lead, [data-chat-widget] { display: none !important; }
   .bp-stage { padding: 0; background: var(--dark); print-color-adjust: exact; -webkit-print-color-adjust: exact; }
   .bp-workbench, .bp-results-grid { grid-template-columns: minmax(0, 1fr); }
   .bp-canvas, .bp-start { position: static; }
