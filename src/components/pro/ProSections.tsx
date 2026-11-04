@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Check, CircleDashed, FileText, Hourglass, Settings2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/nav/nav-links';
-import { proPageByKey } from '@/content/pro/pro-pages';
+import { proPageByKey, proPageByPath } from '@/content/pro/pro-pages';
 import type { L, ProSection } from '@/content/pro/types';
 import type { EvidenceTier } from '@/content/pro/evidence';
 import { useLocale } from '@/lib/i18n';
@@ -445,4 +445,3 @@ export function CtaSection({ s, title, lede, department, pageKey }: SectionProps
   );
 }
 
-import { proPageByPath } from '@/content/pro/pro-pages';
