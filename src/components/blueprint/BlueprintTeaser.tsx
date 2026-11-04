@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { SECTORS, blueprintSearch } from "@/content/blueprint";
 import { localeHref, useLocale } from "@/lib/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { BP } from "./copy";
 import SystemMap from "./SystemMap";
 import "@/blueprint.css";
@@ -11,6 +12,7 @@ const SAMPLE = SECTORS.find(s => s.id === "retail")!.suggests;
 /** Home band that opens the blueprint builder, either blank or pre-filled from a sector. */
 export default function BlueprintTeaser() {
   const locale = useLocale();
+  const compact = useIsMobile();
   const Next = locale === "ar" ? ArrowLeft : ArrowRight;
   const to = localeHref("/blueprint", locale);
   return (
@@ -32,7 +34,7 @@ export default function BlueprintTeaser() {
           </ul>
         </div>
         <figure className="bp-teaser-map">
-          <SystemMap needs={SAMPLE} locale={locale} label={`${BP.teaserSample[locale]}`} mini />
+          <SystemMap needs={SAMPLE} locale={locale} label={BP.teaserSample[locale]} mini compact={compact} />
           <figcaption>{BP.teaserSample[locale]}</figcaption>
         </figure>
       </div>

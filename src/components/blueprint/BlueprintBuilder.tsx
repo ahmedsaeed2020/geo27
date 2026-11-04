@@ -33,6 +33,7 @@ import { productByKey } from "@/content/catalog";
 import { screenById } from "@/content/screens";
 import type { Shot } from "@/content/product-shots";
 import { useLocale, type Locale } from "@/lib/i18n";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { BP } from "./copy";
 import SystemMap, { flowKey } from "./SystemMap";
 import "@/product-proof.css";
@@ -71,6 +72,7 @@ function interestLine(bp: Blueprint, locale: Locale): string {
 
 export default function BlueprintBuilder() {
   const locale = useLocale();
+  const compact = useIsMobile();
   const navigate = useNavigate();
   const search = useSearch({ strict: false }) as Record<string, unknown>;
   const bp = useMemo(() => parseBlueprint(search), [search]);
@@ -227,7 +229,7 @@ export default function BlueprintBuilder() {
                     </Button>
                   )}
                 </div>
-                <SystemMap needs={bp.needs} locale={locale} label={mapLabel} emptyHint={BP.empty[locale]} focus={focus} onFocus={setFocus} />
+                <SystemMap needs={bp.needs} locale={locale} label={mapLabel} emptyHint={BP.empty[locale]} focus={focus} onFocus={setFocus} compact={compact} />
                 <p className="bp-legend">{BP.legend[locale]}</p>
               </div>
             </div>

@@ -116,7 +116,7 @@
 
 .bp-start { position: sticky; top: 96px; background: var(--deep); color: var(--paper2); border-color: transparent; }
 .bp-start h2 { color: color-mix(in oklab, var(--paper2) 80%, var(--deep)); font-size: 14px; font-family: var(--font-monospace); letter-spacing: .1em; text-transform: uppercase; font-weight: 400; }
-.bp-edition { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin: 0 0 10px; color: var(--paper2); line-height: 1.25; }
+.bp-start .bp-edition { font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; margin: 0 0 10px; color: var(--paper2); line-height: 1.25; }
 .bp-start p { line-height: 1.8; font-size: 14.5px; margin: 0 0 14px; }
 .bp-why { border-top: 1px solid color-mix(in oklab, var(--paper2) 18%, transparent); padding-top: 12px; margin-bottom: 14px; font-size: 13.5px; }
 .bp-why > span { font-weight: 700; color: var(--mint); }
