@@ -1,6 +1,6 @@
-// DIGIT CRM — seven area pages (Corporate Profile 2026, pp. 25–26; owner brief 2026-11-04). The two genuine CRM
-// screens (Deals and Manager workbench, demo data) prove only what they show; those items are `demonstrated`.
-// The seven areas follow the CRM navigation visible in those screens. CRM stops at the won opportunity: quotation,
+// DIGIT CRM — seven area pages (Corporate Profile 2026, pp. 25–26; owner brief 2026-11-04). The profile's CRM demo
+// screens show the old module logos and were withdrawn by the owner (2026-11-04), so no CRM screen is shown and
+// every page is `illustrative`. The seven areas follow the CRM navigation. CRM stops at the won opportunity: quotation,
 // order, delivery, invoice and collection belong to DIGIT Pro Selling.
 import type { L, SpecialistDepartment } from './types';
 
@@ -14,7 +14,7 @@ export const CRM: SpecialistDepartment[] = [
     slug: 'management',
     label: t('نظرة عامة وإدارة علاقات العملاء', 'CRM Overview & Management'),
     summary: t('لوحة علاقات العملاء و«عملي اليوم» ومنصة المدير: ما ينتظر كل بائع، وما يحتاج قرار المدير.', 'The CRM board, “My day” and the manager workbench: what waits for each rep and what needs the manager’s decision.'),
-    headline: t('يوم البائع وقرار المدير… في شاشتين واضحتين', 'The rep’s day and the manager’s decision… on two clear screens'),
+    headline: t('يوم البائع وقرار المدير… كل منهما يبدأ من الخطوة التالية', 'The rep’s day and the manager’s decision… each starts from the next step'),
     seoDescription: t('نظرة عامة على DIGIT CRM: لوحة علاقات العملاء وعملي اليوم ومنصة المدير بالعملاء غير المسندين والمتابعات المتأخرة وزمن الاستجابة.', 'DIGIT CRM overview: the CRM board, My day and the manager workbench with unassigned leads, overdue follow-ups and response time.'),
     profilePages: [25, 26],
     photo: 'crm-sales-call',
@@ -36,8 +36,8 @@ export const CRM: SpecialistDepartment[] = [
       {
         id: 'records',
         kind: 'records',
-        title: t('ما تعرضه الشاشة', 'What the screen shows'),
-        lede: t('عناصر ظاهرة في الشاشة الفعلية.', 'Elements visible in the real screen.'),
+        title: t('ما تعرضه منصة المدير', 'What the manager workbench shows'),
+        lede: t('كما في الملف التعريفي (ص 26)، وتُعرض في جلسة الديمو.', 'As in the corporate profile (p. 26), shown in a demo session.'),
         items: [
           { name: t('عملاء محتملون غير مسندين', 'Unassigned leads'), body: t('ما لم يُسند لبائع بعد، ليُوزَّع قبل أن يبرد.', 'Leads not yet assigned to a rep, to be distributed before they go cold.'), status: DOC },
           { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('المتابعات التي فات موعدها وتلك المستحقة اليوم.', 'Follow-ups past their date and those due today.'), status: DOC },
@@ -50,7 +50,7 @@ export const CRM: SpecialistDepartment[] = [
       {
         id: 'roles',
         kind: 'roles',
-        title: t('دوران وشاشتان', 'Two roles, two screens'),
+        title: t('دوران… ونقطتا بداية', 'Two roles… two starting points'),
         lede: t('كما في الملف التعريفي (ص 26).', 'As in the corporate profile (p. 26).'),
         items: [
           { role: t('البائع', 'Sales rep'), does: t('يبدأ يومه من «عملي اليوم» وينفذ الخطوة التالية لكل عميل.', 'Starts the day from “My day” and does the next step for each customer.'), sees: t('عملاؤه المسندون ومتابعاته المستحقة وفرصه.', 'Their assigned customers, due follow-ups and opportunities.') },
@@ -127,7 +127,7 @@ export const CRM: SpecialistDepartment[] = [
           { name: t('العميل المحتمل', 'Lead'), code: 'Lead', body: t('الجهة وجهة الاتصال والاهتمام والمصدر.', 'Company, contact, interest and source.'), status: DOC },
           { name: t('مصادر العملاء', 'Lead sources'), code: 'Lead Sources', body: t('قائمة المصادر لقياس ما يأتي بعملاء مؤهلين.', 'The list of sources, to see which bring qualified leads.'), status: DOC },
           { name: t('الإسناد والملكية', 'Assignment and ownership'), code: 'Ownership', body: t('المالك الحالي وتاريخ الإسناد.', 'Current owner and assignment date.'), status: DOC },
-          { name: t('عدد غير المسندين وزمن الاستجابة', 'Unassigned count and response time'), body: t('ظاهران في منصة المدير.', 'Both visible on the manager workbench.'), status: DOC },
+          { name: t('عدد غير المسندين وزمن الاستجابة', 'Unassigned count and response time'), body: t('يتابعهما المدير من منصته.', 'The manager follows both from the workbench.'), status: DOC },
         ],
       },
       {
@@ -192,7 +192,7 @@ export const CRM: SpecialistDepartment[] = [
         id: 'records',
         kind: 'records',
         title: t('ما تعرضه لوحة الصفقات', 'What the deals board shows'),
-        lede: t('عناصر ظاهرة في الشاشة الفعلية.', 'Elements visible in the real screen.'),
+        lede: t('ما تعرضه لوحة الصفقات، ويُعرض في جلسة الديمو.', 'What the deals board shows, demonstrated in a demo session.'),
         items: [
           { name: t('كانبان حسب المرحلة', 'Kanban by stage'), code: 'Kanban', body: t('بطاقة لكل صفقة بالمنشأة والقيمة والنسبة والمالك وآخر نشاط.', 'A card per deal with organization, value, probability, owner and last activity.'), status: DOC },
           { name: t('مؤشرات المسار', 'Pipeline indicators'), body: t('إجمالي المسار المفتوح، والمسار المرجّح، ونسبة الفوز، وإيراد الصفقات الرابحة.', 'Total open pipeline, weighted pipeline, win rate and won revenue.'), status: DOC },
@@ -280,8 +280,8 @@ export const CRM: SpecialistDepartment[] = [
           { name: t('المكالمات', 'Calls'), code: 'Calls', body: t('من اتصل ومتى وما النتيجة.', 'Who called, when and the outcome.'), status: DOC },
           { name: t('الاجتماعات', 'Meetings'), code: 'Meetings', body: t('الحضور والموضوع والقرار.', 'Attendees, topic and decision.'), status: DOC },
           { name: t('المهام', 'Tasks'), code: 'Tasks', body: t('الإجراء والموعد والمالك.', 'Action, due date and owner.'), status: DOC },
-          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('عدادان ظاهران في منصة المدير.', 'Two counters visible on the manager workbench.'), status: DOC },
-          { name: t('جدولة الإجراء التالي', 'Schedule the next action'), body: t('زر ظاهر في منصة المدير.', 'A button visible on the manager workbench.'), status: DOC },
+          { name: t('المتأخر والمستحق اليوم', 'Overdue and due today'), body: t('عدادان في منصة المدير.', 'Two counters on the manager workbench.'), status: DOC },
+          { name: t('جدولة الإجراء التالي', 'Schedule the next action'), body: t('إجراء مباشر من منصة المدير.', 'A direct action from the manager workbench.'), status: DOC },
         ],
       },
       {
@@ -424,13 +424,12 @@ export const CRM: SpecialistDepartment[] = [
         id: 'records',
         kind: 'records',
         title: t('مؤشرات القسم', 'Department indicators'),
-        lede: t('ظاهرة في منصة المدير، ولكل مؤشر رمز يعرّفه.', 'Visible on the manager workbench, each with a code that defines it.'),
+        lede: t('مؤشرات منصة المدير، ولكل مؤشر تعريف ومصدر.', 'Manager workbench indicators, each with a definition and a source.'),
         items: [
           { name: t('نسبة تغطية خط الأنابيب', 'Pipeline coverage ratio'), body: t('المسار المفتوح مقابل الهدف.', 'Open pipeline against target.'), status: DOC },
           { name: t('متابعات متأخرة', 'Overdue follow-ups'), body: t('عدد المتابعات التي فات موعدها.', 'Count of follow-ups past their date.'), status: DOC },
           { name: t('قائمة الاعتمادات', 'Approvals queue'), body: t('ما ينتظر اعتماد المدير.', 'What is waiting for the manager’s approval.'), status: DOC },
           { name: t('صافي حركة خط الأنابيب', 'Net pipeline movement'), body: t('الداخل ناقص الخارج من المسار.', 'In minus out of the pipeline.'), status: DOC },
-          { name: t('تخصيص المؤشرات', 'Customize indicators'), body: t('زر ظاهر بجانب مؤشرات القسم.', 'A button next to the department indicators.'), status: DOC },
         ],
       },
       {
@@ -507,8 +506,7 @@ export const CRM: SpecialistDepartment[] = [
         title: t('ما يُدار هنا', 'What is managed here'),
         lede: t('إعدادات تؤثر في كل المجالات.', 'Settings that affect every area.'),
         items: [
-          { name: t('مؤشرات حسب الصلاحية', 'Indicators by permission'), body: t('عبارة «سجلاتك المسموح بها فقط» ظاهرة في الشاشة.', '“Only the records you may see” is stated on screen.'), status: DOC },
-          { name: t('شريط البيئة التجريبية', 'Demo environment banner'), body: t('«بيئة تجريبية معزولة · بيانات محاكاة» ظاهر أعلى الشاشات.', '“Isolated demo environment · simulated data” shown at the top of the screens.'), status: DOC },
+          { name: t('مؤشرات حسب الصلاحية', 'Indicators by permission'), body: t('كل مؤشر يُحسب على السجلات المسموح لك برؤيتها فقط.', 'Every indicator counts only the records you may see.'), status: DOC },
           { name: t('الأدوار', 'Roles'), code: 'Roles', body: t('ما يراه ويفعله كل دور.', 'What each role sees and does.'), status: DOC },
           { name: t('مراحل البيع', 'Sales stages'), code: 'Deal Stages', body: t('المراحل ونسب الاحتمال.', 'Stages and probabilities.'), status: DOC },
           { name: t('الأهداف', 'Targets'), body: t('أهداف الأفراد والفريق.', 'Individual and team targets.'), status: DOC },
