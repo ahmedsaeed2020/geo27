@@ -69,7 +69,7 @@ const pro: ProductFamily = {
   solutions: [],
 };
 
-const hrDept = (order: number, id: string, ar: string, en: string): Department => ({ id, product: 'hr', path: `/hr/${id}`, source: 'cms', label: { ar, en } });
+const hrDept = (id: string, ar: string, en: string): Department => ({ id, product: 'hr', path: `/hr/${id}`, source: 'cms', label: { ar, en } });
 const hr: ProductFamily = {
   key: 'hr',
   base: '/hr',
@@ -79,14 +79,14 @@ const hr: ProductFamily = {
   summary: { ar: 'دورة الموظف والقوى العاملة في نظام واحد، من الهيكل التنظيمي حتى الحوكمة.', en: 'The employee and workforce lifecycle in one system, from organization structure to governance.' },
   groupLabel: { ar: 'مجالات DIGIT HR', en: 'DIGIT HR areas' },
   departments: [
-    hrDept(1, 'core-hr', 'الموارد البشرية الأساسية والهيكل التنظيمي', 'Core HR & Organization'),
-    hrDept(2, 'talent', 'المواهب والتوظيف والتطوير', 'Human Capital & Talent'),
-    hrDept(3, 'workforce', 'الحضور والإجازات والورديات', 'Workforce Management'),
+    hrDept('core-hr', 'الموارد البشرية الأساسية والهيكل التنظيمي', 'Core HR & Organization'),
+    hrDept('talent', 'المواهب والتوظيف والتطوير', 'Human Capital & Talent'),
+    hrDept('workforce', 'الحضور والإجازات والورديات', 'Workforce Management'),
     // The brief's Arabic label adds «المعتمدة»; it is held back pending owner confirmation (approval wording rule).
-    hrDept(4, 'payroll', 'الرواتب والتعويضات والعمليات السعودية', 'Payroll, Rewards & Saudi Operations'),
-    hrDept(5, 'self-service', 'الخدمة الذاتية وتجربة الموظف والمدير', 'Employee & Manager Experience'),
-    hrDept(6, 'people-analytics', 'التحليلات وتخطيط القوى العاملة', 'People Intelligence & Planning'),
-    hrDept(7, 'administration', 'الإعدادات والحوكمة', 'Administration & Governance'),
+    hrDept('payroll', 'الرواتب والتعويضات والعمليات السعودية', 'Payroll, Rewards & Saudi Operations'),
+    hrDept('self-service', 'الخدمة الذاتية وتجربة الموظف والمدير', 'Employee & Manager Experience'),
+    hrDept('people-analytics', 'التحليلات وتخطيط القوى العاملة', 'People Intelligence & Planning'),
+    hrDept('administration', 'الإعدادات والحوكمة', 'Administration & Governance'),
   ],
   extras: [],
   solutions: [],
