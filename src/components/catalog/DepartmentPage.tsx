@@ -17,6 +17,7 @@ import HrModuleBody, { useHrSource } from '@/components/hr/HrModuleBody';
 import type { CmsBlock, CmsContent } from '@/lib/cms-schema';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import { useScrollEdges } from '@/hooks/use-scroll-edges';
 import '@/product-proof.css';
 
 const COPY = {
@@ -429,6 +430,7 @@ function GenericDepartmentBody({ content, path, locale }: { content: CmsContent;
   const deptId = registered?.id ?? meta?.id ?? '';
   const heroShot = known(meta?.heroShot ?? '');
   const heroBox = useLightbox(heroShot ? [heroShot] : []);
+  const siblingsRef = useScrollEdges<HTMLDivElement>();
   const blocks = local.blocks.filter(b => b.enabled);
   const relatedFromMeta = (meta?.related ?? []).map(id => family?.departments.find(d => d.id === id)).filter((d): d is NonNullable<typeof d> => !!d && d.id !== deptId);
   const headline = local.headline || registered?.label[locale] || local.title;
@@ -489,7 +491,7 @@ function GenericDepartmentBody({ content, path, locale }: { content: CmsContent;
 
       {family && family.departments.length > 1 && (
         <nav className="dp-siblings" aria-label={family.groupLabel[locale]}>
-          <div className="dp-wrap">
+          <div className="dp-wrap" ref={siblingsRef}>
             <span className="dp-siblings-label">{family.groupLabel[locale]}</span>
             <ul role="list">
               {family.departments.map(d => (
