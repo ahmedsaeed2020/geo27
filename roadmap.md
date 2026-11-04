@@ -6,7 +6,7 @@
 - [x] Social share card: 1200x630 AR/EN images with the real logo, default og:image for every page without its own.
 - [x] Signature experience: /blueprint + /en/blueprint "Design your system" builder (sector, size, needs → live system map, connections, real screens, reading path, starting edition, delivery path, shareable link, print/PDF, demo request carrying the blueprint), home band, Resources menu, sitemap, llms.txt; request saved with blueprint label in admin (E2E, test rows deleted).
 - [x] Site search (header button, Ctrl/⌘ K or "/") across products, departments, Pro workspaces, 117 reports and site pages, Arabic spelling-tolerant, AR/EN; hidden at 1280–1365 px where the full menu leaves no room (shortcut still works).
-- [x] Re-audit after fixes: 130 pages desktop + mobile clean (200, no errors, no overflow, no broken images); 125 tests pass.
+- [x] Re-audit after fixes: 130 pages desktop + mobile clean (200, no errors, no overflow, no broken images); 121 automated tests pass; report in Files.
 - [ ] Owner: close visitor access to chat tables and anonymous request inserts together with the next approved publish (live site still uses the old widget) — blocked on publish approval.
 - [ ] Blueprint: add CMS controls (sector suggestions, area wording) to the admin so editors can tune the builder without code.
 - [ ] Search: show a short "recent searches" list and track zero-result queries in admin to find missing pages.
