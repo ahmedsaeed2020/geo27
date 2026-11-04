@@ -40,6 +40,7 @@ export const PRO_SECTIONS = [
   { id: 'band-crumb', label: 'مسار التنقل (ثابت)', locked: true },
   { id: 'hero', label: 'الواجهة الرئيسية (ثابتة)', locked: true },
   { id: 'features', label: 'ماذا تشمل الباقة' },
+  { id: 'departments', label: 'أقسام DIGIT Pro (اختيار القسم)' },
   { id: 'showcase', label: 'ماذا تحصل في DIGIT Pro (الشاشات)' },
   { id: 'zatca', label: 'الفوترة الإلكترونية' },
   { id: 'preview', label: 'معاينة النظام' },

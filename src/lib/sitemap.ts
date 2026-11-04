@@ -2,7 +2,7 @@ import type { PublishedRecord } from './cms-schema';
 
 export const SITE_ORIGIN = 'https://digit-erp.com';
 /** CMS kinds that become public pages; feature stories stay out until their evidence is approved and routed. */
-const SITEMAP_KINDS = ['page', 'product', 'module', 'industry', 'resource'];
+const SITEMAP_KINDS = ['page', 'product', 'module', 'industry', 'resource', 'department'];
 
 const escapeXml = (s: string) => s.replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&apos;' })[c] ?? c);
 const bare = (p: string) => p.replace(/^\/en(?=\/|$)/, '') || '/';
