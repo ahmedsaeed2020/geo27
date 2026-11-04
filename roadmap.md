@@ -7,9 +7,9 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 - [x] CRM hub: Lead-to-Deal explorer, Sales Manager workbench; seven area pages (CMS drafts); distinct from Pro Selling; no screenshots until recaptured.
 - [x] POS hub: selling / store operations / connected operations chapters; 12-segment searchable industry explorer with generated store photos (no people/logos); industry demo request E2E saved product + interest, test row deleted.
 - [x] FSM+ITM hub (new /modules/fsm-itm AR/EN route, sitemap) with 11-step service journey and inspection loop (failed retest reopens the deficiency); nine area pages (CMS drafts).
-- [ ] About: three layers (platform / specialist apps / technology & delivery), DIGIT ↔ TRILOGY relationship.
-- [ ] Implementation & delivery page: Discovery → Scope → Data → Configuration → Training → Go-live; included vs separately scoped.
-- [ ] Home targeted additions: three-layer model, six-family explorer, connected stories, role discovery (4 new roles), delivery, contextual demo — Pro/HR home content unchanged.
+- [x] About: interactive three layers (platform / specialist apps / technology & delivery), friction between departments, DIGIT ↔ Trilogy services band (scoped separately); AR/EN 1280/390 checked.
+- [x] Implementation & delivery page: six-stage stepper (Discovery → Go-live/acceptance) with outputs and participants; package entitlements vs separately scoped vs Trilogy services; next-step band with discovery booking.
+- [x] Home targeted additions (editable/hideable home sections): three-layer model, six-family portfolio explorer with connected stories and real Pro/HR screens, four new roles, delivery band, contextual demo — existing sections unchanged; new sections slot in after their design predecessor.
 - [ ] Contextual lead forms on every new hub/department/service page (product, department/industry, workflow, page, language, UTM) — E2E saved and read back.
 - [ ] SEO/sitemap/hreflang for new routes; drafts noindex; tests for rules; QA desktop/tablet/mobile AR/EN; Pro/HR regression check; screenshots + handoff report.
 - [x] Owner 2026-11-04 17:54: screenshots showing the old module logos (pink app icon in the side rail) are wrong — scanned all 67 product screens and 16 profile photos: only the two CRM demo screens had it; removed from pages, stories, menu, editor and storage; CRM pages now show labelled diagrams; test keeps them out.
