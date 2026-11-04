@@ -8,7 +8,8 @@
 - [x] CMS: V4 pages list their source sections in the editor (reorder/hide/retitle, Pro-only screen picker where a section has a lead screen, no department-template switch); drafts for inventory + 4 areas with titles. (E2E: retitle + hide saved as draft, public page unchanged, restored.)
 - [x] Demo requests from workspaces/questions carry product, department and topic (E2E: ACC-DUES request saved and read back, test row deleted); topic shown in Leads/CSV.
 - [x] Phase E: 88 tests pass; all 22 AR/EN URLs (10 V4 pages + /pro) at 390 and 1280 px return 200 with no console errors, overflow, broken images or Arabic in English V4 sections; 404 for unknown areas; canonical/hreflang checked. No live publish.
-- [ ] /pro hub: optional executive-proof and role-discovery bands built from the V4 CFO/area content — ready.
+- [x] /pro hub: new editable "paths" band after the department picker — four CFO questions with evidence status, roles to their pages, and the live report count by department (117), AR/EN, checked at 1280/390 px; listed in the admin Pro sections editor with heading overrides.
+- [ ] /modules/reports directory: deep links from the hub's category counts to a pre-filtered directory (?category=) — ready.
 - [ ] Owner: the V4 pack references screenshots that were not included; sections without a real screen show labelled process diagrams until real captures are supplied — blocked on owner.
 - [ ] Owner: approve the V4 pages before the next publish (nothing is live yet) — blocked on owner.
 # Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
