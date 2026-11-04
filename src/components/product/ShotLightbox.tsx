@@ -31,6 +31,8 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
   const PrevIcon = locale === "ar" ? ChevronRight : ChevronLeft;
   const NextIcon = locale === "ar" ? ChevronLeft : ChevronRight;
   const zoom = current && current.width < 700 ? 1.5 : 1;
+  // A higher-resolution derivative, when the screen has one, keeps small UI text legible at full size.
+  const image = current?.full ?? current;
   return (
     <Dialog.Root open={Boolean(current)} onOpenChange={open => { if (!open) onClose(); }}>
       <Dialog.Portal>
@@ -46,11 +48,11 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
               <img
                 key={current.id}
                 className="pp-lb-img"
-                src={current.src}
-                width={current.width}
-                height={current.height}
+                src={image?.src}
+                width={image?.width}
+                height={image?.height}
                 alt={current.caption[locale]}
-                style={{ "--pp-w": `${current.width}px`, "--pp-zoom": String(zoom) } as CSSProperties}
+                style={{ "--pp-w": `${image?.width ?? current.width}px`, "--pp-zoom": String(zoom) } as CSSProperties}
               />
             </div>
             {multiple && <>
