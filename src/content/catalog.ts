@@ -2,8 +2,10 @@
 // lead context and the admin catalog all read from here, so a department exists in exactly one place.
 // Labels come from the owner's product brief (2026-11-04); summaries reuse copy already approved on the site.
 import { HR_INDEX } from './hr/hr-index';
+import { specialistIndexOf, specialistPath } from './specialist/registry';
+import type { SpecialistProduct } from './specialist/types';
 export type L = { ar: string; en: string };
-export type ProductKey = 'pro' | 'hr' | 'construction' | 'pos';
+export type ProductKey = 'pro' | 'hr' | 'construction' | 'crm' | 'fsm' | 'pos';
 
 /**
  * `page`: an existing file-based route with imported, already-published content.
@@ -92,7 +94,11 @@ const hr: ProductFamily = {
   solutions: [],
 };
 
-const conDept = (id: string, ar: string, en: string): Department => ({ id, product: 'construction', path: `/construction/${id}`, source: 'cms', label: { ar, en } });
+// Construction, CRM and FSM + ITM departments come from the specialist page registry (V4 brief 2026-11-04,
+// corporate profile taxonomy); each is a CMS-gated route that is public only once its page is published.
+const specialistDepartments = (product: SpecialistProduct): Department[] =>
+  specialistIndexOf(product).map(d => ({ id: d.slug, product, path: specialistPath(d), source: 'cms', label: d.label, summary: d.summary, ...(d.heroShots[0] ? { shot: d.heroShots[0] } : {}) }));
+
 const construction: ProductFamily = {
   key: 'construction',
   base: '/construction',
@@ -100,20 +106,39 @@ const construction: ProductFamily = {
   area: { ar: 'المقاولات', en: 'Construction' },
   nav: { ar: 'المقاولات', en: 'Construction' },
   overview: '/modules/contracting',
-  summary: { ar: 'رحلات المشروع والعقود والتكلفة لشركات المقاولات، مرتبطة بمحاسبتك.', en: 'Project, contract and cost journeys for contractors, connected to your accounting.' },
+  summary: { ar: 'من المقايسة إلى التحصيل في سياق مشروع واحد: العقد والتنفيذ والتكلفة والمستخلصات، مرتبطة بمحاسبتك.', en: 'From BOQ to collection in one project context: contract, execution, cost and claims, connected to your accounting.' },
   groupLabel: { ar: 'أقسام DIGIT Construction', en: 'DIGIT Construction departments' },
-  departments: [
-    conDept('portfolio', 'الإدارة والمحفظة', 'Management & Portfolio'),
-    conDept('projects', 'المشاريع والتنفيذ', 'Projects & Execution'),
-    conDept('estimating', 'المناقصات والتقدير وجداول الكميات', 'Estimating, Tendering & BOQ'),
-    conDept('contracts-claims', 'عقود العملاء والمستخلصات', 'Client Contracts & Claims'),
-    conDept('subcontractors', 'المقاولون الباطن والقياسات', 'Subcontractors & Measurement'),
-    conDept('budget-cost', 'الموازنات والتكاليف والتوقعات', 'Budget, Cost & Forecast'),
-    conDept('procurement', 'المشتريات والمواد', 'Procurement & Materials'),
-    conDept('resources', 'الموارد والمصروفات', 'Resources & Spend'),
-    conDept('financial-closeout', 'الموقف المالي والإقفال والتقارير', 'Financial Position, Closeout & Reports'),
-  ],
+  departments: specialistDepartments('construction'),
   extras: [{ id: 'sector', path: '/industries/contracting-industry', label: { ar: 'قطاع المقاولات', en: 'Contracting sector' } }],
+  solutions: [],
+};
+
+const crm: ProductFamily = {
+  key: 'crm',
+  base: '/crm',
+  name: { ar: 'DIGIT CRM', en: 'DIGIT CRM' },
+  area: { ar: 'علاقات العملاء', en: 'Customer relationships' },
+  nav: { ar: 'علاقات العملاء', en: 'CRM' },
+  overview: '/modules/crm',
+  summary: { ar: 'من العميل المحتمل إلى الصفقة: مسؤول وخطوة تالية لكل عميل، واستثناءات يتصرف فيها المدير.', en: 'From lead to deal: an owner and a next step for every customer, and exceptions the manager can act on.' },
+  groupLabel: { ar: 'مجالات DIGIT CRM', en: 'DIGIT CRM areas' },
+  shot: 'crm-01-deals',
+  departments: specialistDepartments('crm'),
+  extras: [],
+  solutions: [],
+};
+
+const fsm: ProductFamily = {
+  key: 'fsm',
+  base: '/fsm',
+  name: { ar: 'DIGIT FSM + ITM', en: 'DIGIT FSM + ITM' },
+  area: { ar: 'الخدمة والفحص الميداني', en: 'Field service & inspection' },
+  nav: { ar: 'الخدمة الميدانية', en: 'Field service' },
+  overview: '/modules/fsm-itm',
+  summary: { ar: 'من العقد إلى الزيارة: تشغيل ميداني له تاريخ ومسؤول ومستند، من الفحص حتى الإغلاق المؤكد.', en: 'From agreement to visit: field operations with a history, an owner and a document, from inspection to verified closure.' },
+  groupLabel: { ar: 'مجالات DIGIT FSM + ITM', en: 'DIGIT FSM + ITM areas' },
+  departments: specialistDepartments('fsm'),
+  extras: [],
   solutions: [],
 };
 
@@ -141,7 +166,7 @@ const pos: ProductFamily = {
   ],
 };
 
-export const PRODUCTS: ProductFamily[] = [pro, hr, construction, pos];
+export const PRODUCTS: ProductFamily[] = [pro, hr, construction, crm, fsm, pos];
 export const PRODUCT_KEYS = PRODUCTS.map(p => p.key);
 export const productByKey = (key: string): ProductFamily | undefined => PRODUCTS.find(p => p.key === key);
 export const ALL_DEPARTMENTS: Department[] = PRODUCTS.flatMap(p => p.departments);
@@ -183,12 +208,12 @@ export const ABOUT_LINKS: MenuLink[] = [
   { path: '/contact-4', label: { ar: 'تواصل معنا', en: 'Contact us' } },
 ];
 
-/** Systems outside the four product families, kept at their existing module routes. */
+/**
+ * Systems outside the six product families, kept at their existing module routes. CRM is now a product family;
+ * Projects and Manufacturing are development directions (corporate profile p. 31) and stay out of product menus.
+ */
 export const MORE_SYSTEMS: MenuLink[] = [
   { path: '/modules/e-invoicing-zatca', label: { ar: 'الفوترة الإلكترونية', en: 'E-invoicing' } },
-  { path: '/modules/crm', label: { ar: 'إدارة العملاء CRM', en: 'CRM' } },
-  { path: '/modules/projects', label: { ar: 'المشاريع', en: 'Projects' } },
-  { path: '/modules/manufacturing', label: { ar: 'التصنيع', en: 'Manufacturing' } },
   { path: '/modules', label: { ar: 'كل الموديولات', en: 'All modules' } },
 ];
 
@@ -218,6 +243,14 @@ export const EXPLORE_BY_ROLE: MenuLink[] = [
   { path: '/modules/purchasing', label: { ar: 'مسؤول المشتريات', en: 'Buyer' }, summary: { ar: 'المشتريات والموردون', en: 'Purchasing & suppliers' } },
   { path: '/modules/inventory', label: { ar: 'مسؤول المستودع', en: 'Warehouse lead' }, summary: { ar: 'المخزون والمستودعات', en: 'Inventory & warehouses' } },
   { path: '/starter', label: { ar: 'صاحب المنشأة', en: 'Business owner' }, summary: { ar: 'DIGIT Starter', en: 'DIGIT Starter' } },
+];
+
+/** Roles for the remaining specialist products (V4 brief); kept apart so the DIGIT Pro role list stays unchanged. */
+export const EXPLORE_BY_ROLE_SPECIALIST: MenuLink[] = [
+  { path: '/modules/contracting', label: { ar: 'مدير المشاريع', en: 'Project director' }, summary: { ar: 'من المقايسة إلى التحصيل', en: 'From BOQ to collection' } },
+  { path: '/modules/crm', label: { ar: 'مدير فريق المبيعات', en: 'Sales team manager' }, summary: { ar: 'من العميل المحتمل إلى الخطوة التالية', en: 'From lead to next action' } },
+  { path: '/modules/pos', label: { ar: 'مدير عمليات التجزئة', en: 'Retail operations manager' }, summary: { ar: 'من الكاشير إلى عمليات الشركة', en: 'From the till to company operations' } },
+  { path: '/modules/fsm-itm', label: { ar: 'مدير عمليات الخدمة', en: 'Service operations manager' }, summary: { ar: 'من العقد إلى الإغلاق المؤكد', en: 'From agreement to verified closure' } },
 ];
 
 export const EXPLORE_BY_PROBLEM: MenuLink[] = [
@@ -309,6 +342,6 @@ export function allMenuPaths(): string[] {
     p.extras.forEach(e => out.add(e.path));
     p.solutions.forEach(s => out.add(s.path));
   }
-  for (const group of [ABOUT_LINKS, MORE_SYSTEMS, PACKAGES, INDUSTRIES, EXPLORE_BY_ROLE, EXPLORE_BY_PROBLEM, RESOURCE_LINKS, SERVICE_LINKS]) group.forEach(l => out.add(l.path));
+  for (const group of [ABOUT_LINKS, MORE_SYSTEMS, PACKAGES, INDUSTRIES, EXPLORE_BY_ROLE, EXPLORE_BY_ROLE_SPECIALIST, EXPLORE_BY_PROBLEM, RESOURCE_LINKS, SERVICE_LINKS]) group.forEach(l => out.add(l.path));
   return [...out];
 }
