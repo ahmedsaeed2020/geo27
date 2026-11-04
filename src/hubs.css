@@ -164,6 +164,8 @@
   .hs-building, .hs-split, .hs-workbench, .hs-pos-intro, .hs-explorer, .hs-ex-panel, .hs-persp, .hs-panel-row, .hs-chapters { grid-template-columns: minmax(0, 1fr); }
   .hs-tower { min-height: 0; }
   .hs-ex-side { position: static; }
+  .hs-wb-list { display: flex; overflow-x: auto; padding: 2px 2px 6px; scroll-snap-type: x proximity; }
+  .hs-wb-item { flex: none; width: min(240px, 70vw); scroll-snap-align: start; }
   .hs-ex-list { display: flex; overflow-x: auto; padding-bottom: 4px; }
   .hs-ex-item { flex: none; }
   .hs-ex-photo img { min-height: 0; aspect-ratio: 16 / 10; }
