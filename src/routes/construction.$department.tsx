@@ -9,6 +9,6 @@ export const Route = createFileRoute('/construction/$department')({
 });
 
 function Page() {
-  const { path } = Route.useLoaderData();
-  return <DepartmentRouteView path={path} />;
+  const { path, specialist } = Route.useLoaderData();
+  return <DepartmentRouteView path={path} specialist={specialist} />;
 }
