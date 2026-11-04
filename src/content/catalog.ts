@@ -66,8 +66,11 @@ const pro: ProductFamily = {
     { id: 'fixed-assets', product: 'pro', path: '/modules/fixed-assets', source: 'page', shot: '04-360-04-fa2', label: { ar: 'الأصول الثابتة', en: 'Fixed Assets' }, summary: { ar: 'راجع الإهلاك المجدول والمستحق والمرحّل ومطابقته مع الأستاذ العام', en: 'Review scheduled, due and posted depreciation against the GL' } },
   ],
   extras: [
-    { id: 'dashboards', path: '/modules/accounting', hash: 'proof-cfo', shot: '01-cfo-01-e1', label: { ar: 'لوحات الإدارة', en: 'Management dashboards' }, summary: { ar: 'مركز قيادة المدير المالي', en: 'CFO command center' } },
-    { id: 'reports', path: '/modules/reports', shot: '09-rep-03-r6', label: { ar: 'التقارير', en: 'Reports' }, summary: { ar: 'تقارير موحدة بالعربي', en: 'Unified Arabic reports' } },
+    { id: 'reports', path: '/modules/reports', shot: '09-rep-03-r6', label: { ar: 'مركز التقارير', en: 'Report center' }, summary: { ar: 'فهرس التقارير حسب السؤال والإدارة', en: 'Reports by question and department' } },
+    { id: 'dashboards', path: '/pro/executive-dashboards', shot: '01-cfo-01-e1', label: { ar: 'لوحات الإدارة', en: 'Management dashboards' }, summary: { ar: 'مركز القيادة والاستثناءات', en: 'Command center and exceptions' } },
+    { id: 'cfo', path: '/pro/cfo-decisions', shot: '01-cfo-02-e2', label: { ar: 'قرارات المدير المالي', en: 'CFO decisions' }, summary: { ar: 'اثنا عشر سؤالًا تنفيذيًا', en: 'Twelve executive questions' } },
+    { id: 'governance', path: '/pro/settings-governance', shot: '10-ctl-03-s4', label: { ar: 'الإعدادات والحوكمة', en: 'Settings & governance' }, summary: { ar: 'الصلاحيات والاعتمادات', en: 'Permissions and approvals' } },
+    { id: 'capabilities', path: '/pro/capabilities', shot: '03-doc-01-d1', label: { ar: 'القدرات المتقدمة', en: 'Advanced capabilities' }, summary: { ar: 'القدرات حسب النتيجة', en: 'Capabilities by outcome' } },
     { id: 'tour', path: '/pro', hash: 'pro-inside', shot: '10-ctl-01-s1', label: { ar: 'جولة في المنتج', en: 'Product tour' }, summary: { ar: 'عشر مساحات عمل من النظام الحقيقي', en: 'Ten workspaces from the live product' } },
   ],
   solutions: [],
@@ -209,7 +212,7 @@ export const INDUSTRIES: MenuLink[] = [
 
 /** Explore by role or business problem: existing pages only, grouped the same way as the home App Explorer. */
 export const EXPLORE_BY_ROLE: MenuLink[] = [
-  { path: '/modules/accounting', label: { ar: 'المدير المالي', en: 'CFO' }, summary: { ar: 'المحاسبة والمالية', en: 'Accounting & finance' } },
+  { path: '/pro/cfo-decisions', label: { ar: 'المدير المالي', en: 'CFO' }, summary: { ar: 'أسئلة وقرارات المدير المالي', en: 'CFO questions & decisions' } },
   { path: '/modules/fixed-assets', label: { ar: 'المراقب المالي', en: 'Financial controller' }, summary: { ar: 'دورة حياة الأصول', en: 'Asset lifecycle' } },
   { path: '/modules/sales', label: { ar: 'مدير المبيعات', en: 'Sales manager' }, summary: { ar: 'المبيعات وملف العميل', en: 'Sales & customer profile' } },
   { path: '/modules/purchasing', label: { ar: 'مسؤول المشتريات', en: 'Buyer' }, summary: { ar: 'المشتريات والموردون', en: 'Purchasing & suppliers' } },
