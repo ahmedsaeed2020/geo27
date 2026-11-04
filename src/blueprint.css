@@ -216,3 +216,9 @@
   .bp-canvas, .bp-start { position: static; }
   .bp-read, .bp-frictions li, .bp-delivery li { break-inside: avoid; }
 }
+
+/* Arabic text must never be letter-spaced (it breaks the joined script) or set in the Latin monospace. */
+[dir="rtl"] .bp-kicker, [dir="rtl"] .bp-summary, [dir="rtl"] .bp-start h2, [dir="rtl"] .bp-teaser-map figcaption, [dir="rtl"] .bp-count {
+  font-family: var(--font-plex); letter-spacing: 0; text-transform: none; font-weight: 600;
+}
+.bp-teaser h2 { font-weight: 700; }
