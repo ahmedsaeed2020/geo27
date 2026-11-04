@@ -114,7 +114,8 @@ function HeroDiagram({ dept, locale }: { dept: SpecialistDepartment; locale: Loc
   const points = intro && intro.kind === 'intro' ? intro.points : [];
   const records = dept.sections.find(s => s.kind === 'records');
   const recs = records && records.kind === 'records' ? records.items : [];
-  const sig = dept.signature === 'stack' && recs.length < 3 ? 'matrix' : (dept.signature === 'matrix' || dept.signature === 'stack') ? dept.signature : steps.length ? dept.signature : 'matrix';
+  const usesSteps = dept.signature === 'ledger' || dept.signature === 'lanes' || dept.signature === 'loop' || dept.signature === 'timeline';
+  const sig = usesSteps && steps.length ? dept.signature : dept.signature === 'stack' && recs.length >= 3 ? 'stack' : 'matrix';
   let body: ReactNode;
   if (sig === 'matrix') {
     body = (
@@ -275,7 +276,7 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
         </dl>
       </div>
       <p className="sr-only">
-        {C.profile[locale]} {entry.profilePages.join('، ')}
+        {C.profile[locale]} {entry.profilePages.join(locale === 'ar' ? '، ' : ', ')}
       </p>
     </section>
   );
