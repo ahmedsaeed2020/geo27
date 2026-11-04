@@ -1,4 +1,5 @@
-import { useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useState } from 'react';
+import { useRouterState } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, Search } from 'lucide-react';
 import { Input } from '@/components/ui/input';
 import { NavLink } from '@/components/nav/nav-links';
@@ -63,6 +64,14 @@ export function ReportDirectorySection({ s, title, lede, eyebrow }: SectionProps
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState<ReportCategory | 'all'>('all');
   const searchId = useId();
+  // `#reports-<category>` (linked from the /pro hub) opens the directory filtered to that department.
+  const hash = useRouterState({ select: st => st.location.hash });
+  useEffect(() => {
+    const id = hash.replace(/^#?reports-/, '');
+    if (!hash.includes('reports-') || !REPORT_CATEGORIES.some(c => c.id === id)) return;
+    setCategory(id as ReportCategory);
+    document.getElementById(`pv-${s.id}`)?.scrollIntoView({ block: 'start' });
+  }, [hash, s.id]);
   const normalized = query.trim().toLowerCase();
   const visible = useMemo(
     () => REPORTS.filter(r => (category === 'all' || r.category === category) && (!normalized || r.key.toLowerCase().includes(normalized) || r.ar.includes(query.trim()))),

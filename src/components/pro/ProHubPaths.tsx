@@ -96,8 +96,10 @@ export default function ProHubPaths() {
             <ul role="list" className="ph-cats">
               {perCategory.map(c => (
                 <li key={c.id}>
-                  <span>{c.label[locale]}</span>
-                  <span dir="ltr">{c.n}</span>
+                  <NavLink path="/modules/reports" hash={`reports-${c.id}`} className="ph-cat">
+                    <span>{c.label[locale]}</span>
+                    <span dir="ltr">{c.n}</span>
+                  </NavLink>
                 </li>
               ))}
             </ul>
