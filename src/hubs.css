@@ -9,6 +9,7 @@
 .hs-block[data-alt] { background: var(--paper2); }
 .hs-head { max-width: 780px; margin-bottom: clamp(24px, 3vw, 36px); }
 .hs-sub { margin: 36px 0 14px; }
+.hs :is(ul, ol) { margin: 0; padding: 0; list-style: none; }
 .hs [role="tab"]:focus-visible, .hs button:focus-visible, .hs a:focus-visible, .hs label:focus-within { outline: 2px solid var(--ring); outline-offset: 2px; }
 
 .hs-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 20px; font-size: 15px; font-weight: 700; color: var(--primary); }

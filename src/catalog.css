@@ -1,7 +1,7 @@
 /* Header, product Mega Menu and mobile navigation. Uses the site tokens only. */
 .site-header { position: sticky; top: 0; z-index: 50; background: var(--light); box-shadow: 0 1px 3px color-mix(in oklab, var(--deep) 10%, transparent); transition: background-color 300ms ease, box-shadow 300ms ease; }
 .site-header[data-scrolled] { background: color-mix(in oklab, var(--light) 88%, transparent); box-shadow: 0 8px 30px color-mix(in oklab, var(--deep) 10%, transparent); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-.site-header-bar { max-width: 1600px; margin-inline: auto; display: flex; align-items: center; gap: 24px; height: 96px; padding-inline: 24px; transition: height 300ms ease; }
+.site-header-bar { max-width: 1680px; margin-inline: auto; display: flex; align-items: center; gap: 24px; height: 96px; padding-inline: 24px; transition: height 300ms ease; }
 .site-header[data-scrolled] .site-header-bar { height: 64px; }
 .site-logo { display: flex; flex: none; align-items: center; gap: 10px; border-radius: 8px; }
 .site-logo:focus-visible { outline: 3px solid var(--ring); outline-offset: 4px; }
@@ -105,7 +105,12 @@
 .mm-columns > .mm-col:last-child .mm-links li { break-inside: avoid; }
 .mm-col { min-width: 0; }
 
-/* Laptop widths: seven menu groups plus the language switch and demo button must fit without touching. */
+/* Six products plus About, Systems and Resources: below 1680px the brand eyebrow above each product label is dropped
+   (the label and the opened panel still name the product) so all nine groups, the language switch and the demo button fit. */
+@media (min-width: 1280px) and (max-width: 1679.98px) {
+  .mm-top-eyebrow { display: none; }
+}
+/* Laptop widths: tighter spacing as well. */
 @media (min-width: 1280px) and (max-width: 1439.98px) {
   .site-header-bar { gap: 14px; padding-inline: 20px; }
   .site-header-actions { gap: 8px; }
