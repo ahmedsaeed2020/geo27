@@ -41,6 +41,7 @@ import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ConstructionIndexRouteImport } from './routes/construction.index'
 import { Route as ConstructionDepartmentRouteImport } from './routes/construction.$department'
+import { Route as CrmDepartmentRouteImport } from './routes/crm.$department'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
 import { Route as EnAbout4RouteImport } from './routes/en.about-4'
@@ -64,6 +65,7 @@ import { Route as EnStarterRouteImport } from './routes/en.starter'
 import { Route as EnSupportRouteImport } from './routes/en.support'
 import { Route as EnTermsRouteImport } from './routes/en.terms'
 import { Route as EnTrustSecurityRouteImport } from './routes/en.trust-security'
+import { Route as FsmDepartmentRouteImport } from './routes/fsm.$department'
 import { Route as HrIndexRouteImport } from './routes/hr.index'
 import { Route as HrDepartmentRouteImport } from './routes/hr.$department'
 import { Route as IndustriesIndexRouteImport } from './routes/industries.index'
@@ -118,6 +120,8 @@ import { Route as ServicesSupportRouteImport } from './routes/services.support'
 import { Route as ServicesTrainingRouteImport } from './routes/services.training'
 import { Route as EnConstructionIndexRouteImport } from './routes/en.construction.index'
 import { Route as EnConstructionDepartmentRouteImport } from './routes/en.construction.$department'
+import { Route as EnCrmDepartmentRouteImport } from './routes/en.crm.$department'
+import { Route as EnFsmDepartmentRouteImport } from './routes/en.fsm.$department'
 import { Route as EnHrIndexRouteImport } from './routes/en.hr.index'
 import { Route as EnHrDepartmentRouteImport } from './routes/en.hr.$department'
 import { Route as EnIndustriesIndexRouteImport } from './routes/en.industries.index'
@@ -331,6 +335,11 @@ const ConstructionDepartmentRoute = ConstructionDepartmentRouteImport.update({
   path: '/construction/$department',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CrmDepartmentRoute = CrmDepartmentRouteImport.update({
+  id: '/crm/$department',
+  path: '/crm/$department',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnIndexRoute = EnIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -445,6 +454,11 @@ const EnTrustSecurityRoute = EnTrustSecurityRouteImport.update({
   id: '/trust-security',
   path: '/trust-security',
   getParentRoute: () => EnRoute,
+} as any)
+const FsmDepartmentRoute = FsmDepartmentRouteImport.update({
+  id: '/fsm/$department',
+  path: '/fsm/$department',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const HrIndexRoute = HrIndexRouteImport.update({
   id: '/hr/',
@@ -724,6 +738,16 @@ const EnConstructionDepartmentRoute =
     path: '/construction/$department',
     getParentRoute: () => EnRoute,
   } as any)
+const EnCrmDepartmentRoute = EnCrmDepartmentRouteImport.update({
+  id: '/crm/$department',
+  path: '/crm/$department',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnFsmDepartmentRoute = EnFsmDepartmentRouteImport.update({
+  id: '/fsm/$department',
+  path: '/fsm/$department',
+  getParentRoute: () => EnRoute,
+} as any)
 const EnHrIndexRoute = EnHrIndexRouteImport.update({
   id: '/hr/',
   path: '/hr/',
@@ -1037,6 +1061,7 @@ export interface FileRoutesByFullPath {
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1059,6 +1084,7 @@ export interface FileRoutesByFullPath {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
@@ -1114,6 +1140,8 @@ export interface FileRoutesByFullPath {
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/crm/$department': typeof EnCrmDepartmentRoute
+  '/en/fsm/$department': typeof EnFsmDepartmentRoute
   '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
@@ -1196,6 +1224,7 @@ export interface FileRoutesByTo {
   '/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1215,6 +1244,7 @@ export interface FileRoutesByTo {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
@@ -1270,6 +1300,8 @@ export interface FileRoutesByTo {
   '/modules': typeof ModulesIndexRoute
   '/services-3': typeof Services3IndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/crm/$department': typeof EnCrmDepartmentRoute
+  '/en/fsm/$department': typeof EnFsmDepartmentRoute
   '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
@@ -1358,6 +1390,7 @@ export interface FileRoutesById {
   '/_authenticated/admin': typeof AuthenticatedAdminRoute
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/crm/$department': typeof CrmDepartmentRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/careers': typeof EnCareersRoute
@@ -1380,6 +1413,7 @@ export interface FileRoutesById {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
   '/industries/distribution': typeof IndustriesDistributionRoute
@@ -1435,6 +1469,8 @@ export interface FileRoutesById {
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
+  '/en/crm/$department': typeof EnCrmDepartmentRoute
+  '/en/fsm/$department': typeof EnFsmDepartmentRoute
   '/en/hr/$department': typeof EnHrDepartmentRoute
   '/en/industries/contracting-industry': typeof EnIndustriesContractingIndustryRoute
   '/en/industries/distribution': typeof EnIndustriesDistributionRoute
@@ -1523,6 +1559,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/api/chat'
     | '/construction/$department'
+    | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1545,6 +1582,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
@@ -1600,6 +1638,8 @@ export interface FileRouteTypes {
     | '/modules/'
     | '/services-3/'
     | '/en/construction/$department'
+    | '/en/crm/$department'
+    | '/en/fsm/$department'
     | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
@@ -1682,6 +1722,7 @@ export interface FileRouteTypes {
     | '/admin'
     | '/api/chat'
     | '/construction/$department'
+    | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1701,6 +1742,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
@@ -1756,6 +1798,8 @@ export interface FileRouteTypes {
     | '/modules'
     | '/services-3'
     | '/en/construction/$department'
+    | '/en/crm/$department'
+    | '/en/fsm/$department'
     | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
@@ -1843,6 +1887,7 @@ export interface FileRouteTypes {
     | '/_authenticated/admin'
     | '/api/chat'
     | '/construction/$department'
+    | '/crm/$department'
     | '/en/about'
     | '/en/about-4'
     | '/en/careers'
@@ -1865,6 +1910,7 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
     | '/industries/distribution'
@@ -1920,6 +1966,8 @@ export interface FileRouteTypes {
     | '/modules/'
     | '/services-3/'
     | '/en/construction/$department'
+    | '/en/crm/$department'
+    | '/en/fsm/$department'
     | '/en/hr/$department'
     | '/en/industries/contracting-industry'
     | '/en/industries/distribution'
@@ -2007,6 +2055,8 @@ export interface RootRouteChildren {
   TrustSecurityRoute: typeof TrustSecurityRoute
   ApiChatRoute: typeof ApiChatRoute
   ConstructionDepartmentRoute: typeof ConstructionDepartmentRoute
+  CrmDepartmentRoute: typeof CrmDepartmentRoute
+  FsmDepartmentRoute: typeof FsmDepartmentRoute
   HrDepartmentRoute: typeof HrDepartmentRoute
   PosSolutionsElectricalAppliancesRoute: typeof PosSolutionsElectricalAppliancesRoute
   PosSolutionsFloristRoute: typeof PosSolutionsFloristRoute
@@ -2249,6 +2299,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConstructionDepartmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/crm/$department': {
+      id: '/crm/$department'
+      path: '/crm/$department'
+      fullPath: '/crm/$department'
+      preLoaderRoute: typeof CrmDepartmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en/': {
       id: '/en/'
       path: '/'
@@ -2409,6 +2466,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/en/trust-security'
       preLoaderRoute: typeof EnTrustSecurityRouteImport
       parentRoute: typeof EnRoute
+    }
+    '/fsm/$department': {
+      id: '/fsm/$department'
+      path: '/fsm/$department'
+      fullPath: '/fsm/$department'
+      preLoaderRoute: typeof FsmDepartmentRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/hr/': {
       id: '/hr/'
@@ -2786,6 +2850,20 @@ declare module '@tanstack/react-router' {
       path: '/construction/$department'
       fullPath: '/en/construction/$department'
       preLoaderRoute: typeof EnConstructionDepartmentRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/crm/$department': {
+      id: '/en/crm/$department'
+      path: '/crm/$department'
+      fullPath: '/en/crm/$department'
+      preLoaderRoute: typeof EnCrmDepartmentRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/fsm/$department': {
+      id: '/en/fsm/$department'
+      path: '/fsm/$department'
+      fullPath: '/en/fsm/$department'
+      preLoaderRoute: typeof EnFsmDepartmentRouteImport
       parentRoute: typeof EnRoute
     }
     '/en/hr/': {
@@ -3319,6 +3397,8 @@ interface EnRouteChildren {
   EnTrustSecurityRoute: typeof EnTrustSecurityRoute
   EnIndexRoute: typeof EnIndexRoute
   EnConstructionDepartmentRoute: typeof EnConstructionDepartmentRoute
+  EnCrmDepartmentRoute: typeof EnCrmDepartmentRoute
+  EnFsmDepartmentRoute: typeof EnFsmDepartmentRoute
   EnHrDepartmentRoute: typeof EnHrDepartmentRoute
   EnPosSolutionsElectricalAppliancesRoute: typeof EnPosSolutionsElectricalAppliancesRoute
   EnPosSolutionsFloristRoute: typeof EnPosSolutionsFloristRoute
@@ -3359,6 +3439,8 @@ const EnRouteChildren: EnRouteChildren = {
   EnTrustSecurityRoute: EnTrustSecurityRoute,
   EnIndexRoute: EnIndexRoute,
   EnConstructionDepartmentRoute: EnConstructionDepartmentRoute,
+  EnCrmDepartmentRoute: EnCrmDepartmentRoute,
+  EnFsmDepartmentRoute: EnFsmDepartmentRoute,
   EnHrDepartmentRoute: EnHrDepartmentRoute,
   EnPosSolutionsElectricalAppliancesRoute:
     EnPosSolutionsElectricalAppliancesRoute,
@@ -3527,6 +3609,8 @@ const rootRouteChildren: RootRouteChildren = {
   TrustSecurityRoute: TrustSecurityRoute,
   ApiChatRoute: ApiChatRoute,
   ConstructionDepartmentRoute: ConstructionDepartmentRoute,
+  CrmDepartmentRoute: CrmDepartmentRoute,
+  FsmDepartmentRoute: FsmDepartmentRoute,
   HrDepartmentRoute: HrDepartmentRoute,
   PosSolutionsElectricalAppliancesRoute: PosSolutionsElectricalAppliancesRoute,
   PosSolutionsFloristRoute: PosSolutionsFloristRoute,
