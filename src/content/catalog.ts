@@ -247,6 +247,57 @@ export const SERVICE_LINKS: MenuLink[] = [
   { path: '/services-3/erpnext-service', label: { ar: 'تنفيذ وترقية النظام', en: 'System implementation & upgrade' } },
 ];
 
+/* ------------------------------ Resolved catalog view ------------------------------ */
+
+type OrderEntry = { id: string; enabled: boolean };
+/** Stored menu order/visibility per product family (the `catalog` site setting). */
+export type CatalogOrder = { products?: Partial<Record<ProductKey, OrderEntry[]>> };
+
+/**
+ * A department as menus and hubs show it. A CMS department becomes `live` only once its page is published; until
+ * then it points to its card on the product hub, so no menu item opens an empty or unpublished page.
+ */
+export type ResolvedDepartment = Department & { live: boolean; href: string; hash?: string };
+export type ResolvedFamily = Omit<ProductFamily, 'departments'> & { departments: ResolvedDepartment[]; liveCount: number };
+
+export const departmentAnchor = (id: string) => `dept-${id}`;
+
+/** Applies a stored order; hidden entries drop out, unknown ids are ignored and new items keep their place at the end. */
+export function orderById<T extends { id: string }>(items: T[], order?: OrderEntry[]): T[] {
+  if (!order?.length) return items;
+  const byId = new Map(items.map(item => [item.id, item]));
+  const seen = new Set<string>();
+  const out: T[] = [];
+  for (const entry of order) {
+    const item = byId.get(entry.id);
+    if (!item || seen.has(entry.id)) continue;
+    seen.add(entry.id);
+    if (entry.enabled) out.push(item);
+  }
+  for (const item of items) if (!seen.has(item.id)) out.push(item);
+  return out;
+}
+
+export function resolveCatalog(order: CatalogOrder | undefined, publishedPaths: Iterable<string>): ResolvedFamily[] {
+  const published = new Set(publishedPaths);
+  return PRODUCTS.map(family => {
+    const stored = order?.products?.[family.key];
+    const departments = orderById(family.departments, stored).map((d): ResolvedDepartment => {
+      const live = d.source === 'page' || published.has(d.path);
+      return live ? { ...d, live, href: d.path } : { ...d, live, href: family.overview, hash: departmentAnchor(d.id) };
+    });
+    const solutions = family.key === 'pos' ? orderById(family.solutions, stored) : family.solutions;
+    return { ...family, departments, solutions, liveCount: departments.filter(d => d.live).length };
+  });
+}
+
+/** Home › product › department trail for a department page. */
+export function departmentTrail(path: string): { product: ProductFamily; department: Department } | undefined {
+  const department = departmentByPath(path);
+  const product = department && productByKey(department.product);
+  return department && product ? { product, department } : undefined;
+}
+
 /** Every internal path the menus can link to, for route checks. */
 export function allMenuPaths(): string[] {
   const out = new Set<string>();
