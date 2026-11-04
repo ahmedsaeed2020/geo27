@@ -257,7 +257,7 @@ export const SERVICE_LINKS: MenuLink[] = [
 
 type OrderEntry = { id: string; enabled: boolean };
 /** Stored menu order/visibility per product family (the `catalog` site setting). */
-export type CatalogOrder = { products?: Partial<Record<ProductKey, OrderEntry[]>> };
+export type CatalogOrder = { products?: { [K in ProductKey]?: OrderEntry[] | undefined } };
 
 /**
  * A department as menus and hubs show it. A CMS department becomes `live` only once its page is published; until
