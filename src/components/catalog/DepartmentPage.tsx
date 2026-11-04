@@ -250,7 +250,7 @@ function DocumentBlock({ block, locale }: { block: CmsBlock; locale: Locale }) {
         })}
       </ul>
       {shown.map((item, i) => (
-        <figure key={i} className="dp-docs-shot">
+        <figure key={i} className="dp-docs-shot" style={{ '--dp-shot-w': `${shots[i]!.width}px` } as CSSProperties}>
           <figcaption>{item.title}</figcaption>
           <ShotFrame shot={shots[i]!} size="lead" caption={false} onOpen={() => box.open(i)} />
         </figure>

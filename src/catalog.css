@@ -328,7 +328,8 @@
 .dp-chain-pair > span:last-child { background: var(--ink); color: var(--paper2); }
 .dp-chain-pair svg { width: 16px; height: 16px; color: var(--primary); }
 .dp-chain-item small { display: block; margin-top: 8px; font-size: 13px; color: var(--body2); }
-.dp-docs-shot { margin: 32px 0 0; }
+/* Small widget captures are never upscaled, so their frame shrinks with them instead of floating in an empty full-width canvas. */
+.dp-docs-shot { margin: 32px 0 0; max-width: max(calc(var(--dp-shot-w, 2000px) * 1.6), 440px); }
 .dp-docs-shot figcaption { margin-bottom: 12px; font-size: 16px; font-weight: 700; color: var(--ink); }
 
 .dp-report { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.5fr); align-items: start; gap: 40px; }
