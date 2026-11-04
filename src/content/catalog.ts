@@ -1,6 +1,7 @@
 // Canonical product-and-department registry. Header, Mega Menu, Product Hubs, department pages, breadcrumbs,
 // lead context and the admin catalog all read from here, so a department exists in exactly one place.
 // Labels come from the owner's product brief (2026-11-04); summaries reuse copy already approved on the site.
+import { HR_INDEX } from './hr/hr-index';
 export type L = { ar: string; en: string };
 export type ProductKey = 'pro' | 'hr' | 'construction' | 'pos';
 
