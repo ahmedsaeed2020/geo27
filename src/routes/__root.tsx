@@ -20,6 +20,7 @@ import { loadSite, previewTokenFrom } from '@/lib/cms-query';
 import { CmsProvider } from '@/components/cms/CmsContext';
 import PreviewBanner, { SettingsDraftBanner, type SettingsDraftState } from '@/components/cms/PreviewBanner';
 import v3Css from '../v3.css?url';
+import catalogCss from '../catalog.css?url';
 
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
@@ -121,6 +122,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },
       { rel: 'stylesheet', href: v3Css },
+      { rel: 'stylesheet', href: catalogCss },
       ...(icon
         ? [{ rel: "icon", href: icon, type: "image/png" }, { rel: "apple-touch-icon", href: icon }]
         : [
@@ -158,10 +160,10 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
-const DRAFT_SETTING_KEYS = ['forms', 'home', 'pro'] as const;
+const DRAFT_SETTING_KEYS = ['forms', 'home', 'pro', 'catalog'] as const;
 
 /**
- * `?draft_settings=home|pro|forms` shows saved, unpublished settings to a signed-in editor. It runs only in the
+ * `?draft_settings=home|pro|forms|catalog` shows saved, unpublished settings to a signed-in editor. It runs only in the
  * browser after hydration (the session lives there) and never changes what visitors or crawlers receive.
  */
 function useSettingsDraft(): SettingsDraftState {
