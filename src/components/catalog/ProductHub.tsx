@@ -1,4 +1,5 @@
-import { useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
+import { useRouterState } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ShotFrame from '@/components/product/ShotFrame';
 import ShotLightbox from '@/components/product/ShotLightbox';
@@ -9,6 +10,11 @@ import { SHOTS, type Shot } from '@/content/product-shots';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { useCatalog } from './useCatalog';
 import '@/product-proof.css';
+
+/** The department card a menu link pointed at (client-side hash changes do not update :target). */
+function useTargetId(): string {
+  return useRouterState({ select: s => s.location.hash.replace(/^#/, '') });
+}
 
 const COPY = {
   proEyebrow: { ar: 'أقسام DIGIT Pro', en: 'DIGIT Pro departments' },
@@ -57,6 +63,11 @@ function ProCycle({ family, locale }: { family: ResolvedFamily; locale: Locale }
   const current = depts[active];
   const shot: Shot | undefined = current?.shot ? SHOTS[current.shot] : undefined;
   const extras = useMemo(() => family.extras.map(x => ({ ...x, s: x.shot ? SHOTS[x.shot] : undefined })), [family.extras]);
+  const target = useTargetId();
+  useEffect(() => {
+    const i = depts.findIndex(d => departmentAnchor(d.id) === target);
+    if (i >= 0) setActive(i);
+  }, [target, depts]);
   if (!current) return null;
   const onKey = (e: KeyboardEvent<HTMLButtonElement>) => {
     const vertical = e.key === 'ArrowDown' || e.key === 'ArrowUp';
@@ -132,13 +143,14 @@ function ProCycle({ family, locale }: { family: ResolvedFamily; locale: Locale }
 }
 
 function HrLifecycle({ family, locale }: { family: ResolvedFamily; locale: Locale }) {
+  const target = useTargetId();
   const foundation = family.departments.filter(d => d.id === 'administration');
   const track = family.departments.filter(d => d.id !== 'administration');
   return (
     <div className="ph-hr">
       <ol role="list" className="ph-track" style={{ '--ph-steps': String(Math.max(track.length, 1)) } as CSSProperties}>
         {track.map((d, i) => (
-          <li key={d.id} id={departmentAnchor(d.id)} className="ph-step" data-motion-step>
+          <li key={d.id} id={departmentAnchor(d.id)} className="ph-step" data-motion-step data-target={target === departmentAnchor(d.id) ? '' : undefined}>
             <span className="ph-step-dot" aria-hidden="true">
               {i + 1}
             </span>
@@ -148,7 +160,7 @@ function HrLifecycle({ family, locale }: { family: ResolvedFamily; locale: Local
         ))}
       </ol>
       {foundation.map(d => (
-        <div key={d.id} id={departmentAnchor(d.id)} className="ph-foundation">
+        <div key={d.id} id={departmentAnchor(d.id)} className="ph-foundation" data-target={target === departmentAnchor(d.id) ? '' : undefined}>
           <span className="ph-label">{COPY.foundation[locale]}</span>
           <strong>{d.label[locale]}</strong>
           <DeptAction family={family} d={d} locale={locale} area />
@@ -159,6 +171,7 @@ function HrLifecycle({ family, locale }: { family: ResolvedFamily; locale: Local
 }
 
 function ConstructionJourneys({ family, locale }: { family: ResolvedFamily; locale: Locale }) {
+  const target = useTargetId();
   const placed = new Set(CONSTRUCTION_LANES.flatMap(l => l.ids));
   const lanes = CONSTRUCTION_LANES.map((lane, i) => ({
     ...lane,
@@ -177,7 +190,7 @@ function ConstructionJourneys({ family, locale }: { family: ResolvedFamily; loca
             {lane.depts.map(d => {
               n += 1;
               return (
-                <li key={d.id} id={departmentAnchor(d.id)} className="ph-node">
+                <li key={d.id} id={departmentAnchor(d.id)} className="ph-node" data-target={target === departmentAnchor(d.id) ? '' : undefined}>
                   <span className="ph-node-no" aria-hidden="true">
                     {n}
                   </span>
