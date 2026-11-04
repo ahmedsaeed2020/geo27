@@ -79,11 +79,12 @@
 .mm-shot figcaption { padding: 10px 14px 12px; border-top: 1px solid var(--dline); font-size: 13px; font-weight: 600; line-height: 1.6; color: var(--ink); }
 .mm-shot figcaption small { display: block; font-size: 11px; font-weight: 700; color: var(--primary); }
 .mm-brand { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; height: 100%; min-height: 260px; overflow: hidden; padding: 26px; border-radius: 18px; background: linear-gradient(155deg, var(--deep), var(--dark)); color: var(--paper2); }
-.mm-brand-bars { position: absolute; top: 26px; inset-inline-end: -40px; display: grid; gap: 12px; opacity: 0.16; }
-.mm-brand-bars span { display: block; height: 34px; border-radius: 17px; background: var(--paper2); }
-.mm-brand-bars span:nth-child(1) { width: 170px; background: var(--mint); }
-.mm-brand-bars span:nth-child(2) { width: 250px; }
-.mm-brand-bars span:nth-child(3) { width: 200px; }
+.mm-brand-bars { display: grid; gap: 7px; margin-bottom: 18px; }
+.mm-brand-bars span { display: block; height: 12px; border-radius: 6px; background: var(--paper2); opacity: 0.9; }
+.mm-brand-bars span:nth-child(1) { width: 46px; background: var(--mint); opacity: 1; }
+.mm-brand-bars span:nth-child(2) { width: 74px; }
+.mm-brand-bars span:nth-child(3) { width: 58px; }
+.mm-brand::after { content: ""; position: absolute; inset-block-start: -60px; inset-inline-end: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, var(--mint) 30%, transparent), transparent 70%); pointer-events: none; }
 .mm-brand-title { margin-top: auto; font-size: 20px; font-weight: 800; line-height: 1.45; }
 .mm-brand-body { font-size: 14px; line-height: 1.7; color: color-mix(in oklab, var(--paper2) 78%, transparent); }
 .mm-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 36px; padding-top: 16px; border-top: 1px solid var(--dline); }
@@ -98,7 +99,10 @@
 .mm-family .mm-product { margin: 0 0 4px; font-size: 20px; }
 .mm-family .mm-summary { font-size: 13px; line-height: 1.65; }
 .mm-family .mm-count { align-self: flex-start; margin-top: auto; }
-.mm-columns { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--dline); }
+.mm-columns { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 24px; margin-top: 22px; padding-top: 18px; border-top: 1px solid var(--dline); }
+.mm-columns > .mm-col:last-child { grid-column: span 2; }
+.mm-columns > .mm-col:last-child .mm-links { display: block; columns: 2; column-gap: 16px; }
+.mm-columns > .mm-col:last-child .mm-links li { break-inside: avoid; }
 .mm-col { min-width: 0; }
 
 @media (max-width: 1279.98px) {
