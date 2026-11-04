@@ -37,7 +37,7 @@
 .hs-building { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(20px, 3vw, 40px); align-items: stretch; }
 .hs-tower { position: relative; display: grid; align-items: end; min-height: 440px; padding: 22px; border-radius: 22px; background: linear-gradient(180deg, color-mix(in oklab, var(--deep) 25%, transparent), color-mix(in oklab, var(--deep) 75%, transparent)), var(--hs-photo, none) center / cover, var(--deep); overflow: hidden; }
 .hs-floors { display: grid; gap: 8px; }
-.hs-floor { display: flex; align-items: center; gap: 12px; width: calc(100% - (4 - var(--i)) * 0px); margin-inline: calc((4 - var(--i)) * 3%); padding: 13px 16px; border: 1px solid color-mix(in oklab, var(--paper2) 35%, transparent); border-radius: 12px; background: color-mix(in oklab, var(--paper2) 14%, transparent); backdrop-filter: blur(4px); color: var(--paper2); text-align: start; transition: background .2s, transform .2s, border-color .2s; }
+.hs-floor { display: flex; align-items: center; gap: 12px; margin-inline: calc(var(--i) * 3%); padding: 13px 16px; border: 1px solid color-mix(in oklab, var(--paper2) 35%, transparent); border-radius: 12px; background: color-mix(in oklab, var(--paper2) 14%, transparent); backdrop-filter: blur(4px); color: var(--paper2); text-align: start; transition: background .2s, transform .2s, border-color .2s; }
 .hs-floor:hover { background: color-mix(in oklab, var(--paper2) 24%, transparent); }
 .hs-floor[aria-selected="true"] { border-color: var(--sp-accent); background: var(--paper2); color: var(--deep); transform: scale(1.02); }
 .hs-floor-no { font-family: var(--font-monospace); font-size: 12px; opacity: .8; }
