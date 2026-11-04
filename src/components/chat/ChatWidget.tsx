@@ -214,7 +214,7 @@ export default function ChatWidget() {
   const BackIcon = locale === "ar" ? ArrowRight : ArrowLeft;
 
   return (
-    <div className="fixed bottom-4 end-4 z-50 flex flex-col items-end gap-3" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <div data-chat-widget className="fixed bottom-4 end-4 z-50 flex flex-col items-end gap-3" dir={locale === "ar" ? "rtl" : "ltr"}>
       {open && (
         <div className="flex h-[32rem] w-[22rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl">
           <div className="flex items-center justify-between gap-2 border-b border-border bg-primary px-4 py-3 text-primary-foreground">
