@@ -46,7 +46,6 @@ const page: ProPageContent = {
             en: 'The path starts with a material request, then a request for quotation sent to several suppliers, then their quotes as original documents compared in the supplier quotation comparison report. Requests with no quote yet appear in a dedicated report so no need gets lost.',
           },
           features: [],
-          lead: { id: '' },
         },
         work: {
           docs: [

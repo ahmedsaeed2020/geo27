@@ -163,7 +163,6 @@ const page: ProPageContent = {
             en: 'A count is recorded as an original stock reconciliation that keeps the quantity before and after, and batches and serial numbers have their own ledgers and reports: available batches, batch balance history, expiry status and negative batches.',
           },
           features: [],
-          lead: { id: '' },
         },
         work: {
           docs: [

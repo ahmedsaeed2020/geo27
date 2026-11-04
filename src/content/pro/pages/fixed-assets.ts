@@ -205,7 +205,6 @@ const page: ProPageContent = {
             en: 'Maintenance and repairs are original documents linked to the asset, while their accounting treatment (expense or addition to the asset’s value) and the treatment of sale and scrapping and their effect on profit and loss are agreed with your finance team before go-live, because they are accounting policies rather than technical settings.',
           },
           features: [],
-          lead: { id: '' },
         },
         work: {
           docs: [

@@ -19,7 +19,8 @@ export type Workspace = {
   roles: L[];
   /** Stages of the department journey this workspace covers (indexes into the page's journey rail). */
   stages?: number[];
-  overview: { body: L; features: Feature[]; lead: ShotRef; extra?: ShotRef[] };
+  /** Without a lead screen the workspace shows its document path as a labelled diagram (never a mock screen). */
+  overview: { body: L; features: Feature[]; lead?: ShotRef; extra?: ShotRef[] };
   work: { docs: NativeDoc[]; steps: L[]; control: L };
   reports: { keys: string[]; decision: L };
 };
