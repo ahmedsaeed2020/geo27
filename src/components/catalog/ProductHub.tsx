@@ -1,9 +1,8 @@
-import { useMemo, useRef, useState, type KeyboardEvent } from 'react';
+import { useMemo, useRef, useState, type CSSProperties, type KeyboardEvent } from 'react';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import ShotFrame from '@/components/product/ShotFrame';
 import ShotLightbox from '@/components/product/ShotLightbox';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
-import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/nav/nav-links';
 import { departmentAnchor, type L, type ProductKey, type ResolvedDepartment, type ResolvedFamily } from '@/content/catalog';
 import { SHOTS, type Shot } from '@/content/product-shots';
@@ -137,7 +136,7 @@ function HrLifecycle({ family, locale }: { family: ResolvedFamily; locale: Local
   const track = family.departments.filter(d => d.id !== 'administration');
   return (
     <div className="ph-hr">
-      <ol role="list" className="ph-track" style={{ '--ph-steps': String(Math.max(track.length, 1)) } as React.CSSProperties}>
+      <ol role="list" className="ph-track" style={{ '--ph-steps': String(Math.max(track.length, 1)) } as CSSProperties}>
         {track.map((d, i) => (
           <li key={d.id} id={departmentAnchor(d.id)} className="ph-step" data-motion-step>
             <span className="ph-step-dot" aria-hidden="true">
@@ -218,13 +217,6 @@ export default function ProductDepartments({ product }: { product: ProductKey })
         {product === 'pro' && <ProCycle family={family} locale={locale} />}
         {product === 'hr' && <HrLifecycle family={family} locale={locale} />}
         {product === 'construction' && <ConstructionJourneys family={family} locale={locale} />}
-        {product !== 'pro' && family.liveCount === 0 && (
-          <div className="ph-cta">
-            <Button size="lg" onClick={() => focusLeadForm({ product: family.key, department: '' })}>
-              {locale === 'ar' ? 'احجز ديمو Digit' : 'Book Digit demo'}
-            </Button>
-          </div>
-        )}
       </div>
     </section>
   );
