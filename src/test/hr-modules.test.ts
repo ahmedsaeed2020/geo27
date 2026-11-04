@@ -25,6 +25,11 @@ describe('DIGIT HR module coverage (owner handoff)', () => {
     expect(new Set(all.flatMap(m => Object.keys(m.screens))).size).toBe(98);
   });
 
+  it('gives each page an intro heading that differs from its hero headline in both languages', () => {
+    for (const m of all)
+      for (const l of ['ar', 'en'] as const) expect(m.intro.title[l].trim(), `${m.slug} ${l}`).not.toBe(m.hero.title[l].trim());
+  });
+
   it('gives every section feature and screen id a definition in its own page', () => {
     for (const m of all)
       for (const s of m.sections) {
