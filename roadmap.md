@@ -7,7 +7,7 @@
 - [x] /pro hub: department picker now links each department's four workspaces (20 in all) and the cross-department areas; stays in the editable "departments" Pro section.
 - [x] CMS: V4 pages list their source sections in the editor (reorder/hide/retitle, Pro-only screen picker where a section has a lead screen, no department-template switch); drafts for inventory + 4 areas with titles. (E2E: retitle + hide saved as draft, public page unchanged, restored.)
 - [x] Demo requests from workspaces/questions carry product, department and topic (E2E: ACC-DUES request saved and read back, test row deleted); topic shown in Leads/CSV.
-- [x] Phase E: 88 tests pass; AR/EN desktop and phone checks of all 10 pages (no console errors, no overflow), 404 for unknown areas, canonical/hreflang checked. No live publish.
+- [x] Phase E: 88 tests pass; all 22 AR/EN URLs (10 V4 pages + /pro) at 390 and 1280 px return 200 with no console errors, overflow, broken images or Arabic in English V4 sections; 404 for unknown areas; canonical/hreflang checked. No live publish.
 - [ ] /pro hub: optional executive-proof and role-discovery bands built from the V4 CFO/area content — ready.
 - [ ] Owner: the V4 pack references screenshots that were not included; sections without a real screen show labelled process diagrams until real captures are supplied — blocked on owner.
 - [ ] Owner: approve the V4 pages before the next publish (nothing is live yet) — blocked on owner.
