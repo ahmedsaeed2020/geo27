@@ -13,7 +13,7 @@
 - [ ] Owner: approve the HR handoff features (all marked product vision / not approved), confirm employee names in the 16 HR screenshots are demo data, and approve the evidence guide before any HR page is published — blocked on owner.
 - [ ] Owner: provide approved content and real screens for the 9 Construction department pages before they can be published — blocked on product evidence.
 - [ ] Owner: Employee & Manager Experience has no real screenshot yet (shows a labelled diagram) — needs a real capture.
-- [ ] Add the edge-fade/active-centering behaviour from the HR area switcher to the Construction department switcher.
+- [x] Area switchers on all department pages fade at the hidden edge and centre the current area.
 
 # DIGIT Website V3 — 2026-10-30
 - [x] Stage 1 foundation: server-saved contextual leads, consent/channel checks, durable rate limit, private inbox and exact approved notification recipient; saved/read-back tested.
