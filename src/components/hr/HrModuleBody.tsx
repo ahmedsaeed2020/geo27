@@ -4,6 +4,7 @@ import { NavLink } from '@/components/nav/nav-links';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { Button } from '@/components/ui/button';
 import { useCatalog } from '@/components/catalog/useCatalog';
+import { useScrollEdges } from '@/hooks/use-scroll-edges';
 import { cachedHrModule, loadHrModule, type HrModuleConfig, type HrModuleContent } from '@/content/hr/hr-modules';
 import { productByKey } from '@/content/catalog';
 import type { Shot } from '@/content/product-shots';
@@ -69,6 +70,7 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
   const demo = () => focusLeadForm({ product: 'hr', department: config.slug });
   const Arrow = locale === 'ar' ? ArrowLeft : ArrowRight;
   const siblings = family?.departments.filter(d => d.id !== config.slug) ?? [];
+  const siblingsRef = useScrollEdges<HTMLDivElement>();
   let splitCount = 0;
 
   return (
@@ -88,7 +90,7 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
 
       {family && family.departments.length > 1 && (
         <nav className="dp-siblings" aria-label={C.areas[locale]}>
-          <div className="dp-wrap">
+          <div className="dp-wrap" ref={siblingsRef}>
             <span className="dp-siblings-label">{C.areas[locale]}</span>
             <ul role="list">
               {family.departments.map(d => (

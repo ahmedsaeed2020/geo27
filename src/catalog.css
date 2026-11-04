@@ -259,6 +259,10 @@
 .dp-siblings { position: sticky; top: 64px; z-index: 20; border-bottom: 1px solid var(--dline); background: color-mix(in oklab, var(--paper2) 92%, transparent); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
 .dp-siblings .dp-wrap { display: flex; align-items: center; gap: 16px; overflow-x: auto; padding-block: 10px; scrollbar-width: none; }
 .dp-siblings .dp-wrap::-webkit-scrollbar { display: none; }
+/* Edge fades on the inline side that still has hidden areas (set by useScrollEdges). */
+.dp-siblings .dp-wrap { --fade-l: 0px; --fade-r: 0px; -webkit-mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent); mask-image: linear-gradient(to right, transparent, #000 var(--fade-l), #000 calc(100% - var(--fade-r)), transparent); }
+[dir="ltr"] .dp-siblings .dp-wrap[data-more-start], [dir="rtl"] .dp-siblings .dp-wrap[data-more-end] { --fade-l: 56px; }
+[dir="ltr"] .dp-siblings .dp-wrap[data-more-end], [dir="rtl"] .dp-siblings .dp-wrap[data-more-start] { --fade-r: 56px; }
 .dp-siblings-label { flex: none; font-size: 12px; font-weight: 700; color: var(--body2); white-space: nowrap; }
 .dp-siblings ul { display: flex; gap: 6px; }
 .dp-siblings a { display: block; padding: 6px 14px; border: 1px solid transparent; border-radius: 999px; font-size: 13.5px; font-weight: 600; color: var(--ink); white-space: nowrap; transition: border-color 150ms ease; }

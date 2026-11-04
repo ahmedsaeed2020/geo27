@@ -9,7 +9,6 @@ export function useScrollEdges<T extends HTMLElement>() {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const rtl = getComputedStyle(el).direction === 'rtl';
     const update = () => {
       const max = el.scrollWidth - el.clientWidth;
       const pos = Math.abs(el.scrollLeft);
@@ -28,7 +27,6 @@ export function useScrollEdges<T extends HTMLElement>() {
     el.addEventListener('scroll', update, { passive: true });
     const ro = new ResizeObserver(update);
     ro.observe(el);
-    void rtl;
     return () => {
       el.removeEventListener('scroll', update);
       ro.disconnect();
