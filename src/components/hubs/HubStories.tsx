@@ -24,6 +24,7 @@ import {
 } from '@/content/specialist/stories';
 import type { L } from '@/content/specialist/types';
 import { useLocale, type Locale } from '@/lib/i18n';
+import { DeptLink, Head, useTabs } from './story-kit';
 import '@/specialist.css';
 import '@/hubs.css';
 
@@ -51,60 +52,6 @@ const C = {
   step: { ar: 'الخطوة', en: 'Step' },
   of: { ar: 'من', en: 'of' },
 } satisfies Record<string, L>;
-
-/** Arrow-key navigation for a row of tabs (RTL-aware); vertical lists use up/down. */
-function useTabs(count: number, locale: Locale, vertical = false) {
-  const [active, setActive] = useState(0);
-  const refs = useRef<(HTMLButtonElement | null)[]>([]);
-  const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
-    const keys = vertical ? ['ArrowUp', 'ArrowDown'] : ['ArrowLeft', 'ArrowRight'];
-    if (!keys.includes(e.key) && e.key !== 'Home' && e.key !== 'End') return;
-    e.preventDefault();
-    let next = active;
-    if (e.key === 'Home') next = 0;
-    else if (e.key === 'End') next = count - 1;
-    else {
-      const forward = vertical ? e.key === 'ArrowDown' : e.key === (locale === 'ar' ? 'ArrowLeft' : 'ArrowRight');
-      next = (active + (forward ? 1 : -1) + count) % count;
-    }
-    setActive(next);
-    refs.current[next]?.focus();
-  };
-  const tabProps = (i: number, panelId: string, tabId: string) => ({
-    ref: (el: HTMLButtonElement | null) => {
-      refs.current[i] = el;
-    },
-    id: tabId,
-    type: 'button' as const,
-    role: 'tab' as const,
-    'aria-selected': i === active,
-    'aria-controls': panelId,
-    tabIndex: i === active ? 0 : -1,
-    onClick: () => setActive(i),
-    onKeyDown,
-  });
-  return { active, setActive, tabProps };
-}
-
-function Head({ kicker, title, lede, id }: { kicker: string; title: string; lede?: string; id: string }) {
-  return (
-    <header className="hs-head">
-      <p className="sp-kicker">{kicker}</p>
-      <h2 id={id}>{title}</h2>
-      {lede && <p className="sp-lede">{lede}</p>}
-    </header>
-  );
-}
-
-function DeptLink({ path, locale, label = C.openDept }: { path: string; locale: Locale; label?: L }) {
-  const Arrow = locale === 'ar' ? ArrowLeft : ArrowRight;
-  return (
-    <NavLink path={path} className="hs-link">
-      {label[locale]}
-      <Arrow aria-hidden="true" />
-    </NavLink>
-  );
-}
 
 /** A magnified region of a real screen, with the full screen one click away. */
 function Lens({ shotId, focus, locale }: { shotId: string; focus: Focus; locale: Locale }) {
