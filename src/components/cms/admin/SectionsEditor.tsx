@@ -38,6 +38,10 @@ function headingSlots(page: Page): Record<string, HeadingSlot[]> {
     collect(node, acc);
     if (acc.length) out[id] = acc;
   }
+  // Component sections (not source containers) expose their single main heading, like Home.
+  for (const d of PRO_SECTIONS as readonly SectionDef[]) {
+    if (d.heading && !d.locked && !out[d.id]) out[d.id] = [{ key: `${d.id}.heading`, ar: d.heading.ar, en: d.heading.en ?? translate(d.heading.ar, 'en') }];
+  }
   return out;
 }
 
