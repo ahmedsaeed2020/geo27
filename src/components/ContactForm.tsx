@@ -105,6 +105,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
       pagePath: window.location.pathname,
       product: chosenProduct,
       department: chosenDepartment,
+      topic: element.dataset['leadTopic'] ?? '',
       referrer: document.referrer,
       utm: Object.fromEntries([...new URLSearchParams(window.location.search)].filter(([key]) => key.startsWith('utm_'))),
       consent: form.get('consent') === 'on',
