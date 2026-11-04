@@ -771,7 +771,7 @@
     "PAY-07": {
       "text": {
         "ar": "مسيرات رواتب مبدئية وإعادة تشغيل الموظفين الخطأ",
-        "en": "Trial payroll runs and reruns for employees with errors"
+        "en": "Preliminary payroll runs for review, and reruns for employees with errors"
       },
       "sections": [
         "04.1"
