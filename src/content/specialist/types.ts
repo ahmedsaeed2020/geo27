@@ -12,7 +12,8 @@ export type SpecialistProduct = 'construction' | 'crm' | 'fsm';
  */
 export type EvidenceStatus = 'demonstrated' | 'documented' | 'scoped';
 
-export type FlowStep = { id: string; label: L; record: L; owner: L; state: L; output: L };
+/** `record` is either translated copy or a system document name shown as-is in both languages (e.g. `Work Order`). */
+export type FlowStep = { id: string; label: L; record: L | string; owner: L; state: L; output: L };
 export type RecordItem = { name: L; code?: string; body: L; status: EvidenceStatus };
 export type Decision = { question: L; answer: L; source: L; owner: L };
 export type ReportItem = { name: L; purpose: L; status: EvidenceStatus };

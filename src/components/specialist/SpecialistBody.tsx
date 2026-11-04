@@ -320,7 +320,7 @@ function SectionView({ section, title, body, eyebrow, locale, index }: { section
                 <dl>
                   <div>
                     <dt>{C.record[locale]}</dt>
-                    <dd><bdi>{s.record[locale]}</bdi></dd>
+                    <dd>{typeof s.record === 'string' ? <code dir="ltr">{s.record}</code> : <bdi>{s.record[locale]}</bdi>}</dd>
                   </div>
                   <div>
                     <dt>{C.owner[locale]}</dt>
