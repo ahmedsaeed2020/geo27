@@ -1,4 +1,4 @@
-import { useId, useState } from 'react';
+import { useId } from 'react';
 import { ArrowLeft, ArrowRight, Check } from 'lucide-react';
 import { NavLink } from '@/components/nav/nav-links';
 import { useDemoRequest } from '@/components/nav/MegaMenu';
@@ -292,32 +292,18 @@ export function SpecialistDiscovery() {
   const base = useId();
   const families = useCatalog();
   const demo = useDemoRequest();
-  const [picked, setPicked] = useState<string | null>(null);
-  const { active, setActive, tabProps } = useTabs(families.length, locale);
-  const index = picked ? Math.max(0, families.findIndex(f => f.key === picked)) : active;
+  const { active: index, tabProps } = useTabs(families.length, locale);
   const family = families[index];
   if (!family) return null;
   const story = PRODUCT_STORIES[family.key];
   const pic = story ? photoOf(story.photo) : undefined;
-  const tab = (i: number) => {
-    const p = tabProps(i, `${base}-p`, `${base}-tab-${i}`);
-    return {
-      ...p,
-      'aria-selected': i === index,
-      tabIndex: i === index ? 0 : -1,
-      onClick: () => {
-        setPicked(null);
-        setActive(i);
-      },
-    };
-  };
   return (
     <section className="hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
         <Head kicker={PORTFOLIO.kicker[locale]} title={PORTFOLIO.title[locale]} lede={PORTFOLIO.lede[locale]} id={`${base}-t`} />
         <div role="tablist" aria-label={PORTFOLIO.families[locale]} className="cs-families">
           {families.map((f, i) => (
-            <button key={f.key} {...tab(i)} className="cs-family" data-product={f.key}>
+            <button key={f.key} {...tabProps(i, `${base}-p`, `${base}-tab-${i}`)} className="cs-family" data-product={f.key}>
               <span className="cs-family-name" dir="ltr">{f.name.en}</span>
               <strong>{f.area[locale]}</strong>
             </button>
@@ -384,18 +370,15 @@ export function SpecialistDiscovery() {
         <div className="cs-roles">
           <h3 className="cs-mini">{PORTFOLIO.roles[locale]}</h3>
           <ul role="list">
-            {EXPLORE_BY_ROLE_SPECIALIST.map(r => {
-              const key = families.find(f => f.overview === r.path)?.key ?? null;
-              return (
-                <li key={r.path}>
-                  <NavLink path={r.path} className="cs-role" onMouseEnter={() => key && setPicked(key)} onFocus={() => key && setPicked(key)}>
-                    <strong>{r.label[locale]}</strong>
-                    {r.summary && <span>{r.summary[locale]}</span>}
-                    <ArrowFor locale={locale} />
-                  </NavLink>
-                </li>
-              );
-            })}
+            {EXPLORE_BY_ROLE_SPECIALIST.map(r => (
+              <li key={r.path}>
+                <NavLink path={r.path} className="cs-role">
+                  <strong>{r.label[locale]}</strong>
+                  {r.summary && <span>{r.summary[locale]}</span>}
+                  <ArrowFor locale={locale} />
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

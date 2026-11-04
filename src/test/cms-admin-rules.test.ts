@@ -55,10 +55,15 @@ describe('form settings', () => {
 describe('section layout', () => {
   it('keeps new source sections and drops unknown ones', () => {
     expect(orderSections(['hero', 'faq', 'cta'] as const, { sections: [{ id: 'faq', enabled: false }, { id: 'gone', enabled: true }], texts: {} })).toEqual([
-      { id: 'faq', enabled: false },
       { id: 'hero', enabled: true },
+      { id: 'faq', enabled: false },
       { id: 'cta', enabled: true },
     ]);
+  });
+
+  it('places a newly added section after the section it follows in the design, not at the end', () => {
+    const saved = { sections: [{ id: 'cta', enabled: true }, { id: 'hero', enabled: true }, { id: 'faq', enabled: true }], texts: {} };
+    expect(orderSections(['hero', 'layers', 'faq', 'cta'] as const, saved).map(s => s.id)).toEqual(['cta', 'hero', 'layers', 'faq']);
   });
 });
 

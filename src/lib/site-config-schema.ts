@@ -118,6 +118,20 @@ export function orderSections<T extends string>(source: readonly T[], layout: Se
     seen.add(s.id);
     out.push({ id: s.id as T, enabled: s.enabled });
   }
-  for (const id of source) if (!seen.has(id)) out.push({ id, enabled: true });
+  // A source section the stored layout doesn't know yet goes right after the nearest section that precedes it in the
+  // source order, so a newly added section appears where it was designed instead of after the closing call to action.
+  source.forEach((id, i) => {
+    if (seen.has(id)) return;
+    let at = 0;
+    for (let j = i - 1; j >= 0; j--) {
+      const k = out.findIndex(o => o.id === source[j]);
+      if (k >= 0) {
+        at = k + 1;
+        break;
+      }
+    }
+    out.splice(at, 0, { id, enabled: true });
+    seen.add(id);
+  });
   return out;
 }

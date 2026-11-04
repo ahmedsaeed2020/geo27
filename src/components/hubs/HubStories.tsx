@@ -24,6 +24,7 @@ import {
 import type { L } from '@/content/specialist/types';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { DeptLink, Head, useTabs } from './story-kit';
+import { DeliveryJourney, FrictionBand, PlatformLayers, TrilogyBand } from './CorporateStory';
 import '@/specialist.css';
 import '@/hubs.css';
 
@@ -612,4 +613,12 @@ export const HUB_STORIES: Record<string, () => ReactNode> = {
   'modules-contracting': () => <ConstructionStory />,
   'modules-crm': () => <CrmStory />,
   'modules-pos': () => <PosStory />,
+  'about-4': () => (
+    <>
+      <PlatformLayers />
+      <FrictionBand />
+      <TrilogyBand />
+    </>
+  ),
+  'services-3-implementation': () => <DeliveryJourney />,
 };
