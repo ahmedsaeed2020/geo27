@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import HeroSlider from '@/sections/HeroSlider';
-import ProductOrbit from '@/sections/ProductOrbit';
+import Hero from '@/sections/Hero';
 import AppExplorer from '@/sections/AppExplorer';
 import WorkflowJourney from '@/sections/WorkflowJourney';
 import LeadCapturePanel from '@/components/LeadCapturePanel';
@@ -58,7 +58,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-paper font-plex">
       <Header />
       <main ref={mainRef}>
-        <ProductOrbit />
+        <Hero />
         <EditableSections page="home">
           {sections.map(s => <Fragment key={s.id}>{RENDER[s.id]()}</Fragment>)}
         </EditableSections>

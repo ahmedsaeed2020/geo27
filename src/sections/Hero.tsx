@@ -194,7 +194,7 @@ function OrbitBackground() {
 export default function Hero() {
   const locale = useLocale();
   return localizeTree((
-    <section id="hero" className="relative min-h-[60vh] overflow-hidden bg-dark">
+    <section id="digit-orbit" className="relative min-h-[60vh] overflow-hidden bg-dark">
       <style>{`
 #dgt-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#08140F;font-family:'IBM Plex Sans Arabic',-apple-system,Segoe UI,Tahoma,sans-serif;}
 #dgt-bg *{box-sizing:border-box;}
@@ -224,9 +224,9 @@ export default function Hero() {
       <OrbitBackground />
       <div className="relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
         <p className="text-[28px] font-medium text-mint lg:text-[44px]">محاسبتك أوضح مع ديجيت</p>
-        <h1 className="mx-auto mt-2 px-0 text-[34px] leading-[1.25] font-bold text-paper lg:px-[50px] lg:text-[56px]">
+        <h2 className="mx-auto mt-2 px-0 text-[34px] leading-[1.25] font-bold text-paper lg:px-[50px] lg:text-[56px]">
           منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.
-        </h1>
+        </h2>
         <p className="mx-auto mt-3 max-w-[900px] px-0 py-px text-[16px] text-[#C2CCC5] lg:px-[50px] lg:text-[22px]">
           Digit نظام ERP مالي وتشغيلي للسوق السعودي — محاسبة وفوترة إلكترونية ومبيعات ومشتريات ومخزون ونقاط بيع وتقارير، سحابياً أو داخل سيرفراتك.
         </p>
