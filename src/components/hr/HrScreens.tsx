@@ -8,7 +8,7 @@ import type { ShotFocus } from '@/content/hr/hr-modules';
 import type { Locale } from '@/lib/i18n';
 import { HR_COPY as C } from './hr-copy';
 
-export type ResolvedScreen = { shot: Shot; focus?: ShotFocus };
+export type ResolvedScreen = { shot: Shot; focus?: ShotFocus | undefined };
 
 export function useScreenLightbox(shots: Shot[]) {
   const [index, setIndex] = useState<number | null>(null);
