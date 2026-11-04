@@ -59,17 +59,23 @@ describe('DIGIT HR module coverage (owner handoff)', () => {
 });
 
 describe('DIGIT HR claims', () => {
-  it('withholds the unreleased AI features from visitors but keeps their ids', () => {
+  it('shows every owner-approved handoff feature, withholding none (owner approval 2026-11-04)', () => {
     const withheld = all.flatMap(m => Object.entries(m.features).filter(([, f]) => f.withheld).map(([id]) => id));
-    expect(new Set(withheld)).toEqual(new Set(['REC-09', 'ANL-09']));
+    expect(withheld).toEqual([]);
   });
 
-  it('shows no AI wording or underlying platform names in visible copy', () => {
+  it('limits AI wording to the two owner-approved AI features (REC-09, ANL-09)', () => {
+    const ai = /الذكاء الاصطناعي|\bAI\b/;
+    const withAi = all.flatMap(m => Object.entries(m.features).filter(([, f]) => ai.test(f.text.ar) || ai.test(f.text.en)).map(([id]) => id));
+    expect(new Set(withAi)).toEqual(new Set(['REC-09', 'ANL-09']));
     for (const m of all) {
-      const visible = { ...m, features: Object.fromEntries(Object.entries(m.features).filter(([, f]) => !f.withheld)) };
-      const text = JSON.stringify(visible);
-      expect(text).not.toMatch(/الذكاء الاصطناعي|\bAI\b|Frappe|ERPNext|HRMS|NOT_CONFIGURED/);
+      const rest = { ...m, features: Object.fromEntries(Object.entries(m.features).filter(([id]) => !withAi.includes(id))) };
+      expect(JSON.stringify(rest), m.slug).not.toMatch(ai);
     }
+  });
+
+  it('never names the underlying platform in visible copy', () => {
+    for (const m of all) expect(JSON.stringify(m), m.slug).not.toMatch(/Frappe|ERPNext|HRMS|NOT_CONFIGURED/);
   });
 
   it('flags the wage-protection and Saudization sections for the no-integration note', () => {
@@ -87,6 +93,7 @@ describe('DIGIT HR screens', () => {
       expect(HR_SHOTS[id], id).toBeDefined();
       expect(p.sha256).toMatch(/^[0-9a-f]{64}$/);
       expect(p.handoffShaMatches, id).toBe(true);
+      expect(p.privacyReview, `${id}: owner confirmed the employee names are demo data`).toBe('owner-confirmed-demo-data-2026-11-04');
       const [x0, y0, x1, y1] = p.cropPx as [number, number, number, number];
       const [w, h] = p.originalPx as [number, number];
       expect(x0 === 0 && x1 === w && y1 === h && y0 >= 0 && y0 < h * 0.07, `${id} only drops the top bar`).toBe(true);

@@ -10,7 +10,12 @@
 - [x] Tests (catalog-rules: 12 rules), AR/EN desktop/mobile screenshots, overflow and link checks, sitemap/404 checks. No live publish.
 - [ ] Owner: review the Inventory draft and approve its evidence before publishing — blocked on owner.
 - [x] HR 7-module handoff: seven bilingual HR pages (30 sections, 147 features, 16 real screens, 7 distinct heroes) built as unpublished drafts with 7-day private preview links; CMS can reorder/hide/override sections.
-- [ ] Owner: approve the HR handoff features (all marked product vision / not approved), confirm employee names in the 16 HR screenshots are demo data, and approve the evidence guide before any HR page is published — blocked on owner.
+- [x] Owner approved all HR handoff features (incl. REC-09/ANL-09) and confirmed the 16 HR screenshot employee names are demo data (2026-11-04); HR drafts marked evidence-approved, still unpublished.
+# Imagery pass (owner 2026-11-04: supplied Saudi characters, no uncovered hair, generate all needed images)
+- [ ] Replace the 6 visible page photos showing women with uncovered hair (pro ×2, demo-3 ×2, contact-4, ERPNext service) with corrected versions.
+- [ ] Generate two character scenes for each of the 7 HR pages (intro background + closing CTA background) from the supplied characters; wire through the scene manifest.
+- [ ] Visual QA of every new/edited image (identity, hijab, no text/UI/logos) and HR pages AR/EN desktop/mobile.
+- [ ] Owner: real Employee & Manager Experience screenshot and Construction department screens/content — requested from owner.
 - [ ] Owner: provide approved content and real screens for the 9 Construction department pages before they can be published — blocked on product evidence.
 - [ ] Owner: Employee & Manager Experience has no real screenshot yet (shows a labelled diagram) — needs a real capture.
 - [x] Area switchers on all department pages fade at the hidden edge and centre the current area.
