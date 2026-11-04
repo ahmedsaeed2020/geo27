@@ -54,6 +54,90 @@ const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?:
     title: "تواصل مع Digit | دعم ومبيعات في السعودية",
     description: "تحدّث مع فريق Digit على +966 59 505 1150 أو a.saeed@digit-erp.com، أو اطلب عرضًا توضيحيًا لمنشأتك. دعم محلي بالعربي.",
   },
+  // Audit 2026-11-04: titles under 15 characters, descriptions under 70 characters or shared between two pages.
+  "/modules": {
+    title: "موديولات Digit | المحاسبة والمبيعات والمخزون والموارد البشرية",
+    description: "استعرض موديولات Digit في منصة واحدة: المحاسبة والمبيعات والمشتريات والمخزون والأصول ونقاط البيع والموارد البشرية والمقاولات وعلاقات العملاء، مترابطة لحظيًا.",
+  },
+  "/services-3": {
+    title: "خدمات Digit | التحليل والتطبيق وترحيل البيانات والتدريب",
+    description: "خدمات Digit لإطلاق نظامك بثقة: جلسة تحليل وتهيئة، تطبيق النظام، ترحيل البيانات، التخصيص، التدريب، تجهيز الفوترة الإلكترونية، الاستضافة والدعم.",
+  },
+  "/services-3/support": {
+    title: "الدعم الفني بالعربي واتفاقية مستوى الخدمة | Digit",
+    description: "خدمة الدعم ضمن تشغيل Digit: اتفاقية مستوى خدمة بأوقات استجابة مكتوبة، قنوات تواصل واضحة، ومتابعة كل طلب حتى إغلاقه مع فريق عربي تعرفه بالاسم.",
+  },
+  "/support": {
+    title: "مركز دعم عملاء Digit | تذاكر وقاعدة معرفة عربية",
+    description: "مركز دعم عملاء Digit: افتح تذكرة من داخل النظام، وتابع أوقات الاستجابة المكتوبة، واستفد من قاعدة المعرفة العربية وفريق دعم تعرفه بالاسم.",
+  },
+  "/resources": {
+    title: "مركز المعرفة وجولات النظام | DIGIT",
+    description: "مركز معرفة Digit: شروحات عملية للمحاسبة والمخزون والتقارير، وجولة في شاشات DIGIT Pro الفعلية تعرّفك على طريقة العمل قبل العرض التوضيحي.",
+  },
+  "/terms": {
+    title: "الشروط والأحكام لاستخدام منصة Digit",
+    description: "الشروط والأحكام المنظمة لاستخدام منصة Digit: الحساب والتسجيل، الاشتراك والباقات والدفع، الترخيص، الاستخدام المقبول، وبيانات العميل والخصوصية.",
+  },
+  "/pos-solutions/florist": {
+    title: "نقاط بيع لمحلات الزهور والهدايا | Digit",
+    description: "بيع الباقات والورود والهدايا، وطلبات مسبقة للمناسبات، وتتبّع مخزون قصير الصلاحية، وتوصيل مع فاتورة مبسطة، وفق إعدادات النظام.",
+  },
+};
+
+/** English counterparts where the imported page title or description was too short or shared with another page. */
+const EN_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
+  "/demo": {
+    title: "Book a Digit Demo | See the System by Department",
+    description: "A tailored walkthrough of Digit by role: finance, sales, inventory, point of sale or HR. See how it fits your company and book your session.",
+  },
+  "/modules": {
+    title: "Digit Modules | Accounting, Sales, Inventory, HR and More",
+    description: "Explore Digit modules on one platform: accounting, sales, purchasing, inventory, fixed assets, point of sale, HR, construction and CRM, connected in real time.",
+  },
+  "/modules/crm": {
+    title: "DIGIT CRM | From Lead to Deal for Sales Teams",
+    description: "Clear sales stages, complete communication logs and follow-ups that never get lost, connected to sales and collections in DIGIT.",
+    crumb: "CRM",
+  },
+  "/modules/pos": {
+    title: "Saudi POS System Connected to Inventory | Digit",
+    description: "Every sale automatically becomes a compliant invoice, an accounting entry and an inventory deduction, for retail and restaurants across your branches.",
+    crumb: "POS",
+  },
+  "/modules/sales": {
+    title: "Sales Management from Quote to Collection | Digit",
+    description: "Bilingual quotes, sales orders, compliant invoices and collection tracking, connected to inventory and accounting in Digit.",
+    crumb: "Sales",
+  },
+  "/industries/retail": {
+    title: "Retail POS and Multi-Branch Operations | Digit",
+    description: "Points of sale connected to inventory and accounting across all your branches, with compliant invoicing and no manual reconciliation.",
+  },
+  "/pos-solutions/salons": {
+    title: "POS for Salons and Beauty Centers | Digit",
+    description: "Services and products on one invoice, specialist commissions, packages and repeat customers, and supply inventory, per system settings.",
+  },
+  "/services-3": {
+    title: "Digit Services | Discovery, Implementation, Migration and Training",
+    description: "Digit services to launch with confidence: discovery workshop, implementation, data migration, customization, training, e-invoicing onboarding, hosting and support.",
+  },
+  "/services-3/support": {
+    title: "Arabic Support with a Service Level Agreement | Digit",
+    description: "Support as part of running Digit: a service level agreement with written response times, clear contact channels, and every request followed to closure.",
+  },
+  "/support": {
+    title: "Digit Customer Support Center | Tickets and Arabic Knowledge Base",
+    description: "The Digit customer support center: open tickets from inside the system, follow written response times, and use the Arabic knowledge base and a team you know by name.",
+  },
+  "/resources": {
+    title: "Resources and Product Tours | DIGIT",
+    description: "The Digit knowledge center: practical accounting, inventory and reporting explainers, and a tour of real DIGIT Pro screens before your demo.",
+  },
+  "/terms": {
+    title: "Terms and Conditions for Using Digit",
+    description: "The terms that govern use of the Digit platform: account and registration, subscriptions, plans and payment, licensing, acceptable use, customer data and privacy.",
+  },
 };
 
 const HOME_JSONLD = [
@@ -93,7 +177,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
   const english = path === "/en" || path.startsWith("/en/");
   const arPath = english ? path.replace(/^\/en/, "") || "/" : path;
   const enPath = arPath === "/" ? "/en" : "/en" + arPath;
-  const override = english ? undefined : AR_OVERRIDES[arPath];
+  const override = english ? EN_OVERRIDES[arPath] : AR_OVERRIDES[arPath];
   const meta = [...(head.meta ?? [])];
   const get = (key: string) => meta.find(m => m.name === key || m.property === key)?.content;
   const content = records.find(r => r.path===arPath)?.published;
@@ -131,7 +215,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
       ],
     });
   } else if (arPath.startsWith("/modules/")) {
-    const crumb = (english ? (title.split(/[—|]/)[0] ?? title).trim() : override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim());
+    const crumb = override?.crumb ?? (title.split(/[—|]/)[0] ?? title).trim();
     jsonld.push({
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
