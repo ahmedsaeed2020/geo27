@@ -83,6 +83,8 @@ export default function PageEditor({
     return () => { live = false; };
   }, [proConfig?.key]);
   const shownBlocks = proConfig ? withProSourceBlocks(local.blocks, proConfig) : local.blocks;
+  // Only V4 sections with a lead screen (anatomy, chapter) accept a screen override.
+  const proSources = proConfig?.sections.map(s => ({ ...s, screen: !!proContent?.sections.some(x => x.id === s.id && (x.kind === 'anatomy' || x.kind === 'chapter')) }));
   const activeLinks = previews.filter(p => p.document_id === doc.id).length;
 
   const edit = (next: CmsContent) => {
@@ -355,11 +357,11 @@ export default function PageEditor({
             </Field>
           ))}
 
-          <DepartmentFields content={c} path={path} locale={locale} media={media} edit={edit} />
+          {!proConfig && <DepartmentFields content={c} path={path} locale={locale} media={media} edit={edit} />}
 
           <h3 className="border-t border-border pt-5 font-bold">أقسام الصفحة</h3>
           {proConfig && <p className="text-xs text-muted-foreground">أقسام صفحة DIGIT Pro تأتي من محتوى المصدر: رتّبها أو أخفها أو غيّر عنوانها ونصها التمهيدي؛ الحقول الفارغة تعرض نص المصدر.</p>}
-          <BlockList blocks={shownBlocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} department={c.department} sourceSections={proConfig?.sections} />
+          <BlockList blocks={shownBlocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} department={c.department} sourceSections={proSources} />
           <AddBlockButtons department={!!c.department} onAdd={type => update({ blocks: [...local.blocks, newBlock(type)] })} />
         </div>
 
