@@ -1,10 +1,9 @@
-import { useLocale, localizeTree } from "@/lib/i18n";
+import { useLocale, localizeTree, localeHref } from "@/lib/i18n";
 import { Fragment, useRef, useState, type ElementType, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { ArrowLeft, ArrowRight, ChevronDown } from "lucide-react";
 import { useNavigate } from "@tanstack/react-router";
 import ContactForm from "@/components/ContactForm";
-import { localeHref } from "@/lib/i18n";
 import previewMeta from "@/content/package-preview-meta.json";
 import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
