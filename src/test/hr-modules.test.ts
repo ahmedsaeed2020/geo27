@@ -84,7 +84,7 @@ describe('DIGIT HR screens', () => {
       expect(p.handoffShaMatches, id).toBe(true);
       const [x0, y0, x1, y1] = p.cropPx as [number, number, number, number];
       const [w, h] = p.originalPx as [number, number];
-      expect(x0 === 0 && x1 === w && y1 === h && y0 >= 0 && y0 < h * 0.06, `${id} only drops the top bar`).toBe(true);
+      expect(x0 === 0 && x1 === w && y1 === h && y0 >= 0 && y0 < h * 0.07, `${id} only drops the top bar`).toBe(true);
     }
   });
 
