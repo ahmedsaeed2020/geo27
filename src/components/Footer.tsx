@@ -110,13 +110,12 @@ export default function Footer() {
             </p>
             <div className="mt-5 flex gap-3">
               {/* social icons */}
-              <a href="/#" aria-label="X" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink">
+              <a href="https://x.com/digitsaudi" target="_blank" rel="noopener noreferrer" aria-label="X" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.3l7.3-8.3L1.6 2H8l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.8H5.3L17.8 20z"/></svg>
               </a>
-              <a href="/#" aria-label="LinkedIn" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.24 8.16h4.52V23H.24V8.16zM8.34 8.16h4.33v2.03h.06c.6-1.14 2.08-2.34 4.28-2.34 4.58 0 5.42 3.01 5.42 6.92V23h-4.52v-7.23c0-1.72-.03-3.94-2.4-3.94-2.4 0-2.77 1.87-2.77 3.81V23H8.34V8.16z"/></svg>
-              </a>
-              <a href="/#" aria-label="YouTube" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink">
+              <a href="https://www.facebook.com/digitksa" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink"><svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.8c0-.9.3-1.5 1.6-1.5h1.7V4.4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.3H7.4V14h2.8v8h3.3z"/></svg></a>
+              <a href="https://www.instagram.com/digitksa/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink"><svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+              <a href="https://www.youtube.com/@Digitksa" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex h-9 w-9 items-center justify-center rounded-[10px] bg-[rgba(52,211,153,.12)] text-mint transition-colors hover:bg-mint hover:text-ink">
                 <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.3 31.3 0 0 0 0 12a31.3 31.3 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.3 31.3 0 0 0 24 12a31.3 31.3 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
               </a>
             </div>
