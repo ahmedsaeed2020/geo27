@@ -62,8 +62,8 @@
  },
  "intro": {
   "title": {
-   "ar": "افهم يوم العمل قبل احتساب أثره",
-   "en": "Understand the workday before calculating its impact"
+   "ar": "الإجازة والوردية والبصمة تصف يومًا واحدًا",
+   "en": "Leave, shifts and punches describe the same workday"
   },
   "body": {
    "ar": "الإجازات والحضور والورديات ومصدر الوقت عمليات متصلة، ويجب تفسير الاستثناء قبل اتخاذ إجراء.",
