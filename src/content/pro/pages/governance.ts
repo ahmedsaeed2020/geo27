@@ -61,8 +61,8 @@ const page: ProPageContent = {
       id: 'scope',
       kind: 'scope',
       lede: {
-        ar: 'الحوكمة نصفها في النظام ونصفها في سياسة منشأتك. هذا ما يعمل اليوم، وما يمر باختبار القبول، وما نحدده معك أثناء التهيئة.',
-        en: 'Governance is half in the system and half in your company’s policy. Here is what works today, what is in acceptance testing, and what we define with you during set-up.',
+        ar: 'الحوكمة نصفها في النظام ونصفها في سياسة منشأتك. هذا ما يعمل اليوم، وما نؤكده لك في العرض التوضيحي، وما نحدده معك أثناء التهيئة.',
+        en: 'Governance is half in the system and half in your company’s policy. Here is what works today, what we confirm in your demo, and what we define with you during set-up.',
       },
       items: [
         { title: { ar: 'الرؤية والتشغيل حسب الصلاحية', en: 'Visibility and running by permission' }, body: { ar: 'تنبيه النطاق المقيد، وفهرس تقارير يتبع الصلاحية، وصندوق اعتمادات موحد.', en: 'Restricted-scope warnings, a permission-aware report directory and a unified approvals inbox.' }, tier: 'available', ids: ['R2', 'R3', 'S4'], shot: '10-ctl-03-s4' },

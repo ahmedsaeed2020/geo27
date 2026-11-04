@@ -73,8 +73,8 @@ const page: ProPageContent = {
       id: 'tiers',
       kind: 'scope',
       lede: {
-        ar: 'نصف كل قدرة بحالتها الحقيقية: متاحة الآن، أو مبنية وتمر باختبار القبول، أو تُحدَّد أثناء التهيئة مع منشأتك.',
-        en: 'We describe every capability by its real status: available now, built and in acceptance testing, or defined with your company during set-up.',
+        ar: 'نصف كل قدرة بحالتها الحقيقية: متاحة الآن، أو مبنية ونؤكدها لك في العرض التوضيحي، أو تُحدَّد أثناء التهيئة مع منشأتك.',
+        en: 'We describe every capability by its real status: available now, built and confirmed for you in your demo, or defined with your company during set-up.',
       },
       items: [
         { title: { ar: 'المستند والرؤية 360', en: 'Documents and 360° views' }, body: { ar: 'المراحل والمحاور الخمسة والمستندات المرتبطة ولوحة الطرف وملفات 360.', en: 'Stages, the five axes, related documents, the party panel and the 360° views.' }, tier: 'available', ids: ['D1', 'D2', 'D3', 'D9', 'SL1', 'IN2', 'FA2'], shot: '03-doc-03-d3' },

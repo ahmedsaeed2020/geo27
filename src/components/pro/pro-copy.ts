@@ -39,7 +39,7 @@ export const PRO_COPY = {
   answeredBy: { ar: 'تجيب عنه اليوم', en: 'Answered today by' },
   screenAnswer: { ar: 'شاشة متاحة', en: 'An available screen' },
   reportAnswer: { ar: 'تقرير أصلي', en: 'A native report' },
-  cardStatus: { ar: 'بطاقة السؤال على الصفحة التنفيذية: قيد اختبار القبول', en: 'The question’s card on the executive home: in acceptance testing' },
+  cardStatus: { ar: 'بطاقة السؤال على الصفحة التنفيذية: نعرضها لك في العرض التوضيحي', en: 'The question’s card on the executive home: shown in your demo' },
   role: { ar: 'لمن', en: 'For' },
   records: { ar: 'من أي سجلات', en: 'From which records' },
   filters: { ar: 'الفلاتر', en: 'Filters' },
