@@ -105,7 +105,7 @@ export default function SiteSearch() {
         <DialogContent className="site-search-dialog overflow-hidden p-0 sm:max-w-2xl" dir={locale === "ar" ? "rtl" : "ltr"}>
           <DialogTitle className="sr-only">{COPY.title[locale]}</DialogTitle>
           <DialogDescription className="sr-only">{COPY.description[locale]}</DialogDescription>
-          <Command shouldFilter={false} loop className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:pt-3 [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-input]]:h-14 [&_[cmdk-input]]:text-base [&_[cmdk-item]]:gap-3 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-2.5 [&_[cmdk-item]_svg]:h-4 [&_[cmdk-item]_svg]:w-4">
+          <Command shouldFilter={false} loop className="[&_[cmdk-group-heading]]:px-3 [&_[cmdk-group-heading]]:pt-3 [&_[cmdk-group-heading]]:font-semibold [&_[cmdk-group-heading]]:text-muted-foreground [&_[cmdk-input-wrapper]]:pe-12 [&_[cmdk-input]]:h-14 [&_[cmdk-input]]:text-base [&_[cmdk-item]]:gap-3 [&_[cmdk-item]]:px-3 [&_[cmdk-item]]:py-2.5 [&_[cmdk-item]_svg]:h-4 [&_[cmdk-item]_svg]:w-4">
             <CommandInput value={query} onValueChange={setQuery} placeholder={COPY.placeholder[locale]} aria-label={COPY.title[locale]} />
             <CommandList className="max-h-[min(60vh,480px)]">
               {query.trim() ? (
