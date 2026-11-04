@@ -55,7 +55,7 @@
 .bp-choices { display: flex; flex-wrap: wrap; gap: 8px; }
 .bp-choice { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--deep) 18%, transparent); background: var(--paper2); font-size: 13.5px; font-weight: 500; line-height: 1.4; cursor: pointer; transition: border-color .2s, background .2s, transform .2s; }
 .bp-choice:hover { border-color: color-mix(in oklab, var(--primary) 55%, transparent); }
-.bp-choice input { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.bp-choice input { position: absolute; inset: 0; z-index: 1; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: pointer; }
 .bp-choice:has(input:focus-visible) { outline: 2px solid var(--primary); outline-offset: 2px; }
 .bp-choice[data-checked] { background: color-mix(in oklab, var(--mint) 18%, var(--paper2)); border-color: var(--primary); color: var(--ink); }
 .bp-choice-mark { display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid color-mix(in oklab, var(--deep) 30%, transparent); flex: none; transition: background .2s, border-color .2s; }
