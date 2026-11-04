@@ -1,3 +1,8 @@
+# Home slider & site-wide CTA pass (owner 2026-11-04 19:26 / 19:39)
+- [ ] Home: replace the old laptop band image with a luxury product slider (6 real-screen slides, generated text-free scenes, motion, more detail), hero unchanged.
+- [ ] Whole site: every demo/subscribe/trial button opens the site's own request form (no external hosted subscription pages).
+- [ ] Whole site: remove "تجريبي/مؤقت/demo data/placeholder"-style wording from visible copy so it reads as a live site (AR + EN).
+
 # Requested pages
 # DIGIT Website V4 — remaining products & corporate experience (owner brief 2026-11-04 17:07)
 Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate profile = content authority, current site = design authority; no live publish.
