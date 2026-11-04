@@ -227,7 +227,7 @@
 .cs-friction { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: clamp(20px, 3vw, 44px); align-items: start; }
 .cs-friction-points { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
 .cs-friction-points li { display: flex; align-items: center; gap: 12px; padding: 16px 18px; border: 1px solid var(--dline); border-radius: 14px; background: var(--card); font-size: 15.5px; font-weight: 700; }
-.cs-friction-points span { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: color-mix(in oklab, var(--destructive) 10%, var(--card)); font-family: var(--font-monospace); font-size: 12.5px; color: var(--destructive); }
+.cs-friction-points span { flex: none; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: color-mix(in oklab, var(--destructive) 10%, var(--card)); font-family: var(--font-monospace); font-size: 12.5px; color: color-mix(in oklab, var(--destructive) 80%, var(--ink)); }
 .cs-friction-side { display: grid; gap: 4px; }
 .cs-questions { display: grid; gap: 10px; }
 .cs-questions li { padding: 14px 16px; border-inline-start: 3px solid var(--primary); border-radius: 4px; background: var(--card); }
