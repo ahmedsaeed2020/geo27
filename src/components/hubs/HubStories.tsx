@@ -1,6 +1,5 @@
 import { useId, useMemo, useRef, useState, type CSSProperties, type KeyboardEvent, type ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Expand, RotateCcw, Search, X } from 'lucide-react';
-import { NavLink } from '@/components/nav/nav-links';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import ShotLightbox from '@/components/product/ShotLightbox';
 import { StatusChip } from '@/components/specialist/SpecialistBody';
@@ -37,7 +36,6 @@ const C = {
   owner: { ar: 'المسؤول', en: 'Owner' },
   status: { ar: 'الحالة', en: 'Status' },
   implication: { ar: 'الأثر على العقد والتكلفة', en: 'Contract and cost implication' },
-  openDept: { ar: 'افتح صفحة المجال', en: 'Open the area page' },
   objects: { ar: 'السجلات', en: 'Records' },
   actions: { ar: 'الإجراءات', en: 'Actions' },
   outcome: { ar: 'الناتج', en: 'Outcome' },
