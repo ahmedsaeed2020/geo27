@@ -38,10 +38,16 @@ const SUGGESTED: { path: string; label: { ar: string; en: string } }[] = [
 const isTyping = (target: EventTarget | null) =>
   target instanceof HTMLElement && (target.isContentEditable || ["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName));
 
+const rank = (entries: SearchEntry[], group: SearchGroup) => {
+  const i = entries.findIndex(e => e.group === group);
+  return i === -1 ? Infinity : i;
+};
+
 function Results({ entries, locale, go }: { entries: SearchEntry[]; locale: Locale; go: (e: { path: string; hash?: string | undefined }) => void }) {
   return (
     <>
-      {SEARCH_GROUPS.map(group => {
+      {/* Groups follow their best-ranked result, so a direct title match isn't pushed below a product summary match. */}
+      {[...SEARCH_GROUPS].sort((a, b) => rank(entries, a.id) - rank(entries, b.id)).map(group => {
         const items = entries.filter(e => e.group === group.id);
         if (!items.length) return null;
         const Icon = ICONS[group.id];
