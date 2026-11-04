@@ -1,6 +1,6 @@
 # Full-site audit & signature experience (owner 2026-11-04 21:36: audit every page, apply recommendations, fix errors, innovate)
-- [x] Audit: 128 AR/EN pages at 1280 and 390 px (status, console, overflow, broken images, alt, h1, titles/descriptions, anchors, banned wording, prices, axe WCAG 2.1 AA).
-- [x] Fix: brand-green contrast (site + imported pages), mint button text, unlabeled/empty-label icons, focusable scroll strip, duplicate ids (pricing), dead request links (POS), unreadable text on industry/pharmacy/partnership/implementation/construction sections. Axe contrast nodes 1,173 → 4 (all decorative or hidden).
+- [x] Audit: 130 AR/EN pages at 1280 and 390 px (status, console, overflow, broken images, alt, h1, titles/descriptions, anchors, banned wording, prices, axe WCAG 2.1 AA).
+- [x] Fix: brand-green contrast (site + imported pages), mint button text, unlabeled/empty-label icons, focusable scroll strip, duplicate ids (pricing), dead request links (POS), unreadable text on industry/pharmacy/partnership/implementation/construction sections. Re-check of the fixed pages: only decorative or hidden text still flagged.
 - [x] Fix: short/long/duplicate titles and descriptions (AR + EN); English careers "thousands of establishments" claim removed; "certified margin" reworded.
 - [x] Fix: server code deprecation warnings (validator API).
 - [x] Social share card: 1200x630 AR/EN images with the real logo, default og:image for every page without its own.
