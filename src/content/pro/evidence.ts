@@ -40,6 +40,6 @@ export function tierCounts(parts: EvidencePart[]): Record<EvidenceTier, number> 
  * (01-cfo-02-e2 → E2, 06-pur-04-pur-015 → PUR-015). A screen may be used as evidence only for that ID.
  */
 export function shotEvidenceId(shotId: string): string {
-  const tail = shotId.split('-').slice(2).join('-');
+  const tail = shotId.split('-').slice(3).join('-');
   return tail.toUpperCase();
 }
