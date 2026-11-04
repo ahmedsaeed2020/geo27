@@ -355,6 +355,11 @@
   .hr-outcomes-grid { grid-template-columns: minmax(0, 1fr); }
   .hr-tab { flex: 1 1 100%; }
 }
+@container (max-width: 520px) {
+  .hr-hero-actions { display: grid; grid-template-columns: minmax(0, 1fr); width: 100%; }
+  .hr-hero[data-variant="journey"] .hr-hero-actions, .hr-hero[data-variant="pipeline"] .hr-hero-actions, .hr-hero[data-variant="drill"] .hr-hero-actions { justify-self: stretch; }
+  .hr-hero-actions > * { width: 100%; justify-content: center; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   .hr-cap-details summary svg, .hr-capnav-list a, .hr-related-grid a, .hr-tab { transition: none; }
