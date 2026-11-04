@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { PRO_PAGES, proLeadTopic, proPageByPath, PRO_AREAS, areaSlug } from '@/content/pro/pro-pages';
+import { PRO_PAGES, proLeadTopic, proPageByPath, proWorkspacesOf, PRO_AREAS, areaSlug } from '@/content/pro/pro-pages';
 import { EVIDENCE, shotEvidenceId, tierOf, tierOfId, type EvidenceTier } from '@/content/pro/evidence';
 import { REPORTS, REPORTS_WITHHELD, reportByKey } from '@/content/pro/reports';
 import type { Feature, ProPageContent, ProSection, ShotRef } from '@/content/pro/types';
@@ -110,6 +110,16 @@ describe('DIGIT Pro V4 page registry', () => {
     expect(ALL_DEPARTMENTS.filter(d => d.product === 'pro')).toHaveLength(5);
     expect(proPageByPath('/en/modules/sales')?.key).toBe('selling');
     expect(proPageByPath('/pro/capabilities/')?.key).toBe('capabilities');
+  });
+
+  it('maps four workspaces for each of the five departments on the /pro hub (20 in all)', () => {
+    const pro = productByKey('pro')!;
+    const spaces = pro.departments.map(d => proWorkspacesOf(d.path));
+    expect(spaces.map(s => s.length)).toEqual([4, 4, 4, 4, 4]);
+    expect(new Set(spaces.flat().map(s => s.id)).size).toBe(20);
+    expect(proWorkspacesOf('/en/modules/accounting').map(s => s.id)).toEqual(['ACC-OPS', 'ACC-DUES', 'ACC-CASH', 'ACC-REPORT']);
+    // Every workspace is also a valid lead topic, so a hub or page CTA can name it.
+    expect(spaces.flat().every(s => proLeadTopic(s.id) === s.id)).toBe(true);
   });
 });
 
