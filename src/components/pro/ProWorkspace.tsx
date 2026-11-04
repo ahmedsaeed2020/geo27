@@ -2,12 +2,12 @@ import { useRef, useState, type KeyboardEvent } from 'react';
 import { ArrowLeft, ArrowRight, Check, FileText, ShieldCheck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/nav/nav-links';
-import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { reportByKey } from '@/content/pro/reports';
 import type { L, Workspace } from '@/content/pro/types';
 import { useLocale } from '@/lib/i18n';
 import { PRO_COPY as C } from './pro-copy';
 import { ProScreen, useSectionLightbox } from './ProScreens';
+import { useAskDemo } from './use-ask-demo';
 
 type Props = {
   id: string;
@@ -83,7 +83,8 @@ export default function ProWorkspace({ id, ws, title, lede, eyebrow, shotId, ind
     tabs.current[next]?.focus();
   };
   const number = (n: number) => String(n).padStart(2, '0');
-  const ask = () => focusLeadForm({ product: 'pro', department, topic: ws.code, interest: title });
+  const askDemo = useAskDemo();
+  const ask = () => askDemo({ department, topic: ws.code, interest: title });
 
   return (
     <section className="pv-sec pv-ws" id={`pv-${id}`} aria-labelledby={`pv-${id}-title`} data-flip={flip ? '' : undefined}>
