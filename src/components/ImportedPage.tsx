@@ -43,7 +43,7 @@ type Page = { title: string; sourceUrl: string; nodes: Node[] };
 
 /** True when an HTML widget inside `node` already declares `id` itself, so the wrapper must not repeat it. */
 function declaresId(node: Node, id: string): boolean {
-  return (node.children ?? []).some(child => (child.html ?? "").includes(`id="${id}"`) || declaresId(child, id));
+  return (node.html ?? "").includes(`id="${id}"`) || (node.children ?? []).some(child => declaresId(child, id));
 }
 
 type RenderProps = { node: Node; pageKey: string; backdrop?: boolean; bodyBackdrop?: boolean };
