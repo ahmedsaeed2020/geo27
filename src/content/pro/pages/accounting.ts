@@ -234,7 +234,7 @@ const page: ProPageContent = {
         { title: { ar: 'السداد', en: 'Payment' }, body: { ar: 'سند صرف يُخصص على الفاتورة، أو دفعة مجمّعة لعدة موردين مع ملف التحويل البنكي.', en: 'A payment entry allocated to the bill, or a payment run for several suppliers with its bank transfer file.' }, doc: 'Payment Entry' },
         { title: { ar: 'المطابقة البنكية', en: 'Bank matching' }, body: { ar: 'حركة الكشف تُطابق مع السند في أداة التسوية البنكية، والحركات غير المطابقة تبقى ظاهرة.', en: 'The statement line is matched to the payment in the reconciliation tool, and unmatched movements stay visible.' }, doc: 'Bank Transaction' },
         { title: { ar: 'قائمة الإقفال', en: 'Close checklist' }, body: { ar: 'التسوية البنكية وفروقات الدفاتر الفرعية خطوات بحالة واضحة قبل إقفال الفترة.', en: 'Bank reconciliation and sub-ledger differences are steps with a clear state before the period closes.' }, shot: '01-cfo-04-f11' },
-        { title: { ar: 'القوائم المالية', en: 'Financial statements' }, body: { ar: 'الأرباح والخسائر والمركز المالي من نفس الأستاذ، بفلاتر الفترة والشركة.', en: 'Profit and loss and financial position from the same ledger, filtered by period and company.' }, doc: 'GL Entry', shot: '09-rep-03-r6' },
+        { title: { ar: 'القوائم المالية', en: 'Financial statements' }, body: { ar: 'الأرباح والخسائر والمركز المالي من نفس الأستاذ، بفلاتر الفترة والشركة.', en: 'Profit and loss and financial position from the same ledger, filtered by period and company.' }, doc: 'General Ledger', shot: '09-rep-03-r6' },
       ],
     },
     {

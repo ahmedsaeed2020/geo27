@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { CSSProperties, ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Check, CircleDashed, FileText, Hourglass, Settings2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { NavLink } from '@/components/nav/nav-links';
