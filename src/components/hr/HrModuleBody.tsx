@@ -110,7 +110,21 @@ export default function HrModuleBody({ content, locale, config, source, renderBl
             <h2 id="hr-intro-title">{source.intro.title[locale]}</h2>
             <div>
               <p className="hr-intro-lead">{source.intro.body[locale]}</p>
-              <p>{C.problemNote[locale]}</p>
+              {placed.length > 0 && (
+                <nav className="hr-scope" aria-label={C.scope[locale]}>
+                  <p>{C.scope[locale]}</p>
+                  <ul role="list">
+                    {placed.map(b => {
+                      const s = sectionOf(b)!;
+                      return (
+                        <li key={b.id}>
+                          <a href={`#cap-${s.id.replace('.', '-')}`}>{b.title.trim() || s.title[locale]}</a>
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </nav>
+              )}
             </div>
           </div>
         </div>

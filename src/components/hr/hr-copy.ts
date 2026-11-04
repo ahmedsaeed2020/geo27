@@ -9,10 +9,7 @@ export const HR_COPY = {
   areas: { ar: 'مجالات DIGIT HR', en: 'DIGIT HR areas' },
   flow: { ar: 'مسار العمل', en: 'Work path' },
   problemEyebrow: { ar: 'المشكلة الفعلية', en: 'The real business problem' },
-  problemNote: {
-    ar: 'لسنا أمام مستند مستقل أو شاشة معزولة؛ بل أمام عملية تبدأ بمدخل واضح، تمر بالمراجعة والقرار، ثم تترك مخرجًا يمكن الرجوع إليه.',
-    en: 'This is not an isolated document or screen. It is a process that starts with a clear input, passes through review and decision, and leaves an output you can return to.',
-  },
+  scope: { ar: 'يغطي هذا المجال', en: 'This area covers' },
   journeyEyebrow: { ar: 'رحلة العمل', en: 'The business journey' },
   journeyTitle: { ar: 'كيف ترتبط الأجزاء لتصل إلى قرار؟', en: 'How do the parts connect to reach a decision?' },
   stage: { ar: 'المرحلة', en: 'Stage' },

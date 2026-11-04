@@ -129,6 +129,12 @@
 .hr-intro { padding: 72px 0 40px; }
 .hr-intro-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 18px 56px; align-items: start; }
 .hr-intro-grid p { line-height: 1.9; color: var(--body2); }
+.hr-scope { margin-top: 22px; }
+.hr-scope > p { margin-bottom: 10px; font-size: 13px; font-weight: 700; color: var(--deep) !important; }
+.hr-scope ul { display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.hr-scope a { display: inline-flex; align-items: center; min-height: 36px; padding: 6px 14px; border: 1px solid var(--dline); border-radius: 999px; background: var(--card); color: var(--ink); font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color 180ms ease, background-color 180ms ease; }
+.hr-scope a:hover { border-color: var(--mint); background: color-mix(in oklab, var(--mint) 10%, var(--card)); }
+.hr-scope a:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
 .hr-intro-lead { margin-bottom: 14px; font-size: clamp(18px, 1.8cqi, 21px); font-weight: 600; color: var(--ink) !important; }
 .hr-journey { padding: 40px 0 72px; }
 .hr-journey-rail { display: grid; grid-template-columns: repeat(var(--hr-steps, 5), minmax(0, 1fr)); gap: 0; margin-top: 30px; counter-reset: step; }
