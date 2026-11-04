@@ -706,7 +706,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
           { id: 'budget', label: t('الموازنة المعتمدة', 'Approved budget'), record: t('موازنة المشروع', 'Project budget'), owner: t('مدير التكلفة', 'Cost controller'), state: t('معتمدة', 'Approved'), output: t('مرجع البند', 'Line reference') },
           { id: 'actuals', label: t('تسجيل الفعلي', 'Record actuals'), record: t('فواتير وصرف مواد وشهادات', 'Invoices, issues and certificates'), owner: t('المالية والموقع', 'Finance and site'), state: t('مرحّل', 'Posted'), output: t('التكلفة الفعلية', 'Actual cost') },
           { id: 'commit', label: t('حصر الالتزامات', 'Count commitments'), record: t('أوامر مفتوحة', 'Open orders'), owner: t('المشتريات والعقود', 'Procurement and contracts'), state: t('مفتوح', 'Open'), output: t('الالتزامات', 'Commitments') },
-          { id: 'forecast', label: t('تقدير المتبقي', 'Estimate to complete'), record: t('توقع البند', 'Line forecast'), owner: t('مدير المشروع', 'Project manager'), state: t('مُراجَع', 'Reviewed'), output: 'ETC / EAC' },
+          { id: 'forecast', label: t('تقدير المتبقي', 'Estimate to complete'), record: t('توقع البند', 'Line forecast'), owner: t('مدير المشروع', 'Project manager'), state: t('مُراجَع', 'Reviewed'), output: t('المتبقي والمتوقع عند الإنجاز (ETC / EAC)', 'ETC / EAC') },
           { id: 'decide', label: t('القرار', 'Decision'), record: t('ملاحظة المراجعة', 'Review note'), owner: t('مدير المشاريع', 'Project director'), state: t('مُسند', 'Assigned'), output: t('إجراء على البنود المتجاوزة', 'Action on lines over budget') },
         ],
       },
