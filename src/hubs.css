@@ -1,6 +1,6 @@
 /* Interactive stories on the Construction, CRM, POS and FSM + ITM product hubs. Shares tokens with specialist.css. */
 .hs { --sp-accent: var(--primary); --sp-accent-soft: color-mix(in oklab, var(--sp-accent) 12%, var(--paper2)); color: var(--ink); }
-.hs[data-product="construction"] { --sp-accent: oklch(0.6 0.12 70); }
+.hs[data-product="construction"] { --sp-accent: oklch(0.55 0.12 70); }
 .hs[data-product="fsm"] { --sp-accent: oklch(0.55 0.09 215); }
 .hs[data-product="pos"] { --sp-accent: oklch(0.56 0.11 25); }
 .hs h2 { font-size: clamp(25px, 3vw, 38px); font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; text-wrap: balance; }
