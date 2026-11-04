@@ -1,4 +1,14 @@
 # Requested pages
+# Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
+- [ ] One product catalog: Pro (5 departments + dashboards/reports/tour), HR (7 groups), Construction (9 departments), POS (existing solutions); existing routes reused, new HR/Construction routes registered.
+- [ ] Header and Mega Menu: new top level, multi-column product panels with real screenshot, explore by role/problem, keyboard/Escape/click, mobile accordions, AR/EN.
+- [ ] Reusable Department Detail Page (15 optional content regions) driven by the CMS, AR/EN routes, breadcrumbs, SEO, noindex/404 while unpublished.
+- [ ] Product Hubs: department selector on /pro (financial cycle), HR (lifecycle) and Construction (journeys), each with its own layout; hidden until departments are published.
+- [ ] CMS: department drafts registered (16), department fields and content blocks in the page editor, catalog order/visibility settings with draft/publish/history, admin "Products & departments" view.
+- [ ] Demo requests carry product, department, page and UTM; shown in Leads and CSV.
+- [ ] Representative department draft (Inventory) built only from existing approved text and real screenshots; preview link.
+- [ ] Tests, AR/EN desktop/mobile screenshots, overflow and link checks, sitemap/noindex checks; handoff report. No live publish.
+
 # DIGIT Website V3 — 2026-10-30
 - [x] Stage 1 foundation: server-saved contextual leads, consent/channel checks, durable rate limit, private inbox and exact approved notification recipient; saved/read-back tested.
 - [x] Stage 2 foundation: real-screen Home, searchable App Explorer by department/role/problem/industry, four-step workflow, contextual header/footer CTA; 49 original assets retained.
