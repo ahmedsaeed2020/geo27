@@ -1,0 +1,921 @@
+{
+ "slug": "workforce-management",
+ "module": "03",
+ "name": {
+  "ar": "إدارة القوى العاملة",
+  "en": "Workforce Management"
+ },
+ "hero": {
+  "title": {
+   "ar": "افهم يوم العمل قبل احتساب أثره",
+   "en": "Understand the workday before calculating its impact"
+  },
+  "subtitle": {
+   "ar": "الإجازات والحضور والورديات والساعات الإضافية ومصادر الوقت، ضمن مشهد واحد قابل للمراجعة.",
+   "en": "Leave, attendance, shifts, overtime and time data sources in one reviewable view."
+  },
+  "center": null,
+  "nodes": [
+   {
+    "ar": "سياسات الإجازات",
+    "en": "Leave policies"
+   },
+   {
+    "ar": "جدولة الورديات",
+    "en": "Shift scheduling"
+   },
+   {
+    "ar": "التقاط الحضور",
+    "en": "Attendance capture"
+   },
+   {
+    "ar": "فحص الاستثناءات",
+    "en": "Exception checks"
+   },
+   {
+    "ar": "اعتماد التصحيح",
+    "en": "Correction approval"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "الجدول",
+    "en": "Schedule"
+   },
+   {
+    "ar": "الحضور",
+    "en": "Attendance"
+   },
+   {
+    "ar": "الاستثناء",
+    "en": "Exception"
+   },
+   {
+    "ar": "المراجعة",
+    "en": "Review"
+   },
+   {
+    "ar": "القرار",
+    "en": "Decision"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "افهم يوم العمل قبل احتساب أثره",
+   "en": "Understand the workday before calculating its impact"
+  },
+  "body": {
+   "ar": "الإجازات والحضور والورديات ومصدر الوقت عمليات متصلة، ويجب تفسير الاستثناء قبل اتخاذ إجراء.",
+   "en": "Leave, attendance, shifts and time data sourcing are connected processes. Exceptions must be understood before action is taken."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "سياسات الإجازات",
+    "en": "Leave policies"
+   },
+   {
+    "ar": "جدولة الورديات",
+    "en": "Shift scheduling"
+   },
+   {
+    "ar": "التقاط الحضور",
+    "en": "Attendance capture"
+   },
+   {
+    "ar": "فحص الاستثناءات",
+    "en": "Exception checks"
+   },
+   {
+    "ar": "اعتماد التصحيح",
+    "en": "Correction approval"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "مدير عمليات HR",
+    "en": "HR operations manager"
+   },
+   {
+    "ar": "مسؤول الحضور",
+    "en": "Attendance officer"
+   },
+   {
+    "ar": "مدير الفريق",
+    "en": "Team manager"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "طلب معتمد/مرفوض",
+    "en": "Approved/rejected request"
+   },
+   {
+    "ar": "تحديث سجل الإجازة وفق المصدر الأصلي",
+    "en": "Leave record update based on the original source"
+   },
+   {
+    "ar": "حضور معتمد عند إتمام المسار",
+    "en": "Approved attendance upon workflow completion"
+   },
+   {
+    "ar": "قائمة استثناءات معالجة",
+    "en": "List of resolved exceptions"
+   },
+   {
+    "ar": "جدول ورديات",
+    "en": "Shift schedule"
+   },
+   {
+    "ar": "Shift Assignment/Request",
+    "en": "Shift Assignment/Request"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "طلبات الإجازة المعلقة",
+    "en": "Pending leave requests"
+   },
+   {
+    "ar": "الغياب المخطط",
+    "en": "Planned absence"
+   },
+   {
+    "ar": "استثناءات اليوم",
+    "en": "Today's exceptions"
+   },
+   {
+    "ar": "أعمار المعالجة",
+    "en": "Processing age"
+   },
+   {
+    "ar": "التغطية المجدولة",
+    "en": "Scheduled coverage"
+   },
+   {
+    "ar": "تضارب الورديات",
+    "en": "Shift conflicts"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "تعارض الوردية أو العطلات",
+    "en": "Shift or holiday conflicts"
+   },
+   {
+    "ar": "بصمة مفقودة",
+    "en": "Missing punch"
+   },
+   {
+    "ar": "تداخل ورديات",
+    "en": "Overlapping shifts"
+   },
+   {
+    "ar": "صف مكرر",
+    "en": "Duplicate row"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "03.1",
+   "title": {
+    "ar": "الإجازات والاستحقاقات",
+    "en": "Leave and entitlements"
+   },
+   "problem": {
+    "ar": "الأخطاء في رصيد الإجازات تؤدي إلى قرارات غير عادلة ومراجعات يدوية.",
+    "en": "Errors in leave balances lead to unfair decisions and manual reviews."
+   },
+   "how": {
+    "ar": "من طلب الإجازة نعرض السياسة والتخصيص والرصيد والحركة والتعارض ثم مسار الاعتماد.",
+    "en": "From the leave request, we show the policy, allocation, balance, transactions and conflicts, followed by the approval workflow."
+   },
+   "outcome": {
+    "ar": "قرار أسرع ورصيد قابل للتتبع إلى المصدر.",
+    "en": "Faster decisions and a balance traceable to its source."
+   },
+   "decision": {
+    "ar": "قرار إجازة مستند إلى أهلية ومصدر رصيد",
+    "en": "Leave decisions based on eligibility and the source of the balance"
+   },
+   "narrative": {
+    "ar": "طلب الإجازة ليس إدخال تاريخ بداية ونهاية فحسب. يتطلب قرار المدير النظر في سياسة الاستحقاق والرصيد والتداخلات والعطلات وجدول الفريق. يحفظ النظام الطلب وحالته ويحدّث سجلات الاستحقاق وفق دورة الاعتماد المعتمدة. ويجب أن يظل الفرق واضحًا بين رصيد مؤكد وبين رقم مرئي غير محسوب بسبب الصلاحية أو عدم توافر البيانات.",
+    "en": "A leave request involves more than entering start and end dates. The manager's decision requires reviewing the entitlement policy, balance, overlaps, holidays and team schedule. The system saves the request and its status and updates entitlement records according to the approved approval cycle. The distinction must remain clear between a confirmed balance and a displayed figure that has not been calculated due to permissions or unavailable data."
+   },
+   "inputs": [
+    {
+     "ar": "رصيد/تخصيص إجازة",
+     "en": "Leave balance/allocation"
+    },
+    {
+     "ar": "طلب",
+     "en": "Request"
+    },
+    {
+     "ar": "تواريخ",
+     "en": "Dates"
+    },
+    {
+     "ar": "سياسة",
+     "en": "Policy"
+    },
+    {
+     "ar": "تقويم عطلات",
+     "en": "Holiday calendar"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "طلب معتمد/مرفوض",
+     "en": "Approved/rejected request"
+    },
+    {
+     "ar": "تحديث سجل الإجازة وفق المصدر الأصلي",
+     "en": "Leave record update based on the original source"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تعارض الوردية أو العطلات",
+     "en": "Shift or holiday conflicts"
+    },
+    {
+     "ar": "عدم أهلية",
+     "en": "Ineligibility"
+    },
+    {
+     "ar": "نقص رصيد",
+     "en": "Insufficient balance"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "طلبات الإجازة المعلقة",
+     "en": "Pending leave requests"
+    },
+    {
+     "ar": "الغياب المخطط",
+     "en": "Planned absence"
+    },
+    {
+     "ar": "استثناءات الرصيد",
+     "en": "Balance exceptions"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Employee",
+     "en": "Employee"
+    },
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    },
+    {
+     "ar": "HR Operations",
+     "en": "HR Operations"
+    }
+   ],
+   "features": [
+    "LEV-01",
+    "LEV-02",
+    "LEV-03",
+    "LEV-04",
+    "LEV-05",
+    "LEV-06",
+    "LEV-07",
+    "LEV-08"
+   ],
+   "screens": [
+    "T-01",
+    "T-02",
+    "T-03",
+    "T-04"
+   ]
+  },
+  {
+   "id": "03.2",
+   "title": {
+    "ar": "الحضور والانصراف والاستثناءات",
+    "en": "Time and attendance and exceptions"
+   },
+   "problem": {
+    "ar": "مئات البصمات لا تعني أن الحضور صحيح.",
+    "en": "Hundreds of punches do not mean attendance is accurate."
+   },
+   "how": {
+    "ar": "نظهر الاستثناءات أولًا، نربطها بالبصمة والوردية والإجازة وطلبات التصحيح.",
+    "en": "We show exceptions first, linking them to punches, shifts, leave and correction requests."
+   },
+   "outcome": {
+    "ar": "تقليل البحث اليدوي وزيادة وضوح سبب الخطأ.",
+    "en": "Less manual searching and greater clarity on the cause of errors."
+   },
+   "decision": {
+    "ar": "معالجة سبب الاستثناء بدل قراءة مئات السجلات",
+    "en": "Address the cause of the exception instead of reading hundreds of records"
+   },
+   "narrative": {
+    "ar": "عدد البصمات ليس مقياسًا لصحة الحضور. تبدأ الشاشة العملية من الاستثناء: من لا يملك بصمة دخول أو خروج؟ هل توجد وردية؟ هل توجد إجازة أو طلب تصحيح؟ يعرض القسم السجلات المرتبطة ويميز بين طلب التعديل واعتماد الحضور النهائي. ومن هنا يستطيع مسؤول الوقت متابعة الأعمار والأسباب بدل إعادة فحص مئات الأسطر يدويًا.",
+    "en": "The number of punches is not a measure of attendance accuracy. The operational screen starts with the exception: Who is missing a clock-in or clock-out punch? Is there a shift? Is there leave or a correction request? This section displays related records and distinguishes between a correction request and final attendance approval. From here, the time officer can track how long exceptions have been pending and their causes instead of manually rechecking hundreds of rows."
+   },
+   "inputs": [
+    {
+     "ar": "بصمات الدخول/الخروج",
+     "en": "Clock-in/clock-out punches"
+    },
+    {
+     "ar": "التعيين/الوردية",
+     "en": "Assignment/shift"
+    },
+    {
+     "ar": "الإجازات",
+     "en": "Leave"
+    },
+    {
+     "ar": "طلب التصحيح",
+     "en": "Correction request"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "حضور معتمد عند إتمام المسار",
+     "en": "Approved attendance upon workflow completion"
+    },
+    {
+     "ar": "قائمة استثناءات معالجة",
+     "en": "List of resolved exceptions"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "بصمة مفقودة",
+     "en": "Missing punch"
+    },
+    {
+     "ar": "ازدواجية",
+     "en": "Duplication"
+    },
+    {
+     "ar": "دخول خارج الوردية",
+     "en": "Clock-in outside shift hours"
+    },
+    {
+     "ar": "خلاف بين المصادر",
+     "en": "Discrepancy between sources"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "استثناءات اليوم",
+     "en": "Today's exceptions"
+    },
+    {
+     "ar": "أعمار المعالجة",
+     "en": "Processing age"
+    },
+    {
+     "ar": "طلبات التصحيح",
+     "en": "Correction requests"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Time Officer",
+     "en": "Time Officer"
+    },
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    }
+   ],
+   "features": [
+    "ATT-01",
+    "TIM-01",
+    "TIM-02",
+    "TIM-04",
+    "SCH-04",
+    "SCH-05",
+    "SCH-06"
+   ],
+   "screens": [
+    "T-05",
+    "T-06",
+    "T-07"
+   ]
+  },
+  {
+   "id": "03.3",
+   "title": {
+    "ar": "الورديات والعمل الإضافي",
+    "en": "Shifts and overtime"
+   },
+   "problem": {
+    "ar": "جدول الورديات قد يبدو كاملًا بينما يغفل التعارض والتغطية.",
+    "en": "A shift schedule may look complete while overlooking conflicts and coverage."
+   },
+   "how": {
+    "ar": "نقارن التعيين بالطلبات والإجازات ثم نعرض الجدولة والتعارضات.",
+    "en": "We compare assignments with requests and leave, then display scheduling and conflicts."
+   },
+   "outcome": {
+    "ar": "جدولة قابلة للمراجعة قبل حفظ قرارات التغطية.",
+    "en": "Scheduling that can be reviewed before coverage decisions are saved."
+   },
+   "decision": {
+    "ar": "جدول مرتبط بالموظف وساعات العمل والاستثناءات",
+    "en": "A schedule linked to the employee, working hours and exceptions"
+   },
+   "narrative": {
+    "ar": "الوردية الصحيحة ليست مجرد تقسيم ساعات على جدول أسبوعي. قبل الاعتماد تُراجع التغطية والتداخلات وإجازات العاملين وطلبات التبديل وساعات العمل الإضافي. تعرض الشاشة القرار اليومي للمدير وما يحتاج تعديلًا، مع عدم الافتراض أن اعتماد ساعات إضافية يرحّل تلقائيًا إلى الرواتب دون ربط مثبت.",
+    "en": "A sound shift plan is more than allocating hours across a weekly schedule. Coverage, overlaps, employee leave, swap requests and overtime hours are reviewed before approval. The screen shows the manager's daily decision and what needs adjustment, without assuming that approved overtime hours are automatically transferred to payroll unless a verified link is in place."
+   },
+   "inputs": [
+    {
+     "ar": "طلبات جداول",
+     "en": "Schedule requests"
+    },
+    {
+     "ar": "ورديات",
+     "en": "Shifts"
+    },
+    {
+     "ar": "موارد متاحة",
+     "en": "Available resources"
+    },
+    {
+     "ar": "ساعات عمل إضافية",
+     "en": "Overtime hours"
+    },
+    {
+     "ar": "إجازات",
+     "en": "Leave"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "جدول ورديات",
+     "en": "Shift schedule"
+    },
+    {
+     "ar": "Shift Assignment/Request",
+     "en": "Shift assignment/request"
+    },
+    {
+     "ar": "سجل طلب إضافي",
+     "en": "Overtime request record"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تداخل ورديات",
+     "en": "Overlapping shifts"
+    },
+    {
+     "ar": "موظف غير متاح",
+     "en": "Unavailable employee"
+    },
+    {
+     "ar": "تجاوز محتمل لساعات",
+     "en": "Potential hours overrun"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "التغطية المجدولة",
+     "en": "Scheduled coverage"
+    },
+    {
+     "ar": "تضارب الورديات",
+     "en": "Shift conflicts"
+    },
+    {
+     "ar": "الساعات الإضافية",
+     "en": "Overtime hours"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Workforce Planner",
+     "en": "Workforce planner"
+    },
+    {
+     "ar": "Manager",
+     "en": "Manager"
+    }
+   ],
+   "features": [
+    "TIM-03",
+    "SCH-01",
+    "SCH-02",
+    "SCH-03"
+   ],
+   "screens": [
+    "T-08",
+    "T-09",
+    "T-10"
+   ]
+  },
+  {
+   "id": "03.4",
+   "title": {
+    "ar": "مصادر الحضور والاستيراد",
+    "en": "Attendance sources and imports"
+   },
+   "problem": {
+    "ar": "مصادر البصمات المختلفة تنتج سجلات مكررة أو غير مرتبطة.",
+    "en": "Different time punch sources produce duplicate or unlinked records."
+   },
+   "how": {
+    "ar": "نقرأ آخر مزامنة ودفعات الاستيراد والتسجيلات غير المرتبطة ونحيلها للمستند الأصلي.",
+    "en": "We review the latest sync, import batches and unlinked entries, and trace them back to the original document."
+   },
+   "outcome": {
+    "ar": "إمكانية تصحيح مصدر الحضور ومراقبة جودته.",
+    "en": "The ability to correct the attendance source and monitor its quality."
+   },
+   "decision": {
+    "ar": "قابلية تفسير رقم الحضور من مصدره الأصلي",
+    "en": "Attendance figures explainable through their original source"
+   },
+   "narrative": {
+    "ar": "حتى أفضل تقرير حضور يفقد الثقة حين يُجهل مصدر التسجيل. يشرح هذا القسم كيف تدخل سجلات الوقت من مصدر أو ملف، وكيف تُراجع الدفعة، وكيف تُصنّف السجلات المقبولة والمكررة والمرفوضة. وجود شاشة للاستيراد لا يثبت اتصالًا مباشرًا بالأجهزة البيومترية أو مزود خدمة خارجي؛ هذا يحتاج سجل ربط حي واختبار.",
+    "en": "Even the best attendance report loses credibility when the source of an entry is unknown. This section explains how time records enter from a source or file, how batches are reviewed, and how records are classified as accepted, duplicate or rejected. An import screen does not prove a direct connection to biometric devices or an external service provider; that requires a live integration log and testing."
+   },
+   "inputs": [
+    {
+     "ar": "ملف استيراد",
+     "en": "Import file"
+    },
+    {
+     "ar": "مصدر التقاط",
+     "en": "Capture source"
+    },
+    {
+     "ar": "رقم موظف",
+     "en": "Employee number"
+    },
+    {
+     "ar": "وقت",
+     "en": "Time"
+    },
+    {
+     "ar": "تنسيق",
+     "en": "Format"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "دفعة استيراد",
+     "en": "Import batch"
+    },
+    {
+     "ar": "سجلات مقبولة/مرفوضة",
+     "en": "Accepted/rejected records"
+    },
+    {
+     "ar": "أثر مصدر البيانات",
+     "en": "Data source trail"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "صف مكرر",
+     "en": "Duplicate row"
+    },
+    {
+     "ar": "موظف غير معروف",
+     "en": "Unknown employee"
+    },
+    {
+     "ar": "وقت/صيغة غير صالحة",
+     "en": "Invalid time/format"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "حالة دفعات الاستيراد",
+     "en": "Import batch status"
+    },
+    {
+     "ar": "الأخطاء حسب النوع",
+     "en": "Errors by type"
+    },
+    {
+     "ar": "آخر مصدر",
+     "en": "Latest source"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "Time Admin",
+     "en": "Time admin"
+    },
+    {
+     "ar": "IT Integration",
+     "en": "IT integration"
+    }
+   ],
+   "features": [
+    "SET-05",
+    "TIM-05"
+   ],
+   "screens": [
+    "G-01",
+    "G-02",
+    "G-03"
+   ]
+  }
+ ],
+ "features": {
+  "LEV-01": {
+   "text": {
+    "ar": "بطاقات رصيد الإجازة (حالي، متوقع، مأخوذ، مجدول) + طلب",
+    "en": "Leave balance cards (current, projected, taken, scheduled) + request"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-02": {
+   "text": {
+    "ar": "تقويم الإجازات مع نموذج طلب جانبي",
+    "en": "Leave calendar with a side-panel request form"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-03": {
+   "text": {
+    "ar": "دورة اعتماد الغياب بالحالات وأثرها على حالة التعيين",
+    "en": "Absence approval cycle with statuses and their impact on assignment status"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-04": {
+   "text": {
+    "ar": "قواعد الاستحقاق: منح دورية، تبرع، صرف وشراء رصيد",
+    "en": "Entitlement rules: periodic grants, donation, cash-out and balance purchase"
+   },
+   "sections": [
+    "03.1",
+    "04.3"
+   ]
+  },
+  "LEV-05": {
+   "text": {
+    "ar": "متتبع الرصيد وتفسير القاعدة",
+    "en": "Balance tracker and rule explanation"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-06": {
+   "text": {
+    "ar": "الإجازة الطويلة كقضية",
+    "en": "Extended leave managed as a case"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-07": {
+   "text": {
+    "ar": "الإجازة تغذي بطاقة الوقت",
+    "en": "Leave feeds into the timecard"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "LEV-08": {
+   "text": {
+    "ar": "محاكي سياسات الإجازة: ماذا لو لسنوات الخدمة ونوع الإجازة بدون تغيير الواقع",
+    "en": "Leave policy simulator: what-if scenarios for years of service and leave type without changing live data"
+   },
+   "sections": [
+    "03.1"
+   ]
+  },
+  "ATT-01": {
+   "text": {
+    "ar": "تسجيل الحضور من الموبايل بالموقع الجغرافي",
+    "en": "Mobile attendance recording with geolocation"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "TIM-01": {
+   "text": {
+    "ar": "سجل بطاقات الوقت + اعتماد ورفض جماعي",
+    "en": "Timecard log + bulk approval and rejection"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "TIM-02": {
+   "text": {
+    "ar": "عناصر للحل: الاستثناءات، البصمات الناقصة، طلبات التصحيح",
+    "en": "Items to resolve: exceptions, missing punches, correction requests"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "TIM-04": {
+   "text": {
+    "ar": "لوحات الوقت وبطاقات المهام",
+    "en": "Time dashboards and task cards"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "SCH-04": {
+   "text": {
+    "ar": "التوفر مقابل تفضيلات العمل",
+    "en": "Availability versus work preferences"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "SCH-05": {
+   "text": {
+    "ar": "تغطية عبء العمل وتقدير تكلفة الجدول",
+    "en": "Workload coverage and schedule cost estimation"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "SCH-06": {
+   "text": {
+    "ar": "الدورات والقوالب والملء التلقائي وإعدادات القيود",
+    "en": "Cycles, templates, autofill and constraint settings"
+   },
+   "sections": [
+    "03.2"
+   ]
+  },
+  "TIM-03": {
+   "text": {
+    "ar": "ملخص الأجر اليومي/الأسبوعي/بأثر رجعي وتفصيل الإضافي",
+    "en": "Daily/weekly/retroactive pay summary and overtime breakdown"
+   },
+   "sections": [
+    "03.3"
+   ]
+  },
+  "SCH-01": {
+   "text": {
+    "ar": "جدول أسبوعي بكتل ورديات ملونة + سجل الجدول اليومي",
+    "en": "Weekly schedule with color-coded shift blocks + daily schedule log"
+   },
+   "sections": [
+    "03.3"
+   ]
+  },
+  "SCH-02": {
+   "text": {
+    "ar": "إدارة الوردية واختيار الموظفين المؤهلين",
+    "en": "Shift management and eligible employee selection"
+   },
+   "sections": [
+    "03.3"
+   ]
+  },
+  "SCH-03": {
+   "text": {
+    "ar": "الورديات المفتوحة وطلبات التغطية",
+    "en": "Open shifts and coverage requests"
+   },
+   "sections": [
+    "03.3"
+   ]
+  },
+  "SET-05": {
+   "text": {
+    "ar": "تحميل بيانات جماعي",
+    "en": "Bulk data upload"
+   },
+   "sections": [
+    "03.4",
+    "07.1"
+   ]
+  },
+  "TIM-05": {
+   "text": {
+    "ar": "استيراد بصمات الأجهزة ومطابقتها بدون تكرار مع حجر السجلات غير الصالحة",
+    "en": "Device time punch import and matching without duplicates, with invalid records quarantined"
+   },
+   "sections": [
+    "03.4"
+   ]
+  }
+ },
+ "screens": {
+  "T-01": {
+   "title": {
+    "ar": "مركز الإجازات",
+    "en": "Leave center"
+   },
+   "role": "Executive cockpit"
+  },
+  "T-02": {
+   "title": {
+    "ar": "سجل طلبات الإجازة",
+    "en": "Leave request log"
+   },
+   "role": "Operational register"
+  },
+  "T-03": {
+   "title": {
+    "ar": "سياسات واستحقاقات الإجازات",
+    "en": "Leave policies and entitlements"
+   },
+   "role": "Operational register"
+  },
+  "T-04": {
+   "title": {
+    "ar": "أرصدة وسجل الإجازات",
+    "en": "Leave balances and history"
+   },
+   "role": "Analytical report"
+  },
+  "T-05": {
+   "title": {
+    "ar": "مركز الحضور",
+    "en": "Attendance center"
+   },
+   "role": "Executive cockpit"
+  },
+  "T-06": {
+   "title": {
+    "ar": "سجل تسجيل الحضور",
+    "en": "Attendance entry log"
+   },
+   "role": "Operational register"
+  },
+  "T-07": {
+   "title": {
+    "ar": "معالجة استثناءات الحضور",
+    "en": "Attendance exception handling"
+   },
+   "role": "Exception / approval queue"
+  },
+  "T-08": {
+   "title": {
+    "ar": "تقويم الورديات",
+    "en": "Shift calendar"
+   },
+   "role": "Roster / calendar"
+  },
+  "T-09": {
+   "title": {
+    "ar": "سجل تعيين الورديات",
+    "en": "Shift assignment log"
+   },
+   "role": "Operational register"
+  },
+  "T-10": {
+   "title": {
+    "ar": "اعتماد العمل الإضافي",
+    "en": "Overtime approval"
+   },
+   "role": "Operational register"
+  },
+  "G-01": {
+   "title": {
+    "ar": "مصادر تسجيل الوقت",
+    "en": "Time recording sources"
+   },
+   "role": "Configuration workbench"
+  },
+  "G-02": {
+   "title": {
+    "ar": "مركز استيراد سجلات الحضور",
+    "en": "Attendance record import center"
+   },
+   "role": "Exception / approval queue"
+  },
+  "G-03": {
+   "title": {
+    "ar": "ربط الموظفين بالأجهزة والمواقع",
+    "en": "Employee mapping to devices and locations"
+   },
+   "role": "Operational register"
+  }
+ }
+}

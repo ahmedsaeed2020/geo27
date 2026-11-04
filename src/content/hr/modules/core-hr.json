@@ -1,0 +1,1107 @@
+{
+ "slug": "core-hr",
+ "module": "01",
+ "name": {
+  "ar": "الموارد البشرية الأساسية",
+  "en": "Core HR & Organization"
+ },
+ "hero": {
+  "title": {
+   "ar": "كل قرار يبدأ من ملف موثوق",
+   "en": "Every decision starts with a trusted record"
+  },
+  "subtitle": {
+   "ar": "من الهيكل التنظيمي والمناصب إلى ملف الموظف والتعيين والعقد؛ مرجع واحد يمنح كل عملية سياقها.",
+   "en": "From organizational structure and positions to employee records, appointments and contracts—one reference gives every process its context."
+  },
+  "center": {
+   "ar": "ملف الموظف 360°",
+   "en": "Employee 360"
+  },
+  "nodes": [
+   {
+    "ar": "المؤسسة",
+    "en": "Organization"
+   },
+   {
+    "ar": "الوظيفة والمنصب",
+    "en": "Job and position"
+   },
+   {
+    "ar": "العلاقة الوظيفية",
+    "en": "Employment relationship"
+   },
+   {
+    "ar": "العقد والمستند",
+    "en": "Contract and document"
+   }
+  ],
+  "flow": [
+   {
+    "ar": "المؤسسة",
+    "en": "Organization"
+   },
+   {
+    "ar": "الوظيفة",
+    "en": "Job"
+   },
+   {
+    "ar": "المنصب",
+    "en": "Position"
+   },
+   {
+    "ar": "الموظف",
+    "en": "Employee"
+   },
+   {
+    "ar": "العلاقة التعاقدية",
+    "en": "Contractual relationship"
+   }
+  ]
+ },
+ "intro": {
+  "title": {
+   "ar": "البنية التي تُبنى عليها قرارات الموارد البشرية",
+   "en": "The foundation for HR decisions"
+  },
+  "body": {
+   "ar": "الهيكل والشركات والوظائف والمناصب والموظف والعقد ليست ملفات مستقلة؛ هي علاقات تُعرّف سياق كل إجراء.",
+   "en": "Structure, companies, jobs, positions, employees and contracts are not isolated records; their relationships define the context of every action."
+  }
+ },
+ "journey": {
+  "steps": [
+   {
+    "ar": "الشركة والهيكل",
+    "en": "Company and structure"
+   },
+   {
+    "ar": "الوظيفة والمنصب",
+    "en": "Job and position"
+   },
+   {
+    "ar": "ملف الموظف",
+    "en": "Employee record"
+   },
+   {
+    "ar": "الحركة والتعيين",
+    "en": "Employee movement and appointment"
+   },
+   {
+    "ar": "العقد والمستند",
+    "en": "Contract and document"
+   }
+  ],
+  "roles": [
+   {
+    "ar": "مدير الموارد البشرية",
+    "en": "HR manager"
+   },
+   {
+    "ar": "مسؤول التنظيم",
+    "en": "Organizational structure administrator"
+   },
+   {
+    "ar": "شؤون الموظفين",
+    "en": "Personnel administration"
+   }
+  ]
+ },
+ "outcomes": {
+  "outputs": [
+   {
+    "ar": "شجرة هيكل",
+    "en": "Org chart tree"
+   },
+   {
+    "ar": "تبعيات موثقة",
+    "en": "Documented reporting lines"
+   },
+   {
+    "ar": "قاموس وظائف يميز بين المسمى والمنصب الفعلي",
+    "en": "Job dictionary distinguishing job titles from actual positions"
+   },
+   {
+    "ar": "قائمة مناصب",
+    "en": "Position list"
+   },
+   {
+    "ar": "شاغر متاح",
+    "en": "Open vacancy"
+   },
+   {
+    "ar": "Employee 360",
+    "en": "Employee 360"
+   }
+  ],
+  "kpis": [
+   {
+    "ar": "جاهزية الهيكل",
+    "en": "Organizational structure readiness"
+   },
+   {
+    "ar": "توزيع الأفراد حسب الوحدة",
+    "en": "Headcount distribution by unit"
+   },
+   {
+    "ar": "توزيع الوظائف حسب العائلة/الدرجة",
+    "en": "Job distribution by family/grade"
+   },
+   {
+    "ar": "فجوات تعريف المهن",
+    "en": "Gaps in occupational definitions"
+   },
+   {
+    "ar": "المناصب المعتمدة والشاغرة والمشغولة",
+    "en": "Approved, vacant and filled positions"
+   },
+   {
+    "ar": "اختلاف المخطط عن الفعلي",
+    "en": "Planned vs. actual variance"
+   }
+  ],
+  "exceptions": [
+   {
+    "ar": "تعارض التبعية",
+    "en": "Conflicting reporting lines"
+   },
+   {
+    "ar": "ازدواجية المسميات",
+    "en": "Duplicate job titles"
+   },
+   {
+    "ar": "منصب يتجاوز الميزانية",
+    "en": "Position over budget"
+   },
+   {
+    "ar": "مستند منتهي",
+    "en": "Expired document"
+   },
+   {
+    "ar": "تاريخ متعارض",
+    "en": "Conflicting date"
+   }
+  ]
+ },
+ "sections": [
+  {
+   "id": "01.1",
+   "title": {
+    "ar": "الهيكل التنظيمي والجهات",
+    "en": "Organizational structure and entities"
+   },
+   "problem": {
+    "ar": "تشتت بيانات الشركات والفروع يجعل أي قرار تعيين أو تخطيط عرضة للاختلاف بين الإدارات.",
+    "en": "Fragmented company and branch data leaves hiring and planning decisions open to inconsistencies across departments."
+   },
+   "how": {
+    "ar": "نبدأ من خريطة المؤسسة: الشركات، الوحدات، الفروع والأقسام، ثم ننتقل للأشخاص والمناصب داخلها.",
+    "en": "We start with the organizational map—companies, units, branches and departments—then move to the people and positions within it."
+   },
+   "outcome": {
+    "ar": "مرجع تنظيمي واحد يوضح التبعية والمسؤولية ومكان كل موظف.",
+    "en": "One organizational reference clarifies reporting lines, responsibilities and where every employee fits."
+   },
+   "decision": {
+    "ar": "الانتقال من شركة إلى إدارة إلى موظف دون إعادة إدخال بياناته",
+    "en": "Navigate from company to department to employee without re-entering employee data"
+   },
+   "narrative": {
+    "ar": "حين تُدار الشركات والفروع والأقسام في سجلات متفرقة، يصبح من الصعب تحديد الجهة التي يتبع لها كل موظف أو منصب. تُبدأ الرحلة من تعريف الكيانات والهيكل ومراكز المسؤولية، ثم عرض العلاقة بينها بصورة يمكن تصفحها. يرى مسؤول الموارد البشرية التنظيم قبل أن يتخذ قرار تعيين أو نقل، بينما تكشف حالات النقص أو التعارض عن سجلات تحتاج مراجعة.",
+    "en": "When companies, branches and departments are managed in separate records, it becomes difficult to identify which entity each employee or position belongs to. The journey starts by defining entities, structure and responsibility centers, then presenting their relationships in a navigable view. HR administrators can see the organization before making an appointment or transfer decision, while gaps and conflicts highlight records that need review."
+   },
+   "inputs": [
+    {
+     "ar": "شركة/جهة قانونية",
+     "en": "Company/legal entity"
+    },
+    {
+     "ar": "فرع",
+     "en": "Branch"
+    },
+    {
+     "ar": "قسم",
+     "en": "Department"
+    },
+    {
+     "ar": "وحدة أعمال",
+     "en": "Business unit"
+    },
+    {
+     "ar": "مدير",
+     "en": "Manager"
+    },
+    {
+     "ar": "موقع",
+     "en": "Location"
+    },
+    {
+     "ar": "مركز تكلفة",
+     "en": "Cost center"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "شجرة هيكل",
+     "en": "Org chart tree"
+    },
+    {
+     "ar": "تبعيات موثقة",
+     "en": "Documented reporting lines"
+    },
+    {
+     "ar": "بيانات مرجعية قابلة للتتبع",
+     "en": "Traceable reference data"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تعارض التبعية",
+     "en": "Conflicting reporting lines"
+    },
+    {
+     "ar": "وحدة بلا مدير",
+     "en": "Unit without a manager"
+    },
+    {
+     "ar": "سجل يتبع كيانًا خاطئًا",
+     "en": "Record assigned to the wrong entity"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "جاهزية الهيكل",
+     "en": "Organizational structure readiness"
+    },
+    {
+     "ar": "توزيع الأفراد حسب الوحدة",
+     "en": "Headcount distribution by unit"
+    },
+    {
+     "ar": "العناصر خارج الهيكل",
+     "en": "Items outside the organizational structure"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Manager",
+     "en": "HR manager"
+    },
+    {
+     "ar": "مسؤول الإعداد",
+     "en": "Configuration administrator"
+    }
+   ],
+   "features": [
+    "SET-02",
+    "SET-03",
+    "SET-04",
+    "ORG-01",
+    "ORG-03"
+   ],
+   "screens": [
+    "O-01",
+    "O-02",
+    "O-03"
+   ]
+  },
+  {
+   "id": "01.2",
+   "title": {
+    "ar": "التصنيف والملفات الوظيفية",
+    "en": "Job classification and profiles"
+   },
+   "problem": {
+    "ar": "غياب معايير الوظائف يجعل المقارنة والترقية والتوظيف غير منضبطة.",
+    "en": "Without job standards, comparisons, promotions and hiring lack consistency."
+   },
+   "how": {
+    "ar": "نعرّف المسمى والوصف والعائلة الوظيفية والدرجة، ونربطها بالمنصب والموظف.",
+    "en": "We define the job title, description, family and grade, then link them to the position and employee."
+   },
+   "outcome": {
+    "ar": "لغة وظيفية موحدة للتوظيف والتطوير والتعويضات.",
+    "en": "A shared job vocabulary for recruitment, development and compensation."
+   },
+   "decision": {
+    "ar": "اتفاق التوظيف والتطوير والتعويض على تعريف وظيفي واحد",
+    "en": "Recruitment, development and compensation aligned on one job definition"
+   },
+   "narrative": {
+    "ar": "قبل أن تقارن الشركة المرشحين أو تحدد مسارًا وظيفيًا، يجب أن يتفق الجميع على معنى المسمى والعائلة والدرجة والمتطلبات. هذا القسم يوحّد لغة الوظائف دون الخلط بين «الوظيفة» بوصفها تعريفًا مهنيًا و«المنصب» بوصفه موقعًا تنظيميًا يشغله شخص. نتيجة ذلك أن احتياج التوظيف والتقييم والتطوير يُقرأ على أساس وصف واضح بدل مسميات حرة متباينة.",
+    "en": "Before a company compares candidates or defines a career path, everyone must agree on what the job title, family, grade and requirements mean. This section standardizes job terminology without confusing a job, as an occupational definition, with a position, as a place in the organization occupied by a person. Recruitment, assessment and development needs can then be understood through clear descriptions rather than inconsistent, free-form titles."
+   },
+   "inputs": [
+    {
+     "ar": "عائلة وظيفية",
+     "en": "Job family"
+    },
+    {
+     "ar": "مسمى",
+     "en": "Job title"
+    },
+    {
+     "ar": "وصف وظيفة",
+     "en": "Job description"
+    },
+    {
+     "ar": "درجة",
+     "en": "Grade"
+    },
+    {
+     "ar": "مهارات ومتطلبات",
+     "en": "Skills and requirements"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "قاموس وظائف يميز بين المسمى والمنصب الفعلي",
+     "en": "Job dictionary distinguishing job titles from actual positions"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "ازدواجية المسميات",
+     "en": "Duplicate job titles"
+    },
+    {
+     "ar": "وظيفة بلا وصف",
+     "en": "Job without a description"
+    },
+    {
+     "ar": "خلط الوظيفة بالشاغر",
+     "en": "Confusion between job and vacancy"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "توزيع الوظائف حسب العائلة/الدرجة",
+     "en": "Job distribution by family/grade"
+    },
+    {
+     "ar": "فجوات تعريف المهن",
+     "en": "Gaps in occupational definitions"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Manager",
+     "en": "HR manager"
+    },
+    {
+     "ar": "مسؤول التطوير التنظيمي",
+     "en": "Organizational development officer"
+    }
+   ],
+   "features": [],
+   "screens": [
+    "O-04",
+    "O-05"
+   ]
+  },
+  {
+   "id": "01.3",
+   "title": {
+    "ar": "المناصب والميزانيات",
+    "en": "Positions and budgets"
+   },
+   "problem": {
+    "ar": "قد تظهر وظيفة شاغرة بلا ميزانية أو منصب مخصص.",
+    "en": "A vacancy may arise without a budget or an allocated position."
+   },
+   "how": {
+    "ar": "من الخطة نحدد المنصب وشاغله أو شغوره، ثم نربطه باحتياج التوظيف والاعتماد.",
+    "en": "Starting from the plan, we identify the position and whether it is filled or vacant, then link it to the hiring need and approval."
+   },
+   "outcome": {
+    "ar": "رؤية للشواغر والاحتياجات مع إبقاء المناصب والتوظيف مفاهيم منفصلة.",
+    "en": "Visibility into vacancies and staffing needs while keeping positions and recruitment as distinct concepts."
+   },
+   "decision": {
+    "ar": "قرار توظيف مربوط بحاجة فعلية إلى منصب معتمد",
+    "en": "A hiring decision linked to an actual need for an approved position"
+   },
+   "narrative": {
+    "ar": "تحتاج الإدارة إلى معرفة كم منصبًا خططت له، وما الذي اعتُمد، ومن يشغل كل منصب، وأين توجد شواغر فعلية. يعالج القسم الفرق بين Job وPosition وVacancy وRequisition والميزانية؛ فليست جميعها أسماء للشيء نفسه. تظهر قرارات إنشاء المنصب واعتماده وربطه بالتوظيف ضمن سجل يمكن الرجوع إليه، ولا يتحول السيناريو التخطيطي إلى موافقة مالية لمجرد عرضه في شاشة.",
+    "en": "Management needs to know how many positions were planned, which were approved, who occupies each position and where actual vacancies exist. This section distinguishes between Job, Position, Vacancy, Requisition and budget; they are not different names for the same thing. Decisions to create and approve a position and link it to recruitment appear in a record that can be referenced. A planning scenario does not become financial approval simply because it is displayed on a screen."
+   },
+   "inputs": [
+    {
+     "ar": "الهيكل",
+     "en": "Organizational structure"
+    },
+    {
+     "ar": "Job Profile",
+     "en": "Job Profile"
+    },
+    {
+     "ar": "Position",
+     "en": "Position"
+    },
+    {
+     "ar": "الميزانية المعتمدة",
+     "en": "Approved budget"
+    },
+    {
+     "ar": "وضع شاغل المنصب",
+     "en": "Position holder status"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "قائمة مناصب",
+     "en": "Position list"
+    },
+    {
+     "ar": "شاغر متاح",
+     "en": "Available vacancy"
+    },
+    {
+     "ar": "طلب فتح وظيفة أو مراجعة ميزانية",
+     "en": "Request to open a job or review the budget"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "منصب يتجاوز الميزانية",
+     "en": "Position over budget"
+    },
+    {
+     "ar": "تعدد شاغلين غير جائز",
+     "en": "Multiple position holders not permitted"
+    },
+    {
+     "ar": "فرق بين شاغر ومسمى",
+     "en": "Distinction between a vacancy and a job title"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "المناصب المعتمدة والشاغرة والمشغولة",
+     "en": "Approved, vacant and filled positions"
+    },
+    {
+     "ar": "اختلاف المخطط عن الفعلي",
+     "en": "Planned vs. actual variance"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Director",
+     "en": "HR director"
+    },
+    {
+     "ar": "التخطيط الوظيفي",
+     "en": "Workforce planning"
+    },
+    {
+     "ar": "Finance",
+     "en": "Finance"
+    }
+   ],
+   "features": [
+    "ORG-02",
+    "ORG-04",
+    "ORG-05",
+    "ORG-06",
+    "ORG-08"
+   ],
+   "screens": [
+    "O-06",
+    "O-07",
+    "O-08"
+   ]
+  },
+  {
+   "id": "01.4",
+   "title": {
+    "ar": "سجل الموظفين وملف 360",
+    "en": "Employee records and Employee 360"
+   },
+   "problem": {
+    "ar": "بيانات الموظف غالبًا موزعة بين ملفات مختلفة يصعب تتبعها.",
+    "en": "Employee data is often scattered across files that are difficult to track."
+   },
+   "how": {
+    "ar": "نفتح Employee 360 لنرى الوظيفة والبيانات والوثائق والعلاقات والإجازات والحضور وفق الدور.",
+    "en": "Open Employee 360 to view job details, data, documents, relationships, leave and attendance according to your role."
+   },
+   "outcome": {
+    "ar": "ملف موحد يختصر البحث ويوصل مباشرة للمستند المصدر.",
+    "en": "A unified profile that reduces search time and links directly to the source document."
+   },
+   "decision": {
+    "ar": "نقطة بحث واحدة عن سياق الموظف المصرح بعرضه",
+    "en": "One place to find the employee context you are authorized to view"
+   },
+   "narrative": {
+    "ar": "يستغرق البحث عن معلومات موظف وقتًا حين تتوزع بين التعيين والعقد والحضور والإجازات والمستندات. يُقدَّم Employee 360 بوصفه مدخلًا إلى العلاقات، لا نسخة أخرى من كل مستند؛ فيرى الموظف المفوض السياق الذي تسمح له صلاحياته برؤيته، وينتقل إلى المصدر الأصلي لتفاصيل الحالة. الفكرة ليست تجميع عشرة تبويبات فقط، بل إظهار تاريخ الموظف والوثائق المرتبطة بالقرار الذي أمام المستخدم.",
+    "en": "Finding employee information takes time when it is spread across assignments, contracts, attendance, leave and documents. Employee 360 serves as a gateway to related records, not another copy of every document. Authorized staff can see the context their permissions allow and navigate to the original source for case details. The aim is not simply to bring ten tabs together, but to show the employee history and documents relevant to the decision at hand."
+   },
+   "inputs": [
+    {
+     "ar": "بيانات الهوية والتواصل",
+     "en": "Identity and contact details"
+    },
+    {
+     "ar": "الشركة",
+     "en": "Company"
+    },
+    {
+     "ar": "التعيين",
+     "en": "Assignment"
+    },
+    {
+     "ar": "العقد",
+     "en": "Contract"
+    },
+    {
+     "ar": "المستندات المرتبطة",
+     "en": "Linked documents"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "Employee 360",
+     "en": "Employee 360"
+    },
+    {
+     "ar": "روابط السجلات وسجل الحالة والتغيرات",
+     "en": "Record links, status history and change log"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "مستند منتهي",
+     "en": "Expired document"
+    },
+    {
+     "ar": "بيانات ناقصة",
+     "en": "Missing data"
+    },
+    {
+     "ar": "اختلاف التعيين بين المستندات",
+     "en": "Assignment discrepancies across documents"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "اكتمال ملف الموظف",
+     "en": "Employee profile completeness"
+    },
+    {
+     "ar": "النواقص",
+     "en": "Missing items"
+    },
+    {
+     "ar": "تغيرات القوى العاملة",
+     "en": "Workforce changes"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Operations",
+     "en": "HR operations"
+    },
+    {
+     "ar": "HR Manager",
+     "en": "HR manager"
+    }
+   ],
+   "features": [
+    "COR-01"
+   ],
+   "screens": [
+    "E-01",
+    "E-02"
+   ]
+  },
+  {
+   "id": "01.5",
+   "title": {
+    "ar": "العلاقات والتعيينات والتنقلات",
+    "en": "Relationships, assignments and transfers"
+   },
+   "problem": {
+    "ar": "التنقلات والترقيات قد تفقد أثرها التاريخي أو ترتبط بتاريخ غير صحيح.",
+    "en": "Transfers and promotions may lose their historical trail or be linked to an incorrect date."
+   },
+   "how": {
+    "ar": "نبدأ من الموظف، نجهّز تغييرًا مؤرخًا، نراجع أهليته واعتماده ثم نقرأ سجل التغيير.",
+    "en": "Start with the employee, prepare a dated change, review eligibility and approval, then view the change log."
+   },
+   "outcome": {
+    "ar": "تتبع كامل للتطور الوظيفي وحفظ أثر كل إجراء.",
+    "en": "Full tracking of career progression, with a preserved record of every action."
+   },
+   "decision": {
+    "ar": "كل تغيير وظيفي له مستند وسياق زمني قابل للرجوع",
+    "en": "Every job change has a document and a timeline you can refer back to"
+   },
+   "narrative": {
+    "ar": "الترقية أو النقل أو تغيير التبعية لا يجب أن يمحو التعيين السابق. تبدأ الحركة بتحديد الموظف ونوع التغيير وسببه وتاريخ سريانه، ثم تمر بالمراجعة المصرح بها حتى تنعكس على سجل التعيينات عند التنفيذ. يمكن قراءة التسلسل زمنيًا وشرح سبب الاختلاف بين وضع اليوم ووضع فترة سابقة، بدل ترك ملف الموظف بقيمة حالية فقط بلا تاريخ.",
+    "en": "A promotion, transfer or change in reporting line should not erase the previous assignment. The process starts by identifying the employee, change type, reason and effective date. It then goes through authorized review before being reflected in the assignment history upon execution. You can follow the sequence chronologically and explain why today's status differs from an earlier period, rather than leaving the employee profile with only a current value and no history."
+   },
+   "inputs": [
+    {
+     "ar": "الموظف",
+     "en": "Employee"
+    },
+    {
+     "ar": "التعيين الحالي",
+     "en": "Current assignment"
+    },
+    {
+     "ar": "نوع الحركة",
+     "en": "Change type"
+    },
+    {
+     "ar": "سبب وتاريخ سريان",
+     "en": "Reason and effective date"
+    },
+    {
+     "ar": "موافقات",
+     "en": "Approvals"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "طلب ترقية/نقل/إنهاء",
+     "en": "Promotion/transfer/termination request"
+    },
+    {
+     "ar": "سجل حركة بتاريخ سريان",
+     "en": "Change record with effective date"
+    },
+    {
+     "ar": "تكليف جديد",
+     "en": "New assignment"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "تاريخ متعارض",
+     "en": "Conflicting date"
+    },
+    {
+     "ar": "حركة دون اعتماد",
+     "en": "Change without approval"
+    },
+    {
+     "ar": "صلاحية غير كافية",
+     "en": "Insufficient permissions"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "الحركات المعلقة",
+     "en": "Pending changes"
+    },
+    {
+     "ar": "النقل والترقية",
+     "en": "Transfers and promotions"
+    },
+    {
+     "ar": "تغيّر شاغلي الوظائف",
+     "en": "Changes in job holders"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Operations",
+     "en": "HR operations"
+    },
+    {
+     "ar": "المدير",
+     "en": "Manager"
+    },
+    {
+     "ar": "المعتمد",
+     "en": "Approver"
+    }
+   ],
+   "features": [
+    "COR-02",
+    "COR-03",
+    "COR-04"
+   ],
+   "screens": [
+    "E-03",
+    "E-04",
+    "E-05"
+   ]
+  },
+  {
+   "id": "01.6",
+   "title": {
+    "ar": "العقود والوثائق",
+    "en": "Contracts and documents"
+   },
+   "problem": {
+    "ar": "تواريخ انتهاء العقود والوثائق قد تفوت دون إنذار واضح.",
+    "en": "Contract and document expiry dates can pass without a clear alert."
+   },
+   "how": {
+    "ar": "نجمع العقود والوثائق والملفات المرتبطة بالموظف ونظهر المواعيد والإجراءات القادمة.",
+    "en": "Bring together contracts, documents and files linked to the employee, and display upcoming dates and actions."
+   },
+   "outcome": {
+    "ar": "متابعة للعقود والتجديدات دون البحث في ملفات منفصلة.",
+    "en": "Track contracts and renewals without searching through separate files."
+   },
+   "decision": {
+    "ar": "ربط مستند العمل بسياق الموظف ودورة التجديد",
+    "en": "Link employment documents to employee context and the renewal cycle"
+   },
+   "narrative": {
+    "ar": "العقد ليس مجرد ملف PDF محفوظ في مجلد. يحتاج مسؤول الموارد البشرية إلى ربطه بالموظف ومدة السريان والتعديلات والملاحق والمستندات المطلوبة. يوضح القسم كيفية التمييز بين العقد الأصلي والتعديل ومراجعة تواريخ الانتهاء، مع فصل مجرد التنبيه أو إنشاء سجل التجديد عن توقيع أو إجراء قانوني لم يثبت تنفيذه.",
+    "en": "A contract is more than a PDF stored in a folder. The HR administrator needs to link it to the employee, validity period, amendments, addenda and required documents. This section explains how to distinguish the original contract from an amendment and review expiry dates, while keeping a simple alert or renewal record creation distinct from a signature or legal action whose completion has not been verified."
+   },
+   "inputs": [
+    {
+     "ar": "عقد العمل",
+     "en": "Employment contract"
+    },
+    {
+     "ar": "بنوده",
+     "en": "Contract terms"
+    },
+    {
+     "ar": "تاريخ البداية والنهاية",
+     "en": "Start and end dates"
+    },
+    {
+     "ar": "المرفقات",
+     "en": "Attachments"
+    },
+    {
+     "ar": "طلب تعديل",
+     "en": "Amendment request"
+    }
+   ],
+   "outputs": [
+    {
+     "ar": "سجل عقد/تعديل",
+     "en": "Contract/amendment record"
+    },
+    {
+     "ar": "نسخة محفوظة",
+     "en": "Saved copy"
+    },
+    {
+     "ar": "تنبيه تجديد عند توافر الإعداد",
+     "en": "Renewal alert when configured"
+    }
+   ],
+   "exceptions": [
+    {
+     "ar": "انتهاء محتمل",
+     "en": "Potential expiry"
+    },
+    {
+     "ar": "اختلاف رقم/تاريخ",
+     "en": "Number/date discrepancy"
+    },
+    {
+     "ar": "مستند غير مربوط",
+     "en": "Unlinked document"
+    }
+   ],
+   "kpis": [
+    {
+     "ar": "العقود حسب الحالة",
+     "en": "Contracts by status"
+    },
+    {
+     "ar": "القادم تجديدها",
+     "en": "Upcoming renewals"
+    },
+    {
+     "ar": "المرفقات الناقصة",
+     "en": "Missing attachments"
+    }
+   ],
+   "roles": [
+    {
+     "ar": "HR Operations",
+     "en": "HR operations"
+    },
+    {
+     "ar": "مسؤول العقود",
+     "en": "Contracts administrator"
+    }
+   ],
+   "features": [
+    "COR-05",
+    "KSA-01"
+   ],
+   "screens": [
+    "E-06",
+    "E-07",
+    "E-08"
+   ]
+  }
+ ],
+ "features": {
+  "SET-02": {
+   "text": {
+    "ar": "معالج الهيكل المؤسسي (مؤسسة › أقسام › كيانات قانونية › وحدات أعمال) مع إنشاء ماستر تابع داخل المعالج وتقرير ملخص",
+    "en": "Organizational structure wizard (organization › departments › legal entities › business units) with linked master record creation within the wizard and a summary report"
+   },
+   "sections": [
+    "01.1"
+   ]
+  },
+  "SET-03": {
+   "text": {
+    "ar": "الكيان القانوني ببيانات التسجيل وعلم صاحب العمل",
+    "en": "Legal entity with registration details and employer flag"
+   },
+   "sections": [
+    "01.1"
+   ]
+  },
+  "SET-04": {
+   "text": {
+    "ar": "مجموعات البيانات المرجعية (مشتركة / خاصة بكيان)",
+    "en": "Reference data sets (shared / entity-specific)"
+   },
+   "sections": [
+    "01.1"
+   ]
+  },
+  "ORG-01": {
+   "text": {
+    "ar": "ماسترات الهيكل: الموقع، وحدة الأعمال، الإدارة بمديرها ومركز تكلفتها، الوظيفة",
+    "en": "Structure master records: location, business unit, department with its manager and cost center, job"
+   },
+   "sections": [
+    "01.1"
+   ]
+  },
+  "ORG-03": {
+   "text": {
+    "ar": "شجرة الهيكل والإدارات مع التجميع",
+    "en": "Organization and department tree with grouping"
+   },
+   "sections": [
+    "01.1"
+   ]
+  },
+  "ORG-02": {
+   "text": {
+    "ar": "المنصب بملفه ومؤهلاته",
+    "en": "Position with its profile and qualifications"
+   },
+   "sections": [
+    "01.3"
+   ]
+  },
+  "ORG-04": {
+   "text": {
+    "ar": "هرم المناصب وشاغلوها + مزامنة المنصب مع التعيين",
+    "en": "Position hierarchy and position holders + position-to-assignment synchronization"
+   },
+   "sections": [
+    "01.3"
+   ]
+  },
+  "ORG-05": {
+   "text": {
+    "ar": "اعتماد المنصب",
+    "en": "Position approval"
+   },
+   "sections": [
+    "01.3"
+   ]
+  },
+  "ORG-06": {
+   "text": {
+    "ar": "الانتقال منصب › طلب توظيف › شاغر",
+    "en": "Transition: position → job requisition → vacancy"
+   },
+   "sections": [
+    "01.3",
+    "02.1"
+   ]
+  },
+  "ORG-08": {
+   "text": {
+    "ar": "وضوح المفاهيم: المنصب ≠ الوظيفة ≠ الشاغر ≠ طلب التوظيف، بتعريف ظاهر وروابط بينهم",
+    "en": "Clear concepts: position ≠ job ≠ vacancy ≠ job requisition, with visible definitions and links between them"
+   },
+   "sections": [
+    "01.3",
+    "02.1"
+   ]
+  },
+  "COR-01": {
+   "text": {
+    "ar": "ملف الموظف 360 بأقسامه (وظيفة، راتب، مزايا، أداء، تعلم، تعاقب، بيانات شخصية، هوية، طوارئ، معالون، تفضيلات التواصل)",
+    "en": "Employee 360 sections (job, salary, benefits, performance, learning, succession, personal details, identity, emergency contacts, dependents, communication preferences)"
+   },
+   "sections": [
+    "01.4"
+   ]
+  },
+  "COR-02": {
+   "text": {
+    "ar": "طبقات الشخص › علاقة العمل › التعيين، مع تعدد التعيينات والتعيين الأساسي",
+    "en": "Person › Employment relationship › Assignment layers, with multiple assignments and a primary assignment"
+   },
+   "sections": [
+    "01.5"
+   ]
+  },
+  "COR-03": {
+   "text": {
+    "ar": "بيانات مؤرخة بتاريخ سريان + تعديل بيانات الوظيفة بخطوات وخط زمني",
+    "en": "Effective-dated data + step-by-step job data updates and timeline"
+   },
+   "sections": [
+    "01.5"
+   ]
+  },
+  "COR-04": {
+   "text": {
+    "ar": "إجراءات توظيفية مصنفة (ترقية، نقل، إنهاء) بأسباب وإمكانية عكس + شريط كل الإجراءات",
+    "en": "Categorized employment actions (promotion, transfer, termination) with reasons and reversal capability + all-actions bar"
+   },
+   "sections": [
+    "01.5"
+   ]
+  },
+  "COR-05": {
+   "text": {
+    "ar": "مستندات الموظف",
+    "en": "Employee documents"
+   },
+   "sections": [
+    "01.6"
+   ]
+  },
+  "KSA-01": {
+   "text": {
+    "ar": "اكتمال الهوية السعودية (هوية/إقامة) — مقترح، غير مرصود بشاشة",
+    "en": "Saudi identity completeness (national ID/Iqama) — proposed, not observed on a screen"
+   },
+   "sections": [
+    "01.6"
+   ]
+  }
+ },
+ "screens": {
+  "O-01": {
+   "title": {
+    "ar": "مستكشف الهيكل التنظيمي",
+    "en": "Org structure explorer"
+   },
+   "role": "Hierarchy explorer"
+  },
+  "O-02": {
+   "title": {
+    "ar": "الجهات القانونية والشركات",
+    "en": "Legal entities and companies"
+   },
+   "role": "Operational register"
+  },
+  "O-03": {
+   "title": {
+    "ar": "الأقسام والفروع",
+    "en": "Departments and branches"
+   },
+   "role": "Operational register"
+  },
+  "O-04": {
+   "title": {
+    "ar": "عائلات الوظائف",
+    "en": "Job families"
+   },
+   "role": "Operational register"
+  },
+  "O-05": {
+   "title": {
+    "ar": "الملفات الوظيفية",
+    "en": "Job profiles"
+   },
+   "role": "360 record workspace"
+  },
+  "O-06": {
+   "title": {
+    "ar": "سجل المناصب",
+    "en": "Position register"
+   },
+   "role": "Operational register"
+  },
+  "O-07": {
+   "title": {
+    "ar": "ملف المنصب",
+    "en": "Position profile"
+   },
+   "role": "360 record workspace"
+  },
+  "O-08": {
+   "title": {
+    "ar": "ميزانية المناصب واعتماداتها",
+    "en": "Position budgets and approvals"
+   },
+   "role": "Exception / approval queue"
+  },
+  "E-01": {
+   "title": {
+    "ar": "دليل الموظفين",
+    "en": "Employee directory"
+   },
+   "role": "Operational register"
+  },
+  "E-02": {
+   "title": {
+    "ar": "الملف الشامل للموظف",
+    "en": "Comprehensive employee profile"
+   },
+   "role": "360 record workspace"
+  },
+  "E-03": {
+   "title": {
+    "ar": "سجل العلاقة التعاقدية",
+    "en": "Contractual relationship record"
+   },
+   "role": "Operational register"
+  },
+  "E-04": {
+   "title": {
+    "ar": "سجل التعيينات بالتاريخ",
+    "en": "Dated assignment history"
+   },
+   "role": "Operational register"
+  },
+  "E-05": {
+   "title": {
+    "ar": "النقل والترقيات",
+    "en": "Transfers and promotions"
+   },
+   "role": "Operational register"
+  },
+  "E-06": {
+   "title": {
+    "ar": "سجل عقود العمل",
+    "en": "Employment contract register"
+   },
+   "role": "Operational register"
+  },
+  "E-07": {
+   "title": {
+    "ar": "العقد والتعديلات",
+    "en": "Contract and amendments"
+   },
+   "role": "360 record workspace"
+  },
+  "E-08": {
+   "title": {
+    "ar": "انتهاء وتجديد المستندات",
+    "en": "Document expiry and renewal"
+   },
+   "role": "Operational register"
+  }
+ }
+}
