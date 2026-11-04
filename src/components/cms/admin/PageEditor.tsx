@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useServerFn } from '@tanstack/react-start';
 import { useRouter } from '@tanstack/react-router';
 import { CalendarClock, Check, Copy, History, Link2, RotateCcw, Save, XCircle } from 'lucide-react';
@@ -8,6 +8,11 @@ import { cmsContentSchema, type CmsContent } from '@/lib/cms-schema';
 import { DepartmentBody } from '@/components/catalog/DepartmentPage';
 import { AddBlockButtons, BlockList, newBlock } from './BlockEditor';
 import DepartmentFields from './DepartmentFields';
+import ProPageBody from '@/components/pro/ProPageBody';
+import { loadProPage, proPageByPath } from '@/content/pro/pro-pages';
+import type { ProPageContent } from '@/content/pro/types';
+import { LocaleScope } from '@/lib/i18n';
+import { withProSourceBlocks } from '@/lib/pro-sections';
 import { SHOTS } from '@/content/product-shots';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -68,6 +73,16 @@ export default function PageEditor({
   const router = useRouter();
   const approvedMedia = media.filter(m => m.approval === 'approved' && !m.archived_at);
   const local = c[locale];
+  // DIGIT Pro V4 pages: the document orders, hides and retitles the page's source sections.
+  const proConfig = proPageByPath(path);
+  const [proContent, setProContent] = useState<ProPageContent | null>(null);
+  useEffect(() => {
+    let live = true;
+    setProContent(null);
+    if (proConfig) void loadProPage(proConfig.key).then(content => { if (live && content) setProContent(content); });
+    return () => { live = false; };
+  }, [proConfig?.key]);
+  const shownBlocks = proConfig ? withProSourceBlocks(local.blocks, proConfig) : local.blocks;
   const activeLinks = previews.filter(p => p.document_id === doc.id).length;
 
   const edit = (next: CmsContent) => {
@@ -343,14 +358,21 @@ export default function PageEditor({
           <DepartmentFields content={c} path={path} locale={locale} media={media} edit={edit} />
 
           <h3 className="border-t border-border pt-5 font-bold">أقسام الصفحة</h3>
-          <BlockList blocks={local.blocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} department={c.department} />
+          {proConfig && <p className="text-xs text-muted-foreground">أقسام صفحة DIGIT Pro تأتي من محتوى المصدر: رتّبها أو أخفها أو غيّر عنوانها ونصها التمهيدي؛ الحقول الفارغة تعرض نص المصدر.</p>}
+          <BlockList blocks={shownBlocks} onChange={blocks => update({ blocks })} media={approvedMedia} locale={locale} department={c.department} sourceSections={proConfig?.sections} />
           <AddBlockButtons department={!!c.department} onAdd={type => update({ blocks: [...local.blocks, newBlock(type)] })} />
         </div>
 
         <div>
           <div className="v3-cms-preview" data-device={device} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
             <p className="text-xs text-muted-foreground">معاينة المسودة · {locale.toUpperCase()}</p>
-            {c.department ? (
+            {proConfig && proContent ? (
+              <div className="pv-preview" inert>
+                <LocaleScope locale={locale}>
+                  <ProPageBody config={proConfig} content={proContent} cms={c} nav={false} />
+                </LocaleScope>
+              </div>
+            ) : c.department ? (
               <div className="dept-page dept-preview" inert>
                 <DepartmentBody content={c} path={path} locale={locale} />
               </div>
