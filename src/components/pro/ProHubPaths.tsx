@@ -57,11 +57,13 @@ export default function ProHubPaths() {
             <ol role="list" className="ph-q">
               {questions.map(q => (
                 <li key={q.id}>
-                  <strong>{q.question[locale]}</strong>
-                  <span className="ph-q-status" data-status={q.status}>
-                    {q.status === 'screen' ? <Check aria-hidden="true" /> : <Hourglass aria-hidden="true" />}
-                    {(q.status === 'screen' ? COPY.screen : COPY.report)[locale]}
-                  </span>
+                  <NavLink path="/pro/cfo-decisions" hash={`pv-q-${q.id}`} className="ph-q-link">
+                    <strong>{q.question[locale]}</strong>
+                    <span className="ph-q-status" data-status={q.status}>
+                      {q.status === 'screen' ? <Check aria-hidden="true" /> : <Hourglass aria-hidden="true" />}
+                      {(q.status === 'screen' ? COPY.screen : COPY.report)[locale]}
+                    </span>
+                  </NavLink>
                 </li>
               ))}
             </ol>

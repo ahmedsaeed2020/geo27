@@ -1,4 +1,5 @@
-import { useRef, useState, type KeyboardEvent } from 'react';
+import { useEffect, useRef, useState, type KeyboardEvent } from 'react';
+import { useRouterState } from '@tanstack/react-router';
 import { Check, FileText, Hourglass } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useLocale } from '@/lib/i18n';
@@ -18,6 +19,14 @@ export function QuestionsSection({ s, title, lede, eyebrow }: SectionProps<'ques
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const box = useSectionLightbox(s.items.map(q => q.shot));
   const ask = useAskDemo();
+  // `#pv-q-EXE-xx` (linked from the /pro hub) opens that question.
+  const hash = useRouterState({ select: st => st.location.hash });
+  useEffect(() => {
+    const i = s.items.findIndex(item => hash.replace(/^#/, '') === `pv-q-${item.id}`);
+    if (i < 0) return;
+    setActive(i);
+    document.getElementById(`pv-${s.id}`)?.scrollIntoView({ block: 'start' });
+  }, [hash, s.items, s.id]);
   const q = s.items[active] ?? s.items[0];
   if (!q) return null;
   const onKey = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {

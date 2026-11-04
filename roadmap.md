@@ -10,7 +10,7 @@
 - [x] Phase E: 88 tests pass; all 22 AR/EN URLs (10 V4 pages + /pro) at 390 and 1280 px return 200 with no console errors, overflow, broken images or Arabic in English V4 sections; 404 for unknown areas; canonical/hreflang checked. No live publish.
 - [x] /pro hub: new editable "paths" band after the department picker — four CFO questions with evidence status, roles to their pages, and the live report count by department (117), AR/EN, checked at 1280/390 px; listed in the admin Pro sections editor with heading overrides.
 - [x] Report-category counts on /pro open /modules/reports#reports-<category> with the directory pre-filtered (checked by click and direct load, AR/EN).
-- [ ] CFO page: deep link to a single executive question (#EXE-xx selects its tab) from the hub's question list — ready.
+- [x] Hub CFO questions open /pro/cfo-decisions#pv-q-EXE-xx with that question selected.
 - [ ] Owner: the V4 pack references screenshots that were not included; sections without a real screen show labelled process diagrams until real captures are supplied — blocked on owner.
 - [ ] Owner: approve the V4 pages before the next publish (nothing is live yet) — blocked on owner.
 # Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
