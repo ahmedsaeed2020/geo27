@@ -64,6 +64,13 @@
       "when": 1793792383470,
       "tag": "0008_inventory_draft_evidence_pending",
       "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "7",
+      "when": 1793792407715,
+      "tag": "0009_inventory_draft_english_terms",
+      "breakpoints": true
     }
   ]
 }
