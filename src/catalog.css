@@ -105,6 +105,13 @@
 .mm-columns > .mm-col:last-child .mm-links li { break-inside: avoid; }
 .mm-col { min-width: 0; }
 
+/* Laptop widths: seven menu groups plus the language switch and demo button must fit without touching. */
+@media (min-width: 1280px) and (max-width: 1439.98px) {
+  .site-header-bar { gap: 14px; padding-inline: 20px; }
+  .site-header-actions { gap: 8px; }
+  .mm-top { font-size: 14px; }
+  .mm-trigger { margin-inline-end: 4px; }
+}
 @media (max-width: 1279.98px) {
   .mm-nav { display: none; }
   .mnav-trigger { display: inline-flex; }
