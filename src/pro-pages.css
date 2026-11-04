@@ -331,6 +331,7 @@
   .pv-root .pv-rfeat, .pv-root .pv-layers, .pv-root .pv-mosaic, .pv-root .pv-features, .pv-root .pv-explorer { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pv-root .pv-ws-index-nav ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pv-root .pv-scope { grid-template-columns: minmax(0, 1fr); }
+  .pv-root .pv-flow { grid-template-columns: repeat(min(var(--pv-cols), 3), minmax(0, 1fr)); }
 }
 @media (max-width: 900px) {
   .pv-root .pv-intro-grid, .pv-root .pv-overview, .pv-root .pv-ws[data-flip] .pv-overview, .pv-root .pv-work, .pv-root .pv-reports-tab, .pv-root .pv-anatomy, .pv-root .pv-chapter-grid, .pv-root .pv-chapter[data-flip] .pv-chapter-grid, .pv-root .pv-exec, .pv-root .pv-hero-grid { grid-template-columns: minmax(0, 1fr); }
@@ -339,6 +340,7 @@
   .pv-root .pv-match, .pv-root .pv-checks { grid-template-columns: minmax(0, 1fr); gap: 26px; }
   .pv-root .pv-match > li + li::before { inset-inline-start: 50%; top: -24px; translate: -50% 0; }
   .pv-root .pv-life { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pv-root .pv-flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .pv-root .pv-decisions > li { grid-template-columns: 40px minmax(0, 1fr); }
   .pv-root .pv-decisions > li > .pp-shot { grid-column: 2; }
   .pv-root .pv-features[data-layout="rows"] > li { grid-template-columns: minmax(0, 1fr); }
@@ -347,7 +349,7 @@
   .pv-root .pv-hero-screen { order: -1; }
 }
 @media (max-width: 640px) {
-  .pv-root .pv-rfeat, .pv-root .pv-layers, .pv-root .pv-mosaic, .pv-root .pv-features, .pv-root .pv-explorer, .pv-root .pv-life, .pv-root .pv-ws-index-nav ol { grid-template-columns: minmax(0, 1fr); }
+  .pv-root .pv-rfeat, .pv-root .pv-layers, .pv-root .pv-mosaic, .pv-root .pv-features, .pv-root .pv-explorer, .pv-root .pv-life, .pv-root .pv-flow, .pv-root .pv-ws-index-nav ol { grid-template-columns: minmax(0, 1fr); }
   .pv-root .pv-screen[data-lens] { grid-template-columns: minmax(0, 1fr); }
   .pv-root .pv-lens-view { aspect-ratio: 1.6; }
   .pv-root .pv-docs > div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
