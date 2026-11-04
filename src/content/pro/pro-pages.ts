@@ -7,16 +7,23 @@ export type ProPageKey = 'accounting' | 'selling' | 'purchasing' | 'inventory' |
 
 export type ProPageConfig = {
   key: ProPageKey;
-  /** `department`: one of the five operational departments; `area`: a cross-department experience. */
-  kind: 'department' | 'area';
+  /**
+   * `department`: one of the five operational departments, `module`: the report center; both enrich an existing
+   * imported route (its hero, FAQ, closing CTA and SEO pair stay). `area`: a new cross-department page under /pro.
+   */
+  kind: 'department' | 'module' | 'area';
   path: string;
   label: L;
+  /** Short menu summary. */
+  summary: L;
+  /** Area pages only: on-page H1 and SEO pair. Existing routes keep their imported hero and SEO. */
   headline: L;
   seoTitle: L;
   seoDescription: L;
+  /** Real DIGIT Pro screen for the area hero and menus. */
   heroShots: string[];
   sections: { id: string; title: L }[];
-  /** Imported source sections (by design class) the V4 chapters replace on existing department routes. */
+  /** Imported source sections (by design class) the V4 chapters replace on existing routes. */
   replaces?: string[];
   /** Visual signature of the page. */
   signature: 'ledger' | 'journey' | 'match' | 'anatomy' | 'lifecycle' | 'catalog' | 'command' | 'control' | 'explorer' | 'executive';
@@ -28,6 +35,7 @@ const IMPORTED_REPLACED = ['benefits', 'inside', 'sec', 'demo', 'related'];
 export const PRO_PAGES: ProPageConfig[] = [
   {
     key: 'accounting',
+    summary: { ar: 'القيود والذمم والنقد والتقارير، وكل رقم بمصدره', en: 'Journals, dues, cash and reports, every figure with its source' },
     kind: 'department',
     path: '/modules/accounting',
     signature: 'ledger',
@@ -53,6 +61,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'selling',
+    summary: { ar: 'من عرض السعر إلى التحصيل في رحلة واحدة', en: 'From quotation to collection in one journey' },
     kind: 'department',
     path: '/modules/sales',
     signature: 'journey',
@@ -78,6 +87,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'purchasing',
+    summary: { ar: 'من الاحتياج إلى الاستلام والفاتورة، مع أداء المورد', en: 'From need to receipt and bill, with supplier performance' },
     kind: 'department',
     path: '/modules/purchasing',
     signature: 'match',
@@ -103,6 +113,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'inventory',
+    summary: { ar: 'الفعلي والمحجوز والمتوقع، ومطابقة القيمة مع الدفاتر', en: 'Actual, reserved and projected, with value reconciled to the books' },
     kind: 'department',
     path: '/modules/inventory',
     signature: 'anatomy',
@@ -128,6 +139,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'fixed-assets',
+    summary: { ar: 'دورة حياة الأصل والإهلاك المرحّل مقابل المستحق', en: 'The asset lifecycle and posted versus due depreciation' },
     kind: 'department',
     path: '/modules/fixed-assets',
     signature: 'lifecycle',
@@ -153,7 +165,8 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'reports',
-    kind: 'area',
+    summary: { ar: 'فهرس التقارير حسب السؤال والإدارة', en: 'The report directory by question and department' },
+    kind: 'module',
     path: '/modules/reports',
     signature: 'catalog',
     label: { ar: 'مركز التقارير', en: 'Report Center' },
@@ -174,6 +187,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'dashboards',
+    summary: { ar: 'مركز القيادة والاستثناءات ومؤشرات بتعريف ومصدر', en: 'Command center, exceptions and indicators with a source' },
     kind: 'area',
     path: '/pro/executive-dashboards',
     signature: 'command',
@@ -196,6 +210,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'governance',
+    summary: { ar: 'الصلاحيات والاعتمادات وما يحدَّد أثناء التهيئة', en: 'Permissions, approvals and what is set at set-up' },
     kind: 'area',
     path: '/pro/settings-governance',
     signature: 'control',
@@ -217,6 +232,7 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'capabilities',
+    summary: { ar: 'مستكشف القدرات حسب النتيجة وحالة كل قدرة', en: 'Capabilities by outcome, with the status of each' },
     kind: 'area',
     path: '/pro/capabilities',
     signature: 'explorer',
@@ -237,12 +253,13 @@ export const PRO_PAGES: ProPageConfig[] = [
   },
   {
     key: 'cfo',
+    summary: { ar: 'اثنا عشر سؤالًا تنفيذيًا بشاشاتها وتقاريرها', en: 'Twelve executive questions with their screens and reports' },
     kind: 'area',
-    path: '/pro/cfo-intelligence',
+    path: '/pro/cfo-decisions',
     signature: 'executive',
-    label: { ar: 'ذكاء المدير المالي', en: 'CFO Intelligence' },
+    label: { ar: 'قرارات المدير المالي', en: 'CFO Decisions' },
     headline: { ar: 'ما يحتاج المدير المالي أن يعرفه، ويفحصه، ويقرره', en: 'What a CFO needs to know, investigate and decide' },
-    seoTitle: { ar: 'ذكاء المدير المالي والقرارات | DIGIT Pro', en: 'CFO Intelligence & Decisions | DIGIT Pro' },
+    seoTitle: { ar: 'أسئلة وقرارات المدير المالي | DIGIT Pro', en: 'CFO Questions & Decisions | DIGIT Pro' },
     seoDescription: {
       ar: 'اثنا عشر سؤالًا تنفيذيًا في DIGIT Pro: السيولة، والذمم، والالتزامات، والمخزون، والإهلاك، والإقفال، مع الشاشة والتقرير المصدر وحالة الإثبات لكل سؤال.',
       en: 'Twelve executive questions in DIGIT Pro: liquidity, receivables, commitments, inventory, depreciation and close, each with its screen, source report and evidence status.',
@@ -262,6 +279,22 @@ export const PRO_PAGES: ProPageConfig[] = [
 ];
 
 export const proPageByKey = (key: string): ProPageConfig | undefined => PRO_PAGES.find(p => p.key === key);
+export const PRO_AREAS = PRO_PAGES.filter(p => p.kind === 'area');
+/** Slug of an area page: /pro/<slug>. */
+export const areaSlug = (p: ProPageConfig) => p.path.slice('/pro/'.length);
+export const proAreaBySlug = (slug: string): ProPageConfig | undefined => PRO_AREAS.find(p => areaSlug(p) === slug);
+
+/**
+ * Lead topics a Pro page may attach to a demo request: workspace codes (ACC-OPS…), executive questions
+ * (EXE-01…) and page keys. Anything else is stored empty.
+ */
+const WORKSPACE_ID = /^[A-Z]{3}-[A-Z]{3,10}$/;
+export const PRO_LEAD_TOPICS: ReadonlySet<string> = new Set([
+  ...PRO_PAGES.map(p => p.key),
+  ...PRO_PAGES.flatMap(p => p.sections.map(s => s.id).filter(id => WORKSPACE_ID.test(id))),
+  ...Array.from({ length: 12 }, (_, i) => `EXE-${String(i + 1).padStart(2, '0')}`),
+]);
+export const proLeadTopic = (topic: string): string => (PRO_LEAD_TOPICS.has(topic) ? topic : '');
 const bare = (path: string) => (path.replace(/^\/en(?=\/|$)/, '') || '/').replace(/\/$/, '') || '/';
 export const proPageByPath = (path: string): ProPageConfig | undefined => PRO_PAGES.find(p => p.path === bare(path));
 
