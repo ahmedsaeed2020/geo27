@@ -19,6 +19,8 @@ import type { ProductKey } from "@/content/catalog";
 import ProPageBody from "@/components/pro/ProPageBody";
 import { proPageByKey } from "@/content/pro/pro-pages";
 import type { ProPageContent } from "@/content/pro/types";
+import { withAccessibleHtml } from "@/lib/accessible-html";
+import { isRequestWording } from "@/lib/form-cta";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
 
@@ -39,12 +41,23 @@ type Node = {
 };
 type Page = { title: string; sourceUrl: string; nodes: Node[] };
 
-function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: { node: Node; pageKey: string; backdrop?: boolean; bodyBackdrop?: boolean }) {
+/** True when an HTML widget inside `node` already declares `id` itself, so the wrapper must not repeat it. */
+function declaresId(node: Node, id: string): boolean {
+  return (node.children ?? []).some(child => (child.html ?? "").includes(`id="${id}"`) || declaresId(child, id));
+}
+
+type RenderProps = { node: Node; pageKey: string; backdrop?: boolean; bodyBackdrop?: boolean };
+
+function RenderNode(props: RenderProps) {
+  return withAccessibleHtml(RenderSourceNode(props));
+}
+
+function RenderSourceNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: RenderProps) {
   const locale = useLocale();
   const cms = useCmsPage();
   const override = cms?.[locale].sourceEdits[node.id];
   if (override !== undefined) node = { ...node, html:override, text:override };
-  const props = { className: node.className, id: node.anchor || undefined };
+  const props = { className: node.className, id: node.anchor && !declaresId(node, node.anchor) ? node.anchor : undefined };
   if (node.type === "container") {
     const hero = (backdrop || /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className)) && getPageScene(pageKey);
     return localizeTree(<div {...props} className={`${node.className}${hero || bodyBackdrop ? " scene-backed" : ""}${bodyBackdrop ? " scene-content-section" : ""}`} data-import-container>{bodyBackdrop ? <PageScene pageKey={pageKey} kind="body" backdrop /> : hero && <PageScene pageKey={pageKey} kind="background" />}{node.children?.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}</div>, locale);
@@ -60,7 +73,8 @@ function RenderNode({ node, pageKey, backdrop = false, bodyBackdrop = false }: {
     : <div {...props} className={`${node.className} import-image-slot`} aria-hidden="true" />;
   if (node.type === "feature-card") return localizeTree(<article {...props} className={`${node.className} import-feature-card`}><h2>{node.text}</h2><div dangerouslySetInnerHTML={{ __html: node.html ?? "" }} /><Button asChild variant="link"><Link to={node.href ?? "/modules"}>عرض التفاصيل ←</Link></Button></article>, locale);
   if (node.type === "button") {
-    const href = node.href || "#";
+    // A source request button without a destination opens the request form (via /demo) instead of a dead "#".
+    const href = node.href || (isRequestWording(node.text ?? "") ? "/demo" : "#");
     return localizeTree(<Button asChild size="lg" className={`${node.className} import-action`} variant={node.text?.includes("واتساب") ? "outline" : "default"}>
       {href.startsWith("/") && !href.includes("#") ? <Link to={href}>{node.text}</Link> : <a href={href} target={node.external ? "_blank" : undefined} rel={node.external ? "noopener noreferrer" : undefined}>{node.text}</a>}
     </Button>, locale);
