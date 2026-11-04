@@ -62,6 +62,7 @@ describe('Design-your-system blueprint', () => {
   it('tags the demo request with a topic the request form accepts', () => {
     const topic = blueprintTopic({ sector: 'field-service', employees: '500+', branches: '6+', needs: ['field'] });
     expect(topic).toBe('BP-field-service-500p-6p');
-    expect(leadSchema.shape.topic.safeParse(topic).success).toBe(true);
+    const lead = { name: 'Ahmed', company: 'Test Co', email: 'a@example.com', phone: '', interest: 'DIGIT', requestType: 'demo', jobRole: '', message: '', locale: 'ar', pagePath: '/blueprint', consent: true, topic };
+    expect(leadSchema.safeParse(lead).success).toBe(true);
   });
 });
