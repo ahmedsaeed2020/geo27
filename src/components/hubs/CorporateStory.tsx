@@ -29,7 +29,7 @@ export function PlatformLayers({ variant = 'about' }: { variant?: 'about' | 'hom
   const { active, tabProps } = useTabs(CORPORATE_LAYERS.length, locale, true);
   const layer = CORPORATE_LAYERS[active]!;
   return (
-    <section className="hs-block cs-layers" aria-labelledby={`${base}-t`} data-variant={variant}>
+    <section className="hs hs-block cs-layers" aria-labelledby={`${base}-t`} data-variant={variant}>
       <div className="dp-wrap">
         <div className="cs-layers-head">
           <Head kicker={CORPORATE.kicker[locale]} title={CORPORATE.title[locale]} lede={CORPORATE.relation[locale]} id={`${base}-t`} />
@@ -100,7 +100,7 @@ export function FrictionBand() {
   const locale = useLocale();
   const base = useId();
   return (
-    <section className="hs-block" data-alt="" aria-labelledby={`${base}-t`}>
+    <section className="hs hs-block" data-alt="" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap cs-friction">
         <div>
           <Head kicker={FRICTION.kicker[locale]} title={FRICTION.title[locale]} id={`${base}-t`} />
@@ -137,7 +137,7 @@ export function TrilogyBand() {
   const locale = useLocale();
   const base = useId();
   return (
-    <section className="hs-block" aria-labelledby={`${base}-t`}>
+    <section className="hs hs-block" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
         <Head kicker={TRILOGY.kicker[locale]} title={TRILOGY.title[locale]} lede={TRILOGY.body[locale]} id={`${base}-t`} />
         <div className="cs-trilogy">
@@ -188,7 +188,7 @@ export function DeliveryJourney({ variant = 'service' }: { variant?: 'service' |
   const stage = DELIVERY_STAGES[active]!;
   const home = variant === 'home';
   return (
-    <section className="hs-block cs-delivery" data-alt={home ? '' : undefined} aria-labelledby={`${base}-t`} data-variant={variant}>
+    <section className="hs hs-block cs-delivery" data-alt={home ? '' : undefined} aria-labelledby={`${base}-t`} data-variant={variant}>
       <div className="dp-wrap">
         <Head kicker={DELIVERY.kicker[locale]} title={DELIVERY.title[locale]} lede={DELIVERY.lede[locale]} id={`${base}-t`} />
         <div role="tablist" aria-label={DELIVERY.stagesLabel[locale]} className="cs-track">
@@ -298,7 +298,7 @@ export function SpecialistDiscovery() {
   const story = PRODUCT_STORIES[family.key];
   const pic = story ? photoOf(story.photo) : undefined;
   return (
-    <section className="hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
+    <section className="hs hs-block cs-portfolio" aria-labelledby={`${base}-t`}>
       <div className="dp-wrap">
         <Head kicker={PORTFOLIO.kicker[locale]} title={PORTFOLIO.title[locale]} lede={PORTFOLIO.lede[locale]} id={`${base}-t`} />
         <div role="tablist" aria-label={PORTFOLIO.families[locale]} className="cs-families">
