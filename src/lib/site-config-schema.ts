@@ -73,7 +73,7 @@ export type SecurityConfig = z.infer<typeof securitySchema>;
  */
 const orderList = z.array(z.object({ id: z.string().max(60), enabled: z.boolean() })).max(40).default([]);
 export const catalogSchema = z.object({
-  products: z.object({ pro: orderList, hr: orderList, construction: orderList, pos: orderList }).partial().default({}),
+  products: z.object({ pro: orderList, hr: orderList, construction: orderList, crm: orderList, fsm: orderList, pos: orderList }).partial().default({}),
 });
 export type CatalogConfig = z.infer<typeof catalogSchema>;
 

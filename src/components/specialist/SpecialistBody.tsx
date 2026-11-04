@@ -92,7 +92,7 @@ function useLightbox(shots: Shot[]) {
   return { open: (i: number) => setIndex(i), node };
 }
 
-function SectionHead({ eyebrow, title, lede, id }: { eyebrow?: string; title: string; lede?: string; id: string }) {
+function SectionHead({ eyebrow, title, lede, id }: { eyebrow?: string | undefined; title: string; lede?: string | undefined; id: string }) {
   return (
     <header className="sp-head">
       {eyebrow && <p className="sp-kicker">{eyebrow}</p>}

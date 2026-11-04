@@ -44,7 +44,7 @@ export default function DepartmentFields({ content, path, locale, media, edit }:
         {source && (
           <p className="mt-2 rounded-md bg-card p-2 text-xs text-muted-foreground">
             صفحة مبنية من محتوى {found?.suffix} المعتمد للمراجعة ({source.sections.length} أقسام). أي حقل فارغ يعرض نص المصدر؛ اكتب نصًا لاستبداله، ورتّب الأقسام أو أخفها من قائمة الأقسام أدناه.
-            {source.illustrative && ' لا توجد شاشة فعلية لهذا المجال بعد؛ تعرض الصفحة رسمًا توضيحيًا معلَّمًا بذلك.'}
+            {!!source.illustrative && ' لا توجد شاشة فعلية لهذا المجال بعد؛ تعرض الصفحة رسمًا توضيحيًا معلَّمًا بذلك.'}
           </p>
         )}
       </div>
