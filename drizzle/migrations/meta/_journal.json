@@ -57,6 +57,13 @@
       "when": 1793790494596,
       "tag": "0007_inventory_draft_drop_unverified_zoom",
       "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "7",
+      "when": 1793792383470,
+      "tag": "0008_inventory_draft_evidence_pending",
+      "breakpoints": true
     }
   ]
 }
