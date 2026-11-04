@@ -176,10 +176,6 @@ const EN_OVERRIDES: Record<string, { title: string; description: string; crumb?:
     title: "POS for Salons and Beauty Centers | Digit",
     description: "Services and products on one invoice, specialist commissions, packages and repeat customers, and supply inventory, per system settings.",
   },
-  "/services-3": {
-    title: "Digit Services | Discovery, Implementation, Migration and Training",
-    description: "Digit services to launch with confidence: discovery workshop, implementation, data migration, customization, training, e-invoicing onboarding, hosting and support.",
-  },
   "/services-3/support": {
     title: "Arabic Support with a Service Level Agreement | Digit",
     description: "Support as part of running Digit: a service level agreement with written response times, clear contact channels, and every request followed to closure.",
