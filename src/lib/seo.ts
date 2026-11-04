@@ -11,6 +11,15 @@ type Head = { meta?: MetaTag[]; links?: Record<string, string>[]; scripts?: Reco
 const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
   "/": {
     title: "Digit | نظام ERP سعودي للمحاسبة والمبيعات والمخزون",
+    description: "نظام أعمال سعودي سحابي من Digit: محاسبة ومبيعات ومخزون ونقاط بيع وموارد بشرية، مع دعم الربط بمنظومة فاتورة. يخدم أكثر من 50 منشأة سعودية.",
+  },
+  "/blueprint": {
+    title: "صمّم منظومة DIGIT لمنشأتك | مخطط تفاعلي",
+    description: "اختر قطاعك وحجم منشأتك واحتياجك، وشاهد منظومة DIGIT المناسبة: المجالات المترابطة والشاشات الحقيقية وطريق التنفيذ، ثم احجز عرضًا توضيحيًا عليها.",
+    crumb: "صمّم منظومتك",
+  },
+  "/": {
+    title: "Digit | نظام ERP سعودي للمحاسبة والمبيعات والمخزون",
     description: "نظام أعمال سعودي سحابي من Digit: محاسبة، مبيعات، مخزون، نقاط بيع وموارد بشرية، مع دعم الربط بمنظومة الفوترة الإلكترونية (فاتورة). يخدم أكثر من 50 منشأة سعودية. احجز عرضًا.",
   },
   "/modules/e-invoicing-zatca": {
@@ -87,6 +96,59 @@ const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?:
 
 /** English counterparts where the imported page title or description was too short or shared with another page. */
 const EN_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
+  "/blueprint": {
+    title: "Design your DIGIT system | Interactive blueprint",
+    description: "Pick your sector, size and needs to see the DIGIT system that fits: connected areas, real screens, a reading path and the road to go-live.",
+    crumb: "Design your system",
+  },
+  "/careers": {
+    title: "Careers at Digit | Build a Saudi Arabic-first ERP",
+    description: "Join the Digit / Trilogy team building an Arabic-first ERP for Saudi businesses. If you master your work and care about impact and clarity, talk to us.",
+    crumb: "Careers",
+  },
+  "/pos-solutions/electrical-appliances": {
+    title: "POS for Electrical Appliance Stores | Digit",
+    description: "Sell appliances and electronics with serial and warranty tracking, delivery and installation, and multi-branch stock, with simplified invoices.",
+    crumb: "Electrical appliances",
+  },
+  "/pos-solutions/florist": {
+    title: "POS for Florists & Gift Shops | Digit",
+    description: "Sell bouquets, flowers and gifts, take pre-orders for occasions, track short-shelf-life stock and manage delivery, with simplified invoices.",
+    crumb: "Florists",
+  },
+  "/pos-solutions/furniture": {
+    title: "POS for Furniture & Furnishing Stores | Digit",
+    description: "Sell furniture by model and material, handle orders, delivery and installation, and manage stock across showrooms and warehouses.",
+    crumb: "Furniture",
+  },
+  "/pos-solutions/optical": {
+    title: "POS for Opticians | Digit",
+    description: "Sell eyeglasses, sunglasses and lenses, track stock by model and colour, and keep a customer file with vision measurements.",
+    crumb: "Opticians",
+  },
+  "/pro/executive-dashboards": {
+    title: "Executive Dashboards | DIGIT Pro",
+    description: "The DIGIT Pro command center: liquidity, exceptions, close and approvals, and how a management board differs from a workspace, on real screens.",
+  },
+  "/pro/capabilities": {
+    title: "Advanced Capabilities | DIGIT Pro",
+    description: "DIGIT Pro capabilities by outcome: 360° views, connected documents, exceptions and approvals, work queues and reporting, each with its evidence status.",
+  },
+  "/services-3": {
+    title: "Digit Services | Discovery, Implementation & Training",
+    description: "Digit services to launch with confidence: discovery workshop, implementation, data migration, customization, training, e-invoicing onboarding, hosting and support.",
+    crumb: "Services",
+  },
+  "/services-3/discovery-workshop": {
+    title: "Discovery Workshop | Digit Services",
+    description: "A structured session on your operations and pain points that ends with a scope, recommendations and a preliminary implementation plan, without commitment.",
+    crumb: "Discovery workshop",
+  },
+  "/services-3/implementation": {
+    title: "Implementation & Delivery | Digit Services",
+    description: "A defined implementation method: clear phases, one point of contact, Arabic training and user acceptance testing before go-live, with no open-ended projects.",
+    crumb: "Implementation",
+  },
   "/demo": {
     title: "Book a Digit Demo | See the System by Department",
     description: "A tailored walkthrough of Digit by role: finance, sales, inventory, point of sale or HR. See how it fits your company and book your session.",
