@@ -100,7 +100,7 @@ export const FLOWS: Flow[] = [
   { from: 'projects', to: 'close', label: t('المشروع من المقايسة إلى التحصيل مرتبط بمحاسبتك', 'Project from BOQ to collection, tied to your accounting') },
   { from: 'projects', to: 'purchasing', label: t('مشتريات المشروع بسياقه', 'Project purchasing in its own context') },
   { from: 'crm', to: 'sales', label: t('التسليم للمبيعات بخطوة تالية واضحة', 'Handoff to sales with a clear next step') },
-  { from: 'einvoice', to: 'sales', label: t('الفاتورة تُربط بمنظومة فاتورة', 'Invoices linked to the Fatoora system') },
+  { from: 'einvoice', to: 'sales', label: t('يدعم ربط الفاتورة بمنظومة فاتورة', 'Supports linking invoices to Fatoora') },
   { from: 'close', to: 'reports', label: t('كل مؤشر يتعمّق إلى مستنده', 'Every indicator drills down to its document') },
   { from: 'approvals', to: 'purchasing', label: t('الموافقة داخل مسار العمل', 'Approvals inside the workflow') },
 ];
