@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import PageScene from "@/components/PageScene";
 import ProShowcase from "@/components/product/ProShowcase";
 import ProductDepartments from "@/components/catalog/ProductHub";
+import ProHubPaths from "@/components/pro/ProHubPaths";
 import LeadCapturePanel from './LeadCapturePanel';
 import CmsBlocks from './cms/CmsBlocks';
 import { useSiteConfig } from './cms/CmsContext';
@@ -108,6 +109,7 @@ export default function PackagePage({ nodes, slug }: { nodes: PackageNode[]; slu
     body = <EditableSections page="pro">{sections.map(s => {
       if (s.id === "showcase") return <ProShowcase key={s.id} />;
       if (s.id === "departments") return <ProductDepartments key={s.id} product="pro" />;
+      if (s.id === "paths") return <ProHubPaths key={s.id} />;
       if (s.id === "cms") return <CmsBlocks key={s.id} />;
       if (s.id === "lead") return <Fragment key={s.id}>{lead}</Fragment>;
       const node = byId.get(s.id);

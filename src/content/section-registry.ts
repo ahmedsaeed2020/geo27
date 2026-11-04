@@ -41,6 +41,7 @@ export const PRO_SECTIONS = [
   { id: 'hero', label: 'الواجهة الرئيسية (ثابتة)', locked: true },
   { id: 'features', label: 'ماذا تشمل الباقة' },
   { id: 'departments', label: 'أقسام DIGIT Pro (اختيار القسم)' },
+  { id: 'paths', label: 'مسارات: أسئلة المدير المالي والأدوار والتقارير', heading: { ar: 'ابدأ من سؤالك، أو من دورك، أو من التقرير', en: 'Start from your question, your role or the report' } },
   { id: 'showcase', label: 'ماذا تحصل في DIGIT Pro (الشاشات)' },
   { id: 'zatca', label: 'الفوترة الإلكترونية' },
   { id: 'preview', label: 'معاينة النظام' },

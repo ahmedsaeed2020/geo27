@@ -453,6 +453,7 @@ export type Database = {
           referrer: string | null
           request_type: string
           status: string
+          topic: string
           utm: Json
         }
         Insert: {
@@ -479,6 +480,7 @@ export type Database = {
           referrer?: string | null
           request_type?: string
           status?: string
+          topic?: string
           utm?: Json
         }
         Update: {
@@ -505,6 +507,7 @@ export type Database = {
           referrer?: string | null
           request_type?: string
           status?: string
+          topic?: string
           utm?: Json
         }
         Relationships: []

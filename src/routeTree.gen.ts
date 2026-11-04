@@ -98,6 +98,7 @@ import { Route as PosSolutionsPharmaciesRouteImport } from './routes/pos-solutio
 import { Route as PosSolutionsRestaurantsCafesRouteImport } from './routes/pos-solutions.restaurants-cafes'
 import { Route as PosSolutionsSalonsRouteImport } from './routes/pos-solutions.salons'
 import { Route as PosSolutionsSweetsRouteImport } from './routes/pos-solutions.sweets'
+import { Route as ProAreaRouteImport } from './routes/pro_.$area'
 import { Route as Services3IndexRouteImport } from './routes/services-3.index'
 import { Route as Services3CustomizationRouteImport } from './routes/services-3.customization'
 import { Route as Services3DataMigrationRouteImport } from './routes/services-3.data-migration'
@@ -151,6 +152,7 @@ import { Route as EnPosSolutionsPharmaciesRouteImport } from './routes/en.pos-so
 import { Route as EnPosSolutionsRestaurantsCafesRouteImport } from './routes/en.pos-solutions.restaurants-cafes'
 import { Route as EnPosSolutionsSalonsRouteImport } from './routes/en.pos-solutions.salons'
 import { Route as EnPosSolutionsSweetsRouteImport } from './routes/en.pos-solutions.sweets'
+import { Route as EnProAreaRouteImport } from './routes/en.pro_.$area'
 import { Route as EnServices3IndexRouteImport } from './routes/en.services-3.index'
 import { Route as EnServices3CustomizationRouteImport } from './routes/en.services-3.customization'
 import { Route as EnServices3DataMigrationRouteImport } from './routes/en.services-3.data-migration'
@@ -619,6 +621,11 @@ const PosSolutionsSweetsRoute = PosSolutionsSweetsRouteImport.update({
   path: '/pos-solutions/sweets',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProAreaRoute = ProAreaRouteImport.update({
+  id: '/pro_/$area',
+  path: '/pro/$area',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Services3IndexRoute = Services3IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -896,6 +903,11 @@ const EnPosSolutionsSweetsRoute = EnPosSolutionsSweetsRouteImport.update({
   path: '/pos-solutions/sweets',
   getParentRoute: () => EnRoute,
 } as any)
+const EnProAreaRoute = EnProAreaRouteImport.update({
+  id: '/pro_/$area',
+  path: '/pro/$area',
+  getParentRoute: () => EnRoute,
+} as any)
 const EnServices3IndexRoute = EnServices3IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -1078,6 +1090,7 @@ export interface FileRoutesByFullPath {
   '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/pro/$area': typeof ProAreaRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1132,6 +1145,7 @@ export interface FileRoutesByFullPath {
   '/en/pos-solutions/restaurants-cafes': typeof EnPosSolutionsRestaurantsCafesRoute
   '/en/pos-solutions/salons': typeof EnPosSolutionsSalonsRoute
   '/en/pos-solutions/sweets': typeof EnPosSolutionsSweetsRoute
+  '/en/pro/$area': typeof EnProAreaRoute
   '/en/services-3/customization': typeof EnServices3CustomizationRoute
   '/en/services-3/data-migration': typeof EnServices3DataMigrationRoute
   '/en/services-3/discovery-workshop': typeof EnServices3DiscoveryWorkshopRoute
@@ -1232,6 +1246,7 @@ export interface FileRoutesByTo {
   '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/pro/$area': typeof ProAreaRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1286,6 +1301,7 @@ export interface FileRoutesByTo {
   '/en/pos-solutions/restaurants-cafes': typeof EnPosSolutionsRestaurantsCafesRoute
   '/en/pos-solutions/salons': typeof EnPosSolutionsSalonsRoute
   '/en/pos-solutions/sweets': typeof EnPosSolutionsSweetsRoute
+  '/en/pro/$area': typeof EnProAreaRoute
   '/en/services-3/customization': typeof EnServices3CustomizationRoute
   '/en/services-3/data-migration': typeof EnServices3DataMigrationRoute
   '/en/services-3/discovery-workshop': typeof EnServices3DiscoveryWorkshopRoute
@@ -1395,6 +1411,7 @@ export interface FileRoutesById {
   '/pos-solutions/restaurants-cafes': typeof PosSolutionsRestaurantsCafesRoute
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
+  '/pro_/$area': typeof ProAreaRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1449,6 +1466,7 @@ export interface FileRoutesById {
   '/en/pos-solutions/restaurants-cafes': typeof EnPosSolutionsRestaurantsCafesRoute
   '/en/pos-solutions/salons': typeof EnPosSolutionsSalonsRoute
   '/en/pos-solutions/sweets': typeof EnPosSolutionsSweetsRoute
+  '/en/pro_/$area': typeof EnProAreaRoute
   '/en/services-3/customization': typeof EnServices3CustomizationRoute
   '/en/services-3/data-migration': typeof EnServices3DataMigrationRoute
   '/en/services-3/discovery-workshop': typeof EnServices3DiscoveryWorkshopRoute
@@ -1558,6 +1576,7 @@ export interface FileRouteTypes {
     | '/pos-solutions/restaurants-cafes'
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
+    | '/pro/$area'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -1612,6 +1631,7 @@ export interface FileRouteTypes {
     | '/en/pos-solutions/restaurants-cafes'
     | '/en/pos-solutions/salons'
     | '/en/pos-solutions/sweets'
+    | '/en/pro/$area'
     | '/en/services-3/customization'
     | '/en/services-3/data-migration'
     | '/en/services-3/discovery-workshop'
@@ -1712,6 +1732,7 @@ export interface FileRouteTypes {
     | '/pos-solutions/restaurants-cafes'
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
+    | '/pro/$area'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -1766,6 +1787,7 @@ export interface FileRouteTypes {
     | '/en/pos-solutions/restaurants-cafes'
     | '/en/pos-solutions/salons'
     | '/en/pos-solutions/sweets'
+    | '/en/pro/$area'
     | '/en/services-3/customization'
     | '/en/services-3/data-migration'
     | '/en/services-3/discovery-workshop'
@@ -1874,6 +1896,7 @@ export interface FileRouteTypes {
     | '/pos-solutions/restaurants-cafes'
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
+    | '/pro_/$area'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -1928,6 +1951,7 @@ export interface FileRouteTypes {
     | '/en/pos-solutions/restaurants-cafes'
     | '/en/pos-solutions/salons'
     | '/en/pos-solutions/sweets'
+    | '/en/pro_/$area'
     | '/en/services-3/customization'
     | '/en/services-3/data-migration'
     | '/en/services-3/discovery-workshop'
@@ -1993,6 +2017,7 @@ export interface RootRouteChildren {
   PosSolutionsRestaurantsCafesRoute: typeof PosSolutionsRestaurantsCafesRoute
   PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
   PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
+  ProAreaRoute: typeof ProAreaRoute
   ConstructionIndexRoute: typeof ConstructionIndexRoute
   HrIndexRoute: typeof HrIndexRoute
   ApiPublicCmsMediaFileRoute: typeof ApiPublicCmsMediaFileRoute
@@ -2623,6 +2648,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PosSolutionsSweetsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pro_/$area': {
+      id: '/pro_/$area'
+      path: '/pro/$area'
+      fullPath: '/pro/$area'
+      preLoaderRoute: typeof ProAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services-3/': {
       id: '/services-3/'
       path: '/'
@@ -2994,6 +3026,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnPosSolutionsSweetsRouteImport
       parentRoute: typeof EnRoute
     }
+    '/en/pro_/$area': {
+      id: '/en/pro_/$area'
+      path: '/pro/$area'
+      fullPath: '/en/pro/$area'
+      preLoaderRoute: typeof EnProAreaRouteImport
+      parentRoute: typeof EnRoute
+    }
     '/en/services-3/': {
       id: '/en/services-3/'
       path: '/'
@@ -3290,6 +3329,7 @@ interface EnRouteChildren {
   EnPosSolutionsRestaurantsCafesRoute: typeof EnPosSolutionsRestaurantsCafesRoute
   EnPosSolutionsSalonsRoute: typeof EnPosSolutionsSalonsRoute
   EnPosSolutionsSweetsRoute: typeof EnPosSolutionsSweetsRoute
+  EnProAreaRoute: typeof EnProAreaRoute
   EnConstructionIndexRoute: typeof EnConstructionIndexRoute
   EnHrIndexRoute: typeof EnHrIndexRoute
 }
@@ -3330,6 +3370,7 @@ const EnRouteChildren: EnRouteChildren = {
   EnPosSolutionsRestaurantsCafesRoute: EnPosSolutionsRestaurantsCafesRoute,
   EnPosSolutionsSalonsRoute: EnPosSolutionsSalonsRoute,
   EnPosSolutionsSweetsRoute: EnPosSolutionsSweetsRoute,
+  EnProAreaRoute: EnProAreaRoute,
   EnConstructionIndexRoute: EnConstructionIndexRoute,
   EnHrIndexRoute: EnHrIndexRoute,
 }
@@ -3496,6 +3537,7 @@ const rootRouteChildren: RootRouteChildren = {
   PosSolutionsRestaurantsCafesRoute: PosSolutionsRestaurantsCafesRoute,
   PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
   PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
+  ProAreaRoute: ProAreaRoute,
   ConstructionIndexRoute: ConstructionIndexRoute,
   HrIndexRoute: HrIndexRoute,
   ApiPublicCmsMediaFileRoute: ApiPublicCmsMediaFileRoute,

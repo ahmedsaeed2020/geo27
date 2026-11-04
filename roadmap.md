@@ -1,4 +1,18 @@
 # Requested pages
+# DIGIT Pro V4 complete product pages (owner brief 2026-11-04 16:51)
+- [x] Phase A: source map — 321 IDs mapped to evidence tiers (available / being verified / scoped), screenshot→feature provenance, 117 runnable reports (2 e-invoicing entries withheld); rules kept as tests.
+- [x] Phase B: five department pages expanded in place (4 workspaces each with Overview · Documents & Work · Reports tabs, distinct visual signature, journeys, decisions, cross-links, contextual demo); original hero, proof band, FAQ and CTA kept; AR/EN.
+- [x] Phase C: /modules/reports report center (featured reports + searchable directory) and new pages Executive Dashboards, Settings & Governance, Advanced Capabilities (AR/EN routes, SEO, sitemap, CMS drafts).
+- [x] Phase D: CFO Decisions page — 12 executive questions with evidence status, five finance chapters, drill-down to the document.
+- [x] /pro hub: department picker now links each department's four workspaces (20 in all) and the cross-department areas; stays in the editable "departments" Pro section.
+- [x] CMS: V4 pages list their source sections in the editor (reorder/hide/retitle, Pro-only screen picker where a section has a lead screen, no department-template switch); drafts for inventory + 4 areas with titles. (E2E: retitle + hide saved as draft, public page unchanged, restored.)
+- [x] Demo requests from workspaces/questions carry product, department and topic (E2E: ACC-DUES request saved and read back, test row deleted); topic shown in Leads/CSV.
+- [x] Phase E: 88 tests pass; all 22 AR/EN URLs (10 V4 pages + /pro) at 390 and 1280 px return 200 with no console errors, overflow, broken images or Arabic in English V4 sections; 404 for unknown areas; canonical/hreflang checked. No live publish.
+- [x] /pro hub: new editable "paths" band after the department picker — four CFO questions with evidence status, roles to their pages, and the live report count by department (117), AR/EN, checked at 1280/390 px; listed in the admin Pro sections editor with heading overrides.
+- [x] Report-category counts on /pro open /modules/reports#reports-<category> with the directory pre-filtered (checked by click and direct load, AR/EN).
+- [x] Hub CFO questions open /pro/cfo-decisions#pv-q-EXE-xx with that question selected.
+- [ ] Owner: the V4 pack references screenshots that were not included; sections without a real screen show labelled process diagrams until real captures are supplied — blocked on owner.
+- [ ] Owner: approve the V4 pages before the next publish (nothing is live yet) — blocked on owner.
 # Product information architecture, Mega Menu & department pages (owner brief 2026-11-04)
 - [x] One product catalog: Pro (5 departments + dashboards/reports/tour), HR (7 groups), Construction (9 departments), POS (existing solutions); existing routes reused, new HR/Construction routes registered.
 - [x] Header and Mega Menu: new top level, multi-column product panels with real Pro screenshot, explore by role/problem, keyboard/Escape/click, mobile accordions, AR/EN; checked at 390, 1280, 1366 and 1440 px.

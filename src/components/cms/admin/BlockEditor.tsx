@@ -34,12 +34,14 @@ export function newBlock(type: CmsBlock['type']): CmsBlock {
   return { id: crypto.randomUUID(), type, title: '', body: '', shotId: '', mediaUrl: '', mediaAlt: '', href: '', enabled: true, eyebrow: '', items: [], shots: [], focus: null, ref: '' };
 }
 
-function ShotSelect({ value, onChange, label = 'الشاشة الفعلية', empty = 'بدون شاشة' }: { value: string; onChange: (v: string) => void; label?: string; empty?: string }) {
+type ShotGroup = (typeof SHOT_GROUPS)[number]['label'];
+
+function ShotSelect({ value, onChange, label = 'الشاشة الفعلية', empty = 'بدون شاشة', group }: { value: string; onChange: (v: string) => void; label?: string; empty?: string; group?: ShotGroup | undefined }) {
   return (
     <Field label={label}>
       <NativeSelect value={value} onChange={e => onChange(e.target.value)}>
         <option value="">{empty}</option>
-        {SHOT_GROUPS.map(g => (
+        {SHOT_GROUPS.filter(g => !group || g.label === group).map(g => (
           <optgroup key={g.label} label={g.label}>
             {g.shots.map(s => (
               <option key={s.id} value={s.id}>
@@ -163,7 +165,7 @@ function FocusEditor({ block, update }: { block: CmsBlock; update: (v: Partial<C
 }
 
 /** Editor for a `source` block: placement and visibility plus optional overrides; empty fields keep the source copy. */
-function SourceBlockFields({ block, update, title }: { block: CmsBlock; update: (v: Partial<CmsBlock>) => void; title: string }) {
+function SourceBlockFields({ block, update, title, screen = true, group }: { block: CmsBlock; update: (v: Partial<CmsBlock>) => void; title: string; screen?: boolean; group?: ShotGroup | undefined }) {
   return (
     <>
       <p className="rounded-md bg-muted/40 p-2 text-xs">
@@ -178,14 +180,19 @@ function SourceBlockFields({ block, update, title }: { block: CmsBlock; update: 
       <Field label="النص التمهيدي" hint="فارغ = سرد القسم من المصدر">
         <Textarea rows={3} value={block.body} onChange={e => update({ body: e.target.value })} />
       </Field>
-      <ShotSelect value={block.shotId} onChange={v => update({ shotId: v })} label="الشاشة الفعلية" empty="شاشة المصدر (إن وُجدت)" />
+      {screen && <ShotSelect value={block.shotId} onChange={v => update({ shotId: v })} label="الشاشة الفعلية" empty="شاشة المصدر (إن وُجدت)" group={group} />}
     </>
   );
 }
 
-export function BlockList({ blocks, onChange, media, locale, department = null }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null }) {
+/** A page's source section as the editor lists it; `screen: false` hides the screen override (the section has no lead screen). */
+export type SourceSectionInfo = { id: string; title: { ar: string; en: string }; screen?: boolean };
+
+export function BlockList({ blocks, onChange, media, locale, department = null, sourceSections }: { blocks: CmsBlock[]; onChange: (blocks: CmsBlock[]) => void; media: Media[]; locale: 'ar' | 'en'; department?: DepartmentMeta | null; sourceSections?: SourceSectionInfo[] | undefined }) {
   const updateBlock = (id: string, v: Partial<CmsBlock>) => onChange(blocks.map(b => (b.id === id ? { ...b, ...v } : b)));
-  const source = department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
+  // Explicit source sections are DIGIT Pro V4 pages; otherwise an HR module's handoff sections.
+  const source: { sections: SourceSectionInfo[] } | undefined = sourceSections ? { sections: sourceSections } : department?.product === 'hr' ? hrModuleBySlug(department.id) : undefined;
+  const group: ShotGroup | undefined = sourceSections ? 'DIGIT Pro' : department?.product === 'hr' ? 'DIGIT HR' : undefined;
   return (
     <>
       {blocks.map((b, i) => {
@@ -205,7 +212,13 @@ export function BlockList({ blocks, onChange, media, locale, department = null }
                 </Button>
               </div>
               <p className="text-xs text-muted-foreground">{BLOCK_INFO.source.hint}</p>
-              <SourceBlockFields block={b} update={update} title={source?.sections.find(s => s.id === b.ref)?.title[locale] ?? ''} />
+              <SourceBlockFields
+                block={b}
+                update={update}
+                title={source?.sections.find(s => s.id === b.ref)?.title[locale] ?? ''}
+                screen={source?.sections.find(s => s.id === b.ref)?.screen !== false}
+                group={group}
+              />
               <label className="flex items-center gap-2 text-sm">
                 <input type="checkbox" checked={b.enabled} onChange={e => update({ enabled: e.target.checked })} />
                 ظاهر

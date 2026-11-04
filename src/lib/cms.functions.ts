@@ -8,6 +8,7 @@ import { cmsContentSchema, departmentPublishIssues, safePath, type PublishedReco
 import { departmentById } from '@/content/catalog';
 import { ALL_SHOTS as SHOTS } from '@/content/screens';
 import { hrModuleBySlug } from '@/content/hr/hr-modules';
+import { proPageByPath } from '@/content/pro/pro-pages';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
 import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type CmsRole, type Db } from './cms-access';
@@ -197,7 +198,8 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
         const shots = [b.shotId, ...b.shots, ...b.items.map(i => i.shotId)].filter(Boolean);
         if (shots.some(id => !SHOTS[id])) throw new Error('Unknown product screen');
         if (b.type === 'source') {
-          const source = content.department?.product === 'hr' ? hrModuleBySlug(content.department.id) : undefined;
+          // Source sections belong to an HR module (by its department) or to a DIGIT Pro V4 page (by its route).
+          const source = content.department?.product === 'hr' ? hrModuleBySlug(content.department.id) : proPageByPath(data.path);
           if (!source?.sections.some(s => s.id === b.ref)) throw new Error('Unknown source section');
         }
       }

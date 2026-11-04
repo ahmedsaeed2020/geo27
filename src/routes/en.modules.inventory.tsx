@@ -3,6 +3,7 @@ import { withSeo } from "@/lib/seo";
 import { localizeData, translate } from "@/lib/i18n";
 import { createFileRoute } from "@tanstack/react-router";
 import ImportedPage from "@/components/ImportedPage";
+import proInventory from "@/content/pro/pages/inventory";
 import arabicPage from "@/content/site/modules-inventory.json";
 import "@/content/site/modules-inventory.css";
 const page = localizeData(arabicPage);
@@ -18,4 +19,4 @@ export const Route = createFileRoute("/en/modules/inventory")({
   ] }, loaderData),
   component: Page,
 });
-function Page() { return <ImportedPage page={page} pageKey="modules-inventory" />; }
+function Page() { return <ImportedPage page={page} pageKey="modules-inventory" pro={proInventory} />; }

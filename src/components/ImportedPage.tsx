@@ -15,6 +15,9 @@ import { PAGE_PROOFS } from "@/content/product-proof";
 import ProductDepartments from "@/components/catalog/ProductHub";
 import DepartmentPage from "@/components/catalog/DepartmentPage";
 import type { ProductKey } from "@/content/catalog";
+import ProPageBody from "@/components/pro/ProPageBody";
+import { proPageByKey } from "@/content/pro/pro-pages";
+import type { ProPageContent } from "@/content/pro/types";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
 
@@ -73,15 +76,21 @@ const HUBS: Record<string, ProductKey> = { "modules-hr-payroll": "hr", "modules-
  * A published (or previewed) department draft on an existing page route switches it to the shared Department
  * template; otherwise the imported source page renders with its published overrides.
  */
-export default function ImportedPage({ page, pageKey }: { page: Page; pageKey: string }) {
+export default function ImportedPage({ page, pageKey, pro }: { page: Page; pageKey: string; pro?: ProPageContent }) {
   const locale = useLocale();
   const cms = useCmsPage();
   const path = useRouterState({ select: s => s.location.pathname.replace(/^\/en(?=\/|$)/, "") || "/" });
-  if (cms?.department && cms[locale].blocks.some(b => b.enabled)) return <DepartmentPage content={cms} path={path} />;
-  return <SourceImportedPage page={page} pageKey={pageKey} />;
+  // DIGIT Pro V4 pages are themselves the department template: their CMS document orders the V4 sections instead.
+  if (!pro && cms?.department && cms[locale].blocks.some(b => b.enabled)) return <DepartmentPage content={cms} path={path} />;
+  return <SourceImportedPage page={page} pageKey={pageKey} {...(pro ? { pro } : {})} />;
 }
 
-function SourceImportedPage({ page, pageKey }: { page: Page; pageKey: string }) {
+const hasClass = (className: string, names: string[]) => names.some(n => new RegExp(`(?:^|\\s)${n}(?:\\s|$)`).test(className));
+
+function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKey: string; pro?: ProPageContent }) {
+  const proConfig = pro ? proPageByKey(pro.key) : undefined;
+  // V4 chapters replace the imported benefit/inside/demo/related sections; hero, stats, FAQ and closing CTA stay.
+  const page = proConfig?.replaces ? { ...source, nodes: source.nodes.filter(node => !hasClass(node.className, proConfig.replaces!)) } : source;
   const locale = useLocale();
   const hub = HUBS[pageKey];
   const mainRef = useRef<HTMLElement>(null);
@@ -109,7 +118,7 @@ function SourceImportedPage({ page, pageKey }: { page: Page; pageKey: string }) 
    const bodyIndex = contentIndex;
   const cms = useCmsPage();
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
-  const proofs = PAGE_PROOFS[pageKey];
+  const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
 }

@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { hrModuleBySlug, type HrModuleConfig } from '@/content/hr/hr-modules';
+import { proPageByKey } from '@/content/pro/pro-pages';
 export const safePath = z.string().regex(/^\/(?:[a-z0-9][a-z0-9/-]*)?$/).max(240).refine(v => !/^\/(admin|auth|api|lovable|_)/.test(v));
 
 /**
@@ -85,6 +86,8 @@ export const DEPARTMENT_MIN_BLOCKS = 3;
  */
 export function departmentPublishIssues(c: CmsContent): string[] {
   if (!c.department) return [];
+  // DIGIT Pro V4 departments render their source sections on their existing route; the department template is unused.
+  if (c.department.product === 'pro' && proPageByKey(c.department.id)) return [];
   const issues: string[] = [];
   const names = { ar: 'العربية', en: 'English' } as const;
   // Source-backed pages (DIGIT HR modules) are judged on what they render: CMS overrides with source fallback.

@@ -1,11 +1,18 @@
-import { cloneElement, isValidElement, type ReactNode, type ReactElement } from "react";
+import { cloneElement, createContext, createElement, isValidElement, useContext, type ReactNode, type ReactElement } from "react";
 import { useRouterState } from "@tanstack/react-router";
 import translations from "@/content/en/translations.json";
 
 export type Locale = "ar" | "en";
 const dictionary: Record<string, string> = translations;
+/** Admin previews render a page in the language being edited; everywhere else the language comes from the URL. */
+const LocaleOverride = createContext<Locale | null>(null);
+export function LocaleScope({ locale, children }: { locale: Locale; children: ReactNode }) {
+  return createElement(LocaleOverride.Provider, { value: locale }, children);
+}
 export function useLocale(): Locale {
-  return useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) ? "en" : "ar" });
+  const forced = useContext(LocaleOverride);
+  const fromUrl = useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) ? "en" : "ar" });
+  return forced ?? fromUrl;
 }
 export function translate(text: string, locale: Locale = "en"): string {
   if (locale === "ar") return text;
