@@ -2,11 +2,11 @@ import ContactForm from './ContactForm';
 import { useLocale } from '@/lib/i18n';
 import { Button } from './ui/button';
 
-export type LeadContext = { product?: string; department?: string };
+export type LeadContext = { product?: string; department?: string; topic?: string };
 
 /**
  * Scrolls to the page's demo form and focuses it. An optional product/department context (for example a department
- * card on a product hub) is attached to the next request. Returns false when the page has no form.
+ * card on a product hub, or a DIGIT Pro workspace) is attached to the next request. Returns false when the page has no form.
  */
 export function focusLeadForm(context?: LeadContext): boolean {
   const form = document.querySelector<HTMLFormElement>('[data-contextual-form]');
@@ -14,6 +14,7 @@ export function focusLeadForm(context?: LeadContext): boolean {
   if (context && typeof context.product === 'string') {
     form.dataset['leadProduct'] = context.product;
     form.dataset['leadDepartment'] = context.department ?? '';
+    form.dataset['leadTopic'] = context.topic ?? '';
   }
   form.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'center' });
   form.querySelector<HTMLInputElement>('input[name=name]')?.focus({ preventScroll: true });

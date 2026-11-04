@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { productByKey } from '@/content/catalog';
+export { proLeadTopic } from '@/content/pro/pro-pages';
 export const LEAD_RECIPIENT = 'a.saeed@trilogy.com.sa';
 export const leadSchema = z.object({
   name: z.string().trim().min(2).max(100), company: z.string().trim().min(2).max(160),
@@ -14,6 +15,8 @@ export const leadSchema = z.object({
   /** Product family and department of the page the request came from (catalog ids). */
   product: z.string().max(20).default(''),
   department: z.string().max(60).default(''),
+  /** DIGIT Pro workspace, executive question or page the visitor asked about (e.g. ACC-OPS, EXE-02). */
+  topic: z.string().max(40).regex(/^[A-Za-z0-9-]*$/).default(''),
 }).refine(v => !!v.email || !!v.phone, { message: 'A contact channel is required', path: ['email'] });
 export type LeadInput = z.infer<typeof leadSchema>;
 
