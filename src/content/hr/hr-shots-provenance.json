@@ -1,0 +1,450 @@
+{
+ "hr-s01": {
+  "source": "assets/original-screens/S01.png",
+  "sha256": "b3aa8236e41c056b9588c2e7ab7af0cb8d4c4b33b460b80d840551cd4766d2dd",
+  "originalPx": [
+   4200,
+   2418
+  ],
+  "cropPx": [
+   0,
+   110,
+   4200,
+   2418
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    879
+   ],
+   "full": [
+    2800,
+    1539
+   ]
+  },
+  "handoffAsset": "S01",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s06": {
+  "source": "assets/original-screens/S06.png",
+  "sha256": "35918765b6bdb7d7f052e37d7d1597fb909dffc7ca6f9ff9f84e0872a6b71a61",
+  "originalPx": [
+   4052,
+   2408
+  ],
+  "cropPx": [
+   0,
+   124,
+   4052,
+   2408
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    902
+   ],
+   "full": [
+    2800,
+    1578
+   ]
+  },
+  "handoffAsset": "S06",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s08": {
+  "source": "assets/original-screens/S08.png",
+  "sha256": "f721aadc0303613c99c763447a2229ded70e5be2e498d4c2b3a8375a165b3863",
+  "originalPx": [
+   4052,
+   1984
+  ],
+  "cropPx": [
+   0,
+   124,
+   4052,
+   1984
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    734
+   ],
+   "full": [
+    2800,
+    1285
+   ]
+  },
+  "handoffAsset": "S08",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s09": {
+  "source": "assets/original-screens/S09.png",
+  "sha256": "9c55bdc9836deb1d95f0e7e0ddd51d21f7d30dd3686a6f402c5b20caac0af3eb",
+  "originalPx": [
+   3426,
+   1882
+  ],
+  "cropPx": [
+   0,
+   0,
+   3426,
+   1882
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    879
+   ],
+   "full": [
+    2800,
+    1538
+   ]
+  },
+  "handoffAsset": "S09",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s10": {
+  "source": "assets/original-screens/S10.png",
+  "sha256": "2ed88cb109408f779797313b24261a8d122e61ba2b912c2b3c74236163e702a0",
+  "originalPx": [
+   3426,
+   1928
+  ],
+  "cropPx": [
+   0,
+   0,
+   3426,
+   1928
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    900
+   ],
+   "full": [
+    2800,
+    1576
+   ]
+  },
+  "handoffAsset": "S10",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s13": {
+  "source": "assets/original-screens/S13.png",
+  "sha256": "674231ceae7647a7c0d0e78a2f0433fd7a2d181929ead1bfea195a2a65938bdc",
+  "originalPx": [
+   3426,
+   2870
+  ],
+  "cropPx": [
+   0,
+   0,
+   3426,
+   2870
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    1340
+   ],
+   "full": [
+    2800,
+    2346
+   ]
+  },
+  "handoffAsset": "S13",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s16": {
+  "source": "assets/original-screens/S16.png",
+  "sha256": "103822488e98611580fd004a8f5a88fda2465e0e93dfbdb20767946bd34f91c0",
+  "originalPx": [
+   4072,
+   2242
+  ],
+  "cropPx": [
+   0,
+   0,
+   4072,
+   2242
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    881
+   ],
+   "full": [
+    2800,
+    1542
+   ]
+  },
+  "handoffAsset": "S16",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s17": {
+  "source": "assets/original-screens/S17.png",
+  "sha256": "1514c45e728cf6259014297dce798a78f919b99e681946ebe151dfa3be2d36fd",
+  "originalPx": [
+   4072,
+   2242
+  ],
+  "cropPx": [
+   0,
+   0,
+   4072,
+   2242
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    881
+   ],
+   "full": [
+    2800,
+    1542
+   ]
+  },
+  "handoffAsset": "S17",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s18": {
+  "source": "assets/original-screens/S18.png",
+  "sha256": "61cfb6a3828418358f91360a41a9ce47d18e37031097616ffbd0f5d6f92fc963",
+  "originalPx": [
+   4072,
+   2242
+  ],
+  "cropPx": [
+   0,
+   0,
+   4072,
+   2242
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    881
+   ],
+   "full": [
+    2800,
+    1542
+   ]
+  },
+  "handoffAsset": "S18",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s19": {
+  "source": "assets/original-screens/S19.png",
+  "sha256": "28661bd177ca231fb76e747c4ac3d0ea1067b4affe85215eff61713cb1154aba",
+  "originalPx": [
+   4072,
+   1882
+  ],
+  "cropPx": [
+   0,
+   96,
+   4072,
+   1882
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    702
+   ],
+   "full": [
+    2800,
+    1228
+   ]
+  },
+  "handoffAsset": "S19",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s20": {
+  "source": "assets/original-screens/S20.png",
+  "sha256": "2f8264a5f72661fc562fb4476023dcca3cd4531582baf4257582455e7e3daa50",
+  "originalPx": [
+   4072,
+   2396
+  ],
+  "cropPx": [
+   0,
+   102,
+   4072,
+   2396
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    901
+   ],
+   "full": [
+    2800,
+    1577
+   ]
+  },
+  "handoffAsset": "S20",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s21": {
+  "source": "assets/original-screens/S21.png",
+  "sha256": "9e212dc66c5eb98d771b67185f1e326bc853677b34fcf7e3c36eb4288ed93a95",
+  "originalPx": [
+   4072,
+   2584
+  ],
+  "cropPx": [
+   0,
+   102,
+   4072,
+   2584
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    975
+   ],
+   "full": [
+    2800,
+    1707
+   ]
+  },
+  "handoffAsset": "S21",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s26": {
+  "source": "assets/original-screens/S26.png",
+  "sha256": "c50cbbe54dc104ca15d11912fc67200707635d63b95e9a2f7694c8869b064334",
+  "originalPx": [
+   3438,
+   2178
+  ],
+  "cropPx": [
+   0,
+   0,
+   3438,
+   2178
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    1014
+   ],
+   "full": [
+    2800,
+    1774
+   ]
+  },
+  "handoffAsset": "S26",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s27": {
+  "source": "assets/original-screens/S27.png",
+  "sha256": "6f031e8a72bf608c78487c78d20c1035f6481e11af2b57cda583f6bf07a28755",
+  "originalPx": [
+   3438,
+   1434
+  ],
+  "cropPx": [
+   0,
+   0,
+   3438,
+   1434
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    667
+   ],
+   "full": [
+    2800,
+    1168
+   ]
+  },
+  "handoffAsset": "S27",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s28": {
+  "source": "assets/original-screens/S28.png",
+  "sha256": "81a00bf22a9e3eddfc36f84b3c440e53b89ef49deec13b489cbf3c6ef085e417",
+  "originalPx": [
+   4064,
+   3248
+  ],
+  "cropPx": [
+   0,
+   92,
+   4064,
+   3248
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    1243
+   ],
+   "full": [
+    2800,
+    2174
+   ]
+  },
+  "handoffAsset": "S28",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ },
+ "hr-s29": {
+  "source": "assets/original-screens/S29.png",
+  "sha256": "519f70cf355c326b69bd8fd2a4f7e10e303eec834fbc98501c6bf8eb4bd6e945",
+  "originalPx": [
+   3436,
+   2064
+  ],
+  "cropPx": [
+   0,
+   0,
+   3436,
+   2064
+  ],
+  "derivatives": {
+   "inline": [
+    1600,
+    961
+   ],
+   "full": [
+    2800,
+    1682
+   ]
+  },
+  "handoffAsset": "S29",
+  "handoffShaMatches": true,
+  "sourceClass": "USER_PROVIDED_PRODUCT_SCREENSHOT",
+  "privacyReview": "pending-owner"
+ }
+}
