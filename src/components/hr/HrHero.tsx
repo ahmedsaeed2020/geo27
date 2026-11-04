@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import { ArrowLeft, ArrowRight, Lock } from 'lucide-react';
 import { NavLink } from '@/components/nav/nav-links';
 import ShotFrame from '@/components/product/ShotFrame';
@@ -172,7 +173,7 @@ function Blueprint({ nodes, shots, locale, open }: ArtProps) {
   );
 }
 
-const ART: Record<HrHeroVariant, (p: ArtProps) => React.ReactNode> = { constellation: Constellation, journey: Journey, schedule: Schedule, pipeline: Pipeline, service: Service, drill: Drill, blueprint: Blueprint };
+const ART: Record<HrHeroVariant, (p: ArtProps) => ReactNode> = { constellation: Constellation, journey: Journey, schedule: Schedule, pipeline: Pipeline, service: Service, drill: Drill, blueprint: Blueprint };
 
 type Props = {
   variant: HrHeroVariant;
