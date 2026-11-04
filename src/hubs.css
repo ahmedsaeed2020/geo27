@@ -50,7 +50,7 @@
 .hs-chain li { position: relative; display: grid; align-content: start; gap: 8px; padding: 18px 16px; border-radius: 16px; background: color-mix(in oklab, var(--sp-accent) calc(8% + var(--i) * 5%), var(--card)); border: 1px solid var(--dline); }
 .hs-chain-no { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; background: var(--deep); font-family: var(--font-monospace); font-size: 12px; color: var(--paper2); }
 .hs-chain strong { font-size: 17px; }
-.hs-chain span:not(.hs-chain-no) { font-size: 14px; line-height: 1.7; color: var(--body2); }
+.hs-chain span:not(.hs-chain-no) { font-size: 14px; line-height: 1.7; color: color-mix(in oklab, var(--body2) 70%, var(--ink)); }
 .hs-chain-arrow { position: absolute; top: 22px; inset-inline-end: -15px; z-index: 1; width: 16px; height: 16px; color: var(--sp-accent); }
 .hs-measures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
 .hs-measures li { display: grid; align-content: start; gap: 8px; padding: 18px; border: 1px dashed var(--iconborder); border-radius: 16px; background: var(--card); }
@@ -274,7 +274,7 @@
 .cs-scope-note { margin-top: 10px; font-size: 13px; color: var(--body2); }
 .cs-next { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: 18px 32px; align-items: center; margin-top: clamp(28px, 4vw, 48px); padding: clamp(22px, 3vw, 32px); border-radius: 22px; background: var(--deep); color: var(--paper2); }
 .cs-next .sp-kicker { color: var(--mint); }
-.cs-next h3 { font-size: clamp(20px, 2.2vw, 26px); color: var(--paper2); }
+.cs-next.cs-next h3 { font-size: clamp(20px, 2.2vw, 26px); color: var(--paper2); }
 .cs-next-steps strong { color: var(--paper2); }
 .cs-next .sp-lede { color: color-mix(in oklab, var(--paper2) 80%, transparent); }
 .cs-next-steps { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
