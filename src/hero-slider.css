@@ -33,7 +33,7 @@
   width: 100%;
   max-width: 1320px;
   margin-inline: auto;
-  padding: clamp(28px, 4vw, 56px) 24px 24px;
+  padding: clamp(24px, 3vw, 44px) 24px 20px;
   display: grid;
   grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
   gap: clamp(32px, 5vw, 80px);
@@ -62,6 +62,8 @@
 .hx-chip-name { padding: 4px 12px; border-radius: 999px; background: var(--hs-deep); color: var(--primary-foreground); font-family: var(--font-archivo); font-weight: 700; letter-spacing: .01em; }
 .hx-chip-tag { font-weight: 600; color: var(--hs-deep); }
 .hx-title { margin: 0; font-size: clamp(2.3rem, 4.3vw, 4.2rem); line-height: 1.12; font-weight: 800; letter-spacing: -.012em; color: var(--hs-ink); text-wrap: balance; }
+/* Latin headlines run longer than Arabic ones; a tighter scale keeps the slide rail inside the first fold. */
+[dir='ltr'] .hx-title, .hx:lang(en) .hx-title { font-size: clamp(2.1rem, 3.5vw, 3.4rem); line-height: 1.08; letter-spacing: -.02em; }
 .hx-lead { margin: 18px 0 0; max-width: 36rem; font-size: clamp(1.02rem, 1.25vw, 1.18rem); line-height: 1.75; color: var(--muted-foreground); text-wrap: pretty; }
 .hx-points { list-style: none; margin: 22px 0 0; padding: 0; display: grid; gap: 10px; }
 .hx-points li { display: flex; align-items: flex-start; gap: 10px; font-size: 1rem; font-weight: 600; color: var(--hs-ink); }
