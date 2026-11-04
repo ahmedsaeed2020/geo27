@@ -6,7 +6,8 @@ import sanitizeHtml from 'sanitize-html';
 import type { Database } from '@/integrations/supabase/types';
 import { cmsContentSchema, departmentPublishIssues, safePath, type PublishedRecord } from './cms-schema';
 import { departmentById } from '@/content/catalog';
-import { SHOTS } from '@/content/product-shots';
+import { ALL_SHOTS as SHOTS } from '@/content/screens';
+import { hrModuleBySlug } from '@/content/hr/hr-modules';
 import { DEFAULT_SITE_CONFIG, PUBLIC_CONFIG_KEYS, parseConfig, type SiteConfig } from './site-config-schema';
 import { normalizeRedirectSource } from './redirect-rules';
 import { assertPublishAllowed, audit, resolveAccess, sha256Hex, type CmsRole, type Db } from './cms-access';
@@ -195,6 +196,10 @@ export const saveCmsDocument = createServerFn({ method: 'POST' })
         if (hrefs.some(h => !safePath.safeParse(h).success)) throw new Error('Use a valid internal page link');
         const shots = [b.shotId, ...b.shots, ...b.items.map(i => i.shotId)].filter(Boolean);
         if (shots.some(id => !SHOTS[id])) throw new Error('Unknown product screen');
+        if (b.type === 'source') {
+          const source = content.department?.product === 'hr' ? hrModuleBySlug(content.department.id) : undefined;
+          if (!source?.sections.some(s => s.id === b.ref)) throw new Error('Unknown source section');
+        }
       }
     }
     if (content.department) {

@@ -1,6 +1,7 @@
 import { CheckCircle2, CircleAlert } from 'lucide-react';
 import { departmentById, departmentByPath, productByKey } from '@/content/catalog';
-import { SHOTS } from '@/content/product-shots';
+import { SHOT_GROUPS } from '@/content/screens';
+import { hrModuleBySlug } from '@/content/hr/hr-modules';
 import { departmentPublishIssues, type CmsContent } from '@/lib/cms-schema';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -32,6 +33,7 @@ export default function DepartmentFields({ content, path, locale, media, edit }:
   const issues = departmentPublishIssues(content);
   const approved = media.filter(m => m.approval === 'approved' && !m.archived_at);
   const dept = departmentById(meta.product, meta.id);
+  const source = meta.product === 'hr' ? hrModuleBySlug(meta.id) : undefined;
   return (
     <section className="space-y-4 rounded-md border border-border bg-muted/30 p-4" aria-label="قالب صفحة القسم">
       <div>
@@ -39,27 +41,37 @@ export default function DepartmentFields({ content, path, locale, media, edit }:
           قالب صفحة القسم · {family?.name.ar} · {dept?.label.ar ?? meta.id}
         </h3>
         <p className="text-xs text-muted-foreground">العنوان والوصف أعلاه لمحركات البحث؛ هذه الحقول تظهر على الصفحة نفسها.</p>
+        {source && (
+          <p className="mt-2 rounded-md bg-card p-2 text-xs text-muted-foreground">
+            صفحة مبنية من محتوى DIGIT HR المعتمد للمراجعة ({source.sections.length} أقسام). أي حقل فارغ يعرض نص المصدر؛ اكتب نصًا لاستبداله، ورتّب الأقسام أو أخفها من قائمة الأقسام أدناه.
+            {source.illustrative && ' لا توجد شاشة فعلية لهذا المجال بعد؛ تعرض الصفحة رسمًا توضيحيًا معلَّمًا بذلك.'}
+          </p>
+        )}
       </div>
-      <Field label={locale === 'ar' ? 'العنوان الرئيسي (H1)' : 'Page headline (H1)'} hint={dept ? `فارغ = ${dept.label[locale]}` : undefined}>
+      <Field label={locale === 'ar' ? 'العنوان الرئيسي (H1)' : 'Page headline (H1)'} hint={source ? `فارغ = ${source.headline[locale]}` : dept ? `فارغ = ${dept.label[locale]}` : undefined}>
         <Input value={local.headline} onChange={e => update({ headline: e.target.value })} />
       </Field>
-      <Field label={locale === 'ar' ? 'الوصف التمهيدي' : 'Lede'}>
+      <Field label={locale === 'ar' ? 'الوصف التمهيدي' : 'Lede'} hint={source ? `فارغ = ${source.seoDescription[locale]}` : undefined}>
         <Textarea rows={3} value={local.lede} onChange={e => update({ lede: e.target.value })} />
       </Field>
       <Field label={locale === 'ar' ? 'اسم القسم في القائمة ومسار التنقل' : 'Menu and breadcrumb label'} hint="اتركه فارغًا لاستخدام الاسم المسجّل في الكتالوج.">
         <Input value={local.navLabel} onChange={e => update({ navLabel: e.target.value })} />
       </Field>
-      <Field label="الشاشة الرئيسية للقسم" hint="شاشة فعلية من النظام تُعرض بحجم كبير في أعلى الصفحة.">
+      <Field label="الشاشة الرئيسية للقسم" hint={source ? 'فارغ = شاشة المصدر المخصصة لهذا المجال.' : 'شاشة فعلية من النظام تُعرض بحجم كبير في أعلى الصفحة.'}>
         <NativeSelect value={meta.heroShot} onChange={e => setMeta({ heroShot: e.target.value })}>
-          <option value="">بدون شاشة</option>
-          {Object.values(SHOTS).map(s => (
-            <option key={s.id} value={s.id}>
-              {s.caption.ar}
-            </option>
+          <option value="">{source ? 'شاشة المصدر' : 'بدون شاشة'}</option>
+          {SHOT_GROUPS.map(g => (
+            <optgroup key={g.label} label={g.label}>
+              {g.shots.map(s => (
+                <option key={s.id} value={s.id}>
+                  {s.caption.ar}
+                </option>
+              ))}
+            </optgroup>
           ))}
         </NativeSelect>
       </Field>
-      {!meta.heroShot && (
+      {!meta.heroShot && !source && (
         <Field label="أو صورة معتمدة من المكتبة" hint="لأقسام لم تُعتمد لها شاشات بعد؛ لا تستخدم صورًا تخيلية للنظام.">
           <NativeSelect value={meta.heroMedia} onChange={e => setMeta({ heroMedia: e.target.value })}>
             <option value="">بدون صورة</option>
