@@ -59,7 +59,6 @@ export default function SystemMap({ needs, locale, label, emptyHint, focus = nul
   const placed = layout(needs, locale);
   const byId = new Map(placed.map(p => [p.id, p]));
   const flows = flowsFor(needs);
-  const active = (key: string, ends: NeedId[] = []) => !focus || focus === key || ends.includes(focus as NeedId) || (focus.includes(">") && ends.length === 0 && false);
   const nodeActive = (id: NeedId) => !focus || focus === id || flows.some(f => flowKey(f) === focus && (f.from === id || f.to === id));
   return (
     <svg className="bp-map" data-mini={mini ? "" : undefined} viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} direction={locale === "ar" ? "rtl" : "ltr"}>
@@ -88,7 +87,7 @@ export default function SystemMap({ needs, locale, label, emptyHint, focus = nul
           const b = byId.get(f.to);
           if (!a || !b) return null;
           const key = flowKey(f);
-          const on = active(key, []) && (!focus || focus === key || focus === f.from || focus === f.to);
+          const on = !focus || focus === key || focus === f.from || focus === f.to;
           return (
             <path
               key={key}
