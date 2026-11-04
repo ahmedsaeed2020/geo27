@@ -223,7 +223,7 @@
   },
   "services-3-erpnext-service": {
     "background": "/__l5e/assets-v1/0c35f687-c6fb-447c-b443-7106b67887c6/services-3-erpnext-service-background.jpg",
-    "body": "/__l5e/assets-v1/6beee3e0-4808-4e37-98ba-7bc5b998064e/services-3-erpnext-service-body.jpg"
+    "body": "/__l5e/assets-v1/c400a4eb-3a0a-43a7-bef3-f40e3656c9b6/services-3-erpnext-service-body-modest.jpg"
   },
   "services-3-hosting": {
     "background": "/__l5e/assets-v1/5b007b4f-b718-4361-995d-da9ffb76d6df/services-3-hosting-background.jpg",
@@ -277,7 +277,7 @@
     "photographicBody": true
   },
   "contact-4": {
-    "background": "/__l5e/assets-v1/dac6c66a-263b-4b2e-8420-b45674e34047/contact-4-background.jpg",
+    "background": "/__l5e/assets-v1/d3209060-54f6-4e2a-b41b-654481bd50e5/contact-4-background-modest.jpg",
     "body": "/__l5e/assets-v1/48a2003b-877a-45de-a9c7-b35bbacbcebd/contact-4-body.jpg"
   },
   "industries": {
@@ -300,8 +300,8 @@
     "body": "/__l5e/assets-v1/19d01e25-be50-4438-86a3-1640fad1c5ee/saudi-localization-body.jpg"
   },
   "demo-3": {
-    "background": "/__l5e/assets-v1/b7a6ca30-8c38-419a-936e-2f08ac3f5472/demo-3-background.jpg",
-    "body": "/__l5e/assets-v1/35042483-302b-4773-8336-75e5eb5c2338/demo-3-body.jpg"
+    "background": "/__l5e/assets-v1/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
+    "body": "/__l5e/assets-v1/984f2de0-4f9f-4abc-a0c4-193752ac8b10/demo-3-body-modest.jpg"
   },
   "services-3": {
     "background": "/__l5e/assets-v1/f99f0f3f-539b-4099-8ddf-a224b4c72fe9/services-3-background.jpg",
@@ -323,8 +323,8 @@
     "body": "/__l5e/assets-v1/28bb8a6f-5a88-4409-bc3a-2fa52d8129d6/terms-body.jpg"
   },
   "pro": {
-    "background": "/__l5e/assets-v1/3866e5da-d656-439f-832b-3b8b23255b04/pro-background.jpg",
-    "body": "/__l5e/assets-v1/0fd70429-34c7-4dc4-ba46-ad25314c1a74/pro-body.jpg"
+    "background": "/__l5e/assets-v1/4e7e1e72-e817-4f5a-8a5b-1d849252163a/pro-background-modest.jpg",
+    "body": "/__l5e/assets-v1/839b6757-3de9-4f14-84e1-41b190f32c2f/pro-body-modest.jpg"
   },
   "trust-security": {
     "background": "/__l5e/assets-v1/555ad65f-16cb-4700-be23-b724405d6730/trust-security-background.jpg",
