@@ -329,5 +329,61 @@
   "trust-security": {
     "background": "/__l5e/assets-v1/555ad65f-16cb-4700-be23-b724405d6730/trust-security-background.jpg",
     "body": "/__l5e/assets-v1/88028e41-0ed0-40af-a881-43d64a794a44/trust-security-body.jpg"
+  },
+  "hr-core-hr": {
+    "background": "/__l5e/assets-v1/83f3e044-0739-45c8-ab1e-86c1a6c83d2f/hr-core-hr-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
+    "body": "/__l5e/assets-v1/2956fe78-6de4-4edf-952c-5be9eba7e9bb/hr-core-hr-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/e8370aa3-1dff-451a-9301-9973f0fb46ff/hr-core-hr-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-talent-hcm": {
+    "background": "/__l5e/assets-v1/f83e5714-4326-45f3-923c-83cfab068f0d/hr-talent-hcm-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/895e9de5-9a96-48bd-b664-13b05f0925b0/hr-talent-hcm-intro-960.webp",
+    "body": "/__l5e/assets-v1/18fde4d5-5b75-49e7-ae53-71e21e9ba6c9/hr-talent-hcm-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/2216633b-ba9e-497c-8e74-c852baf7e7b0/hr-talent-hcm-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-workforce-management": {
+    "background": "/__l5e/assets-v1/f3121dac-84a3-4138-ad38-e1af3a04ce35/hr-workforce-management-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/4399c7d5-224c-4243-977e-bc6ac26bec19/hr-workforce-management-intro-960.webp",
+    "body": "/__l5e/assets-v1/4bf8f6e1-08c9-4f38-b33f-970b3d296586/hr-workforce-management-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/61dfd884-5802-4069-9a35-6fe21a2542ff/hr-workforce-management-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-payroll-rewards": {
+    "background": "/__l5e/assets-v1/149c22f8-c720-43d4-8b79-635ac94052ad/hr-payroll-rewards-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/1494b459-9ee3-43dc-8f29-6cc43b3a2266/hr-payroll-rewards-intro-960.webp",
+    "body": "/__l5e/assets-v1/78d7858b-666d-4848-9bee-5efdad9829c6/hr-payroll-rewards-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/c8caa0dd-d214-4dc6-bbd8-1a1fcdcffdb4/hr-payroll-rewards-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-employee-experience": {
+    "background": "/__l5e/assets-v1/a2e68dd7-3e97-4f5a-94c2-7ee92f10b73a/hr-employee-experience-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
+    "body": "/__l5e/assets-v1/b5e7a794-f359-4c26-add8-4e842e2226da/hr-employee-experience-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/6e9fa563-ae2d-4496-b45d-281347609ce8/hr-employee-experience-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-people-intelligence": {
+    "background": "/__l5e/assets-v1/c4fb8b17-9255-443e-b7a7-a45845c1cfd2/hr-people-intelligence-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/18cee6cf-6328-4892-a4d8-f5d3faed27ff/hr-people-intelligence-intro-960.webp",
+    "body": "/__l5e/assets-v1/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/e9565384-ee6a-48f8-b069-3e9004dfe8b9/hr-people-intelligence-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
+  },
+  "hr-administration-governance": {
+    "background": "/__l5e/assets-v1/cb791d9e-329f-4445-a0db-ba1e6dcb8cab/hr-administration-governance-intro.webp",
+    "backgroundSmall": "/__l5e/assets-v1/bf4c3869-2ced-43ab-8a79-25afa2cb423f/hr-administration-governance-intro-960.webp",
+    "body": "/__l5e/assets-v1/23cdc153-89bc-45cf-be40-263cab0ffba6/hr-administration-governance-cta.webp",
+    "bodySmall": "/__l5e/assets-v1/7384c7ea-634a-4886-8e75-a5b9ec183d03/hr-administration-governance-cta-960.webp",
+    "bodyWidth": 1920,
+    "bodyHeight": 960
   }
 }
