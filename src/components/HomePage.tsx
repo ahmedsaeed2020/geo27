@@ -7,7 +7,7 @@ import LeadCapturePanel from '@/components/LeadCapturePanel';
 import CmsBlocks from '@/components/cms/CmsBlocks';
 import TrustStrip from "@/sections/TrustStrip";
 import ChaosToControl from "@/sections/ChaosToControl";
-import ProductBand from "@/sections/ProductBand";
+import ProductSlider from "@/sections/ProductSlider";
 import Modules from "@/sections/Modules";
 import ProductShowcase from "@/sections/ProductShowcase";
 import Capabilities from "@/sections/Capabilities";
@@ -31,7 +31,7 @@ const RENDER: Record<HomeSectionId, () => ReactNode> = {
   explorer: () => <AppExplorer />,
   journey: () => <WorkflowJourney />,
   chaos: () => <ChaosToControl />,
-  band: () => <ProductBand />,
+  band: () => <ProductSlider />,
   modules: () => <Modules />,
   portfolio: () => <SpecialistDiscovery />,
   showcase: () => <ProductShowcase />,

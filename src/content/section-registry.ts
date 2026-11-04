@@ -21,7 +21,7 @@ export const HOME_SECTIONS = [
   { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
   { id: 'journey', label: 'رحلة العمل', heading: { ar: 'نفس العمل. أربع زوايا أوضح.', en: 'One operation. Four clearer perspectives.' } },
   { id: 'chaos', label: 'من الفوضى إلى التحكّم', heading: { ar: 'من الفوضى… إلى التحكّم' } },
-  { id: 'band', label: 'شريط المحاسبة', heading: { ar: 'محاسبتك أوضح' } },
+  { id: 'band', label: 'سلايدر المنتجات (محاسبتك أوضح)', heading: { ar: 'محاسبتك أوضح' } },
   { id: 'modules', label: 'الموديولات', heading: { ar: 'منصة واحدة… لكل إدارات شركتك' } },
   { id: 'portfolio', label: 'محفظة الحلول (المنتجات الستة والأدوار)', heading: { ar: 'محفظة حلول واحدة… لا باقة واحدة لكل شيء.', en: 'One solution portfolio… not one bundle for everything.' } },
   { id: 'showcase', label: 'شاشات النظام الحقيقية', heading: HOME_SHOWCASE.title },
