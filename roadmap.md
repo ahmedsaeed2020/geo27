@@ -1,13 +1,15 @@
 # Full-site audit & signature experience (owner 2026-11-04 21:36: audit every page, apply recommendations, fix errors, innovate)
 - [x] Audit: 128 AR/EN pages at 1280 and 390 px (status, console, overflow, broken images, alt, h1, titles/descriptions, anchors, banned wording, prices, axe WCAG 2.1 AA).
-- [ ] Fix: brand-green text and buttons below 4.5:1 contrast (site + imported pages), mint button text, unlabeled icons, focusable scroll strip, duplicate ids, dead in-page links, request buttons without a link.
-- [ ] Fix: short/duplicate page titles and descriptions (AR + EN).
-- [ ] Fix: server code deprecation warnings (validator API).
-- [ ] Social share card: 1200x630 AR/EN images with the real logo, default og:image for every page without its own.
-- [ ] Signature experience: "Design your system" blueprint builder (sector, size, needs → connected system map, real screens, reading path, start point, shareable link, contextual demo request), AR/EN routes, SEO, sitemap, entry points.
-- [ ] Site search palette (Ctrl/Cmd+K and header button) across products, departments, pages, reports and CFO questions, AR/EN.
-- [ ] Re-audit after fixes (axe + crawl), tests for new rules, report in Files.
+- [x] Fix: brand-green contrast (site + imported pages), mint button text, unlabeled/empty-label icons, focusable scroll strip, duplicate ids (pricing), dead request links (POS), unreadable text on industry/pharmacy/partnership/implementation/construction sections. Axe contrast nodes 1,173 → 4 (all decorative or hidden).
+- [x] Fix: short/long/duplicate titles and descriptions (AR + EN); English careers "thousands of establishments" claim removed; "certified margin" reworded.
+- [x] Fix: server code deprecation warnings (validator API).
+- [x] Social share card: 1200x630 AR/EN images with the real logo, default og:image for every page without its own.
+- [x] Signature experience: /blueprint + /en/blueprint "Design your system" builder (sector, size, needs → live system map, connections, real screens, reading path, starting edition, delivery path, shareable link, print/PDF, demo request carrying the blueprint), home band, Resources menu, sitemap, llms.txt; request saved with blueprint label in admin (E2E, test rows deleted).
+- [x] Site search (header button, Ctrl/⌘ K or "/") across products, departments, Pro workspaces, 117 reports and site pages, Arabic spelling-tolerant, AR/EN; hidden at 1280–1365 px where the full menu leaves no room (shortcut still works).
+- [x] Re-audit after fixes: 130 pages desktop + mobile clean (200, no errors, no overflow, no broken images); 125 tests pass.
 - [ ] Owner: close visitor access to chat tables and anonymous request inserts together with the next approved publish (live site still uses the old widget) — blocked on publish approval.
+- [ ] Blueprint: add CMS controls (sector suggestions, area wording) to the admin so editors can tune the builder without code.
+- [ ] Search: show a short "recent searches" list and track zero-result queries in admin to find missing pages.
 
 # Home slider & site-wide CTA pass (owner 2026-11-04 19:26 / 19:39)
 - [x] Home: replaced the old laptop band image with a luxury product slider (6 real-screen slides, generated text-free scenes, autoplay timeline, tilt/float motion, verified figures, per-slide demo context, lightbox), hero unchanged; AR/EN 1440/390 + keyboard/reduced-motion checked.
