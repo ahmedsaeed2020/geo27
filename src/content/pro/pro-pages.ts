@@ -169,7 +169,7 @@ export const PRO_PAGES: ProPageConfig[] = [
       s('featured', 'تقارير مختارة: السؤال والدور والقرار', 'Featured reports: question, role and decision'),
       s('directory', 'فهرس التقارير', 'Report directory'),
       s('controls', 'ضوابط التقرير: الصلاحية والفترة والتصدير', 'Report controls: permission, period and export'),
-      s('decisions', 'من التقرير إلى المستند الأصلي', 'From report to source document'),
+      s('trace', 'من التقرير إلى المستند الأصلي', 'From report to source document'),
     ],
   },
   {

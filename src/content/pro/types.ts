@@ -35,7 +35,7 @@ export type ProSection =
   | { id: string; kind: 'anatomy'; lede: L; lead: ShotRef; terms: Term[]; support?: ShotRef[]; note?: L }
   | { id: string; kind: 'match'; lede: L; columns: { doc: L; sys: string; holds: L }[]; checks: Feature[]; note: L }
   | { id: string; kind: 'lifecycle'; lede: L; stages: { title: L; body: L; ws: string; shown: boolean; shot?: string }[]; note: L }
-  | { id: string; kind: 'mosaic'; lede: L; items: { shot: string; note: L }[] }
+  | { id: string; kind: 'mosaic'; lede: L; items: { shot: string; note: L; href?: string }[] }
   | { id: string; kind: 'decisions'; lede: L; items: { question: L; answer: L; report?: string; href?: string; shot?: string }[] }
   | { id: string; kind: 'connections'; lede: L; items: { to: string; title: L; body: L }[] }
   | { id: string; kind: 'features'; lede: L; items: Feature[]; layout?: 'grid' | 'rows' }
@@ -43,8 +43,7 @@ export type ProSection =
   | { id: string; kind: 'report-directory'; lede: L }
   | { id: string; kind: 'layers'; lede: L; layers: { name: L; who: L; purpose: L; example: L; shot: string; href: string }[] }
   | { id: string; kind: 'questions'; lede: L; items: ExecQuestion[] }
-  | { id: string; kind: 'chapter'; kicker: L; lede: L; lead: ShotRef; points: { title: L; body: L }[]; reports: string[]; support?: string[]; flip?: boolean }
-  | { id: string; kind: 'tiers'; lede: L }
+  | { id: string; kind: 'chapter'; kicker: L; lede: L; lead: ShotRef; points: { title: L; body: L; id?: string }[]; reports: string[]; support?: string[]; flip?: boolean }
   | { id: string; kind: 'explorer'; lede: L; themes: { id: string; label: L }[]; items: (Feature & { theme: string })[] }
   | { id: string; kind: 'scope'; lede: L; items: { title: L; body: L; tier: 'available' | 'verifying' | 'scoped'; ids: string[]; shot?: string }[] }
   | { id: string; kind: 'cta'; body: L; interest: L };
