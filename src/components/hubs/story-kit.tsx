@@ -7,8 +7,8 @@ import type { Locale } from '@/lib/i18n';
 const OPEN_DEPT: L = { ar: 'افتح صفحة المجال', en: 'Open the area page' };
 
 /** Arrow-key navigation for a row of tabs (RTL-aware); vertical lists use up/down. */
-export function useTabs(count: number, locale: Locale, vertical = false) {
-  const [active, setActive] = useState(0);
+export function useTabs(count: number, locale: Locale, vertical = false, initial = 0) {
+  const [active, setActive] = useState(initial);
   const refs = useRef<(HTMLButtonElement | null)[]>([]);
   const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>) => {
     const keys = vertical ? ['ArrowUp', 'ArrowDown'] : ['ArrowLeft', 'ArrowRight'];
