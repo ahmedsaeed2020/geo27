@@ -156,7 +156,7 @@ const page: ProPageContent = {
           features: [
             { id: 'D1', title: { ar: 'شريط مراحل المستند', en: 'Document stage strip' }, body: { ar: 'عميل، عرض سعر، أمر بيع، إشعار تسليم، فاتورة: أين يقف المستند الآن.', en: 'Customer, quotation, order, delivery note, invoice: where the document stands now.' }, shot: '03-doc-01-d1' },
             { id: 'D2', title: { ar: 'حالة الطلب على خمسة محاور', en: 'Order status on five axes' }, body: { ar: 'الطلب مفتوح، والتسليم جزئي 71%، والفوترة جزئية 71%، والائتمان حسب الصلاحية.', en: 'Order open, delivery partial at 71%, billing partial at 71%, credit by permission.' }, shot: '03-doc-02-d2' },
-            { id: 'SEL-006', title: { ar: 'المتاح والموعد الموعود', en: 'Available stock and promised date' }, body: { ar: 'الفعلي والمحجوز والمتوقع والمتاح لكل بند مع تاريخ التوريد الموعود.', en: 'Actual, reserved, projected and available for each line, with the promised delivery date.' }, shot: '05-sales-02-sl5' },
+            { id: 'SL5', title: { ar: 'المتاح والموعد الموعود', en: 'Available stock and promised date' }, body: { ar: 'الفعلي والمحجوز والمتوقع والمتاح لكل بند مع تاريخ التوريد الموعود.', en: 'Actual, reserved, projected and available for each line, with the promised delivery date.' }, shot: '05-sales-02-sl5' },
             { id: 'SL11', title: { ar: 'مُسلّم ولم يُفوتر، بأعماره', en: 'Delivered but not billed, by age' }, body: { ar: 'إجمالي غير المفوتر وتوزيعه على فئات العمر، مع أرقام التسليمات.', en: 'Total unbilled and its spread across age buckets, with the delivery numbers.' }, shot: '02-cash-06-sl11' },
           ],
           lead: { id: '03-doc-01-d1', focus: { x: 52, y: 22, zoom: 2.4 } },

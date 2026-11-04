@@ -1,6 +1,6 @@
 import type { ProPageContent } from '../types';
 
-// CFO Intelligence (V4 page 35 and the 12 executive questions EXE-01..12). Each question names the view, the
+// CFO Decisions (V4 page 35 and the 12 executive questions EXE-01..12). Each question names the view, the
 // source records and native reports, the decision, and which real screen answers it today. The executive cards
 // themselves are in acceptance testing, so their status is shown rather than implied.
 const page: ProPageContent = {
@@ -134,7 +134,7 @@ const page: ProPageContent = {
         ar: 'اختر ثلاثة أسئلة من الاثني عشر، ونعرض لك إجاباتها على شركة تجريبية ثم نناقش بياناتك.',
         en: 'Pick three of the twelve questions, and we will show you their answers on a demo company, then discuss your data.',
       },
-      interest: { ar: 'ذكاء المدير المالي', en: 'CFO intelligence' },
+      interest: { ar: 'قرارات المدير المالي', en: 'CFO decisions' },
     },
   ],
 };

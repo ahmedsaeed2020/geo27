@@ -116,7 +116,7 @@ const page: ProPageContent = {
             en: 'The item’s latest movements appear in its 360 view with date, document, warehouse, quantity and value effect: delivery notes, purchase receipts and stock entries. Transfers between warehouses run in two steps, with goods in transit and their age tracked.',
           },
           features: [
-            { id: 'INV-008', title: { ar: 'الاستلام والصرف والتحويل', en: 'Receipts, issues and transfers' }, body: { ar: 'كل حركة كمية بمستندها الأصلي وأثرها في القيمة.', en: 'Every quantity movement with its original document and value effect.' }, shot: '04-360-03-in2' },
+            { id: 'INV-008', title: { ar: 'الاستلام والصرف والتحويل', en: 'Receipts, issues and transfers' }, body: { ar: 'كل حركة كمية بمستندها الأصلي وأثرها في القيمة.', en: 'Every quantity movement with its original document and value effect.' } },
             { id: 'IN13', title: { ar: 'تحويل على مرحلتين وبضاعة في الطريق', en: 'Two-step transfer with goods in transit' }, body: { ar: 'مستودع البضاعة في الطريق يوضح ما خرج ولم يصل.', en: 'The goods-in-transit warehouse shows what has left and not yet arrived.' }, shot: '07-inv-05-in13' },
           ],
           lead: { id: '04-360-03-in2', focus: { x: 50, y: 80, zoom: 1.9 } },

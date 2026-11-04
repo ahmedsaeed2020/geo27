@@ -198,7 +198,7 @@ export const PRO_PAGES: ProPageConfig[] = [
       ar: 'مركز القيادة التنفيذي في DIGIT Pro: السيولة والاستثناءات والإقفال والاعتمادات، والفرق بين لوحة الإدارة ومساحة العمل والتقرير، بشاشات حقيقية.',
       en: 'The DIGIT Pro executive command center: liquidity, exceptions, close and approvals, and how a management board differs from a workspace and a report, shown with real screens.',
     },
-    heroShots: ['01-cfo-01-e1'],
+    heroShots: ['10-ctl-04-s7'],
     sections: [
       s('layers', 'ثلاث طبقات: الإدارة، والتشغيل، والتقرير', 'Three layers: management, operations, reports'),
       s('board', 'مركز القيادة التنفيذي', 'The executive command center'),
