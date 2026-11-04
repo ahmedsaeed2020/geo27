@@ -3,7 +3,7 @@ import { getRequest } from '@tanstack/react-start/server';
 import { leadCatalogContext, leadSchema, LEAD_RECIPIENT, proLeadTopic } from './leads-schema';
 import { parseConfig } from './site-config-schema';
 
-export const submitLead = createServerFn({ method: 'POST' }).inputValidator(leadSchema).handler(async ({ data }) => {
+export const submitLead = createServerFn({ method: 'POST' }).validator(leadSchema).handler(async ({ data }) => {
   if (data.website) throw new Error('Invalid submission');
   const request = getRequest();
   const raw = `${request.headers.get('cf-connecting-ip') ?? request.headers.get('x-forwarded-for') ?? 'local'}:${data.email || data.phone}`;

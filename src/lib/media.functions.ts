@@ -49,7 +49,7 @@ async function requireContent(supabase: Db, userId: string) {
 
 export const uploadCmsMedia = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       base64: z.string().max(11_500_000),
       title: z.string().trim().min(1).max(200),
@@ -98,7 +98,7 @@ export const uploadCmsMedia = createServerFn({ method: 'POST' })
 /** Stores one browser-generated WebP size; widths are fixed so responsive URLs stay predictable. */
 export const addMediaVariant = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       id: z.string().uuid(),
       base64: z.string().max(4_500_000),
@@ -127,7 +127,7 @@ export const addMediaVariant = createServerFn({ method: 'POST' })
 
 export const updateCmsMedia = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       id: z.string().uuid(),
       title: z.string().trim().min(1).max(200),
@@ -159,7 +159,7 @@ export const updateCmsMedia = createServerFn({ method: 'POST' })
 /** Swaps the stored file while keeping the public URL, so every page that uses the image updates at once. */
 export const replaceCmsMedia = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(
+  .validator(
     z.object({
       id: z.string().uuid(),
       base64: z.string().max(11_500_000),
@@ -196,7 +196,7 @@ export const replaceCmsMedia = createServerFn({ method: 'POST' })
 
 export const archiveCmsMedia = createServerFn({ method: 'POST' })
   .middleware([requireSupabaseAuth])
-  .inputValidator(z.object({ id: z.string().uuid(), archived: z.boolean() }))
+  .validator(z.object({ id: z.string().uuid(), archived: z.boolean() }))
   .handler(async ({ data, context }) => {
     const access = await requireContent(context.supabase, context.userId);
     if (!access.owner) throw new Error('Owner approval required');

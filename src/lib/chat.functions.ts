@@ -8,7 +8,7 @@ import { z } from 'zod';
 const uuid = z.string().uuid();
 
 export const createVisitorThread = createServerFn({ method: 'POST' })
-  .inputValidator(z.object({ visitorId: uuid, locale: z.enum(['ar', 'en']) }))
+  .validator(z.object({ visitorId: uuid, locale: z.enum(['ar', 'en']) }))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
     // Light abuse guard: one visitor id cannot open an unlimited number of threads in an hour.
@@ -21,7 +21,7 @@ export const createVisitorThread = createServerFn({ method: 'POST' })
   });
 
 export const listVisitorThreads = createServerFn({ method: 'POST' })
-  .inputValidator(z.object({ visitorId: uuid, ids: z.array(uuid).max(20) }))
+  .validator(z.object({ visitorId: uuid, ids: z.array(uuid).max(20) }))
   .handler(async ({ data }) => {
     if (!data.ids.length) return [];
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
@@ -35,7 +35,7 @@ export const listVisitorThreads = createServerFn({ method: 'POST' })
   });
 
 export const getVisitorMessages = createServerFn({ method: 'POST' })
-  .inputValidator(z.object({ visitorId: uuid, threadId: uuid }))
+  .validator(z.object({ visitorId: uuid, threadId: uuid }))
   .handler(async ({ data }) => {
     const { supabaseAdmin } = await import('@/integrations/supabase/client.server');
     const { data: thread } = await supabaseAdmin.from('chat_threads').select('id').eq('id', data.threadId).eq('visitor_id', data.visitorId).maybeSingle();
