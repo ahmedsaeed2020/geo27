@@ -15,11 +15,7 @@ function Section({ id, title, eyebrow, open, onToggle, children }: { id: string;
       <h2>
         <button type="button" className="mnav-toggle" aria-expanded={open} aria-controls={`mnav-${id}`} onClick={onToggle}>
           <span>
-            {eyebrow && (
-              <small dir="ltr" className="mnav-eyebrow">
-                {eyebrow}
-              </small>
-            )}
+            {eyebrow && <small className="mnav-eyebrow">{eyebrow}</small>}
             {title}
           </span>
           <ChevronDown aria-hidden="true" />

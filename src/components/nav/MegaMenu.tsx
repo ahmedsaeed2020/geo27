@@ -89,7 +89,7 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
     <div className="mm-grid" data-product={family.key}>
       <div className="mm-intro">
         <p className="mm-eyebrow">{family.area[locale]}</p>
-        <p className="mm-product" dir="ltr">{family.name[locale]}</p>
+        <p className="mm-product">{family.name[locale]}</p>
         <p className="mm-summary">{family.summary[locale]}</p>
         <NavLink path={family.overview} className="mm-overview" onClick={close}>
           {NAV_COPY.overview[locale]} {family.name[locale]}
@@ -142,7 +142,7 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
               <span />
               <span />
             </span>
-            <span className="mm-shot-body">
+            <span className="mm-shot-body" data-fit={shot.width < 900 || shot.width / shot.height > 1.8 ? 'contain' : 'cover'}>
               <img key={shot.id} src={shot.src} width={shot.width} height={shot.height} alt={shot.caption[locale]} loading="lazy" decoding="async" />
             </span>
             <figcaption>
@@ -158,7 +158,7 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
               <span />
             </span>
             <p className="mm-brand-title">
-              {NAV_COPY.walkthrough[locale]} <span dir="ltr">{family.name[locale]}</span>
+              {NAV_COPY.walkthrough[locale]} <bdi>{family.name[locale]}</bdi>
             </p>
             <p className="mm-brand-body">{NAV_COPY.walkthroughBody[locale]}</p>
             <Button
@@ -210,9 +210,7 @@ function SystemsPanel({ families, close }: { families: ResolvedFamily[]; close: 
           <li key={f.key}>
             <NavLink path={f.overview} className="mm-family" onClick={close}>
               <span className="mm-eyebrow">{f.area[locale]}</span>
-              <span className="mm-product" dir="ltr">
-                {f.name[locale]}
-              </span>
+              <span className="mm-product">{f.name[locale]}</span>
               <span className="mm-summary">{f.summary[locale]}</span>
               <span className="mm-count">{countLabel(f, locale)}</span>
             </NavLink>
@@ -266,11 +264,7 @@ function TopItem({
   return (
     <div className="mm-item" data-compact={compact ? '' : undefined} data-open={open ? '' : undefined} data-active={active ? '' : undefined} onMouseEnter={onOpen}>
       <NavLink path={path} className="mm-top">
-        {eyebrow && (
-          <span className="mm-top-eyebrow" dir="ltr">
-            {eyebrow}
-          </span>
-        )}
+        {eyebrow && <span className="mm-top-eyebrow">{eyebrow}</span>}
         <span className="mm-top-label">{label}</span>
       </NavLink>
       <button
