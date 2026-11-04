@@ -27,8 +27,10 @@ export type ProductFamily = {
   key: ProductKey;
   /** Product name, e.g. DIGIT Pro. */
   name: L;
-  /** Business area shown in the header, e.g. المالية. */
+  /** Business area, e.g. المالية. */
   area: L;
+  /** Short top-level header label. */
+  nav: L;
   overview: string;
   summary: L;
   /** What the department list is called in menus and hubs. */
@@ -47,6 +49,7 @@ const pro: ProductFamily = {
   key: 'pro',
   name: { ar: 'DIGIT Pro', en: 'DIGIT Pro' },
   area: { ar: 'المالية', en: 'Finance' },
+  nav: { ar: 'المالية', en: 'Finance' },
   overview: '/pro',
   summary: {
     ar: 'المحاسبة والمبيعات والمشتريات والمخزون والأصول والتقارير في نظام مالي وتشغيلي واحد.',
@@ -75,6 +78,7 @@ const hr: ProductFamily = {
   base: '/hr',
   name: { ar: 'DIGIT HR', en: 'DIGIT HR' },
   area: { ar: 'الموارد البشرية', en: 'Human Resources' },
+  nav: { ar: 'الموارد البشرية', en: 'HR' },
   overview: '/modules/hr-payroll',
   summary: { ar: 'دورة الموظف والقوى العاملة في نظام واحد، من الهيكل التنظيمي حتى الحوكمة.', en: 'The employee and workforce lifecycle in one system, from organization structure to governance.' },
   groupLabel: { ar: 'مجالات DIGIT HR', en: 'DIGIT HR areas' },
@@ -98,6 +102,7 @@ const construction: ProductFamily = {
   base: '/construction',
   name: { ar: 'DIGIT Construction', en: 'DIGIT Construction' },
   area: { ar: 'المقاولات', en: 'Construction' },
+  nav: { ar: 'المقاولات', en: 'Construction' },
   overview: '/modules/contracting',
   summary: { ar: 'رحلات المشروع والعقود والتكلفة لشركات المقاولات، مرتبطة بمحاسبتك.', en: 'Project, contract and cost journeys for contractors, connected to your accounting.' },
   groupLabel: { ar: 'أقسام DIGIT Construction', en: 'DIGIT Construction departments' },
@@ -121,6 +126,7 @@ const pos: ProductFamily = {
   key: 'pos',
   name: { ar: 'DIGIT POS', en: 'DIGIT POS' },
   area: { ar: 'نقاط البيع', en: 'Point of Sale' },
+  nav: { ar: 'نقاط البيع', en: 'POS' },
   overview: '/modules/pos',
   summary: { ar: 'نقاط بيع تربط المبيعات بالمخزون والمحاسبة لحظيًا وتدعم فروعك المتعددة.', en: 'Point of sale that links sales to inventory and accounting in real time across your branches.' },
   groupLabel: { ar: 'حلول حسب النشاط', en: 'Solutions by business' },
