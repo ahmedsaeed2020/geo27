@@ -4,6 +4,7 @@ import { NavLink } from '@/components/nav/nav-links';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import ShotFrame from '@/components/product/ShotFrame';
 import ShotLightbox from '@/components/product/ShotLightbox';
+import ScreenMosaic from '@/components/product/ScreenMosaic';
 import { Button } from '@/components/ui/button';
 import { useCatalog } from '@/components/catalog/useCatalog';
 import { useScrollEdges } from '@/hooks/use-scroll-edges';
@@ -562,10 +563,19 @@ function SectionView({ section, title, body, eyebrow, locale, index }: { section
   );
 }
 
-function ScreensSection({ head, ids }: { head: ReactNode; ids: string[] }) {
+function ScreensSection({ head, ids, locale, label, id }: { head: ReactNode; ids: string[]; locale: Locale; label: string; id: string }) {
   const shots = useMemo(() => shotsOf(ids), [ids]);
+  const tiles = useMemo(() => shots.map(shot => ({ shot })), [shots]);
   const box = useLightbox(shots);
   if (!shots.length) return <>{head}</>;
+  if (shots.length > 1) {
+    return (
+      <>
+        {head}
+        <ScreenMosaic tiles={tiles} locale={locale} label={label} id={id} />
+      </>
+    );
+  }
   return (
     <>
       {head}
