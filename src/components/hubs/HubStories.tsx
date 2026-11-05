@@ -2,6 +2,7 @@ import { useId, useMemo, useRef, useState, type CSSProperties, type KeyboardEven
 import { ArrowLeft, ArrowRight, Expand, RotateCcw, Search, X } from 'lucide-react';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import ShotLightbox from '@/components/product/ShotLightbox';
+import ScreenMosaic from '@/components/product/ScreenMosaic';
 import { StatusChip } from '@/components/specialist/SpecialistBody';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -53,6 +54,9 @@ const C = {
 } satisfies Record<string, L>;
 
 /** A magnified region of a real screen, with the full screen one click away. */
+/** Registered real screens as mosaic tiles (unknown ids are skipped). */
+const shotTiles = (ids: string[]) => ids.map(screenById).filter((s): s is Shot => !!s).map(shot => ({ shot }));
+
 function Lens({ shotId, focus, locale }: { shotId: string; focus: Focus; locale: Locale }) {
   const shot = screenById(shotId);
   const [open, setOpen] = useState<number | null>(null);
@@ -265,7 +269,7 @@ export function CrmStory() {
               {stage.id === 'handoff' && <p className="hs-panel-note">{CRM.handoff[locale]}</p>}
               <DeptLink path={stage.dept} locale={locale} />
             </div>
-            {stage.shot ? <Lens shotId={stage.shot.id} focus={stage.shot.focus} locale={locale} /> : <PhotoNote photoKey="crm-sales-call" locale={locale} />}
+            {stage.shots?.length ? <ScreenMosaic tiles={shotTiles(stage.shots)} locale={locale} label="DIGIT CRM" id={`${base}-jm-${stage.id}`} /> : stage.shot ? <Lens shotId={stage.shot.id} focus={stage.shot.focus} locale={locale} /> : <PhotoNote photoKey="crm-sales-call" locale={locale} />}
           </div>
         </div>
       </section>
@@ -297,7 +301,7 @@ export function CrmStory() {
                   <dd>{item.source[locale]}</dd>
                 </div>
               </dl>
-              {item.shot ? <Lens shotId={item.shot.id} focus={item.shot.focus} locale={locale} /> : <p className="hs-panel-note">{C.noShot[locale]}</p>}
+              {item.shots?.length ? <ScreenMosaic tiles={shotTiles(item.shots)} locale={locale} label="DIGIT CRM" id={`${base}-wm-${item.id}`} note={false} /> : item.shot ? <Lens shotId={item.shot.id} focus={item.shot.focus} locale={locale} /> : <p className="hs-panel-note">{C.noShot[locale]}</p>}
             </div>
           </div>
           <DeptLink path="/crm/management" locale={locale} />
