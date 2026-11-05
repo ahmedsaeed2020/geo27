@@ -70,9 +70,10 @@ export const CUSTOMER_COUNT = 50;
 export const SUCCESS_STORIES_COPY = {
   kicker: { ar: 'شركاء النجاح', en: 'Our customers' },
   heading: { ar: 'قصص النجاح', en: 'Success stories' },
+  /** Text before and after the counted customer figure. */
   lead: {
-    ar: (n: string) => `أكثر من ${n} منشأة سعودية في المقاولات والعقار والتجارة والخدمات والتدريب اختارت Digit.`,
-    en: (n: string) => `More than ${n} Saudi businesses across contracting, real estate, trading, services and training chose Digit.`,
+    ar: ['أكثر من ', ' منشأة سعودية في المقاولات والعقار والتجارة والخدمات والتدريب اختارت Digit.'],
+    en: ['More than ', ' Saudi businesses across contracting, real estate, trading, services and training chose Digit.'],
   },
   listLabel: { ar: 'شعارات عملاء Digit', en: 'Digit customer logos' },
   pause: { ar: 'إيقاف حركة الشعارات', en: 'Pause the logo strip' },
