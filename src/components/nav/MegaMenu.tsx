@@ -17,7 +17,7 @@ import {
   type ResolvedDepartment,
   type ResolvedFamily,
 } from '@/content/catalog';
-import { SHOTS } from '@/content/product-shots';
+import { screenById } from '@/content/screens';
 import { localeHref, useLocale, type Locale } from '@/lib/i18n';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { Button } from '@/components/ui/button';
@@ -89,7 +89,7 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
   const pathname = useRouterState({ select: s => s.location.pathname.replace(/^\/en(?=\/|$)/, '') || '/' });
   const demo = useDemoRequest();
   const [shotId, setShotId] = useState(family.shot ?? '');
-  const shot = shotId ? SHOTS[shotId] : undefined;
+  const shot = screenById(shotId);
   const list = family.key === 'pos' ? [] : family.departments;
   const visual = FAMILY_VISUAL[family.key];
   const FamilyIcon = visual.icon;
