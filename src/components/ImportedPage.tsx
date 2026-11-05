@@ -1,5 +1,5 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { createContext, Fragment, useContext, useEffect, useMemo, useRef, type CSSProperties, type ElementType } from "react";
+import { createContext, Fragment, useContext, useEffect, useMemo, useRef, type CSSProperties, type ElementType, type ReactNode } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { ChevronDown } from "lucide-react";
 import Header from "@/components/Header";
@@ -128,7 +128,7 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
     const classes = [node.className, hero && "scene-backed", hero && (directory ? "scene-directory" : "scene-hero"), role && "scene-hero-copy", role === "centered" && "scene-hero-centered"].filter(Boolean).join(" ");
     const children = node.children ?? [];
     const split = layout.split?.id === node.id ? layout.split : undefined;
-    let body: React.ReactNode;
+    let body: ReactNode;
     if (split?.mode === "first-child" && children.length) {
       body = <>
         <div className="scene-split-head"><RenderNode node={children[0]} pageKey={pageKey} /><SplitPhotoFigure photo={split} /></div>
@@ -214,12 +214,11 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
     updatePricing();
     return () => { pricing?.removeEventListener("change", updatePricing); };
   }, [pageKey]);
-  const heroIndex = page.nodes.findIndex(node => /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/.test(node.className));
-  const contentIndex = page.nodes.findIndex((node, index) => index > Math.max(heroIndex, 0) && node.type === "container" && !/(?:^|\s)(?:band-crumb|proof|nav)(?:\s|$)/.test(node.className));
-   const bodyIndex = contentIndex;
+  const heroIndex = page.nodes.findIndex(node => HERO_CLASS.test(node.className));
+  const layout = useMemo(() => sceneLayout(page.nodes, heroIndex, pageKey), [page.nodes, heroIndex, pageKey]);
   const cms = useCmsPage();
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} backdrop={heroIndex < 0 && index === 0} bodyBackdrop={index === bodyIndex} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></SceneLayoutContext.Provider><Footer /></div>, locale);
 }
