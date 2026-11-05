@@ -88,7 +88,8 @@ export const CONSTRUCTION_CHANGE: { id: string; label: L; body: L }[] = [
 
 /* ---------- CRM: Lead-to-Deal explorer and manager workbench (pp. 25–26) ---------- */
 export type Focus = { x: number; y: number; zoom: number };
-export type CrmStage = { id: string; label: L; objects: string[]; actions: L[]; outcome: L; dept: string; shot?: { id: string; focus: Focus }; status: EvidenceStatus };
+/** `shots`: real DIGIT CRM screens and close-ups (ids in src/content/screens.ts) shown beside the stage. */
+export type CrmStage = { id: string; label: L; objects: string[]; actions: L[]; outcome: L; dept: string; shot?: { id: string; focus: Focus }; shots?: string[]; status: EvidenceStatus };
 
 export const CRM_JOURNEY: CrmStage[] = [
   {
@@ -98,7 +99,8 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('تسجيل المصدر', 'Record the source'), t('الإسناد لبائع', 'Assign to a rep')],
     outcome: t('عميل محتمل له مصدر ومالك.', 'A lead with a source and an owner.'),
     dept: '/crm/leads',
-    status: 'documented',
+    shots: ['crm2-leads-sources', 'crm2-nav-leads'],
+    status: 'demonstrated',
   },
   {
     id: 'qualification',
@@ -107,7 +109,8 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('أول تواصل', 'First contact'), t('قرار مؤهل أو غير مؤهل بسبب', 'Qualified or not, with a reason')],
     outcome: t('قرار تأهيل موثّق وزمن استجابة معروف.', 'A recorded qualification decision and a known response time.'),
     dept: '/crm/leads',
-    status: 'documented',
+    shots: ['crm2-leads-funnel', 'crm2-leads-first-contact'],
+    status: 'demonstrated',
   },
   {
     id: 'account',
@@ -116,7 +119,8 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('إنشاء المنشأة وجهات الاتصال', 'Create the organization and contacts'), t('تحديد صاحب القرار', 'Identify the decision maker')],
     outcome: t('سجل عميل واحد يعرفه الجميع.', 'One customer record everyone knows.'),
     dept: '/crm/accounts',
-    status: 'documented',
+    shots: ['crm2-acc-health', 'crm2-acc-open-opps'],
+    status: 'demonstrated',
   },
   {
     id: 'opportunity',
@@ -125,7 +129,8 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('تحديد القيمة والاحتمال', 'Set value and probability'), t('تحديد تاريخ الإغلاق المتوقع', 'Set the expected close date')],
     outcome: t('صفقة في مرحلة واضحة بقيمة مرجحة.', 'A deal in a clear stage with a weighted value.'),
     dept: '/crm/opportunities',
-    status: 'documented',
+    shots: ['crm2-opp-conversion', 'crm2-opp-ageing'],
+    status: 'demonstrated',
   },
   {
     id: 'follow-up',
@@ -134,7 +139,8 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('جدولة الإجراء التالي', 'Schedule the next action'), t('تسجيل النتيجة', 'Record the outcome')],
     outcome: t('لا صفقة بلا خطوة تالية؛ الراكد يظهر كتنبيه.', 'No deal without a next step; stalled deals show as alerts.'),
     dept: '/crm/activities',
-    status: 'documented',
+    shots: ['crm2-act-mix', 'crm2-act-daily'],
+    status: 'demonstrated',
   },
   {
     id: 'handoff',
@@ -143,19 +149,20 @@ export const CRM_JOURNEY: CrmStage[] = [
     actions: [t('الفوز بالصفقة', 'Win the deal'), t('الانتقال إلى عرض السعر في DIGIT Pro', 'Move to the quotation in DIGIT Pro')],
     outcome: t('تبدأ دورة البيع في DIGIT Pro: عرض سعر وأمر بيع وفاتورة وتحصيل.', 'The DIGIT Pro selling cycle starts: quotation, sales order, invoice and collection.'),
     dept: '/modules/sales',
+    shots: ['crm2-opp-weighted', 'crm2-nav-opp'],
     status: 'scoped',
   },
 ];
 
-export type WorkbenchItem = { id: string; label: L; decision: L; owner: L; source: L; status: EvidenceStatus; shot?: { id: string; focus: Focus } };
+export type WorkbenchItem = { id: string; label: L; decision: L; owner: L; source: L; status: EvidenceStatus; shot?: { id: string; focus: Focus }; shots?: string[] };
 
 export const CRM_WORKBENCH: WorkbenchItem[] = [
-  { id: 'unassigned', label: t('عملاء محتملون غير مسندين', 'Unassigned leads'), decision: t('لمن يُسند كل عميل قبل أن يبرد؟', 'Who takes each lead before it goes cold?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('سجل العميل المحتمل ومالكه', 'Lead record and owner'), status: 'documented' },
-  { id: 'overdue', label: t('متابعات متأخرة', 'Overdue follow-ups'), decision: t('من يحتاج تدخلًا اليوم؟', 'Who needs help today?'), owner: t('مدير المبيعات مع البائع', 'Sales manager with the rep'), source: t('المهام والأنشطة المستحقة', 'Due tasks and activities'), status: 'documented' },
-  { id: 'ageing', label: t('عمر المرحلة', 'Stage ageing'), decision: t('أي الصفقات بقيت طويلًا في مرحلتها؟', 'Which deals have sat too long in their stage?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('تاريخ دخول الصفقة للمرحلة', 'Date the deal entered its stage'), status: 'documented' },
-  { id: 'activity', label: t('نشاط البيع', 'Sales activity'), decision: t('هل يكفي نشاط الفريق لتحقيق الهدف؟', 'Is team activity enough to hit the target?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('المكالمات والاجتماعات والمهام', 'Calls, meetings and tasks'), status: 'documented' },
+  { id: 'unassigned', label: t('عملاء محتملون غير مسندين', 'Unassigned leads'), decision: t('لمن يُسند كل عميل قبل أن يبرد؟', 'Who takes each lead before it goes cold?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('سجل العميل المحتمل ومالكه', 'Lead record and owner'), status: 'demonstrated', shots: ['crm2-leads'] },
+  { id: 'overdue', label: t('متابعات متأخرة', 'Overdue follow-ups'), decision: t('من يحتاج تدخلًا اليوم؟', 'Who needs help today?'), owner: t('مدير المبيعات مع البائع', 'Sales manager with the rep'), source: t('المهام والأنشطة المستحقة', 'Due tasks and activities'), status: 'demonstrated', shots: ['crm2-home'] },
+  { id: 'ageing', label: t('عمر المرحلة', 'Stage ageing'), decision: t('أي الصفقات بقيت طويلًا في مرحلتها؟', 'Which deals have sat too long in their stage?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('تاريخ دخول الصفقة للمرحلة', 'Date the deal entered its stage'), status: 'demonstrated', shots: ['crm2-opp-ageing'] },
+  { id: 'activity', label: t('نشاط البيع', 'Sales activity'), decision: t('هل يكفي نشاط الفريق لتحقيق الهدف؟', 'Is team activity enough to hit the target?'), owner: t('مدير المبيعات', 'Sales manager'), source: t('المكالمات والاجتماعات والمهام', 'Calls, meetings and tasks'), status: 'demonstrated', shots: ['crm2-act-daily', 'crm2-act-calls'] },
   { id: 'stalled', label: t('صفقات راكدة', 'Stalled opportunities'), decision: t('نعيد تنشيطها أم نغلقها كخسارة؟', 'Revive them or close them as lost?'), owner: t('البائع ثم المدير', 'The rep, then the manager'), source: t('تنبيه «راكدة» على الصفقة', 'The “stalled” alert on the deal'), status: 'documented' },
-  { id: 'next', label: t('الإجراءات التالية', 'Next actions'), decision: t('ما الصفقات التي لا خطوة تالية لها؟', 'Which deals have no next step?'), owner: t('البائع', 'Sales rep'), source: t('تنبيه «بلا إجراء تالٍ» على الصفقة', 'The “no next step” alert on the deal'), status: 'documented' },
+  { id: 'next', label: t('الإجراءات التالية', 'Next actions'), decision: t('ما الصفقات التي لا خطوة تالية لها؟', 'Which deals have no next step?'), owner: t('البائع', 'Sales rep'), source: t('تنبيه «بلا إجراء تالٍ» على الصفقة', 'The “no next step” alert on the deal'), status: 'demonstrated', shots: ['crm2-opportunities'] },
 ];
 
 /* ---------- POS: chapters and the twelve-sector explorer (pp. 27–28) ---------- */

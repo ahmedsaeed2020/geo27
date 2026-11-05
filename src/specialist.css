@@ -209,3 +209,26 @@
 .sp-page .pp-shot[data-size] .pp-frame[data-mode] .pp-frame-body img { width: 100%; height: auto; max-width: none; max-height: none; margin: 0; object-fit: initial; border-radius: 0; box-shadow: none; -webkit-mask-image: none; mask-image: none; }
 /* The hero caption sits over the photograph: give it its own readable surface. */
 .sp-hero-shot figcaption { align-self: flex-start; max-width: 100%; margin-top: 2px; padding: 7px 12px; border-radius: 10px; background: color-mix(in oklab, var(--paper2) 94%, transparent); box-shadow: 0 8px 22px -14px color-mix(in oklab, var(--deep) 45%, transparent); backdrop-filter: blur(6px); line-height: 1.6; }
+
+/* ---------- Mosaic hero: editorial header (headline | lede + actions) above one frame of real screens ---------- */
+.sp-hero[data-layout="mosaic"] { padding-bottom: 40px; }
+.sp-hero-top { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); align-items: end; gap: 18px clamp(28px, 5vw, 72px); margin-top: 24px; }
+.sp-hero-top .sp-hero-lede { margin-top: 0; }
+.sp-hero-top .sp-hero-actions { margin-top: 20px; }
+.sp-hero-mosaic { margin-top: clamp(26px, 3.4vw, 40px); }
+.sp-hero[data-layout="mosaic"] .sp-legend { margin-top: 22px; }
+
+/* ---------- CTA photograph: crisp on its own half, never washed out behind the text ---------- */
+.sp-cta-photo { inset: 0 auto 0 auto; inset-inline-end: 0; width: min(50%, 860px); opacity: 1; object-position: 50% 16%; -webkit-mask-image: linear-gradient(to left, #000 72%, transparent); mask-image: linear-gradient(to left, #000 72%, transparent); }
+[dir="rtl"] .sp-cta-photo { -webkit-mask-image: linear-gradient(to right, #000 72%, transparent); mask-image: linear-gradient(to right, #000 72%, transparent); }
+.sp-cta::after, [dir="rtl"] .sp-cta::after { content: none; }
+.sp-cta .dp-wrap > div { max-width: min(560px, 48%); }
+.sp-cta .dp-wrap { flex-direction: column; align-items: flex-start; justify-content: center; }
+
+@media (max-width: 900px) {
+  .sp-hero-top { grid-template-columns: minmax(0, 1fr); align-items: start; }
+  .sp-cta { padding-top: 0; }
+  .sp-cta-photo { position: relative; display: block; width: 100%; height: 240px; margin-bottom: 28px; -webkit-mask-image: linear-gradient(to top, transparent, #000 34%); mask-image: linear-gradient(to top, transparent, #000 34%); }
+  [dir="rtl"] .sp-cta-photo { -webkit-mask-image: linear-gradient(to top, transparent, #000 34%); mask-image: linear-gradient(to top, transparent, #000 34%); }
+  .sp-cta .dp-wrap > div { max-width: none; }
+}

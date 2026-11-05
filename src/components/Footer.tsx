@@ -159,13 +159,12 @@ export default function Footer() {
         {/* Bottom row */}
         <div className="flex flex-wrap items-center justify-between gap-4 pt-6 text-[12.5px]">
           <span>© 2026 Digit · جميع الحقوق محفوظة · صُنع في السعودية</span>
-          <span className="font-monospace text-[12px]">
-            <a href="/#" className="hover:text-mint">سياسة الخصوصية</a>
-            <span className="mx-2 opacity-50">·</span>
-            <a href="/#" className="hover:text-mint">الشروط والأحكام</a>
-            <span className="mx-2 opacity-50">·</span>
-            <LanguageSwitch />
-          </span>
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 text-[13px]">
+            <a href="/terms#c-7" className="hover:text-mint">سياسة الخصوصية</a>
+            <span className="opacity-40" aria-hidden="true">·</span>
+            <a href="/terms" className="hover:text-mint">الشروط والأحكام</a>
+            <LanguageSwitch tone="dark" />
+          </div>
         </div>
       </div>
     </footer>

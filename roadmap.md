@@ -1,3 +1,14 @@
+# Owner notes 2026-11-05 13:58 (home accepted; footer language, form scene, masonry screens, CRM imagery, assistant look)
+- [x] Footer: the blank white language pill becomes a clear globe icon + "English"/"العربية" button styled for the dark footer; dead privacy/terms links fixed.
+- [x] Request form section: form in one column (right in Arabic, left in English) over a full scene — the Digit advisor (ADVISOR-SA-A) presenting to the Saudi owner (OWNER-SA-A) in a luxury meeting room beside a large screen that shows a real Digit screen (composited, never generated UI); AR/EN mirrored versions, mobile stacking; applied to every LeadCapturePanel and the /demo and /quote pages.
+- [x] Masonry screen mosaic: one framed "engine" holding several real-screen crops (wide on top, square + rectangle below, tall side), each tile opening the full screen; reusable across inner pages.
+- [x] CRM: new crisp crops from the owner's CRM pack (funnel, sources donut, first-contact time, stage ageing, stage conversion, expected closings, health donut, activity mix, calls by result, KPI strips, module navigation), provenance recorded; every CRM area page hero shows its mosaic instead of the person-with-screen photo, plus an in-page "from inside the system" mosaic.
+- [x] Apply the mosaic style to the other inner pages that have real screens (HR sections, Construction areas, CRM module page).
+- [x] AI assistant: premium launcher with label, branded header with avatar/online state, welcome card with suggested questions (AR/EN), polished bubbles and composer, mobile full-height sheet.
+- [x] QA: AR/EN desktop + mobile on CRM/HR/Construction pages, forms, footer, assistant; tests; build.
+- [ ] Owner: a real screen of CRM users/roles/settings so the CRM administration area can join the mosaics (it stays a labelled diagram until then).
+- [ ] Owner: review the new request scene, screen mosaics and assistant on the preview and approve publishing.
+
 # Site-wide clarity pass (owner 2026-11-05 08:32: 200+ figure, no empty frames, clear photos, capabilities imagery, menu identity)
 - [x] Customer figure: «أكثر من 200 منشأة سعودية» / "200+ Saudi businesses" everywhere (hero, home, slider, stories strip, SEO, assistant, llms.txt, translations, tests).
 - [x] Empty frames: every "مثال توضيحي / لقطة توضيحية" browser frame on module, industry and POS pages shows a real registered screen or a clear contextual photo; no placeholder captions left.

@@ -4,6 +4,7 @@ import { NavLink } from '@/components/nav/nav-links';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import ShotFrame from '@/components/product/ShotFrame';
 import ShotLightbox from '@/components/product/ShotLightbox';
+import ScreenMosaic from '@/components/product/ScreenMosaic';
 import { Button } from '@/components/ui/button';
 import { useCatalog } from '@/components/catalog/useCatalog';
 import { useScrollEdges } from '@/hooks/use-scroll-edges';
@@ -211,6 +212,84 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
   const lead = shots[0];
   const box = useLightbox(shots);
   const demo = () => focusLeadForm({ product: dept.product, department: dept.slug });
+  // An editor's chosen hero screen leads the mosaic too.
+  const tiles = useMemo(() => {
+    const ids = dept.mosaic ?? [];
+    return shotsOf(heroShotId ? [heroShotId, ...ids.filter(id => id !== heroShotId)] : ids).map(shot => ({ shot }));
+  }, [heroShotId, dept.mosaic]);
+  const crumbs = (
+    <nav aria-label={C.crumbs[locale]} className="dp-crumbs">
+      <ol role="list">
+        <li>
+          <NavLink path="/">{C.home[locale]}</NavLink>
+        </li>
+        {product && (
+          <li>
+            <NavLink path={product.overview}>{product.name[locale]}</NavLink>
+          </li>
+        )}
+        <li aria-current="page">{crumb}</li>
+      </ol>
+    </nav>
+  );
+  const actions = (
+    <div className="sp-hero-actions">
+      <Button size="lg" onClick={demo}>
+        {C.demo[locale]}
+      </Button>
+      {product && (
+        <Button asChild size="lg" variant="outline">
+          <NavLink path={product.overview}>
+            {C.overview[locale]} {product.name[locale]}
+          </NavLink>
+        </Button>
+      )}
+    </div>
+  );
+  const legend = (
+    <dl className="sp-legend" aria-label={C.legend[locale]}>
+      {/* "Shown in a real screen" is only explained on a page that actually shows one. */}
+      {(Object.keys(STATUS) as EvidenceStatus[]).filter(s => s !== 'demonstrated' || dept.heroShots.length > 0).map(s => (
+        <div key={s}>
+          <dt>
+            <StatusChip status={s} locale={locale} />
+          </dt>
+          <dd>{STATUS[s].hint[locale]}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+  if (tiles.length >= 3) {
+    // Several real screens: an editorial header above one mosaic of screens and close-ups (no photo behind them).
+    return (
+      <section className="sp-hero" data-layout="mosaic" data-signature={dept.signature} data-product={dept.product}>
+        <div className="dp-wrap">
+          {crumbs}
+          <div className="sp-hero-top">
+            <div className="sp-hero-copy">
+              {product && (
+                <p className="sp-eyebrow">
+                  <bdi>{product.name[locale]}</bdi> · {product.area[locale]}
+                </p>
+              )}
+              <h1 className="sp-h1">{headline}</h1>
+            </div>
+            <div className="sp-hero-aside">
+              <p className="sp-hero-lede">{lede}</p>
+              {actions}
+            </div>
+          </div>
+          <div className="sp-hero-mosaic">
+            <ScreenMosaic tiles={tiles} locale={locale} label={product?.name[locale] ?? SPECIALIST_META[dept.product].name} id={`sp-hero-${dept.slug}`} />
+          </div>
+          {legend}
+        </div>
+        <p className="sr-only">
+          {C.profile[locale]} {entry.profilePages.join(locale === 'ar' ? '، ' : ', ')}
+        </p>
+      </section>
+    );
+  }
   return (
     <section className="sp-hero" data-signature={dept.signature} data-product={dept.product}>
       <div className="dp-wrap">
@@ -284,7 +363,7 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
 }
 
 /* ---------- Section renderers ---------- */
-function SectionView({ section, title, body, eyebrow, locale, index }: { section: SpecialistSection; title: string; body: string; eyebrow: string; locale: Locale; index: number }) {
+function SectionView({ section, title, body, eyebrow, locale, index, label }: { section: SpecialistSection; title: string; body: string; eyebrow: string; locale: Locale; index: number; label: string }) {
   const hid = `sp-${section.id}-title`;
   const lede = body || section.lede[locale];
   const head = <SectionHead id={hid} title={title} lede={lede} eyebrow={eyebrow || undefined} />;
@@ -453,7 +532,7 @@ function SectionView({ section, title, body, eyebrow, locale, index }: { section
       );
       break;
     case 'screens':
-      inner = <ScreensSection head={head} ids={section.shots} />;
+      inner = <ScreensSection head={head} ids={section.shots} locale={locale} label={label} id={`sp-${section.id}`} />;
       break;
     case 'scope':
       inner = (
@@ -484,10 +563,19 @@ function SectionView({ section, title, body, eyebrow, locale, index }: { section
   );
 }
 
-function ScreensSection({ head, ids }: { head: ReactNode; ids: string[] }) {
+function ScreensSection({ head, ids, locale, label, id }: { head: ReactNode; ids: string[]; locale: Locale; label: string; id: string }) {
   const shots = useMemo(() => shotsOf(ids), [ids]);
+  const tiles = useMemo(() => shots.map(shot => ({ shot })), [shots]);
   const box = useLightbox(shots);
   if (!shots.length) return <>{head}</>;
+  if (shots.length > 1) {
+    return (
+      <>
+        {head}
+        <ScreenMosaic tiles={tiles} locale={locale} label={label} id={id} />
+      </>
+    );
+  }
   return (
     <>
       {head}
@@ -580,7 +668,7 @@ export default function SpecialistBody({ content, locale, entry, source, renderB
         if (b.type !== 'source') return renderBlock(b, i);
         const section = source.sections.find(s => s.id === b.ref);
         if (!section) return null;
-        return <SectionView key={b.id} section={section} title={b.title.trim() || section.title[locale]} body={b.body.trim()} eyebrow={b.eyebrow.trim()} locale={locale} index={sectionIndex++} />;
+        return <SectionView key={b.id} section={section} title={b.title.trim() || section.title[locale]} body={b.body.trim()} eyebrow={b.eyebrow.trim()} locale={locale} index={sectionIndex++} label={SPECIALIST_META[source.product].name} />;
       })}
 
       <section className="sp-cta" aria-labelledby="sp-cta-title">
@@ -591,7 +679,7 @@ export default function SpecialistBody({ content, locale, entry, source, renderB
             <h2 id="sp-cta-title">{C.ctaTitle[locale]}</h2>
             <p>{C.ctaBody[locale]}</p>
           </div>
-          <Button size="lg" variant="secondary" onClick={demo}>
+          <Button size="lg" className="bg-mint text-ink hover:bg-mint/90" onClick={demo}>
             {C.demo[locale]}
           </Button>
         </div>

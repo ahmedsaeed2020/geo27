@@ -1,0 +1,108 @@
+/* Request section on the advisor/owner meeting scene (LeadScene). Everything is scoped under .ls-root so imported-page
+   element rules (h2, p, ul, li, img, figure) never reach it, and it never restyles anything outside.
+   Desktop: the photograph fills the section; the form card sits on the reading side (right in Arabic, left in English)
+   and the photograph slides away from the card just enough that both people and the display stay clear of it.
+   Narrow screens: the photograph becomes a crisp band above the card. */
+.ls-root {
+  --ls-card: clamp(440px, 36cqw, 520px);
+  --ls-edge: max(24px, calc((100cqw - 1320px) / 2));
+  --ls-space: calc(var(--ls-card) + var(--ls-edge) + 28px);
+  container-type: inline-size;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--dark);
+  color: var(--ink);
+}
+.ls-root .ls-media { position: absolute; inset: 0; z-index: -2; margin: 0; }
+.ls-root .ls-media img {
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center 38%;
+}
+/* People and display occupy the first 60% of the Arabic photograph (the last 60% of the mirrored English one). */
+.ls-root[data-dir="rtl"] .ls-media img { left: 0; translate: min(0px, calc(100cqw - var(--ls-space) - 60%)) 0; }
+.ls-root[data-dir="ltr"] .ls-media img { right: 0; translate: max(0px, calc(var(--ls-space) - 100cqw + 60%)) 0; }
+.ls-root .ls-shade { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.ls-root[data-dir="rtl"] .ls-shade { background: linear-gradient(270deg, color-mix(in oklab, var(--dark) 52%, transparent) 0%, color-mix(in oklab, var(--dark) 18%, transparent) 38%, transparent 52%); }
+.ls-root[data-dir="ltr"] .ls-shade { background: linear-gradient(90deg, color-mix(in oklab, var(--dark) 52%, transparent) 0%, color-mix(in oklab, var(--dark) 18%, transparent) 38%, transparent 52%); }
+
+.ls-root .ls-chip {
+  position: absolute;
+  bottom: 26px;
+  inset-inline-end: var(--ls-edge);
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  max-width: calc(100% - var(--ls-space) - 24px);
+  padding: 9px 16px 9px 14px;
+  border: 1px solid color-mix(in oklab, var(--paper2) 28%, transparent);
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--dark) 62%, transparent);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--paper2);
+}
+.ls-root .ls-chip-dot { position: relative; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); }
+.ls-root .ls-chip-dot::after { content: ""; position: absolute; inset: -4px; border-radius: 50%; border: 2px solid var(--mint); opacity: 0; animation: ls-ping 2.4s ease-out infinite; }
+@keyframes ls-ping { 0% { transform: scale(.6); opacity: .8; } 100% { transform: scale(1.8); opacity: 0; } }
+
+.ls-root .ls-wrap { position: relative; display: flex; align-items: center; justify-content: flex-start; min-height: clamp(680px, 56.25cqw, 920px); padding-block: 40px; padding-inline: var(--ls-edge); }
+.ls-root .ls-card {
+  width: var(--ls-card);
+  padding: 26px 28px 22px;
+  border: 1px solid color-mix(in oklab, var(--paper2) 55%, transparent);
+  border-radius: 24px;
+  background: color-mix(in oklab, var(--paper2) 96%, transparent);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 40px 90px -40px rgb(0 0 0 / .6), 0 12px 30px -18px rgb(0 0 0 / .35);
+}
+.ls-root .ls-eyebrow { margin: 0; font-size: 13px; font-weight: 700; color: var(--primary); }
+.ls-root .ls-title { margin: 4px 0 0; font-size: clamp(24px, 2.05vw, 30px); font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); }
+.ls-root .ls-lede { margin: 8px 0 0; font-size: 14.5px; line-height: 1.75; color: var(--body2); }
+.ls-root .ls-points { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 16px; padding: 0; list-style: none; }
+.ls-root .ls-points li { display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 5px 10px 5px 9px; border: 1px solid color-mix(in oklab, var(--primary) 22%, transparent); border-radius: 999px; background: color-mix(in oklab, var(--mint) 12%, var(--paper2)); font-size: 12px; white-space: nowrap; font-weight: 700; line-height: 1.3; color: var(--deep); }
+.ls-root .ls-points svg { width: 14px; height: 14px; flex: none; color: var(--primary); }
+.ls-root .ls-form { margin: 0; padding: 16px 0 0; border-top: 1px dashed var(--dline); }
+.ls-root .ls-form .grid { gap: 10px 12px; }
+.ls-root .ls-form input:not([type="checkbox"]), .ls-root .ls-form select { height: 40px; }
+.ls-root .ls-form > p { margin-top: 8px; font-size: 12.5px; }
+.ls-root .ls-form > label.flex { margin-top: 8px; font-size: 13px; font-weight: 500; }
+.ls-root .ls-submit-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.ls-root .ls-submit-row > button { flex: 1 1 auto; height: 46px; font-size: 15px; }
+.ls-root .ls-form label { font-size: 13.5px; font-weight: 600; color: var(--ink); }
+.ls-root .ls-whatsapp { display: inline-flex; flex: none; align-items: center; justify-content: center; gap: 7px; height: 46px; padding-inline: 16px; border: 1.5px solid color-mix(in oklab, var(--primary) 40%, transparent); border-radius: 10px; font-size: 14px; font-weight: 700; color: var(--primary); text-decoration: none; transition: background-color .2s, border-color .2s; }
+.ls-root .ls-whatsapp:hover { border-color: var(--primary); background: color-mix(in oklab, var(--mint) 14%, transparent); }
+.ls-root .ls-whatsapp:focus-visible { outline: 3px solid var(--ring); outline-offset: 2px; }
+.ls-root .ls-whatsapp svg { width: 17px; height: 17px; }
+
+@media (max-width: 1099px) {
+  .ls-root { background: var(--paper); }
+}
+@container (max-width: 1099px) {
+  .ls-root .ls-media { position: relative; z-index: auto; aspect-ratio: 16 / 10; }
+  .ls-root[data-dir] .ls-media img { inset: 0; width: 100%; height: 100%; min-width: 0; translate: none; }
+  .ls-root[data-dir="rtl"] .ls-media img { object-position: 4% 38%; }
+  .ls-root[data-dir="ltr"] .ls-media img { object-position: 96% 38%; }
+  .ls-root .ls-shade { display: none; }
+  .ls-root .ls-chip { top: 16px; bottom: auto; inset-inline-start: 16px; inset-inline-end: auto; max-width: calc(100% - 32px); }
+  .ls-root .ls-wrap { min-height: 0; justify-content: center; margin-top: -72px; padding: 0 16px 48px; }
+  .ls-root .ls-card { width: 100%; max-width: 680px; }
+}
+@container (max-width: 640px) {
+  .ls-root .ls-media { aspect-ratio: 5 / 4; }
+  .ls-root .ls-chip { font-size: 12px; padding: 7px 12px; }
+  .ls-root .ls-wrap { margin-top: -44px; padding-inline: 12px; }
+  .ls-root .ls-card { padding: 22px 18px 18px; border-radius: 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ls-root .ls-chip-dot::after { animation: none; }
+}

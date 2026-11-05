@@ -19,6 +19,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [21, 22],
     photo: 'construction-aerial',
     heroShots: ['con-executive-kpis', 'con-risk-matrix', 'con-project-360'],
+    mosaic: ['con-executive-kpis', 'con-cash-flow', 'con-risk-matrix', 'con-project-360'],
     illustrative: false,
     signature: 'matrix',
     sections: [
@@ -121,6 +122,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22, 23],
     photo: 'construction-change-review',
     heroShots: ['con-decisions-today', 'con-approval-queue'],
+    mosaic: ['con-decisions-today', 'con-approval-queue', 'con-cost-sheet'],
     illustrative: false,
     signature: 'ledger',
     sections: [
@@ -223,6 +225,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [21, 22, 23],
     photo: 'construction-levels',
     heroShots: ['con-wbs', 'con-project-360'],
+    mosaic: ['con-wbs', 'con-project-360', 'con-risk-matrix'],
     illustrative: false,
     signature: 'timeline',
     sections: [
@@ -326,6 +329,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22, 23],
     photo: 'construction-change-review',
     heroShots: ['con-approval-queue', 'con-decisions-today'],
+    mosaic: ['con-approval-queue', 'con-decisions-today', 'con-cost-cash-chain'],
     illustrative: false,
     signature: 'stack',
     sections: [
@@ -427,6 +431,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22, 24],
     photo: 'construction-measurement',
     heroShots: ['con-cost-sheet'],
+    mosaic: ['con-cost-sheet', 'con-approval-queue', 'con-cash-flow'],
     illustrative: false,
     signature: 'lanes',
     sections: [
@@ -522,6 +527,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22, 24],
     photo: 'construction-measurement',
     heroShots: ['con-cost-cash-chain', 'con-receivables-ageing', 'con-project-360'],
+    mosaic: ['con-cost-cash-chain', 'con-receivables-ageing', 'con-project-360'],
     illustrative: false,
     signature: 'stack',
     sections: [
@@ -626,6 +632,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22],
     photo: 'construction-levels',
     heroShots: ['con-cost-sheet'],
+    mosaic: ['con-cost-sheet', 'con-approval-queue', 'con-wbs'],
     illustrative: false,
     signature: 'lanes',
     sections: [
@@ -707,6 +714,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22, 24],
     photo: 'construction-aerial',
     heroShots: ['con-cost-sheet', 'con-cash-flow', 'con-cost-cash-chain'],
+    mosaic: ['con-cost-sheet', 'con-cash-flow', 'con-cost-cash-chain'],
     illustrative: false,
     signature: 'ledger',
     sections: [
@@ -809,6 +817,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     profilePages: [22],
     photo: 'construction-change-review',
     heroShots: ['con-cash-flow', 'con-receivables-ageing'],
+    mosaic: ['con-cash-flow', 'con-receivables-ageing', 'con-cost-cash-chain', 'con-executive-kpis'],
     illustrative: false,
     signature: 'matrix',
     sections: [

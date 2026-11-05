@@ -52,6 +52,11 @@ export type SpecialistDepartment = {
   photo: string;
   /** Real DIGIT screens (ids in src/content/screens.ts); empty when no capture exists yet. */
   heroShots: string[];
+  /**
+   * Hero screen mosaic: real screens and feature close-ups (ids in src/content/screens.ts), first one leading.
+   * With three or more the hero shows the mosaic instead of a single screen over the photograph.
+   */
+  mosaic?: string[];
   /** True when no real screen exists: the page shows a labelled process graphic and the gap is recorded. */
   illustrative: boolean;
   signature: Signature;
