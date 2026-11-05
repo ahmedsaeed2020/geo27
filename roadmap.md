@@ -1,3 +1,11 @@
+# Award-level motion & interaction (owner brief 2026-11-05, preview only)
+- [x] Shared motion system: per-product entrance identities (Pro, HR x7 arts, Construction, CRM, POS, FSM, site), home orbit/slider first-load beats, scroll reveals and step sequences, home product theater, mega-menu indicator/preview crossfade, lightbox grow-out, section rail, page view transitions.
+- [x] Performance: first-fold photo/lead text painted at once (LCP back to baseline); waiting headings never clipped; reduced motion overrides every rule.
+- [x] QA: 25 pages AR/EN desktop/mobile + reduced motion (63 checks clean), interactions, 153 tests, recordings + report in Files (digit-motion-qa).
+- [ ] Owner: review the motion on the preview and approve publishing.
+- [ ] Section rail on the Pro/Starter package pages (kept off to preserve the published package design; add only if the owner wants it).
+- [ ] Measure real-visitor Core Web Vitals after the next approved publish and compare with the preview measurements.
+
 # Owner notes 2026-11-05 15:07 (screen frame rejected; Trilogy one-page prompt)
 - [x] Screen frame redesign: the multi-screen frame (e.g. CRM reports "5 مقاطع") is rejected as it looks — mixed zoom (blown-up menu crop), heavy caption bars, dashboard-like grid. Replace it with a premium showcase that presents each idea and its real screen clearly at a consistent scale; keep several real screens visible in one frame; lightbox; AR/EN; mobile.
 - [x] Visual review of every page that shows the frame (CRM areas + module, Construction areas + module, HR sections, hub stories) at desktop and mobile, AR/EN, element screenshots inspected one by one.

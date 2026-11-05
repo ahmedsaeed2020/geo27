@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from 'react';
+import { useEffect, useId, useLayoutEffect, useRef, useState, type KeyboardEvent as ReactKeyboardEvent, type ReactNode } from 'react';
 import { useNavigate, useRouterState } from '@tanstack/react-router';
 import { ArrowLeft, ArrowRight, ChevronDown } from 'lucide-react';
 import {
@@ -88,8 +88,16 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
   const locale = useLocale();
   const pathname = useRouterState({ select: s => s.location.pathname.replace(/^\/en(?=\/|$)/, '') || '/' });
   const demo = useDemoRequest();
-  const [shotId, setShotId] = useState(family.shot ?? '');
+  const [shotId, setPreviewId] = useState(family.shot ?? '');
+  // The previous real screen stays underneath while the next one crossfades in.
+  const [prevId, setPrevId] = useState<string | null>(null);
+  const setShotId = (id: string) => {
+    if (id === shotId) return;
+    setPrevId(shotId || null);
+    setPreviewId(id);
+  };
   const shot = screenById(shotId);
+  const prevShot = prevId ? screenById(prevId) : undefined;
   const list = family.key === 'pos' ? [] : family.departments;
   const visual = FAMILY_VISUAL[family.key];
   const FamilyIcon = visual.icon;
@@ -156,11 +164,14 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
               <span />
             </span>
             <span className="mm-shot-body" data-fit={shot.width < 900 || shot.width / shot.height > 1.8 ? 'contain' : 'cover'}>
-              <img key={shot.id} src={shot.src} width={shot.width} height={shot.height} alt={shot.caption[locale]} loading="lazy" decoding="async" />
+              {prevShot && prevShot.id !== shot.id && (
+                <img key={`prev-${prevShot.id}`} className="mm-shot-prev" src={prevShot.src} width={prevShot.width} height={prevShot.height} alt="" aria-hidden="true" decoding="async" onAnimationEnd={() => setPrevId(null)} />
+              )}
+              <img key={shot.id} className="mm-shot-next" src={shot.src} width={shot.width} height={shot.height} alt={shot.caption[locale]} loading="lazy" decoding="async" />
             </span>
             <figcaption>
               <small>{NAV_COPY.realScreen[locale]}</small>
-              {shot.caption[locale]}
+              <span key={shot.id} className="mm-cap">{shot.caption[locale]}</span>
             </figcaption>
           </figure>
         ) : (
@@ -319,8 +330,53 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
   const navRef = useRef<HTMLElement>(null);
   const triggers = useRef<Partial<Record<TopKey, HTMLButtonElement | null>>>({});
   const timer = useRef<number | undefined>(undefined);
+  const previous = useRef<TopKey | null>(null);
+  const escaping = useRef(false);
+  const order: TopKey[] = ['about', ...families.map(f => f.key), 'systems', 'resources'];
 
   useEffect(() => setOpen(null), [pathname]);
+
+  // Switching from one open panel to another slides the new family in from the side it sits on (set before paint).
+  useLayoutEffect(() => {
+    const nav = navRef.current;
+    const from = previous.current;
+    previous.current = open;
+    if (!nav) return;
+    if (open && from && from !== open) {
+      nav.setAttribute('data-switch', '');
+      nav.style.setProperty('--mm-dir', String(order.indexOf(open) > order.indexOf(from) ? 1 : -1));
+    } else nav.removeAttribute('data-switch');
+  });
+
+  // The active indicator glides to the item under the pointer or focus, and rests on the open or current product.
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const rest = () => (open && nav.querySelector<HTMLElement>(`.mm-item[data-open]`)) || nav.querySelector<HTMLElement>('.mm-item[data-active]:not([data-compact])');
+    const move = (item: HTMLElement | null) => {
+      const label = item?.querySelector<HTMLElement>('.mm-top-label');
+      if (!label) { nav.removeAttribute('data-indicator'); return; }
+      const box = nav.getBoundingClientRect();
+      const r = label.getBoundingClientRect();
+      nav.style.setProperty('--mm-ix', `${(r.left - box.left).toFixed(1)}px`);
+      nav.style.setProperty('--mm-iy', `${(r.bottom - box.top + 5).toFixed(1)}px`);
+      nav.style.setProperty('--mm-iw', `${r.width.toFixed(1)}px`);
+      nav.setAttribute('data-indicator', '');
+    };
+    const onOver = (e: Event) => move((e.target as HTMLElement).closest<HTMLElement>('.mm-item') ?? rest());
+    const onLeave = () => move(rest());
+    move(rest());
+    nav.addEventListener('mouseover', onOver);
+    nav.addEventListener('focusin', onOver);
+    nav.addEventListener('mouseleave', onLeave);
+    window.addEventListener('resize', onLeave);
+    return () => {
+      nav.removeEventListener('mouseover', onOver);
+      nav.removeEventListener('focusin', onOver);
+      nav.removeEventListener('mouseleave', onLeave);
+      window.removeEventListener('resize', onLeave);
+    };
+  }, [open, activeProduct, locale, families.length]);
   useEffect(() => {
     if (!open) return;
     const onPointer = (e: PointerEvent) => {
@@ -329,8 +385,11 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return;
       const key = open;
+      // Returning focus to the trigger must not reopen its panel through the focus-visible open.
+      escaping.current = true;
       setOpen(null);
       triggers.current[key]?.focus();
+      requestAnimationFrame(() => { escaping.current = false; });
     };
     document.addEventListener('pointerdown', onPointer);
     document.addEventListener('keydown', onKey);
@@ -354,7 +413,7 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
   const item = (key: TopKey) => ({
     id: key,
     open: open === key,
-    onOpen: () => hoverOpen(key),
+    onOpen: () => { if (!escaping.current) hoverOpen(key); },
     onToggle: () => setOpen(open === key ? null : key),
     register: (el: HTMLButtonElement | null) => {
       triggers.current[key] = el;
@@ -372,6 +431,7 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
         if (!navRef.current?.contains(e.relatedTarget as Node | null)) setOpen(null);
       }}
     >
+      <span className="mm-indicator" aria-hidden="true" />
       {extra}
       <TopItem {...item('about')} label={NAV_COPY.about[locale]} path="/about-4" active={bare === '/about-4'} compact>
         <LinkList links={ABOUT_LINKS} close={close} />

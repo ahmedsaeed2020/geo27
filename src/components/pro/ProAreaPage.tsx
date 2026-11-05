@@ -10,6 +10,7 @@ import { NavLink } from '@/components/nav/nav-links';
 import type { ProPageConfig } from '@/content/pro/pro-pages';
 import type { ProPageContent } from '@/content/pro/types';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import SectionRail from '@/components/motion/SectionRail';
 import { useLocale } from '@/lib/i18n';
 import { PRO_COPY as C } from './pro-copy';
 import ProPageBody from './ProPageBody';
@@ -93,6 +94,7 @@ export default function ProAreaPage({ config, content }: { config: ProPageConfig
         <CmsBlocks />
         {cms?.formEnabled !== false && <LeadCapturePanel interest={cms?.[locale].navLabel.trim() || config.label[locale]} product="pro" />}
       </main>
+      <SectionRail rootRef={main} pageKey={`pro-${config.key}-${locale}`} />
       <Footer />
     </div>
   );

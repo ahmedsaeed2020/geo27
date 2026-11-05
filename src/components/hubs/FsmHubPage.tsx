@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { photo as photoOf } from '@/content/specialist/photos';
 import type { L } from '@/content/specialist/types';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import SectionRail from '@/components/motion/SectionRail';
 import { useLocale } from '@/lib/i18n';
 import { FsmStory } from './HubStories';
 import '@/specialist.css';
@@ -84,6 +85,7 @@ export default function FsmHubPage() {
         <ProductDepartments product="fsm" />
         {cms?.formEnabled !== false && <LeadCapturePanel interest="DIGIT FSM + ITM" product="fsm" />}
       </main>
+      <SectionRail rootRef={mainRef} pageKey={`fsm-hub-${locale}`} />
       <Footer />
     </div>
   );

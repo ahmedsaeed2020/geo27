@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Pause, Play } from "lucide-react";
 
 const DIGIT_ICON =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEaWdpdCI+CiAgPHJlY3QgeD0iMTgiIHk9IjIyLjUiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMyIgcng9IjYuNSIgZmlsbD0iI0ZGRkZGRiI+PC9yZWN0PgogIDxyZWN0IHg9IjYzIiB5PSIyMi41IiB3aWR0aD0iMTkiIGhlaWdodD0iMTMiIHJ4PSI1IiBmaWxsPSIjMzREMzk5Ij48L3JlY3Q+CiAgPHJlY3QgeD0iMTgiIHk9IjQzLjUiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxMyIgcng9IjYuNSIgZmlsbD0iI0ZGRkZGRiI+PC9yZWN0PgogIDxyZWN0IHg9IjE4IiB5PSI2NC41IiB3aWR0aD0iNTAiIGhlaWdodD0iMTMiIHJ4PSI2LjUiIGZpbGw9IiNGRkZGRkYiPjwvcmVjdD4KPC9zdmc+";
@@ -34,9 +35,15 @@ const RINGS = [
   { rx: 0.435, ry: 0.18, period: 150, offset: 1.2, mods: ["pos", "manufacturing", "projects", "einvoicing", "reports"] },
 ];
 
-function OrbitBackground() {
+function OrbitBackground({ paused }: { paused: boolean }) {
   const locale = useLocale();
   const rootRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(paused);
+  const wakeRef = useRef<() => void>(() => {});
+  useEffect(() => {
+    pausedRef.current = paused;
+    wakeRef.current();
+  }, [paused]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -87,6 +94,7 @@ function OrbitBackground() {
         e.style.width = c.rx * R * 2 + "px";
         e.style.height = c.ry * R * 2 + "px";
       });
+      wakeRef.current();
     }
     let ro: ResizeObserver | null = null;
     if (typeof ResizeObserver !== "undefined") {
@@ -118,8 +126,21 @@ function OrbitBackground() {
 
     const reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
     let raf = 0;
+    // The orbit only runs while it is on screen, the tab is visible and the visitor has not paused it.
+    let onScreen = true;
+    let clock = 0;
+    let last = 0;
+    let introStart = -1;
+    const running = () => onScreen && !pausedRef.current && document.visibilityState === "visible";
+    const ease = (x: number) => 1 - Math.pow(1 - x, 3);
     function frame(ts: number) {
-      const t = reduce ? 0 : ts / 1000;
+      raf = 0;
+      if (introStart < 0) introStart = ts;
+      clock += last ? Math.min(ts - last, 50) : 0;
+      last = ts;
+      const t = reduce ? 0 : clock / 1000;
+      // Entrance: the modules travel out from the core onto their orbits, ring by ring.
+      const intro = reduce ? 1 : Math.min(1, (ts - introStart) / 1700);
       curX += (tgX - curX) * 0.08;
       curY += (tgY - curY) * 0.08;
       core.style.transform = `translate(-50%,-50%) translate(${(curX * -18).toFixed(1)}px,${(curY * -14).toFixed(1)}px)`;
@@ -128,9 +149,11 @@ function OrbitBackground() {
         const ang = c.base - (t / c.period) * Math.PI * 2;
         const depth = (Math.sin(ang) + 1) / 2;
         const par = 1 + c.ring * 0.9;
-        let px = cx + Math.cos(ang) * cfg.rx * R + curX * 32 * par * (0.5 + depth * 0.5);
-        let py = cy + Math.sin(ang) * cfg.ry * R + curY * 24 * par * (0.5 + depth * 0.5);
-        let scale = 0.58 + depth * 0.54, op = 0.4 + depth * 0.6;
+        const arrive = ease(Math.min(1, Math.max(0, intro * 1.35 - c.ring * 0.17)));
+        const reach = 0.3 + 0.7 * arrive;
+        let px = cx + Math.cos(ang) * cfg.rx * R * reach + curX * 32 * par * (0.5 + depth * 0.5);
+        let py = cy + Math.sin(ang) * cfg.ry * R * reach + curY * 24 * par * (0.5 + depth * 0.5);
+        let scale = (0.58 + depth * 0.54) * (0.6 + 0.4 * arrive), op = (0.4 + depth * 0.6) * arrive;
         let influence = 0;
         if (mX != null && mY != null) {
           const dx = mX - px, dy = mY - py, dist = Math.sqrt(dx * dx + dy * dy);
@@ -148,19 +171,28 @@ function OrbitBackground() {
         c.el.style.boxShadow = `0 10px 30px rgba(0,0,0,.5),0 0 ${(22 + influence * 42).toFixed(0)}px rgba(52,211,153,${(0.14 + influence * 0.34).toFixed(2)}),inset 0 1px 0 rgba(255,255,255,.08)`;
         c.line.setAttribute("x1", String(cx)); c.line.setAttribute("y1", String(cy));
         c.line.setAttribute("x2", String(px)); c.line.setAttribute("y2", String(py));
-        c.line.setAttribute("stroke-opacity", (0.04 + depth * 0.12 + influence * 0.28).toFixed(3));
         const prog = (t / 3.4 + c.phase) % 1;
         c.pulse.setAttribute("cx", (px + (cx - px) * prog).toFixed(1));
         c.pulse.setAttribute("cy", (py + (cy - py) * prog).toFixed(1));
         c.pulse.setAttribute("r", (1.4 + depth * 1.8 + influence * 1.2).toFixed(2));
-        c.pulse.setAttribute("fill-opacity", ((0.15 + depth * 0.7 + influence * 0.35) * (1 - prog)).toFixed(3));
+        c.pulse.setAttribute("fill-opacity", ((0.15 + depth * 0.7 + influence * 0.35) * (1 - prog) * arrive).toFixed(3));
+        c.line.setAttribute("stroke-opacity", ((0.04 + depth * 0.12 + influence * 0.28) * arrive).toFixed(3));
       }
-      raf = requestAnimationFrame(frame);
+      if (running() && !(reduce && intro >= 1)) raf = requestAnimationFrame(frame);
+      else last = 0;
     }
+    const wake = () => { if (!raf && running()) raf = requestAnimationFrame(frame); };
+    wakeRef.current = wake;
+    const visibility = new IntersectionObserver(([entry]) => { onScreen = Boolean(entry?.isIntersecting); wake(); });
+    visibility.observe(root);
+    document.addEventListener("visibilitychange", wake);
     raf = requestAnimationFrame(frame);
 
     return () => {
       cancelAnimationFrame(raf);
+      visibility.disconnect();
+      document.removeEventListener("visibilitychange", wake);
+      wakeRef.current = () => {};
       ro?.disconnect();
       window.removeEventListener("pointermove", onPointer);
       window.removeEventListener("mousemove", onMouse);
@@ -191,10 +223,16 @@ function OrbitBackground() {
   ), locale);
 }
 
+const PAUSE_COPY = {
+  pause: { ar: "إيقاف الحركة", en: "Pause motion" },
+  play: { ar: "تشغيل الحركة", en: "Play motion" },
+};
+
 export default function Hero() {
   const locale = useLocale();
+  const [paused, setPaused] = useState(false);
   return localizeTree((
-    <section id="digit-orbit" className="relative min-h-[60vh] overflow-hidden bg-dark">
+    <section id="digit-orbit" className="relative min-h-[60vh] overflow-hidden bg-dark" data-paused={paused ? "" : undefined}>
       <style>{`
 #dgt-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#08140F;font-family:'IBM Plex Sans Arabic',-apple-system,Segoe UI,Tahoma,sans-serif;}
 #dgt-bg *{box-sizing:border-box;}
@@ -221,8 +259,12 @@ export default function Hero() {
 @media (max-height:720px){#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{top:38%;}#dgt-bg .dgt-ring,#dgt-bg .dgt-core{top:38%;}}
 @media (prefers-reduced-motion:reduce){#dgt-bg .dgt-halo,#dgt-bg .dgt-disc,#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{animation:none;}}
       `}</style>
-      <OrbitBackground />
-      <div className="relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
+      <OrbitBackground paused={paused} />
+      <button type="button" className="dm-orbit-pause" onClick={() => setPaused(p => !p)} aria-pressed={paused}>
+        {paused ? <Play aria-hidden="true" /> : <Pause aria-hidden="true" />}
+        <span>{paused ? PAUSE_COPY.play[locale] : PAUSE_COPY.pause[locale]}</span>
+      </button>
+      <div className="dm-orbit-copy relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
         <p className="text-[28px] font-medium text-mint lg:text-[44px]">محاسبتك أوضح مع ديجيت</p>
         <h2 className="mx-auto mt-2 px-0 text-[34px] leading-[1.25] font-bold text-paper lg:px-[50px] lg:text-[56px]">
           منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.

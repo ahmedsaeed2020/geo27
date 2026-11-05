@@ -22,6 +22,8 @@ import { CmsProvider } from '@/components/cms/CmsContext';
 import PreviewBanner, { SettingsDraftBanner, type SettingsDraftState } from '@/components/cms/PreviewBanner';
 import v3Css from '../v3.css?url';
 import catalogCss from '../catalog.css?url';
+import motionCss from '../motion.css?url';
+import { motionIdentity } from '@/motion/identity';
 
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
@@ -124,6 +126,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "stylesheet", href: bilingualCss },
       { rel: 'stylesheet', href: v3Css },
       { rel: 'stylesheet', href: catalogCss },
+      { rel: 'stylesheet', href: motionCss },
       ...(icon
         ? [{ rel: "icon", href: icon, type: "image/png" }, { rel: "apple-touch-icon", href: icon }]
         : [
@@ -148,8 +151,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   const english = useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) });
+  // The product family's motion identity is server-rendered so first-fold choreography runs on first paint.
+  const identity = useRouterState({ select: state => motionIdentity(state.location.pathname) });
   return (
-    <html lang={english ? "en" : "ar"} dir={english ? "ltr" : "rtl"}>
+    <html lang={english ? "en" : "ar"} dir={english ? "ltr" : "rtl"} data-dm={identity}>
       <head>
         <HeadContent />
       </head>

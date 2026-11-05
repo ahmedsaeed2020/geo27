@@ -24,6 +24,8 @@ import { withAccessibleHtml } from "@/lib/accessible-html";
 import { isRequestWording } from "@/lib/form-cta";
 import "@/imported-pages.css";
 import { usePageMotion } from "@/hooks/use-page-motion";
+import HeroFlowline from "@/components/motion/HeroFlowline";
+import SectionRail from "@/components/motion/SectionRail";
 import { SourceFrame, FeatureVisualView } from "@/components/SourceVisual";
 import { bodyPhotoInFrame, frameFill, isSourceFrame } from "@/content/page-frames";
 import { FEATURE_VISUALS } from "@/content/feature-visuals";
@@ -184,7 +186,7 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
         {(run < 0 ? [] : children.slice(run)).map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}
       </>;
     } else body = children.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />);
-    return localizeTree(<div {...props} className={classes} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{body}{areaLink && <AreaCardLink department={areaLink} />}</div>, locale);
+    return localizeTree(<div {...props} className={classes} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{hero && !directory && <HeroFlowline />}{body}{areaLink && <AreaCardLink department={areaLink} />}</div>, locale);
   }
   if (node.type === "heading") {
     const tags: Record<string, ElementType> = { h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
@@ -263,5 +265,5 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><AreaLinksContext.Provider value={areaLinks}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></AreaLinksContext.Provider></SceneLayoutContext.Provider><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><AreaLinksContext.Provider value={areaLinks}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></AreaLinksContext.Provider></SceneLayoutContext.Provider><SectionRail rootRef={mainRef} pageKey={`${pageKey}-${locale}`} /><Footer /></div>, locale);
 }

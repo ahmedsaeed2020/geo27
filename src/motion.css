@@ -1,0 +1,448 @@
+/* ==========================================================================================================
+   DIGIT motion system — "Connected intelligence in motion"
+   One stylesheet (linked from the root head so first-fold choreography is present on first paint) for every
+   presentation-only motion layer: hero entrances per product identity, the DIGIT Flowline, step narratives,
+   product screen transitions, the Mega Menu, the screen viewer, the section rail and route transitions.
+   Content is never animated letter by letter; product screens move as whole frames and are never altered.
+   Identity comes from <html data-dm="home|site|pro|hr|construction|crm|fsm|pos">.
+   ========================================================================================================== */
+
+:root {
+  --dm-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --dm-ease-precise: cubic-bezier(.2, 0, 0, 1);
+  --dm-ease-build: cubic-bezier(.7, 0, .2, 1);
+  --dm-ease-spring: cubic-bezier(.34, 1.4, .64, 1);
+  --dm-dist: 18px;
+  --dm-start: -1; /* -1: the reading start is on the left (LTR) */
+  --dm-flow: var(--primary);
+  --dm-flow-soft: color-mix(in oklab, var(--primary) 22%, transparent);
+  --dm-flow-glow: color-mix(in oklab, var(--mint) 60%, transparent);
+}
+[dir="rtl"] { --dm-start: 1; }
+@media (max-width: 1023px) { :root { --dm-dist: 12px; } }
+@media (max-width: 640px) { :root { --dm-dist: 8px; } }
+
+/* ---------- Shared keyframes ---------- */
+@keyframes dm-rise { from { opacity: 0; translate: 0 var(--dm-dist); } }
+@keyframes dm-fade { from { opacity: 0; } }
+/* Masked editorial entrance: the whole headline block is unveiled line by line from the top, in reading order,
+   while it rises into place (never split into glyphs, so Arabic shaping is untouched). */
+@keyframes dm-mask-up {
+  from { clip-path: polygon(-8% -40%, 108% -40%, 108% -40%, -8% -40%); translate: 0 .3em; }
+  to { clip-path: polygon(-8% -40%, 108% -40%, 108% 140%, -8% 140%); translate: 0 0; }
+}
+/* Precision entrance: the line is written in reading direction. */
+@keyframes dm-write-ltr {
+  from { clip-path: polygon(-8% -40%, -8% -40%, -8% 140%, -8% 140%); }
+  to { clip-path: polygon(-8% -40%, 108% -40%, 108% 140%, -8% 140%); }
+}
+@keyframes dm-write-rtl {
+  from { clip-path: polygon(108% -40%, 108% -40%, 108% 140%, 108% 140%); }
+  to { clip-path: polygon(-8% -40%, 108% -40%, 108% 140%, -8% 140%); }
+}
+@keyframes dm-push { from { opacity: 0; translate: calc(var(--dm-start) * 36px) 0; } }
+/* Commercial momentum for headlines: the line is unmasked from the reading start while it moves forward a stage. */
+@keyframes dm-deal-ltr { from { clip-path: inset(-20% 100% -20% -8%); translate: -24px 0; } to { clip-path: inset(-20% -8% -20% -8%); translate: 0 0; } }
+@keyframes dm-deal-rtl { from { clip-path: inset(-20% -8% -20% 100%); translate: 24px 0; } to { clip-path: inset(-20% -8% -20% -8%); translate: 0 0; } }
+@keyframes dm-depth { from { opacity: 0; translate: 0 34px; scale: .955; } }
+@keyframes dm-layers { from { opacity: 0; transform: perspective(1400px) rotateX(9deg) translateY(46px); } }
+@keyframes dm-settle { from { scale: 1.07; } }
+/* Solid variants for the first fold's large text and media: they are painted at full opacity on the first frame and
+   only move, so motion never postpones the page's largest paint (LCP) or hides the lead message. */
+@keyframes dm-lift { from { translate: 0 14px; } }
+@keyframes dm-push-solid { from { translate: calc(var(--dm-start) * 28px) 0; } }
+@keyframes dm-depth-solid { from { translate: 0 26px; scale: .965; } }
+@keyframes dm-layers-solid { from { transform: perspective(1400px) rotateX(7deg) translateY(36px); } }
+@keyframes dm-sheen { from { background-position: var(--dm-sheen-from) 0; } to { background-position: var(--dm-sheen-to) 0; } }
+@keyframes dm-pop { from { opacity: 0; scale: .7; } }
+@keyframes dm-grow-x { from { scale: 0 1; } }
+@keyframes dm-grow-y { from { scale: 1 0; } }
+@keyframes dm-signal { 0% { translate: 0 0; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { translate: 0 var(--dm-run, 100%); opacity: 0; } }
+
+/* ---------- Micro-interactions shared by existing links and buttons ---------- */
+a > svg.lucide-arrow-left, a > svg.lucide-arrow-right, button > svg.lucide-arrow-left, button > svg.lucide-arrow-right { transition: translate .32s var(--dm-ease-out); }
+@media (hover: hover) {
+  a:hover > svg.lucide-arrow-left, button:hover > svg.lucide-arrow-left { translate: -4px 0; }
+  a:hover > svg.lucide-arrow-right, button:hover > svg.lucide-arrow-right { translate: 4px 0; }
+}
+a:focus-visible > svg.lucide-arrow-left { translate: -4px 0; }
+a:focus-visible > svg.lucide-arrow-right { translate: 4px 0; }
+[data-slot="button"] { transition-property: color, background-color, border-color, box-shadow, translate, scale; transition-duration: .22s; transition-timing-function: var(--dm-ease-out); }
+[data-slot="button"]:active { scale: .97; }
+
+/* ==========================================================================================================
+   1. First folds — CSS-only, so they run on first paint (SSR) and never wait for JavaScript.
+      CTAs start within 0.3s; every element is fully readable at rest.
+   ========================================================================================================== */
+
+/* Home — the orbit band: environment, then the business message line by line. */
+#digit-orbit .dm-orbit-copy > * { animation: dm-rise .9s var(--dm-ease-out) backwards; }
+/* The promise line and the supporting line are the band's largest text: always painted, they settle into place. */
+#digit-orbit .dm-orbit-copy > :nth-child(1) { animation-name: dm-lift; animation-duration: 1.1s; animation-delay: .25s; }
+#digit-orbit .dm-orbit-copy > :nth-child(2) { animation-name: dm-mask-up; animation-duration: 1.05s; animation-delay: .4s; }
+#digit-orbit .dm-orbit-copy > :nth-child(3) { animation-name: dm-lift; animation-delay: .55s; }
+#digit-orbit .dm-orbit-copy > :nth-child(4) { animation-delay: .62s; }
+#digit-orbit .dm-orbit-copy > :nth-child(5) { animation-delay: .74s; }
+.dm-orbit-pause { position: absolute; z-index: 3; inset-block-end: 18px; inset-inline-end: 18px; display: inline-flex; align-items: center; gap: 8px; height: 36px; padding-inline: 12px; border: 1px solid color-mix(in oklab, var(--mint) 35%, transparent); border-radius: 999px; background: color-mix(in oklab, var(--dark) 70%, transparent); color: var(--mint); font-size: 12.5px; font-weight: 600; cursor: pointer; opacity: .78; transition: opacity .2s ease, background-color .2s ease; }
+.dm-orbit-pause:hover, .dm-orbit-pause:focus-visible { opacity: 1; background: color-mix(in oklab, var(--dark) 92%, transparent); }
+.dm-orbit-pause:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.dm-orbit-pause svg { width: 14px; height: 14px; }
+#digit-orbit[data-paused] #dgt-bg * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: no-preference) {
+  /* Beat A — the environment: the core ignites, then its orbits open one after another. */
+  #digit-orbit #dgt-bg .dgt-ring { animation: dm-ring-in 1.6s var(--dm-ease-out) backwards; }
+  #digit-orbit #dgt-bg .dgt-r2 { animation-delay: .14s; }
+  #digit-orbit #dgt-bg .dgt-r3 { animation-delay: .28s; }
+  #digit-orbit #dgt-bg .dgt-core { animation: dm-pop 1.1s var(--dm-ease-spring) backwards; }
+  #digit-orbit #dgt-bg .dgt-vignette { animation: dm-fade 1.2s ease backwards; }
+}
+@keyframes dm-ring-in { from { opacity: 0; scale: .5; } }
+
+/* Home — the product slider: the ledger grid opens, the frame draws, then the rail settles (first load only;
+   the slides keep their own approved choreography). */
+.hx .hx-lines { animation: dm-grid-open 1.8s var(--dm-ease-out) .1s backwards; }
+@keyframes dm-grid-open { from { clip-path: circle(0% at 72% 38%); } to { clip-path: circle(140% at 72% 38%); } }
+.hx .hx-orb { animation-name: hx-drift, dm-fade; animation-duration: 18s, 1.6s; animation-timing-function: ease-in-out, ease; animation-iteration-count: infinite, 1; animation-direction: alternate, normal; animation-fill-mode: none, backwards; }
+.hx .hx-orb-2 { animation-duration: 24s, 1.6s; animation-direction: alternate-reverse, normal; }
+.hx .hx-frame { animation: dm-frame-in 1.3s var(--dm-ease-out) .35s backwards; }
+@keyframes dm-frame-in { from { opacity: 0; scale: .92; } }
+.hx .hx-top > * { animation: dm-rise .8s var(--dm-ease-out) backwards; }
+.hx .hx-top > :nth-child(2) { animation-delay: .12s; }
+.hx .hx-tab { animation: dm-rise .7s var(--dm-ease-out) backwards; animation-delay: calc(.55s + var(--dm-k, 0) * 70ms); }
+.hx .hx-tab:nth-child(2) { --dm-k: 1; } .hx .hx-tab:nth-child(3) { --dm-k: 2; } .hx .hx-tab:nth-child(4) { --dm-k: 3; } .hx .hx-tab:nth-child(5) { --dm-k: 4; }
+.hx .hx-controls { animation: dm-fade .8s ease 1s backwards; }
+
+/* Inner pages — shared timings. Copy blocks: badge, headline, lede, actions, chips. */
+.imported-page > :is(.hero, .pos-hero) .scene-hero-copy > *,
+.imported-page > :is(.hero, .pos-hero) > [data-import-container] > [data-import-container]:not(.scene-hero-copy) > *,
+.pv-hero .pv-hero-copy > *, .hr-hero .hr-hero-copy > *, .sp-hero .sp-hero-copy > * {
+  animation: dm-rise .8s var(--dm-ease-out) backwards;
+}
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > :nth-child(2) { animation-delay: .06s; }
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > :nth-child(3) { animation-delay: .18s; }
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > :nth-child(4) { animation-delay: .26s; }
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > :nth-child(5) { animation-delay: .36s; }
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > :nth-child(n + 6) { animation-delay: .44s; }
+
+/* The lead paragraph after the headline is often the first fold's largest text: it is painted at once and settles. */
+:is(.scene-hero-copy, .pv-hero-copy, .hr-hero-copy, .sp-hero-copy) > h1 ~ p,
+.imported-page > :is(.hero, .pos-hero) [data-import-container] > h1 ~ p { animation-name: dm-lift !important; }
+html[data-dm="crm"] :is(.scene-hero-copy, .sp-hero-copy) > h1 ~ p,
+html[data-dm="crm"] .imported-page > .hero [data-import-container] > h1 ~ p { animation-name: dm-push-solid !important; }
+
+/* Headlines: each identity enters the business message differently. */
+.imported-page > :is(.hero, .pos-hero) h1, .pv-hero h1, .hr-hero h1, .sp-hero h1 {
+  animation: dm-mask-up 1s var(--dm-ease-out) .06s backwards !important;
+}
+/* DIGIT Pro and corporate pages — financial precision: the line is written in reading order. */
+html[data-dm="pro"] :is(.imported-page > :is(.hero, .pos-hero), .pv-hero) h1,
+html[data-dm="site"] .imported-page > :is(.hero, .pos-hero) h1 { animation: dm-write-ltr .95s var(--dm-ease-precise) .06s backwards !important; }
+html[data-dm="pro"][dir="rtl"] :is(.imported-page > :is(.hero, .pos-hero), .pv-hero) h1,
+html[data-dm="site"][dir="rtl"] .imported-page > :is(.hero, .pos-hero) h1 { animation-name: dm-write-rtl !important; }
+/* DIGIT CRM — commercial momentum: copy is pushed in from the reading start, like a deal moving a stage. */
+html[data-dm="crm"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-name: dm-push; animation-duration: .85s; }
+html[data-dm="crm"] :is(.imported-page > .hero, .sp-hero) h1 { animation: dm-deal-ltr .9s var(--dm-ease-out) .06s backwards !important; }
+html[data-dm="crm"][dir="rtl"] :is(.imported-page > .hero, .sp-hero) h1 { animation-name: dm-deal-rtl !important; }
+/* DIGIT Construction — project progression: elements are laid like courses, one level after another. */
+html[data-dm="construction"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-duration: .95s; animation-timing-function: var(--dm-ease-build); }
+html[data-dm="construction"] :is(.imported-page > .hero, .sp-hero) h1 { animation-timing-function: cubic-bezier(.45, 0, .15, 1) !important; animation-duration: .95s !important; }
+/* DIGIT POS — operational rhythm: short, even beats; store-type chips land one after another. */
+html[data-dm="pos"] :is(.imported-page > :is(.hero, .pos-hero)) h1 { animation-duration: .7s !important; }
+html[data-dm="pos"] .imported-page > :is(.hero, .pos-hero) .scene-hero-copy > :last-child > * { animation: dm-pop .5s var(--dm-ease-spring) backwards; animation-delay: calc(.42s + var(--dm-k, 0) * 80ms); }
+html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(2) { --dm-k: 1; } html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(3) { --dm-k: 2; }
+html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(4) { --dm-k: 3; } html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(5) { --dm-k: 4; }
+html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(n + 6) { --dm-k: 5; }
+/* Store-type feature chips in POS solution heroes are laid out as chips (their source lost the chip styling). */
+.imported-page .pos-hero :has(> .chip) { display: flex; flex-wrap: wrap; gap: 8px; }
+.imported-page .pos-hero .chip { display: inline-flex; align-items: center; padding: 5px 12px; border: 1px solid var(--dline); border-radius: 999px; background: var(--card); font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--deep); }
+
+/* Imported hero photograph: painted at once (it is usually the page's largest paint), it settles from a slow push-in
+   while a soft light passes over it from the seam outward; depth then comes from the scroll drift. */
+.imported-page .scene-hero > .page-scene-background img { animation: dm-settle 1.8s var(--dm-ease-out) backwards; will-change: translate; }
+.imported-page .scene-hero > .page-scene-background.page-scene-background::after {
+  content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(100deg, transparent 38%, color-mix(in oklab, var(--card) 42%, transparent) 50%, transparent 62%) no-repeat;
+  background-size: 300% 100%; --dm-sheen-from: 0%; --dm-sheen-to: 100%;
+  animation: dm-sheen 1.5s var(--dm-ease-out) .2s both; opacity: .9;
+}
+[dir="ltr"] .imported-page .scene-hero > .page-scene-background.page-scene-background::after { --dm-sheen-from: 100%; --dm-sheen-to: 0%; }
+
+/* DIGIT Pro V4 pages — the real screen enters as the proof, then the chapter index ticks in. */
+.pv-hero .pv-hero-screen { animation: dm-depth-solid 1.1s var(--dm-ease-precise) .2s backwards; }
+.pv-hero .pv-hero-toc > li { animation: dm-rise .6s var(--dm-ease-precise) backwards; animation-delay: calc(.5s + var(--dm-k, 0) * 60ms); }
+.pv-hero .pv-hero-toc > li:nth-child(2) { --dm-k: 1; } .pv-hero .pv-hero-toc > li:nth-child(3) { --dm-k: 2; } .pv-hero .pv-hero-toc > li:nth-child(4) { --dm-k: 3; }
+.pv-hero .pv-hero-toc > li:nth-child(5) { --dm-k: 4; } .pv-hero .pv-hero-toc > li:nth-child(n + 6) { --dm-k: 5; }
+
+/* Specialist area pages (Construction, CRM, Field Service). */
+/* The aside carries the lead paragraph and the actions: painted at once, it settles beside the headline. */
+.sp-hero .sp-hero-aside { animation: dm-lift .9s var(--dm-ease-out) .2s backwards; }
+html[data-dm="crm"] .sp-hero .sp-hero-aside { animation-name: dm-push-solid; }
+.sp-hero .sp-hero-mosaic, .sp-hero .sp-hero-art { animation: dm-depth-solid 1.1s var(--dm-ease-out) .2s backwards; }
+html[data-dm="construction"] .sp-hero .sp-hero-mosaic { animation: dm-layers-solid 1.25s var(--dm-ease-build) .2s backwards; }
+html[data-dm="crm"] .sp-hero .sp-hero-mosaic { animation: dm-push-solid 1.05s var(--dm-ease-out) .2s backwards; }
+.sp-hero .sp-legend > * { animation: dm-rise .6s var(--dm-ease-out) backwards; animation-delay: calc(.7s + var(--dm-k, 0) * 90ms); }
+.sp-hero .sp-legend > :nth-child(2) { --dm-k: 1; } .sp-hero .sp-legend > :nth-child(3) { --dm-k: 2; } .sp-hero .sp-legend > :nth-child(4) { --dm-k: 3; }
+/* Field Service — field to closure: the hub art's steps arrive along the service route. */
+html[data-dm="fsm"] .sp-hero .sp-hero-art { animation: dm-push-solid 1.05s var(--dm-ease-out) .2s backwards; }
+html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation: dm-rise .55s var(--dm-ease-out) backwards; animation-delay: calc(.6s + var(--dm-k, 0) * 110ms); }
+
+/* DIGIT HR departments — the people lifecycle; each department's art keeps its own choreography. */
+.hr-hero .hr-art-lead, .hr-hero .hr-inset { animation: dm-depth-solid 1.05s var(--dm-ease-out) .2s backwards; }
+.hr-hero :is(.hr-orbit-nodes, .hr-path, .hr-ruler, .hr-gates, .hr-drill, .hr-questions) > li,
+.hr-hero :is(.hr-stack-item, .hr-layer), .hr-hero .hr-loop > :not(.hr-loop-ring):not(.hr-loop-hub) {
+  animation: dm-rise .6s var(--dm-ease-out) backwards; animation-delay: calc(.42s + var(--dm-k, 0) * 110ms);
+}
+.hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(2) { --dm-k: 1; } .hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(3) { --dm-k: 2; }
+.hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(4) { --dm-k: 3; } .hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(5) { --dm-k: 4; }
+.hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(6) { --dm-k: 5; } .hr-hero :is(ul, ol, .hr-stack, .hr-layers, .hr-loop) > :nth-child(n + 7) { --dm-k: 6; }
+/* Core HR — the organisation forms around its centre. */
+.hr-art[data-art="constellation"] .hr-orbit-ring { animation: dm-pop 1.1s var(--dm-ease-out) .25s backwards; }
+.hr-art[data-art="constellation"] .hr-orbit-nodes > li { animation-name: dm-pop; animation-timing-function: var(--dm-ease-spring); }
+.hr-art[data-art="constellation"] .hr-orbit-center { animation: dm-fade .8s ease 1.1s backwards; }
+/* Talent — the career path is walked step by step, its records stack behind it. */
+.hr-art[data-art="journey"] .hr-path > li { animation-name: dm-push; }
+.hr-art[data-art="journey"] .hr-stack-item { animation-name: dm-layers-solid; animation-duration: .9s; }
+/* Workforce — the schedule ruler ticks into place. */
+.hr-art[data-art="schedule"] .hr-ruler > li { animation-name: dm-pop; animation-duration: .45s; animation-delay: calc(.38s + var(--dm-k, 0) * 70ms); }
+.hr-art[data-art="schedule"] .hr-ruler-tick { animation: dm-grow-y .5s var(--dm-ease-out) backwards; animation-delay: inherit; transform-origin: bottom; }
+/* Payroll — each gate opens before the next one. */
+.hr-art[data-art="pipeline"] .hr-gates > li { animation-name: dm-push; animation-duration: .55s; animation-delay: calc(.4s + var(--dm-k, 0) * 150ms); }
+.hr-art[data-art="pipeline"] .hr-gate-no { animation: dm-pop .5s var(--dm-ease-spring) backwards; animation-delay: inherit; }
+/* Employee experience — the service loop closes around its hub. */
+.hr-art[data-art="service"] .hr-loop-ring { animation: dm-spin-in 1.4s var(--dm-ease-out) .2s backwards; }
+@keyframes dm-spin-in { from { opacity: 0; rotate: -120deg; scale: .8; } }
+.hr-art[data-art="service"] .hr-loop-hub { animation: dm-pop .8s var(--dm-ease-spring) .3s backwards; }
+/* People intelligence — the drill descends one level at a time. */
+.hr-art[data-art="drill"] .hr-drill > li { animation-duration: .5s; animation-delay: calc(.38s + var(--dm-k, 0) * 140ms); }
+.hr-art[data-art="drill"] .hr-layer { animation-name: dm-layers-solid; animation-duration: .95s; }
+/* Administration — governance questions are laid on the blueprint grid. */
+.hr-art[data-art="blueprint"] .hr-questions > li { animation-name: dm-fade; animation-duration: .7s; }
+.hr-hero .hr-flow > li { animation: dm-rise .5s var(--dm-ease-out) backwards; animation-delay: calc(.62s + var(--dm-k, 0) * 90ms); }
+.hr-hero .hr-flow > li:nth-child(2) { --dm-k: 1; } .hr-hero .hr-flow > li:nth-child(3) { --dm-k: 2; } .hr-hero .hr-flow > li:nth-child(4) { --dm-k: 3; }
+.hr-hero .hr-flow > li:nth-child(5) { --dm-k: 4; } .hr-hero .hr-flow > li:nth-child(n + 6) { --dm-k: 5; }
+
+/* ==========================================================================================================
+   2. DIGIT Flowline — the hero signature on imported product pages: a precise line at the seam between the
+      copy and the photograph, with nodes drawn in each product's own glyph.
+   ========================================================================================================== */
+.dm-flowline { position: absolute; z-index: 0; inset-block: 15%; inset-inline-end: 50%; width: 2px; pointer-events: none; }
+.dm-flowline-track { position: absolute; inset: 0; border-radius: 2px; background: linear-gradient(to bottom, transparent, var(--dm-flow) 14%, var(--dm-flow) 86%, transparent); transform-origin: top; opacity: .55; animation: dm-grow-y 1.4s var(--dm-ease-out) .35s backwards; }
+.dm-flowline-node { position: absolute; inset-inline-start: 50%; top: calc(var(--k) * 25% + 6%); width: 14px; height: 14px; margin-inline-start: -7px; border: 1.5px solid var(--dm-flow); border-radius: 4px; background: var(--card); box-shadow: 0 0 0 4px color-mix(in oklab, var(--card) 70%, transparent); animation: dm-pop .55s var(--dm-ease-spring) backwards; animation-delay: calc(.55s + var(--k) * 230ms); }
+[dir="rtl"] .dm-flowline-node { margin-inline-start: 0; margin-inline-end: -7px; inset-inline-start: auto; inset-inline-end: 50%; }
+.dm-flowline-node::after { content: ""; position: absolute; inset: 3px; border-radius: 1px; background: var(--dm-flow); opacity: .9; }
+/* A signal travels the line three times after the entrance, then the scene rests. */
+.dm-flowline-signal { position: absolute; inset-block: 0; inset-inline: -4px; overflow: hidden; }
+.dm-flowline-signal::before { content: ""; position: absolute; inset-inline-start: 2px; top: -24px; width: 6px; height: 24px; border-radius: 6px; background: linear-gradient(to bottom, transparent, var(--dm-flow-glow), var(--dm-flow)); animation: dm-signal-run 3.8s var(--dm-ease-precise) 2s 3 both; }
+@keyframes dm-signal-run { 0% { top: -24px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
+/* Glyphs: documents (Pro), people (HR), courses (Construction), stages (CRM), sites (Field Service), beats (POS). */
+.dm-flowline[data-glyph="hr"] .dm-flowline-node, .dm-flowline[data-glyph="fsm"] .dm-flowline-node { border-radius: 50%; }
+.dm-flowline[data-glyph="hr"] .dm-flowline-node::after { inset: 3.5px; border-radius: 50%; }
+.dm-flowline[data-glyph="fsm"] .dm-flowline-node::after { inset: 4px; border-radius: 50%; background: var(--deep); }
+.dm-flowline[data-glyph="construction"] .dm-flowline-node { width: 18px; height: 10px; margin-inline-start: -9px; border-radius: 2px; }
+[dir="rtl"] .dm-flowline[data-glyph="construction"] .dm-flowline-node { margin-inline-end: -9px; }
+.dm-flowline[data-glyph="construction"] .dm-flowline-node::after { inset: 2px 2px 5px; }
+.dm-flowline[data-glyph="crm"] .dm-flowline-node { border: 0; border-radius: 0; background: var(--dm-flow); clip-path: polygon(0 0, 60% 0, 100% 50%, 60% 100%, 0 100%, 40% 50%); box-shadow: none; rotate: 90deg; }
+.dm-flowline[data-glyph="crm"] .dm-flowline-node::after { content: none; }
+.dm-flowline[data-glyph="pos"] .dm-flowline-node { height: 6px; width: 16px; margin-inline-start: -8px; border-radius: 6px; background: var(--dm-flow); }
+[dir="rtl"] .dm-flowline[data-glyph="pos"] .dm-flowline-node { margin-inline-end: -8px; }
+.dm-flowline[data-glyph="pos"] .dm-flowline-node::after { content: none; }
+@media (max-width: 1024px) {
+  .dm-flowline { inset-block: auto; inset-inline: 24px; top: calc(clamp(220px, 56vw, 380px) + 6px); width: auto; height: 2px; }
+  .dm-flowline-track { background: linear-gradient(to left, transparent, var(--dm-flow) 10%, var(--dm-flow) 90%, transparent); transform-origin: right; animation-name: dm-grow-x; }
+  [dir="ltr"] .dm-flowline-track { transform-origin: left; }
+  .dm-flowline-node, [dir="rtl"] .dm-flowline-node { top: -6px; inset-inline-end: auto; inset-inline-start: calc(var(--k) * 25% + 8%); margin: 0; }
+  .dm-flowline[data-glyph="crm"] .dm-flowline-node { rotate: calc(var(--dm-start) * -90deg + 90deg); }
+  .dm-flowline-signal { display: none; }
+}
+
+/* ==========================================================================================================
+   3. Step narratives — items light in order and their connectors draw between them (the HR journey rail
+      follows the scroll). Classes come from use-page-motion: .dm-seq, then .dm-play when the list is in view.
+   ========================================================================================================== */
+.dm-seq > * { transition: opacity .55s ease, translate .7s var(--dm-ease-out), border-color .4s ease, box-shadow .4s ease; transition-delay: calc(var(--dm-i, 0) * 140ms); }
+.dm-seq:not(.dm-play) > * { opacity: 0; translate: 0 var(--dm-dist); }
+/* Construction / CRM / Field Service flows: the connector between two cards draws after the first one lands. */
+.sp-flow.dm-seq li + li::before { scale: 0 1; transform-origin: right; transition: scale .5s var(--dm-ease-out); transition-delay: calc(var(--dm-i) * 140ms + 60ms); }
+[dir="ltr"] .sp-flow.dm-seq li + li::before { transform-origin: left; }
+.sp-flow.dm-seq.dm-play li + li::before { scale: 1 1; }
+.sp-flow.dm-seq .sp-flow-no { display: inline-block; transition: scale .45s var(--dm-ease-spring), color .3s ease; transition-delay: calc(var(--dm-i) * 140ms + 140ms); }
+.sp-flow.dm-seq:not(.dm-play) .sp-flow-no { scale: .6; }
+/* DIGIT Pro — document to decision: question → definition → original report → document, connected in order. */
+@media (min-width: 1101px) {
+  .pv-root .pv-flow.dm-seq > li + li::before { content: ""; position: absolute; top: 37px; inset-inline-start: -15px; width: 16px; height: 2px; border-radius: 2px; background: var(--dm-flow); scale: 0 1; transform-origin: right; transition: scale .5s var(--dm-ease-out); transition-delay: calc(var(--dm-i) * 160ms + 80ms); }
+  [dir="ltr"] .pv-root .pv-flow.dm-seq > li + li::before { transform-origin: left; }
+  .pv-root .pv-flow.dm-seq.dm-play > li + li::before { scale: 1 1; }
+}
+.pv-root .pv-flow.dm-seq > li { transition-delay: calc(var(--dm-i) * 160ms); }
+.pv-root .pv-flow.dm-seq .pv-flow-no { transition: color .5s ease; transition-delay: calc(var(--dm-i) * 160ms + 200ms); }
+.pv-root .pv-flow.dm-seq.dm-play .pv-flow-no { color: var(--primary); }
+.pv-root .pv-flow.dm-seq .pp-shot { transition: opacity .6s ease, translate .8s var(--dm-ease-out); transition-delay: calc(var(--dm-i) * 160ms + 220ms); }
+.pv-root .pv-flow.dm-seq:not(.dm-play) .pp-shot { opacity: 0; translate: 0 14px; }
+/* Delivery steps (dark band): each stage lands, its number lights. */
+.cs-next-steps.dm-seq li span { transition: color .4s ease; transition-delay: calc(var(--dm-i) * 140ms + 160ms); }
+.cs-next-steps.dm-seq.dm-play li span { color: var(--mint); }
+/* HR journey rail — a progressive timeline. Desktop: the fill and the current step follow the scroll. */
+.hr-journey-rail.dm-seq li::after { content: ""; position: absolute; inset-inline: 0; top: -3px; height: 3px; background: linear-gradient(to left, var(--primary), var(--mint)); transform-origin: right; scale: 0 1; transition: scale .6s var(--dm-ease-out); transition-delay: calc(var(--dm-i) * 140ms + 80ms); }
+[dir="ltr"] .hr-journey-rail.dm-seq li::after { transform-origin: left; background: linear-gradient(to right, var(--primary), var(--mint)); }
+.hr-journey-rail.dm-seq.dm-play:not(.dm-progress) li::after { scale: 1 1; }
+.hr-journey-rail.dm-progress li::after { transition: none; scale: clamp(0, calc(var(--dm-p, 0) * var(--dm-n) - var(--dm-i)), 1) 1; }
+.hr-journey-rail.dm-progress li { transition: opacity .55s ease, translate .7s var(--dm-ease-out); }
+.hr-journey-rail.dm-progress.dm-play li:not([data-dm-reached]) { opacity: .55; }
+.hr-journey-rail.dm-progress li .hr-journey-no { display: inline-block; transition: scale .35s var(--dm-ease-spring), color .3s ease; }
+.hr-journey-rail.dm-progress li[data-dm-current] .hr-journey-no { scale: 1.35; color: var(--deep); }
+.hr-journey-rail.dm-progress li[data-dm-current] strong { color: var(--primary); }
+@media (max-width: 900px) { .hr-journey-rail.dm-seq li::after { inset-inline: auto; inset-inline-start: 0; top: 0; bottom: 0; width: 2px; height: auto; transform-origin: top; scale: 1 0; } .hr-journey-rail.dm-seq.dm-play li::after { scale: 1 1; } }
+
+/* ==========================================================================================================
+   4. Product screens — presentation only: frames swap with depth; the screen itself is never altered.
+   ========================================================================================================== */
+.dm-swap { animation: dm-swap-in .62s var(--dm-ease-out) both; }
+@keyframes dm-swap-in { from { opacity: 0; translate: 0 18px; scale: .975; } }
+.dm-swap[data-dir="back"] { animation-name: dm-swap-back; }
+@keyframes dm-swap-back { from { opacity: 0; translate: 0 -14px; scale: .985; } }
+.pp .pp-panel { animation: dm-swap-in .6s var(--dm-ease-out) both !important; }
+.pp .pp-panel .pp-panel-grid > :first-child { animation: dm-depth .8s var(--dm-ease-out) .05s backwards; }
+.pp .pp-panel .pp-panel-side > * { animation: dm-rise .7s var(--dm-ease-out) backwards; animation-delay: calc(.16s + var(--dm-k, 0) * 90ms); }
+.pp .pp-panel .pp-panel-side > :nth-child(2) { --dm-k: 1; }
+.pp-tab { transition: color .25s ease, background-color .3s var(--dm-ease-out), box-shadow .3s ease, scale .3s var(--dm-ease-spring); }
+.pp-tab[aria-selected="true"] { scale: 1.02; }
+/* Screen frames respond to the pointer with a little lift; zooming in shows a precise ring. */
+@media (hover: hover) and (pointer: fine) {
+  .pp-frame { transition: translate .45s var(--dm-ease-out), box-shadow .45s var(--dm-ease-out); }
+  .pp-frame:hover { translate: 0 -3px; }
+}
+
+/* Workflow journey (home): the active angle's marker is connected by the drawn flowline. */
+.dm-journey-flow { position: absolute; inset-inline-start: 23px; top: 24px; bottom: 24px; width: 1px; background: linear-gradient(to bottom, var(--mint), var(--primary)); transform-origin: top; transition: transform .7s var(--dm-ease-out); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .dm-journey-flow { transition: none; } }
+
+/* ==========================================================================================================
+   5. Mega Menu — fluid panel entrance, product-family switching, a moving active indicator and crossfading
+      real screens. Keyboard, touch and Escape behaviour is unchanged.
+   ========================================================================================================== */
+.mm-nav { position: relative; }
+.mm-indicator { position: absolute; z-index: 2; left: 0; top: 0; height: 2px; width: var(--mm-iw, 0px); border-radius: 2px; background: var(--primary); translate: var(--mm-ix, 0px) var(--mm-iy, 0px); opacity: 0; pointer-events: none; transition: translate .42s var(--dm-ease-out), width .42s var(--dm-ease-out), opacity .25s ease; }
+.mm-nav[data-indicator] .mm-indicator { opacity: 1; }
+.mm-nav[data-indicator] .mm-item[data-active] .mm-top-label::after { opacity: 0; }
+.mm-item .mm-top-label::after { transition: opacity .2s ease; }
+.mm-panel-inner { animation: dm-panel-in .34s var(--dm-ease-out) both !important; transform-origin: top center; }
+@keyframes dm-panel-in { from { opacity: 0; clip-path: inset(0 0 100% 0 round 0 0 22px 22px); translate: 0 -6px; } to { opacity: 1; clip-path: inset(0 0 0 0 round 0 0 22px 22px); translate: 0 0; } }
+.mm-nav[data-switch] .mm-panel-inner { animation: dm-panel-swap .3s var(--dm-ease-out) both !important; }
+@keyframes dm-panel-swap { from { opacity: .3; translate: calc(var(--mm-dir, 1) * var(--dm-start) * -18px) 0; } }
+.mm-item[data-compact] .mm-panel-inner { animation-name: dm-panel-in-compact !important; }
+@keyframes dm-panel-in-compact { from { opacity: 0; translate: 0 -6px; scale: .98; } }
+.mm-grid > *, .mm-systems > * { animation: dm-rise .45s var(--dm-ease-out) backwards; }
+.mm-grid > :nth-child(2), .mm-systems > :nth-child(2) { animation-delay: .05s; }
+.mm-grid > :nth-child(3) { animation-delay: .1s; }
+.mm-grid > :nth-child(n + 4) { animation-delay: .14s; }
+.mm-depts > li, .mm-solutions > li, .mm-families > li { animation: dm-rise .4s var(--dm-ease-out) backwards; animation-delay: calc(.06s + var(--dm-k, 0) * 28ms); }
+.mm-depts > li:nth-child(2), .mm-solutions > li:nth-child(2), .mm-families > li:nth-child(2) { --dm-k: 1; }
+.mm-depts > li:nth-child(3), .mm-solutions > li:nth-child(3), .mm-families > li:nth-child(3) { --dm-k: 2; }
+.mm-depts > li:nth-child(4), .mm-solutions > li:nth-child(4), .mm-families > li:nth-child(4) { --dm-k: 3; }
+.mm-depts > li:nth-child(5), .mm-solutions > li:nth-child(5), .mm-families > li:nth-child(5) { --dm-k: 4; }
+.mm-depts > li:nth-child(6), .mm-solutions > li:nth-child(6), .mm-families > li:nth-child(6) { --dm-k: 5; }
+.mm-depts > li:nth-child(7), .mm-solutions > li:nth-child(7) { --dm-k: 6; }
+.mm-depts > li:nth-child(8), .mm-solutions > li:nth-child(8) { --dm-k: 7; }
+.mm-depts > li:nth-child(n + 9), .mm-solutions > li:nth-child(n + 9) { --dm-k: 8; }
+.mm-dept-icon { transition: background-color .2s ease, color .2s ease, translate .35s var(--dm-ease-spring), rotate .35s var(--dm-ease-spring); }
+.mm-dept:hover .mm-dept-icon, .mm-dept:focus-visible .mm-dept-icon, .mm-solutions a:hover .mm-dept-icon { translate: 0 -2px; rotate: calc(var(--dm-start) * 6deg); }
+.mm-shot-body { position: relative; }
+.mm-shot-body img { animation: none !important; }
+.mm-shot-body .mm-shot-next { animation: dm-shot-in .42s var(--dm-ease-out) both !important; }
+@keyframes dm-shot-in { from { opacity: 0; scale: 1.035; } }
+.mm-shot-body .mm-shot-prev { position: absolute; inset: 0; animation: dm-fade-out .42s ease both !important; }
+.mm-shot-body[data-fit="contain"] .mm-shot-prev { inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px); }
+@keyframes dm-fade-out { to { opacity: 0; } }
+.mm-shot figcaption .mm-cap { display: block; animation: dm-rise .35s var(--dm-ease-out) both; }
+
+/* ==========================================================================================================
+   6. Screen viewer — the original screen grows out of its frame (FLIP, in ShotLightbox) and steps sideways.
+   ========================================================================================================== */
+.pp-lb-overlay[data-state="open"] { animation: dm-fade .3s ease both !important; }
+.pp-lb-overlay[data-state="closed"] { animation: dm-fade-out .22s ease both !important; }
+.pp-lb[data-state="closed"] { animation: dm-lb-out .22s ease both; }
+@keyframes dm-lb-out { to { opacity: 0; scale: .985; } }
+.pp-lb[data-state="open"] .pp-lb-top { animation: dm-rise .45s var(--dm-ease-out) .12s backwards; }
+.pp-lb[data-step="next"] .pp-lb-img { animation: dm-lb-step .38s var(--dm-ease-out) both; --dm-lb-x: calc(var(--dm-start) * -40px); }
+.pp-lb[data-step="prev"] .pp-lb-img { animation: dm-lb-step .38s var(--dm-ease-out) both; --dm-lb-x: calc(var(--dm-start) * 40px); }
+@keyframes dm-lb-step { from { opacity: 0; translate: var(--dm-lb-x) 0; } }
+
+/* ==========================================================================================================
+   7. Section rail — animated in-page navigation for long pages (wide desktops only).
+   ========================================================================================================== */
+.dm-rail { position: fixed; z-index: 40; inset-inline-start: 18px; top: 50%; translate: 0 -50%; display: none; pointer-events: none; transition: opacity .4s ease, translate .5s var(--dm-ease-out), visibility 0s linear .4s; }
+/* The rail stays out of the first fold and slides in once the reader reaches the first section. */
+.dm-rail:not([data-on]) { opacity: 0; visibility: hidden; translate: calc(var(--dm-start) * 12px) -50%; }
+.dm-rail[data-on] { transition-delay: 0s; }
+@media (min-width: 1400px) and (min-height: 700px) { .dm-rail { display: block; } }
+.dm-rail ol { position: relative; display: grid; gap: 4px; margin: 0; padding: 6px 0; list-style: none; pointer-events: auto; }
+.dm-rail-track, .dm-rail-fill { position: absolute; z-index: 0; inset-inline-start: 13px; top: 19px; bottom: 19px; width: 2px; border-radius: 2px; background: color-mix(in oklab, var(--deep) 14%, transparent); }
+.dm-rail-fill { bottom: auto; height: calc((100% - 38px) * var(--dm-rail, 0)); background: linear-gradient(to bottom, var(--mint), var(--primary)); transition: height .5s var(--dm-ease-out); }
+.dm-rail button { position: relative; display: flex; align-items: center; gap: 10px; height: 26px; padding: 0 6px; border: 0; background: none; color: var(--deep); cursor: pointer; font: inherit; }
+.dm-rail-dot { position: relative; z-index: 1; flex: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid color-mix(in oklab, var(--deep) 28%, transparent); background: var(--paper); transition: border-color .3s ease, background-color .3s ease, scale .35s var(--dm-ease-spring); }
+.dm-rail button[data-seen] .dm-rail-dot { border-color: var(--primary); }
+.dm-rail button[aria-current] .dm-rail-dot { scale: 1.25; border-color: var(--primary); background: var(--primary); box-shadow: 0 0 0 4px color-mix(in oklab, var(--primary) 18%, transparent); }
+.dm-rail-label { padding: 4px 10px; border-radius: 8px; background: var(--card); box-shadow: 0 10px 26px -14px color-mix(in oklab, var(--deep) 45%, transparent); border: 1px solid var(--dline); font-size: 12.5px; font-weight: 700; line-height: 1.4; white-space: nowrap; opacity: 0; translate: calc(var(--dm-start) * -6px) 0; pointer-events: none; transition: opacity .2s ease, translate .3s var(--dm-ease-out); }
+.dm-rail button:hover .dm-rail-label, .dm-rail button:focus-visible .dm-rail-label { opacity: 1; translate: 0 0; }
+.dm-rail button:focus-visible { outline: none; }
+.dm-rail button:focus-visible .dm-rail-dot { outline: 2px solid var(--ring); outline-offset: 2px; }
+.dm-rail[data-dark] .dm-rail-dot { background: var(--dark); }
+
+/* ==========================================================================================================
+   8. Sticky product theater — HR capability chapters keep their real screen in view while the story scrolls.
+   ========================================================================================================== */
+@media (min-width: 1101px) {
+  .hr-cap[data-variant="split"] .hr-cap-body { align-items: start; }
+  .hr-cap[data-variant="split"] .hr-cap-visual { position: sticky; top: 112px; }
+}
+
+/* ==========================================================================================================
+   9. Route transitions — progressive enhancement through the View Transitions API (TanStack Router).
+   ========================================================================================================== */
+.site-header { view-transition-name: dm-header; }
+.cw-root { view-transition-name: dm-chat; }
+::view-transition-group(dm-header), ::view-transition-group(dm-chat) { animation-duration: 0s; }
+::view-transition-old(root) { animation: dm-vt-out .2s ease both; }
+::view-transition-new(root) { animation: dm-vt-in .42s var(--dm-ease-out) both; }
+@keyframes dm-vt-out { to { opacity: 0; translate: 0 -10px; } }
+@keyframes dm-vt-in { from { opacity: 0; translate: 0 14px; } }
+/* Entering another product department: the new page is drawn in from the reading start over the brand surface. */
+html:active-view-transition-type(dm-department)::view-transition-new(root) { animation: dm-vt-wipe-ltr .55s var(--dm-ease-out) both; }
+html[dir="rtl"]:active-view-transition-type(dm-department)::view-transition-new(root) { animation-name: dm-vt-wipe-rtl; }
+@keyframes dm-vt-wipe-ltr { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+@keyframes dm-vt-wipe-rtl { from { clip-path: inset(0 0 0 100%); } to { clip-path: inset(0 0 0 0); } }
+html:active-view-transition-type(dm-department)::view-transition-old(root) { animation: dm-vt-out .4s ease both; }
+html:active-view-transition-type(dm-department) { background: var(--deep); }
+
+/* ==========================================================================================================
+   10. Device tiers and reduced motion.
+   ========================================================================================================== */
+@media (max-width: 1023px) {
+  .hr-cap[data-variant="split"] .hr-cap-visual { position: static; }
+  .pp .pp-panel .pp-panel-grid > :first-child { animation-name: dm-rise; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #digit-orbit .dm-orbit-copy > *, .hx .hx-lines, .hx .hx-orb, .hx .hx-frame, .hx .hx-top > *, .hx .hx-tab, .hx .hx-controls,
+  .imported-page > :is(.hero, .pos-hero) *, .imported-page .scene-hero > .page-scene-background, .imported-page .scene-hero > .page-scene-background img,
+  .pv-hero *, .hr-hero *, .sp-hero *, .dm-flowline *, .dm-swap, .pp .pp-panel, .pp .pp-panel *, .mm-panel-inner, .mm-grid > *, .mm-systems > *,
+  .mm-depts > li, .mm-solutions > li, .mm-families > li, .mm-shot-body *, .mm-shot figcaption .mm-cap, .pp-lb-overlay, .pp-lb, .pp-lb *, .dm-orbit-pause {
+    animation: none !important;
+  }
+  .imported-page .scene-hero > .page-scene-background.page-scene-background::after { content: none; }
+  /* Identity-specific entrances carry higher specificity; these selectors match it so reduced motion always wins. */
+  html[data-dm][dir] :is(.imported-page > :is(.hero, .pos-hero), .pv-hero, .hr-hero, .sp-hero) :is(h1, h1 ~ p, [data-import-container] > h1 ~ p),
+  html[data-dm] .mm-nav[data-switch] .mm-panel-inner, html[data-dm] .mm-item[data-compact] .mm-panel-inner,
+  html[data-dm] .mm-shot-body :is(.mm-shot-next, .mm-shot-prev), html[data-dm] .pp-lb-overlay[data-state], html[data-dm] .pp .pp-panel {
+    animation: none !important;
+  }
+  .dm-seq > *, .dm-seq li::before, .dm-seq li::after, .dm-seq .sp-flow-no, .dm-seq .pv-flow-no, .dm-seq .pp-shot, .mm-indicator, .dm-rail *, .pp-frame, .pp-tab,
+  a > svg.lucide-arrow-left, a > svg.lucide-arrow-right, button > svg.lucide-arrow-left, button > svg.lucide-arrow-right, [data-slot="button"], .mm-dept-icon {
+    transition: none !important;
+  }
+  .dm-seq > *, .dm-seq .pp-shot { opacity: 1 !important; translate: none !important; }
+  .dm-seq li::before, .dm-seq li::after, .dm-seq .sp-flow-no { scale: 1 !important; }
+  .mm-shot-prev { display: none; }
+  .hx .hx-orb { animation: none !important; }
+  .hr-cap[data-variant="split"] .hr-cap-visual { position: static; }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}

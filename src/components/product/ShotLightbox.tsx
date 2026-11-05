@@ -1,4 +1,4 @@
-import { useRef, type CSSProperties, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { Shot } from "@/content/product-shots";
@@ -12,14 +12,36 @@ type Props = {
   onClose: () => void;
 };
 
-/** Full-size screenshot viewer: Esc or a click closes it; arrows move within the same section. */
+// Safari does not focus buttons on click, so the element under the last pointer press also identifies the opener.
+let lastPress: Element | null = null;
+if (typeof document !== "undefined") document.addEventListener("pointerdown", event => { lastPress = event.target instanceof Element ? event.target : null; }, true);
+
+/** The visible box of the screen that opened the viewer (its frame image), if it is still on screen. */
+function sourceBox(opener: Element | null): DOMRect | null {
+  const frame = opener?.closest("button, a, [role='button']") ?? opener;
+  const img = frame instanceof HTMLImageElement ? frame : frame?.querySelector("img");
+  const box = img?.getBoundingClientRect();
+  if (!box || box.width < 24 || box.height < 24 || box.bottom < 0 || box.top > window.innerHeight) return null;
+  return box;
+}
+
+/**
+ * Full-size screenshot viewer: Esc or a click closes it; arrows move within the same section. On open the original
+ * screen grows out of the frame that opened it (FLIP); stepping slides in reading direction. The image itself is the
+ * unmodified original and stays accessible; reduced motion opens it in place.
+ */
 export default function ShotLightbox({ shots, index, onIndexChange, onClose }: Props) {
   const locale = useLocale();
   const opener = useRef<HTMLElement | null>(null);
+  const source = useRef<DOMRect | null>(null);
+  const imgRef = useRef<HTMLImageElement>(null);
+  const [stepDir, setStepDir] = useState<"next" | "prev" | null>(null);
   const current = index === null ? undefined : shots[index];
+  const isOpen = Boolean(current);
   const multiple = shots.length > 1;
   const step = (delta: number) => {
     if (index === null) return;
+    setStepDir(delta > 0 ? "next" : "prev");
     onIndexChange((index + delta + shots.length) % shots.length);
   };
   const onKeyDown = (event: KeyboardEvent<HTMLDivElement>) => {
@@ -29,13 +51,55 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
     const forward = event.key === (locale === "ar" ? "ArrowLeft" : "ArrowRight");
     step(forward ? 1 : -1);
   };
+
+  // Measure the opening frame before the dialog paints over it.
+  if (isOpen && !opener.current && !source.current && typeof document !== "undefined") {
+    const active = document.activeElement instanceof HTMLElement && document.activeElement !== document.body ? document.activeElement : null;
+    source.current = sourceBox(active ?? lastPress);
+  }
+
+  useEffect(() => {
+    if (isOpen) return;
+    setStepDir(null);
+    source.current = null;
+  }, [isOpen]);
+
+  // The dialog portal mounts its content a beat after opening, so the grow-out runs when the full-size image itself
+  // attaches (stepping remounts the image with no pending source, so steps use the CSS slide instead).
+  const attachImage = (img: HTMLImageElement | null) => {
+    imgRef.current = img;
+    const from = source.current;
+    if (!img || !from) return;
+    source.current = null;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof img.animate !== "function") return;
+    const asked = performance.now();
+    const run = () => requestAnimationFrame(() => {
+      // A slow full-size download simply opens in place rather than jumping back to the frame late.
+      if (!img.isConnected || performance.now() - asked > 450) return;
+      const to = img.getBoundingClientRect();
+      if (!to.width || !to.height) return;
+      const scale = from.width / to.width;
+      const hidden = Math.max(0, to.height - from.height / scale);
+      img.animate(
+        [
+          // Opacity and scale are pinned so the generic fade-in does not wash out the screen while it grows.
+          { transformOrigin: "0 0", opacity: 1, scale: "1", transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${scale})`, clipPath: `inset(0 0 ${hidden}px 0 round ${10 / scale}px)` },
+          { transformOrigin: "0 0", opacity: 1, scale: "1", transform: "none", clipPath: "inset(0 0 0 0 round 10px)" },
+        ],
+        { duration: 540, easing: "cubic-bezier(.16, 1, .3, 1)" },
+      );
+    });
+    if (img.complete && img.naturalWidth) run();
+    else img.addEventListener("load", run, { once: true });
+  };
+
   const PrevIcon = locale === "ar" ? ChevronRight : ChevronLeft;
   const NextIcon = locale === "ar" ? ChevronLeft : ChevronRight;
   const zoom = current && current.width < 700 ? 1.5 : 1;
   // A higher-resolution derivative, when the screen has one, keeps small UI text legible at full size.
   const image = current?.full ?? current;
   return (
-    <Dialog.Root open={Boolean(current)} onOpenChange={open => { if (!open) onClose(); }}>
+    <Dialog.Root open={isOpen} onOpenChange={open => { if (!open) onClose(); }}>
       <Dialog.Portal>
         <Dialog.Overlay className="pp-lb-overlay" />
         <Dialog.Content
@@ -44,6 +108,7 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
           lang={locale}
           onKeyDown={onKeyDown}
           aria-describedby={undefined}
+          data-step={stepDir ?? undefined}
           // There is no Dialog.Trigger, so remember the frame that opened the viewer and return focus to it on close.
           onOpenAutoFocus={() => { opener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null; }}
           onCloseAutoFocus={event => {
@@ -61,6 +126,7 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
             <div className="pp-lb-stage" onClick={onClose}>
               <img
                 key={current.id}
+                ref={attachImage}
                 className="pp-lb-img"
                 src={image?.src}
                 width={image?.width}
