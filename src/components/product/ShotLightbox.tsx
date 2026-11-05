@@ -82,8 +82,9 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
       const hidden = Math.max(0, to.height - from.height / scale);
       img.animate(
         [
-          { transformOrigin: "0 0", transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${scale})`, clipPath: `inset(0 0 ${hidden}px 0 round ${10 / scale}px)` },
-          { transformOrigin: "0 0", transform: "none", clipPath: "inset(0 0 0 0 round 10px)" },
+          // Opacity and scale are pinned so the generic fade-in does not wash out the screen while it grows.
+          { transformOrigin: "0 0", opacity: 1, scale: "1", transform: `translate(${from.left - to.left}px, ${from.top - to.top}px) scale(${scale})`, clipPath: `inset(0 0 ${hidden}px 0 round ${10 / scale}px)` },
+          { transformOrigin: "0 0", opacity: 1, scale: "1", transform: "none", clipPath: "inset(0 0 0 0 round 10px)" },
         ],
         { duration: 540, easing: "cubic-bezier(.16, 1, .3, 1)" },
       );
