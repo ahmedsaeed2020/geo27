@@ -139,11 +139,13 @@ function ChatPanel({ threadId, locale, onError, initial }: { threadId: string; l
   const loadMessages = useServerFn(getVisitorMessages);
   useEffect(() => {
     // A chat opened from a suggestion starts empty: send the question instead of restoring history.
-    console.warn('[cw] mount', threadId, initial, sentInitial.current);
     if (initial && !sentInitial.current) {
-      sentInitial.current = true;
-      sendMessage({ text: initial });
-      return;
+      // Deferred so a development double-mount sends once, on the chat instance that stays mounted.
+      const timer = setTimeout(() => {
+        sentInitial.current = true;
+        sendMessage({ text: initial });
+      }, 0);
+      return () => clearTimeout(timer);
     }
     let cancelled = false;
     loadMessages({ data: { visitorId: getVisitorId(), threadId } })
