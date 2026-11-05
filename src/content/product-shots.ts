@@ -1,4 +1,5 @@
-// Real DIGIT Pro screenshots (owner upload 2026-10-30). Pixel sizes come from the
+// Real DIGIT Pro screenshots (owner upload 2026-10-30; seven more from the Run11.1 live pack, 2026-11-05 — only
+// requirement IDs whose evidence class is complete & verified, and only captures without sample-tenant labels). Pixel sizes come from the
 // manifest so every frame reserves its space before the image loads.
 export type L = { ar: string; en: string };
 /** `full`: optional higher-resolution derivative for the lightbox; `src` stays the inline image. */
@@ -14,6 +15,7 @@ const ROWS: Row[] = [
   ["01-cfo-03-e3", 1, 455, 53, "لوحة الاستثناءات والمخاطر", "Exceptions and risk board"],
   ["01-cfo-04-f11", 1, 1024, 247, "قائمة الإقفال ومراجعة الفروقات قبل الإقفال", "Close checklist with variance review before closing"],
   ["01-cfo-05-r7", 1, 1440, 400, "كل كارت معاه تعريفه ومصدره", "Every card carries its definition and source"],
+  ["01-cfo-06-f1", 1, 1024, 328, "دفاتر اليومية: المسودات والمتأخر والمرحّل هذا الشهر لكل دفتر", "Journals: drafts, overdue and posted this month for each journal"],
   ["02-cash-01-f9", 2, 1024, 592, "مساحة التحصيل: المتأخر مقابل الصافي القابل للتحصيل", "Collections workspace: overdue vs. net collectible"],
   ["02-cash-02-sl6", 2, 1024, 109, "حظر ائتمان بسبب مقروء", "Credit hold with a readable reason"],
   ["02-cash-03-f19", 2, 1024, 87, "كشف فواتير الموردين المكررة", "Duplicate supplier invoice detection"],
@@ -35,20 +37,26 @@ const ROWS: Row[] = [
   ["05-sales-02-sl5", 5, 1024, 158, "المتاح والمحجوز والمتوقع على سطر البيع", "Available, reserved and projected stock on the sales line"],
   ["05-sales-03-sl7", 5, 1024, 60, "«ليه السعر ده؟»: شرح التسعير", "“Why this price?”: pricing explained"],
   ["05-sales-04-sel-004", 5, 1024, 53, "حالة أمر البيع ومراحله", "Sales order status and stages"],
+  ["05-sales-05-sel-006", 5, 366, 253, "توفر سطر البيع في المستودعات قبل الوعد بالتسليم", "Sales line availability across warehouses before promising delivery"],
   ["06-pur-01-pu6", 6, 1024, 174, "الالتزامات المفتوحة وأوامر الشراء المتأخرة", "Open commitments and late purchase orders"],
   ["06-pur-02-pu9", 6, 1024, 155, "انحرافات السعر والكمية والعملة", "Price, quantity and currency variances"],
   ["06-pur-03-pu12", 6, 1024, 515, "تقييم المورد: الالتزام بالمواعيد والتركّز", "Supplier scorecard: on-time delivery and concentration"],
   ["06-pur-04-pur-015", 6, 366, 515, "تحليل الإنفاق وتركّز الموردين", "Spend analysis and supplier concentration"],
   ["06-pur-05-pur-016", 6, 1024, 515, "موثوقية التوريد", "Supply reliability"],
+  ["06-pur-06-pur-006", 6, 366, 241, "التزامات الشراء المفتوحة: ما لم يُستلم وما لم يُفوتر", "Open purchase commitments: not yet received and not yet billed"],
+  ["06-pur-07-pur-014", 6, 366, 175, "انحرافات سعر وكمية الشراء مع طريقة الحساب", "Purchase price and quantity variances, with how they are computed"],
   ["07-inv-01-in1", 7, 1024, 213, "لوحة عمليات كل مستودع", "Operations board for each warehouse"],
   ["07-inv-02-in3", 7, 366, 919, "الفعلي والمتاح والمحجوز والمتوقع منفصلة", "Actual, available, reserved and projected kept separate"],
   ["07-inv-03-inv-014", 7, 1024, 269, "مطابقة قيمة المخزون مع الأستاذ العام", "Stock value reconciled to the general ledger"],
   ["07-inv-04-in11", 7, 1024, 594, "تحليل ABC والدوران والأعمار", "ABC analysis, turnover and ageing"],
   ["07-inv-05-in13", 7, 366, 69, "التحويل على مرحلتين وتتبع البضاعة في الطريق", "Two-step transfers with goods-in-transit tracking"],
   ["07-inv-06-inv-017", 7, 366, 567, "مؤشرات المستودع على الجوال", "Warehouse indicators on mobile"],
+  ["07-inv-07-inv-003", 7, 1024, 158, "توفر البنود في المستودعات: الفعلي والمحجوز والمتوقع والنقص", "Item availability by warehouse: actual, reserved, projected and shortage"],
+  ["07-inv-08-inv-008", 7, 366, 567, "لوحة عمليات المستودعات: الجاهز للشحن والمتأخر والمنتظر استلامه", "Warehouse operations board: ready to ship, late and to receive"],
   ["08-ast-01-fa4", 8, 366, 178, "المجدول مقابل المستحق مقابل المرحّل لكل دفتر", "Scheduled vs. due vs. posted for each book"],
   ["08-ast-02-fa5", 8, 1024, 376, "جسر حركة الأصول ومطابقته مع الأستاذ العام", "Asset movement bridge reconciled to the general ledger"],
   ["08-ast-03-fix-003", 8, 366, 640, "سجل الأصل وتاريخه", "Asset register and history"],
+  ["08-ast-04-fix-015", 8, 366, 377, "جسر حركة الأصول مطابق للأستاذ العام", "Asset roll-forward reconciled to the general ledger"],
   ["09-rep-02-r2", 9, 1024, 44, "تنبيه واضح لما نطاق الصلاحية يكون مقيد", "A clear warning when your access scope is restricted"],
   ["09-rep-03-r6", 9, 1440, 900, "مصمم القوائم المالية", "Financial statement designer"],
   ["09-rep-04-l1", 9, 366, 978, "عرض Pivot وتقويم", "Pivot and calendar views"],
