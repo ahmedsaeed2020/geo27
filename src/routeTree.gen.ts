@@ -729,34 +729,34 @@ const ServicesIndexRoute = ServicesIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesCustomizationRoute = ServicesCustomizationRouteImport.update({
-  id: '/customization',
-  path: '/customization',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/customization',
+  path: '/services/customization',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesDataMigrationRoute = ServicesDataMigrationRouteImport.update({
-  id: '/data-migration',
-  path: '/data-migration',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/data-migration',
+  path: '/services/data-migration',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesHostingRoute = ServicesHostingRouteImport.update({
-  id: '/hosting',
-  path: '/hosting',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/hosting',
+  path: '/services/hosting',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesImplementationRoute = ServicesImplementationRouteImport.update({
-  id: '/implementation',
-  path: '/implementation',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/implementation',
+  path: '/services/implementation',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesSupportRoute = ServicesSupportRouteImport.update({
-  id: '/support',
-  path: '/support',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/support',
+  path: '/services/support',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesTrainingRoute = ServicesTrainingRouteImport.update({
-  id: '/training',
-  path: '/training',
-  getParentRoute: () => ServicesRoute,
+  id: '/services/training',
+  path: '/services/training',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const EnConstructionIndexRoute = EnConstructionIndexRouteImport.update({
   id: '/construction/',
@@ -2141,6 +2141,12 @@ export interface RootRouteChildren {
   PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
   PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
   ProAreaRoute: typeof ProAreaRoute
+  ServicesCustomizationRoute: typeof ServicesCustomizationRoute
+  ServicesDataMigrationRoute: typeof ServicesDataMigrationRoute
+  ServicesHostingRoute: typeof ServicesHostingRoute
+  ServicesImplementationRoute: typeof ServicesImplementationRoute
+  ServicesSupportRoute: typeof ServicesSupportRoute
+  ServicesTrainingRoute: typeof ServicesTrainingRoute
   ConstructionIndexRoute: typeof ConstructionIndexRoute
   HrIndexRoute: typeof HrIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
@@ -2907,45 +2913,45 @@ declare module '@tanstack/react-router' {
     }
     '/services/customization': {
       id: '/services/customization'
-      path: '/customization'
+      path: '/services/customization'
       fullPath: '/services/customization'
       preLoaderRoute: typeof ServicesCustomizationRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/data-migration': {
       id: '/services/data-migration'
-      path: '/data-migration'
+      path: '/services/data-migration'
       fullPath: '/services/data-migration'
       preLoaderRoute: typeof ServicesDataMigrationRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/hosting': {
       id: '/services/hosting'
-      path: '/hosting'
+      path: '/services/hosting'
       fullPath: '/services/hosting'
       preLoaderRoute: typeof ServicesHostingRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/implementation': {
       id: '/services/implementation'
-      path: '/implementation'
+      path: '/services/implementation'
       fullPath: '/services/implementation'
       preLoaderRoute: typeof ServicesImplementationRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/support': {
       id: '/services/support'
-      path: '/support'
+      path: '/services/support'
       fullPath: '/services/support'
       preLoaderRoute: typeof ServicesSupportRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/training': {
       id: '/services/training'
-      path: '/training'
+      path: '/services/training'
       fullPath: '/services/training'
       preLoaderRoute: typeof ServicesTrainingRouteImport
-      parentRoute: typeof ServicesRoute
+      parentRoute: typeof rootRouteImport
     }
     '/en/construction/': {
       id: '/en/construction/'
@@ -3725,6 +3731,12 @@ const rootRouteChildren: RootRouteChildren = {
   PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
   PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
   ProAreaRoute: ProAreaRoute,
+  ServicesCustomizationRoute: ServicesCustomizationRoute,
+  ServicesDataMigrationRoute: ServicesDataMigrationRoute,
+  ServicesHostingRoute: ServicesHostingRoute,
+  ServicesImplementationRoute: ServicesImplementationRoute,
+  ServicesSupportRoute: ServicesSupportRoute,
+  ServicesTrainingRoute: ServicesTrainingRoute,
   ConstructionIndexRoute: ConstructionIndexRoute,
   HrIndexRoute: HrIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
