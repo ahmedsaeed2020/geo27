@@ -32,7 +32,7 @@ function Tile({ logo, alt, loaded }: { logo: CustomerLogo; alt: string; loaded: 
 export default function SuccessStories({ variant = 'section' }: { variant?: 'section' | 'inline' }) {
   const locale = useLocale();
   const titleId = useId();
-  const rootRef = useRef<HTMLElement>(null);
+  const rootRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
   const [count, setCount] = useState(CUSTOMER_COUNT);
@@ -107,7 +107,7 @@ export default function SuccessStories({ variant = 'section' }: { variant?: 'sec
 
   if (variant === 'inline') {
     return (
-      <div ref={rootRef as React.RefObject<HTMLDivElement>} className="ss-root" data-variant="inline" data-success-stories="" role="group" aria-labelledby={titleId}>
+      <div ref={rootRef} className="ss-root" data-variant="inline" data-success-stories="" role="group" aria-labelledby={titleId}>
         {body}
       </div>
     );

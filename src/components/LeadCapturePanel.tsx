@@ -51,7 +51,7 @@ export default function LeadCapturePanel({ interest = 'DIGIT', product, departme
           </a>
         </Button>
       </div>
-      <ContactForm kind="demo" interest={interest} {...(product ? { product } : {})} {...(department ? { department } : {})} />
+      <ContactForm kind="demo" interest={interest} stories={false} {...(product ? { product } : {})} {...(department ? { department } : {})} />
     </section>
     </>
   );
