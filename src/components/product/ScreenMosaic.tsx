@@ -14,7 +14,7 @@ const C = {
   enlarge: { ar: 'تكبير', en: 'Enlarge' },
   note: { ar: 'الأسماء والأرقام في الشاشات توضيحية. اضغط أي مقطع لتكبيره.', en: 'Names and figures in the screens are illustrative. Select any view to enlarge it.' },
 };
-const views = (n: number, l: Locale) => (l === 'ar' ? `${n} ${n > 10 ? 'مقطعًا' : 'مقاطع'}` : `${n} views`);
+const views = (n: number, l: Locale) => (l === 'ar' ? (n === 1 ? 'مقطع واحد' : n === 2 ? 'مقطعان' : `${n} ${n > 10 ? 'مقطعًا' : 'مقاطع'}`) : n === 1 ? '1 view' : `${n} views`);
 const viewAll = (n: number, l: Locale) => (l === 'ar' ? `عرض كل المقاطع (${n})` : `View all ${n} views`);
 
 /** Width/height of the cell: screens keep their own proportions, magnified regions are square. */
