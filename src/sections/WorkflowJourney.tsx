@@ -21,6 +21,7 @@ export default function WorkflowJourney() {
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const sectionRef = useRef<HTMLElement>(null);
   const picked = useRef(false);
+  const activeRef = useRef(0);
   const step = JOURNEY_STEPS[active]!;
   const screen = productShot(step.shot);
   const Arrow = l === 'ar' ? ArrowLeft : ArrowRight;
@@ -43,12 +44,14 @@ export default function WorkflowJourney() {
     return registerScene(el, (_p, rect, viewport) => {
       if (picked.current) return;
       const next = chapterAt((viewport * 0.5 - rect.top) / Math.max(1, rect.height * 0.72), count);
-      setActive(current => {
-        if (current !== next) setBack(next < current);
-        return next;
-      });
+      const current = activeRef.current;
+      if (next === current) return;
+      activeRef.current = next;
+      setBack(next < current);
+      setActive(next);
     });
   }, [count]);
+  useEffect(() => { activeRef.current = active; }, [active]);
   const onKey = (e: KeyboardEvent<HTMLButtonElement>) => {
     const forward = e.key === 'ArrowDown' || (l === 'ar' ? e.key === 'ArrowLeft' : e.key === 'ArrowRight');
     const back = e.key === 'ArrowUp' || (l === 'ar' ? e.key === 'ArrowRight' : e.key === 'ArrowLeft');
