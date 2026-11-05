@@ -83,12 +83,20 @@ export function LeadScene({ interest = 'DIGIT', product, department, kind = 'dem
               );
             })}
           </ul>
-          <ContactForm kind={kind} interest={interest} stories={false} bare {...(product ? { product } : {})} {...(department ? { department } : {})} />
-          <a className="ls-whatsapp" href="https://wa.me/966595051150" target="_blank" rel="noopener noreferrer">
-            <MessageCircle aria-hidden="true" />
-            <span>{C.whatsapp[l]}</span>
-            <bdi dir="ltr">+966 59 505 1150</bdi>
-          </a>
+          <ContactForm
+            kind={kind}
+            interest={interest}
+            stories={false}
+            bare
+            {...(product ? { product } : {})}
+            {...(department ? { department } : {})}
+            after={
+              <a className="ls-whatsapp" href="https://wa.me/966595051150" target="_blank" rel="noopener noreferrer" aria-label={`${C.whatsapp[l]} +966 59 505 1150`}>
+                <MessageCircle aria-hidden="true" />
+                <span>{C.whatsappShort[l]}</span>
+              </a>
+            }
+          />
         </div>
       </div>
     </section>
