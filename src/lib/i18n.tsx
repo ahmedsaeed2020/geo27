@@ -21,8 +21,11 @@ export function translate(text: string, locale: Locale = "en"): string {
 }
 export function localeHref(href: string, locale: Locale): string {
   if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/__l5e/") || /\.[a-z0-9]+(?:[?#]|$)/i.test(href)) return href;
-  const bare = href.replace(/^\/en(?=\/|$)/, "") || "/";
-  return locale === "en" ? `/en${bare === "/" ? "" : bare}` : bare;
+  // Internal links point straight at the canonical URL: no trailing slash (imported WordPress links carry one), so
+  // crawlers never hop through a redirect.
+  const canonical = href.replace(/^([^?#]*?)\/+(?=[?#]|$)/, "$1");
+  const bare = canonical.replace(/^\/en(?=\/|[?#]|$)/, "") || "/";
+  return locale === "en" ? `/en${bare === "/" ? "" : bare.startsWith("?") || bare.startsWith("#") ? bare : bare}` : bare.startsWith("?") || bare.startsWith("#") ? `/${bare}` : bare;
 }
 export function localizeData<T>(data: T, locale: Locale = "en"): T {
   if (typeof data === "string") {
