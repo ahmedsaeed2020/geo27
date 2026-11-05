@@ -1,8 +1,8 @@
 // Real DIGIT HR screenshots from the owner's HR 7-module handoff (16 originals, SHA-256 verified against its
 // asset manifest). Derivatives are uniform downscales of the originals; seven drop only the app's top bar
 // (crop boxes in hr-shots-provenance.json). Captions describe what each screen actually shows.
-// Privacy: the data looks like a demo tenant (digit-demo.test / digit.local); owner confirmation is still
-// required before any page that shows these screens is published.
+// Privacy: the names and records come from a sample tenant (digit-demo.test / digit.local); the owner confirmed
+// in 2026-11 that they are not real employees and approved the screens for the public pages.
 import type { Shot } from '@/content/product-shots';
 
 const pointers = import.meta.glob<{ url: string }>('/src/assets/hr/*.asset.json', { eager: true, import: 'default' });

@@ -26,6 +26,7 @@ describe("Real DIGIT Pro screenshots", () => {
       ["05-sales-01-sl2", "05-sales-02-sl5", "05-sales-03-sl7"],
       ["07-inv-01-in1", "07-inv-03-inv-014", "07-inv-02-in3"],
       ["08-ast-02-fa5", "08-ast-01-fa4", "08-ast-03-fix-003"],
+      ["hr-s01", "hr-s16", "hr-s21"],
     ]);
     expect(Object.values(PROBLEM_SHOTS)).toEqual(["09-rep-04-l1", "10-ctl-03-s4", "04-360-01-sl1"]);
   });

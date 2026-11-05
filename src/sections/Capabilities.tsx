@@ -1,54 +1,51 @@
-import { useLocale, localizeTree } from "@/lib/i18n";
-import { ShieldCheck, UserLock, FileSignature, FolderOpen, Gauge, Waypoints } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
+import { ArrowLeft, ArrowRight, Network, FileStack, BellRing, ShieldCheck, LayoutDashboard, FileBarChart2 } from "lucide-react";
+import { useLocale, localeHref } from "@/lib/i18n";
 import { SectionHeading } from '@/components/cms/SectionText';
+import { CAPABILITIES, CAPABILITY_CARDS, type CapabilityIcon } from "@/content/home";
 
-const CARDS: { title: string; desc: string; icon: React.ReactNode | null }[] = [
-  { title: "الأمان · MFA", desc: "مصادقة متعددة العوامل وحماية الوصول لكل حساب.", icon: null },
-  { title: "الصلاحيات والمستخدمون", desc: "أدوار دقيقة لكل فرع ومستخدم، وسجل عمليات كامل.", icon: <UserLock size={25} /> },
-  { title: "التوقيع الرقمي", desc: "اعتماد رقمي للمستندات داخل دورة العمل.", icon: <FileSignature size={25} /> },
-  { title: "إدارة المستندات", desc: "أرشفة مرتبطة مباشرة بالعمليات والمعاملات.", icon: <FolderOpen size={25} /> },
-  { title: "الذكاء الاصطناعي", desc: "مؤشرات وتنبيهات لحظية مبنية على بيانات نظامك.", icon: <Gauge size={25} /> },
-  { title: "التكاملات", desc: "WooCommerce و API وربط منصاتك الخارجية.", icon: null },
-];
+const ICONS: Record<CapabilityIcon, ComponentType<SVGProps<SVGSVGElement>>> = {
+  "360": Network, documents: FileStack, approvals: BellRing, permissions: ShieldCheck, dashboards: LayoutDashboard, reports: FileBarChart2,
+};
 
-void ShieldCheck;
-void Waypoints;
-
+/** Cross-system capabilities, each opening the DIGIT Pro V4 page that shows it on real screens. */
 export default function Capabilities() {
-  const locale = useLocale();
-  return localizeTree((
-    <section
-      id="capabilities"
-      className="py-20"
-      style={{ background: "linear-gradient(160deg, #0a5a44, #08140F)" }}
-    >
-      <div className="mx-auto max-w-[1240px] px-6">
+  const l = useLocale();
+  const Arrow = l === "ar" ? ArrowLeft : ArrowRight;
+  return (
+    <section id="capabilities" className="py-20 max-md:py-14" style={{ background: "linear-gradient(160deg, var(--deep), var(--dark))" }}>
+      <div className="mx-auto max-w-[1240px] px-6 max-md:px-4">
         <div className="text-center">
-          <h4 className="font-monospace text-[20px] font-bold tracking-[2px] text-mint uppercase">
-            القدرات
-          </h4>
-          <SectionHeading k="capabilities" className="mt-3 text-[36px] leading-[1.2] font-extrabold text-white">
-            قدرات تمتد عبر النظام كله.
+          <p className="font-monospace text-[14px] font-bold tracking-[2px] text-mint uppercase">{CAPABILITIES.eyebrow[l]}</p>
+          <SectionHeading k="capabilities" className="mt-3 text-[36px] leading-[1.2] font-extrabold text-paper max-md:text-[28px]">
+            {CAPABILITIES.heading[l]}
           </SectionHeading>
-          <p className="mx-auto mt-4 max-w-[620px] text-[17px] leading-[1.7] text-[rgba(244,243,238,.74)]">
-            ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.
-          </p>
+          <p className="mx-auto mt-4 max-w-[640px] text-[17px] leading-[1.7] text-paper/74">{CAPABILITIES.lede[l]}</p>
         </div>
 
-        <div className="mt-12 grid grid-cols-3 gap-8 max-lg:gap-5 max-md:grid-cols-1">
-          {CARDS.map((c) => (
-            <div
-              key={c.title}
-              data-motion-card
-              className="rounded-[16px] border border-[rgba(244,243,238,.14)] bg-[rgba(244,243,238,.06)] p-[22px] text-start"
-            >
-              {c.icon && <div className="mb-3 text-mint">{c.icon}</div>}
-              <h3 className="text-[16px] font-extrabold text-white">{c.title}</h3>
-              <p className="mt-1.5 text-[13px] leading-[1.7] text-[rgba(244,243,238,.66)]">{c.desc}</p>
-            </div>
-          ))}
-        </div>
+        <ul className="mt-12 grid list-none grid-cols-3 gap-6 p-0 max-lg:grid-cols-2 max-lg:gap-5 max-md:grid-cols-1">
+          {CAPABILITY_CARDS.map(c => {
+            const Icon = ICONS[c.icon];
+            return (
+              <li key={c.icon} data-motion-card>
+                <a
+                  href={localeHref(c.href, l)}
+                  className="group flex h-full flex-col rounded-[16px] border border-paper/14 bg-paper/6 p-[22px] text-start transition-colors hover:border-mint/50 hover:bg-paper/10 focus-visible:outline-2 focus-visible:outline-mint"
+                >
+                  <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-[12px] bg-mint/12 text-mint">
+                    <Icon className="h-[22px] w-[22px]" strokeWidth={1.8} aria-hidden="true" />
+                  </span>
+                  <h3 className="text-[16.5px] font-extrabold text-paper">{c.title[l]}</h3>
+                  <p className="mt-1.5 text-[13.5px] leading-[1.7] text-paper/66">{c.body[l]}</p>
+                  <span className="mt-auto inline-flex items-center gap-1.5 pt-4 text-[13px] font-semibold text-mint">
+                    {CAPABILITIES.open[l]} <Arrow className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-0.5 ltr:group-hover:translate-x-0.5" aria-hidden="true" />
+                  </span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
       </div>
     </section>
-  ), locale);
+  );
 }

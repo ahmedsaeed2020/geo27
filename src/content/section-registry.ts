@@ -1,4 +1,5 @@
 import { HOME_SHOWCASE } from './product-proof';
+import { CAPABILITIES, CHAOS, EXPLORER, FAQ_COPY, FINAL, INDUSTRIES_COPY, JOURNEY, MODULES, PROBLEMS, SAUDI } from './home';
 import { orderSections, type SectionLayoutConfig } from '@/lib/site-config-schema';
 
 /**
@@ -18,23 +19,23 @@ export const HOME_SECTIONS = [
   { id: 'hero', label: 'سلايدر المنتجات الرئيسي (ثابت)', locked: true },
   { id: 'trust', label: 'شريط الثقة' },
   { id: 'layers', label: 'المنصة والتطبيقات والتنفيذ', heading: { ar: 'منصة أعمال. تطبيقات متخصصة. قدرة على التنفيذ.', en: 'A business platform. Specialist applications. The capability to deliver.' } },
-  { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
-  { id: 'journey', label: 'رحلة العمل', heading: { ar: 'نفس العمل. أربع زوايا أوضح.', en: 'One operation. Four clearer perspectives.' } },
-  { id: 'chaos', label: 'من الفوضى إلى التحكّم', heading: { ar: 'من الفوضى… إلى التحكّم' } },
+  { id: 'explorer', label: 'ابدأ من دورك (الأدوار والأسئلة)', heading: EXPLORER.heading },
+  { id: 'journey', label: 'رحلة العمل (أربع زوايا من DIGIT Pro)', heading: JOURNEY.heading },
+  { id: 'chaos', label: 'من الفوضى إلى التحكّم (المنتجات الستة)', heading: CHAOS.heading },
   { id: 'band', label: 'سلايدر المنتجات (محاسبتك أوضح)', heading: { ar: 'محاسبتك أوضح' } },
-  { id: 'modules', label: 'الموديولات', heading: { ar: 'منصة واحدة… لكل إدارات شركتك' } },
+  { id: 'modules', label: 'المنتجات والأقسام', heading: MODULES.heading },
   { id: 'portfolio', label: 'محفظة الحلول (المنتجات الستة والأدوار)', heading: { ar: 'محفظة حلول واحدة… لا باقة واحدة لكل شيء.', en: 'One solution portfolio… not one bundle for everything.' } },
   { id: 'blueprint', label: 'صمّم منظومتك (المخطط التفاعلي)', heading: { ar: 'ارسم منظومتك في دقيقة… ثم احجز العرض عليها', en: 'Sketch your system in a minute… then book the demo on it' } },
   { id: 'showcase', label: 'شاشات النظام الحقيقية', heading: HOME_SHOWCASE.title },
-  { id: 'capabilities', label: 'القدرات', heading: { ar: 'قدرات تمتد عبر النظام كله.' } },
-  { id: 'problems', label: 'مشاكل الأنظمة التقليدية', heading: { ar: 'وداعاً لمشاكل الأنظمة التقليدية' } },
-  { id: 'industries', label: 'القطاعات', heading: { ar: 'مصمَّم لقطاع عملك' } },
-  { id: 'saudi', label: 'التوطين السعودي', heading: { ar: 'جاهز لفاتورة هيئة الزكاة… من اليوم الأول' } },
+  { id: 'capabilities', label: 'القدرات', heading: CAPABILITIES.heading },
+  { id: 'problems', label: 'مشاكل الأنظمة التقليدية', heading: PROBLEMS.heading },
+  { id: 'industries', label: 'القطاعات', heading: INDUSTRIES_COPY.heading },
+  { id: 'saudi', label: 'التوطين السعودي', heading: SAUDI.heading },
   { id: 'delivery', label: 'التنفيذ والتسليم', heading: { ar: 'التنفيذ ليس تثبيتًا… بل تشغيل مقبول.', en: 'Implementation isn’t an install… it’s accepted operation.' } },
-  { id: 'faq', label: 'الأسئلة الشائعة', heading: { ar: 'أسئلة قبل أن تقرّر — إجابات مباشرة' } },
+  { id: 'faq', label: 'الأسئلة الشائعة', heading: FAQ_COPY.heading },
   { id: 'cms', label: 'أقسام مضافة من الإدارة' },
   { id: 'lead', label: 'نموذج الطلب' },
-  { id: 'final', label: 'الدعوة الختامية', heading: { ar: 'جاهز تشوف كيف يناسب النظام شركتك؟' } },
+  { id: 'final', label: 'الدعوة الختامية', heading: FINAL.heading },
 ] as const satisfies readonly SectionDef[];
 
 export type HomeSectionId = (typeof HOME_SECTIONS)[number]['id'];

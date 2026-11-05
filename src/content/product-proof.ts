@@ -140,22 +140,23 @@ export type HomeTab = { key: string; label: L; hook: L; lead: string; smalls: [s
 export const HOME_SHOWCASE = {
   eyebrow: PROOF_COPY.eyebrow,
   title: { ar: "مش مجرد وعود… دي شاشات النظام الحقيقية", en: "Not promises: these are real DIGIT screens" },
-  sub: { ar: "كل رقم بمصدره، وكل مستند مرتبط باللي قبله واللي بعده، بالعربي من أول شاشة.", en: "Every number has its source, every document links to what came before and after, in Arabic from the first screen." },
+  sub: { ar: "شاشات حقيقية من DIGIT Pro وDIGIT HR: كل رقم بمصدره، وكل مستند مرتبط باللي قبله واللي بعده، بالعربي من أول شاشة.", en: "Real screens from DIGIT Pro and DIGIT HR: every number has its source, every document links to what came before and after, in Arabic from the first screen." },
   tabs: [
-    { key: "cfo", label: { ar: "المدير المالي", en: "CFO" }, hook: { ar: "موقفك المالي كله في شاشة واحدة، وكل رقم بمصدره", en: "Your whole financial position on one screen, every number traced to its source" }, lead: "01-cfo-01-e1", smalls: ["01-cfo-02-e2", "01-cfo-04-f11"], href: "/modules/accounting", linkLabel: { ar: "تفاصيل المحاسبة", en: "Explore accounting" } },
+    { key: "cfo", label: { ar: "المدير المالي", en: "CFO" }, hook: { ar: "موقفك المالي كله في شاشة واحدة، وكل رقم بمصدره", en: "Your whole financial position on one screen, every number traced to its source" }, lead: "01-cfo-01-e1", smalls: ["01-cfo-02-e2", "01-cfo-04-f11"], href: "/pro/cfo-decisions", linkLabel: { ar: "أسئلة المدير المالي", en: "The CFO questions" } },
     { key: "cash", label: { ar: "التحصيل", en: "Collections" }, hook: { ar: "اعرف مين متأخر وليه قبل ما يأثر على السيولة", en: "Know who is late and why before it hits cash" }, lead: "02-cash-01-f9", smalls: ["02-cash-03-f19", "02-cash-02-sl6"], href: "/modules/accounting", linkLabel: { ar: "تفاصيل المحاسبة", en: "Explore accounting" } },
-    { key: "doc", label: { ar: "المستند الذكي", en: "Smart document" }, hook: { ar: "كل مستند بيقولك هو فين وليه مش بيترحّل", en: "Every document tells you where it stands and why it can't post" }, lead: "03-doc-04-d5", smalls: ["03-doc-01-d1", "03-doc-02-d2"], href: "/features", linkLabel: { ar: "كل القدرات", en: "See all capabilities" } },
+    { key: "doc", label: { ar: "المستند الذكي", en: "Smart document" }, hook: { ar: "كل مستند بيقولك هو فين وليه مش بيترحّل", en: "Every document tells you where it stands and why it can't post" }, lead: "03-doc-04-d5", smalls: ["03-doc-01-d1", "03-doc-02-d2"], href: "/pro/capabilities", linkLabel: { ar: "القدرات المشتركة", en: "Shared capabilities" } },
     { key: "sales", label: { ar: "المبيعات", en: "Sales" }, hook: { ar: "وعد العميل على حاجة متوفرة فعلًا وبسعر مفهوم", en: "Promise only what you actually have, at a price you can explain" }, lead: "05-sales-01-sl2", smalls: ["05-sales-02-sl5", "05-sales-03-sl7"], href: "/modules/sales", linkLabel: { ar: "تفاصيل المبيعات", en: "Explore sales" } },
     { key: "inv", label: { ar: "المخزون", en: "Inventory" }, hook: { ar: "رصيد المخزن هو نفسه اللي في الدفاتر", en: "Warehouse stock that matches the books" }, lead: "07-inv-01-in1", smalls: ["07-inv-03-inv-014", "07-inv-02-in3"], href: "/modules/inventory", linkLabel: { ar: "تفاصيل المخزون", en: "Explore inventory" } },
     { key: "ast", label: { ar: "الأصول", en: "Fixed assets" }, hook: { ar: "راجع الإهلاك المجدول والمستحق والمرحّل ومطابقته", en: "Review scheduled, due and posted depreciation against the GL" }, lead: "08-ast-02-fa5", smalls: ["08-ast-01-fa4", "08-ast-03-fix-003"], href: "/modules/fixed-assets", linkLabel: { ar: "تفاصيل الأصول الثابتة", en: "Explore fixed assets" } },
+    { key: "hr", label: { ar: "الموارد البشرية", en: "HR" }, hook: { ar: "من مركز القيادة إلى ملف الموظف وجاهزية مسير الرواتب", en: "From the command center to the employee file and payroll run readiness" }, lead: "hr-s01", smalls: ["hr-s16", "hr-s21"], href: "/modules/hr-payroll", linkLabel: { ar: "تفاصيل DIGIT HR", en: "Explore DIGIT HR" } },
   ] satisfies HomeTab[],
 };
 
-/** Challenge slides on the home page that get a supporting screenshot thumbnail. */
+/** Home challenge slides (keyed by PROBLEM_SLIDES[].key in src/content/home.ts) that get a supporting screenshot. */
 export const PROBLEM_SHOTS: Record<string, string> = {
-  "تقارير متأخّرة": "09-rep-04-l1",
-  "موافقات بطيئة": "10-ctl-03-s4",
-  "اعتماد زائد على الإكسل": "04-360-01-sl1",
+  reports: "09-rep-04-l1",
+  approvals: "10-ctl-03-s4",
+  spreadsheets: "04-360-01-sl1",
 };
 
 export const PRO_SHOWCASE = {

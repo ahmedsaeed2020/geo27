@@ -1,3 +1,9 @@
+# Home refresh with the new content (owner 2026-11-05 "next till finish": every old home block updated)
+- [x] HR 7 + Construction 9 section pages published; demo vs quote buttons open separate pages and forms (2026-11-04 turn).
+- [x] Home: role finder ("ابدأ من شغلك", 11 roles), trust strip, "four angles" journey (V4 workspaces), chaos-to-control (six products), modules (six families + every department), capabilities (V4 pages), challenges (linked answers), industries (products per sector, FSM hub), Saudi localization (approved wording, no WPS/GOSI compliance claim), FAQ (+ matching structured data, AR+EN), final CTA (demo / quote / blueprint), band subtitle, showcase tabs (V4 links + HR screens), home lead form for all products.
+- [x] Home: AR/EN 1280/390 visual check, keyboard, no overflow; tests for home claims/links (src/test/home-content.test.ts); full test run.
+- [ ] Owner: review the refreshed home on the preview and approve publishing.
+
 # Full-site audit & signature experience (owner 2026-11-04 21:36: audit every page, apply recommendations, fix errors, innovate)
 - [x] Audit: 130 AR/EN pages at 1280 and 390 px (status, console, overflow, broken images, alt, h1, titles/descriptions, anchors, banned wording, prices, axe WCAG 2.1 AA).
 - [x] Fix: brand-green contrast (site + imported pages), mint button text, unlabeled/empty-label icons, focusable scroll strip, duplicate ids (pricing), dead request links (POS), unreadable text on industry/pharmacy/partnership/implementation/construction sections. Re-check of the fixed pages: only decorative or hidden text still flagged.
