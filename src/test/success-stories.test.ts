@@ -14,7 +14,7 @@ describe('success stories logo ticker', () => {
   });
 
   it('uses the approved customer figure', () => {
-    expect(CUSTOMER_COUNT).toBe(50);
+    expect(CUSTOMER_COUNT).toBe(200); // owner 2026-11-05: «أكثر من 200 منشأة سعودية»
   });
 
   it('sits on the home page directly before the demo form', () => {
