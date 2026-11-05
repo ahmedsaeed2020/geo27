@@ -27,9 +27,26 @@ function collect(root: HTMLElement): Item[] {
   return out;
 }
 
+let probe: CanvasRenderingContext2D | null | undefined;
+
+/** True when a section paints an opaque dark background (any CSS colour space, resolved through a 1px canvas). */
+function isDark(el: HTMLElement): boolean {
+  const bg = getComputedStyle(el).backgroundColor;
+  if (!bg || bg === 'transparent' || bg === 'rgba(0, 0, 0, 0)') return false;
+  if (probe === undefined) probe = document.createElement('canvas').getContext('2d', { willReadFrequently: true });
+  if (!probe) return false;
+  probe.clearRect(0, 0, 1, 1);
+  probe.fillStyle = '#fff';
+  probe.fillStyle = bg;
+  probe.fillRect(0, 0, 1, 1);
+  const [r = 255, g = 255, b = 255, a = 0] = probe.getImageData(0, 0, 1, 1).data;
+  return a > 128 && r * 0.299 + g * 0.587 + b * 0.114 < 90;
+}
+
 /**
  * Animated section navigation for long pages: a fixed rail of section stops whose fill follows the reader. It only
- * appears on wide desktops (CSS), lists the page's own section headings and scrolls to them without changing the URL.
+ * appears on wide desktops (CSS), stays out of the first fold, lists the page's own section headings and scrolls to
+ * them without changing the URL.
  */
 export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<HTMLElement | null>; pageKey: string }) {
   const locale = useLocale();
@@ -40,9 +57,28 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
   useEffect(() => {
     const root = rootRef.current;
     if (!root || !window.matchMedia('(min-width: 1400px)').matches) return;
-    // Sections settle after hydration (CMS order, lazy blocks), so collect once the page has painted.
-    const id = window.setTimeout(() => setItems(collect(root)), 400);
-    return () => window.clearTimeout(id);
+    setActive(-1);
+    // Sections settle after hydration (CMS order, lazy blocks), so the stops are re-collected whenever the page's
+    // height changes and kept when the same headings come back.
+    let timer = 0;
+    let signature = '';
+    const refresh = () => {
+      window.clearTimeout(timer);
+      timer = window.setTimeout(() => {
+        const next = collect(root);
+        const sig = next.map(item => item.label).join('|');
+        if (sig === signature && next.every((item, i) => item.el.isConnected && item.el === items[i]?.el)) return;
+        signature = sig;
+        setItems(next);
+      }, 250);
+    };
+    let items: Item[] = [];
+    const resize = new ResizeObserver(refresh);
+    resize.observe(root);
+    refresh();
+    // Keep the closure's copy in sync for the identity check above.
+    const sync = setInterval(() => { items = collect(root); }, 60_000);
+    return () => { window.clearTimeout(timer); clearInterval(sync); resize.disconnect(); };
   }, [rootRef, pageKey]);
 
   useEffect(() => {
@@ -57,10 +93,8 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
           continue;
         }
         setActive(index);
-        const bg = getComputedStyle(items[index]!.el).backgroundColor;
-        const rgb = bg.match(/\d+(\.\d+)?/g)?.map(Number) ?? [];
         // Dark bands get a dark dot fill so the rail stays legible on them.
-        setDark(rgb.length >= 3 && (rgb[3] ?? 1) > 0.5 && (rgb[0]! * 0.299 + rgb[1]! * 0.587 + rgb[2]! * 0.114) < 90);
+        setDark(isDark(items[index]!.el));
       }
     }, { rootMargin: '-45% 0px -50% 0px' });
     items.forEach(item => observer.observe(item.el));
@@ -87,7 +121,7 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
       <ol>
         {items.map((item, index) => (
           <li key={`${index}-${item.label}`}>
-            <button type="button" onClick={() => go(item)} aria-current={index === active ? 'true' : undefined} data-seen={index <= active ? '' : undefined} aria-label={`${COPY.go[locale]}: ${item.label}`}>
+            <button type="button" onClick={() => go(item)} aria-current={index === active ? 'location' : undefined} data-seen={index <= active ? '' : undefined} aria-label={`${COPY.go[locale]}: ${item.label}`}>
               <span className="dm-rail-dot" aria-hidden="true" />
               <span className="dm-rail-label" aria-hidden="true">{item.label}</span>
             </button>
