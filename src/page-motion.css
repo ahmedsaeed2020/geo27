@@ -46,6 +46,6 @@
   .motion-target, [data-motion-step].motion-target, .motion-target[data-motion] { opacity: 1; translate: none; scale: none; clip-path: none; transition: none; }
   [data-motion-card], [data-motion-card] img, [data-motion-card] svg, .industry-scene, .package-page .package-tab::after { transition: none; }
   [data-motion-card]:hover, [data-motion-card]:focus-within { transform: none; }
-  [data-motion-step].motion-visible svg, #industries [data-sector-active="true"] > :is(p, a, span) { animation: none; }
+  [data-motion-step].motion-visible svg, #industries [data-sector-active="true"] > :is(p, a, span), .motion-target[data-motion="line"] { animation: none; }
   :is(#faq, .import-faq, .package-faq, .hr-cap-details) details::details-content { transition: none; }
 }
