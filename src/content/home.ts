@@ -83,16 +83,19 @@ export const JOURNEY_STEPS: JourneyStep[] = [
     open: t('افتح مساحة الذمم والتحصيل', 'Open the receivables workspace'),
   },
   {
-    ws: 'board',
-    page: '/pro/executive-dashboards',
+    ws: 'q-EXE-01',
+    page: '/pro/cfo-decisions',
     label: t('الإدارة', 'Management'),
-    question: t('ما الذي يحتاج تدخل الإدارة الآن، وما مصدر المؤشر؟', 'What needs management’s attention now, and where does the indicator come from?'),
-    lede: t('النقد والذمم والإقفال والأداء في لوحات متتالية، ولكل بطاقة تعريف ومصدر وعدد السجلات والفترة.', 'Cash, receivables, close and performance in successive boards, with a definition, source, record count and period on every card.'),
-    roles: [t('المدير المالي', 'CFO'), t('المدير التنفيذي', 'CEO')],
+    question: t('كيف يتحرك الإيراد ومجمل الربح؟', 'How are revenue and gross margin moving?'),
+    lede: t('من فواتير المبيعات المرحّلة وتكلفة البضاعة المباعة إلى لوحات المدير المالي، والقرار: أين نركز البيع، وأين نراجع التسعير.', 'From posted sales invoices and cost of goods sold to the CFO boards, and the decision: where to focus selling, and where to revisit pricing.'),
+    roles: [t('المدير العام', 'General manager'), t('المدير المالي', 'CFO')],
     shot: '01-cfo-01-e1',
-    open: t('افتح لوحات الإدارة', 'Open the management dashboards'),
+    open: t('افتح أسئلة المدير المالي', 'Open the CFO questions'),
   },
 ];
+
+/** Workspace or question anchor on the page that owns the step. */
+export const journeyHref = (s: JourneyStep) => `${s.page}#pv-${s.ws}`;
 
 /* ---------------------------------- Chaos to control ---------------------------------- */
 
