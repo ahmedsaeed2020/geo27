@@ -49,9 +49,13 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
     if (items.length < 4) return;
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) {
-        if (!entry.isIntersecting) continue;
         const index = items.findIndex(item => item.el === entry.target);
         if (index < 0) continue;
+        // Back above the first section (the first fold): the rail steps aside again.
+        if (!entry.isIntersecting) {
+          if (index === 0 && entry.boundingClientRect.top > 0) setActive(-1);
+          continue;
+        }
         setActive(index);
         const bg = getComputedStyle(items[index]!.el).backgroundColor;
         const rgb = bg.match(/\d+(\.\d+)?/g)?.map(Number) ?? [];
