@@ -75,7 +75,7 @@ const COPY = {
  * Every visitor form carries the «قصص النجاح» logo strip on top (boxed to the form's width); the demo panel renders its
  * own larger strip above its heading and passes `stories={false}`, and admin previews (`demo`) never show it.
  */
-export default function ContactForm({ kind, interest = '', demo = false, product, department, stories = !demo }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string; stories?: boolean }) {
+export default function ContactForm({ kind, interest = '', demo = false, product, department, stories = !demo, bare = false }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string; stories?: boolean; /** Inside a card that already has its own frame and h2 (the meeting-scene lead section). */ bare?: boolean }) {
   const locale = useLocale();
   const t = COPY[locale];
   const settings = useSiteConfig().forms;
@@ -150,7 +150,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
 
   if (state === "success") {
     return withStories(
-      <div role="status" className="border border-border bg-card p-6 text-center">
+      <div role="status" className={bare ? 'rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center' : 'border border-border bg-card p-6 text-center'}>
         <p className="font-semibold text-foreground">{demo ? t.demoOnly : settings.success[locale] || t.success}</p>
       </div>
     );
@@ -159,8 +159,8 @@ export default function ContactForm({ kind, interest = '', demo = false, product
   const optional = (required: boolean) => (required ? '' : t.optional);
 
   return withStories(
-    <form onSubmit={handleSubmit} method="post" className="border border-border bg-card p-6" noValidate data-contextual-form={demo ? undefined : true}>
-      <h2 className="mb-4 text-lg font-bold text-foreground">{settings.heading[locale] || t.heading}</h2>
+    <form onSubmit={handleSubmit} method="post" className={bare ? 'ls-form' : 'border border-border bg-card p-6'} noValidate data-contextual-form={demo ? undefined : true}>
+      {bare ? <h3 className="mb-4 text-base font-bold text-foreground">{settings.heading[locale] || t.heading}</h3> : <h2 className="mb-4 text-lg font-bold text-foreground">{settings.heading[locale] || t.heading}</h2>}
       <div className="grid gap-3 sm:grid-cols-2">
         <label>{t.name}<Input name="name" autoComplete="name" required maxLength={100} /></label>
         <label>{t.company}<Input name="company" autoComplete="organization" required maxLength={160} /></label>
