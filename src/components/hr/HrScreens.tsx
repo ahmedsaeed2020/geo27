@@ -2,6 +2,7 @@ import { useRef, useState, type CSSProperties, type KeyboardEvent } from 'react'
 import { ArrowLeft, ArrowRight, Search } from 'lucide-react';
 import ShotFrame from '@/components/product/ShotFrame';
 import ShotLightbox from '@/components/product/ShotLightbox';
+import ScreenMosaic, { type MosaicTile } from '@/components/product/ScreenMosaic';
 import { Button } from '@/components/ui/button';
 import type { Shot } from '@/content/product-shots';
 import type { ShotFocus } from '@/content/hr/hr-modules';
@@ -45,6 +46,19 @@ export default function HrScreens({ screens, locale, id }: { screens: ResolvedSc
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = screens[active] ?? screens[0];
   if (!current) return null;
+  // Several screens, or one with a marked region: one mosaic of the screens and their magnified details.
+  if (screens.length > 1 || current.focus) {
+    const tiles: MosaicTile[] = screens.flatMap(s => {
+      const own: MosaicTile[] = [{ shot: s.shot }];
+      if (s.focus) own.push({ shot: s.shot, focus: s.focus, caption: `${C.magnified[locale]} · ${s.shot.caption[locale]}` });
+      return own;
+    });
+    return (
+      <div className="hr-screens" data-mosaic="">
+        <ScreenMosaic tiles={tiles} locale={locale} label="DIGIT HR" id={id} />
+      </div>
+    );
+  }
   if (screens.length === 1) {
     return (
       <div className="hr-screens" data-lens={current.focus ? '' : undefined}>

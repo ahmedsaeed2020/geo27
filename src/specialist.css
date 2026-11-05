@@ -223,7 +223,7 @@
 [dir="rtl"] .sp-cta-photo { -webkit-mask-image: linear-gradient(to right, #000 72%, transparent); mask-image: linear-gradient(to right, #000 72%, transparent); }
 .sp-cta::after, [dir="rtl"] .sp-cta::after { content: none; }
 .sp-cta .dp-wrap > div { max-width: min(560px, 48%); }
-.sp-cta .dp-wrap { justify-content: flex-start; }
+.sp-cta .dp-wrap { flex-direction: column; align-items: flex-start; justify-content: center; }
 
 @media (max-width: 900px) {
   .sp-hero-top { grid-template-columns: minmax(0, 1fr); align-items: start; }
