@@ -10,6 +10,7 @@ import { NavLink } from '@/components/nav/nav-links';
 import type { ProPageConfig } from '@/content/pro/pro-pages';
 import type { ProPageContent } from '@/content/pro/types';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import SectionRail from '@/components/motion/SectionRail';
 import { useLocale } from '@/lib/i18n';
 import { PRO_COPY as C } from './pro-copy';
 import ProPageBody from './ProPageBody';

@@ -20,6 +20,7 @@ import type { SpecialistDepartment } from '@/content/specialist/types';
 import type { CmsBlock, CmsContent } from '@/lib/cms-schema';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import SectionRail from '@/components/motion/SectionRail';
 import { useScrollEdges } from '@/hooks/use-scroll-edges';
 import '@/product-proof.css';
 

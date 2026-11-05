@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { photo as photoOf } from '@/content/specialist/photos';
 import type { L } from '@/content/specialist/types';
 import { usePageMotion } from '@/hooks/use-page-motion';
+import SectionRail from '@/components/motion/SectionRail';
 import { useLocale } from '@/lib/i18n';
 import { FsmStory } from './HubStories';
 import '@/specialist.css';
