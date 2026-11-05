@@ -10,6 +10,7 @@ import { productByKey, departmentById } from '@/content/catalog';
 import { cmsContentSchema, departmentPublishIssues, sourceBlock } from '@/lib/cms-schema';
 import { SOURCE_AREA_LINKS } from '@/content/source-area-links';
 import crmModulePage from '@/content/site/modules-crm.json';
+import provenance from '@/content/specialist/specialist-shots-provenance.json';
 
 type SrcNode = { id: string; children?: SrcNode[] };
 const nodeIds = (nodes: SrcNode[]): string[] => nodes.flatMap(n => [n.id, ...nodeIds(n.children ?? [])]);
@@ -56,6 +57,30 @@ describe('Construction, CRM and FSM + ITM pages', () => {
     expect(withScreens(CRM)).toEqual(['management', 'leads', 'opportunities', 'activities', 'accounts', 'sales-management']);
     expect(CRM.find(d => d.slug === 'administration')!.illustrative).toBe(true);
     for (const d of CONSTRUCTION) for (const id of d.heroShots) expect(id.startsWith('con-'), `${d.slug}: ${id}`).toBe(true);
+  });
+
+  it('builds every CRM and Construction area hero with screens from a mosaic of at least three real screens, never on the illustrative pages', () => {
+    const mosaicPages = (list: typeof ALL) => list.filter(d => (d.mosaic?.length ?? 0) >= 3).map(d => d.slug);
+    expect(mosaicPages(CRM)).toEqual(['management', 'leads', 'opportunities', 'activities', 'accounts', 'sales-management']);
+    expect(mosaicPages(CONSTRUCTION)).toEqual(CONSTRUCTION.map(d => d.slug));
+    expect(FSM.some(d => d.mosaic?.length)).toBe(false);
+    expect(CRM.find(d => d.slug === 'administration')!.mosaic).toBeUndefined();
+    for (const d of [...CRM, ...CONSTRUCTION]) {
+      const ids = d.mosaic ?? [];
+      expect(new Set(ids).size, `${d.slug}: duplicate tile`).toBe(ids.length);
+      for (const id of ids) {
+        expect(screenById(id), `${d.slug}: ${id}`).toBeDefined();
+        expect(id.startsWith(d.product === 'crm' ? 'crm2-' : 'con-'), `${d.slug}: ${id}`).toBe(true);
+      }
+    }
+  });
+
+  it('records the source crop of every CRM close-up used in a mosaic', () => {
+    const shots = (provenance as { shots: Record<string, { original: string; box_ltrb: number[] }> }).shots;
+    for (const id of new Set(CRM.flatMap(d => d.mosaic ?? []))) {
+      expect(shots[id]?.original, id).toMatch(/^CRM\/0[1-8]\.png$/);
+      expect(shots[id]?.box_ltrb, id).toHaveLength(4);
+    }
   });
 
   it('lets all seven CRM area pages pass the admin publish check from their source sections', () => {
