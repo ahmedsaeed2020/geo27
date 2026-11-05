@@ -351,26 +351,35 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
   // The active indicator glides to the item under the pointer or focus, and rests on the open or current product.
   useEffect(() => {
     const nav = navRef.current;
-    if (!nav) return;
+    const indicator = nav?.querySelector<HTMLElement>('.mm-indicator');
+    if (!nav || !indicator) return;
+    let current: HTMLElement | null = null;
     const rest = () => (open && nav.querySelector<HTMLElement>(`.mm-item[data-open]`)) || nav.querySelector<HTMLElement>('.mm-item[data-active]:not([data-compact])');
     const move = (item: HTMLElement | null) => {
+      current = item;
       const label = item?.querySelector<HTMLElement>('.mm-top-label');
-      if (!label) { nav.removeAttribute('data-indicator'); return; }
-      const box = nav.getBoundingClientRect();
+      // The indicator is positioned against the header (the nav itself stays unpositioned so panels span the header).
+      const host = indicator.offsetParent as HTMLElement | null;
+      if (!label || !host) { nav.removeAttribute('data-indicator'); return; }
+      const box = host.getBoundingClientRect();
       const r = label.getBoundingClientRect();
-      nav.style.setProperty('--mm-ix', `${(r.left - box.left).toFixed(1)}px`);
-      nav.style.setProperty('--mm-iy', `${(r.bottom - box.top + 5).toFixed(1)}px`);
+      nav.style.setProperty('--mm-ix', `${(r.left - box.left - host.clientLeft).toFixed(1)}px`);
+      nav.style.setProperty('--mm-iy', `${(r.bottom - box.top - host.clientTop + 5).toFixed(1)}px`);
       nav.style.setProperty('--mm-iw', `${r.width.toFixed(1)}px`);
       nav.setAttribute('data-indicator', '');
     };
     const onOver = (e: Event) => move((e.target as HTMLElement).closest<HTMLElement>('.mm-item') ?? rest());
     const onLeave = () => move(rest());
     move(rest());
+    // The header shrinks when the page scrolls; keep the indicator under its label as the bar resizes.
+    const resize = new ResizeObserver(() => move(current ?? rest()));
+    resize.observe(nav);
     nav.addEventListener('mouseover', onOver);
     nav.addEventListener('focusin', onOver);
     nav.addEventListener('mouseleave', onLeave);
     window.addEventListener('resize', onLeave);
     return () => {
+      resize.disconnect();
       nav.removeEventListener('mouseover', onOver);
       nav.removeEventListener('focusin', onOver);
       nav.removeEventListener('mouseleave', onLeave);

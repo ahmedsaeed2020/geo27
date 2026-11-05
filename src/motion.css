@@ -320,7 +320,8 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
    5. Mega Menu — fluid panel entrance, product-family switching, a moving active indicator and crossfading
       real screens. Keyboard, touch and Escape behaviour is unchanged.
    ========================================================================================================== */
-.mm-nav { position: relative; }
+/* The nav stays unpositioned: product panels are sized against the full-width sticky header, and the indicator is
+   placed against that same box (MegaMenu measures from its offsetParent). */
 .mm-indicator { position: absolute; z-index: 2; left: 0; top: 0; height: 2px; width: var(--mm-iw, 0px); border-radius: 2px; background: var(--primary); translate: var(--mm-ix, 0px) var(--mm-iy, 0px); opacity: 0; pointer-events: none; transition: translate .42s var(--dm-ease-out), width .42s var(--dm-ease-out), opacity .25s ease; }
 .mm-nav[data-indicator] .mm-indicator { opacity: 1; }
 .mm-nav[data-indicator] .mm-item[data-active] .mm-top-label::after { opacity: 0; }
