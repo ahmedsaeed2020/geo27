@@ -331,6 +331,7 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
   const triggers = useRef<Partial<Record<TopKey, HTMLButtonElement | null>>>({});
   const timer = useRef<number | undefined>(undefined);
   const previous = useRef<TopKey | null>(null);
+  const escaping = useRef(false);
   const order: TopKey[] = ['about', ...families.map(f => f.key), 'systems', 'resources'];
 
   useEffect(() => setOpen(null), [pathname]);
@@ -384,8 +385,11 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
     const onKey = (e: KeyboardEvent) => {
       if (e.key !== 'Escape') return;
       const key = open;
+      // Returning focus to the trigger must not reopen its panel through the focus-visible open.
+      escaping.current = true;
       setOpen(null);
       triggers.current[key]?.focus();
+      requestAnimationFrame(() => { escaping.current = false; });
     };
     document.addEventListener('pointerdown', onPointer);
     document.addEventListener('keydown', onKey);
@@ -409,7 +413,7 @@ export function DesktopNav({ extra }: { extra?: ReactNode }) {
   const item = (key: TopKey) => ({
     id: key,
     open: open === key,
-    onOpen: () => hoverOpen(key),
+    onOpen: () => { if (!escaping.current) hoverOpen(key); },
     onToggle: () => setOpen(open === key ? null : key),
     register: (el: HTMLButtonElement | null) => {
       triggers.current[key] = el;
