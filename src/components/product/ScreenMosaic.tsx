@@ -104,7 +104,10 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
     });
     const floor = wide ? 330 : 250;
     const cap = wide ? Math.min(600, width * 0.56) : Math.min(520, width * 1.2);
-    return { wide, stage: Math.round(Math.min(cap, Math.max(floor, ...heights)) + inset * 2) };
+    const stage = Math.round(Math.min(cap, Math.max(floor, ...heights)) + inset * 2);
+    // Compositions much shorter than the stage gather in its middle with a larger headline instead of leaving a gap.
+    const roomy = heights.map(h => h + inset * 2 < stage * 0.78);
+    return { wide, stage, roomy };
   }, [views, width]);
 
   if (!tiles.length) return null;
@@ -161,6 +164,7 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
                 aria-labelledby={multiple ? `${id}-svt-${i}` : undefined}
                 data-active={on ? 'true' : 'false'}
                 data-layout={side ? 'side' : 'stack'}
+                data-room={!side && geometry.roomy[i] ? '' : undefined}
                 inert={!on}
               >
                 <div className="sv-copy">
