@@ -72,8 +72,10 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
     if (!img || !from) return;
     source.current = null;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof img.animate !== "function") return;
+    const asked = performance.now();
     const run = () => requestAnimationFrame(() => {
-      if (!img.isConnected) return;
+      // A slow full-size download simply opens in place rather than jumping back to the frame late.
+      if (!img.isConnected || performance.now() - asked > 450) return;
       const to = img.getBoundingClientRect();
       if (!to.width || !to.height) return;
       const scale = from.width / to.width;
