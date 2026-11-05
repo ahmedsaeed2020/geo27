@@ -12,7 +12,7 @@ type Row = [id: string, width: number, height: number, fullWidth: number, fullHe
 
 const CONSTRUCTION_ROWS: Row[] = [
   ['con-executive-kpis', 1600, 449, 2800, 786, 'مساحة الإدارة العليا: ما يحتاج انتباهك، والمعتمد والمفوتر والمحصل والتكلفة المتوقعة للمحفظة', 'Executive workspace: what needs your attention, plus approved, invoiced, collected and forecast cost for the portfolio'],
-  ['con-risk-matrix', 1350, 1236, 1350, 1236, 'مصفوفة المخاطر 5×5: إجمالي التعرض والمخاطر العالية حسب الأثر والاحتمال', '5×5 risk matrix: total exposure and high risks by impact and likelihood'],
+  ['con-risk-matrix', 1330, 748, 1330, 748, 'مصفوفة المخاطر 5×5: توزيع المخاطر النشطة حسب الأثر والاحتمال', '5×5 risk matrix: active risks by impact and likelihood'],
   ['con-project-360', 1600, 1168, 2088, 1524, 'ملف المشروع: الإنجاز وتأخر الجدول، ومن العقد إلى النقد، ومن الموازنة إلى التكلفة', 'Project file: progress and schedule delay, contract to cash, and budget to cost'],
   ['con-wbs', 1600, 562, 2800, 984, 'هيكل تجزئة العمل: حزم العمل والمهام المرتبطة بكل عقدة ونسبة إنجازها', 'Work breakdown structure: work packages, linked tasks per node and their progress'],
   ['con-decisions-today', 1600, 429, 2800, 752, 'قرارات اليوم: إصدارات التقدير والأوامر التغييرية بانتظار الاعتماد مع العمر والمسؤول', 'Today’s decisions: estimate versions and change orders awaiting approval, with age and owner'],

@@ -90,22 +90,22 @@
   "con-risk-matrix": {
    "original": "con/09.png",
    "box_ltrb": [
-    2140,
-    919,
+    2160,
+    1330,
     3490,
-    2155
+    2078
    ],
    "crop_size": [
-    1350,
-    1236
+    1330,
+    748
    ],
    "inline": [
-    1350,
-    1236
+    1330,
+    748
    ],
    "full": [
-    1350,
-    1236
+    1330,
+    748
    ]
   },
   "con-receivables-ageing": {
