@@ -7,7 +7,7 @@
 - [ ] Careers hero: sharper image with clearly visible faces.
 - [ ] Mega Menu: each product panel gets its own photo with the green overlay and its own icon; every department/area link has a distinct icon.
 - [ ] QA: AR/EN desktop + mobile crawl (no placeholders, no broken images, no overflow), tests.
-- [ ] Owner: newer DIGIT CRM screenshots (the owner offered to send them) — blocked on owner.
+- [ ] Owner screenshot packs 2026-11-05 (Pro RUN11.1 live 419 + development 80 not-live, HR best 16 full-res, CRM, construction): review each image, register the usable live ones with provenance, and place full screens or crops as feature proof on /features, modules, packages, every HR page and every construction page. Development (not-live) screens stay out unless clearly labelled; CRM/construction replace photo fills where a real screen matches.
 
 # Home refresh with the new content (owner 2026-11-05 "next till finish": every old home block updated)
 - [x] HR 7 + Construction 9 section pages published; demo vs quote buttons open separate pages and forms (2026-11-04 turn).
