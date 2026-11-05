@@ -282,3 +282,88 @@ export const FINAL = {
 /* -------------------------------------- Lead form -------------------------------------- */
 
 export const HOME_LEAD = t('كل منتجات DIGIT', 'All DIGIT products');
+
+/* ------------------------------ Explorer: start from your role ------------------------------ */
+
+/**
+ * A link in the role finder: a DIGIT Pro workspace or CFO question (`page` + `ws`, label = that page's question),
+ * a catalog department or POS activity (`dept`, resolved through the catalog so an unpublished page opens its hub
+ * card), or a plain page (`href`).
+ */
+export type ExplorerLink =
+  | { kind: 'question'; page: string; ws: string; label: L }
+  | { kind: 'dept'; product: ProductKey; id: string }
+  | { kind: 'page'; href: string; label: L };
+
+export type ExplorerRole = { id: string; product: ProductKey | 'all'; label: L; start: L; links: ExplorerLink[] };
+
+const q = (page: string, ws: string, ar: string, en: string): ExplorerLink => ({ kind: 'question', page, ws, label: t(ar, en) });
+const d = (product: ProductKey, id: string): ExplorerLink => ({ kind: 'dept', product, id });
+const pg = (href: string, ar: string, en: string): ExplorerLink => ({ kind: 'page', href, label: t(ar, en) });
+const CFO = '/pro/cfo-decisions';
+
+export const EXPLORER = {
+  eyebrow: t('ابدأ من دورك', 'Start from your role'),
+  heading: t('ابدأ من شغلك، مش من اسم البرنامج', 'Start with your work, not a software name'),
+  lede: t('اختر دورك لترى الأسئلة التي يجيب عنها DIGIT والصفحات التي تبدأ منها.', 'Choose your role to see the questions DIGIT answers and the pages to start from.'),
+  roles: t('الأدوار', 'Roles'),
+  question: t('سؤال', 'Question'),
+  page: t('صفحة', 'Page'),
+  product: t('المنتج', 'Product'),
+  demo: t('احجز عرضًا توضيحيًا لهذا الدور', 'Book a demo for this role'),
+  search: t('ابحث عن قسم أو سؤال', 'Find a department or question'),
+  placeholder: t('محاسبة، رواتب، مستخلصات، مخزون…', 'Accounting, payroll, claims, stock…'),
+  results: t('نتيجة', 'results'),
+  none: t('لا توجد نتيجة. جرّب كلمة أخرى، أو اختر دورك.', 'No results. Try another word, or choose your role.'),
+  clear: t('مسح البحث', 'Clear search'),
+};
+
+export const EXPLORER_ROLES: ExplorerRole[] = [
+  { id: 'cfo', product: 'pro', label: t('المدير المالي', 'CFO'), start: t('اثنا عشر سؤالًا تنفيذيًا، لكل سؤال مصدره والقرار الذي يدعمه.', 'Twelve executive questions, each with its source and the decision it supports.'), links: [
+    q(CFO, 'q-EXE-02', 'ما وضع السيولة والاستحقاقات القادمة؟', 'What is our liquidity and upcoming due-date exposure?'),
+    q(CFO, 'q-EXE-12', 'هل نحن جاهزون لإقفال الفترة؟', 'Are we ready to close the period?'),
+    pg('/pro/executive-dashboards', 'لوحات الإدارة', 'Management dashboards'),
+    pg('/modules/reports', 'مركز التقارير', 'Report center'),
+  ] },
+  { id: 'controller', product: 'pro', label: t('المراقب المالي', 'Financial controller'), start: t('الذمم وقيمة المخزون والأصول، قبل الإقفال.', 'Receivables, stock value and assets, before close.'), links: [
+    q('/modules/accounting', 'ACC-DUES', 'أي الديون متأخر، وما الذي يمكن تحصيله فعلًا؟', 'Which debts are overdue, and what can actually be collected?'),
+    q(CFO, 'q-EXE-09', 'هل قيمة المخزون مطابقة للأستاذ العام؟', 'Does stock value agree with the general ledger?'),
+    q(CFO, 'q-EXE-10', 'ما صافي القيمة الدفترية للأصول، وهل الإهلاك مرحّل؟', 'What is the assets’ net book value, and is depreciation posted?'),
+    d('pro', 'fixed-assets'),
+  ] },
+  { id: 'sales', product: 'pro', label: t('مدير المبيعات', 'Sales manager'), start: t('من ملف العميل إلى التسليم والفوترة.', 'From the customer file to delivery and invoicing.'), links: [
+    q('/modules/sales', 'SEL-CUSTOMER', 'من هو العميل وراء هذه المعاملة؟', 'Who is the customer behind this transaction?'),
+    q(CFO, 'q-EXE-03', 'ما الذي بعناه ولم نسلّمه بعد؟', 'What have we sold but not yet delivered?'),
+    q(CFO, 'q-EXE-04', 'ما الذي سلّمناه ولم نفوتره؟', 'What have we delivered but not invoiced?'),
+    d('pro', 'selling'),
+  ] },
+  { id: 'buyer', product: 'pro', label: t('مسؤول المشتريات', 'Buyer'), start: t('الالتزامات المفتوحة وما استُلم ولم يُفوتر.', 'Open commitments and what was received but not billed.'), links: [
+    q(CFO, 'q-EXE-05', 'ما التزامات الشراء المفتوحة؟', 'What purchase commitments are open?'),
+    q(CFO, 'q-EXE-06', 'ما الذي استلمناه ولم يُفوتر لنا؟', 'What have we received but not been billed for?'),
+    d('pro', 'purchasing'),
+  ] },
+  { id: 'warehouse', product: 'pro', label: t('مسؤول المستودع', 'Warehouse lead'), start: t('المتاح والمحجوز والمتوقع، لكل مستودع على حدة.', 'Available, reserved and projected, warehouse by warehouse.'), links: [
+    q('/modules/inventory', 'INV-MASTER', 'كم المتاح فعليًا لهذا الطلب؟', 'How much is really available for this order?'),
+    q(CFO, 'q-EXE-07', 'كم المتاح والمحجوز والمتوقع من المخزون؟', 'How much stock is available, reserved and projected?'),
+    q(CFO, 'q-EXE-08', 'ما المخزون الراكد وما المعرض لانتهاء الصلاحية؟', 'Which stock is ageing or at risk of expiry?'),
+    d('pro', 'inventory'),
+  ] },
+  { id: 'hr', product: 'hr', label: t('مدير الموارد البشرية', 'HR manager'), start: t('دورة الموظف والقوى العاملة في نظام واحد، من الهيكل التنظيمي حتى الحوكمة.', 'The employee and workforce lifecycle in one system, from organization structure to governance.'), links: [
+    d('hr', 'core-hr'), d('hr', 'workforce-management'), d('hr', 'payroll-rewards'), d('hr', 'people-intelligence'),
+  ] },
+  { id: 'projects', product: 'construction', label: t('مدير المشاريع', 'Project director'), start: t('من المقايسة إلى التحصيل في سياق مشروع واحد.', 'From BOQ to collection in one project context.'), links: [
+    d('construction', 'projects'), d('construction', 'contracts'), d('construction', 'claims'), d('construction', 'budget-cost'),
+  ] },
+  { id: 'crm', product: 'crm', label: t('مدير فريق المبيعات', 'Sales team manager'), start: t('من العميل المحتمل إلى الخطوة التالية.', 'From lead to next action.'), links: [
+    d('crm', 'leads'), d('crm', 'opportunities'), d('crm', 'accounts'), d('crm', 'sales-management'),
+  ] },
+  { id: 'retail', product: 'pos', label: t('مدير عمليات التجزئة', 'Retail operations manager'), start: t('من الكاشير إلى عمليات الشركة.', 'From the till to company operations.'), links: [
+    pg('/modules/pos', 'DIGIT POS', 'DIGIT POS'), pg('/industries/retail', 'قطاع التجزئة', 'Retail sector'), d('pos', 'pharmacies'), d('pos', 'restaurants-cafes'),
+  ] },
+  { id: 'service', product: 'fsm', label: t('مدير عمليات الخدمة', 'Service operations manager'), start: t('من العقد إلى الإغلاق المؤكد.', 'From agreement to verified closure.'), links: [
+    d('fsm', 'agreements'), d('fsm', 'work-orders'), d('fsm', 'inspection'), d('fsm', 'deficiencies'),
+  ] },
+  { id: 'owner', product: 'all', label: t('صاحب المنشأة', 'Business owner'), start: t('ابدأ بما تحتاجه الآن، وأضف غيره لاحقًا.', 'Start with what you need now, and add more later.'), links: [
+    pg('/blueprint', 'صمّم منظومتك', 'Design your system'), pg('/starter', 'DIGIT Starter', 'DIGIT Starter'), pg('/pro', 'DIGIT Pro', 'DIGIT Pro'), pg('/services-3/implementation', 'مراحل التنفيذ', 'Delivery stages'),
+  ] },
+];
