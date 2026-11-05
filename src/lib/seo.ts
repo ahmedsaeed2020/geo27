@@ -1,6 +1,7 @@
 // Central SEO layer: every content route wraps its head() with withSeo(path, head)
 // so canonical, og:url, locale, hreflang and JSON-LD stay consistent site-wide.
-import { departmentTrail } from "@/content/catalog";
+import { departmentTrail, PRODUCTS } from "@/content/catalog";
+import { HOME_FAQ } from "@/content/home";
 import { PRO_AREAS } from "@/content/pro/pro-pages";
 
 export const SITE_URL = "https://digit-erp.com";
