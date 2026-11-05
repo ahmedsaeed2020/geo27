@@ -21,6 +21,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [25, 26],
     photo: 'crm-sales-call',
     heroShots: ['crm2-home', 'crm2-executive', 'crm2-leads'],
+    mosaic: ['crm2-exec-cards', 'crm2-home-activity', 'crm2-nav-home', 'crm2-opp-conversion', 'crm2-leads-sources', 'crm2-act-mix'],
     illustrative: false,
     signature: 'matrix',
     sections: [
@@ -100,6 +101,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [25],
     photo: 'crm-sales-call',
     heroShots: ['crm2-leads'],
+    mosaic: ['crm2-leads-sources', 'crm2-leads-funnel', 'crm2-nav-leads', 'crm2-leads-first-contact', 'crm2-leads-conversion'],
     illustrative: false,
     signature: 'timeline',
     sections: [
@@ -183,6 +185,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [25],
     photo: 'crm-sales-call',
     heroShots: ['crm2-opportunities', 'crm2-forecast'],
+    mosaic: ['crm2-opp-conversion', 'crm2-opp-ageing', 'crm2-nav-opp', 'crm2-opp-closings', 'crm2-opp-weighted'],
     illustrative: false,
     signature: 'lanes',
     sections: [
@@ -261,6 +264,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [25, 26],
     photo: 'crm-sales-call',
     heroShots: ['crm2-activities'],
+    mosaic: ['crm2-act-daily', 'crm2-act-mix', 'crm2-rep-activity-type', 'crm2-act-calls', 'crm2-home-activity'],
     illustrative: false,
     signature: 'timeline',
     sections: [
@@ -343,6 +347,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [25],
     photo: 'crm-sales-call',
     heroShots: ['crm2-accounts-health'],
+    mosaic: ['crm2-acc-health', 'crm2-acc-open-opps', 'crm2-nav-leads', 'crm2-exec-health', 'crm2-accounts-health'],
     illustrative: false,
     signature: 'matrix',
     sections: [
@@ -422,6 +427,7 @@ export const CRM: SpecialistDepartment[] = [
     profilePages: [26],
     photo: 'crm-sales-call',
     heroShots: ['crm2-executive', 'crm2-opportunities', 'crm2-forecast'],
+    mosaic: ['crm2-exec-cards', 'crm2-opp-weighted', 'crm2-nav-reports', 'crm2-opp-closings', 'crm2-rep-activity-type'],
     illustrative: false,
     signature: 'ledger',
     sections: [
