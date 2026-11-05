@@ -219,7 +219,7 @@
 .sp-hero[data-layout="mosaic"] .sp-legend { margin-top: 22px; }
 
 /* ---------- CTA photograph: crisp on its own half, never washed out behind the text ---------- */
-.sp-cta-photo { inset: 0 auto 0 auto; inset-inline-end: 0; width: min(50%, 860px); opacity: 1; -webkit-mask-image: linear-gradient(to left, #000 72%, transparent); mask-image: linear-gradient(to left, #000 72%, transparent); }
+.sp-cta-photo { inset: 0 auto 0 auto; inset-inline-end: 0; width: min(50%, 860px); opacity: 1; object-position: 50% 16%; -webkit-mask-image: linear-gradient(to left, #000 72%, transparent); mask-image: linear-gradient(to left, #000 72%, transparent); }
 [dir="rtl"] .sp-cta-photo { -webkit-mask-image: linear-gradient(to right, #000 72%, transparent); mask-image: linear-gradient(to right, #000 72%, transparent); }
 .sp-cta::after, [dir="rtl"] .sp-cta::after { content: none; }
 .sp-cta .dp-wrap > div { max-width: min(560px, 48%); }

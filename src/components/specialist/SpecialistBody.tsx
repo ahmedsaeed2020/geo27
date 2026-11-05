@@ -679,7 +679,7 @@ export default function SpecialistBody({ content, locale, entry, source, renderB
             <h2 id="sp-cta-title">{C.ctaTitle[locale]}</h2>
             <p>{C.ctaBody[locale]}</p>
           </div>
-          <Button size="lg" variant="secondary" onClick={demo}>
+          <Button size="lg" className="bg-mint text-ink hover:bg-mint/90" onClick={demo}>
             {C.demo[locale]}
           </Button>
         </div>
