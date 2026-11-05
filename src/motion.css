@@ -425,6 +425,12 @@ html:active-view-transition-type(dm-department) { background: var(--deep); }
     animation: none !important;
   }
   .imported-page .scene-hero > .page-scene-background.page-scene-background::after { content: none; }
+  /* Identity-specific entrances carry higher specificity; these selectors match it so reduced motion always wins. */
+  html[data-dm][dir] :is(.imported-page > :is(.hero, .pos-hero), .pv-hero, .hr-hero, .sp-hero) :is(h1, h1 ~ p, [data-import-container] > h1 ~ p),
+  html[data-dm] .mm-nav[data-switch] .mm-panel-inner, html[data-dm] .mm-item[data-compact] .mm-panel-inner,
+  html[data-dm] .mm-shot-body :is(.mm-shot-next, .mm-shot-prev), html[data-dm] .pp-lb-overlay[data-state], html[data-dm] .pp .pp-panel {
+    animation: none !important;
+  }
   .dm-seq > *, .dm-seq li::before, .dm-seq li::after, .dm-seq .sp-flow-no, .dm-seq .pv-flow-no, .dm-seq .pp-shot, .mm-indicator, .dm-rail *, .pp-frame, .pp-tab,
   a > svg.lucide-arrow-left, a > svg.lucide-arrow-right, button > svg.lucide-arrow-left, button > svg.lucide-arrow-right, [data-slot="button"], .mm-dept-icon {
     transition: none !important;
