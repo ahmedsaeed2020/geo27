@@ -128,8 +128,6 @@ html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(n + 6) { --dm-k:
 /* Imported hero photograph: revealed from the seam outward, then it settles (depth comes from the scroll drift). */
 .imported-page .scene-hero > .page-scene-background { animation: dm-write-rtl 1.25s var(--dm-ease-out) .12s backwards; }
 [dir="ltr"] .imported-page .scene-hero > .page-scene-background { animation-name: dm-write-ltr; }
-[dir="rtl"] .imported-page .scene-hero > .page-scene-background { animation-name: dm-write-ltr; }
-[dir="ltr"] .imported-page .scene-hero > .page-scene-background { animation-name: dm-write-rtl; }
 .imported-page .scene-hero > .page-scene-background img { animation: dm-settle 1.8s var(--dm-ease-out) backwards; will-change: translate; }
 @media (max-width: 1024px) { .imported-page .scene-hero > .page-scene-background { animation-name: dm-fade !important; animation-duration: .9s; } }
 
