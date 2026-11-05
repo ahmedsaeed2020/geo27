@@ -107,7 +107,7 @@
   cursor: zoom-in;
   transition: background .25s, border-color .25s, color .25s;
 }
-.sv-open:hover { background: var(--mint); border-color: var(--mint); color: var(--deep); }
+.sv-open:hover { background: color-mix(in oklab, var(--mint) 22%, transparent); border-color: var(--mint); color: var(--paper); }
 .sv-open:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
 .sv-open svg { width: 14px; height: 14px; }
 
