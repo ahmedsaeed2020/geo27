@@ -1,6 +1,6 @@
 // GENERATED from the department content files (construction.ts, crm.ts, fsm.ts) — light index for menus, CMS
 // validation, the admin editor and SEO. Full copy loads per product on the page. specialist.test.ts fails if this
-// index and the content files drift apart; regenerate with the script in AGENTS.md.
+// index and the content files drift apart; regenerate with: bun scripts/generate-specialist-index.ts
 import type { SpecialistIndexEntry } from './registry';
 
 export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
@@ -28,8 +28,12 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    22
   ],
   "photo": "construction-aerial",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-executive-kpis",
+   "con-risk-matrix",
+   "con-project-360"
+  ],
+  "illustrative": false,
   "signature": "matrix",
   "sections": [
    {
@@ -65,6 +69,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "عروض المحفظة",
      "en": "Portfolio views"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
     }
    },
    {
@@ -107,8 +118,11 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    23
   ],
   "photo": "construction-change-review",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-decisions-today",
+   "con-approval-queue"
+  ],
+  "illustrative": false,
   "signature": "ledger",
   "sections": [
    {
@@ -144,6 +158,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "عروض التسعير",
      "en": "Estimating views"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
     }
    },
    {
@@ -187,8 +208,11 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    23
   ],
   "photo": "construction-levels",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-wbs",
+   "con-project-360"
+  ],
+  "illustrative": false,
   "signature": "timeline",
   "sections": [
    {
@@ -224,6 +248,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "عروض المتابعة",
      "en": "Follow-up views"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
     }
    },
    {
@@ -266,8 +297,11 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    23
   ],
   "photo": "construction-change-review",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-approval-queue",
+   "con-decisions-today"
+  ],
+  "illustrative": false,
   "signature": "stack",
   "sections": [
    {
@@ -303,6 +337,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "عروض العقود",
      "en": "Contract views"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
     }
    },
    {
@@ -345,8 +386,10 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    24
   ],
   "photo": "construction-measurement",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-cost-sheet"
+  ],
+  "illustrative": false,
   "signature": "lanes",
   "sections": [
    {
@@ -424,8 +467,12 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    24
   ],
   "photo": "construction-measurement",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-cost-cash-chain",
+   "con-receivables-ageing",
+   "con-project-360"
+  ],
+  "illustrative": false,
   "signature": "stack",
   "sections": [
    {
@@ -471,6 +518,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     }
    },
    {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
+    }
+   },
+   {
     "id": "connections",
     "title": {
      "ar": "مرتبط بـ",
@@ -502,8 +556,10 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    22
   ],
   "photo": "construction-levels",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-cost-sheet"
+  ],
+  "illustrative": false,
   "signature": "lanes",
   "sections": [
    {
@@ -574,8 +630,12 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    24
   ],
   "photo": "construction-aerial",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-cost-sheet",
+   "con-cash-flow",
+   "con-cost-cash-chain"
+  ],
+  "illustrative": false,
   "signature": "ledger",
   "sections": [
    {
@@ -621,6 +681,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     }
    },
    {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
+    }
+   },
+   {
     "id": "connections",
     "title": {
      "ar": "من أين تأتي الأرقام",
@@ -652,8 +719,11 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    22
   ],
   "photo": "construction-change-review",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "con-cash-flow",
+   "con-receivables-ageing"
+  ],
+  "illustrative": false,
   "signature": "matrix",
   "sections": [
    {
@@ -689,6 +759,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "تقارير المشروع",
      "en": "Project reports"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT Construction",
+     "en": "From DIGIT Construction screens"
     }
    },
    {
@@ -731,8 +808,12 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-home",
+   "crm2-executive",
+   "crm2-leads"
+  ],
+  "illustrative": false,
   "signature": "matrix",
   "sections": [
    {
@@ -761,6 +842,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "قرارات المدير هذا الصباح",
      "en": "The manager’s decisions this morning"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT CRM",
+     "en": "From DIGIT CRM screens"
     }
    },
    {
@@ -795,8 +883,10 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    25
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-leads"
+  ],
+  "illustrative": false,
   "signature": "timeline",
   "sections": [
    {
@@ -866,8 +956,11 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    25
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-opportunities",
+   "crm2-forecast"
+  ],
+  "illustrative": false,
   "signature": "lanes",
   "sections": [
    {
@@ -889,6 +982,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "أسئلة مسار البيع",
      "en": "Pipeline questions"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT CRM",
+     "en": "From DIGIT CRM screens"
     }
    },
    {
@@ -931,8 +1031,10 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-activities"
+  ],
+  "illustrative": false,
   "signature": "timeline",
   "sections": [
    {
@@ -1002,8 +1104,10 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    25
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-accounts-health"
+  ],
+  "illustrative": false,
   "signature": "matrix",
   "sections": [
    {
@@ -1073,8 +1177,12 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
    26
   ],
   "photo": "crm-sales-call",
-  "heroShots": [],
-  "illustrative": true,
+  "heroShots": [
+   "crm2-executive",
+   "crm2-opportunities",
+   "crm2-forecast"
+  ],
+  "illustrative": false,
   "signature": "ledger",
   "sections": [
    {
@@ -1103,6 +1211,13 @@ export const SPECIALIST_INDEX: SpecialistIndexEntry[] = [
     "title": {
      "ar": "أسئلة الأسبوع",
      "en": "Questions for the week"
+    }
+   },
+   {
+    "id": "screens",
+    "title": {
+     "ar": "من شاشات DIGIT CRM",
+     "en": "From DIGIT CRM screens"
     }
    },
    {
