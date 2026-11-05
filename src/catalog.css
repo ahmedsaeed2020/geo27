@@ -60,8 +60,18 @@
 .mm-depts[data-dense] .mm-dept { padding-block: 8px; }
 .mm-dept:hover, .mm-dept:focus-visible, .mm-dept[aria-current="page"] { background: var(--tabactive); outline: none; }
 .mm-dept:focus-visible { box-shadow: 0 0 0 2px var(--ring); }
-.mm-dept-no { flex: none; padding-top: 3px; font-family: var(--font-monospace); font-size: 12px; color: var(--primary); }
-.mm-dept:not([data-live]) .mm-dept-no { color: var(--body2); }
+.mm-dept-icon { display: inline-grid; flex: none; place-items: center; width: 34px; height: 34px; border-radius: 10px; background: var(--tabactive); color: var(--primary); transition: background-color 150ms ease, color 150ms ease; }
+.mm-dept-icon svg { width: 18px; height: 18px; stroke-width: 1.8; }
+.mm-dept:hover .mm-dept-icon, .mm-dept:focus-visible .mm-dept-icon, .mm-dept[aria-current="page"] .mm-dept-icon { background: var(--primary); color: var(--paper2); }
+.mm-dept:not([data-live]) .mm-dept-icon { color: var(--body2); }
+.mm-solutions a { display: flex; align-items: center; gap: 10px; }
+.mm-solutions .mm-dept-icon { width: 30px; height: 30px; border-radius: 9px; }
+.mm-solutions .mm-dept-icon svg { width: 16px; height: 16px; }
+.mm-solutions a:hover .mm-dept-icon, .mm-solutions a:focus-visible .mm-dept-icon { background: var(--primary); color: var(--paper2); }
+.mm-intro-icon, .mm-family-icon { display: inline-grid; place-items: center; width: 44px; height: 44px; margin-bottom: 12px; border-radius: 13px; background: linear-gradient(150deg, var(--deep), var(--primary)); color: var(--mint); box-shadow: 0 12px 24px -16px color-mix(in oklab, var(--deep) 70%, transparent); }
+.mm-intro-icon svg, .mm-family-icon svg { width: 22px; height: 22px; stroke-width: 1.8; }
+.mm-family-icon { width: 38px; height: 38px; margin-bottom: 8px; border-radius: 11px; }
+.mm-family-icon svg { width: 19px; height: 19px; }
 .mm-dept-copy { min-width: 0; }
 .mm-dept-name { display: block; font-size: 15px; font-weight: 700; line-height: 1.5; }
 .mm-dept:hover .mm-dept-name { color: var(--primary); }
@@ -78,15 +88,15 @@
 @keyframes mm-fade { from { opacity: 0.2; } to { opacity: 1; } }
 .mm-shot figcaption { padding: 10px 14px 12px; border-top: 1px solid var(--dline); font-size: 13px; font-weight: 600; line-height: 1.6; color: var(--ink); }
 .mm-shot figcaption small { display: block; font-size: 11px; font-weight: 700; color: var(--primary); }
-.mm-brand { position: relative; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; height: 100%; min-height: 260px; overflow: hidden; padding: 26px; border-radius: 18px; background: linear-gradient(155deg, var(--deep), var(--dark)); color: var(--paper2); }
-.mm-brand-bars { display: grid; gap: 7px; margin-bottom: 18px; }
-.mm-brand-bars span { display: block; height: 12px; border-radius: 6px; background: var(--paper2); opacity: 0.9; }
-.mm-brand-bars span:nth-child(1) { width: 46px; background: var(--mint); opacity: 1; }
-.mm-brand-bars span:nth-child(2) { width: 74px; }
-.mm-brand-bars span:nth-child(3) { width: 58px; }
-.mm-brand::after { content: ""; position: absolute; inset-block-start: -60px; inset-inline-end: -60px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, color-mix(in oklab, var(--mint) 30%, transparent), transparent 70%); pointer-events: none; }
+/* Product cover: the family's own photo under the brand's green overlay, with its own icon. The photo stays clear at
+   the top; the overlay deepens only where the copy sits. */
+.mm-brand { position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: flex-start; gap: 10px; height: 100%; min-height: 300px; overflow: hidden; padding: 24px; border-radius: 18px; background: var(--deep); color: var(--paper2); }
+.mm-brand-photo { position: absolute; inset: 0; z-index: -2; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; animation: mm-fade 260ms ease-out; }
+.mm-brand::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, color-mix(in oklab, var(--deep) 94%, transparent) 0%, color-mix(in oklab, var(--deep) 78%, transparent) 42%, color-mix(in oklab, var(--deep) 18%, transparent) 78%, transparent 100%); pointer-events: none; }
+.mm-brand-icon { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--mint); color: var(--deep); box-shadow: 0 14px 28px -14px color-mix(in oklab, var(--dark) 80%, transparent); }
+.mm-brand-icon svg { width: 24px; height: 24px; stroke-width: 1.9; }
 .mm-brand-title { margin-top: auto; font-size: 20px; font-weight: 800; line-height: 1.45; }
-.mm-brand-body { font-size: 14px; line-height: 1.7; color: color-mix(in oklab, var(--paper2) 78%, transparent); }
+.mm-brand-body { font-size: 14px; line-height: 1.7; color: color-mix(in oklab, var(--paper2) 86%, transparent); }
 .mm-foot { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 12px 36px; padding-top: 16px; border-top: 1px solid var(--dline); }
 .mm-explore { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .mm-explore .mm-label { margin: 0; }
