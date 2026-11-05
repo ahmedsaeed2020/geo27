@@ -5,10 +5,18 @@
  */
 
 /** Pages whose only job is the request form. */
-const FORM_PAGES = new Set(['/demo', '/demo-3']);
+const FORM_PAGES = new Set(['/demo', '/demo-3', '/quote']);
+
+/** Wording that asks for a price, quote or subscription: these open /quote; every other request opens /demo. */
+const QUOTE_WORDING = /سعر|تسعير|اشترك|ابدأ باقة|ابدأ بالباقة|quote|pric|subscribe/i;
+
+/** Which standalone request page a call to action belongs to. */
+export function requestPage(text: string, href = ''): '/quote' | '/demo' {
+  return QUOTE_WORDING.test(text) || /\/quote(?:[?#]|$)/.test(href) ? '/quote' : '/demo';
+}
 
 /** Wording that asks for a demo, a quote, a subscription or a conversation with sales (Arabic and English). */
-const REQUEST_WORDING = /احجز|اطلب|تحدث مع|تحدّث مع|اشترك|ابدأ باقة|ابدأ بالباقة|سجّل كشريك|سجل كشريك|جرّب|ديمو|\bdemo\b|book|request|subscribe|talk to|register as/i;
+const REQUEST_WORDING = /احجز|اطلب|عرض سعر|\bquote\b|تحدث مع|تحدّث مع|اشترك|ابدأ باقة|ابدأ بالباقة|سجّل كشريك|سجل كشريك|جرّب|ديمو|\bdemo\b|book|request|subscribe|talk to|register as/i;
 
 /** Strips the /en prefix and any trailing slash so Arabic and English links compare alike. */
 export function barePath(pathname: string): string {

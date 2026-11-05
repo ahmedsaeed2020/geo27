@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate } from '@tanstack/react-router';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
-import { opensRequestForm } from '@/lib/form-cta';
+import { barePath, opensRequestForm, requestPage } from '@/lib/form-cta';
 import { localeHref, useLocale } from '@/lib/i18n';
 
 /**
@@ -25,7 +25,12 @@ export default function FormCtaRouting() {
       if (!opensRequestForm({ href, text, current: window.location.pathname, targetHasForm: Boolean(target?.querySelector('form')) })) return;
       event.preventDefault();
       event.stopPropagation();
-      if (!focusLeadForm()) void navigate({ to: localeHref('/demo', locale) });
+      // Demo and quote requests each have their own page and form; the sending page travels along so the request
+      // still records which product or department the visitor was reading. An in-page jump to a form is left alone above.
+      const page = requestPage(text, href);
+      const here = window.location.pathname;
+      if (barePath(here) === page) { focusLeadForm(); return; }
+      void navigate({ href: `${localeHref(page, locale)}?from=${encodeURIComponent(here)}` });
     };
     window.addEventListener('click', onClick, true);
     return () => window.removeEventListener('click', onClick, true);
