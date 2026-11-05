@@ -1,3 +1,8 @@
+# Owner notes 2026-11-05 15:07 (screen frame rejected; Trilogy one-page prompt)
+- [ ] Screen frame redesign: the multi-screen frame (e.g. CRM reports "5 مقاطع") is rejected as it looks — mixed zoom (blown-up menu crop), heavy caption bars, dashboard-like grid. Replace it with a premium showcase that presents each idea and its real screen clearly at a consistent scale; keep several real screens visible in one frame; lightbox; AR/EN; mobile.
+- [ ] Visual review of every page that shows the frame (CRM areas + module, Construction areas + module, HR sections, hub stories) at desktop and mobile, AR/EN, element screenshots inspected one by one.
+- [ ] Trilogy one-page prompt: a copy-ready Lovable prompt for the Trilogy main site that adds one page presenting DIGIT (all products, departments, Pro workspaces, reports, blueprint, delivery, Saudi localization, FAQ, demo/quote) with every link pointing to the right digit-erp.com page; check which links are live on digit-erp.com today.
+
 # Owner notes 2026-11-05 13:58 (home accepted; footer language, form scene, masonry screens, CRM imagery, assistant look)
 - [x] Footer: the blank white language pill becomes a clear globe icon + "English"/"العربية" button styled for the dark footer; dead privacy/terms links fixed.
 - [x] Request form section: form in one column (right in Arabic, left in English) over a full scene — the Digit advisor (ADVISOR-SA-A) presenting to the Saudi owner (OWNER-SA-A) in a luxury meeting room beside a large screen that shows a real Digit screen (composited, never generated UI); AR/EN mirrored versions, mobile stacking; applied to every LeadCapturePanel and the /demo and /quote pages.
