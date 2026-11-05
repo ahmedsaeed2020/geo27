@@ -58,8 +58,8 @@ type RenderProps = { node: Node; pageKey: string };
  */
 type HeroRole = "copy" | "centered" | "visual";
 type SplitPhoto = { id: string; mode: "first-child" | "run"; src: string; width: number; height: number };
-type SceneLayout = { heroId?: string; roles: Map<string, HeroRole>; split?: SplitPhoto };
-const SceneLayoutContext = createContext<SceneLayout>({ roles: new Map() });
+type SceneLayout = { heroId: string | undefined; roles: Map<string, HeroRole>; split: SplitPhoto | undefined };
+const SceneLayoutContext = createContext<SceneLayout>({ heroId: undefined, roles: new Map(), split: undefined });
 
 const HERO_CLASS = /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/;
 const DIRECTORY_CLASS = /(?:^|\s)import-directory(?:\s|$)/;
@@ -68,10 +68,16 @@ const NO_SPLIT_CLASS = /(?:^|\s)(?:band-crumb|proof|nav|hero|pos-hero|import-dir
 const holdsHeading = (node: Node): boolean => node.type === "heading" || (node.children ?? []).some(holdsHeading);
 const holdsFrame = (node: Node): boolean => isSourceFrame(node) || (node.children ?? []).some(holdsFrame);
 
+/** The node's single container child when it only wraps one, otherwise the node itself. */
+const innerOf = (node: Node): Node => {
+  const kids = node.children ?? [];
+  const only = kids.length === 1 ? kids[0] : undefined;
+  return only && only.type === "container" ? only : node;
+};
+
 function heroRoles(hero: Node): Map<string, HeroRole> {
   const roles = new Map<string, HeroRole>();
-  const kids = hero.children ?? [];
-  const inner = kids.length === 1 && kids[0].type === "container" ? kids[0] : hero;
+  const inner = innerOf(hero);
   const items = inner.children ?? [];
   if (items.some(item => item.type === "heading")) roles.set(inner.id, "centered");
   else for (const item of items) if (item.type === "container") roles.set(item.id, holdsHeading(item) ? "copy" : "visual");
@@ -80,19 +86,18 @@ function heroRoles(hero: Node): Map<string, HeroRole> {
 
 function sceneLayout(nodes: Node[], heroIndex: number, pageKey: string): SceneLayout {
   const scene = getPageScene(pageKey);
-  if (!scene) return { roles: new Map() };
+  if (!scene) return { heroId: undefined, roles: new Map(), split: undefined };
   const hero = heroIndex >= 0 ? nodes[heroIndex] : undefined;
   const roles = hero && !DIRECTORY_CLASS.test(hero.className) ? heroRoles(hero) : new Map<string, HeroRole>();
   // Directory pages without a hero: the photo sits beside their title instead of behind the whole list.
-  if (!hero && nodes[0]) {
-    const first = nodes[0];
-    const inner = first.children?.length === 1 && first.children[0].type === "container" ? first.children[0] : first;
-    return { roles, split: { id: inner.id, mode: "run", src: scene.background, width: 1398, height: 864 } };
-  }
-  if (bodyPhotoInFrame(pageKey)) return { heroId: hero?.id, roles };
-  const section = nodes.find((node, index) => index > heroIndex && node.type === "container" && !NO_SPLIT_CLASS.test(node.className)
-    && (node.children?.length ?? 0) >= 2 && node.children![0].type === "container" && node.children![0].children?.some(child => child.type === "heading")
-    && !holdsFrame(node));
+  const first = nodes[0];
+  if (!hero && first) return { heroId: undefined, roles, split: { id: innerOf(first).id, mode: "run", src: scene.background, width: 1398, height: 864 } };
+  if (bodyPhotoInFrame(pageKey)) return { heroId: hero?.id, roles, split: undefined };
+  const section = nodes.find((node, index) => {
+    const head = node.children?.[0];
+    return index > heroIndex && node.type === "container" && !NO_SPLIT_CLASS.test(node.className) && (node.children?.length ?? 0) >= 2
+      && head?.type === "container" && (head.children ?? []).some(child => child.type === "heading") && !holdsFrame(node);
+  });
   return { heroId: hero?.id, roles, split: section ? { id: section.id, mode: "first-child", src: scene.body, width: scene.bodyWidth ?? 1398, height: scene.bodyHeight ?? 864 } : undefined };
 }
 
