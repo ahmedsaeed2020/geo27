@@ -74,6 +74,7 @@ export default function HomePage() {
           {sections.map(s => <Fragment key={s.id}>{RENDER[s.id]()}</Fragment>)}
         </EditableSections>
       </main>
+      <SectionRail rootRef={mainRef} pageKey={`home-${locale}-${sections.map(s => s.id).join('.')}`} />
       <Footer />
     </div>
   );

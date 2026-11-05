@@ -93,6 +93,7 @@ export default function ProAreaPage({ config, content }: { config: ProPageConfig
         <CmsBlocks />
         {cms?.formEnabled !== false && <LeadCapturePanel interest={cms?.[locale].navLabel.trim() || config.label[locale]} product="pro" />}
       </main>
+      <SectionRail rootRef={main} pageKey={`pro-${config.key}-${locale}`} />
       <Footer />
     </div>
   );

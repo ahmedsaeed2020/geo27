@@ -559,6 +559,7 @@ export default function DepartmentPage({ content, path, hr = null, specialist = 
         <DepartmentBody content={content} path={path} locale={locale} hr={hr} specialist={specialist} />
         {content.formEnabled && <LeadCapturePanel interest={title} product={product} department={department} />}
       </main>
+      <SectionRail rootRef={mainRef} pageKey={`dept-${path}-${locale}`} />
       <Footer />
     </div>
   );

@@ -84,6 +84,7 @@ export default function FsmHubPage() {
         <ProductDepartments product="fsm" />
         {cms?.formEnabled !== false && <LeadCapturePanel interest="DIGIT FSM + ITM" product="fsm" />}
       </main>
+      <SectionRail rootRef={mainRef} pageKey={`fsm-hub-${locale}`} />
       <Footer />
     </div>
   );
