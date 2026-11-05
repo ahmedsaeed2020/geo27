@@ -18,11 +18,8 @@ export default function FormCtaRouting() {
       const link = (event.target as Element | null)?.closest?.('a[href]');
       if (!(link instanceof HTMLAnchorElement) || link.closest('[data-form-cta-ignore]')) return;
       const href = link.getAttribute('href') ?? '';
-      const hash = href.startsWith('#') ? href : href.includes('#') ? href.slice(href.indexOf('#')) : '';
-      let target: Element | null = null;
-      try { target = hash.length > 1 ? document.getElementById(decodeURIComponent(hash.slice(1))) : null; } catch { target = null; }
       const text = link.textContent ?? '';
-      if (!opensRequestForm({ href, text, current: window.location.pathname, targetHasForm: Boolean(target?.querySelector('form')) })) return;
+      if (!opensRequestForm({ href, text, current: window.location.pathname, targetHasForm: false })) return;
       event.preventDefault();
       event.stopPropagation();
       // Demo and quote requests each have their own page and form; the sending page travels along so the request
