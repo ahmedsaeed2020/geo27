@@ -90,7 +90,7 @@ export default function ProductOrbit({ product }: { product: ProductKey | 'syste
 
         <div className="porb-stage" ref={stageRef}>
           <svg className="porb-lines" data-orbit-lines aria-hidden="true" />
-          {rings.map((_, i) => <div key={i} className="porb-ring" data-orbit-ring aria-hidden="true" />)}
+          {rings.map((ring, i) => <div key={i} className="porb-ring" data-orbit-ring aria-hidden="true" style={{ width: `${ring.rx * 200}%`, height: `${ring.ry * 200}%` }} />)}
           <div className="porb-core" data-orbit-core aria-hidden="true">
             <span className="porb-halo" />
             <span className="porb-disc"><DigitIcon name={model.core.glyph} /></span>
@@ -126,7 +126,7 @@ export default function ProductOrbit({ product }: { product: ProductKey | 'syste
         >
           <ul role="list">
             {items.map((item, i) => (
-              <li key={item.id}>
+              <li key={item.id} style={{ '--i': i } as CSSProperties}>
                 <NavLink
                   path={item.path}
                   hash={item.hash}
