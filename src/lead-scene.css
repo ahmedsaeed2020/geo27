@@ -66,7 +66,7 @@
   box-shadow: 0 40px 90px -40px rgb(0 0 0 / .6), 0 12px 30px -18px rgb(0 0 0 / .35);
 }
 .ls-root .ls-eyebrow { margin: 0; font-size: 13px; font-weight: 700; color: var(--primary); }
-.ls-root .ls-title { margin: 4px 0 0; font-size: clamp(25px, 2.2vw, 30px); font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); }
+.ls-root .ls-title { margin: 4px 0 0; font-size: clamp(24px, 2.05vw, 30px); font-weight: 800; line-height: 1.3; letter-spacing: -0.01em; color: var(--ink); }
 .ls-root .ls-lede { margin: 8px 0 0; font-size: 14.5px; line-height: 1.75; color: var(--body2); }
 .ls-root .ls-points { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 16px; padding: 0; list-style: none; }
 .ls-root .ls-points li { display: inline-flex; align-items: center; gap: 6px; margin: 0; padding: 5px 10px 5px 9px; border: 1px solid color-mix(in oklab, var(--primary) 22%, transparent); border-radius: 999px; background: color-mix(in oklab, var(--mint) 12%, var(--paper2)); font-size: 12px; white-space: nowrap; font-weight: 700; line-height: 1.3; color: var(--deep); }
@@ -89,7 +89,7 @@
 }
 @container (max-width: 1099px) {
   .ls-root .ls-media { position: relative; z-index: auto; aspect-ratio: 16 / 10; }
-  .ls-root .ls-media img { inset: 0; width: 100%; height: 100%; min-width: 0; translate: none; }
+  .ls-root[data-dir] .ls-media img { inset: 0; width: 100%; height: 100%; min-width: 0; translate: none; }
   .ls-root[data-dir="rtl"] .ls-media img { object-position: 4% 38%; }
   .ls-root[data-dir="ltr"] .ls-media img { object-position: 96% 38%; }
   .ls-root .ls-shade { display: none; }

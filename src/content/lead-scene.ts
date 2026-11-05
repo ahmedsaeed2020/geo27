@@ -31,9 +31,9 @@ export const LEAD_SCENE_COPY = {
     en: 'Tell us your needs and an advisor confirms the scope with you, then you receive a written scope, rollout stages and cost.',
   },
   points: [
-    { ar: 'مستشار من فريق Digit', en: 'A Digit advisor' },
-    { ar: 'شاشات النظام الفعلية', en: 'Real system screens' },
-    { ar: 'نطاق وخطوة تالية واضحة', en: 'A clear scope and next step' },
+    { ar: 'مستشار من Digit', en: 'Digit advisor' },
+    { ar: 'شاشات فعلية', en: 'Real screens' },
+    { ar: 'خطوة تالية واضحة', en: 'Clear next step' },
   ],
   whatsapp: { ar: 'أو تواصل عبر واتساب', en: 'Or reach us on WhatsApp' },
   whatsappShort: { ar: 'واتساب', en: 'WhatsApp' },
