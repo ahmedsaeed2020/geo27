@@ -34,9 +34,15 @@ const RINGS = [
   { rx: 0.435, ry: 0.18, period: 150, offset: 1.2, mods: ["pos", "manufacturing", "projects", "einvoicing", "reports"] },
 ];
 
-function OrbitBackground() {
+function OrbitBackground({ paused }: { paused: boolean }) {
   const locale = useLocale();
   const rootRef = useRef<HTMLDivElement>(null);
+  const pausedRef = useRef(paused);
+  const wakeRef = useRef<() => void>(() => {});
+  useEffect(() => {
+    pausedRef.current = paused;
+    wakeRef.current();
+  }, [paused]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -118,8 +124,21 @@ function OrbitBackground() {
 
     const reduce = window.matchMedia("(prefers-reduced-motion:reduce)").matches;
     let raf = 0;
+    // The orbit only runs while it is on screen, the tab is visible and the visitor has not paused it.
+    let onScreen = true;
+    let clock = 0;
+    let last = 0;
+    let introStart = -1;
+    const running = () => onScreen && !pausedRef.current && document.visibilityState === "visible";
+    const ease = (x: number) => 1 - Math.pow(1 - x, 3);
     function frame(ts: number) {
-      const t = reduce ? 0 : ts / 1000;
+      raf = 0;
+      if (introStart < 0) introStart = ts;
+      clock += last ? Math.min(ts - last, 50) : 0;
+      last = ts;
+      const t = reduce ? 0 : clock / 1000;
+      // Entrance: the modules travel out from the core onto their orbits, ring by ring.
+      const intro = reduce ? 1 : Math.min(1, (ts - introStart) / 1700);
       curX += (tgX - curX) * 0.08;
       curY += (tgY - curY) * 0.08;
       core.style.transform = `translate(-50%,-50%) translate(${(curX * -18).toFixed(1)}px,${(curY * -14).toFixed(1)}px)`;
@@ -128,9 +147,11 @@ function OrbitBackground() {
         const ang = c.base - (t / c.period) * Math.PI * 2;
         const depth = (Math.sin(ang) + 1) / 2;
         const par = 1 + c.ring * 0.9;
-        let px = cx + Math.cos(ang) * cfg.rx * R + curX * 32 * par * (0.5 + depth * 0.5);
-        let py = cy + Math.sin(ang) * cfg.ry * R + curY * 24 * par * (0.5 + depth * 0.5);
-        let scale = 0.58 + depth * 0.54, op = 0.4 + depth * 0.6;
+        const arrive = ease(Math.min(1, Math.max(0, intro * 1.35 - c.ring * 0.17)));
+        const reach = 0.3 + 0.7 * arrive;
+        let px = cx + Math.cos(ang) * cfg.rx * R * reach + curX * 32 * par * (0.5 + depth * 0.5);
+        let py = cy + Math.sin(ang) * cfg.ry * R * reach + curY * 24 * par * (0.5 + depth * 0.5);
+        let scale = (0.58 + depth * 0.54) * (0.6 + 0.4 * arrive), op = (0.4 + depth * 0.6) * arrive;
         let influence = 0;
         if (mX != null && mY != null) {
           const dx = mX - px, dy = mY - py, dist = Math.sqrt(dx * dx + dy * dy);
@@ -153,14 +174,24 @@ function OrbitBackground() {
         c.pulse.setAttribute("cx", (px + (cx - px) * prog).toFixed(1));
         c.pulse.setAttribute("cy", (py + (cy - py) * prog).toFixed(1));
         c.pulse.setAttribute("r", (1.4 + depth * 1.8 + influence * 1.2).toFixed(2));
-        c.pulse.setAttribute("fill-opacity", ((0.15 + depth * 0.7 + influence * 0.35) * (1 - prog)).toFixed(3));
+        c.pulse.setAttribute("fill-opacity", ((0.15 + depth * 0.7 + influence * 0.35) * (1 - prog) * arrive).toFixed(3));
+        c.line.setAttribute("stroke-opacity", ((0.04 + depth * 0.12 + influence * 0.28) * arrive).toFixed(3));
       }
-      raf = requestAnimationFrame(frame);
+      if (running() && !(reduce && intro >= 1)) raf = requestAnimationFrame(frame);
+      else last = 0;
     }
+    const wake = () => { if (!raf && running()) raf = requestAnimationFrame(frame); };
+    wakeRef.current = wake;
+    const visibility = new IntersectionObserver(([entry]) => { onScreen = Boolean(entry?.isIntersecting); wake(); });
+    visibility.observe(root);
+    document.addEventListener("visibilitychange", wake);
     raf = requestAnimationFrame(frame);
 
     return () => {
       cancelAnimationFrame(raf);
+      visibility.disconnect();
+      document.removeEventListener("visibilitychange", wake);
+      wakeRef.current = () => {};
       ro?.disconnect();
       window.removeEventListener("pointermove", onPointer);
       window.removeEventListener("mousemove", onMouse);
