@@ -2,10 +2,10 @@ import { existsSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
-  CAPABILITY_CARDS, FINAL, HOME_FAQ, INDUSTRY_TILES, JOURNEY_STEPS, PROBLEM_SLIDES, SAUDI, SAUDI_TILES, journeyHref,
+  CAPABILITY_CARDS, EXPLORER_ROLES, FINAL, HOME_FAQ, INDUSTRY_TILES, JOURNEY_STEPS, PROBLEM_SLIDES, SAUDI, SAUDI_TILES, journeyHref,
 } from "@/content/home";
 import * as HOME from "@/content/home";
-import { PRODUCTS, MORE_SYSTEMS } from "@/content/catalog";
+import { PRODUCTS, MORE_SYSTEMS, productByKey } from "@/content/catalog";
 import { PRO_AREAS } from "@/content/pro/pro-pages";
 import { HR_INDEX } from "@/content/hr/hr-index";
 import { PROBLEM_SHOTS, HOME_SHOWCASE } from "@/content/product-proof";
@@ -43,6 +43,24 @@ describe("home page content", () => {
     }
     expect(journeyHref(JOURNEY_STEPS[0]!)).toBe("/modules/sales#pv-SEL-CUSTOMER");
     expect(journeyHref(JOURNEY_STEPS[3]!)).toBe("/pro/cfo-decisions#pv-q-EXE-01");
+  });
+
+  it("gives every role questions copied from their DIGIT Pro page and departments that exist in the catalog", () => {
+    const pages: Record<string, unknown> = { "/modules/sales": selling, "/modules/inventory": inventory, "/modules/accounting": accounting, "/pro/cfo-decisions": cfo };
+    expect(EXPLORER_ROLES).toHaveLength(11);
+    for (const role of EXPLORER_ROLES) {
+      expect(role.links.length, role.id).toBeGreaterThanOrEqual(3);
+      for (const link of role.links) {
+        if (link.kind === "question") {
+          const source = JSON.stringify(pages[link.page]);
+          expect(source, `${role.id} ${link.ws}`).toContain(link.label.ar);
+          expect(source, `${role.id} ${link.ws}`).toContain(link.label.en);
+        } else if (link.kind === "dept") {
+          const family = productByKey(link.product)!;
+          expect([...family.departments, ...family.solutions].some(x => x.id === link.id), `${role.id} ${link.product}/${link.id}`).toBe(true);
+        } else expect(routeExists(link.href), link.href).toBe(true);
+      }
+    }
   });
 
   it("links only to pages that exist", () => {
