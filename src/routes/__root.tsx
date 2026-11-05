@@ -154,7 +154,8 @@ function RootShell({ children }: { children: ReactNode }) {
   // The product family's motion identity is server-rendered so first-fold choreography runs on first paint.
   const identity = useRouterState({ select: state => motionIdentity(state.location.pathname) });
   return (
-    <html lang={english ? "en" : "ar"} dir={english ? "ltr" : "rtl"} data-dm={identity}>
+    // Arabic is the site's primary language and the literal default; /en pages override lang and dir.
+    <html lang="ar" dir="rtl" {...(english ? { lang: "en", dir: "ltr" } : {})} data-dm={identity}>
       <head>
         <HeadContent />
       </head>
