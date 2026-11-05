@@ -250,9 +250,10 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   }, [pageKey]);
   const heroIndex = page.nodes.findIndex(node => HERO_CLASS.test(node.className));
   const layout = useMemo(() => sceneLayout(page.nodes, heroIndex, pageKey), [page.nodes, heroIndex, pageKey]);
+  const areaLinks = useAreaLinks(pageKey);
   const cms = useCmsPage();
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></SceneLayoutContext.Provider><Footer /></div>, locale);
+  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><AreaLinksContext.Provider value={areaLinks}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></AreaLinksContext.Provider></SceneLayoutContext.Provider><Footer /></div>, locale);
 }
