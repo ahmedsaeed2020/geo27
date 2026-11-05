@@ -1,6 +1,7 @@
 import ContactForm from './ContactForm';
 import { useLocale } from '@/lib/i18n';
 import { Button } from './ui/button';
+import SuccessStories from './stories/SuccessStories';
 
 export type LeadContext = { product?: string; department?: string; topic?: string; interest?: string };
 
@@ -29,9 +30,15 @@ export function focusLeadForm(context?: LeadContext): boolean {
   return true;
 }
 
-export default function LeadCapturePanel({ interest = 'DIGIT', product, department }: { interest?: string } & LeadContext) {
+/**
+ * The demo form. By default the «قصص النجاح» customer-logo ticker sits right above it on the same background;
+ * pages that place the ticker themselves (the home section list) pass `stories={false}`.
+ */
+export default function LeadCapturePanel({ interest = 'DIGIT', product, department, stories = true }: { interest?: string; stories?: boolean } & LeadContext) {
   const l = useLocale();
   return (
+    <>
+    {stories && <SuccessStories />}
     <section id="digit-lead" className="mx-auto max-w-5xl px-4 py-16">
       <div className="mb-6 flex flex-wrap items-end justify-between gap-4">
         <div>
@@ -46,5 +53,6 @@ export default function LeadCapturePanel({ interest = 'DIGIT', product, departme
       </div>
       <ContactForm kind="demo" interest={interest} {...(product ? { product } : {})} {...(department ? { department } : {})} />
     </section>
+    </>
   );
 }

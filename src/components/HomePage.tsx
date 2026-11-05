@@ -18,6 +18,7 @@ import SaudiLocalization from "@/sections/SaudiLocalization";
 import Faq from "@/sections/Faq";
 import FinalCta from "@/sections/FinalCta";
 import BlueprintTeaser from "@/components/blueprint/BlueprintTeaser";
+import SuccessStories from "@/components/stories/SuccessStories";
 import { DeliveryJourney, PlatformLayers, SpecialistDiscovery } from '@/components/hubs/CorporateStory';
 import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
@@ -30,7 +31,7 @@ import { arrangeSections, HOME_SECTIONS, type HomeSectionId } from '@/content/se
 /** The home request form is for every product, not only DIGIT Pro. */
 function HomeLead() {
   const locale = useLocale();
-  return <LeadCapturePanel interest={HOME_LEAD[locale]} />;
+  return <LeadCapturePanel interest={HOME_LEAD[locale]} stories={false} />;
 }
 
 const RENDER: Record<HomeSectionId, () => ReactNode> = {
@@ -52,6 +53,7 @@ const RENDER: Record<HomeSectionId, () => ReactNode> = {
   delivery: () => <DeliveryJourney variant="home" />,
   faq: () => <Faq />,
   cms: () => <CmsBlocks />,
+  stories: () => <SuccessStories />,
   lead: () => <HomeLead />,
   final: () => <FinalCta />,
 };

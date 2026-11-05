@@ -1,6 +1,7 @@
 import { HOME_SHOWCASE } from './product-proof';
 import { CAPABILITIES, CHAOS, EXPLORER, FAQ_COPY, FINAL, INDUSTRIES_COPY, JOURNEY, MODULES, PROBLEMS, SAUDI } from './home';
 import { orderSections, type SectionLayoutConfig } from '@/lib/site-config-schema';
+import { SUCCESS_STORIES_COPY } from './success-stories';
 
 /**
  * Editable section lists for the Home and Pro pages. Order/visibility and heading overrides are stored in the
@@ -34,6 +35,7 @@ export const HOME_SECTIONS = [
   { id: 'delivery', label: 'التنفيذ والتسليم', heading: { ar: 'التنفيذ ليس تثبيتًا… بل تشغيل مقبول.', en: 'Implementation isn’t an install… it’s accepted operation.' } },
   { id: 'faq', label: 'الأسئلة الشائعة', heading: FAQ_COPY.heading },
   { id: 'cms', label: 'أقسام مضافة من الإدارة' },
+  { id: 'stories', label: 'قصص النجاح (شريط شعارات العملاء)', heading: SUCCESS_STORIES_COPY.heading },
   { id: 'lead', label: 'نموذج الطلب' },
   { id: 'final', label: 'الدعوة الختامية', heading: FINAL.heading },
 ] as const satisfies readonly SectionDef[];
