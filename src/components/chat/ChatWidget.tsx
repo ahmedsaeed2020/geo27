@@ -139,6 +139,7 @@ function ChatPanel({ threadId, locale, onError, initial }: { threadId: string; l
   const loadMessages = useServerFn(getVisitorMessages);
   useEffect(() => {
     // A chat opened from a suggestion starts empty: send the question instead of restoring history.
+    console.warn('[cw] mount', threadId, initial, sentInitial.current);
     if (initial && !sentInitial.current) {
       sentInitial.current = true;
       sendMessage({ text: initial });
