@@ -67,3 +67,18 @@
 .import-pos-solutions-pharmacies .in-2b3f67c0 { color: var(--import-source-7); }
 /* Partnership "register now" eyebrow above the form was white on the light page. */
 .import-partnership .is-173 { color: var(--import-source-7); }
+
+/* Source cards that open their product-area page (src/content/source-area-links.ts): the whole card is the link
+   target, with a visible area name at the bottom. */
+.imported-page .import-area-card{position:relative;transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.imported-page .import-area-card:has(.import-area-link:hover),.imported-page .import-area-card:has(.import-area-link:focus-visible){border-color:var(--primary);box-shadow:0 12px 30px rgba(6,78,59,.10)}
+.imported-page .import-area-link{display:inline-flex;align-items:center;gap:6px;width:fit-content;margin-top:auto;padding-top:10px;font-size:14px;font-weight:700;line-height:1.4;color:var(--primary);text-decoration:none}
+.imported-page .import-area-link::after{content:"";position:absolute;inset:0;border-radius:inherit}
+.imported-page .import-area-link:focus-visible{outline:none}
+.imported-page .import-area-card:has(.import-area-link:focus-visible){outline:2px solid var(--primary);outline-offset:3px}
+.imported-page .import-area-link svg{width:15px;height:15px;flex:none;transition:transform .2s ease}
+.imported-page .import-area-link:hover svg{transform:translateX(3px)}
+[dir="rtl"] .imported-page .import-area-link:hover svg{transform:translateX(-3px)}
+@media(prefers-reduced-motion:reduce){.imported-page .import-area-card,.imported-page .import-area-link svg{transition:none}}
+/* CRM proof stats are centred cards. */
+.import-modules-crm .in-8ed1cac .import-area-link{align-self:center}

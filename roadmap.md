@@ -10,7 +10,7 @@
 - [x] Owner screenshot packs 2026-11-05 (Pro RUN11.1 live 419 + development 80 not-live, HR best 16 full-res, CRM, construction): review each image, register the usable live ones with provenance, and place full screens or crops as feature proof on /features, modules, packages, every HR page and every construction page. Development (not-live) screens stay out unless clearly labelled; CRM/construction replace photo fills where a real screen matches.
 
 - [x] Screens placed (2026-11-05): Construction 10 crops on all 9 area pages + Contracting module/industry frames; CRM 7 crops on 6 of 7 area pages + CRM module frame (administration stays a labelled diagram); 7 more verified Pro live screens on accounting/sales/purchasing/inventory/assets; HR menu previews use the existing HR screens. Development (not-live) pack not used.
-- [ ] Owner: publish the 7 CRM area pages from the admin (now backed by current CRM screens; still drafts, so they 404 for visitors) — waits on owner approval.
+- [x] Owner 2026-11-05: published the 7 CRM area pages (AR/EN, audit-logged) and linked every CRM module-page card (proof stats, six capabilities, sales-visibility funnel) to its area page; area grid and CRM story already open them.
 - [ ] Owner: recapture without the "(تجريبي)" tenant label for the existing Pro Item 360 screen (inventory page) and the Pro workspace overviews (AST-SERVICE, INV-CONTROL, PUR-SOURCE still show labelled diagrams) — blocked on owner.
 
 # Home refresh with the new content (owner 2026-11-05 "next till finish": every old home block updated)
@@ -54,7 +54,7 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 - [x] Contextual lead forms on every new hub/department/service page (product, department/industry, page, language, UTM) — E2E on POS industry and CRM Leads draft saved and read back, test rows deleted.
 - [x] SEO/sitemap/hreflang/llms.txt for new routes; drafts noindex + 404 without link; 98 tests; 180 AR/EN views at 390–1920 px incl. Pro/HR regression; screenshots + report in Files (digit-v4-remaining).
 - [ ] Owner: real screenshots for Construction, FSM + ITM and POS (pages show labelled diagrams until then) — blocked on owner.
-- [ ] Owner: approve the 25 Construction/CRM/FSM area drafts and the new home/About/Implementation sections before publishing — blocked on owner.
+- [ ] Owner: approve the 18 Construction/FSM area drafts (CRM 7 published 2026-11-05) and the new home/About/Implementation sections before publishing — blocked on owner.
 - [ ] Owner: set up the email sending domain so new-request notifications reach a.saeed@trilogy.com.sa — blocked on owner.
 - [x] Owner 2026-11-04 17:54: screenshots showing the old module logos (pink app icon in the side rail) are wrong — scanned all 67 product screens and 16 profile photos: only the two CRM demo screens had it; removed from pages, stories, menu, editor and storage; CRM pages now show labelled diagrams; test keeps them out.
 - [ ] Owner: recaptured DIGIT CRM screens with the current module logos (deals board, manager workbench) — blocked on owner.

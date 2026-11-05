@@ -6,7 +6,13 @@ import { FSM } from '@/content/specialist/fsm';
 import { SPECIALIST_INDEX } from '@/content/specialist/index-data';
 import { CONSTRUCTION_MONEY_CHAIN, CONSTRUCTION_COST_MEASURES, CRM_JOURNEY, CRM_WORKBENCH, FSM_LOOP, POS_INDUSTRIES } from '@/content/specialist/stories';
 import { ALL_SHOTS, screenById } from '@/content/screens';
-import { productByKey } from '@/content/catalog';
+import { productByKey, departmentById } from '@/content/catalog';
+import { cmsContentSchema, departmentPublishIssues, sourceBlock } from '@/lib/cms-schema';
+import { SOURCE_AREA_LINKS } from '@/content/source-area-links';
+import crmModulePage from '@/content/site/modules-crm.json';
+
+type SrcNode = { id: string; children?: SrcNode[] };
+const nodeIds = (nodes: SrcNode[]): string[] => nodes.flatMap(n => [n.id, ...nodeIds(n.children ?? [])]);
 
 const ALL = [...CONSTRUCTION, ...CRM, ...FSM];
 
@@ -50,6 +56,25 @@ describe('Construction, CRM and FSM + ITM pages', () => {
     expect(withScreens(CRM)).toEqual(['management', 'leads', 'opportunities', 'activities', 'accounts', 'sales-management']);
     expect(CRM.find(d => d.slug === 'administration')!.illustrative).toBe(true);
     for (const d of CONSTRUCTION) for (const id of d.heroShots) expect(id.startsWith('con-'), `${d.slug}: ${id}`).toBe(true);
+  });
+
+  it('lets all seven CRM area pages pass the admin publish check from their source sections', () => {
+    for (const d of CRM) {
+      const side = { title: '', description: '', headline: '', lede: '', blocks: d.sections.map(s => sourceBlock(s.id)) };
+      const doc = cmsContentSchema.parse({ ar: side, en: side, evidence: 'approved', department: { product: 'crm', id: d.slug } });
+      expect(departmentPublishIssues(doc), d.slug).toEqual([]);
+    }
+  });
+
+  it('links the CRM module page cards to existing CRM area pages, covering every area except administration', () => {
+    const links = SOURCE_AREA_LINKS['modules-crm']!;
+    const ids = new Set(nodeIds(crmModulePage.nodes as SrcNode[]));
+    for (const [nodeId, target] of Object.entries(links)) {
+      expect(ids.has(nodeId), nodeId).toBe(true);
+      expect(target.product).toBe('crm');
+      expect(departmentById('crm', target.id), target.id).toBeDefined();
+    }
+    expect([...new Set(Object.values(links).map(l => l.id))].sort()).toEqual(['accounts', 'activities', 'leads', 'management', 'opportunities', 'sales-management']);
   });
 
   it('keeps the five money stages and the four cost measures separate', () => {
