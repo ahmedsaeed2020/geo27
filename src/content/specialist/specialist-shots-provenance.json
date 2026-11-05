@@ -1,0 +1,364 @@
+{
+ "source": "Owner uploads con.zip and CRM.zip (2026-11-05)",
+ "method": "Rectangular crop of one original capture, then uniform downscale (1600 px inline, up to 2800 px full). No pixel inside a crop is edited.",
+ "excluded": "Regions with sample-tenant labels, sign-in addresses, personal e-mail addresses, the floating assistant button or broken source labels.",
+ "shots": {
+  "con-cash-flow": {
+   "original": "con/01.png",
+   "box_ltrb": [
+    55,
+    973,
+    3180,
+    2410
+   ],
+   "crop_size": [
+    3125,
+    1437
+   ],
+   "inline": [
+    1600,
+    736
+   ],
+   "full": [
+    2800,
+    1288
+   ]
+  },
+  "con-cost-sheet": {
+   "original": "con/02.png",
+   "box_ltrb": [
+    55,
+    912,
+    3180,
+    3010
+   ],
+   "crop_size": [
+    3125,
+    2098
+   ],
+   "inline": [
+    1600,
+    1074
+   ],
+   "full": [
+    2800,
+    1880
+   ]
+  },
+  "con-project-360": {
+   "original": "con/03.png",
+   "box_ltrb": [
+    1092,
+    1286,
+    3180,
+    2810
+   ],
+   "crop_size": [
+    2088,
+    1524
+   ],
+   "inline": [
+    1600,
+    1168
+   ],
+   "full": [
+    2088,
+    1524
+   ]
+  },
+  "con-wbs": {
+   "original": "con/08.png",
+   "box_ltrb": [
+    57,
+    833,
+    3491,
+    2040
+   ],
+   "crop_size": [
+    3434,
+    1207
+   ],
+   "inline": [
+    1600,
+    562
+   ],
+   "full": [
+    2800,
+    984
+   ]
+  },
+  "con-risk-matrix": {
+   "original": "con/09.png",
+   "box_ltrb": [
+    2140,
+    919,
+    3490,
+    2155
+   ],
+   "crop_size": [
+    1350,
+    1236
+   ],
+   "inline": [
+    1350,
+    1236
+   ],
+   "full": [
+    1350,
+    1236
+   ]
+  },
+  "con-receivables-ageing": {
+   "original": "con/10.png",
+   "box_ltrb": [
+    58,
+    1066,
+    3602,
+    1657
+   ],
+   "crop_size": [
+    3544,
+    591
+   ],
+   "inline": [
+    1600,
+    267
+   ],
+   "full": [
+    2800,
+    467
+   ]
+  },
+  "con-decisions-today": {
+   "original": "con/11.png",
+   "box_ltrb": [
+    47,
+    0,
+    2990,
+    790
+   ],
+   "crop_size": [
+    2943,
+    790
+   ],
+   "inline": [
+    1600,
+    429
+   ],
+   "full": [
+    2800,
+    752
+   ]
+  },
+  "con-approval-queue": {
+   "original": "con/11.png",
+   "box_ltrb": [
+    47,
+    2010,
+    2990,
+    3000
+   ],
+   "crop_size": [
+    2943,
+    990
+   ],
+   "inline": [
+    1600,
+    538
+   ],
+   "full": [
+    2800,
+    942
+   ]
+  },
+  "con-executive-kpis": {
+   "original": "con/12.png",
+   "box_ltrb": [
+    41,
+    725,
+    3065,
+    1574
+   ],
+   "crop_size": [
+    3024,
+    849
+   ],
+   "inline": [
+    1600,
+    449
+   ],
+   "full": [
+    2800,
+    786
+   ]
+  },
+  "con-cost-cash-chain": {
+   "original": "con/12.png",
+   "box_ltrb": [
+    41,
+    2619,
+    3065,
+    3064
+   ],
+   "crop_size": [
+    3024,
+    445
+   ],
+   "inline": [
+    1600,
+    235
+   ],
+   "full": [
+    2800,
+    412
+   ]
+  },
+  "crm2-executive": {
+   "original": "CRM/01.png",
+   "box_ltrb": [
+    0,
+    0,
+    4458,
+    1448
+   ],
+   "crop_size": [
+    4458,
+    1448
+   ],
+   "inline": [
+    1600,
+    520
+   ],
+   "full": [
+    2800,
+    909
+   ]
+  },
+  "crm2-home": {
+   "original": "CRM/08.png",
+   "box_ltrb": [
+    40,
+    230,
+    4290,
+    2700
+   ],
+   "crop_size": [
+    4250,
+    2470
+   ],
+   "inline": [
+    1600,
+    930
+   ],
+   "full": [
+    2800,
+    1627
+   ]
+  },
+  "crm2-activities": {
+   "original": "CRM/03.png",
+   "box_ltrb": [
+    0,
+    0,
+    4498,
+    2560
+   ],
+   "crop_size": [
+    4498,
+    2560
+   ],
+   "inline": [
+    1600,
+    911
+   ],
+   "full": [
+    2800,
+    1594
+   ]
+  },
+  "crm2-accounts-health": {
+   "original": "CRM/04.png",
+   "box_ltrb": [
+    0,
+    0,
+    4626,
+    1450
+   ],
+   "crop_size": [
+    4626,
+    1450
+   ],
+   "inline": [
+    1600,
+    502
+   ],
+   "full": [
+    2800,
+    878
+   ]
+  },
+  "crm2-opportunities": {
+   "original": "CRM/06.png",
+   "box_ltrb": [
+    40,
+    140,
+    4600,
+    1880
+   ],
+   "crop_size": [
+    4560,
+    1740
+   ],
+   "inline": [
+    1600,
+    611
+   ],
+   "full": [
+    2800,
+    1068
+   ]
+  },
+  "crm2-forecast": {
+   "original": "CRM/06.png",
+   "box_ltrb": [
+    40,
+    2790,
+    4600,
+    3400
+   ],
+   "crop_size": [
+    4560,
+    610
+   ],
+   "inline": [
+    1600,
+    214
+   ],
+   "full": [
+    2800,
+    375
+   ]
+  },
+  "crm2-leads": {
+   "original": "CRM/07.png",
+   "box_ltrb": [
+    40,
+    160,
+    4600,
+    1255
+   ],
+   "crop_size": [
+    4560,
+    1095
+   ],
+   "inline": [
+    1600,
+    384
+   ],
+   "full": [
+    2800,
+    672
+   ]
+  }
+ }
+}
