@@ -123,7 +123,6 @@ export default function Hero() {
 #dgt-bg .dgt-tip{position:absolute;top:calc(100% + 12px);left:50%;transform:translate(-50%,-4px);white-space:nowrap;padding:7px 14px;border-radius:999px;background:#F4F7F5;color:#0B3B2A;font-size:14px;font-weight:700;line-height:1.2;box-shadow:0 10px 26px rgba(0,0,0,.45),0 0 0 1px rgba(52,211,153,.5);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
 #dgt-bg .dgt-tip::before{content:"";position:absolute;bottom:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-bottom-color:#F4F7F5;}
 #dgt-bg .dgt-chip[data-active] .dgt-tip,#dgt-bg .dgt-chip:focus-visible .dgt-tip{opacity:1;transform:translate(-50%,0);}
-#dgt-bg[data-orbit-focus] .dgt-lines{opacity:1;}
 #dgt-bg .dgt-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 34%,rgba(8,20,15,0) 55%,rgba(8,20,15,.55) 100%);}
 @media (max-height:720px){#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{top:38%;}#dgt-bg .dgt-ring,#dgt-bg .dgt-core{top:38%;}}
 @media (prefers-reduced-motion:reduce){#dgt-bg .dgt-halo,#dgt-bg .dgt-disc,#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{animation:none;}}
