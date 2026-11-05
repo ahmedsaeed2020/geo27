@@ -335,8 +335,8 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 .dm-rail { position: fixed; z-index: 40; inset-inline-start: 18px; top: 50%; translate: 0 -50%; display: none; pointer-events: none; }
 @media (min-width: 1400px) and (min-height: 700px) { .dm-rail { display: block; } }
 .dm-rail ol { position: relative; display: grid; gap: 4px; margin: 0; padding: 6px 0; list-style: none; pointer-events: auto; }
-.dm-rail-track, .dm-rail-fill { position: absolute; inset-inline-start: 13px; top: 14px; bottom: 14px; width: 2px; border-radius: 2px; background: color-mix(in oklab, var(--deep) 14%, transparent); }
-.dm-rail-fill { bottom: auto; height: calc((100% - 28px) * var(--dm-rail, 0)); background: linear-gradient(to bottom, var(--mint), var(--primary)); transition: height .5s var(--dm-ease-out); }
+.dm-rail-track, .dm-rail-fill { position: absolute; z-index: 0; inset-inline-start: 13px; top: 19px; bottom: 19px; width: 2px; border-radius: 2px; background: color-mix(in oklab, var(--deep) 14%, transparent); }
+.dm-rail-fill { bottom: auto; height: calc((100% - 38px) * var(--dm-rail, 0)); background: linear-gradient(to bottom, var(--mint), var(--primary)); transition: height .5s var(--dm-ease-out); }
 .dm-rail button { position: relative; display: flex; align-items: center; gap: 10px; height: 26px; padding: 0 6px; border: 0; background: none; color: var(--deep); cursor: pointer; font: inherit; }
 .dm-rail-dot { position: relative; z-index: 1; flex: none; width: 16px; height: 16px; border-radius: 50%; border: 2px solid color-mix(in oklab, var(--deep) 28%, transparent); background: var(--paper); transition: border-color .3s ease, background-color .3s ease, scale .35s var(--dm-ease-spring); }
 .dm-rail button[data-seen] .dm-rail-dot { border-color: var(--primary); }

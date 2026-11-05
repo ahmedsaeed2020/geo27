@@ -78,9 +78,9 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
   const progress = items.length > 1 ? Math.max(0, active) / (items.length - 1) : 0;
   return (
     <nav className="dm-rail" aria-label={COPY.nav[locale]} data-dark={dark ? '' : undefined} style={{ '--dm-rail': progress.toFixed(3) } as CSSProperties}>
+      <span className="dm-rail-track" aria-hidden="true" />
+      <span className="dm-rail-fill" aria-hidden="true" />
       <ol>
-        <span className="dm-rail-track" aria-hidden="true" />
-        <span className="dm-rail-fill" aria-hidden="true" />
         {items.map((item, index) => (
           <li key={`${index}-${item.label}`}>
             <button type="button" onClick={() => go(item)} aria-current={index === active ? 'true' : undefined} data-seen={index <= active ? '' : undefined} aria-label={`${COPY.go[locale]}: ${item.label}`}>
