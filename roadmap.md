@@ -1,6 +1,6 @@
 # Owner notes 2026-11-05 15:07 (screen frame rejected; Trilogy one-page prompt)
-- [ ] Screen frame redesign: the multi-screen frame (e.g. CRM reports "5 مقاطع") is rejected as it looks — mixed zoom (blown-up menu crop), heavy caption bars, dashboard-like grid. Replace it with a premium showcase that presents each idea and its real screen clearly at a consistent scale; keep several real screens visible in one frame; lightbox; AR/EN; mobile.
-- [ ] Visual review of every page that shows the frame (CRM areas + module, Construction areas + module, HR sections, hub stories) at desktop and mobile, AR/EN, element screenshots inspected one by one.
+- [x] Screen frame redesign: the multi-screen frame (e.g. CRM reports "5 مقاطع") is rejected as it looks — mixed zoom (blown-up menu crop), heavy caption bars, dashboard-like grid. Replace it with a premium showcase that presents each idea and its real screen clearly at a consistent scale; keep several real screens visible in one frame; lightbox; AR/EN; mobile.
+- [x] Visual review of every page that shows the frame (CRM areas + module, Construction areas + module, HR sections, hub stories) at desktop and mobile, AR/EN, element screenshots inspected one by one.
 - [ ] Trilogy one-page prompt: a copy-ready Lovable prompt for the Trilogy main site that adds one page presenting DIGIT (all products, departments, Pro workspaces, reports, blueprint, delivery, Saudi localization, FAQ, demo/quote) with every link pointing to the right digit-erp.com page; check which links are live on digit-erp.com today.
 
 # Owner notes 2026-11-05 13:58 (home accepted; footer language, form scene, masonry screens, CRM imagery, assistant look)
