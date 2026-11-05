@@ -23,9 +23,10 @@ export function localeHref(href: string, locale: Locale): string {
   if (!href.startsWith("/") || href.startsWith("//") || href.startsWith("/__l5e/") || /\.[a-z0-9]+(?:[?#]|$)/i.test(href)) return href;
   // Internal links point straight at the canonical URL: no trailing slash (imported WordPress links carry one), so
   // crawlers never hop through a redirect.
-  const canonical = href.replace(/^([^?#]*?)\/+(?=[?#]|$)/, "$1");
-  const bare = canonical.replace(/^\/en(?=\/|[?#]|$)/, "") || "/";
-  return locale === "en" ? `/en${bare === "/" ? "" : bare.startsWith("?") || bare.startsWith("#") ? bare : bare}` : bare.startsWith("?") || bare.startsWith("#") ? `/${bare}` : bare;
+  const [, path = "", rest = ""] = /^([^?#]*)(.*)$/.exec(href) ?? [];
+  const trimmed = path.length > 1 ? path.replace(/\/+$/, "") : path;
+  const bare = trimmed.replace(/^\/en(?=\/|$)/, "") || "/";
+  return (locale === "en" ? `/en${bare === "/" ? "" : bare}` : bare) + rest;
 }
 export function localizeData<T>(data: T, locale: Locale = "en"): T {
   if (typeof data === "string") {
