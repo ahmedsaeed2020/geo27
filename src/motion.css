@@ -193,7 +193,10 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 .dm-flowline-node { position: absolute; inset-inline-start: 50%; top: calc(var(--k) * 25% + 6%); width: 14px; height: 14px; margin-inline-start: -7px; border: 1.5px solid var(--dm-flow); border-radius: 4px; background: var(--card); box-shadow: 0 0 0 4px color-mix(in oklab, var(--card) 70%, transparent); animation: dm-pop .55s var(--dm-ease-spring) backwards; animation-delay: calc(.55s + var(--k) * 230ms); }
 [dir="rtl"] .dm-flowline-node { margin-inline-start: 0; margin-inline-end: -7px; inset-inline-start: auto; inset-inline-end: 50%; }
 .dm-flowline-node::after { content: ""; position: absolute; inset: 3px; border-radius: 1px; background: var(--dm-flow); opacity: .9; }
-.dm-flowline-signal { position: absolute; inset-inline-start: -2px; top: 0; width: 6px; height: 18px; border-radius: 6px; background: linear-gradient(to bottom, transparent, var(--dm-flow-glow), var(--dm-flow)); --dm-run: calc(var(--dm-h, 300px)); animation: dm-signal 3.6s var(--dm-ease-precise) 1.9s 3 backwards; opacity: 0; }
+/* A signal travels the line three times after the entrance, then the scene rests. */
+.dm-flowline-signal { position: absolute; inset-block: 0; inset-inline: -4px; overflow: hidden; }
+.dm-flowline-signal::before { content: ""; position: absolute; inset-inline-start: 2px; top: -24px; width: 6px; height: 24px; border-radius: 6px; background: linear-gradient(to bottom, transparent, var(--dm-flow-glow), var(--dm-flow)); animation: dm-signal-run 3.8s var(--dm-ease-precise) 2s 3 both; }
+@keyframes dm-signal-run { 0% { top: -24px; opacity: 0; } 12% { opacity: 1; } 88% { opacity: 1; } 100% { top: 100%; opacity: 0; } }
 /* Glyphs: documents (Pro), people (HR), courses (Construction), stages (CRM), sites (Field Service), beats (POS). */
 .dm-flowline[data-glyph="hr"] .dm-flowline-node, .dm-flowline[data-glyph="fsm"] .dm-flowline-node { border-radius: 50%; }
 .dm-flowline[data-glyph="hr"] .dm-flowline-node::after { inset: 3.5px; border-radius: 50%; }
