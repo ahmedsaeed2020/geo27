@@ -106,7 +106,7 @@ export default function Hero() {
 @keyframes dgtSpin{to{transform:translate(-50%,-50%) rotate(360deg);}}
 #dgt-bg .dgt-space{position:absolute;inset:0;background:radial-gradient(circle at 50% 34%,rgba(52,211,153,.05) 0%,rgba(8,20,15,0) 60%),radial-gradient(1px 1px at 20% 30%,rgba(52,211,153,.5),transparent),radial-gradient(1px 1px at 80% 20%,rgba(52,211,153,.35),transparent),radial-gradient(1px 1px at 65% 75%,rgba(52,211,153,.4),transparent),radial-gradient(1px 1px at 30% 80%,rgba(52,211,153,.3),transparent),radial-gradient(1px 1px at 88% 62%,rgba(52,211,153,.3),transparent),radial-gradient(1px 1px at 12% 60%,rgba(52,211,153,.25),transparent);}
 #dgt-bg .dgt-lines{position:absolute;inset:0;}
-#dgt-bg .dgt-system{position:absolute;inset:0;}
+#dgt-bg .dgt-system{position:absolute;inset:0;container-type:size;}
 #dgt-bg .dgt-ring{position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);border:1px solid rgba(52,211,153,.10);border-radius:50%;}
 #dgt-bg .dgt-r1{border-color:rgba(52,211,153,.12);}
 #dgt-bg .dgt-r2{border-color:rgba(52,211,153,.09);}
@@ -117,8 +117,13 @@ export default function Hero() {
 #dgt-bg .dgt-disc img{width:62px;height:62px;display:block;filter:drop-shadow(0 0 12px rgba(52,211,153,.75));}
 @keyframes dgtBreathe{0%,100%{opacity:.85;transform:scale(1);}50%{opacity:1;transform:scale(1.1);}}
 @keyframes dgtPulse{0%,100%{box-shadow:0 0 0 6px rgba(52,211,153,.06),0 0 54px rgba(52,211,153,.46),0 0 120px rgba(52,211,153,.24),inset 0 2px 0 rgba(255,255,255,.14),inset 0 0 30px rgba(52,211,153,.2);}50%{box-shadow:0 0 0 9px rgba(52,211,153,.09),0 0 78px rgba(52,211,153,.64),0 0 150px rgba(52,211,153,.34),inset 0 2px 0 rgba(255,255,255,.18),inset 0 0 36px rgba(52,211,153,.28);}}
-#dgt-bg .dgt-chip{position:absolute;left:0;top:0;width:78px;height:78px;border-radius:22px;display:grid;place-items:center;transform:translate(-50%,-50%);will-change:transform,opacity,filter,box-shadow;border-color:rgba(52,211,153,.30);transition:box-shadow .18s ease,border-color .18s ease,filter .18s ease;background:linear-gradient(160deg,rgba(20,50,37,.94),rgba(9,24,18,.94));border:1px solid rgba(52,211,153,.3);box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 22px rgba(52,211,153,.14),inset 0 1px 0 rgba(255,255,255,.08);}
-#dgt-bg .dgt-chip img{width:42px;height:42px;display:block;filter:drop-shadow(0 0 6px rgba(52,211,153,.45));}
+#dgt-bg .dgt-chip{position:absolute;left:0;top:0;width:78px;height:78px;border-radius:22px;display:grid;place-items:center;pointer-events:auto;cursor:pointer;opacity:0;transform:translate(-50%,-50%) translate(calc(50cqw + var(--ox) * 0.3cqmin),calc(34cqh + var(--oy) * 0.3cqmin)) scale(.6);will-change:transform,opacity,filter,box-shadow;transition:box-shadow .18s ease,border-color .18s ease,filter .18s ease;background:linear-gradient(160deg,rgba(20,50,37,.94),rgba(9,24,18,.94));border:1px solid rgba(52,211,153,.3);box-shadow:0 10px 30px rgba(0,0,0,.5),0 0 22px rgba(52,211,153,.14),inset 0 1px 0 rgba(255,255,255,.08);color:#fff;--di-accent:#34D399;text-decoration:none;outline:none;}
+#dgt-bg .dgt-chip .digit-icon{width:42px;height:42px;display:block;filter:drop-shadow(0 0 6px rgba(52,211,153,.45));}
+#dgt-bg .dgt-chip:focus-visible{outline:2px solid #8FF7C8;outline-offset:4px;}
+#dgt-bg .dgt-tip{position:absolute;top:calc(100% + 12px);left:50%;transform:translate(-50%,-4px);white-space:nowrap;padding:7px 14px;border-radius:999px;background:#F4F7F5;color:#0B3B2A;font-size:14px;font-weight:700;line-height:1.2;box-shadow:0 10px 26px rgba(0,0,0,.45),0 0 0 1px rgba(52,211,153,.5);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease;}
+#dgt-bg .dgt-tip::before{content:"";position:absolute;bottom:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-bottom-color:#F4F7F5;}
+#dgt-bg .dgt-chip[data-active] .dgt-tip,#dgt-bg .dgt-chip:focus-visible .dgt-tip{opacity:1;transform:translate(-50%,0);}
+#dgt-bg[data-orbit-focus] .dgt-lines{opacity:1;}
 #dgt-bg .dgt-vignette{position:absolute;inset:0;background:radial-gradient(ellipse 80% 80% at 50% 34%,rgba(8,20,15,0) 55%,rgba(8,20,15,.55) 100%);}
 @media (max-height:720px){#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{top:38%;}#dgt-bg .dgt-ring,#dgt-bg .dgt-core{top:38%;}}
 @media (prefers-reduced-motion:reduce){#dgt-bg .dgt-halo,#dgt-bg .dgt-disc,#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{animation:none;}}
@@ -128,7 +133,7 @@ export default function Hero() {
         {paused ? <Play aria-hidden="true" /> : <Pause aria-hidden="true" />}
         <span>{paused ? PAUSE_COPY.play[locale] : PAUSE_COPY.pause[locale]}</span>
       </button>
-      <div className="dm-orbit-copy relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
+      <div className="dm-orbit-copy pointer-events-none relative z-[2] mx-auto [&>*]:pointer-events-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
         <p className="text-[28px] font-medium text-mint lg:text-[44px]">محاسبتك أوضح مع ديجيت</p>
         <h2 className="mx-auto mt-2 px-0 text-[34px] leading-[1.25] font-bold text-paper lg:px-[50px] lg:text-[56px]">
           منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.
