@@ -209,8 +209,9 @@ html[lang="en"] .sv-bar, [dir="ltr"] .sv-bar { transform-origin: left center; }
 /* Narrow frames (phones, side panels): text above the screen, compact rail. */
 @container (max-width: 759px) {
   .mz-sub { display: none; }
-  .sv-copy { grid-template-columns: auto minmax(0, 1fr); grid-template-areas: "no title" "detail detail"; row-gap: 6px; }
-  .sv-open { display: none; }
+  .sv-copy { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "no title open" "detail detail detail"; row-gap: 6px; column-gap: 10px; }
+  .sv-open { width: 34px; height: 34px; padding: 0; justify-content: center; border-radius: 50%; }
+  .sv-open span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .sv-title { font-size: 16.5px; }
   .sv-detail { font-size: 13.5px; line-height: 1.7; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
   .sv-tabs { grid-auto-columns: 128px; gap: 8px; }
