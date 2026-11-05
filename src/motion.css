@@ -41,6 +41,9 @@
   to { clip-path: polygon(-8% -40%, 108% -40%, 108% 140%, -8% 140%); }
 }
 @keyframes dm-push { from { opacity: 0; translate: calc(var(--dm-start) * 36px) 0; } }
+/* Commercial momentum for headlines: the line is unmasked from the reading start while it moves forward a stage. */
+@keyframes dm-deal-ltr { from { clip-path: inset(-20% 100% -20% -8%); translate: -24px 0; } to { clip-path: inset(-20% -8% -20% -8%); translate: 0 0; } }
+@keyframes dm-deal-rtl { from { clip-path: inset(-20% -8% -20% 100%); translate: 24px 0; } to { clip-path: inset(-20% -8% -20% -8%); translate: 0 0; } }
 @keyframes dm-depth { from { opacity: 0; translate: 0 34px; scale: .955; } }
 @keyframes dm-layers { from { opacity: 0; transform: perspective(1400px) rotateX(9deg) translateY(46px); } }
 @keyframes dm-settle { from { scale: 1.07; } }
@@ -138,7 +141,8 @@ html[data-dm="pro"][dir="rtl"] :is(.imported-page > :is(.hero, .pos-hero), .pv-h
 html[data-dm="site"][dir="rtl"] .imported-page > :is(.hero, .pos-hero) h1 { animation-name: dm-write-rtl !important; }
 /* DIGIT CRM — commercial momentum: copy is pushed in from the reading start, like a deal moving a stage. */
 html[data-dm="crm"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-name: dm-push; animation-duration: .85s; }
-html[data-dm="crm"] :is(.imported-page > .hero, .sp-hero) h1 { animation: dm-push .9s var(--dm-ease-out) .06s backwards !important; }
+html[data-dm="crm"] :is(.imported-page > .hero, .sp-hero) h1 { animation: dm-deal-ltr .9s var(--dm-ease-out) .06s backwards !important; }
+html[data-dm="crm"][dir="rtl"] :is(.imported-page > .hero, .sp-hero) h1 { animation-name: dm-deal-rtl !important; }
 /* DIGIT Construction — project progression: elements are laid like courses, one level after another. */
 html[data-dm="construction"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-duration: .95s; animation-timing-function: var(--dm-ease-build); }
 html[data-dm="construction"] :is(.imported-page > .hero, .sp-hero) h1 { animation-timing-function: cubic-bezier(.45, 0, .15, 1) !important; animation-duration: .95s !important; }
@@ -197,7 +201,7 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 .hr-art[data-art="constellation"] .hr-orbit-center { animation: dm-fade .8s ease 1.1s backwards; }
 /* Talent — the career path is walked step by step, its records stack behind it. */
 .hr-art[data-art="journey"] .hr-path > li { animation-name: dm-push; }
-.hr-art[data-art="journey"] .hr-stack-item { animation-name: dm-layers; animation-duration: .9s; }
+.hr-art[data-art="journey"] .hr-stack-item { animation-name: dm-layers-solid; animation-duration: .9s; }
 /* Workforce — the schedule ruler ticks into place. */
 .hr-art[data-art="schedule"] .hr-ruler > li { animation-name: dm-pop; animation-duration: .45s; animation-delay: calc(.38s + var(--dm-k, 0) * 70ms); }
 .hr-art[data-art="schedule"] .hr-ruler-tick { animation: dm-grow-y .5s var(--dm-ease-out) backwards; animation-delay: inherit; transform-origin: bottom; }
@@ -210,7 +214,7 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 .hr-art[data-art="service"] .hr-loop-hub { animation: dm-pop .8s var(--dm-ease-spring) .3s backwards; }
 /* People intelligence — the drill descends one level at a time. */
 .hr-art[data-art="drill"] .hr-drill > li { animation-duration: .5s; animation-delay: calc(.38s + var(--dm-k, 0) * 140ms); }
-.hr-art[data-art="drill"] .hr-layer { animation-name: dm-layers; animation-duration: .95s; }
+.hr-art[data-art="drill"] .hr-layer { animation-name: dm-layers-solid; animation-duration: .95s; }
 /* Administration — governance questions are laid on the blueprint grid. */
 .hr-art[data-art="blueprint"] .hr-questions > li { animation-name: dm-fade; animation-duration: .7s; }
 .hr-hero .hr-flow > li { animation: dm-rise .5s var(--dm-ease-out) backwards; animation-delay: calc(.62s + var(--dm-k, 0) * 90ms); }
