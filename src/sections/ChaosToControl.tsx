@@ -74,7 +74,7 @@ export default function ChaosToControl() {
                   <li key={r.product} data-motion-step className={i < CHAOS_ROWS.length - 1 ? "border-b border-paper/10" : ""}>
                     <a href={localeHref(family.overview, l)} className="group flex items-center justify-between gap-3 py-[11px] text-[13.5px] text-paper/90 focus-visible:outline-2 focus-visible:outline-mint">
                       <span className="min-w-0">
-                        <b className="block font-semibold text-paper group-hover:text-mint" dir="ltr">{family.name[l]}</b>
+                        <b className="block font-semibold text-paper group-hover:text-mint">{family.name[l]}</b>
                         <span className="text-[12.5px] text-paper/65">{r.label[l]}</span>
                       </span>
                       <span className="flex flex-none items-center gap-[7px] text-end font-monospace text-[11px] text-mint">

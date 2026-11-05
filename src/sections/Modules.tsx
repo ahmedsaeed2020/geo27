@@ -55,7 +55,7 @@ export default function Modules() {
                   </span>
                 </div>
                 <p className="mt-4 text-[13px] font-semibold text-primary">{f.area[l]}</p>
-                <h3 id={`mod-${f.key}`} className="text-[22px] font-bold text-deep" dir="ltr" style={{ textAlign: "start" }}>{f.name[l]}</h3>
+                <h3 id={`mod-${f.key}`} className="text-[22px] font-bold text-deep">{f.name[l]}</h3>
                 <p className="mt-2 text-[14px] leading-[1.7] text-body2">{f.summary[l]}</p>
                 <ul className="mt-4 mb-4 list-none space-y-1.5 border-t border-dline pt-4 p-0">
                   {items.map(it => (
