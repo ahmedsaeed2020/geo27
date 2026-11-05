@@ -61,24 +61,21 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
     // Sections settle after hydration (CMS order, lazy blocks), so the stops are re-collected whenever the page's
     // height changes and kept when the same headings come back.
     let timer = 0;
-    let signature = '';
+    let current: Item[] = [];
     const refresh = () => {
       window.clearTimeout(timer);
       timer = window.setTimeout(() => {
         const next = collect(root);
-        const sig = next.map(item => item.label).join('|');
-        if (sig === signature && next.every((item, i) => item.el.isConnected && item.el === items[i]?.el)) return;
-        signature = sig;
+        const same = next.length === current.length && next.every((item, i) => item.el === current[i]!.el && item.label === current[i]!.label);
+        if (same) return;
+        current = next;
         setItems(next);
       }, 250);
     };
-    let items: Item[] = [];
     const resize = new ResizeObserver(refresh);
     resize.observe(root);
     refresh();
-    // Keep the closure's copy in sync for the identity check above.
-    const sync = setInterval(() => { items = collect(root); }, 60_000);
-    return () => { window.clearTimeout(timer); clearInterval(sync); resize.disconnect(); };
+    return () => { window.clearTimeout(timer); resize.disconnect(); };
   }, [rootRef, pageKey]);
 
   useEffect(() => {
