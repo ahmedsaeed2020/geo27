@@ -40,13 +40,39 @@ const url = (file: string) => {
   return pointer.url;
 };
 
-const toShots = (rows: Row[]): Record<string, Shot> =>
+// Feature close-ups for the screen mosaics: one card, chart or navigation panel each, cut from the same CRM captures
+// (inline up to 1200 px, full up to 2400 px). Same rules: rectangular crop, uniform downscale, nothing edited.
+const CRM_TILE_ROWS: Row[] = [
+  ['crm2-home-activity', 1200, 276, 2400, 551, 'حجم النشاط اليومي لفريق المبيعات عبر الأيام', 'Daily activity volume for the sales team across the days'],
+  ['crm2-nav-home', 1069, 1355, 1069, 1355, 'تنقّل DIGIT CRM: لوحة علاقات العملاء وعملي اليوم ومنصة المدير، بجانب بقية منتجات DIGIT', 'DIGIT CRM navigation: the CRM board, My day and the manager desk, beside the other DIGIT products'],
+  ['crm2-leads-funnel', 1200, 286, 2263, 540, 'قمع التأهيل: من كل العملاء المحتملين إلى التواصل والتأهيل والتحويل', 'Qualification funnel: from all leads to contacted, qualified and converted'],
+  ['crm2-leads-sources', 1200, 280, 2264, 529, 'العملاء المحتملون حسب المصدر: الموقع وحملات واتساب والترشيح والاتصال المباشر', 'Leads by source: website, WhatsApp campaigns, referrals and direct calls'],
+  ['crm2-leads-first-contact', 1200, 352, 2264, 665, 'زمن أول تواصل: كم عميلًا وصلناه خلال ساعة، وكم لم يُتواصل معه بعد', 'Time to first contact: how many leads were reached within an hour, and how many are still waiting'],
+  ['crm2-leads-conversion', 1200, 251, 2263, 474, 'التحويل حسب المصدر: أي قناة تجلب العملاء الذين يتحولون فعلًا', 'Conversion by source: which channel brings the leads that actually convert'],
+  ['crm2-nav-leads', 809, 918, 809, 918, 'قسم العملاء والتأهيل: العملاء المحتملون وجهات الاتصال والحسابات والعميل 360 وصحة العملاء', 'Leads and qualification menu: leads, contacts, accounts, Customer 360 and customer health'],
+  ['crm2-opp-ageing', 1200, 371, 2263, 700, 'خريطة أعمار المراحل: كم صفقة بقيت في كل مرحلة 0–7 و8–14 و15–30 وأكثر من 30 يومًا', 'Stage ageing map: how many deals sat in each stage for 0–7, 8–14, 15–30 and 30+ days'],
+  ['crm2-opp-conversion', 1200, 371, 2264, 700, 'معدلات التحويل بين المراحل: من الفتح والتواصل وعرض السعر والتفاوض إلى الإغلاق الناجح', 'Stage-to-stage conversion: from open, contacted, quoted and negotiating to closed won'],
+  ['crm2-opp-closings', 1200, 367, 2264, 692, 'الإغلاقات المتوقعة شهرًا بشهر حسب تاريخ الإغلاق المتوقع للصفقات المفتوحة', 'Expected closings month by month from the open deals’ expected close dates'],
+  ['crm2-opp-weighted', 1200, 305, 2263, 575, 'القيمة المرجحة حسب المرحلة بالريال، من التفاوض إلى الإغلاق الناجح', 'Weighted value by stage in riyals, from negotiation to closed won'],
+  ['crm2-nav-opp', 809, 902, 809, 902, 'قسم الفرص والمبيعات: الفرص والصفقات وخط الأنابيب ولوحة كانبان وعروض الأسعار وأوامر البيع والفواتير', 'Opportunities and sales menu: deals, pipeline, Kanban board, quotations, sales orders and invoices'],
+  ['crm2-acc-health', 1200, 309, 2260, 582, 'توزيع صحة الحسابات: السليمة والصامتة من إجمالي حسابات المحفظة', 'Account health split: healthy and quiet accounts across the portfolio'],
+  ['crm2-acc-open-opps', 1200, 214, 2260, 403, 'الفرص المفتوحة لكل حساب: أين تتركز الصفقات الجارية بين عملائك', 'Open deals per account: where the live deals sit across your customers'],
+  ['crm2-act-daily', 1200, 220, 2400, 440, 'حجم النشاط اليومي: المكالمات والمهام والملاحظات المسجلة كل يوم', 'Daily activity volume: calls, tasks and notes logged each day'],
+  ['crm2-act-mix', 868, 656, 868, 656, 'مزيج الأنشطة: المهام والاتصالات والملاحظات من إجمالي النشاط', 'Activity mix: tasks, calls and notes within all activity'],
+  ['crm2-act-calls', 868, 688, 868, 688, 'المكالمات حسب النتيجة: مكتمل ولا يوجد رد ومشغول وقائمة الانتظار', 'Calls by outcome: completed, no answer, busy and queued'],
+  ['crm2-rep-activity-type', 1200, 326, 2198, 598, 'تقرير الأنشطة حسب النوع مع التصدير إلى CSV', 'Activities by type report with CSV export'],
+  ['crm2-nav-reports', 572, 918, 572, 918, 'التقارير والتحليلات: مركز التقارير ولوحات المعلومات وتقارير خط المبيعات والمصادر وأنشطة المندوبين', 'Reports and analytics: report centre, dashboards, and pipeline, source and sales-rep activity reports'],
+  ['crm2-exec-cards', 1200, 129, 2400, 257, 'مؤشرات الإدارة العليا: إجمالي خط الأنابيب المفتوح والمسار المرجح ونسبة الفوز وإيراد الصفقات الرابحة', 'Executive indicators: open pipeline, weighted pipeline, win rate and won-deal revenue'],
+  ['crm2-exec-health', 1200, 288, 2191, 525, 'توزيع صحة المحفظة كما تراه الإدارة: الحسابات الصامتة مقابل السليمة', 'Portfolio health as management sees it: quiet against healthy accounts'],
+];
+
+const toShots = (rows: Row[], inline = '1600'): Record<string, Shot> =>
   Object.fromEntries(
     rows.map(([id, width, height, fullWidth, fullHeight, ar, en]) => [
       id,
-      { id, src: url(`${id}-1600.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${id}-full.webp`), width: fullWidth, height: fullHeight } },
+      { id, src: url(`${id}-${inline}.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${id}-full.webp`), width: fullWidth, height: fullHeight } },
     ]),
   );
 
 export const CONSTRUCTION_SHOTS: Record<string, Shot> = toShots(CONSTRUCTION_ROWS);
-export const CRM_SHOTS: Record<string, Shot> = toShots(CRM_ROWS);
+export const CRM_SHOTS: Record<string, Shot> = { ...toShots(CRM_ROWS), ...toShots(CRM_TILE_ROWS, '1200') };
