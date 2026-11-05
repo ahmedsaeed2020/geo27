@@ -59,7 +59,7 @@ export const frameFill = (pageKey: string, nodeId: string): FrameFill | undefine
 
 /** Pages whose body photo already fills a frame, so it is not repeated beside a section heading. */
 export const bodyPhotoInFrame = (pageKey: string): boolean =>
-  Object.values(PAGE_FRAMES[pageKey] ?? {}).some(fill => fill.kind === "photo");
+  Object.values(PAGE_FRAMES[pageKey] ?? {}).some(fill => fill.kind === "photo" && !fill.src);
 
 /** True for a source container that is a browser-style frame (its own child carries the address bar). */
 export const isSourceFrame = (node: { type: string; children?: { html?: string }[] }): boolean =>
