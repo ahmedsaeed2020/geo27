@@ -1,92 +1,225 @@
-/* Screen mosaic: several real DIGIT screens in one deep-green frame (src/components/product/ScreenMosaic.tsx). */
+/* Screen showcase: several real DIGIT screens in one deep-green frame (src/components/product/ScreenMosaic.tsx).
+   A stage presents one view (its idea + the real screen at no more than its original size); a rail shows them all. */
 .mz {
-  --mz-gap: clamp(10px, 1.1vw, 14px);
+  --mz-gap: clamp(12px, 1.4vw, 18px);
   position: relative;
   container-type: inline-size;
   margin: 0;
   padding: var(--mz-gap);
-  border-radius: 24px;
+  border-radius: 26px;
   background:
-    radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--mint) 16%, transparent) 1px, transparent 0) 0 0 / 22px 22px,
-    linear-gradient(160deg, color-mix(in oklab, var(--deep) 88%, var(--mint)), var(--deep) 46%);
-  box-shadow: 0 34px 80px -46px color-mix(in oklab, var(--deep) 75%, transparent), 0 0 0 1px color-mix(in oklab, var(--mint) 14%, transparent) inset;
+    radial-gradient(circle at 1px 1px, color-mix(in oklab, var(--mint) 14%, transparent) 1px, transparent 0) 0 0 / 22px 22px,
+    linear-gradient(160deg, color-mix(in oklab, var(--deep) 86%, var(--mint)), var(--deep) 42%, color-mix(in oklab, var(--deep) 82%, var(--ink)));
+  box-shadow: 0 40px 90px -50px color-mix(in oklab, var(--ink) 80%, transparent), 0 0 0 1px color-mix(in oklab, var(--mint) 16%, transparent) inset;
+  color: var(--paper2);
 }
 
-.mz-bar {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 0;
-  padding: 2px 4px calc(var(--mz-gap) + 2px);
-  color: var(--paper2);
-  font-size: 13px;
-  line-height: 1.4;
-}
+/* Header: product mark, name, context and the counter/pause control. */
+.mz-bar { display: flex; align-items: center; gap: 10px; min-width: 0; padding: 2px 4px calc(var(--mz-gap) - 2px); font-size: 13px; line-height: 1.4; }
 .mz-mark { display: grid; flex-shrink: 0; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--mint); color: var(--deep); }
 .mz-mark svg { width: 16px; height: 16px; }
-.mz-label { flex-shrink: 0; font-weight: 800; letter-spacing: .01em; }
-.mz-sub { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: color-mix(in oklab, var(--paper2) 72%, transparent); }
+.mz-label { flex-shrink: 0; font-weight: 800; letter-spacing: .01em; color: var(--paper); }
+.mz-sub { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: color-mix(in oklab, var(--paper2) 70%, transparent); }
 .mz-sub::before { content: "·"; margin-inline-end: 10px; color: var(--mint); }
-.mz-count { flex-shrink: 0; margin-inline-start: auto; padding: 4px 11px; border-radius: 999px; border: 1px solid color-mix(in oklab, var(--mint) 38%, transparent); color: var(--mint); font-size: 12px; font-weight: 700; }
+.mz-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.mz-ctl { display: flex; flex-shrink: 0; align-items: center; gap: 10px; margin-inline-start: auto; }
+.mz-count { font-family: var(--font-monospace); font-size: 12.5px; letter-spacing: .06em; color: color-mix(in oklab, var(--paper2) 60%, transparent); }
+.mz-count strong { color: var(--mint); font-weight: 700; }
+.mz-play { display: grid; place-items: center; width: 34px; height: 34px; padding: 0; border-radius: 50%; border: 1px solid color-mix(in oklab, var(--mint) 34%, transparent); background: transparent; color: var(--paper2); cursor: pointer; transition: background .25s, border-color .25s; }
+.mz-play:hover { background: color-mix(in oklab, var(--mint) 16%, transparent); border-color: color-mix(in oklab, var(--mint) 60%, transparent); }
+.mz-play:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.mz-play svg { width: 14px; height: 14px; }
 
-.mz-body { display: grid; gap: var(--mz-gap); }
-.mz-cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, var(--mz-side, 1fr)); gap: var(--mz-gap); align-items: start; }
-.mz-col { display: grid; gap: var(--mz-gap); align-content: start; min-width: 0; }
+.mz-body { display: grid; gap: calc(var(--mz-gap) - 2px); min-width: 0; }
 
-.mz-tile {
+/* Stage: one fixed height for the set; slides crossfade inside it. */
+.sv-stage {
+  --sv-dir: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, color-mix(in oklab, var(--paper) 6%, transparent), transparent 40%),
+    color-mix(in oklab, var(--deep) 70%, var(--ink));
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--mint) 14%, transparent) inset, 0 24px 50px -36px color-mix(in oklab, var(--ink) 90%, transparent);
+  touch-action: pan-y;
+}
+.sv-glow {
+  position: absolute;
+  inset: -20% -10% auto;
+  height: 90%;
+  background: radial-gradient(60% 60% at 50% 60%, color-mix(in oklab, var(--mint) 18%, transparent), transparent 70%);
+  pointer-events: none;
+}
+.sv-slide {
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column;
-  width: 100%;
-  min-width: 0;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  border-radius: 14px;
-  background: var(--paper);
-  color: inherit;
-  text-align: start;
-  cursor: zoom-in;
-  box-shadow: 0 14px 30px -22px color-mix(in oklab, var(--ink) 70%, transparent);
-  transition: transform .45s cubic-bezier(.2, .7, .2, 1), box-shadow .45s;
+  gap: 14px;
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .55s ease, visibility 0s linear .55s;
 }
-.mz-tile:hover { transform: translateY(-3px); box-shadow: 0 26px 46px -24px color-mix(in oklab, var(--ink) 80%, transparent); }
-.mz-tile:focus-visible { outline: 3px solid var(--mint); outline-offset: 3px; }
+.sv-slide[data-active="true"] { opacity: 1; visibility: visible; transition: opacity .55s ease; }
+.sv-stage[data-wide] .sv-slide { gap: 20px; padding: 28px; }
+.sv-slide[data-layout="side"] { flex-direction: row; align-items: stretch; }
+.sv-slide[data-room] { justify-content: center; }
+.sv-stage[data-wide] .sv-slide[data-room] { gap: 30px; }
+.sv-slide[data-room] .sv-screen { flex: 0 1 auto; }
+.sv-stage[data-wide] .sv-slide[data-room] .sv-title { font-size: clamp(19px, 2.5cqw, 28px); }
+.sv-stage[data-wide] .sv-slide[data-room] .sv-detail { font-size: 15px; }
 
-.mz-media { position: relative; display: block; width: 100%; overflow: hidden; background: var(--paper2); }
-.mz-media img { display: block; width: 100%; height: 100%; object-fit: contain; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
-.mz-tile:hover .mz-media img { transform: scale(1.025); }
-.mz-zoom { position: absolute; inset: 0; background-repeat: no-repeat; transition: transform .8s cubic-bezier(.2, .7, .2, 1); }
-.mz-tile:hover .mz-zoom { transform: scale(1.04); }
+/* The idea: number, headline, supporting line and the full-size action. */
+.sv-copy {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  grid-template-areas: "no title open" ". detail open";
+  column-gap: 14px;
+  row-gap: 4px;
+  align-items: baseline;
+  flex-shrink: 0;
+  transform: translate3d(0, 10px, 0);
+  opacity: 0;
+  transition: transform .7s cubic-bezier(.2, .7, .2, 1) .08s, opacity .6s ease .08s;
+}
+.sv-slide[data-active="true"] .sv-copy { transform: none; opacity: 1; }
+.sv-no { grid-area: no; justify-self: start; font-family: var(--font-monospace); font-size: 13px; font-weight: 700; letter-spacing: .1em; color: var(--mint); }
+.sv-title { grid-area: title; margin: 0; color: var(--paper); font-size: clamp(16px, 2.1cqw, 22px); font-weight: 800; line-height: 1.4; text-wrap: balance; }
+.sv-detail { grid-area: detail; margin: 0; max-width: 72ch; color: color-mix(in oklab, var(--paper2) 74%, transparent); font-size: 14px; line-height: 1.75; }
+.sv-badge { display: inline-flex; align-items: center; gap: 5px; margin-inline-end: 10px; padding: 3px 10px; border-radius: 999px; background: color-mix(in oklab, var(--mint) 18%, transparent); color: var(--mint); font-size: 12px; font-weight: 700; vertical-align: 3px; }
+.sv-badge svg { width: 13px; height: 13px; }
+.sv-open {
+  grid-area: open;
+  align-self: start;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid color-mix(in oklab, var(--mint) 38%, transparent);
+  background: color-mix(in oklab, var(--paper) 4%, transparent);
+  color: var(--paper2);
+  font-size: 12.5px;
+  font-weight: 700;
+  white-space: nowrap;
+  cursor: zoom-in;
+  transition: background .25s, border-color .25s, color .25s;
+}
+.sv-open:hover { background: color-mix(in oklab, var(--mint) 22%, transparent); border-color: var(--mint); color: var(--paper); }
+.sv-open:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.sv-open svg { width: 14px; height: 14px; }
 
-.mz-badge { position: absolute; inset-block-start: 10px; inset-inline-start: 10px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px; border-radius: 999px; background: var(--deep); color: var(--mint); font-size: 11.5px; font-weight: 700; }
-.mz-badge svg { width: 14px; height: 14px; }
-.mz-expand { position: absolute; inset-block-end: 10px; inset-inline-end: 10px; display: grid; place-items: center; width: 32px; height: 32px; border-radius: 10px; background: var(--deep); color: var(--paper2); opacity: 0; transform: translateY(4px); transition: opacity .3s, transform .3s; }
-.mz-expand svg { width: 16px; height: 16px; }
-.mz-tile:hover .mz-expand, .mz-tile:focus-visible .mz-expand { opacity: 1; transform: none; }
+/* Side composition (tall menus, square charts): the idea on the reading side, the screen beside it. */
+.sv-slide[data-layout="side"] .sv-copy {
+  flex: 0 0 34%;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: "no" "title" "detail" "open";
+  align-content: center;
+  row-gap: 12px;
+}
+.sv-slide[data-layout="side"] .sv-title { font-size: clamp(19px, 2.4cqw, 27px); line-height: 1.35; }
+.sv-slide[data-layout="side"] .sv-detail { font-size: 15px; }
+.sv-slide[data-layout="side"] .sv-open { justify-self: start; margin-top: 8px; }
 
-.mz-cap { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px 12px; border-top: 1px solid var(--dline); }
-.mz-no { flex-shrink: 0; padding-top: 1px; color: var(--primary); font-size: 11.5px; font-weight: 800; font-variant-numeric: tabular-nums; }
-.mz-cap-text { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; color: var(--body2); font-size: 13px; line-height: 1.65; }
+/* The screen: centred, never larger than it appeared on the original display. */
+.sv-screen {
+  display: flex;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
+}
+.sv-screen img,
+.sv-screen .sv-zoom {
+  display: block;
+  max-height: 100%;
+  border-radius: 12px;
+  background: var(--paper);
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--paper) 40%, transparent), 0 34px 60px -30px color-mix(in oklab, var(--ink) 95%, transparent);
+  transform: translate3d(calc(var(--sv-dir) * 26px), 0, 0) scale(.985);
+  transition: transform .9s cubic-bezier(.2, .7, .2, 1), box-shadow .4s;
+}
+.sv-screen img { width: auto; height: auto; }
+.sv-screen .sv-zoom { height: 100%; max-width: 100%; aspect-ratio: 16 / 10; background-repeat: no-repeat; }
+.sv-slide[data-active="true"] .sv-screen img,
+.sv-slide[data-active="true"] .sv-screen .sv-zoom { transform: none; }
+.sv-screen:hover img,
+.sv-screen:hover .sv-zoom { box-shadow: 0 0 0 2px var(--mint), 0 34px 60px -30px color-mix(in oklab, var(--ink) 95%, transparent); }
 
-.mz-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px 18px; padding: calc(var(--mz-gap) + 2px) 4px 2px; }
-.mz-foot p { margin: 0; color: color-mix(in oklab, var(--paper2) 78%, transparent); font-size: 12.5px; line-height: 1.7; }
-.mz-all { display: none; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid color-mix(in oklab, var(--mint) 45%, transparent); border-radius: 999px; background: transparent; color: var(--mint); font-size: 13px; font-weight: 700; cursor: pointer; }
-.mz-all svg { width: 15px; height: 15px; }
-.mz-all:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+/* Rail: every view of the set, the active one with its progress bar. */
+.sv-tabs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(150px, 1fr);
+  gap: 10px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+  scrollbar-color: color-mix(in oklab, var(--mint) 40%, transparent) transparent;
+  padding-bottom: 2px;
+}
+.sv-tab {
+  position: relative;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 9px;
+  min-width: 0;
+  padding: 8px 8px 12px;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid color-mix(in oklab, var(--mint) 14%, transparent);
+  background: color-mix(in oklab, var(--paper) 4%, transparent);
+  color: color-mix(in oklab, var(--paper2) 72%, transparent);
+  text-align: start;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: background .3s, border-color .3s, color .3s;
+}
+.sv-tab:hover { background: color-mix(in oklab, var(--paper) 8%, transparent); color: var(--paper2); }
+.sv-tab[aria-selected="true"] .sv-thumb { box-shadow: 0 0 0 2px var(--mint); }
+.sv-tab[aria-selected="true"] { border-color: color-mix(in oklab, var(--mint) 60%, transparent); background: color-mix(in oklab, var(--mint) 12%, transparent); color: var(--paper); }
+.sv-tab:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+.sv-thumb { position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 9; border-radius: 9px; background: var(--paper); }
+.sv-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: right top; transition: transform .6s cubic-bezier(.2, .7, .2, 1); }
+.sv-thumb .sv-zoom { position: absolute; inset: 0; background-repeat: no-repeat; }
+.sv-tab:hover .sv-thumb img { transform: scale(1.03); }
+.sv-tab-text { display: flex; align-items: baseline; gap: 8px; min-width: 0; padding-inline: 2px; }
+.sv-tab-no { flex-shrink: 0; font-family: var(--font-monospace); font-size: 11.5px; font-weight: 700; letter-spacing: .08em; color: color-mix(in oklab, var(--mint) 75%, transparent); }
+.sv-tab[aria-selected="true"] .sv-tab-no { color: var(--mint); }
+.sv-tab-title { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 13px; font-weight: 700; line-height: 1.5; }
+.sv-tab-icon { display: inline; width: 13px; height: 13px; margin-inline-end: 4px; vertical-align: -2px; color: var(--mint); }
+.sv-track { position: absolute; inset-inline: 0; inset-block-end: 0; height: 3px; overflow: hidden; background: color-mix(in oklab, var(--mint) 10%, transparent); }
+.sv-tab[aria-selected="false"] .sv-track { background: transparent; }
+.sv-bar { position: absolute; inset: 0; background: var(--mint); transform-origin: right center; animation-name: sv-progress; animation-timing-function: linear; animation-fill-mode: forwards; }
+html[lang="en"] .sv-bar, [dir="ltr"] .sv-bar { transform-origin: left center; }
+.sv-bar[data-static="true"] { animation: none; transform: none; }
+@keyframes sv-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
 
-/* Phone-width frame: one column, the first few views, the rest one tap away in the lightbox. */
-@container (max-width: 620px) {
-  .mz-cols, .mz-cols[style] { grid-template-columns: minmax(0, 1fr); }
-  .mz-tile[data-extra] { display: none; }
-  .mz-all { display: inline-flex; }
+.mz-foot { padding: calc(var(--mz-gap) - 2px) 4px 0; }
+.mz-foot p { margin: 0; color: color-mix(in oklab, var(--paper2) 62%, transparent); font-size: 12px; line-height: 1.7; }
+
+/* Narrow frames (phones, side panels): text above the screen, compact rail. */
+@container (max-width: 759px) {
   .mz-sub { display: none; }
-  .mz-tile[data-kind="detail"] .mz-media { aspect-ratio: 16 / 10 !important; }
-  .mz-tile[data-kind="screen"] .mz-media { max-height: 420px; }
-  .mz-tile[data-kind="screen"] .mz-media img { object-fit: cover; object-position: top center; }
+  .sv-copy { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "no title open" "detail detail detail"; row-gap: 6px; column-gap: 10px; }
+  .sv-open { width: 34px; height: 34px; padding: 0; justify-content: center; border-radius: 50%; }
+  .sv-open span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .sv-title { font-size: 16.5px; }
+  .sv-detail { font-size: 13.5px; line-height: 1.7; display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+  .sv-tabs { grid-auto-columns: 128px; gap: 8px; }
+  .sv-tab { padding: 6px 6px 10px; gap: 7px; }
+  .sv-tab-title { font-size: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .mz-tile, .mz-media img, .mz-zoom, .mz-expand { transition: none; }
-  .mz-tile:hover { transform: none; }
-  .mz-tile:hover .mz-media img, .mz-tile:hover .mz-zoom { transform: none; }
+  .sv-slide, .sv-slide[data-active="true"], .sv-copy, .sv-screen img, .sv-screen .sv-zoom, .sv-thumb img { transition: none; }
+  .sv-screen img, .sv-screen .sv-zoom, .sv-copy { transform: none; }
 }

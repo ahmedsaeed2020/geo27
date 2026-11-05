@@ -37,6 +37,6 @@ export const HR_SHOTS: Record<string, Shot> = Object.fromEntries(
   ROWS.map(([no, slug, width, height, fullWidth, fullHeight, ar, en]) => {
     const id = `hr-${no.toLowerCase()}`;
     const base = `hr-${no.toLowerCase()}-${slug}`;
-    return [id, { id, src: url(`${base}-1600.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${base}-full.webp`), width: fullWidth, height: fullHeight } }];
+    return [id, { id, src: url(`${base}-1600.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${base}-full.webp`), width: fullWidth, height: fullHeight }, density: 2 }];
   }),
 );

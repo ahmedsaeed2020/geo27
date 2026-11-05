@@ -70,7 +70,7 @@ const toShots = (rows: Row[], inline = '1600'): Record<string, Shot> =>
   Object.fromEntries(
     rows.map(([id, width, height, fullWidth, fullHeight, ar, en]) => [
       id,
-      { id, src: url(`${id}-${inline}.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${id}-full.webp`), width: fullWidth, height: fullHeight } },
+      { id, src: url(`${id}-${inline}.webp`), width, height, theme: 0, caption: { ar, en }, full: { src: url(`${id}-full.webp`), width: fullWidth, height: fullHeight }, density: 2 },
     ]),
   );
 
