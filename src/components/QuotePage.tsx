@@ -30,7 +30,7 @@ const COPY = {
 } as const;
 
 /** Standalone quote page: its own copy and steps, then the meeting-scene form that records the request as a price quote. */
-export default function QuotePage({ chrome = false }: { chrome?: boolean }) {
+export default function QuotePage({ chrome = true }: { chrome?: boolean }) {
   const locale = useLocale();
   const t = COPY[locale];
   const body = (
