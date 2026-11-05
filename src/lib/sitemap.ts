@@ -16,7 +16,7 @@ export function baselinePaths(xml: string): string[] {
  * Source pages plus indexable CMS pages (both languages). A published "do not index" choice removes the page in both
  * languages, and pages that are not live (unpublished or scheduled) never appear.
  */
-export function buildSitemap(sourcePaths: string[], records: PublishedRecord[], fallbackLastmod = '2026-10-11'): string {
+export function buildSitemap(sourcePaths: string[], records: PublishedRecord[]): string {
   const byPath = new Map(records.map(r => [r.path, r]));
   const paths = new Set(sourcePaths);
   for (const r of records) {
@@ -29,8 +29,9 @@ export function buildSitemap(sourcePaths: string[], records: PublishedRecord[], 
     .sort((a, b) => (a === '/' ? -1 : b === '/' ? 1 : a.localeCompare(b)))
     .map(p => {
       const r = byPath.get(bare(p));
-      const lastmod = r?.published_at ? r.published_at.slice(0, 10) : fallbackLastmod;
-      return `  <url><loc>${SITE_ORIGIN}${escapeXml(p)}</loc><lastmod>${lastmod}</lastmod></url>`;
+      // Only a page's own publish date is a real last-change signal; source pages without one omit <lastmod>.
+      const lastmod = r?.published_at ? `<lastmod>${r.published_at.slice(0, 10)}</lastmod>` : '';
+      return `  <url><loc>${SITE_ORIGIN}${escapeXml(p)}</loc>${lastmod}</url>`;
     });
   return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.join('\n')}\n</urlset>\n`;
 }
