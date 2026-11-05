@@ -15,7 +15,11 @@
 .package-page .hero h1 + div { color: var(--mint); }
 .package-page.package-pro .hero h1 + div { color: var(--light); }
 .package-page .hero > div > div > div:first-child > span { padding: 13px 14px !important; }
-.package-page .hero h1 + div + [data-package-container] { padding: 20px 22px; min-height: 233px; border-radius: 18px; }
+.package-page .hero h1 + div + [data-package-container] { padding: 20px 22px; border-radius: 18px; }
+/* The price card now holds only "custom quote" (no figures outside the Pro value section), so it sizes to its text. */
+.package-page .hero h1 + div + [data-package-container] { min-height: 0; }
+/* Space Mono has no Arabic letters: Arabic in the source's mono labels falls back to Plex Arabic, not a wide mono face. */
+.package-page [style*="Space Mono"] { font-family: "Space Mono", "IBM Plex Sans Arabic", system-ui, sans-serif !important; }
 .package-page .hero h1 + div + div + div { padding: 10px; }
 .package-page .hero .package-action { padding: 12px 25px; min-height: 45px; }
 .package-page .features > div:first-child, .package-page .fit > div:first-child, .package-page .steps > div:first-child, .package-page .faq > div:first-child { margin: 0 auto; text-align: center; }
