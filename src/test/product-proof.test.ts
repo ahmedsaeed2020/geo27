@@ -57,11 +57,11 @@ describe("Real DIGIT Pro screenshots", () => {
 });
 
 describe("Customer count", () => {
-  it("says more than 50 Saudi establishments in both the hero and the home search description", () => {
-    expect(heroSource).toContain("أكثر من 50 منشأة سعودية");
+  it("says more than 200 Saudi establishments in both the hero and the home search description", () => {
+    expect(heroSource).toContain("أكثر من 200 منشأة سعودية");
     const description = withSeo("/").meta?.find(tag => tag.name === "description")?.content ?? "";
-    expect(description).toContain("أكثر من 50 منشأة سعودية");
-    expect(JSON.stringify(withSeo("/"))).not.toContain("200 منشأة");
+    expect(description).toContain("أكثر من 200 منشأة سعودية");
+    expect(JSON.stringify(withSeo("/"))).not.toContain("50 منشأة");
   });
 });
 

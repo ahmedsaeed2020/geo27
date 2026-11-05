@@ -3099,6 +3099,7 @@
   "مؤشرات وتنبيهات لحظية مبنية على بيانات نظامك.": "Real-time indicators and alerts built on your system data.",
   "<ul class=\"is-231\"><li class=\"is-232\"><span class=\"is-233\"></span><span class=\"is-234\"></span>مؤشرات لحظية من بياناتك الفعلية</li><li class=\"is-235\"><span class=\"is-236\"></span><span class=\"is-237\"></span>تنبيهات على الاستثناءات والمتأخرات</li><li class=\"is-238\"><span class=\"is-239\"></span><span class=\"is-240\"></span>يُفعّل حسب الباقة والإعداد</li></ul>": "<ul class=\"is-231\"><li class=\"is-232\"><span class=\"is-233\"></span><span class=\"is-234\"></span>Real-time indicators from your actual data</li><li class=\"is-235\"><span class=\"is-236\"></span><span class=\"is-237\"></span>Alerts on exceptions and overdue items</li><li class=\"is-238\"><span class=\"is-239\"></span><span class=\"is-240\"></span>Activated per package and setup</li></ul>",
   "أكثر من 50": "50+",
+  "أكثر من 200": "200+",
   "منشأة سعودية تعمل على Digit": "Saudi businesses on Digit",
   "داخل المملكة": "Across the Kingdom",
   "واجهة وتقارير": "Interface and reports",
