@@ -33,12 +33,13 @@ export function SourceFrame({ className, pageKey, fill }: { className: string; p
     return <ScreenFill shot={withCaption(shot, fill.caption)} className={className} />;
   }
   const scene = getPageScene(pageKey);
-  if (!scene) return null;
-  const width = scene.bodyWidth ?? 1398;
-  const height = scene.bodyHeight ?? 864;
+  const src = fill.src?.url ?? scene?.body;
+  if (!src) return null;
+  const width = fill.src?.width ?? scene?.bodyWidth ?? 1398;
+  const height = fill.src?.height ?? scene?.bodyHeight ?? 864;
   return <figure className={`${className} sv-frame sv-frame-photo`} data-import-container>
     <span className="sv-photo" style={{ "--sv-ratio": `${width} / ${height}` } as CSSProperties}>
-      <img src={scene.body} alt={fill.caption[locale]} width={width} height={height} loading="lazy" decoding="async" />
+      <img src={src} alt={fill.caption[locale]} width={width} height={height} loading="lazy" decoding="async" />
     </span>
     <figcaption>{fill.caption[locale]}</figcaption>
   </figure>;
