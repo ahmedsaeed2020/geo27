@@ -1,6 +1,5 @@
 /* Digit Assistant: launcher pill and chat panel (src/components/chat/ChatWidget.tsx). */
 .cw-root { position: fixed; inset-block-end: 16px; inset-inline-end: 16px; z-index: 50; display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
-[dir="rtl"].cw-root { align-items: flex-start; }
 
 .cw-mark { display: grid; flex-shrink: 0; place-items: center; width: 38px; height: 38px; border-radius: 12px; background: linear-gradient(145deg, var(--mint), color-mix(in oklab, var(--mint) 70%, var(--primary))); color: var(--deep); box-shadow: 0 0 0 3px color-mix(in oklab, var(--mint) 22%, transparent); }
 .cw-mark svg { width: 19px; height: 19px; }
