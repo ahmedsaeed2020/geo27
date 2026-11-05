@@ -1,4 +1,5 @@
 import { LeadScene } from './LeadCapturePanel';
+import SuccessStories from './stories/SuccessStories';
 import { LEAD_SCENE_COPY } from '@/content/lead-scene';
 import { useLocale } from '@/lib/i18n';
 import Header from './Header';
@@ -51,6 +52,7 @@ export default function QuotePage({ chrome = true }: { chrome?: boolean }) {
         </ol>
         <a href={locale === 'en' ? '/en/demo' : '/demo'} className="mt-6 inline-block font-bold text-primary underline-offset-4 hover:underline">{t.demo}</a>
       </section>
+      <SuccessStories />
       <LeadScene kind="quote" interest="" id="digit-quote" title={LEAD_SCENE_COPY.quoteFormTitle[locale]} />
     </main>
   );
