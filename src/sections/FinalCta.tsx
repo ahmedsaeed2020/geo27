@@ -15,10 +15,10 @@ export default function FinalCta() {
         </SectionHeading>
         <p className="max-w-[720px] text-[17px] leading-[1.7] text-paper/74">{FINAL.lede[l]}</p>
         <div className="mt-4 flex flex-wrap items-stretch justify-center gap-3 max-md:w-full max-md:flex-col">
-          <a href={localeHref("/demo?from=/", l)} className="rounded-[11px] bg-mint px-[26px] py-[13px] text-[15px] font-bold text-ink transition-colors hover:bg-mint/85 focus-visible:outline-2 focus-visible:outline-paper">
+          <a href={localeHref("/demo", l)} className="rounded-[11px] bg-mint px-[26px] py-[13px] text-[15px] font-bold text-ink transition-colors hover:bg-mint/85 focus-visible:outline-2 focus-visible:outline-paper">
             {FINAL.demo[l]}
           </a>
-          <a href={localeHref("/quote?from=/", l)} className={ghost}>{FINAL.quote[l]}</a>
+          <a href={localeHref("/quote", l)} className={ghost}>{FINAL.quote[l]}</a>
           <a href={localeHref("/blueprint", l)} className={ghost}>{FINAL.blueprint[l]}</a>
         </div>
       </div>
