@@ -82,14 +82,20 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
     return () => ro.disconnect();
   }, []);
 
-  const views = useMemo(
-    () =>
-      tiles.map(t => {
-        const caption = t.caption ?? t.shot.caption[locale];
-        return { ...t, caption, ...splitCaption(caption, locale), shape: shapeOf(t) };
-      }),
-    [tiles, locale],
-  );
+  const views = useMemo(() => {
+    const parts = tiles.map(t => {
+      const caption = t.caption ?? t.shot.caption[locale];
+      return { caption, ...splitCaption(caption, locale) };
+    });
+    // Two different screens must never share a headline: those keep their whole caption as the headline.
+    const counts = new Map<string, number>();
+    for (const p of parts) counts.set(p.title, (counts.get(p.title) ?? 0) + 1);
+    return tiles.map((t, i) => {
+      const p = parts[i]!;
+      const twin = (counts.get(p.title) ?? 0) > 1 && tiles.findIndex(o => o.shot.id === t.shot.id) === i && !t.focus;
+      return { ...t, caption: p.caption, title: twin ? p.caption : p.title, detail: twin ? undefined : p.detail, shape: shapeOf(t) };
+    });
+  }, [tiles, locale]);
 
   // One stage height for the whole set (the tallest composition, within bounds), so nothing below moves as it plays.
   const geometry = useMemo(() => {
