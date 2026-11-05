@@ -1,7 +1,7 @@
 # Orbit navigation, image audit, code review, SEO (owner 2026-11-05 18:38)
-- [ ] Home orbit: every module chip shows its name on hover/focus and opens its page on click (HR, CRM, accounting, sales, reports, settings, dashboards, e-signature, ...); orbit look unchanged.
-- [ ] Shared product orbit section (green sun with the product at the core, its departments orbiting, names on hover, click opens the page) added above the existing first fold — existing hero untouched — on Pro, HR, Construction, CRM, FSM + ITM, POS overviews and the all-modules page; AR/EN, keyboard, touch, reduced motion.
-- [ ] /pro overview: replace the faded, unrelated people photo and the empty price card area with system-relevant visuals.
+- [x] Home orbit: every module chip shows its name on hover/focus and opens its page on click (HR, CRM, accounting, sales, reports, settings, dashboards, e-signature, ...); orbit look unchanged.
+- [x] Shared product orbit section (green sun with the product at the core, its departments orbiting, names on hover, click opens the page) added above the existing first fold — existing hero untouched — on Pro, HR, Construction, CRM, FSM + ITM, POS overviews and the all-modules page; AR/EN, keyboard, touch, reduced motion.
+- [x] /pro overview: replace the faded, unrelated people photo and the empty price card area with system-relevant visuals.
 - [ ] Full-site image audit: open every page (AR/EN), find broken, faded or unrelated images and fix them.
 - [ ] Code review report (confirmed problems + ordered refactor plan, no changes until approved) and security scan summary.
 - [ ] SEO: read current findings, fix every actionable item (metadata, sitemap, structured data, internal links) so Google can index faster.
