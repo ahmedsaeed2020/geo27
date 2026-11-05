@@ -3,7 +3,20 @@
 // manifest so every frame reserves its space before the image loads.
 export type L = { ar: string; en: string };
 /** `full`: optional higher-resolution derivative for the lightbox; `src` stays the inline image. */
-export type Shot = { id: string; src: string; width: number; height: number; theme: number; caption: L; full?: { src: string; width: number; height: number } };
+export type Shot = {
+  id: string;
+  src: string;
+  width: number;
+  height: number;
+  theme: number;
+  caption: L;
+  full?: { src: string; width: number; height: number };
+  /** Capture pixels per CSS pixel (2 for retina captures); frames never show a screen larger than its on-screen size. */
+  density?: number;
+};
+
+/** Widest the screen should appear, in CSS pixels: its size on the original display, so text never looks blown up. */
+export const nativeWidth = (shot: Shot) => Math.round((shot.full?.width ?? shot.width) / (shot.density ?? 1));
 export type Theme = { no: number; key: string; chip: L; title: L; hook: L; shots: string[] };
 
 const pointers = import.meta.glob<{ url: string }>("/src/assets/product/*.asset.json", { eager: true, import: "default" });
