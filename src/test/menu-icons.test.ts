@@ -18,7 +18,7 @@ describe('Menu icons come from the DIGIT icon set', () => {
       for (const id of entries(p.key)) {
         const glyph = DEPARTMENT_GLYPH[`${p.key}:${id}`];
         expect(glyph, `${p.key}:${id}`).toBeDefined();
-        expect(GLYPHS[glyph], `${p.key}:${id}`).toBeDefined();
+        expect(glyph && GLYPHS[glyph], `${p.key}:${id}`).toBeDefined();
       }
     }
   });
@@ -36,6 +36,9 @@ describe('Menu icons come from the DIGIT icon set', () => {
   });
 
   it('uses the original digit-erp.com icons for the DIGIT Pro departments', () => {
-    for (const id of entries('pro')) expect(GLYPHS[DEPARTMENT_GLYPH[`pro:${id}`]].from, id).toBe('site');
+    for (const id of entries('pro')) {
+      const glyph = DEPARTMENT_GLYPH[`pro:${id}`];
+      expect(glyph && GLYPHS[glyph].from, id).toBe('site');
+    }
   });
 });
