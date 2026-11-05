@@ -1,4 +1,5 @@
-import { useId, useRef, useState, type KeyboardEvent } from 'react';
+import { useEffect, useId, useRef, useState, type KeyboardEvent } from 'react';
+import { chapterAt, motionTier, registerScene } from '@/motion/scenes';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { shot as productShot } from '@/content/product-shots';
 import { JOURNEY, JOURNEY_STEPS, journeyHref } from '@/content/home';
@@ -15,17 +16,39 @@ export default function WorkflowJourney() {
   const l = useLocale();
   const uid = useId();
   const [active, setActive] = useState(0);
+  const [back, setBack] = useState(false);
   const [zoom, setZoom] = useState(false);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
+  const sectionRef = useRef<HTMLElement>(null);
+  const picked = useRef(false);
   const step = JOURNEY_STEPS[active]!;
   const screen = productShot(step.shot);
   const Arrow = l === 'ar' ? ArrowLeft : ArrowRight;
+  const count = JOURNEY_STEPS.length;
 
   const select = (i: number, focus = false) => {
-    const next = (i + JOURNEY_STEPS.length) % JOURNEY_STEPS.length;
+    const next = (i + count) % count;
+    // Once the visitor picks an angle, scrolling no longer changes it.
+    picked.current = true;
+    setBack(next < active);
     setActive(next);
     if (focus) tabs.current[next]?.focus();
   };
+
+  // Product theater (desktop): while the section crosses the viewport, the four angles follow the reading position
+  // and the real screen changes with them. There is no pinning, so the page scrolls exactly as before.
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el || motionTier() !== 'full') return;
+    return registerScene(el, (_p, rect, viewport) => {
+      if (picked.current) return;
+      const next = chapterAt((viewport * 0.5 - rect.top) / Math.max(1, rect.height * 0.72), count);
+      setActive(current => {
+        if (current !== next) setBack(next < current);
+        return next;
+      });
+    });
+  }, [count]);
   const onKey = (e: KeyboardEvent<HTMLButtonElement>) => {
     const forward = e.key === 'ArrowDown' || (l === 'ar' ? e.key === 'ArrowLeft' : e.key === 'ArrowRight');
     const back = e.key === 'ArrowUp' || (l === 'ar' ? e.key === 'ArrowRight' : e.key === 'ArrowLeft');
@@ -38,7 +61,7 @@ export default function WorkflowJourney() {
   };
 
   return (
-    <section id="workflow-journey" className="bg-paper2 px-4 py-20 max-md:py-14">
+    <section ref={sectionRef} id="workflow-journey" className="bg-paper2 px-4 py-20 max-md:py-14">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 max-w-[720px]">
           <p className={`text-[13px] font-bold text-primary ${l === 'en' ? 'font-monospace tracking-[0.14em] uppercase' : ''}`}>{JOURNEY.eyebrow[l]}</p>
@@ -49,6 +72,7 @@ export default function WorkflowJourney() {
         <div className="grid items-start gap-8 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)]">
           <div role="tablist" aria-orientation="vertical" aria-label={JOURNEY.heading[l]} className="relative flex flex-col gap-2.5">
             <span aria-hidden="true" className="absolute top-6 bottom-6 start-[23px] w-px bg-primary/20" />
+            <span aria-hidden="true" className="dm-journey-flow" style={{ transform: `scaleY(${count > 1 ? active / (count - 1) : 0})` }} />
             {JOURNEY_STEPS.map((s, i) => {
               const on = i === active;
               return (
@@ -82,6 +106,7 @@ export default function WorkflowJourney() {
           </div>
 
           <div role="tabpanel" id={`${uid}-panel`} aria-labelledby={`${uid}-tab-${active}`} className="min-w-0">
+            <div key={step.ws} className="dm-swap" data-dir={back ? 'back' : undefined}>
             <ShotFrame shot={screen} size="lead" onOpen={() => setZoom(true)} />
             <div className="mt-5 rounded-[14px] border border-dline bg-card p-5">
               <p className={`text-[12px] font-bold text-primary ${l === 'en' ? 'font-monospace tracking-[0.12em] uppercase' : ''}`}>
@@ -102,6 +127,7 @@ export default function WorkflowJourney() {
                   {JOURNEY.next[l]}: {JOURNEY_STEPS[(active + 1) % JOURNEY_STEPS.length]!.label[l]}
                 </button>
               </div>
+            </div>
             </div>
           </div>
         </div>
