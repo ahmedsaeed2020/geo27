@@ -76,6 +76,15 @@ a:focus-visible > svg.lucide-arrow-right { translate: 4px 0; }
 .dm-orbit-pause:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
 .dm-orbit-pause svg { width: 14px; height: 14px; }
 #digit-orbit[data-paused] #dgt-bg * { animation-play-state: paused !important; }
+@media (prefers-reduced-motion: no-preference) {
+  /* Beat A — the environment: the core ignites, then its orbits open one after another. */
+  #digit-orbit #dgt-bg .dgt-ring { animation: dm-ring-in 1.6s var(--dm-ease-out) backwards; }
+  #digit-orbit #dgt-bg .dgt-r2 { animation-delay: .14s; }
+  #digit-orbit #dgt-bg .dgt-r3 { animation-delay: .28s; }
+  #digit-orbit #dgt-bg .dgt-core { animation: dm-pop 1.1s var(--dm-ease-spring) backwards; }
+  #digit-orbit #dgt-bg .dgt-vignette { animation: dm-fade 1.2s ease backwards; }
+}
+@keyframes dm-ring-in { from { opacity: 0; scale: .5; } }
 
 /* Home — the product slider: the ledger grid opens, the frame draws, then the rail settles (first load only;
    the slides keep their own approved choreography). */
