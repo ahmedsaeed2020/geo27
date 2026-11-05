@@ -6,6 +6,8 @@
 - [x] Apply the mosaic style to the other inner pages that have real screens (HR sections, Construction areas, CRM module page).
 - [x] AI assistant: premium launcher with label, branded header with avatar/online state, welcome card with suggested questions (AR/EN), polished bubbles and composer, mobile full-height sheet.
 - [x] QA: AR/EN desktop + mobile on CRM/HR/Construction pages, forms, footer, assistant; tests; build.
+- [ ] Owner: a real screen of CRM users/roles/settings so the CRM administration area can join the mosaics (it stays a labelled diagram until then).
+- [ ] Owner: review the new request scene, screen mosaics and assistant on the preview and approve publishing.
 
 # Site-wide clarity pass (owner 2026-11-05 08:32: 200+ figure, no empty frames, clear photos, capabilities imagery, menu identity)
 - [x] Customer figure: «أكثر من 200 منشأة سعودية» / "200+ Saudi businesses" everywhere (hero, home, slider, stories strip, SEO, assistant, llms.txt, translations, tests).
