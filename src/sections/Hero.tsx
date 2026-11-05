@@ -1,5 +1,6 @@
 import { useLocale, localizeTree } from "@/lib/i18n";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Pause, Play } from "lucide-react";
 
 const DIGIT_ICON =
   "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJEaWdpdCI+CiAgPHJlY3QgeD0iMTgiIHk9IjIyLjUiIHdpZHRoPSI0MCIgaGVpZ2h0PSIxMyIgcng9IjYuNSIgZmlsbD0iI0ZGRkZGRiI+PC9yZWN0PgogIDxyZWN0IHg9IjYzIiB5PSIyMi41IiB3aWR0aD0iMTkiIGhlaWdodD0iMTMiIHJ4PSI1IiBmaWxsPSIjMzREMzk5Ij48L3JlY3Q+CiAgPHJlY3QgeD0iMTgiIHk9IjQzLjUiIHdpZHRoPSI2NCIgaGVpZ2h0PSIxMyIgcng9IjYuNSIgZmlsbD0iI0ZGRkZGRiI+PC9yZWN0PgogIDxyZWN0IHg9IjE4IiB5PSI2NC41IiB3aWR0aD0iNTAiIGhlaWdodD0iMTMiIHJ4PSI2LjUiIGZpbGw9IiNGRkZGRkYiPjwvcmVjdD4KPC9zdmc+";
@@ -93,6 +94,7 @@ function OrbitBackground({ paused }: { paused: boolean }) {
         e.style.width = c.rx * R * 2 + "px";
         e.style.height = c.ry * R * 2 + "px";
       });
+      wakeRef.current();
     }
     let ro: ResizeObserver | null = null;
     if (typeof ResizeObserver !== "undefined") {
@@ -169,7 +171,6 @@ function OrbitBackground({ paused }: { paused: boolean }) {
         c.el.style.boxShadow = `0 10px 30px rgba(0,0,0,.5),0 0 ${(22 + influence * 42).toFixed(0)}px rgba(52,211,153,${(0.14 + influence * 0.34).toFixed(2)}),inset 0 1px 0 rgba(255,255,255,.08)`;
         c.line.setAttribute("x1", String(cx)); c.line.setAttribute("y1", String(cy));
         c.line.setAttribute("x2", String(px)); c.line.setAttribute("y2", String(py));
-        c.line.setAttribute("stroke-opacity", (0.04 + depth * 0.12 + influence * 0.28).toFixed(3));
         const prog = (t / 3.4 + c.phase) % 1;
         c.pulse.setAttribute("cx", (px + (cx - px) * prog).toFixed(1));
         c.pulse.setAttribute("cy", (py + (cy - py) * prog).toFixed(1));
@@ -222,10 +223,16 @@ function OrbitBackground({ paused }: { paused: boolean }) {
   ), locale);
 }
 
+const PAUSE_COPY = {
+  pause: { ar: "إيقاف الحركة", en: "Pause motion" },
+  play: { ar: "تشغيل الحركة", en: "Play motion" },
+};
+
 export default function Hero() {
   const locale = useLocale();
+  const [paused, setPaused] = useState(false);
   return localizeTree((
-    <section id="digit-orbit" className="relative min-h-[60vh] overflow-hidden bg-dark">
+    <section id="digit-orbit" className="relative min-h-[60vh] overflow-hidden bg-dark" data-paused={paused ? "" : undefined}>
       <style>{`
 #dgt-bg{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#08140F;font-family:'IBM Plex Sans Arabic',-apple-system,Segoe UI,Tahoma,sans-serif;}
 #dgt-bg *{box-sizing:border-box;}
@@ -252,8 +259,12 @@ export default function Hero() {
 @media (max-height:720px){#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{top:38%;}#dgt-bg .dgt-ring,#dgt-bg .dgt-core{top:38%;}}
 @media (prefers-reduced-motion:reduce){#dgt-bg .dgt-halo,#dgt-bg .dgt-disc,#dgt-bg .dgt-bloom,#dgt-bg .dgt-corona{animation:none;}}
       `}</style>
-      <OrbitBackground />
-      <div className="relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
+      <OrbitBackground paused={paused} />
+      <button type="button" className="dm-orbit-pause" onClick={() => setPaused(p => !p)} aria-pressed={paused}>
+        {paused ? <Play aria-hidden="true" /> : <Pause aria-hidden="true" />}
+        <span>{paused ? PAUSE_COPY.play[locale] : PAUSE_COPY.pause[locale]}</span>
+      </button>
+      <div className="dm-orbit-copy relative z-[2] mx-auto max-w-[1600px] px-6 pt-[340px] pb-[40px] text-center lg:pt-[600px]">
         <p className="text-[28px] font-medium text-mint lg:text-[44px]">محاسبتك أوضح مع ديجيت</p>
         <h2 className="mx-auto mt-2 px-0 text-[34px] leading-[1.25] font-bold text-paper lg:px-[50px] lg:text-[56px]">
           منصة واحدة تدير ماليتك وعملياتك ونقاط بيعك.
