@@ -1,6 +1,6 @@
 // DIGIT Construction — nine department pages (Corporate Profile 2026, pp. 21–24; owner brief 2026-11-04).
-// No authentic Construction screen has been supplied yet: every page is `illustrative` and shows labelled process
-// graphics; the missing captures are recorded in src/content/specialist/evidence-gaps.ts.
+// Real screens: cropped DIGIT Construction captures (owner upload 2026-11-05, specialist-shots.ts). An item is
+// `demonstrated` only when its own screen is on the page; pages without a matching screen stay `illustrative`.
 import type { L, SpecialistDepartment } from './types';
 
 const t = (ar: string, en: string): L => ({ ar, en });

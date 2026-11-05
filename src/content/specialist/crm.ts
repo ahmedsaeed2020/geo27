@@ -1,6 +1,7 @@
 // DIGIT CRM — seven area pages (Corporate Profile 2026, pp. 25–26; owner brief 2026-11-04). The profile's CRM demo
-// screens show the old module logos and were withdrawn by the owner (2026-11-04), so no CRM screen is shown and
-// every page is `illustrative`. The seven areas follow the CRM navigation. CRM stops at the won opportunity: quotation,
+// screens with the old module logos stay withdrawn (2026-11-04); the pages show crops of the current DIGIT CRM
+// captures (owner upload 2026-11-05, specialist-shots.ts) and an item is `demonstrated` only when its screen is on
+// the page. The seven areas follow the CRM navigation. CRM stops at the won opportunity: quotation,
 // order, delivery, invoice and collection belong to DIGIT Pro Selling.
 import type { L, SpecialistDepartment } from './types';
 
