@@ -12,7 +12,7 @@ type Head = { meta?: MetaTag[]; links?: Record<string, string>[]; scripts?: Reco
 const AR_OVERRIDES: Record<string, { title: string; description: string; crumb?: string }> = {
   "/": {
     title: "Digit | نظام ERP سعودي للمحاسبة والمبيعات والمخزون",
-    description: "نظام أعمال سعودي سحابي من Digit: محاسبة ومبيعات ومخزون ونقاط بيع وموارد بشرية، مع دعم الربط بمنظومة فاتورة. يخدم أكثر من 50 منشأة سعودية.",
+    description: "نظام أعمال سعودي سحابي من Digit: محاسبة ومبيعات ومخزون ونقاط بيع وموارد بشرية، مع دعم الربط بمنظومة فاتورة. يخدم أكثر من 200 منشأة سعودية.",
   },
   "/blueprint": {
     title: "صمّم منظومة DIGIT لمنشأتك | مخطط تفاعلي",

@@ -46,7 +46,7 @@ const screen = (id: string): HeroProof => {
 
 export const HERO_COPY = {
   brand: t('لمنشأتك في السعودية', 'For your Saudi business'),
-  trust: t('أكثر من 50 منشأة سعودية', 'More than 50 Saudi businesses'),
+  trust: t('أكثر من 200 منشأة سعودية', 'More than 200 Saudi businesses'),
   region: t('منتجات DIGIT', 'DIGIT products'),
   slides: t('اختر المنتج', 'Choose a product'),
   demo: t('احجز عرضًا توضيحيًا', 'Book a demo'),

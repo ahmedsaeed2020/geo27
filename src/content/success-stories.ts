@@ -64,8 +64,8 @@ export const CUSTOMER_LOGOS: CustomerLogo[] = ENTRIES.map(entry => {
   return { ...entry, width: 300, src: pointer.url };
 });
 
-/** Approved customer figure (claims rule): «أكثر من 50 منشأة سعودية». */
-export const CUSTOMER_COUNT = 50;
+/** Approved customer figure (claims rule): «أكثر من 200 منشأة سعودية». */
+export const CUSTOMER_COUNT = 200;
 
 export const SUCCESS_STORIES_COPY = {
   kicker: { ar: 'شركاء النجاح', en: 'Our customers' },

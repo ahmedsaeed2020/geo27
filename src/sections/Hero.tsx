@@ -245,7 +245,7 @@ export default function Hero() {
           </a>
         </div>
         <p className="pt-[29px] text-[15px] font-bold text-[#C3C3C3]">
-          يدعم الفوترة الإلكترونية · يعتمد عليه أكثر من 50 منشأة سعودية
+          يدعم الفوترة الإلكترونية · يعتمد عليه أكثر من 200 منشأة سعودية
         </p>
       </div>
     </section>
