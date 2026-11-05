@@ -49,7 +49,7 @@ const need = (id: string): Shot => {
 export const SLIDER_COPY = {
   eyebrow: 'DIGIT',
   heading: { ar: 'محاسبتك أوضح', en: 'Clearer accounting' },
-  sub: { ar: 'ليست موديولات مستقلة — بل أساس أمني وتشغيلي يدعم كل عملية في Digit.', en: 'Not just independent modules—but a security and operational foundation supporting every process in Digit.' },
+  sub: { ar: 'شاشات حقيقية من DIGIT Pro: كل رقم بمصدره، وكل مستند مرتبط باللي قبله واللي بعده.', en: 'Real DIGIT Pro screens: every number has its source, every document links to what came before and after.' },
   region: { ar: 'جولة في شاشات DIGIT الفعلية', en: 'A tour of real DIGIT screens' },
   real: { ar: 'شاشة فعلية من النظام', en: 'Actual product screen' },
   enlarge: { ar: 'تكبير الشاشة', en: 'Enlarge screen' },

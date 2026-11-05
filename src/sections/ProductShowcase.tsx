@@ -4,20 +4,26 @@ import { ArrowLeft, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ShotFrame from "@/components/product/ShotFrame";
 import ShotLightbox from "@/components/product/ShotLightbox";
-import { shot } from "@/content/product-shots";
+import { screenById } from "@/content/screens";
 import { DEMO_HREF, HOME_SHOWCASE, PROOF_COPY } from "@/content/product-proof";
 import { localeHref, useLocale } from "@/lib/i18n";
 import "@/product-proof.css";
 import { SectionHeading } from '@/components/cms/SectionText';
 
-/** Home "شوف النظام من جوّه": one large and two small real screens per tab. */
+const need = (id: string) => {
+  const found = screenById(id);
+  if (!found) throw new Error(`Home showcase references an unregistered screen: ${id}`);
+  return found;
+};
+
+/** Home "شوف النظام من جوّه": one large and two small real screens (Pro or HR) per tab. */
 export default function ProductShowcase() {
   const locale = useLocale();
   const tabs = HOME_SHOWCASE.tabs;
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState<number | null>(null);
   const tab = tabs[active] ?? tabs[0]!;
-  const shots = useMemo(() => [tab.lead, ...tab.smalls].map(shot), [tab]);
+  const shots = useMemo(() => [tab.lead, ...tab.smalls].map(need), [tab]);
   const [lead, ...smalls] = shots;
   const LinkArrow = locale === "ar" ? ArrowLeft : ArrowRight;
   const select = (next: number) => { setActive(next); setOpen(null); };

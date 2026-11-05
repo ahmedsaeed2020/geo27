@@ -45,7 +45,7 @@ const RENDER: Record<HomeSectionId, () => ReactNode> = {
   delivery: () => <DeliveryJourney variant="home" />,
   faq: () => <Faq />,
   cms: () => <CmsBlocks />,
-  lead: () => <LeadCapturePanel interest="DIGIT Pro" />,
+  lead: () => <LeadCapturePanel interest={HOME_LEAD[locale]} />,
   final: () => <FinalCta />,
 };
 
