@@ -285,7 +285,8 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 }
 
 /* Workflow journey (home): the active angle's marker is connected by the drawn flowline. */
-.dm-journey-flow { position: absolute; inset-inline-start: 23px; top: 24px; width: 1px; background: var(--primary); transform-origin: top; transition: height .6s var(--dm-ease-out); }
+.dm-journey-flow { position: absolute; inset-inline-start: 23px; top: 24px; bottom: 24px; width: 1px; background: linear-gradient(to bottom, var(--mint), var(--primary)); transform-origin: top; transition: transform .7s var(--dm-ease-out); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .dm-journey-flow { transition: none; } }
 
 /* ==========================================================================================================
    5. Mega Menu — fluid panel entrance, product-family switching, a moving active indicator and crossfading
