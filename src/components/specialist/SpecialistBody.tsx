@@ -363,7 +363,7 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
 }
 
 /* ---------- Section renderers ---------- */
-function SectionView({ section, title, body, eyebrow, locale, index }: { section: SpecialistSection; title: string; body: string; eyebrow: string; locale: Locale; index: number }) {
+function SectionView({ section, title, body, eyebrow, locale, index, label }: { section: SpecialistSection; title: string; body: string; eyebrow: string; locale: Locale; index: number; label: string }) {
   const hid = `sp-${section.id}-title`;
   const lede = body || section.lede[locale];
   const head = <SectionHead id={hid} title={title} lede={lede} eyebrow={eyebrow || undefined} />;
@@ -532,7 +532,7 @@ function SectionView({ section, title, body, eyebrow, locale, index }: { section
       );
       break;
     case 'screens':
-      inner = <ScreensSection head={head} ids={section.shots} />;
+      inner = <ScreensSection head={head} ids={section.shots} locale={locale} label={label} id={`sp-${section.id}`} />;
       break;
     case 'scope':
       inner = (
@@ -668,7 +668,7 @@ export default function SpecialistBody({ content, locale, entry, source, renderB
         if (b.type !== 'source') return renderBlock(b, i);
         const section = source.sections.find(s => s.id === b.ref);
         if (!section) return null;
-        return <SectionView key={b.id} section={section} title={b.title.trim() || section.title[locale]} body={b.body.trim()} eyebrow={b.eyebrow.trim()} locale={locale} index={sectionIndex++} />;
+        return <SectionView key={b.id} section={section} title={b.title.trim() || section.title[locale]} body={b.body.trim()} eyebrow={b.eyebrow.trim()} locale={locale} index={sectionIndex++} label={SPECIALIST_META[source.product].name} />;
       })}
 
       <section className="sp-cta" aria-labelledby="sp-cta-title">
