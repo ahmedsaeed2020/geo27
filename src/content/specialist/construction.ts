@@ -5,6 +5,7 @@ import type { L, SpecialistDepartment } from './types';
 
 const t = (ar: string, en: string): L => ({ ar, en });
 const DOC = 'documented' as const;
+const SHOWN = 'demonstrated' as const;
 const SCOPED = 'scoped' as const;
 
 export const CONSTRUCTION: SpecialistDepartment[] = [
@@ -17,8 +18,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('المحفظة وProject 360 في DIGIT Construction: ملف المشروع الذي يجمع العقد والجداول والتكلفة والمستخلصات، واستثناءات المحفظة مع العودة إلى مستندها.', 'Portfolio and Project 360 in DIGIT Construction: the project file that brings contract, schedule, cost and claims together, with portfolio exceptions traced back to their documents.'),
     profilePages: [21, 22],
     photo: 'construction-aerial',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-executive-kpis', 'con-risk-matrix', 'con-project-360'],
+    illustrative: false,
     signature: 'matrix',
     sections: [
       {
@@ -53,9 +54,9 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         items: [
           { name: t('العقد وجدول القيم', 'Contract and schedule of values'), code: 'Contract · SOV', body: t('قيمة العقد وبنوده والتغييرات المعتمدة عليه.', 'Contract value, its lines and the approved variations against it.'), status: DOC },
           { name: t('خط الأساس والتقدم', 'Baseline and progress'), code: 'Baseline · Progress', body: t('الجدول المعتمد مقابل التقدم المسجل من الموقع.', 'The approved schedule against progress recorded from site.'), status: DOC },
-          { name: t('الموازنة والتكلفة والالتزامات', 'Budget, cost and commitments'), code: 'Budget · Actuals · Commitments', body: t('ثلاثة أرقام منفصلة لا تُجمع في رقم واحد.', 'Three separate figures that are never merged into one.'), status: DOC },
-          { name: t('المستخلصات والتحصيل', 'Claims and collection'), code: 'Claim · Certificate · Payment', body: t('ما طُلب به، وما اعتُمد، وما دُفع فعلًا.', 'What was claimed, what was certified and what was actually paid.'), status: DOC },
-          { name: t('المخاطر والإجراءات', 'Risks and actions'), code: 'Risk · Action', body: t('المخاطر المسجلة على المشروع ومسؤول كل إجراء.', 'Risks logged against the project and the owner of each action.'), status: DOC },
+          { name: t('الموازنة والتكلفة والالتزامات', 'Budget, cost and commitments'), code: 'Budget · Actuals · Commitments', body: t('ثلاثة أرقام منفصلة لا تُجمع في رقم واحد.', 'Three separate figures that are never merged into one.'), status: SHOWN },
+          { name: t('المستخلصات والتحصيل', 'Claims and collection'), code: 'Claim · Certificate · Payment', body: t('ما طُلب به، وما اعتُمد، وما دُفع فعلًا.', 'What was claimed, what was certified and what was actually paid.'), status: SHOWN },
+          { name: t('المخاطر والإجراءات', 'Risks and actions'), code: 'Risk · Action', body: t('المخاطر المسجلة على المشروع ومسؤول كل إجراء.', 'Risks logged against the project and the owner of each action.'), status: SHOWN },
         ],
       },
       {
@@ -75,10 +76,17 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('عروض المحفظة', 'Portfolio views'),
         lede: t('عروض تُبنى من سجلات المشاريع وتُصدَّر كما هي.', 'Views built from project records and exported as they are.'),
         items: [
-          { name: t('استثناءات المحفظة', 'Portfolio exceptions'), purpose: t('المشاريع التي تحتاج تدخلًا، مع سبب كل حالة.', 'Projects that need action, with the reason for each.'), status: DOC },
-          { name: t('ملخص Project 360', 'Project 360 summary'), purpose: t('العقد والتقدم والتكلفة والمستخلصات لمشروع واحد.', 'Contract, progress, cost and claims for one project.'), status: DOC },
+          { name: t('استثناءات المحفظة', 'Portfolio exceptions'), purpose: t('المشاريع التي تحتاج تدخلًا، مع سبب كل حالة.', 'Projects that need action, with the reason for each.'), status: SHOWN },
+          { name: t('ملخص Project 360', 'Project 360 summary'), purpose: t('العقد والتقدم والتكلفة والمستخلصات لمشروع واحد.', 'Contract, progress, cost and claims for one project.'), status: SHOWN },
           { name: t('تصدير الحالة', 'Status export'), purpose: t('تصدير كل حالة للمتابعة خارج الاجتماع.', 'Export each item for follow-up outside the meeting.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-risk-matrix', 'con-project-360'],
       },
       {
         id: 'scope',
@@ -112,8 +120,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('التسعير والعطاءات وجداول الكميات في DIGIT Construction: العطاء والمقايسة ونسخ التقدير وتجميعات الموارد، حتى تصبح المقايسة المعتمدة أساس العقد والموازنة.', 'Tendering, estimation and BOQ in DIGIT Construction: tender, bill of quantities, estimate versions and resource assemblies, so the approved BOQ becomes the basis of contract and budget.'),
     profilePages: [22, 23],
     photo: 'construction-change-review',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-decisions-today', 'con-approval-queue'],
+    illustrative: false,
     signature: 'ledger',
     sections: [
       {
@@ -148,7 +156,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         items: [
           { name: t('العطاء', 'Tender'), code: 'Tender', body: t('العميل والنطاق والمواعيد والمرفقات.', 'Client, scope, dates and attachments.'), status: DOC },
           { name: t('جدول الكميات', 'Bill of quantities'), code: 'BOQ', body: t('البنود بوحداتها وكمياتها.', 'Lines with their units and quantities.'), status: DOC },
-          { name: t('نسخة التقدير', 'Estimate version'), code: 'Cost Estimate', body: t('تكلفة البنود ومصدرها ونسختها.', 'Line costs, their source and their version.'), status: DOC },
+          { name: t('نسخة التقدير', 'Estimate version'), code: 'Cost Estimate', body: t('تكلفة البنود ومصدرها ونسختها.', 'Line costs, their source and their version.'), status: SHOWN },
           { name: t('تجميعة الموارد', 'Resource assembly'), code: 'Resource Assemblies', body: t('مكونات تكلفة الوحدة.', 'The components of a unit cost.'), status: DOC },
           { name: t('نسخة التسعير', 'Pricing version'), code: 'Pricing Versions', body: t('السعر المقدم والهامش والنسخة المعتمدة.', 'Submitted price, margin and the approved version.'), status: DOC },
         ],
@@ -174,6 +182,13 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
           { name: t('تحليل مكونات التكلفة', 'Cost component analysis'), purpose: t('المواد والعمالة والمعدات ومقاولو الباطن لكل بند.', 'Materials, labour, equipment and subcontract for each line.'), status: DOC },
           { name: t('سجل العطاءات', 'Tender register'), purpose: t('العطاءات بحالتها ونتيجتها.', 'Tenders with their status and outcome.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-approval-queue'],
       },
       {
         id: 'scope',
@@ -207,8 +222,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('التخطيط والتنفيذ في DIGIT Construction: هيكل تجزئة العمل وخط الأساس والجدول الزمني والتبعيات، والتقدم المسجل من يوميات الموقع وطلبات الاستيضاح وفحوص الجودة.', 'Planning and execution in DIGIT Construction: work breakdown structure, baseline, schedule and dependencies, with progress recorded from site diaries, RFIs and quality checks.'),
     profilePages: [21, 22, 23],
     photo: 'construction-levels',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-wbs', 'con-project-360'],
+    illustrative: false,
     signature: 'timeline',
     sections: [
       {
@@ -242,7 +257,7 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('سجلات التخطيط والموقع', 'Planning and site records'),
         lede: t('ما يربط المكتب بما يجري في الموقع.', 'What links the office to what happens on site.'),
         items: [
-          { name: t('هيكل تجزئة العمل', 'Work breakdown structure'), code: 'WBS', body: t('حزم العمل ومسؤوليها.', 'Work packages and their owners.'), status: DOC },
+          { name: t('هيكل تجزئة العمل', 'Work breakdown structure'), code: 'WBS', body: t('حزم العمل ومسؤوليها.', 'Work packages and their owners.'), status: SHOWN },
           { name: t('الجدول الزمني والتبعيات', 'Schedule and dependencies'), code: 'Gantt · Dependencies', body: t('الأنشطة وتسلسلها وخط الأساس.', 'Activities, their sequence and the baseline.'), status: DOC },
           { name: t('يومية الموقع', 'Site diary'), code: 'Site Diary', body: t('العمالة والمعدات والطقس والملاحظات اليومية.', 'Daily labour, equipment, weather and notes.'), status: DOC },
           { name: t('طلب الاستيضاح', 'Request for information'), code: 'RFI', body: t('السؤال الفني ومن يجيب وموعده.', 'The technical question, who answers and by when.'), status: DOC },
@@ -266,10 +281,17 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('عروض المتابعة', 'Follow-up views'),
         lede: t('ما يُراجع في اجتماع التقدم.', 'What is reviewed in the progress meeting.'),
         items: [
-          { name: t('التقدم مقابل خط الأساس', 'Progress against baseline'), purpose: t('المخطط والمنفذ والفرق لكل حزمة عمل.', 'Planned, done and variance for each work package.'), status: DOC },
+          { name: t('التقدم مقابل خط الأساس', 'Progress against baseline'), purpose: t('المخطط والمنفذ والفرق لكل حزمة عمل.', 'Planned, done and variance for each work package.'), status: SHOWN },
           { name: t('سجل طلبات الاستيضاح', 'RFI register'), purpose: t('المفتوح والمتأخر ومن ينتظر الرد.', 'Open, overdue and who is waiting for the answer.'), status: DOC },
           { name: t('نتائج الجودة', 'Quality results'), purpose: t('الفحوص المقبولة والمرفوضة وإعادة العمل.', 'Accepted and rejected checks and rework.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-project-360'],
       },
       {
         id: 'scope',
@@ -303,8 +325,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('عقود العملاء والتغييرات في DIGIT Construction: عقد العميل وجدول القيم وأوامر التغيير وتحليل أثرها قبل الاعتماد، حتى يعرف مدير المشروع أي نسخة يعتمد عليها.', 'Client contracts and variations in DIGIT Construction: client contract, schedule of values and change orders with impact analysis before approval, so the project manager knows which version to rely on.'),
     profilePages: [22, 23],
     photo: 'construction-change-review',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-approval-queue', 'con-decisions-today'],
+    illustrative: false,
     signature: 'stack',
     sections: [
       {
@@ -338,9 +360,9 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('مستندات العقد', 'Contract documents'),
         lede: t('السجلات التي تثبت ما اتُّفق عليه وما تغيّر.', 'The records that prove what was agreed and what changed.'),
         items: [
-          { name: t('عقد العميل', 'Client contract'), code: 'Client Contract', body: t('الأطراف والقيمة والشروط والمدة.', 'Parties, value, terms and duration.'), status: DOC },
+          { name: t('عقد العميل', 'Client contract'), code: 'Client Contract', body: t('الأطراف والقيمة والشروط والمدة.', 'Parties, value, terms and duration.'), status: SHOWN },
           { name: t('جدول القيم', 'Schedule of values'), code: 'SOV', body: t('بنود العقد بقيمها، أساس المستخلصات.', 'Contract lines and values, the basis for claims.'), status: DOC },
-          { name: t('أمر التغيير', 'Variation order'), code: 'Change Order · Variation', body: t('التغيير وأثره واعتماده.', 'The change, its impact and its approval.'), status: DOC },
+          { name: t('أمر التغيير', 'Variation order'), code: 'Change Order · Variation', body: t('التغيير وأثره واعتماده.', 'The change, its impact and its approval.'), status: SHOWN },
           { name: t('سجل الأثر', 'Impact record'), code: 'Impact', body: t('الفرق في التكلفة والمدة لكل تغيير.', 'The cost and time difference of each change.'), status: DOC },
         ],
       },
@@ -364,6 +386,13 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
           { name: t('سجل التغييرات', 'Variation register'), purpose: t('كل تغيير بحالته وقيمته وأثره.', 'Every change with its status, value and impact.'), status: DOC },
           { name: t('قيمة العقد المعدلة', 'Revised contract value'), purpose: t('الأصلية والتغييرات والقيمة الحالية.', 'Original, changes and current value.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-decisions-today'],
       },
       {
         id: 'scope',
@@ -397,8 +426,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('مقاولو الباطن والقياسات في DIGIT Construction: أوامر العمل والقياس الفعلي والشهادة والمحتجزات والقيمة المعتمدة والمدفوعة، كل منها منفصل.', 'Subcontractors and measurement in DIGIT Construction: work orders, actual measurement, certification, retention, certified value and paid amount, each kept separate.'),
     profilePages: [22, 24],
     photo: 'construction-measurement',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-cost-sheet'],
+    illustrative: false,
     signature: 'lanes',
     sections: [
       {
@@ -492,8 +521,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('المستخلصات والشهادات في DIGIT Construction: من بنود المستخلص إلى شهادة الإنجاز والفاتورة والتحصيل، مع فصل المقاس والمطالب به والمعتمد والمفوتر والمحصّل.', 'Progress claims and certificates in DIGIT Construction: from claim lines to progress certificate, invoice and payment, keeping measured, claimed, certified, invoiced and collected apart.'),
     profilePages: [22, 24],
     photo: 'construction-measurement',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-cost-cash-chain', 'con-receivables-ageing', 'con-project-360'],
+    illustrative: false,
     signature: 'stack',
     sections: [
       {
@@ -563,9 +592,16 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('عروض المستخلصات', 'Claim views'),
         lede: t('عروض تفصل القيم الخمس.', 'Views that keep the five values apart.'),
         items: [
-          { name: t('سلسلة المستخلص', 'Claim chain'), purpose: t('المقاس والمطالب والمعتمد والمفوتر والمحصّل لكل مستخلص.', 'Measured, claimed, certified, invoiced and collected per claim.'), status: DOC },
-          { name: t('أعمار ذمم المشروع', 'Project receivable ageing'), purpose: t('المستحق من العميل حسب العمر.', 'What the client owes, by age.'), status: DOC },
+          { name: t('سلسلة المستخلص', 'Claim chain'), purpose: t('المقاس والمطالب والمعتمد والمفوتر والمحصّل لكل مستخلص.', 'Measured, claimed, certified, invoiced and collected per claim.'), status: SHOWN },
+          { name: t('أعمار ذمم المشروع', 'Project receivable ageing'), purpose: t('المستحق من العميل حسب العمر.', 'What the client owes, by age.'), status: SHOWN },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-receivables-ageing', 'con-project-360'],
       },
       {
         id: 'connections',
@@ -589,8 +625,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('التوريد والمواد ومخزون الموقع في DIGIT Construction: طلبات المواد وأوامر الموردين والاستلام ومخزون الموقع، والتزامات الشراء مقابل موازنة المشروع.', 'Procurement, materials and site stock in DIGIT Construction: material requests, supplier orders, receiving and site stock, with purchase commitments measured against the project budget.'),
     profilePages: [22],
     photo: 'construction-levels',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-cost-sheet'],
+    illustrative: false,
     signature: 'lanes',
     sections: [
       {
@@ -670,8 +706,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('الموازنة والتكلفة في DIGIT Construction: الموازنة والتكلفة الفعلية والالتزامات والمتبقي حتى الإنجاز والمتوقع عند الإنجاز، كلٌ بمستنده ومن دون دمجها في رقم واحد.', 'Budget and cost in DIGIT Construction: budget, actual cost, commitments, estimate to complete and estimate at completion, each from its own documents and never merged into one figure.'),
     profilePages: [22, 24],
     photo: 'construction-aerial',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-cost-sheet', 'con-cash-flow', 'con-cost-cash-chain'],
+    illustrative: false,
     signature: 'ledger',
     sections: [
       {
@@ -716,10 +752,10 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('مصادر كل رقم', 'The source of each figure'),
         lede: t('كل رقم يفتح مستنداته.', 'Every figure opens its documents.'),
         items: [
-          { name: t('موازنة المشروع وتعديلاتها', 'Project budget and revisions'), code: 'Budget', body: t('من التقدير المعتمد وأوامر التغيير.', 'From the approved estimate and change orders.'), status: DOC },
-          { name: t('التكلفة الفعلية', 'Actual cost'), code: 'Actuals', body: t('الفواتير وصرف المواد وشهادات مقاولي الباطن.', 'Invoices, material issues and subcontract certificates.'), status: DOC },
-          { name: t('الالتزامات', 'Commitments'), code: 'Commitments', body: t('أوامر الشراء ومقاولي الباطن المفتوحة.', 'Open purchase and subcontract orders.'), status: DOC },
-          { name: t('التوقع', 'Forecast'), code: 'ETC · EAC', body: t('تقدير المسؤول للمتبقي وسببه.', 'The owner’s estimate of what remains and why.'), status: DOC },
+          { name: t('موازنة المشروع وتعديلاتها', 'Project budget and revisions'), code: 'Budget', body: t('من التقدير المعتمد وأوامر التغيير.', 'From the approved estimate and change orders.'), status: SHOWN },
+          { name: t('التكلفة الفعلية', 'Actual cost'), code: 'Actuals', body: t('الفواتير وصرف المواد وشهادات مقاولي الباطن.', 'Invoices, material issues and subcontract certificates.'), status: SHOWN },
+          { name: t('الالتزامات', 'Commitments'), code: 'Commitments', body: t('أوامر الشراء ومقاولي الباطن المفتوحة.', 'Open purchase and subcontract orders.'), status: SHOWN },
+          { name: t('التوقع', 'Forecast'), code: 'ETC · EAC', body: t('تقدير المسؤول للمتبقي وسببه.', 'The owner’s estimate of what remains and why.'), status: SHOWN },
         ],
       },
       {
@@ -739,9 +775,16 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
         title: t('عروض التكلفة', 'Cost views'),
         lede: t('الأعمدة الأربعة منفصلة دائمًا.', 'The four columns always kept apart.'),
         items: [
-          { name: t('تقرير تكلفة المشروع', 'Project cost report'), purpose: t('الموازنة والفعلي والالتزامات وETC/EAC لكل بند.', 'Budget, actuals, commitments and ETC/EAC per line.'), status: DOC },
+          { name: t('تقرير تكلفة المشروع', 'Project cost report'), purpose: t('الموازنة والفعلي والالتزامات وETC/EAC لكل بند.', 'Budget, actuals, commitments and ETC/EAC per line.'), status: SHOWN },
           { name: t('تاريخ التوقع', 'Forecast history'), purpose: t('تغير EAC عبر الأشهر وسببه.', 'How EAC changed over months and why.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-cash-flow', 'con-cost-cash-chain'],
       },
       {
         id: 'connections',
@@ -765,8 +808,8 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
     seoDescription: t('مالية المشروع والإقفال في DIGIT Construction: الموقف المالي والحساب الختامي والمحتجزات وإقفال المشروع، مرتبطة بالمحاسبة والمستخلصات والتكلفة.', 'Project finance and closeout in DIGIT Construction: financial position, final account, retentions and project closeout, linked to accounting, claims and cost.'),
     profilePages: [22],
     photo: 'construction-change-review',
-    heroShots: [],
-    illustrative: true,
+    heroShots: ['con-cash-flow', 'con-receivables-ageing'],
+    illustrative: false,
     signature: 'matrix',
     sections: [
       {
@@ -824,6 +867,13 @@ export const CONSTRUCTION: SpecialistDepartment[] = [
           { name: t('الموقف المالي للمشروع', 'Project financial position'), purpose: t('الإيراد والتكلفة والهامش والذمم.', 'Revenue, cost, margin and receivables.'), status: DOC },
           { name: t('تقرير الإقفال', 'Closeout report'), purpose: t('الحالة النهائية لكل عنصر مالي.', 'The final status of each financial element.'), status: DOC },
         ],
+      },
+      {
+        id: 'screens',
+        kind: 'screens',
+        title: t('من شاشات DIGIT Construction', 'From DIGIT Construction screens'),
+        lede: t('مقاطع من شاشات النظام الفعلية لهذا المجال؛ الأسماء والأرقام فيها توضيحية.', 'Sections of the real system screens for this area; the names and figures in them are illustrative.'),
+        shots: ['con-receivables-ageing'],
       },
       {
         id: 'scope',
