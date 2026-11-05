@@ -109,7 +109,6 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
 
   if (!tiles.length) return null;
   const multiple = views.length > 1;
-  const current = views[active] ?? views[0]!;
   const open = (t: MosaicTile) => setZoom(Math.max(0, shots.findIndex(s => s.id === t.shot.id)));
   const dir = direction * (locale === 'ar' ? -1 : 1);
 
@@ -251,15 +250,6 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
       {note && (
         <div className="mz-foot">
           <p>{C.note[locale]}</p>
-          <p className="mz-foot-now" aria-hidden="true">
-            <bdi>{current.title}</bdi>
-            {multiple && (
-              <span dir="ltr">
-                {' '}
-                {pad(active + 1)}/{pad(views.length)}
-              </span>
-            )}
-          </p>
         </div>
       )}
       <ShotLightbox shots={shots} index={zoom} onIndexChange={setZoom} onClose={() => setZoom(null)} />

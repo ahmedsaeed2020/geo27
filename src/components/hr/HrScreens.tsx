@@ -50,7 +50,7 @@ export default function HrScreens({ screens, locale, id }: { screens: ResolvedSc
   if (screens.length > 1 || current.focus) {
     const tiles: MosaicTile[] = screens.flatMap(s => {
       const own: MosaicTile[] = [{ shot: s.shot }];
-      if (s.focus) own.push({ shot: s.shot, focus: s.focus, caption: `${C.magnified[locale]} · ${s.shot.caption[locale]}` });
+      if (s.focus) own.push({ shot: s.shot, focus: s.focus });
       return own;
     });
     return (
