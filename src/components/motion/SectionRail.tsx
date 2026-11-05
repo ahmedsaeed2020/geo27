@@ -77,7 +77,7 @@ export default function SectionRail({ rootRef, pageKey }: { rootRef: RefObject<H
   };
   const progress = items.length > 1 ? Math.max(0, active) / (items.length - 1) : 0;
   return (
-    <nav className="dm-rail" aria-label={COPY.nav[locale]} data-dark={dark ? '' : undefined} style={{ '--dm-rail': progress.toFixed(3) } as CSSProperties}>
+    <nav className="dm-rail" aria-label={COPY.nav[locale]} data-on={active >= 0 ? '' : undefined} data-dark={dark ? '' : undefined} style={{ '--dm-rail': progress.toFixed(3) } as CSSProperties}>
       <span className="dm-rail-track" aria-hidden="true" />
       <span className="dm-rail-fill" aria-hidden="true" />
       <ol>

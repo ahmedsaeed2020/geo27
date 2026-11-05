@@ -25,9 +25,10 @@
 /* ---------- Shared keyframes ---------- */
 @keyframes dm-rise { from { opacity: 0; translate: 0 var(--dm-dist); } }
 @keyframes dm-fade { from { opacity: 0; } }
-/* Masked editorial entrance: the whole line block rises out of its own lower edge (never split into glyphs). */
+/* Masked editorial entrance: the whole headline block is unveiled line by line from the top, in reading order,
+   while it rises into place (never split into glyphs, so Arabic shaping is untouched). */
 @keyframes dm-mask-up {
-  from { clip-path: polygon(-8% 104%, 108% 104%, 108% 140%, -8% 140%); translate: 0 .38em; }
+  from { clip-path: polygon(-8% -40%, 108% -40%, 108% -40%, -8% -40%); translate: 0 .3em; }
   to { clip-path: polygon(-8% -40%, 108% -40%, 108% 140%, -8% 140%); translate: 0 0; }
 }
 /* Precision entrance: the line is written in reading direction. */
@@ -126,13 +127,16 @@ html[data-dm="crm"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-name: d
 html[data-dm="crm"] :is(.imported-page > .hero, .sp-hero) h1 { animation: dm-push .9s var(--dm-ease-out) .06s backwards !important; }
 /* DIGIT Construction — project progression: elements are laid like courses, one level after another. */
 html[data-dm="construction"] :is(.scene-hero-copy, .sp-hero-copy) > * { animation-duration: .95s; animation-timing-function: var(--dm-ease-build); }
-html[data-dm="construction"] :is(.imported-page > .hero, .sp-hero) h1 { animation-timing-function: var(--dm-ease-build) !important; animation-duration: 1.1s !important; }
+html[data-dm="construction"] :is(.imported-page > .hero, .sp-hero) h1 { animation-timing-function: cubic-bezier(.45, 0, .15, 1) !important; animation-duration: .95s !important; }
 /* DIGIT POS — operational rhythm: short, even beats; store-type chips land one after another. */
 html[data-dm="pos"] :is(.imported-page > :is(.hero, .pos-hero)) h1 { animation-duration: .7s !important; }
 html[data-dm="pos"] .imported-page > :is(.hero, .pos-hero) .scene-hero-copy > :last-child > * { animation: dm-pop .5s var(--dm-ease-spring) backwards; animation-delay: calc(.42s + var(--dm-k, 0) * 80ms); }
 html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(2) { --dm-k: 1; } html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(3) { --dm-k: 2; }
 html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(4) { --dm-k: 3; } html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(5) { --dm-k: 4; }
 html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(n + 6) { --dm-k: 5; }
+/* Store-type feature chips in POS solution heroes are laid out as chips (their source lost the chip styling). */
+.imported-page .pos-hero :has(> .chip) { display: flex; flex-wrap: wrap; gap: 8px; }
+.imported-page .pos-hero .chip { display: inline-flex; align-items: center; padding: 5px 12px; border: 1px solid var(--dline); border-radius: 999px; background: var(--card); font-size: 12.5px; font-weight: 600; line-height: 1.4; color: var(--deep); }
 
 /* Imported hero photograph: revealed from the seam outward, then it settles (depth comes from the scroll drift). */
 .imported-page .scene-hero > .page-scene-background { animation: dm-write-rtl 1.25s var(--dm-ease-out) .12s backwards; }
@@ -342,7 +346,10 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
 /* ==========================================================================================================
    7. Section rail — animated in-page navigation for long pages (wide desktops only).
    ========================================================================================================== */
-.dm-rail { position: fixed; z-index: 40; inset-inline-start: 18px; top: 50%; translate: 0 -50%; display: none; pointer-events: none; }
+.dm-rail { position: fixed; z-index: 40; inset-inline-start: 18px; top: 50%; translate: 0 -50%; display: none; pointer-events: none; transition: opacity .4s ease, translate .5s var(--dm-ease-out), visibility 0s linear .4s; }
+/* The rail stays out of the first fold and slides in once the reader reaches the first section. */
+.dm-rail:not([data-on]) { opacity: 0; visibility: hidden; translate: calc(var(--dm-start) * 12px) -50%; }
+.dm-rail[data-on] { transition-delay: 0s; }
 @media (min-width: 1400px) and (min-height: 700px) { .dm-rail { display: block; } }
 .dm-rail ol { position: relative; display: grid; gap: 4px; margin: 0; padding: 6px 0; list-style: none; pointer-events: auto; }
 .dm-rail-track, .dm-rail-fill { position: absolute; z-index: 0; inset-inline-start: 13px; top: 19px; bottom: 19px; width: 2px; border-radius: 2px; background: color-mix(in oklab, var(--deep) 14%, transparent); }
