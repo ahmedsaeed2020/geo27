@@ -422,6 +422,7 @@ html:active-view-transition-type(dm-department) { background: var(--deep); }
   .mm-depts > li, .mm-solutions > li, .mm-families > li, .mm-shot-body *, .mm-shot figcaption .mm-cap, .pp-lb-overlay, .pp-lb, .pp-lb *, .dm-orbit-pause {
     animation: none !important;
   }
+  .imported-page .scene-hero > .page-scene-background.page-scene-background::after { content: none; }
   .dm-seq > *, .dm-seq li::before, .dm-seq li::after, .dm-seq .sp-flow-no, .dm-seq .pv-flow-no, .dm-seq .pp-shot, .mm-indicator, .dm-rail *, .pp-frame, .pp-tab,
   a > svg.lucide-arrow-left, a > svg.lucide-arrow-right, button > svg.lucide-arrow-left, button > svg.lucide-arrow-right, [data-slot="button"], .mm-dept-icon {
     transition: none !important;
