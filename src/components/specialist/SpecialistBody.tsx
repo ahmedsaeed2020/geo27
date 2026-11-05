@@ -211,6 +211,84 @@ function Hero({ dept, entry, locale, headline, lede, crumb, heroShotId }: { dept
   const lead = shots[0];
   const box = useLightbox(shots);
   const demo = () => focusLeadForm({ product: dept.product, department: dept.slug });
+  // An editor's chosen hero screen leads the mosaic too.
+  const tiles = useMemo(() => {
+    const ids = dept.mosaic ?? [];
+    return shotsOf(heroShotId ? [heroShotId, ...ids.filter(id => id !== heroShotId)] : ids).map(shot => ({ shot }));
+  }, [heroShotId, dept.mosaic]);
+  const crumbs = (
+    <nav aria-label={C.crumbs[locale]} className="dp-crumbs">
+      <ol role="list">
+        <li>
+          <NavLink path="/">{C.home[locale]}</NavLink>
+        </li>
+        {product && (
+          <li>
+            <NavLink path={product.overview}>{product.name[locale]}</NavLink>
+          </li>
+        )}
+        <li aria-current="page">{crumb}</li>
+      </ol>
+    </nav>
+  );
+  const actions = (
+    <div className="sp-hero-actions">
+      <Button size="lg" onClick={demo}>
+        {C.demo[locale]}
+      </Button>
+      {product && (
+        <Button asChild size="lg" variant="outline">
+          <NavLink path={product.overview}>
+            {C.overview[locale]} {product.name[locale]}
+          </NavLink>
+        </Button>
+      )}
+    </div>
+  );
+  const legend = (
+    <dl className="sp-legend" aria-label={C.legend[locale]}>
+      {/* "Shown in a real screen" is only explained on a page that actually shows one. */}
+      {(Object.keys(STATUS) as EvidenceStatus[]).filter(s => s !== 'demonstrated' || dept.heroShots.length > 0).map(s => (
+        <div key={s}>
+          <dt>
+            <StatusChip status={s} locale={locale} />
+          </dt>
+          <dd>{STATUS[s].hint[locale]}</dd>
+        </div>
+      ))}
+    </dl>
+  );
+  if (tiles.length >= 3) {
+    // Several real screens: an editorial header above one mosaic of screens and close-ups (no photo behind them).
+    return (
+      <section className="sp-hero" data-layout="mosaic" data-signature={dept.signature} data-product={dept.product}>
+        <div className="dp-wrap">
+          {crumbs}
+          <div className="sp-hero-top">
+            <div className="sp-hero-copy">
+              {product && (
+                <p className="sp-eyebrow">
+                  <bdi>{product.name[locale]}</bdi> · {product.area[locale]}
+                </p>
+              )}
+              <h1 className="sp-h1">{headline}</h1>
+            </div>
+            <div className="sp-hero-aside">
+              <p className="sp-hero-lede">{lede}</p>
+              {actions}
+            </div>
+          </div>
+          <div className="sp-hero-mosaic">
+            <ScreenMosaic tiles={tiles} locale={locale} label={product?.name[locale] ?? SPECIALIST_META[dept.product].name} id={`sp-hero-${dept.slug}`} />
+          </div>
+          {legend}
+        </div>
+        <p className="sr-only">
+          {C.profile[locale]} {entry.profilePages.join(locale === 'ar' ? '، ' : ', ')}
+        </p>
+      </section>
+    );
+  }
   return (
     <section className="sp-hero" data-signature={dept.signature} data-product={dept.product}>
       <div className="dp-wrap">
