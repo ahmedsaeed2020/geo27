@@ -22,6 +22,7 @@ import SuccessStories from "@/components/stories/SuccessStories";
 import { DeliveryJourney, PlatformLayers, SpecialistDiscovery } from '@/components/hubs/CorporateStory';
 import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
+import SectionRail from "@/components/motion/SectionRail";
 import { useLocale } from "@/lib/i18n";
 import { HOME_LEAD } from '@/content/home';
 import { useSiteConfig } from '@/components/cms/CmsContext';
