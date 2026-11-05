@@ -41,7 +41,7 @@ export default function WorkflowJourney() {
     <section id="workflow-journey" className="bg-paper2 px-4 py-20 max-md:py-14">
       <div className="mx-auto max-w-6xl">
         <div className="mb-10 max-w-[720px]">
-          <p className="font-monospace text-[12px] font-bold tracking-[0.14em] text-primary uppercase">{JOURNEY.eyebrow[l]}</p>
+          <p className={`text-[13px] font-bold text-primary ${l === 'en' ? 'font-monospace tracking-[0.14em] uppercase' : ''}`}>{JOURNEY.eyebrow[l]}</p>
           <SectionHeading k="journey" className="mt-2 text-4xl font-bold text-foreground max-md:text-[28px]">{JOURNEY.heading[l]}</SectionHeading>
           <p className="mt-3 text-[16.5px] leading-[1.8] text-body2">{JOURNEY.lede[l]}</p>
         </div>
@@ -84,7 +84,7 @@ export default function WorkflowJourney() {
           <div role="tabpanel" id={`${uid}-panel`} aria-labelledby={`${uid}-tab-${active}`} className="min-w-0">
             <ShotFrame shot={screen} size="lead" onOpen={() => setZoom(true)} />
             <div className="mt-5 rounded-[14px] border border-dline bg-card p-5">
-              <p className="font-monospace text-[11px] font-bold tracking-[0.12em] text-primary uppercase">
+              <p className={`text-[12px] font-bold text-primary ${l === 'en' ? 'font-monospace tracking-[0.12em] uppercase' : ''}`}>
                 {JOURNEY.step[l]} {active + 1} {JOURNEY.of[l]} {JOURNEY_STEPS.length} · {step.label[l]}
               </p>
               <p className="mt-2 text-[16px] leading-[1.75] text-foreground">{step.lede[l]}</p>

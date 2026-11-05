@@ -140,7 +140,7 @@ export const MODULES = {
   more: t('عرض المزيد', 'Learn more'),
   departments: t('أقسام', 'departments'),
   areas: t('مجالات', 'areas'),
-  activities: t('نشاطًا', 'activities'),
+  activities: t('أنشطة', 'activities'),
   also: t('وكمان في DIGIT Pro', 'Also in DIGIT Pro'),
   extra: t('أنظمة إضافية', 'More systems'),
 };

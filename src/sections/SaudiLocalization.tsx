@@ -177,7 +177,7 @@ export default function SaudiLocalization() {
 
             <a href={localeHref(SAUDI.onboardingHref, l)} className="mt-5 flex items-center justify-between gap-3 border-t border-paper/10 pt-4 text-[13.5px] font-semibold text-mint hover:underline">
               {SAUDI.onboarding[l]}
-              <span aria-hidden="true" className="ltr:rotate-180">←</span>
+              <span aria-hidden="true" className="inline-block ltr:rotate-180">←</span>
             </a>
           </div>
         </div>

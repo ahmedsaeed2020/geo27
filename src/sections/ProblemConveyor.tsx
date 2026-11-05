@@ -95,7 +95,7 @@ export default function ProblemConveyor() {
                 <div key={s.key} className={i === idx ? "block" : "hidden"} role="group" aria-roledescription={l === "ar" ? "شريحة" : "slide"} aria-label={`${i + 1} / ${n}`}>
                   <div className="mx-auto flex max-w-[940px] items-stretch justify-center gap-5 max-md:flex-col max-md:gap-0" style={i === idx ? { animation: "dcvfade .42s cubic-bezier(.2,.7,.2,1)" } : undefined}>
                     <div className="flex min-h-[188px] flex-1 flex-col justify-center gap-[18px] rounded-[18px] border border-body2/16 bg-paper p-[30px] max-lg:min-h-[170px] max-lg:p-6">
-                      <div className="font-monospace text-[11px] font-bold tracking-[0.10em] text-body2">{PROBLEMS.today[l]}</div>
+                      <div className={`text-[12px] font-bold text-body2 ${l === "en" ? "font-monospace tracking-[0.10em]" : ""}`}>{PROBLEMS.today[l]}</div>
                       <div className="flex items-center gap-[15px]">
                         <span className="flex h-[46px] w-[46px] flex-none items-center justify-center rounded-[13px] bg-body2/10">{PainMark}</span>
                         <span className="text-[clamp(18px,1.7vw,22px)] leading-[1.4] font-semibold text-ink/70">{s.pain[l]}</span>
@@ -106,12 +106,12 @@ export default function ProblemConveyor() {
                       <span className="flex h-[54px] w-[54px] items-center justify-center rounded-full bg-mint/16 text-primary max-md:-rotate-90 ltr:rotate-180 max-md:ltr:-rotate-90">
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" className="h-[26px] w-[26px]"><path d="M18 12H7" /><path d="M11 7 6 12 11 17" /></svg>
                       </span>
-                      <span className="font-monospace text-[9.5px] font-bold text-primary max-md:hidden">{s.tag[l]}</span>
+                      <span className={`text-[11px] font-bold text-primary max-md:hidden ${l === "en" ? "font-monospace text-[9.5px]" : ""}`}>{s.tag[l]}</span>
                     </div>
 
                     <div className="relative flex min-h-[188px] flex-1 flex-col justify-center gap-[14px] rounded-[18px] border border-primary/18 bg-card p-[30px] shadow-[0_14px_36px_rgba(6,78,59,.10)] max-lg:min-h-[170px] max-lg:p-6">
                       <span className="absolute inset-y-4 start-0 w-1 rounded-full bg-mint" aria-hidden="true" />
-                      <div className="font-monospace text-[11px] font-bold tracking-[0.10em] text-primary">{PROBLEMS.with[l]}</div>
+                      <div className={`text-[12px] font-bold text-primary ${l === "en" ? "font-monospace tracking-[0.10em]" : ""}`}>{PROBLEMS.with[l]}</div>
                       <div className="flex items-center gap-[15px] max-md:flex-wrap">
                         <span className="flex h-[46px] w-[46px] flex-none items-center justify-center rounded-[13px] bg-primary/12">{SolMark}</span>
                         <span className="min-w-0 flex-1 text-[clamp(18px,1.7vw,22px)] leading-[1.4] font-bold text-deep">{s.sol[l]}</span>

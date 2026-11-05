@@ -77,7 +77,7 @@ export default function ChaosToControl() {
                         <b className="block font-semibold text-paper group-hover:text-mint">{family.name[l]}</b>
                         <span className="text-[12.5px] text-paper/65">{r.label[l]}</span>
                       </span>
-                      <span className="flex flex-none items-center gap-[7px] text-end font-monospace text-[11px] text-mint">
+                      <span className={`flex flex-none items-center gap-[7px] text-end text-mint ${l === "en" ? "font-monospace text-[11px]" : "text-[12.5px] font-medium"}`}>
                         {CheckIcon}
                         {r.status[l]}
                       </span>
