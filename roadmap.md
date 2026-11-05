@@ -211,3 +211,6 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 - [ ] Owner decision: the top of /pro still says «عرض سعر مخصص» while the new section shows the Pro price.
 - [ ] Owner decision: several screenshots show the word "ERPNext" in small print; recapture if it must not appear.
 - [ ] Owner decision: the /pro preview section still says its images are illustrative and will be replaced.
+
+# Owner note 2026-11-05 17:56 (menu icons must be Digit's own)
+- [x] Replace the generic menu icons with the DIGIT icon set: original digit-erp.com glyphs where a match exists (Pro departments, dashboard, calendar, signature, settings, search, warning, cost centres, WPS card, POS, pharmacy…), new glyphs drawn in the same grammar for the rest (hard hat, wrench, map pin, ruler, POS activities); desktop mega menu, systems menu and mobile menu, AR/EN; tests.
