@@ -26,6 +26,11 @@ import { usePageMotion } from "@/hooks/use-page-motion";
 import { SourceFrame, FeatureVisualView } from "@/components/SourceVisual";
 import { bodyPhotoInFrame, frameFill, isSourceFrame } from "@/content/page-frames";
 import { FEATURE_VISUALS } from "@/content/feature-visuals";
+import { SOURCE_AREA_LINKS } from "@/content/source-area-links";
+import type { ResolvedDepartment } from "@/content/catalog";
+import { useCatalog } from "@/components/catalog/useCatalog";
+import { NavLink } from "@/components/nav/nav-links";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type Node = {
   id: string;
@@ -60,6 +65,26 @@ type HeroRole = "copy" | "centered" | "visual";
 type SplitPhoto = { id: string; mode: "first-child" | "run"; src: string; width: number; height: number };
 type SceneLayout = { heroId: string | undefined; roles: Map<string, HeroRole>; split: SplitPhoto | undefined };
 const SceneLayoutContext = createContext<SceneLayout>({ heroId: undefined, roles: new Map(), split: undefined });
+/** Source cards that open a published product-area page (see src/content/source-area-links.ts), by node id. */
+const AreaLinksContext = createContext<Map<string, ResolvedDepartment>>(new Map());
+
+function useAreaLinks(pageKey: string): Map<string, ResolvedDepartment> {
+  const catalog = useCatalog();
+  return useMemo(() => {
+    const out = new Map<string, ResolvedDepartment>();
+    for (const [nodeId, target] of Object.entries(SOURCE_AREA_LINKS[pageKey] ?? {})) {
+      const d = catalog.find(f => f.key === target.product)?.departments.find(x => x.id === target.id);
+      if (d?.live) out.set(nodeId, d);
+    }
+    return out;
+  }, [catalog, pageKey]);
+}
+
+function AreaCardLink({ department }: { department: ResolvedDepartment }) {
+  const locale = useLocale();
+  const Arrow = locale === "ar" ? ArrowLeft : ArrowRight;
+  return <NavLink path={department.path} className="import-area-link">{department.label[locale]}<Arrow aria-hidden="true" /></NavLink>;
+}
 
 const HERO_CLASS = /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/;
 const DIRECTORY_CLASS = /(?:^|\s)import-directory(?:\s|$)/;
@@ -117,6 +142,7 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
   const locale = useLocale();
   const cms = useCmsPage();
   const layout = useContext(SceneLayoutContext);
+  const areaLink = useContext(AreaLinksContext).get(node.id);
   const override = cms?.[locale].sourceEdits[node.id];
   if (override !== undefined) node = { ...node, html:override, text:override };
   const props = { className: node.className, id: node.anchor && !declaresId(node, node.anchor) ? node.anchor : undefined };
@@ -132,7 +158,7 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
     if (feature) return localizeTree(<FeatureVisualView className={node.className} visual={feature} />, locale);
     const hero = node.id === layout.heroId && HERO_CLASS.test(node.className) && getPageScene(pageKey);
     const directory = hero && DIRECTORY_CLASS.test(node.className);
-    const classes = [node.className, hero && "scene-backed", hero && (directory ? "scene-directory" : "scene-hero"), role && "scene-hero-copy", role === "centered" && "scene-hero-centered"].filter(Boolean).join(" ");
+    const classes = [node.className, hero && "scene-backed", hero && (directory ? "scene-directory" : "scene-hero"), role && "scene-hero-copy", role === "centered" && "scene-hero-centered", areaLink && "import-area-card"].filter(Boolean).join(" ");
     const children = node.children ?? [];
     const split = layout.split?.id === node.id ? layout.split : undefined;
     let body: ReactNode;
@@ -150,7 +176,7 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
         {(run < 0 ? [] : children.slice(run)).map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}
       </>;
     } else body = children.map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />);
-    return localizeTree(<div {...props} className={classes} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{body}</div>, locale);
+    return localizeTree(<div {...props} className={classes} data-import-container>{hero && <PageScene pageKey={pageKey} kind="background" />}{body}{areaLink && <AreaCardLink department={areaLink} />}</div>, locale);
   }
   if (node.type === "heading") {
     const tags: Record<string, ElementType> = { h1: "h1", h2: "h2", h3: "h3", h4: "h4", h5: "h5", h6: "h6" };
