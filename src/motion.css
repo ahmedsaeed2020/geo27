@@ -170,7 +170,9 @@ html[data-dm="pos"] .scene-hero-copy > :last-child > :nth-child(n + 6) { --dm-k:
 .pv-hero .pv-hero-toc > li:nth-child(5) { --dm-k: 4; } .pv-hero .pv-hero-toc > li:nth-child(n + 6) { --dm-k: 5; }
 
 /* Specialist area pages (Construction, CRM, Field Service). */
-.sp-hero .sp-hero-aside { animation: dm-rise .8s var(--dm-ease-out) .3s backwards; }
+/* The aside carries the lead paragraph and the actions: painted at once, it settles beside the headline. */
+.sp-hero .sp-hero-aside { animation: dm-lift .9s var(--dm-ease-out) .2s backwards; }
+html[data-dm="crm"] .sp-hero .sp-hero-aside { animation-name: dm-push-solid; }
 .sp-hero .sp-hero-mosaic, .sp-hero .sp-hero-art { animation: dm-depth-solid 1.1s var(--dm-ease-out) .2s backwards; }
 html[data-dm="construction"] .sp-hero .sp-hero-mosaic { animation: dm-layers-solid 1.25s var(--dm-ease-build) .2s backwards; }
 html[data-dm="crm"] .sp-hero .sp-hero-mosaic { animation: dm-push-solid 1.05s var(--dm-ease-out) .2s backwards; }
