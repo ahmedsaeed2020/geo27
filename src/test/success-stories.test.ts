@@ -22,9 +22,20 @@ describe('success stories logo ticker', () => {
     expect(ids.indexOf('stories')).toBe(ids.indexOf('lead') - 1);
   });
 
-  it('caps each logo at 200px with about eight across the screen, and loops by half the doubled track', () => {
-    expect(css).toContain('calc((100vw - 64px) / 8 - var(--ss-gap)), 200px)');
+  it('fits about eight logos across the boxed strip (not the screen) and loops by half the doubled track', () => {
+    expect(css).toContain('calc(100cqw / 8 - var(--ss-gap))');
+    expect(css).toContain('container-type: inline-size');
+    expect(css).not.toContain('100vw');
     expect(css).toMatch(/to \{ transform: translate3d\(-50%, 0, 0\); \}/);
+  });
+
+  it('moves right to left in Arabic and left to right in English', () => {
     expect(css).toMatch(/\.ss-track\[data-flow='ltr'\] \{ animation-direction: reverse; \}/);
+    expect(css).not.toMatch(/\.ss-track\[data-flow='rtl'\][^}]*reverse/);
+  });
+
+  it('pauses only while the pointer rests on it (or keyboard focus)', () => {
+    expect(css).toMatch(/\.ss-viewport:hover \.ss-track,\s*\.ss-root \.ss-viewport:focus-visible \.ss-track \{ animation-play-state: paused; \}/);
+    expect(css).not.toContain('data-paused');
   });
 });

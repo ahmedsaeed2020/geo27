@@ -75,13 +75,12 @@ export default function SuccessStories({ variant = 'section' }: { variant?: 'sec
   const logos = locale === 'en' ? [...CUSTOMER_LOGOS].reverse() : CUSTOMER_LOGOS;
   const [before, after] = C.lead[locale];
   const style = { '--ss-duration': `${CUSTOMER_LOGOS.length * SECONDS_PER_LOGO}s` } as CSSProperties;
-  const Title = variant === 'section' ? 'h2' : 'h3';
 
   const body = (
     <>
       <div ref={headRef}>
         <p className="ss-kicker">DIGIT · {C.kicker[locale]}</p>
-        <Title id={titleId} className="ss-title">{heading}</Title>
+        <h2 id={titleId} className="ss-title">{heading}</h2>
         <p className="ss-lead">
           <span aria-hidden="true">
             {before}<span className="ss-count">{count}</span>{after}
