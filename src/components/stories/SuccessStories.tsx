@@ -1,12 +1,11 @@
-import { useEffect, useRef, useState, type CSSProperties } from 'react';
-import { Pause, Play } from 'lucide-react';
+import { useEffect, useId, useRef, useState, type CSSProperties } from 'react';
 import { useLocale } from '@/lib/i18n';
-import { SectionHeading } from '@/components/cms/SectionText';
+import { useSectionOverride } from '@/components/cms/SectionText';
 import { CUSTOMER_COUNT, CUSTOMER_LOGOS, SUCCESS_STORIES_COPY as C, type CustomerLogo } from '@/content/success-stories';
 import '@/success-stories.css';
 
 /** Seconds each logo takes to travel one tile width: slow enough to read every mark as it passes. */
-const SECONDS_PER_LOGO = 4;
+const SECONDS_PER_LOGO = 3.5;
 const COUNT_MS = 1400;
 
 const reducedMotion = () => typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -27,15 +26,17 @@ function Tile({ logo, alt, loaded }: { logo: CustomerLogo; alt: string; loaded: 
 
 /**
  * «قصص النجاح»: an endless, slow ticker of customer logos (right → left in Arabic, left → right in English) with a
- * counted customer figure. It shares the page background and sits directly above the demo form.
+ * counted customer figure, placed above every request form. `section` is the full block above the demo panel (boxed to
+ * the form's width); `inline` is the compact version that sits on top of a form inside its own column.
  */
-export default function SuccessStories() {
+export default function SuccessStories({ variant = 'section' }: { variant?: 'section' | 'inline' }) {
   const locale = useLocale();
-  const rootRef = useRef<HTMLElement>(null);
+  const titleId = useId();
+  const rootRef = useRef<HTMLDivElement>(null);
   const headRef = useRef<HTMLDivElement>(null);
   const [near, setNear] = useState(false);
-  const [paused, setPaused] = useState(false);
   const [count, setCount] = useState(CUSTOMER_COUNT);
+  const heading = useSectionOverride('stories.heading') ?? C.heading[locale];
 
   // Load the logos only when the strip approaches, so pages that never reach it don't download them.
   useEffect(() => {
@@ -75,42 +76,23 @@ export default function SuccessStories() {
   const [before, after] = C.lead[locale];
   const style = { '--ss-duration': `${CUSTOMER_LOGOS.length * SECONDS_PER_LOGO}s` } as CSSProperties;
 
-  return (
-    <section
-      ref={rootRef}
-      className="ss-root"
-      aria-labelledby="success-stories-title"
-      data-success-stories=""
-      {...(paused ? { 'data-paused': '' } : {})}
-    >
-      <div ref={headRef} className="mx-auto flex max-w-5xl flex-wrap items-end justify-between gap-4 px-4">
-        <div className="max-w-3xl">
-          <p className="text-sm font-semibold text-primary">DIGIT · {C.kicker[locale]}</p>
-          <SectionHeading k="stories" id="success-stories-title" className="text-3xl font-bold text-foreground">
-            {C.heading[locale]}
-          </SectionHeading>
-          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
-            <span aria-hidden="true">
-              {before}<span className="ss-count">{count}</span>{after}
-            </span>
-            <span className="sr-only">{before}{CUSTOMER_COUNT}{after}</span>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="ss-toggle"
-          aria-pressed={paused}
-          aria-label={paused ? C.play[locale] : C.pause[locale]}
-          title={paused ? C.play[locale] : C.pause[locale]}
-          onClick={() => setPaused(p => !p)}
-        >
-          {paused ? <Play aria-hidden="true" /> : <Pause aria-hidden="true" />}
-        </button>
+  const body = (
+    <>
+      <div ref={headRef}>
+        <p className="ss-kicker">DIGIT · {C.kicker[locale]}</p>
+        <h2 id={titleId} className="ss-title">{heading}</h2>
+        <p className="ss-lead">
+          <span aria-hidden="true">
+            {before}<span className="ss-count">{count}</span>{after}
+          </span>
+          <span className="sr-only">{before}{CUSTOMER_COUNT}{after}</span>
+        </p>
       </div>
 
-      <div className="ss-viewport">
+      {/* Focusable so keyboard users can hold the strip still, as the pointer does on hover. */}
+      <div className="ss-viewport" tabIndex={0} role="region" aria-label={C.listLabel[locale]}>
         <div className="ss-track" data-flow={locale === 'en' ? 'ltr' : 'rtl'} style={style}>
-          <ul role="list" className="ss-set" aria-label={C.listLabel[locale]}>
+          <ul role="list" className="ss-set">
             {logos.map(logo => <Tile key={logo.file} logo={logo} alt={logo.name[locale]} loaded={near} />)}
           </ul>
           {/* The second copy closes the loop: after the last logo, logo 1 follows without a jump. */}
@@ -119,6 +101,19 @@ export default function SuccessStories() {
           </ul>
         </div>
       </div>
+    </>
+  );
+
+  if (variant === 'inline') {
+    return (
+      <div ref={rootRef} className="ss-root" data-variant="inline" data-success-stories="" role="group" aria-labelledby={titleId}>
+        {body}
+      </div>
+    );
+  }
+  return (
+    <section ref={rootRef} className="ss-root" data-variant="section" data-success-stories="" aria-labelledby={titleId}>
+      <div className="mx-auto max-w-5xl px-4">{body}</div>
     </section>
   );
 }

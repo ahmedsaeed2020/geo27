@@ -1,4 +1,5 @@
-import { useState, type FormEvent } from "react";
+import { useState, type FormEvent, type ReactNode } from "react";
+import SuccessStories from "@/components/stories/SuccessStories";
 import { useServerFn } from '@tanstack/react-start';
 import { useHydrated } from '@tanstack/react-router';
 import { contextForPath } from '@/content/catalog';
@@ -70,7 +71,11 @@ const COPY = {
 } as const;
 
 /** Contextual lead form. Field visibility and copy come from the published form settings; `demo` renders it without submitting. */
-export default function ContactForm({ kind, interest = '', demo = false, product, department }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string }) {
+/**
+ * Every visitor form carries the «قصص النجاح» logo strip on top (boxed to the form's width); the demo panel renders its
+ * own larger strip above its heading and passes `stories={false}`, and admin previews (`demo`) never show it.
+ */
+export default function ContactForm({ kind, interest = '', demo = false, product, department, stories = !demo }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string; stories?: boolean }) {
   const locale = useLocale();
   const t = COPY[locale];
   const settings = useSiteConfig().forms;
@@ -141,8 +146,10 @@ export default function ContactForm({ kind, interest = '', demo = false, product
     }
   }
 
+  const withStories = (node: ReactNode) => stories ? <div className="ss-form-stack"><SuccessStories variant="inline" />{node}</div> : node;
+
   if (state === "success") {
-    return (
+    return withStories(
       <div role="status" className="border border-border bg-card p-6 text-center">
         <p className="font-semibold text-foreground">{demo ? t.demoOnly : settings.success[locale] || t.success}</p>
       </div>
@@ -151,7 +158,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
 
   const optional = (required: boolean) => (required ? '' : t.optional);
 
-  return (
+  return withStories(
     <form onSubmit={handleSubmit} method="post" className="border border-border bg-card p-6" noValidate data-contextual-form={demo ? undefined : true}>
       <h2 className="mb-4 text-lg font-bold text-foreground">{settings.heading[locale] || t.heading}</h2>
       <div className="grid gap-3 sm:grid-cols-2">
