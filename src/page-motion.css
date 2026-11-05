@@ -5,8 +5,17 @@
 .motion-target[data-motion-stage="3"] { transition-delay: 210ms; }
 .motion-target.motion-visible { opacity: 1; translate: 0 0; }
 /* Headings are unveiled from the top in reading order as they rise (the block is masked, never split into letters). */
-.motion-target[data-motion="line"] { opacity: 1; translate: 0 .36em; clip-path: polygon(-6% -40%, 106% -40%, 106% -40%, -6% -40%); transition: translate 820ms cubic-bezier(.16,1,.3,1), clip-path 820ms cubic-bezier(.16,1,.3,1); }
-.motion-target[data-motion="line"].motion-visible { translate: 0 0; clip-path: polygon(-6% -40%, 106% -40%, 106% 140%, -6% 140%); }
+/* The waiting heading is only transparent (never clipped), so the reveal observer still sees its full box; the mask
+   plays as a one-shot animation once it is revealed. */
+.motion-target[data-motion="line"] { translate: none; transition: none; }
+.motion-target[data-motion="line"].motion-visible { animation: motion-line-in 820ms cubic-bezier(.16,1,.3,1) both; }
+.motion-target[data-motion="line"][data-motion-stage="1"].motion-visible { animation-delay: 70ms; }
+.motion-target[data-motion="line"][data-motion-stage="2"].motion-visible { animation-delay: 140ms; }
+.motion-target[data-motion="line"][data-motion-stage="3"].motion-visible { animation-delay: 210ms; }
+@keyframes motion-line-in {
+  from { translate: 0 .36em; clip-path: polygon(-6% -40%, 106% -40%, 106% -40%, -6% -40%); }
+  to { translate: 0 0; clip-path: polygon(-6% -40%, 106% -40%, 106% 140%, -6% 140%); }
+}
 /* Real screen frames enter with depth. */
 .motion-target[data-motion="screen"] { translate: 0 30px; scale: .965; transition: opacity 650ms ease, translate 950ms cubic-bezier(.16,1,.3,1), scale 950ms cubic-bezier(.16,1,.3,1); }
 .motion-target[data-motion="screen"].motion-visible { translate: 0 0; scale: 1; }
