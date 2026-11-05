@@ -1,5 +1,5 @@
 import { HOME_SHOWCASE } from './product-proof';
-import { CAPABILITIES, CHAOS, FAQ_COPY, FINAL, INDUSTRIES_COPY, JOURNEY, MODULES, PROBLEMS, SAUDI } from './home';
+import { CAPABILITIES, CHAOS, EXPLORER, FAQ_COPY, FINAL, INDUSTRIES_COPY, JOURNEY, MODULES, PROBLEMS, SAUDI } from './home';
 import { orderSections, type SectionLayoutConfig } from '@/lib/site-config-schema';
 
 /**
@@ -19,7 +19,7 @@ export const HOME_SECTIONS = [
   { id: 'hero', label: 'سلايدر المنتجات الرئيسي (ثابت)', locked: true },
   { id: 'trust', label: 'شريط الثقة' },
   { id: 'layers', label: 'المنصة والتطبيقات والتنفيذ', heading: { ar: 'منصة أعمال. تطبيقات متخصصة. قدرة على التنفيذ.', en: 'A business platform. Specialist applications. The capability to deliver.' } },
-  { id: 'explorer', label: 'مستكشف التطبيقات', heading: { ar: 'ابدأ من شغلك، مش من اسم البرنامج', en: 'Start with your work, not a software name' } },
+  { id: 'explorer', label: 'ابدأ من دورك (الأدوار والأسئلة)', heading: EXPLORER.heading },
   { id: 'journey', label: 'رحلة العمل (أربع زوايا من DIGIT Pro)', heading: JOURNEY.heading },
   { id: 'chaos', label: 'من الفوضى إلى التحكّم (المنتجات الستة)', heading: CHAOS.heading },
   { id: 'band', label: 'سلايدر المنتجات (محاسبتك أوضح)', heading: { ar: 'محاسبتك أوضح' } },
