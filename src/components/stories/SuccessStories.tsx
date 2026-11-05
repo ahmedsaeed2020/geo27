@@ -90,7 +90,7 @@ export default function SuccessStories({ variant = 'section' }: { variant?: 'sec
       </div>
 
       {/* Focusable so keyboard users can hold the strip still, as the pointer does on hover. */}
-      <div className="ss-viewport" tabIndex={0} role="region" aria-label={C.listLabel[locale]} title={C.hoverHint[locale]}>
+      <div className="ss-viewport" tabIndex={0} role="region" aria-label={C.listLabel[locale]}>
         <div className="ss-track" data-flow={locale === 'en' ? 'ltr' : 'rtl'} style={style}>
           <ul role="list" className="ss-set">
             {logos.map(logo => <Tile key={logo.file} logo={logo} alt={logo.name[locale]} loaded={near} />)}

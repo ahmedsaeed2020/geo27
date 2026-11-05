@@ -76,5 +76,4 @@ export const SUCCESS_STORIES_COPY = {
     en: ['More than ', ' Saudi businesses across contracting, real estate, trading, services and training chose Digit.'],
   },
   listLabel: { ar: 'شعارات عملاء Digit', en: 'Digit customer logos' },
-  hoverHint: { ar: 'مرّر المؤشر فوق الشعارات لإيقافها', en: 'Rest the pointer on the logos to hold them still' },
 } as const;
