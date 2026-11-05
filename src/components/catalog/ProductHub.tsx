@@ -6,7 +6,8 @@ import ShotLightbox from '@/components/product/ShotLightbox';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { NavLink } from '@/components/nav/nav-links';
 import { departmentAnchor, type L, type ProductKey, type ResolvedDepartment, type ResolvedFamily } from '@/content/catalog';
-import { SHOTS, type Shot } from '@/content/product-shots';
+import type { Shot } from '@/content/product-shots';
+import { screenById } from '@/content/screens';
 import { proWorkspacesOf } from '@/content/pro/pro-pages';
 import { useLocale, type Locale } from '@/lib/i18n';
 import { useCatalog } from './useCatalog';
@@ -88,8 +89,8 @@ function ProCycle({ family, locale }: { family: ResolvedFamily; locale: Locale }
   const [open, setOpen] = useState<number | null>(null);
   const tabs = useRef<(HTMLButtonElement | null)[]>([]);
   const current = depts[active];
-  const shot: Shot | undefined = current?.shot ? SHOTS[current.shot] : undefined;
-  const extras = useMemo(() => family.extras.map(x => ({ ...x, s: x.shot ? SHOTS[x.shot] : undefined })), [family.extras]);
+  const shot: Shot | undefined = screenById(current?.shot ?? '');
+  const extras = useMemo(() => family.extras.map(x => ({ ...x, s: screenById(x.shot ?? '') })), [family.extras]);
   const target = useTargetId();
   useEffect(() => {
     const i = depts.findIndex(d => departmentAnchor(d.id) === target);

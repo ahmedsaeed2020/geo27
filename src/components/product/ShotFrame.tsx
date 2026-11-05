@@ -22,6 +22,8 @@ export function frameMode(shot: Shot): FrameMode {
 }
 
 function frameRatio(shot: Shot, size: FrameSize, mode: FrameMode): number {
+  // A large full-screen capture slightly wider than 16:10 keeps both edges instead of losing its sides to the crop.
+  if (size === "lead" && mode === "screen") return Math.max(16 / 10, shot.width / shot.height);
   if (size !== "lead" || (mode !== "detail" && mode !== "strip")) return 16 / 10;
   return Math.min(Math.max(shot.width / shot.height, 1.6), 2.4);
 }

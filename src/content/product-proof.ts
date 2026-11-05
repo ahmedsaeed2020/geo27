@@ -39,7 +39,7 @@ export const PAGE_PROOFS: Record<string, ProofBlock[]> = {
       hook: theme("cfo").hook,
       pain: { ar: "بدل ما تجمع أرقام السيولة والمخاطر وجاهزية الإقفال من شيتات متفرقة.", en: "Instead of pulling cash, risk and close-readiness figures together from scattered spreadsheets." },
       lead: "01-cfo-01-e1",
-      shots: ["01-cfo-01-e1", "01-cfo-02-e2", "01-cfo-03-e3", "01-cfo-04-f11", "01-cfo-05-r7"],
+      shots: ["01-cfo-01-e1", "01-cfo-02-e2", "01-cfo-03-e3", "01-cfo-04-f11", "01-cfo-05-r7", "01-cfo-06-f1"],
       bullets: [
         { ar: "توقع نقدي بثلاث آفاق مع فصل الفعلي عن المجدول", en: "Cash forecast over three horizons, with actuals kept apart from scheduled amounts" },
         { ar: "قائمة إقفال شهرية تكشف فروقات الذمم والمخزون قبل الإقفال", en: "A monthly close checklist that surfaces receivable and stock variances before closing" },
@@ -62,7 +62,7 @@ export const PAGE_PROOFS: Record<string, ProofBlock[]> = {
       title: theme("sales").title,
       hook: theme("sales").hook,
       lead: "04-360-01-sl1",
-      shots: ["05-sales-01-sl2", "05-sales-02-sl5", "05-sales-03-sl7", "05-sales-04-sel-004", "04-360-01-sl1"],
+      shots: ["05-sales-01-sl2", "05-sales-02-sl5", "05-sales-05-sel-006", "05-sales-03-sl7", "05-sales-04-sel-004", "04-360-01-sl1"],
       bullets: [
         { ar: "توفر الصنف ظاهر على كل سطر قبل ما تأكد للعميل", en: "Item availability shows on every line before you confirm to the customer" },
         { ar: "سبب أي سعر أو خصم واضح للبائع", en: "The reason behind any price or discount is clear to the salesperson" },
@@ -77,7 +77,7 @@ export const PAGE_PROOFS: Record<string, ProofBlock[]> = {
       title: theme("pur").title,
       hook: theme("pur").hook,
       lead: "06-pur-03-pu12",
-      shots: ["06-pur-01-pu6", "06-pur-02-pu9", "06-pur-03-pu12", "06-pur-04-pur-015", "06-pur-05-pur-016", "04-360-02-pur-007"],
+      shots: ["06-pur-01-pu6", "06-pur-06-pur-006", "06-pur-02-pu9", "06-pur-07-pur-014", "06-pur-03-pu12", "06-pur-04-pur-015", "06-pur-05-pur-016", "04-360-02-pur-007"],
     },
   ],
   "modules-inventory": [
@@ -87,7 +87,7 @@ export const PAGE_PROOFS: Record<string, ProofBlock[]> = {
       title: theme("inv").title,
       hook: theme("inv").hook,
       lead: "07-inv-04-in11",
-      shots: ["07-inv-01-in1", "07-inv-02-in3", "07-inv-03-inv-014", "07-inv-04-in11", "07-inv-05-in13", "07-inv-06-inv-017", "04-360-03-in2"],
+      shots: ["07-inv-01-in1", "07-inv-08-inv-008", "07-inv-02-in3", "07-inv-07-inv-003", "07-inv-03-inv-014", "07-inv-04-in11", "07-inv-05-in13", "07-inv-06-inv-017", "04-360-03-in2"],
     },
   ],
   "modules-fixed-assets": [
@@ -97,7 +97,7 @@ export const PAGE_PROOFS: Record<string, ProofBlock[]> = {
       title: theme("ast").title,
       hook: theme("ast").hook,
       lead: "04-360-04-fa2",
-      shots: ["08-ast-01-fa4", "08-ast-02-fa5", "08-ast-03-fix-003", "04-360-04-fa2"],
+      shots: ["08-ast-01-fa4", "08-ast-02-fa5", "08-ast-04-fix-015", "08-ast-03-fix-003", "04-360-04-fa2"],
     },
   ],
   "modules-reports": [

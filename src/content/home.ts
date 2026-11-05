@@ -13,7 +13,7 @@ const t = (ar: string, en: string): L => ({ ar, en });
 
 export type TrustIcon = 'customers' | 'products' | 'reports' | 'einvoice' | 'bilingual' | 'delivery';
 export const TRUST_ITEMS: { icon: TrustIcon; label: L }[] = [
-  { icon: 'customers', label: t('أكثر من 50 منشأة سعودية', 'More than 50 Saudi businesses') },
+  { icon: 'customers', label: t('أكثر من 200 منشأة سعودية', 'More than 200 Saudi businesses') },
   { icon: 'products', label: t('6 منتجات على منصة واحدة', '6 products on one platform') },
   { icon: 'reports', label: t(`${REPORTS.length} تقريرًا جاهزًا للتشغيل`, `${REPORTS.length} reports ready to run`) },
   { icon: 'einvoice', label: t('يدعم الربط مع منظومة فاتورة', 'Supports linking with Fatoora') },

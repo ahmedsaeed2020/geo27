@@ -1,6 +1,6 @@
 # Digit — نظام ERP سعودي سحابي / Saudi Cloud ERP
 
-> Digit (ديجيت) is a Saudi cloud ERP platform for SMEs: accounting, ZATCA e-invoicing (Fatoora) integration, sales, purchasing, inventory, fixed assets, POS, HR & payroll, construction, CRM, field service & inspection (FSM + ITM), projects, and manufacturing. DIGIT is the business-applications track of Trilogy Information Technology; implementation is a scoped engagement. Arabic-first, fully bilingual. Cloud or on-premise. Trusted by 50+ Saudi businesses. Contact: +966 59 505 1150, a.saeed@digit-erp.com.
+> Digit (ديجيت) is a Saudi cloud ERP platform for SMEs: accounting, ZATCA e-invoicing (Fatoora) integration, sales, purchasing, inventory, fixed assets, POS, HR & payroll, construction, CRM, field service & inspection (FSM + ITM), projects, and manufacturing. DIGIT is the business-applications track of Trilogy Information Technology; implementation is a scoped engagement. Arabic-first, fully bilingual. Cloud or on-premise. Trusted by 200+ Saudi businesses. Contact: +966 59 505 1150, a.saeed@digit-erp.com.
 
 ## Pricing
 - Starter (e-invoicing, 3 users), Pro (accounting, sales, purchasing, inventory, assets; 10 users; training included), POS add-on, and Enterprise — all via custom quote. Contact the team or book a demo for pricing.

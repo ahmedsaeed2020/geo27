@@ -17,12 +17,13 @@ import {
   type ResolvedDepartment,
   type ResolvedFamily,
 } from '@/content/catalog';
-import { SHOTS } from '@/content/product-shots';
+import { screenById } from '@/content/screens';
 import { localeHref, useLocale, type Locale } from '@/lib/i18n';
 import { focusLeadForm } from '@/components/LeadCapturePanel';
 import { Button } from '@/components/ui/button';
 import { useCatalog } from '@/components/catalog/useCatalog';
 import { NAV_COPY, NavLink } from './nav-links';
+import { departmentIcon, FAMILY_VISUAL } from './nav-visuals';
 
 type TopKey = 'about' | ProductKey | 'systems' | 'resources';
 
@@ -67,12 +68,13 @@ function LinkList({ title, links, close }: { title?: string; links: MenuLink[]; 
   );
 }
 
-function DepartmentLink({ d, index, onPreview, close, current }: { d: ResolvedDepartment; index: number; onPreview: () => void; close: () => void; current: boolean }) {
+function DepartmentLink({ d, onPreview, close, current }: { d: ResolvedDepartment; onPreview: () => void; close: () => void; current: boolean }) {
   const locale = useLocale();
+  const Icon = departmentIcon(d.product, d.id);
   return (
     <li>
       <NavLink path={d.href} hash={d.hash} className="mm-dept" onClick={close} onFocus={onPreview} onMouseEnter={onPreview} aria-current={current ? 'page' : undefined} data-live={d.live ? '' : undefined}>
-        <span className="mm-dept-no" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+        <span className="mm-dept-icon" aria-hidden="true"><Icon /></span>
         <span className="mm-dept-copy">
           <span className="mm-dept-name">{d.label[locale]}</span>
           {d.summary && <span className="mm-dept-sum">{d.summary[locale]}</span>}
@@ -87,11 +89,14 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
   const pathname = useRouterState({ select: s => s.location.pathname.replace(/^\/en(?=\/|$)/, '') || '/' });
   const demo = useDemoRequest();
   const [shotId, setShotId] = useState(family.shot ?? '');
-  const shot = shotId ? SHOTS[shotId] : undefined;
+  const shot = screenById(shotId);
   const list = family.key === 'pos' ? [] : family.departments;
+  const visual = FAMILY_VISUAL[family.key];
+  const FamilyIcon = visual.icon;
   return (
     <div className="mm-grid" data-product={family.key}>
       <div className="mm-intro">
+        <span className="mm-intro-icon" aria-hidden="true"><FamilyIcon /></span>
         <p className="mm-eyebrow">{family.area[locale]}</p>
         <p className="mm-product">{family.name[locale]}</p>
         <p className="mm-summary">{family.summary[locale]}</p>
@@ -121,19 +126,23 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
         </p>
         {list.length > 0 ? (
           <ol role="list" className="mm-depts" data-dense={list.length > 6 ? '' : undefined}>
-            {list.map((d, i) => (
-              <DepartmentLink key={d.id} d={d} index={i} current={pathname === d.path} close={close} onPreview={() => setShotId(d.shot ?? family.shot ?? '')} />
+            {list.map(d => (
+              <DepartmentLink key={d.id} d={d} current={pathname === d.path} close={close} onPreview={() => setShotId(d.shot ?? family.shot ?? '')} />
             ))}
           </ol>
         ) : (
           <ul role="list" className="mm-solutions">
-            {family.solutions.map(s => (
-              <li key={s.id}>
-                <NavLink path={s.path} onClick={close} aria-current={pathname === s.path ? 'page' : undefined}>
-                  {s.label[locale]}
-                </NavLink>
-              </li>
-            ))}
+            {family.solutions.map(s => {
+              const Icon = departmentIcon(family.key, s.id);
+              return (
+                <li key={s.id}>
+                  <NavLink path={s.path} onClick={close} aria-current={pathname === s.path ? 'page' : undefined}>
+                    <span className="mm-dept-icon" aria-hidden="true"><Icon /></span>
+                    {s.label[locale]}
+                  </NavLink>
+                </li>
+              );
+            })}
           </ul>
         )}
       </div>
@@ -155,12 +164,9 @@ function ProductPanel({ family, close }: { family: ResolvedFamily; close: () => 
             </figcaption>
           </figure>
         ) : (
-          <div className="mm-brand">
-            <span className="mm-brand-bars" aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </span>
+          <div className="mm-brand" data-product={family.key}>
+            {visual.photo.src && <img className="mm-brand-photo" src={visual.photo.src} alt="" loading="lazy" decoding="async" />}
+            <span className="mm-brand-icon" aria-hidden="true"><FamilyIcon /></span>
             <p className="mm-brand-title">
               {NAV_COPY.walkthrough[locale]} <bdi>{family.name[locale]}</bdi>
             </p>
@@ -215,16 +221,20 @@ function SystemsPanel({ families, close }: { families: ResolvedFamily[]; close: 
   return (
     <div className="mm-systems">
       <ul role="list" className="mm-families">
-        {families.map(f => (
+        {families.map(f => {
+          const Icon = FAMILY_VISUAL[f.key].icon;
+          return (
           <li key={f.key}>
             <NavLink path={f.overview} className="mm-family" onClick={close}>
+              <span className="mm-family-icon" aria-hidden="true"><Icon /></span>
               <span className="mm-eyebrow">{f.area[locale]}</span>
               <span className="mm-product">{f.name[locale]}</span>
               <span className="mm-summary">{f.summary[locale]}</span>
               <span className="mm-count">{countLabel(f, locale)}</span>
             </NavLink>
           </li>
-        ))}
+          );
+        })}
       </ul>
       <div className="mm-columns">
         <LinkList title={NAV_COPY.moreSystems[locale]} links={MORE_SYSTEMS} close={close} />

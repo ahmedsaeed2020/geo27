@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { SHOTS, THEMES } from "@/content/product-shots";
 import { HOME_SHOWCASE, PAGE_PROOFS, PRO_SHOWCASE, PROBLEM_SHOTS, PROOF_COPY } from "@/content/product-proof";
 import { withSeo } from "@/lib/seo";
+import { shotEvidenceId, tierOfId } from "@/content/pro/evidence";
 import heroSource from "@/sections/Hero.tsx?raw";
 import pricing from "@/content/site/pricing.json";
 import pro from "@/content/pro.json";
@@ -10,9 +11,9 @@ import features from "@/content/site/features.json";
 const pointers = import.meta.glob("/src/assets/product/*.asset.json", { eager: true });
 
 describe("Real DIGIT Pro screenshots", () => {
-  it("uses all 49 uploaded screenshots on /pro, grouped into the 10 themes in order", () => {
-    expect(Object.keys(pointers)).toHaveLength(49);
-    expect(Object.keys(SHOTS)).toHaveLength(49);
+  it("uses all 56 real screenshots (49 uploaded + 7 from the live pack) on /pro, grouped into the 10 themes in order", () => {
+    expect(Object.keys(pointers)).toHaveLength(56);
+    expect(Object.keys(SHOTS)).toHaveLength(56);
     expect(THEMES.map(theme => theme.no)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     const onPro = THEMES.flatMap(theme => theme.shots);
     expect(new Set(onPro)).toEqual(new Set(Object.keys(SHOTS)));
@@ -42,6 +43,13 @@ describe("Real DIGIT Pro screenshots", () => {
     expect(PAGE_PROOFS["features"]?.map(block => block.id)).toEqual(["smart-document", "daily-control"]);
   });
 
+  it("adds live-pack screens only for requirements whose evidence is complete and verified", () => {
+    for (const id of ["01-cfo-06-f1", "05-sales-05-sel-006", "06-pur-06-pur-006", "06-pur-07-pur-014", "07-inv-07-inv-003", "07-inv-08-inv-008", "08-ast-04-fix-015"]) {
+      expect(SHOTS[id], id).toBeDefined();
+      expect(tierOfId(shotEvidenceId(id)), id).toBe("available");
+    }
+  });
+
   it("shows the Pro price only in the /pro showcase", () => {
     expect(PRO_SHOWCASE.price.ar).toBe("DIGIT Pro: 9,999 ر.س سنويًا (بدون ضريبة)، أو 12,999 ر.س مع ربط الفوترة الإلكترونية");
     const elsewhere = JSON.stringify([PAGE_PROOFS, HOME_SHOWCASE, PROOF_COPY, pricing, pro]);
@@ -57,11 +65,11 @@ describe("Real DIGIT Pro screenshots", () => {
 });
 
 describe("Customer count", () => {
-  it("says more than 50 Saudi establishments in both the hero and the home search description", () => {
-    expect(heroSource).toContain("أكثر من 50 منشأة سعودية");
+  it("says more than 200 Saudi establishments in both the hero and the home search description", () => {
+    expect(heroSource).toContain("أكثر من 200 منشأة سعودية");
     const description = withSeo("/").meta?.find(tag => tag.name === "description")?.content ?? "";
-    expect(description).toContain("أكثر من 50 منشأة سعودية");
-    expect(JSON.stringify(withSeo("/"))).not.toContain("200 منشأة");
+    expect(description).toContain("أكثر من 200 منشأة سعودية");
+    expect(JSON.stringify(withSeo("/"))).not.toContain("50 منشأة");
   });
 });
 

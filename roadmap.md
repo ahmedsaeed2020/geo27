@@ -1,3 +1,18 @@
+# Site-wide clarity pass (owner 2026-11-05 08:32: 200+ figure, no empty frames, clear photos, capabilities imagery, menu identity)
+- [x] Customer figure: «أكثر من 200 منشأة سعودية» / "200+ Saudi businesses" everywhere (hero, home, slider, stories strip, SEO, assistant, llms.txt, translations, tests).
+- [x] Empty frames: every "مثال توضيحي / لقطة توضيحية" browser frame on module, industry and POS pages shows a real registered screen or a clear contextual photo; no placeholder captions left.
+- [x] Internal page heroes: photo crisp on the left half (right in English), text on the right; no full-width faded wash; hero visual column no longer covers the photo.
+- [x] Internal page body photo: clear photo column beside the first content section instead of a 14% faded backdrop.
+- [x] Capabilities page (/features): ten capability visuals as a mix of new photos (e-signature on mobile, document filing to cloud, MFA, roles, cloud/on-prem, currencies, backup), real screens (indicators, bilingual) and a designed icon tile (integrations).
+- [x] Careers hero: sharper image with clearly visible faces.
+- [x] Mega Menu: each product panel gets its own photo with the green overlay and its own icon; every department/area link has a distinct icon.
+- [x] QA: AR/EN desktop + mobile crawl (no placeholders, no broken images, no overflow), tests.
+- [x] Owner screenshot packs 2026-11-05 (Pro RUN11.1 live 419 + development 80 not-live, HR best 16 full-res, CRM, construction): review each image, register the usable live ones with provenance, and place full screens or crops as feature proof on /features, modules, packages, every HR page and every construction page. Development (not-live) screens stay out unless clearly labelled; CRM/construction replace photo fills where a real screen matches.
+
+- [x] Screens placed (2026-11-05): Construction 10 crops on all 9 area pages + Contracting module/industry frames; CRM 7 crops on 6 of 7 area pages + CRM module frame (administration stays a labelled diagram); 7 more verified Pro live screens on accounting/sales/purchasing/inventory/assets; HR menu previews use the existing HR screens. Development (not-live) pack not used.
+- [ ] Owner: publish the 7 CRM area pages from the admin (now backed by current CRM screens; still drafts, so they 404 for visitors) — waits on owner approval.
+- [ ] Owner: recapture without the "(تجريبي)" tenant label for the existing Pro Item 360 screen (inventory page) and the Pro workspace overviews (AST-SERVICE, INV-CONTROL, PUR-SOURCE still show labelled diagrams) — blocked on owner.
+
 # Home refresh with the new content (owner 2026-11-05 "next till finish": every old home block updated)
 - [x] HR 7 + Construction 9 section pages published; demo vs quote buttons open separate pages and forms (2026-11-04 turn).
 - [x] Home: role finder ("ابدأ من شغلك", 11 roles), trust strip, "four angles" journey (V4 workspaces), chaos-to-control (six products), modules (six families + every department), capabilities (V4 pages), challenges (linked answers), industries (products per sector, FSM hub), Saudi localization (approved wording, no WPS/GOSI compliance claim), FAQ (+ matching structured data, AR+EN), final CTA (demo / quote / blueprint), band subtitle, showcase tabs (V4 links + HR screens), home lead form for all products.

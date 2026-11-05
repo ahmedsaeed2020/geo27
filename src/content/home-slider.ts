@@ -62,9 +62,9 @@ export const SLIDER_COPY = {
   slides: { ar: 'اختر الشاشة', en: 'Choose a screen' },
 } as const;
 
-/** Verified figures only: 6 catalog families, 5 Pro departments × 4 workspaces, the runnable report list, 50+ customers. */
+/** Verified figures only: 6 catalog families, 5 Pro departments × 4 workspaces, the runnable report list, 200+ customers. */
 export const SLIDER_FACTS: { value: number; suffix?: string; label: L }[] = [
-  { value: 50, suffix: '+', label: { ar: 'منشأة سعودية', en: 'Saudi businesses' } },
+  { value: 200, suffix: '+', label: { ar: 'منشأة سعودية', en: 'Saudi businesses' } },
   { value: 6, label: { ar: 'منتجات متخصصة', en: 'specialist products' } },
   { value: 20, label: { ar: 'مساحة عمل في DIGIT Pro', en: 'DIGIT Pro workspaces' } },
   { value: REPORTS.length, label: { ar: 'تقريرًا جاهزًا للتشغيل', en: 'reports ready to run' } },

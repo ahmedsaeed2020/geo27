@@ -38,9 +38,18 @@ describe('Construction, CRM and FSM + ITM pages', () => {
   it('never shows the withdrawn CRM demo screens with the old module logos', () => {
     expect(Object.keys(ALL_SHOTS).filter(id => id.startsWith('crm-'))).toEqual([]);
     expect(existsSync('src/assets/crm')).toBe(false);
-    expect(CRM.every(d => d.heroShots.length === 0 && d.illustrative)).toBe(true);
+    // CRM pages may only use the current DIGIT CRM captures (owner upload 2026-11-05).
+    for (const d of CRM) for (const id of d.heroShots) expect(id.startsWith('crm2-'), `${d.slug}: ${id}`).toBe(true);
     expect([...CRM_JOURNEY, ...CRM_WORKBENCH].some(s => 'shot' in s && s.shot)).toBe(false);
     expect(productByKey('crm')!.shot).toBeUndefined();
+  });
+
+  it('shows real Construction and CRM screens on every area that has a matching capture', () => {
+    const withScreens = (list: typeof ALL) => list.filter(d => d.heroShots.length > 0).map(d => d.slug);
+    expect(withScreens(CONSTRUCTION)).toEqual(['portfolio', 'estimating', 'projects', 'contracts', 'subcontractors', 'claims', 'procurement', 'budget-cost', 'financial-closeout']);
+    expect(withScreens(CRM)).toEqual(['management', 'leads', 'opportunities', 'activities', 'accounts', 'sales-management']);
+    expect(CRM.find(d => d.slug === 'administration')!.illustrative).toBe(true);
+    for (const d of CONSTRUCTION) for (const id of d.heroShots) expect(id.startsWith('con-'), `${d.slug}: ${id}`).toBe(true);
   });
 
   it('keeps the five money stages and the four cost measures separate', () => {

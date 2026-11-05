@@ -20,7 +20,7 @@ export type Department = {
   label: L;
   summary?: L;
   source: DepartmentSource;
-  /** Real DIGIT screenshot for the Mega Menu feature area; omitted when no approved screen exists. */
+  /** Real DIGIT screen id from src/content/screens.ts for the Mega Menu feature area; omitted when none exists. */
   shot?: string;
 };
 
@@ -79,7 +79,18 @@ const pro: ProductFamily = {
 };
 
 // The seven DIGIT HR modules come from the owner's HR handoff (route slugs, names and summaries); see src/content/hr.
-const hrDepartments = (): Department[] => HR_INDEX.map(m => ({ id: m.slug, product: 'hr', path: `/hr/${m.slug}`, source: 'cms', label: m.label, summary: m.summary }));
+// Menu preview screen per HR area: the real DIGIT HR screen that best shows that area (src/content/hr/hr-shots.ts).
+const HR_MENU_SHOT: Record<string, string> = {
+  'core-hr': 'hr-s10',
+  'talent-hcm': 'hr-s06',
+  'workforce-management': 'hr-s20',
+  'payroll-rewards': 'hr-s21',
+  'employee-experience': 'hr-s13',
+  'people-intelligence': 'hr-s26',
+  'administration-governance': 'hr-s29',
+};
+const hrDepartments = (): Department[] =>
+  HR_INDEX.map(m => ({ id: m.slug, product: 'hr', path: `/hr/${m.slug}`, source: 'cms', label: m.label, summary: m.summary, ...(HR_MENU_SHOT[m.slug] ? { shot: HR_MENU_SHOT[m.slug] } : {}) }));
 const hr: ProductFamily = {
   key: 'hr',
   base: '/hr',
@@ -89,6 +100,7 @@ const hr: ProductFamily = {
   overview: '/modules/hr-payroll',
   summary: { ar: 'دورة الموظف والقوى العاملة في نظام واحد، من الهيكل التنظيمي حتى الحوكمة.', en: 'The employee and workforce lifecycle in one system, from organization structure to governance.' },
   groupLabel: { ar: 'مجالات DIGIT HR', en: 'DIGIT HR areas' },
+  shot: 'hr-s01',
   departments: hrDepartments(),
   extras: [],
   solutions: [],

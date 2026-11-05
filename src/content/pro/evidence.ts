@@ -36,7 +36,7 @@ export function tierCounts(parts: EvidencePart[]): Record<EvidenceTier, number> 
 }
 
 /**
- * Provenance of the 49 real DIGIT Pro screenshots: each file name ends with the Run11.1 ID it was captured to prove
+ * Provenance of the real DIGIT Pro screenshots: each file name ends with the Run11.1 ID it was captured to prove
  * (01-cfo-02-e2 → E2, 06-pur-04-pur-015 → PUR-015). A screen may be used as evidence only for that ID.
  */
 export function shotEvidenceId(shotId: string): string {
