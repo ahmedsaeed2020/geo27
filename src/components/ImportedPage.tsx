@@ -7,7 +7,7 @@ import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import PageScene, { getPageScene } from "@/components/PageScene";
 import ContactForm from "@/components/ContactForm";
-import LeadCapturePanel from './LeadCapturePanel';
+import LeadCapturePanel, { LeadScene } from './LeadCapturePanel';
 import CmsBlocks from './cms/CmsBlocks';
 import { useCmsPage } from './cms/CmsContext';
 import { PageProofs } from "@/components/product/ProductProof";
@@ -134,6 +134,10 @@ function SplitPhotoFigure({ photo }: { photo: SplitPhoto }) {
   </figure>;
 }
 
+function containsHostedForm(node: Node): boolean {
+  return node.type === "hosted-form" || (node.children ?? []).some(containsHostedForm);
+}
+
 function RenderNode(props: RenderProps) {
   return withAccessibleHtml(RenderSourceNode(props));
 }
@@ -147,6 +151,9 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
   if (override !== undefined) node = { ...node, html:override, text:override };
   const props = { className: node.className, id: node.anchor && !declaresId(node, node.anchor) ? node.anchor : undefined };
   if (node.type === "container") {
+    // The demo page's own form section becomes the meeting-scene request section: the form card beside the Digit
+    // advisor presenting a real screen to the owner (same section as every product page).
+    if (pageKey === "demo" && /\bform\b/.test(node.className) && containsHostedForm(node)) return <LeadScene kind="demo" id={node.anchor || "demo-form"} />;
     const role = layout.roles.get(node.id);
     // The hero photo replaces the hero's own frame/visual column.
     if (role === "visual") return null;
