@@ -1,7 +1,9 @@
 import { describe, it, expect } from 'vitest';
 import { CUSTOMER_COUNT, CUSTOMER_LOGOS } from '@/content/success-stories';
 import { HOME_SECTIONS } from '@/content/section-registry';
-import css from '@/success-stories.css?raw';
+import { readFileSync } from 'node:fs';
+
+const css = readFileSync(new URL('../success-stories.css', import.meta.url), 'utf8');
 
 describe('success stories logo ticker', () => {
   it('shows every supplied customer logo once per loop, each with a served asset', () => {
