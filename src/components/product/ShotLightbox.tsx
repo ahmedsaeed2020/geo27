@@ -59,17 +59,21 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
   }
 
   useEffect(() => {
-    if (!isOpen) {
-      setStepDir(null);
-      source.current = null;
-      return;
-    }
-    const img = imgRef.current;
-    const from = source.current;
+    if (isOpen) return;
+    setStepDir(null);
     source.current = null;
-    if (!img || !from || window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof img.animate !== "function") return;
-    let frame = 0;
-    const run = () => {
+  }, [isOpen]);
+
+  // The dialog portal mounts its content a beat after opening, so the grow-out runs when the full-size image itself
+  // attaches (stepping remounts the image with no pending source, so steps use the CSS slide instead).
+  const attachImage = (img: HTMLImageElement | null) => {
+    imgRef.current = img;
+    const from = source.current;
+    if (!img || !from) return;
+    source.current = null;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || typeof img.animate !== "function") return;
+    const run = () => requestAnimationFrame(() => {
+      if (!img.isConnected) return;
       const to = img.getBoundingClientRect();
       if (!to.width || !to.height) return;
       const scale = from.width / to.width;
@@ -81,11 +85,10 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
         ],
         { duration: 540, easing: "cubic-bezier(.16, 1, .3, 1)" },
       );
-    };
-    if (img.complete && img.naturalWidth) frame = requestAnimationFrame(run);
-    else img.addEventListener("load", () => { frame = requestAnimationFrame(run); }, { once: true });
-    return () => cancelAnimationFrame(frame);
-  }, [isOpen]);
+    });
+    if (img.complete && img.naturalWidth) run();
+    else img.addEventListener("load", run, { once: true });
+  };
 
   const PrevIcon = locale === "ar" ? ChevronRight : ChevronLeft;
   const NextIcon = locale === "ar" ? ChevronLeft : ChevronRight;
@@ -120,7 +123,7 @@ export default function ShotLightbox({ shots, index, onIndexChange, onClose }: P
             <div className="pp-lb-stage" onClick={onClose}>
               <img
                 key={current.id}
-                ref={imgRef}
+                ref={attachImage}
                 className="pp-lb-img"
                 src={image?.src}
                 width={image?.width}
