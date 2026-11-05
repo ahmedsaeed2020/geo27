@@ -11,8 +11,8 @@ import '@/orbit.css';
 
 const COPY = {
   hint: {
-    ar: 'مرّر على أي أيقونة في المدار لترى اسمها، واضغط لتدخل صفحتها.',
-    en: 'Hover any icon in the orbit to see its name, and click to open its page.',
+    ar: 'مرّر المؤشر على أي أيقونة في المدار لترى اسمها، واضغط عليها أو على اسمها لتدخل صفحتها.',
+    en: 'Point at any icon in the orbit to see its name; tap it or its name to open the page.',
   },
   nav: { ar: 'صفحات', en: 'Pages of' },
 };
