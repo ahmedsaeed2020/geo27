@@ -36,4 +36,7 @@ export const LEAD_SCENE_COPY = {
     { ar: 'نطاق وخطوة تالية واضحة', en: 'A clear scope and next step' },
   ],
   whatsapp: { ar: 'أو تواصل عبر واتساب', en: 'Or reach us on WhatsApp' },
+  demoKind: { ar: 'عرض توضيحي', en: 'Demo' },
+  quoteKind: { ar: 'عرض سعر', en: 'Price quote' },
+  quoteFormTitle: { ar: 'اكتب احتياج منشأتك', en: 'Tell us what your business needs' },
 } satisfies Record<string, L | L[]>;

@@ -1,5 +1,8 @@
-import ContactForm from './ContactForm';
+import { LeadScene } from './LeadCapturePanel';
+import { LEAD_SCENE_COPY } from '@/content/lead-scene';
 import { useLocale } from '@/lib/i18n';
+import Header from './Header';
+import Footer from './Footer';
 
 const COPY = {
   ar: {
@@ -26,29 +29,31 @@ const COPY = {
   },
 } as const;
 
-/** Standalone quote page: its own copy and a form that records the request as a price quote. */
-export default function QuotePage() {
+/** Standalone quote page: its own copy and steps, then the meeting-scene form that records the request as a price quote. */
+export default function QuotePage({ chrome = false }: { chrome?: boolean }) {
   const locale = useLocale();
   const t = COPY[locale];
-  return (
-    <main className="bg-background px-4 py-16 text-foreground">
-      <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1fr_1.1fr] lg:items-start">
-        <div>
+  const body = (
+    <main className="bg-background text-foreground">
+      <section className="mx-auto max-w-6xl px-4 pb-12 pt-16">
+        <div className="max-w-3xl">
           <p className="text-sm font-bold text-primary">{t.eyebrow}</p>
           <h1 className="mt-2 text-4xl font-bold leading-tight">{t.title}</h1>
           <p className="mt-4 text-lg leading-8 text-muted-foreground">{t.lead}</p>
-          <ol className="mt-8 grid gap-4">
-            {t.steps.map(([n, h, p]) => (
-              <li key={n} className="flex gap-4 border-b border-border pb-4">
-                <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-lg font-bold text-primary-foreground">{n}</span>
-                <span><span className="block font-bold">{h}</span><span className="text-sm text-muted-foreground">{p}</span></span>
-              </li>
-            ))}
-          </ol>
-          <a href={locale === 'en' ? '/en/demo' : '/demo'} className="mt-6 inline-block font-bold text-primary underline-offset-4 hover:underline">{t.demo}</a>
         </div>
-        <ContactForm kind="quote" />
-      </div>
+        <ol className="mt-10 grid gap-4 md:grid-cols-3">
+          {t.steps.map(([n, h, p]) => (
+            <li key={n} className="flex gap-4 rounded-2xl border border-border bg-card p-5">
+              <span className="grid size-10 shrink-0 place-items-center rounded-full bg-primary text-lg font-bold text-primary-foreground">{n}</span>
+              <span className="min-w-0"><span className="block font-bold">{h}</span><span className="text-sm text-muted-foreground">{p}</span></span>
+            </li>
+          ))}
+        </ol>
+        <a href={locale === 'en' ? '/en/demo' : '/demo'} className="mt-6 inline-block font-bold text-primary underline-offset-4 hover:underline">{t.demo}</a>
+      </section>
+      <LeadScene kind="quote" interest="" id="digit-quote" title={LEAD_SCENE_COPY.quoteFormTitle[locale]} />
     </main>
   );
+  if (!chrome) return body;
+  return <div className="bg-paper font-plex"><Header />{body}<Footer /></div>;
 }

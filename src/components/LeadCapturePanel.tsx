@@ -66,7 +66,7 @@ export function LeadScene({ interest = 'DIGIT', product, department, kind = 'dem
       <div className="ls-wrap">
         <div className="ls-card" data-motion-card>
           <p className="ls-eyebrow">
-            <bdi>DIGIT</bdi> · <bdi>{interest}</bdi>
+            <bdi>DIGIT</bdi> · <bdi>{interest && interest !== 'DIGIT' ? interest : kind === 'quote' ? C.quoteKind[l] : C.demoKind[l]}</bdi>
           </p>
           <h2 id={`${id}-title`} className="ls-title">
             {title ?? (kind === 'quote' ? C.quoteTitle[l] : C.title[l])}
