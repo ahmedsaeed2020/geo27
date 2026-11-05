@@ -80,3 +80,5 @@
 .imported-page .import-area-link:hover svg{transform:translateX(3px)}
 [dir="rtl"] .imported-page .import-area-link:hover svg{transform:translateX(-3px)}
 @media(prefers-reduced-motion:reduce){.imported-page .import-area-card,.imported-page .import-area-link svg{transition:none}}
+/* CRM proof stats are centred cards. */
+.import-modules-crm .in-8ed1cac .import-area-link{align-self:center}
