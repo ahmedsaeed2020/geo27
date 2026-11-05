@@ -1,27 +1,19 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useChat } from "@ai-sdk/react";
 import { DefaultChatTransport, type UIMessage } from "ai";
-import { MessageCircle, X, Plus, ArrowRight, ArrowLeft } from "lucide-react";
+import { X, Plus, History, Sparkles, CalendarCheck, FileText, MessageCircle, ChevronLeft, ChevronRight } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 import { createVisitorThread, getVisitorMessages, listVisitorThreads } from "@/lib/chat.functions";
-import { useLocale } from "@/lib/i18n";
-import {
-  Conversation,
-  ConversationContent,
-  ConversationEmptyState,
-  ConversationScrollButton,
-} from "@/components/ai-elements/conversation";
+import { localeHref, useLocale } from "@/lib/i18n";
+import { Conversation, ConversationContent, ConversationScrollButton } from "@/components/ai-elements/conversation";
 import { Message, MessageContent, MessageResponse } from "@/components/ai-elements/message";
-import {
-  PromptInput,
-  PromptInputTextarea,
-  PromptInputFooter,
-  PromptInputSubmit,
-} from "@/components/ai-elements/prompt-input";
+import { PromptInput, PromptInputTextarea, PromptInputFooter, PromptInputSubmit } from "@/components/ai-elements/prompt-input";
 import { Shimmer } from "@/components/ai-elements/shimmer";
 import { Button } from "@/components/ui/button";
+import "@/chat-widget.css";
 
 type Thread = { id: string; title: string | null; updated_at: string };
+type Locale = "ar" | "en";
 
 const VISITOR_KEY = "digit-chat-visitor";
 const THREADS_KEY = "digit-chat-threads";
@@ -51,29 +43,81 @@ function rememberThread(id: string) {
 const COPY = {
   ar: {
     title: "مساعد Digit",
-    subtitle: "اسأل عن الباقات، الموديولات، أو الفوترة الإلكترونية",
-    placeholder: "اكتب سؤالك…",
-    empty: "أهلًا! كيف أقدر أساعدك اليوم؟",
-    thinking: "يفكر…",
+    status: "مساعد ذكي · يرد خلال ثوانٍ",
+    launcher: "اسأل مساعد Digit",
+    placeholder: "اكتب سؤالك عن Digit…",
+    hello: "أهلًا بك في Digit",
+    intro: "أجيبك عن المنتجات والموديولات والفوترة الإلكترونية، وأساعدك تختار البداية المناسبة لمنشأتك.",
+    try: "جرّب أن تسأل",
+    thinking: "يكتب الرد…",
     newChat: "محادثة جديدة",
-    threads: "المحادثات",
-    back: "رجوع",
+    threads: "محادثاتك السابقة",
+    noThreads: "لا توجد محادثات سابقة على هذا الجهاز.",
+    back: "العودة إلى المحادثة",
+    close: "إغلاق المساعد",
     error: "تعذّر الإرسال. حاول مرة أخرى.",
+    demo: "احجز ديمو",
+    quote: "اطلب عرض سعر",
+    whatsapp: "واتساب",
+    note: "إجابات المساعد إرشادية؛ التفاصيل النهائية يؤكدها فريق Digit.",
+    untitled: "محادثة",
+    suggestions: ["أي منتج من Digit يناسب منشأتي؟", "كيف تدعم Digit الفوترة الإلكترونية؟", "ما الذي تغطيه الموارد البشرية والرواتب؟", "كيف أبدأ وما خطوات التطبيق؟"],
   },
   en: {
     title: "Digit Assistant",
-    subtitle: "Ask about packages, modules, or e-invoicing",
-    placeholder: "Type your question…",
-    empty: "Hi! How can I help you today?",
-    thinking: "Thinking…",
+    status: "AI assistant · replies in seconds",
+    launcher: "Ask Digit Assistant",
+    placeholder: "Ask anything about Digit…",
+    hello: "Welcome to Digit",
+    intro: "I can answer questions about the products, modules and e-invoicing, and help you pick the right starting point for your company.",
+    try: "Try asking",
+    thinking: "Writing a reply…",
     newChat: "New chat",
-    threads: "Chats",
-    back: "Back",
+    threads: "Your previous chats",
+    noThreads: "No previous chats on this device.",
+    back: "Back to the chat",
+    close: "Close the assistant",
     error: "Could not send. Please try again.",
+    demo: "Book a demo",
+    quote: "Request a quote",
+    whatsapp: "WhatsApp",
+    note: "Answers are guidance; the Digit team confirms the final details.",
+    untitled: "Chat",
+    suggestions: ["Which Digit product fits my company?", "How does Digit support e-invoicing?", "What do HR and payroll cover?", "How do I get started and what are the steps?"],
   },
 } as const;
 
-function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "ar" | "en"; onError: () => void }) {
+/** The assistant's mark: the same in the launcher, the header and beside each reply. */
+function Mark({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
+  return (
+    <span className="cw-mark" data-size={size} aria-hidden="true">
+      <Sparkles />
+    </span>
+  );
+}
+
+function Welcome({ locale, onAsk, disabled }: { locale: Locale; onAsk: (text: string) => void; disabled?: boolean }) {
+  const t = COPY[locale];
+  return (
+    <div className="cw-welcome">
+      <Mark size="lg" />
+      <h3>{t.hello}</h3>
+      <p>{t.intro}</p>
+      <p className="cw-try">{t.try}</p>
+      <ul role="list" className="cw-chips">
+        {t.suggestions.map(s => (
+          <li key={s}>
+            <button type="button" onClick={() => onAsk(s)} disabled={disabled}>
+              {s}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+function ChatPanel({ threadId, locale, onError, initial }: { threadId: string; locale: Locale; onError: () => void; initial?: string | undefined }) {
   const t = COPY[locale];
   const transport = useMemo(
     () =>
@@ -90,12 +134,19 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
   });
   const busy = status === "submitted" || status === "streaming";
   const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const sentInitial = useRef(false);
 
   const loadMessages = useServerFn(getVisitorMessages);
   useEffect(() => {
+    // A chat opened from a suggestion starts empty: send the question instead of restoring history.
+    if (initial && !sentInitial.current) {
+      sentInitial.current = true;
+      sendMessage({ text: initial });
+      return;
+    }
     let cancelled = false;
     loadMessages({ data: { visitorId: getVisitorId(), threadId } })
-      .then((data) => {
+      .then(data => {
         if (cancelled || data.length === 0) return;
         const restored: UIMessage[] = data.map((row, i) => ({
           id: `db-${i}`,
@@ -108,17 +159,18 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
     return () => {
       cancelled = true;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [threadId, setMessages, loadMessages]);
 
   useEffect(() => {
     textareaRef.current?.focus();
   }, [threadId, status]);
 
-  const handleSubmit = useCallback(
-    (message: { text?: string }) => {
-      const text = message.text?.trim();
-      if (!text || busy) return;
-      sendMessage({ text });
+  const ask = useCallback(
+    (text: string) => {
+      const clean = text.trim();
+      if (!clean || busy) return;
+      sendMessage({ text: clean });
     },
     [busy, sendMessage],
   );
@@ -126,43 +178,38 @@ function ChatPanel({ threadId, locale, onError }: { threadId: string; locale: "a
   return (
     <div className="flex min-h-0 flex-1 flex-col">
       <Conversation className="min-h-0 flex-1">
-        <ConversationContent className="gap-3 p-3">
+        <ConversationContent className="gap-4 px-4 py-4">
           {messages.length === 0 && !busy ? (
-            <ConversationEmptyState title={t.empty} description={t.subtitle} />
+            <Welcome locale={locale} onAsk={ask} />
           ) : (
-            messages.map((message) => (
-              <Message key={message.id} from={message.role}>
-                <MessageContent
-                  className={
-                    message.role === "user"
-                      ? "bg-primary text-primary-foreground rounded-2xl px-3 py-2 text-sm"
-                      : "text-sm text-foreground"
-                  }
-                >
+            messages.map(message => (
+              <Message key={message.id} from={message.role} className="cw-msg">
+                {message.role === "assistant" && <Mark size="sm" />}
+                <MessageContent className={message.role === "user" ? "cw-bubble-user" : "cw-bubble-bot"}>
                   {message.parts
                     .filter((p): p is { type: "text"; text: string } => p.type === "text")
-                    .map((p, i) =>
-                      message.role === "assistant" ? (
-                        <MessageResponse key={i}>{p.text}</MessageResponse>
-                      ) : (
-                        <span key={i}>{p.text}</span>
-                      ),
-                    )}
+                    .map((p, i) => (message.role === "assistant" ? <MessageResponse key={i}>{p.text}</MessageResponse> : <span key={i}>{p.text}</span>))}
                 </MessageContent>
               </Message>
             ))
           )}
-          {status === "submitted" && <Shimmer className="text-sm">{t.thinking}</Shimmer>}
+          {status === "submitted" && (
+            <div className="cw-typing">
+              <Mark size="sm" />
+              <Shimmer className="text-sm">{t.thinking}</Shimmer>
+            </div>
+          )}
         </ConversationContent>
         <ConversationScrollButton />
       </Conversation>
-      <div className="border-t border-border p-2">
-        <PromptInput onSubmit={handleSubmit}>
-          <PromptInputTextarea ref={textareaRef} placeholder={t.placeholder} className="min-h-10 text-sm" />
+      <div className="cw-compose">
+        <PromptInput onSubmit={message => ask(message.text ?? "")} className="cw-input">
+          <PromptInputTextarea ref={textareaRef} placeholder={t.placeholder} className="min-h-11 text-sm" />
           <PromptInputFooter className="justify-end">
             <PromptInputSubmit status={status} disabled={busy} size="icon-sm" />
           </PromptInputFooter>
         </PromptInput>
+        <p className="cw-note">{t.note}</p>
       </div>
     </div>
   );
@@ -175,12 +222,15 @@ export default function ChatWidget() {
   const [view, setView] = useState<"chat" | "threads">("chat");
   const [threads, setThreads] = useState<Thread[]>([]);
   const [activeThread, setActiveThread] = useState<string | null>(null);
+  const [initial, setInitial] = useState<string | undefined>(undefined);
   const [error, setError] = useState(false);
+  const [starting, setStarting] = useState(false);
+  const launcher = useRef<HTMLButtonElement>(null);
 
   const fetchThreads = useServerFn(listVisitorThreads);
   const startThread = useServerFn(createVisitorThread);
   const loadThreads = useCallback(async () => {
-    const ids = getStoredThreadIds().filter((id) => /^[0-9a-f-]{36}$/i.test(id)).slice(0, 20);
+    const ids = getStoredThreadIds().filter(id => /^[0-9a-f-]{36}$/i.test(id)).slice(0, 20);
     if (ids.length === 0) return;
     try {
       setThreads((await fetchThreads({ data: { visitorId: getVisitorId(), ids } })) as Thread[]);
@@ -190,117 +240,151 @@ export default function ChatWidget() {
   }, [fetchThreads]);
 
   useEffect(() => {
-    if (open) {
+    if (open) loadThreads();
+  }, [open, loadThreads]);
+
+  // Esc closes the panel and returns focus to the launcher.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== "Escape") return;
+      setOpen(false);
+      launcher.current?.focus();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const createThread = useCallback(
+    async (question?: string) => {
+      let data: { id: string };
+      setStarting(true);
+      try {
+        data = await startThread({ data: { visitorId: getVisitorId(), locale } });
+      } catch {
+        setError(true);
+        setStarting(false);
+        return;
+      }
+      rememberThread(data.id);
+      setInitial(question);
+      setActiveThread(data.id);
+      setView("chat");
+      setError(false);
+      setStarting(false);
       loadThreads();
-      if (!activeThread && getStoredThreadIds().length > 0) setView("threads");
-    }
-  }, [open, loadThreads, activeThread]);
+    },
+    [locale, loadThreads, startThread],
+  );
 
-  const createThread = useCallback(async () => {
-    let data: { id: string };
-    try {
-      data = await startThread({ data: { visitorId: getVisitorId(), locale } });
-    } catch {
-      setError(true);
-      return;
-    }
-    rememberThread(data.id);
-    setActiveThread(data.id);
-    setView("chat");
-    setError(false);
-    loadThreads();
-  }, [locale, loadThreads, startThread]);
-
-  const BackIcon = locale === "ar" ? ArrowRight : ArrowLeft;
+  const Chevron = locale === "ar" ? ChevronLeft : ChevronRight;
+  const dateOf = (iso: string) => new Date(iso).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-GB", { day: "numeric", month: "short" });
 
   return (
-    <div data-chat-widget className="fixed bottom-4 end-4 z-50 flex flex-col items-end gap-3" dir={locale === "ar" ? "rtl" : "ltr"}>
+    <div data-chat-widget className="cw-root" dir={locale === "ar" ? "rtl" : "ltr"}>
       {open && (
-        <div className="flex h-[32rem] w-[22rem] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-border bg-background shadow-2xl">
-          <div className="flex items-center justify-between gap-2 border-b border-border bg-primary px-4 py-3 text-primary-foreground">
-            <div className="min-w-0">
-              <p className="truncate text-sm font-bold">{t.title}</p>
-              <p className="truncate text-xs opacity-80">{t.subtitle}</p>
+        <section className="cw-panel" role="dialog" aria-label={t.title}>
+          <header className="cw-head">
+            <Mark />
+            <div className="min-w-0 flex-1">
+              <p className="cw-title">{t.title}</p>
+              <p className="cw-status">
+                <span className="cw-dot" aria-hidden="true" />
+                {t.status}
+              </p>
             </div>
-            <div className="flex items-center gap-1">
-              {view === "chat" ? (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-primary-foreground hover:bg-primary-foreground/10"
-                  onClick={() => setView("threads")}
-                  aria-label={t.threads}
-                >
-                  <BackIcon className="size-4" />
-                </Button>
-              ) : (
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  className="text-primary-foreground hover:bg-primary-foreground/10"
-                  onClick={() => setView("chat")}
-                  aria-label={t.back}
-                >
-                  <BackIcon className="size-4" />
-                </Button>
-              )}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="text-primary-foreground hover:bg-primary-foreground/10"
-                onClick={() => setOpen(false)}
-                aria-label="Close"
-              >
-                <X className="size-4" />
-              </Button>
-            </div>
-          </div>
+            <Button variant="ghost" size="icon" className="cw-icon" onClick={() => setView(view === "threads" ? "chat" : "threads")} aria-label={view === "threads" ? t.back : t.threads} aria-pressed={view === "threads"}>
+              <History className="size-4" />
+            </Button>
+            <Button variant="ghost" size="icon" className="cw-icon" onClick={() => void createThread()} aria-label={t.newChat} disabled={starting}>
+              <Plus className="size-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="cw-icon"
+              onClick={() => {
+                setOpen(false);
+                launcher.current?.focus();
+              }}
+              aria-label={t.close}
+            >
+              <X className="size-4" />
+            </Button>
+          </header>
+
+          <nav className="cw-actions" aria-label={t.title}>
+            <a href={localeHref("/demo", locale)} onClick={() => setOpen(false)}>
+              <CalendarCheck aria-hidden="true" />
+              {t.demo}
+            </a>
+            <a href={localeHref("/quote", locale)} onClick={() => setOpen(false)}>
+              <FileText aria-hidden="true" />
+              {t.quote}
+            </a>
+            <a href="https://wa.me/966595051150" target="_blank" rel="noopener noreferrer">
+              <MessageCircle aria-hidden="true" />
+              {t.whatsapp}
+            </a>
+          </nav>
 
           {view === "threads" ? (
-            <div className="flex min-h-0 flex-1 flex-col gap-2 overflow-y-auto p-3">
-              <Button onClick={createThread} className="w-full justify-start gap-2">
+            <div className="cw-threads">
+              <p className="cw-threads-title">{t.threads}</p>
+              {threads.length === 0 && <p className="cw-empty">{t.noThreads}</p>}
+              <ul role="list">
+                {threads.map(thread => (
+                  <li key={thread.id}>
+                    <button
+                      type="button"
+                      aria-current={thread.id === activeThread ? "true" : undefined}
+                      onClick={() => {
+                        setInitial(undefined);
+                        setActiveThread(thread.id);
+                        setView("chat");
+                        setError(false);
+                      }}
+                    >
+                      <span className="cw-thread-name">{thread.title || t.untitled}</span>
+                      <span className="cw-thread-date">{dateOf(thread.updated_at)}</span>
+                      <Chevron aria-hidden="true" />
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <Button onClick={() => void createThread()} className="mt-auto w-full gap-2" disabled={starting}>
                 <Plus className="size-4" /> {t.newChat}
               </Button>
-              {threads.map((thread) => (
-                <button
-                  key={thread.id}
-                  onClick={() => {
-                    setActiveThread(thread.id);
-                    setView("chat");
-                    setError(false);
-                  }}
-                  className="rounded-lg border border-border px-3 py-2 text-start text-sm transition-colors hover:bg-accent"
-                >
-                  <span className="block truncate font-medium">
-                    {thread.title || `${t.threads} · ${new Date(thread.updated_at).toLocaleDateString(locale === "ar" ? "ar-SA" : "en-US")}`}
-                  </span>
-                </button>
-              ))}
             </div>
           ) : activeThread ? (
             <>
-              {error && <p className="bg-destructive/10 px-3 py-1 text-xs text-destructive">{t.error}</p>}
-              <ChatPanel key={activeThread} threadId={activeThread} locale={locale} onError={() => setError(true)} />
+              {error && <p className="cw-error" role="alert">{t.error}</p>}
+              <ChatPanel key={activeThread} threadId={activeThread} locale={locale} initial={initial} onError={() => setError(true)} />
             </>
           ) : (
-            <div className="flex flex-1 flex-col items-center justify-center gap-3 p-6 text-center">
-              <p className="text-sm text-muted-foreground">{t.empty}</p>
-              <Button onClick={createThread} className="gap-2">
+            <div className="flex min-h-0 flex-1 flex-col overflow-y-auto px-4 py-4">
+              {error && <p className="cw-error mb-3" role="alert">{t.error}</p>}
+              <Welcome locale={locale} onAsk={q => void createThread(q)} disabled={starting} />
+              <Button onClick={() => void createThread()} variant="outline" className="mt-4 gap-2" disabled={starting}>
                 <Plus className="size-4" /> {t.newChat}
               </Button>
             </div>
           )}
-        </div>
+        </section>
       )}
 
-      <Button
-        size="icon"
-        className="size-14 rounded-full shadow-xl"
-        onClick={() => setOpen((v) => !v)}
-        aria-label={t.title}
-      >
-        {open ? <X className="size-6" /> : <MessageCircle className="size-6" />}
-      </Button>
+      <button ref={launcher} type="button" className="cw-launcher" data-open={open ? "" : undefined} onClick={() => setOpen(v => !v)} aria-expanded={open} aria-label={open ? t.close : t.launcher}>
+        {open ? (
+          <span className="cw-launcher-icon">
+            <X />
+          </span>
+        ) : (
+          <>
+            <Mark />
+            <span className="cw-launcher-text">{t.launcher}</span>
+          </>
+        )}
+      </button>
     </div>
   );
 }
