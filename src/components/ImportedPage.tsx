@@ -64,6 +64,7 @@ const SceneLayoutContext = createContext<SceneLayout>({ heroId: undefined, roles
 const HERO_CLASS = /(?:^|\s)(?:hero|pos-hero|import-directory)(?:\s|$)/;
 const DIRECTORY_CLASS = /(?:^|\s)import-directory(?:\s|$)/;
 // Sections whose first child is not a section heading (lists, price cards, FAQs, closing CTAs, demo forms).
+const CLEAN_PAGE_PHOTO = /-body(?:-modest)?\.(?:jpe?g|webp|png)$/;
 const NO_SPLIT_CLASS = /(?:^|\s)(?:band-crumb|proof|nav|hero|pos-hero|import-directory|faq|faqs|pos-faq|cards|toc|statswrap|cta|pos-cta|demo|kit|related|pos-related|note)(?:\s|$)/;
 const holdsHeading = (node: Node): boolean => node.type === "heading" || (node.children ?? []).some(holdsHeading);
 const holdsFrame = (node: Node): boolean => isSourceFrame(node) || (node.children ?? []).some(holdsFrame);
@@ -92,7 +93,8 @@ function sceneLayout(nodes: Node[], heroIndex: number, pageKey: string): SceneLa
   // Directory pages without a hero: the photo sits beside their title instead of behind the whole list.
   const first = nodes[0];
   if (!hero && first) return { heroId: undefined, roles, split: { id: innerOf(first).id, mode: "run", src: scene.background, width: 1398, height: 864 } };
-  if (bodyPhotoInFrame(pageKey)) return { heroId: hero?.id, roles, split: undefined };
+  // Only page-specific clean photographs sit beside copy; older library scenes carry printed labels and drawn screens.
+  if (bodyPhotoInFrame(pageKey) || !CLEAN_PAGE_PHOTO.test(scene.body)) return { heroId: hero?.id, roles, split: undefined };
   const section = nodes.find((node, index) => {
     const head = node.children?.[0];
     return index > heroIndex && node.type === "container" && !NO_SPLIT_CLASS.test(node.className) && (node.children?.length ?? 0) >= 2
