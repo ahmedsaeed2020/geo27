@@ -194,26 +194,24 @@ const EN_OVERRIDES: Record<string, { title: string; description: string; crumb?:
   },
 };
 
-const HOME_JSONLD = [
+const homeJsonLd = (lang: "ar" | "en") => [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "Digit",
+    name: "DIGIT",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web, Cloud",
-    inLanguage: "ar",
-    description: "نظام ERP سعودي سحابي: محاسبة، مبيعات، مخزون، نقاط بيع وموارد بشرية، مع دعم الربط بمنظومة الفوترة الإلكترونية.",
-    featureList: ["المحاسبة والتقارير المالية", "المبيعات والعملاء", "إدارة المخزون والمشتريات", "نقاط البيع (POS)", "الموارد البشرية والرواتب", "دعم الربط مع منظومة الفوترة الإلكترونية (فاتورة)"],
+    inLanguage: lang,
+    description: lang === "ar"
+      ? "منصة أعمال سعودية بستة منتجات على قاعدة بيانات مشتركة: المالية والتشغيل، والموارد البشرية، والمقاولات، وعلاقات العملاء، والخدمة الميدانية، ونقاط البيع، مع دعم الربط بمنظومة الفوترة الإلكترونية (فاتورة)."
+      : "A Saudi business platform with six products on one shared database: finance and operations, HR, construction, CRM, field service and point of sale, with support for linking to the Fatoora e-invoicing system.",
+    featureList: PRODUCTS.map(p => `${p.name[lang]} — ${p.area[lang]}`),
   },
   {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: [
-      ["ماذا يقدّم نظام Digit؟", "Digit نظام أعمال سعودي سحابي يشمل المحاسبة والمبيعات والمخزون ونقاط البيع والموارد البشرية في منصة واحدة."],
-      ["هل يدعم Digit الفوترة الإلكترونية؟", "نعم، يدعم Digit الربط مع منظومة الفوترة الإلكترونية (فاتورة)، ونجهّز لك الربط حسب احتياج منشأتك، ولدينا ربط فعلي مستخدم مع عملاء قائمين."],
-      ["كم عدد المنشآت التي تستخدم Digit؟", "يخدم Digit أكثر من 50 منشأة سعودية."],
-      ["كيف أبدأ مع باقة Starter؟", "تختار الباقة وتدفع إلكترونيًا عبر Moyasar، ويتم تجهيز نظامك خلال ساعات. أما باقة Pro والمنشآت الأكبر فعبر عرض توضيحي وعرض سعر مخصص."],
-    ].map(([name, text]) => ({ "@type": "Question", name, acceptedAnswer: { "@type": "Answer", text } })),
+    inLanguage: lang,
+    mainEntity: HOME_FAQ.map(({ q, a }) => ({ "@type": "Question", name: q[lang], acceptedAnswer: { "@type": "Answer", text: a[lang] } })),
   },
 ];
 
@@ -259,7 +257,7 @@ export function withSeo(path: string, head: Head = {}, records: import('./cms-sc
   const kept = meta.filter(m => !m.title && !["description", "og:title", "og:description", "og:url", "og:locale", "og:type", "twitter:card", "twitter:title", "twitter:description"].includes((m.name ?? m.property) as string));
   const scripts = [...(head.scripts ?? [])];
   const jsonld: object[] = [];
-  if (arPath === "/" && !english) jsonld.push(...HOME_JSONLD);
+  if (arPath === "/") jsonld.push(...homeJsonLd(english ? "en" : "ar"));
   const trail = departmentTrail(arPath);
   if (trail) {
     // Department pages sit under their product overview: Home › DIGIT Pro › Inventory & Warehouses.

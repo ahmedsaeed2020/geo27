@@ -22,9 +22,16 @@ import { DeliveryJourney, PlatformLayers, SpecialistDiscovery } from '@/componen
 import { Fragment, useRef, type ReactNode } from "react";
 import { usePageMotion } from "@/hooks/use-page-motion";
 import { useLocale } from "@/lib/i18n";
+import { HOME_LEAD } from '@/content/home';
 import { useSiteConfig } from '@/components/cms/CmsContext';
 import { EditableSections } from '@/components/cms/SectionText';
 import { arrangeSections, HOME_SECTIONS, type HomeSectionId } from '@/content/section-registry';
+
+/** The home request form is for every product, not only DIGIT Pro. */
+function HomeLead() {
+  const locale = useLocale();
+  return <LeadCapturePanel interest={HOME_LEAD[locale]} />;
+}
 
 const RENDER: Record<HomeSectionId, () => ReactNode> = {
   hero: () => <HeroSlider />,
@@ -45,7 +52,7 @@ const RENDER: Record<HomeSectionId, () => ReactNode> = {
   delivery: () => <DeliveryJourney variant="home" />,
   faq: () => <Faq />,
   cms: () => <CmsBlocks />,
-  lead: () => <LeadCapturePanel interest={HOME_LEAD[locale]} />,
+  lead: () => <HomeLead />,
   final: () => <FinalCta />,
 };
 
