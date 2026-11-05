@@ -1,4 +1,4 @@
-import { useMemo, useState, type CSSProperties } from 'react';
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from 'react';
 import { Expand, LayoutGrid, ScanSearch } from 'lucide-react';
 import ShotLightbox from '@/components/product/ShotLightbox';
 import type { Shot } from '@/content/product-shots';
@@ -24,6 +24,9 @@ const LEAD = 2.2;
 const SIDE = 2;
 /** Tiles shown before the "view all" button on a phone-width frame. */
 const COMPACT = 4;
+/** Caption strip under each tile, and the gap between tiles, in CSS pixels (see screen-mosaic.css). */
+const CAPTION = 58;
+const GAP = 14;
 
 /**
  * Masonry of several real screens in one frame: the widest leads across the top, wide cards stack in the main
@@ -38,6 +41,17 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
     for (const t of tiles) if (!seen.has(t.shot.id)) seen.set(t.shot.id, t.shot);
     return [...seen.values()];
   }, [tiles]);
+  const body = useRef<HTMLDivElement>(null);
+  const [width, setWidth] = useState(1120);
+  useEffect(() => {
+    const el = body.current;
+    if (!el || typeof ResizeObserver === 'undefined') return;
+    const ro = new ResizeObserver(([entry]) => {
+      if (entry) setWidth(Math.round(entry.contentRect.width));
+    });
+    ro.observe(el);
+    return () => ro.disconnect();
+  }, []);
   const layout = useMemo(() => {
     const [first, ...others] = tiles;
     const lead = first && ratio(first) >= LEAD ? first : undefined;
@@ -53,10 +67,14 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
     const height = (list: MosaicTile[]) => list.reduce((sum, t) => sum + 1 / ratio(t), 0);
     const a = height(main);
     const b = height(side);
-    // Equal column heights: mainWidth × a = sideWidth × b.
-    const sideFr = b > 0 ? Math.min(1.4, Math.max(0.42, a / b)) : 0;
-    return { lead, main, side, sideFr };
-  }, [tiles]);
+    // Level column ends: mainWidth·a + captions/gaps of the main column = sideWidth·b + those of the side column.
+    const w = Math.max(320, width - GAP);
+    const extra = (side.length - main.length) * (CAPTION + GAP);
+    const mainWidth = a + b > 0 ? (extra + w * b) / (a + b) : w;
+    const sideWidth = Math.min(w * 0.52, Math.max(w * 0.28, w - mainWidth));
+    const sideFr = b > 0 ? sideWidth / (w - sideWidth) : 0;
+    return { lead, main, side, sideFr: Number(sideFr.toFixed(3)) };
+  }, [tiles, width]);
 
   if (!tiles.length) return null;
   let no = 0;
@@ -103,7 +121,7 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
         <span className="mz-sub">{C.real[locale]}</span>
         <span className="mz-count">{views(tiles.length, locale)}</span>
       </figcaption>
-      <div className="mz-body">
+      <div className="mz-body" ref={body}>
         {layout.lead && <div className="mz-lead">{tile(layout.lead, 'lead')}</div>}
         {(layout.main.length > 0 || layout.side.length > 0) && (
           <div className="mz-cols" style={layout.side.length ? ({ '--mz-side': `${layout.sideFr}fr` } as CSSProperties) : undefined} data-single={layout.side.length ? undefined : ''}>
