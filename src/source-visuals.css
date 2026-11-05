@@ -1,0 +1,24 @@
+/* Frames on imported pages filled with a real screen, a clear photo or a designed map (owner 2026-11-05). */
+.imported-page .sv-frame{padding:0!important;border:0!important;background:none!important;box-shadow:none!important;gap:12px!important;margin:0;min-width:0}
+.imported-page .sv-frame-screen .pp-shot{margin:0;width:100%}
+.imported-page .sv-photo{display:block;position:relative;width:100%;aspect-ratio:var(--sv-ratio,16 / 10);overflow:hidden;border-radius:18px;background:var(--paper2);box-shadow:0 22px 48px -26px color-mix(in oklab,var(--deep) 45%,transparent),0 0 0 1px color-mix(in oklab,var(--deep) 8%,transparent)}
+.imported-page .sv-photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.imported-page .sv-frame-photo:hover .sv-photo img{transform:scale(1.025)}
+.imported-page .sv-frame figcaption{font-size:13.5px;line-height:1.6;color:var(--muted-foreground);text-align:start;padding-inline:4px}
+.imported-page .sv-frame-photo figcaption::before{content:"";display:inline-block;width:7px;height:7px;margin-inline-end:8px;border-radius:999px;background:var(--primary);vertical-align:middle}
+/* Feature rows: the visual column keeps its source width and gets a calm surface for maps */
+.imported-page .sv-feature{align-self:center}
+.imported-page .sv-map-frame .sv-map{position:relative;display:block;width:100%;aspect-ratio:400 / 260;border-radius:18px;overflow:hidden;background:radial-gradient(120% 90% at 50% 50%,color-mix(in oklab,var(--primary) 14%,var(--paper)) 0%,var(--paper) 70%);box-shadow:inset 0 0 0 1px color-mix(in oklab,var(--deep) 10%,transparent)}
+.imported-page .sv-map-lines{position:absolute;inset:0;width:100%;height:100%}
+.imported-page .sv-map-lines path{fill:none;stroke:color-mix(in oklab,var(--primary) 55%,transparent);stroke-width:1.6;stroke-dasharray:5 7;animation:svDash 2.4s linear infinite}
+@keyframes svDash{to{stroke-dashoffset:-24}}
+.imported-page .sv-map-core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);display:grid;place-items:center;width:96px;height:96px;border-radius:26px;background:var(--deep);color:var(--primary-foreground);box-shadow:0 0 0 10px color-mix(in oklab,var(--primary) 16%,transparent),0 18px 40px -16px color-mix(in oklab,var(--deep) 70%,transparent);font-family:"Space Mono",monospace;letter-spacing:.12em;font-size:15px}
+.imported-page .sv-map-node{position:absolute;display:flex;flex-direction:column;align-items:center;gap:8px;transform:translate(-50%,-50%);font-size:13px;font-weight:700;color:var(--deep);white-space:nowrap}
+.imported-page .sv-map-node[data-slot="0"]{left:17.5%;top:22%}
+.imported-page .sv-map-node[data-slot="1"]{left:82.5%;top:22%}
+.imported-page .sv-map-node[data-slot="2"]{left:17.5%;top:78%}
+.imported-page .sv-map-node[data-slot="3"]{left:82.5%;top:78%}
+.imported-page .sv-map-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:17px;background:var(--paper);color:var(--primary);box-shadow:0 12px 26px -14px color-mix(in oklab,var(--deep) 55%,transparent),0 0 0 1px color-mix(in oklab,var(--deep) 10%,transparent)}
+.imported-page .sv-map-icon svg{width:26px;height:26px}
+@media (prefers-reduced-motion:reduce){.imported-page .sv-map-lines path{animation:none}.imported-page .sv-photo img{transition:none}}
+@media (max-width:767px){.imported-page .sv-map-core{width:72px;height:72px;border-radius:20px;font-size:12px}.imported-page .sv-map-icon{width:46px;height:46px;border-radius:14px}.imported-page .sv-map-node{font-size:12px}}
