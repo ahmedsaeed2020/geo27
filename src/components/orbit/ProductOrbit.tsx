@@ -118,7 +118,12 @@ export default function ProductOrbit({ product }: { product: ProductKey | 'syste
           })}
         </div>
 
-        <nav className="porb-legend" aria-label={`${COPY.nav[locale]} ${model.core.name[locale]}`}>
+        <nav
+          className="porb-legend"
+          aria-label={`${COPY.nav[locale]} ${model.core.name[locale]}`}
+          onMouseLeave={() => highlight(-1)}
+          onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget as Node | null)) highlight(-1); }}
+        >
           <ul role="list">
             {items.map((item, i) => (
               <li key={item.id}>
