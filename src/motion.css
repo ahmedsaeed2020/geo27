@@ -292,7 +292,7 @@ html[data-dm="fsm"] .sp-hero .sp-hero-art :is(li, figure, .hs-node) { animation:
       real screens. Keyboard, touch and Escape behaviour is unchanged.
    ========================================================================================================== */
 .mm-nav { position: relative; }
-.mm-indicator { position: absolute; z-index: 2; inset-block-end: 10px; inset-inline-start: 0; height: 2px; width: var(--mm-iw, 0px); border-radius: 2px; background: var(--primary); translate: var(--mm-ix, 0px) 0; opacity: 0; pointer-events: none; transition: translate .42s var(--dm-ease-out), width .42s var(--dm-ease-out), opacity .25s ease; }
+.mm-indicator { position: absolute; z-index: 2; left: 0; top: 0; height: 2px; width: var(--mm-iw, 0px); border-radius: 2px; background: var(--primary); translate: var(--mm-ix, 0px) var(--mm-iy, 0px); opacity: 0; pointer-events: none; transition: translate .42s var(--dm-ease-out), width .42s var(--dm-ease-out), opacity .25s ease; }
 .mm-nav[data-indicator] .mm-indicator { opacity: 1; }
 .mm-nav[data-indicator] .mm-item[data-active] .mm-top-label::after { opacity: 0; }
 .mm-item .mm-top-label::after { transition: opacity .2s ease; }
