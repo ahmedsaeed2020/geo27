@@ -102,9 +102,12 @@ export default function ScreenMosaic({ tiles, locale, label, id, note = true }: 
       if (wide && v.shape.ratio < SIDE_RATIO) return Math.max(250, Math.min(v.shape.max, (inner - gap) * 0.6) / v.shape.ratio);
       return copy + gap + Math.min(v.shape.max, inner) / v.shape.ratio;
     });
-    const floor = wide ? 330 : 250;
-    const cap = wide ? Math.min(600, width * 0.56) : Math.min(520, width * 1.2);
-    const stage = Math.round(Math.min(cap, Math.max(floor, ...heights)) + inset * 2);
+    // Sized for most of the set rather than its tallest outlier: an unusually tall screen scales down to fit.
+    const sorted = [...heights].sort((a, b) => a - b);
+    const typical = sorted[Math.floor(0.7 * (sorted.length - 1))] ?? 0;
+    const floor = wide ? 330 : 240;
+    const cap = wide ? Math.min(540, width * 0.48) : Math.min(460, width * 1.1);
+    const stage = Math.round(Math.min(cap, Math.max(floor, typical)) + inset * 2);
     // Compositions much shorter than the stage gather in its middle with a larger headline instead of leaving a gap.
     const roomy = heights.map(h => h + inset * 2 < stage * 0.78);
     return { wide, stage, roomy };
