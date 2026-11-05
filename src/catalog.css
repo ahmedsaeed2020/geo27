@@ -169,7 +169,7 @@
 .mnav-foot { padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); border-top: 1px solid var(--dline); background: var(--light); }
 
 @media (prefers-reduced-motion: reduce) {
-  .mm-panel-inner, .mm-shot-body img, .mnav, .mnav-overlay { animation: none; }
+  .mm-panel-inner, .mm-shot-body img, .mm-brand-photo, .mnav, .mnav-overlay { animation: none; }
   .mm-trigger svg, .mnav-toggle svg, .mm-family, .mm-overview svg { transition: none; }
 }
 
