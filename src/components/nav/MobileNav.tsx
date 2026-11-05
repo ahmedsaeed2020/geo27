@@ -8,7 +8,8 @@ import { Button } from '@/components/ui/button';
 import { useCatalog } from '@/components/catalog/useCatalog';
 import { useDemoRequest } from './MegaMenu';
 import { NAV_COPY, NavLink } from './nav-links';
-import { departmentIcon } from './nav-visuals';
+import { DigitIcon } from '@/components/icons/DigitIcon';
+import { departmentGlyph } from './nav-visuals';
 
 function Section({ id, title, eyebrow, open, onToggle, children }: { id: string; title: string; eyebrow?: string; open: boolean; onToggle: () => void; children: ReactNode }) {
   return (
@@ -92,17 +93,14 @@ export function MobileNav({ extra, demoLabel }: { extra?: (close: () => void) =>
                 <p className="mnav-summary">{f.summary[locale]}</p>
                 <p className="mnav-label">{f.groupLabel[locale]}</p>
                 <ol role="list" className="mnav-links mnav-depts">
-                  {(f.key === 'pos' ? f.solutions.map(s => ({ ...s, href: s.path, hash: undefined as string | undefined })) : f.departments).map(d => {
-                    const Icon = departmentIcon(f.key, d.id);
-                    return (
-                      <li key={d.id}>
-                        <NavLink path={d.href} hash={d.hash} onClick={close}>
-                          <span className="mnav-dept-icon" aria-hidden="true"><Icon /></span>
-                          {d.label[locale]}
-                        </NavLink>
-                      </li>
-                    );
-                  })}
+                  {(f.key === 'pos' ? f.solutions.map(s => ({ ...s, href: s.path, hash: undefined as string | undefined })) : f.departments).map(d => (
+                    <li key={d.id}>
+                      <NavLink path={d.href} hash={d.hash} onClick={close}>
+                        <span className="mnav-dept-icon" aria-hidden="true"><DigitIcon name={departmentGlyph(f.key, d.id)} /></span>
+                        {d.label[locale]}
+                      </NavLink>
+                    </li>
+                  ))}
                 </ol>
                 {f.extras.length > 0 && <Links title={f.key === 'pro' ? NAV_COPY.crossDept[locale] : NAV_COPY.industries[locale]} links={f.extras} close={close} />}
               </Section>
