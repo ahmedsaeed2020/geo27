@@ -1,3 +1,11 @@
+# Orbit navigation, image audit, code review, SEO (owner 2026-11-05 18:38)
+- [ ] Home orbit: every module chip shows its name on hover/focus and opens its page on click (HR, CRM, accounting, sales, reports, settings, dashboards, e-signature, ...); orbit look unchanged.
+- [ ] Shared product orbit section (green sun with the product at the core, its departments orbiting, names on hover, click opens the page) added above the existing first fold — existing hero untouched — on Pro, HR, Construction, CRM, FSM + ITM, POS overviews and the all-modules page; AR/EN, keyboard, touch, reduced motion.
+- [ ] /pro overview: replace the faded, unrelated people photo and the empty price card area with system-relevant visuals.
+- [ ] Full-site image audit: open every page (AR/EN), find broken, faded or unrelated images and fix them.
+- [ ] Code review report (confirmed problems + ordered refactor plan, no changes until approved) and security scan summary.
+- [ ] SEO: read current findings, fix every actionable item (metadata, sitemap, structured data, internal links) so Google can index faster.
+
 # Award-level motion & interaction (owner brief 2026-11-05, preview only)
 - [x] Shared motion system: per-product entrance identities (Pro, HR x7 arts, Construction, CRM, POS, FSM, site), home orbit/slider first-load beats, scroll reveals and step sequences, home product theater, mega-menu indicator/preview crossfade, lightbox grow-out, section rail, page view transitions.
 - [x] Performance: first-fold photo/lead text painted at once (LCP back to baseline); waiting headings never clipped; reduced motion overrides every rule.
