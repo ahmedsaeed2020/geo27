@@ -47,7 +47,15 @@ describe('Construction, CRM and FSM + ITM pages', () => {
     expect(existsSync('src/assets/crm')).toBe(false);
     // CRM pages may only use the current DIGIT CRM captures (owner upload 2026-11-05).
     for (const d of CRM) for (const id of d.heroShots) expect(id.startsWith('crm2-'), `${d.slug}: ${id}`).toBe(true);
-    expect([...CRM_JOURNEY, ...CRM_WORKBENCH].some(s => 'shot' in s && s.shot)).toBe(false);
+    // The CRM module story shows only current captures, and "shown in a real screen" only where one is shown.
+    for (const s of [...CRM_JOURNEY, ...CRM_WORKBENCH]) {
+      expect(s.shot, s.id).toBeUndefined();
+      for (const id of s.shots ?? []) {
+        expect(id.startsWith('crm2-'), `${s.id}: ${id}`).toBe(true);
+        expect(screenById(id), `${s.id}: ${id}`).toBeDefined();
+      }
+      if (s.status === 'demonstrated') expect(s.shots?.length, s.id).toBeGreaterThan(0);
+    }
     expect(productByKey('crm')!.shot).toBeUndefined();
   });
 
