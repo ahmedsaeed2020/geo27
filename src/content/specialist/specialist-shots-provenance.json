@@ -214,7 +214,7 @@
    ]
   },
   "crm2-acc-health": {
-   "original": "CRM/05.png",
+   "original": "CRM/04.png",
    "box_ltrb": [
     2326,
     905,
@@ -236,7 +236,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-acc-open-opps": {
-   "original": "CRM/05.png",
+   "original": "CRM/04.png",
    "box_ltrb": [
     2326,
     1513,
@@ -279,7 +279,7 @@
    ]
   },
   "crm2-act-calls": {
-   "original": "CRM/06.png",
+   "original": "CRM/03.png",
    "box_ltrb": [
     3598,
     2596,
@@ -301,7 +301,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-act-daily": {
-   "original": "CRM/06.png",
+   "original": "CRM/03.png",
    "box_ltrb": [
     51,
     1060,
@@ -323,7 +323,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-act-mix": {
-   "original": "CRM/06.png",
+   "original": "CRM/03.png",
    "box_ltrb": [
     3598,
     1905,
@@ -366,7 +366,7 @@
    ]
   },
   "crm2-exec-cards": {
-   "original": "CRM/08.png",
+   "original": "CRM/01.png",
    "box_ltrb": [
     13,
     424,
@@ -388,7 +388,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-exec-health": {
-   "original": "CRM/08.png",
+   "original": "CRM/01.png",
    "box_ltrb": [
     2242,
     923,
@@ -473,7 +473,7 @@
    ]
   },
   "crm2-home-activity": {
-   "original": "CRM/01.png",
+   "original": "CRM/08.png",
    "box_ltrb": [
     62,
     1742,
@@ -516,7 +516,7 @@
    ]
   },
   "crm2-leads-conversion": {
-   "original": "CRM/02.png",
+   "original": "CRM/07.png",
    "box_ltrb": [
     39,
     2901,
@@ -538,7 +538,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-leads-first-contact": {
-   "original": "CRM/02.png",
+   "original": "CRM/07.png",
    "box_ltrb": [
     2325,
     2901,
@@ -560,7 +560,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-leads-funnel": {
-   "original": "CRM/02.png",
+   "original": "CRM/07.png",
    "box_ltrb": [
     39,
     1268,
@@ -582,7 +582,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-leads-sources": {
-   "original": "CRM/02.png",
+   "original": "CRM/07.png",
    "box_ltrb": [
     2325,
     1268,
@@ -604,7 +604,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-nav-home": {
-   "original": "CRM/01.png",
+   "original": "CRM/08.png",
    "box_ltrb": [
     4351,
     0,
@@ -626,7 +626,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-nav-leads": {
-   "original": "CRM/02.png",
+   "original": "CRM/07.png",
    "box_ltrb": [
     4635,
     0,
@@ -648,7 +648,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-nav-opp": {
-   "original": "CRM/03.png",
+   "original": "CRM/06.png",
    "box_ltrb": [
     4635,
     0,
@@ -670,7 +670,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-nav-reports": {
-   "original": "CRM/07.png",
+   "original": "CRM/02.png",
    "box_ltrb": [
     4530,
     0,
@@ -692,7 +692,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-opp-ageing": {
-   "original": "CRM/03.png",
+   "original": "CRM/06.png",
    "box_ltrb": [
     39,
     1190,
@@ -714,7 +714,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-opp-closings": {
-   "original": "CRM/03.png",
+   "original": "CRM/06.png",
    "box_ltrb": [
     2325,
     2808,
@@ -736,7 +736,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-opp-conversion": {
-   "original": "CRM/03.png",
+   "original": "CRM/06.png",
    "box_ltrb": [
     2325,
     1190,
@@ -758,7 +758,7 @@
    "note": "Feature close-up for the screen mosaic"
   },
   "crm2-opp-weighted": {
-   "original": "CRM/03.png",
+   "original": "CRM/06.png",
    "box_ltrb": [
     39,
     2808,
@@ -801,7 +801,7 @@
    ]
   },
   "crm2-rep-activity-type": {
-   "original": "CRM/07.png",
+   "original": "CRM/02.png",
    "box_ltrb": [
     2274,
     2689,
