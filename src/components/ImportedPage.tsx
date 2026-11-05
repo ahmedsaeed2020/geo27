@@ -33,6 +33,8 @@ import { SOURCE_AREA_LINKS } from "@/content/source-area-links";
 import type { ResolvedDepartment } from "@/content/catalog";
 import { useCatalog } from "@/components/catalog/useCatalog";
 import { NavLink } from "@/components/nav/nav-links";
+import ProductOrbit from "@/components/orbit/ProductOrbit";
+import { ORBIT_PAGES } from "@/content/orbits";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 type Node = {
@@ -265,5 +267,8 @@ function SourceImportedPage({ page: source, pageKey, pro }: { page: Page; pageKe
   // Real product screenshots sit right after the hero (and its stats band), before the source content.
   const proofs = proConfig ? undefined : PAGE_PROOFS[pageKey];
   const proofIndex = heroIndex >= 0 && /(?:^|\s)proof(?:\s|$)/.test(page.nodes[heroIndex + 1]?.className ?? "") ? heroIndex + 1 : heroIndex;
-  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><AreaLinksContext.Provider value={areaLinks}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}><RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></AreaLinksContext.Provider></SceneLayoutContext.Provider><SectionRail rootRef={mainRef} pageKey={`${pageKey}-${locale}`} /><Footer /></div>, locale);
+  // Product overviews open with their orbit navigation above the (unchanged) source hero.
+  const orbit = ORBIT_PAGES[pageKey];
+  const orbitIndex = heroIndex >= 0 ? heroIndex : 0;
+  return localizeTree(<div className="bg-paper font-plex"><Header /><SceneLayoutContext.Provider value={layout}><AreaLinksContext.Provider value={areaLinks}><main ref={mainRef} className={`imported-page import-${pageKey}`} aria-label={page.title}>{page.nodes.map((node, index) => <Fragment key={node.id}>{orbit && index === orbitIndex && <ProductOrbit product={orbit} />}<RenderNode node={node} pageKey={pageKey} />{proofs && index === proofIndex && <PageProofs blocks={proofs} />}{proConfig && pro && index === proofIndex && <ProPageBody config={proConfig} content={pro} />}{story && index === proofIndex && story()}{hub && index === proofIndex && <ProductDepartments product={hub} />}</Fragment>)}<CmsBlocks />{cms?.formEnabled!==false && !holdsHostedForm(page.nodes) && <LeadCapturePanel interest={page.title}/>}</main></AreaLinksContext.Provider></SceneLayoutContext.Provider><SectionRail rootRef={mainRef} pageKey={`${pageKey}-${locale}`} /><Footer /></div>, locale);
 }

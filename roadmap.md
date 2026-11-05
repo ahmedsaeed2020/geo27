@@ -1,3 +1,18 @@
+# Orbit navigation, image audit, code review, SEO (owner 2026-11-05 18:38)
+- [x] Home orbit: every module chip shows its name on hover/focus and opens its page on click (HR, CRM, accounting, sales, reports, settings, dashboards, e-signature, ...); orbit look unchanged.
+- [x] Shared product orbit section (green sun with the product at the core, its departments orbiting, names on hover, click opens the page) added above the existing first fold — existing hero untouched — on Pro, HR, Construction, CRM, FSM + ITM, POS overviews and the all-modules page; AR/EN, keyboard, touch, reduced motion.
+- [x] /pro overview: replace the faded, unrelated people photo and the empty price card area with system-relevant visuals.
+- [x] Full-site image audit: open every page (AR/EN), find broken, faded or unrelated images and fix them.
+- [x] Code review report (confirmed problems + ordered refactor plan, no changes until approved) and security scan summary.
+- [ ] (awaiting owner approval) Security: drop the open visitor policies on chat_threads / chat_messages / contact_requests (server already writes through the admin client); re-test chat and forms end to end.
+- [ ] (awaiting owner approval) Tests for lead submission and chat visitor-ownership checks before any refactor.
+- [ ] (awaiting owner approval) Admin: paginate leads (cap 500) and chats (cap 300) with totals instead of silent cut-offs.
+- [ ] (awaiting owner approval) One shared path normaliser (bare/en strip) and one bilingual t() helper instead of copies in catalog, pro-pages, sitemap and content files.
+- [ ] (awaiting owner approval) Chat widget: show a retry state when history fails to load instead of swallowing the error.
+- [ ] (awaiting owner approval) Footer colours to design tokens; split SpecialistBody / HubStories once tests exist.
+- [x] SEO: read current findings, fix every actionable item (metadata, sitemap, structured data, internal links) so Google can index faster.
+- [ ] (owner) After publishing: submit https://digit-erp.com/sitemap.xml in Google Search Console and request indexing of the main overview pages.
+
 # Award-level motion & interaction (owner brief 2026-11-05, preview only)
 - [x] Shared motion system: per-product entrance identities (Pro, HR x7 arts, Construction, CRM, POS, FSM, site), home orbit/slider first-load beats, scroll reveals and step sequences, home product theater, mega-menu indicator/preview crossfade, lightbox grow-out, section rail, page view transitions.
 - [x] Performance: first-fold photo/lead text painted at once (LCP back to baseline); waiting headings never clipped; reduced motion overrides every rule.

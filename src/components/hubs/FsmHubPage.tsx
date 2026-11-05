@@ -10,6 +10,7 @@ import { photo as photoOf } from '@/content/specialist/photos';
 import type { L } from '@/content/specialist/types';
 import { usePageMotion } from '@/hooks/use-page-motion';
 import SectionRail from '@/components/motion/SectionRail';
+import ProductOrbit from '@/components/orbit/ProductOrbit';
 import { useLocale } from '@/lib/i18n';
 import { FsmStory } from './HubStories';
 import '@/specialist.css';
@@ -48,6 +49,7 @@ export default function FsmHubPage() {
     <div className="bg-paper font-plex">
       <Header />
       <main ref={mainRef} className="dept-page" aria-label={C.h1[locale]}>
+        <ProductOrbit product="fsm" />
         <div className="sp-page" data-product="fsm">
           <section className="sp-hero" data-signature="timeline" data-product="fsm">
             <div className="dp-wrap">

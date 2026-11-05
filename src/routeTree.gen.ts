@@ -32,7 +32,6 @@ import { Route as ProRouteImport } from './routes/pro'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
-import { Route as ServicesRouteImport } from './routes/services'
 import { Route as Services3RouteImport } from './routes/services-3'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StarterRouteImport } from './routes/starter'
@@ -117,6 +116,7 @@ import { Route as Services3MaintenanceRouteImport } from './routes/services-3.ma
 import { Route as Services3SupportRouteImport } from './routes/services-3.support'
 import { Route as Services3TrainingRouteImport } from './routes/services-3.training'
 import { Route as Services3ZatcaOnboardingRouteImport } from './routes/services-3.zatca-onboarding'
+import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesCustomizationRouteImport } from './routes/services.customization'
 import { Route as ServicesDataMigrationRouteImport } from './routes/services.data-migration'
 import { Route as ServicesHostingRouteImport } from './routes/services.hosting'
@@ -294,11 +294,6 @@ const ResourcesRoute = ResourcesRouteImport.update({
 const SaudiLocalizationRoute = SaudiLocalizationRouteImport.update({
   id: '/saudi-localization',
   path: '/saudi-localization',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ServicesRoute = ServicesRouteImport.update({
-  id: '/services',
-  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Services3Route = Services3RouteImport.update({
@@ -728,6 +723,11 @@ const Services3ZatcaOnboardingRoute =
     path: '/zatca-onboarding',
     getParentRoute: () => Services3Route,
   } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesCustomizationRoute = ServicesCustomizationRouteImport.update({
   id: '/customization',
   path: '/customization',
@@ -1089,7 +1089,6 @@ export interface FileRoutesByFullPath {
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services-3': typeof Services3RouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
@@ -1180,6 +1179,7 @@ export interface FileRoutesByFullPath {
   '/industries/': typeof IndustriesIndexRoute
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1259,7 +1259,6 @@ export interface FileRoutesByTo {
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
-  '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
@@ -1346,6 +1345,7 @@ export interface FileRoutesByTo {
   '/industries': typeof IndustriesIndexRoute
   '/modules': typeof ModulesIndexRoute
   '/services-3': typeof Services3IndexRoute
+  '/services': typeof ServicesIndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1430,7 +1430,6 @@ export interface FileRoutesById {
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
-  '/services': typeof ServicesRouteWithChildren
   '/services-3': typeof Services3RouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
@@ -1521,6 +1520,7 @@ export interface FileRoutesById {
   '/industries/': typeof IndustriesIndexRoute
   '/modules/': typeof ModulesIndexRoute
   '/services-3/': typeof Services3IndexRoute
+  '/services/': typeof ServicesIndexRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1605,7 +1605,6 @@ export interface FileRouteTypes {
     | '/quote'
     | '/resources'
     | '/saudi-localization'
-    | '/services'
     | '/services-3'
     | '/sitemap.xml'
     | '/starter'
@@ -1696,6 +1695,7 @@ export interface FileRouteTypes {
     | '/industries/'
     | '/modules/'
     | '/services-3/'
+    | '/services/'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -1775,7 +1775,6 @@ export interface FileRouteTypes {
     | '/quote'
     | '/resources'
     | '/saudi-localization'
-    | '/services'
     | '/sitemap.xml'
     | '/starter'
     | '/support'
@@ -1862,6 +1861,7 @@ export interface FileRouteTypes {
     | '/industries'
     | '/modules'
     | '/services-3'
+    | '/services'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -1945,7 +1945,6 @@ export interface FileRouteTypes {
     | '/quote'
     | '/resources'
     | '/saudi-localization'
-    | '/services'
     | '/services-3'
     | '/sitemap.xml'
     | '/starter'
@@ -2036,6 +2035,7 @@ export interface FileRouteTypes {
     | '/industries/'
     | '/modules/'
     | '/services-3/'
+    | '/services/'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -2120,7 +2120,6 @@ export interface RootRouteChildren {
   QuoteRoute: typeof QuoteRoute
   ResourcesRoute: typeof ResourcesRoute
   SaudiLocalizationRoute: typeof SaudiLocalizationRoute
-  ServicesRoute: typeof ServicesRouteWithChildren
   Services3Route: typeof Services3RouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StarterRoute: typeof StarterRoute
@@ -2144,6 +2143,7 @@ export interface RootRouteChildren {
   ProAreaRoute: typeof ProAreaRoute
   ConstructionIndexRoute: typeof ConstructionIndexRoute
   HrIndexRoute: typeof HrIndexRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
   ApiPublicCmsMediaFileRoute: typeof ApiPublicCmsMediaFileRoute
 }
 
@@ -2308,13 +2308,6 @@ declare module '@tanstack/react-router' {
       path: '/saudi-localization'
       fullPath: '/saudi-localization'
       preLoaderRoute: typeof SaudiLocalizationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/services': {
-      id: '/services'
-      path: '/services'
-      fullPath: '/services'
-      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services-3': {
@@ -2904,6 +2897,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/services-3/zatca-onboarding'
       preLoaderRoute: typeof Services3ZatcaOnboardingRouteImport
       parentRoute: typeof Services3Route
+    }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/services/customization': {
       id: '/services/customization'
@@ -3648,28 +3648,6 @@ const ModulesRouteChildren: ModulesRouteChildren = {
 const ModulesRouteWithChildren =
   ModulesRoute._addFileChildren(ModulesRouteChildren)
 
-interface ServicesRouteChildren {
-  ServicesCustomizationRoute: typeof ServicesCustomizationRoute
-  ServicesDataMigrationRoute: typeof ServicesDataMigrationRoute
-  ServicesHostingRoute: typeof ServicesHostingRoute
-  ServicesImplementationRoute: typeof ServicesImplementationRoute
-  ServicesSupportRoute: typeof ServicesSupportRoute
-  ServicesTrainingRoute: typeof ServicesTrainingRoute
-}
-
-const ServicesRouteChildren: ServicesRouteChildren = {
-  ServicesCustomizationRoute: ServicesCustomizationRoute,
-  ServicesDataMigrationRoute: ServicesDataMigrationRoute,
-  ServicesHostingRoute: ServicesHostingRoute,
-  ServicesImplementationRoute: ServicesImplementationRoute,
-  ServicesSupportRoute: ServicesSupportRoute,
-  ServicesTrainingRoute: ServicesTrainingRoute,
-}
-
-const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
-  ServicesRouteChildren,
-)
-
 interface Services3RouteChildren {
   Services3CustomizationRoute: typeof Services3CustomizationRoute
   Services3DataMigrationRoute: typeof Services3DataMigrationRoute
@@ -3726,7 +3704,6 @@ const rootRouteChildren: RootRouteChildren = {
   QuoteRoute: QuoteRoute,
   ResourcesRoute: ResourcesRoute,
   SaudiLocalizationRoute: SaudiLocalizationRoute,
-  ServicesRoute: ServicesRouteWithChildren,
   Services3Route: Services3RouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StarterRoute: StarterRoute,
@@ -3750,6 +3727,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProAreaRoute: ProAreaRoute,
   ConstructionIndexRoute: ConstructionIndexRoute,
   HrIndexRoute: HrIndexRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
   ApiPublicCmsMediaFileRoute: ApiPublicCmsMediaFileRoute,
 }
 export const routeTree = rootRouteImport

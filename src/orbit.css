@@ -1,0 +1,100 @@
+/* Product orbit navigation (src/components/orbit/ProductOrbit.tsx): the product is the sun at the centre and its
+   departments circle it on tilted rings. The copy sits on the inline-start side, the orbit on the inline-end side;
+   on narrow screens they stack and the named list sits under the orbit. Every rule is scoped under .porb so the
+   imported page styles around it never reach in, and the reduced-motion block removes all movement. */
+.porb{--porb-sun-x:30%;position:relative;isolation:isolate;overflow:hidden;background:var(--dark);color:var(--light);padding-block:56px 52px;font-family:'IBM Plex Sans Arabic',var(--font-sans,system-ui),sans-serif}
+[dir="ltr"] .porb{--porb-sun-x:70%}
+.porb *{box-sizing:border-box;letter-spacing:0}
+.porb .porb-sky{position:absolute;inset:0;z-index:-1;pointer-events:none;background:
+  radial-gradient(52% 78% at var(--porb-sun-x) 52%,color-mix(in oklab,var(--mint) 24%,transparent) 0%,color-mix(in oklab,var(--primary) 15%,transparent) 32%,transparent 66%),
+  radial-gradient(1px 1px at 14% 22%,color-mix(in oklab,var(--mint) 55%,transparent),transparent),
+  radial-gradient(1px 1px at 82% 16%,color-mix(in oklab,var(--mint) 40%,transparent),transparent),
+  radial-gradient(1px 1px at 64% 82%,color-mix(in oklab,var(--mint) 45%,transparent),transparent),
+  radial-gradient(1px 1px at 28% 76%,color-mix(in oklab,var(--mint) 35%,transparent),transparent),
+  radial-gradient(1px 1px at 92% 60%,color-mix(in oklab,var(--mint) 35%,transparent),transparent),
+  radial-gradient(1px 1px at 6% 58%,color-mix(in oklab,var(--mint) 30%,transparent),transparent),
+  linear-gradient(180deg,color-mix(in oklab,var(--dark) 100%,transparent),color-mix(in oklab,var(--deep) 30%,var(--dark)))}
+.porb .porb-sky::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:linear-gradient(90deg,transparent,color-mix(in oklab,var(--mint) 40%,transparent),transparent)}
+
+.porb .porb-wrap{max-width:1280px;margin-inline:auto;padding-inline:24px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-areas:"head stage" "legend stage";column-gap:48px;row-gap:24px;align-items:start}
+.porb .porb-head{grid-area:head;align-self:end;padding-top:12px}
+.porb .porb-stage{grid-area:stage;position:relative;height:520px;container-type:size}
+.porb .porb-legend{grid-area:legend}
+
+/* Copy */
+.porb .porb-eyebrow{display:inline-flex;align-items:center;gap:10px;margin:0 0 16px;padding:6px 14px 6px 6px;border:1px solid color-mix(in oklab,var(--mint) 30%,transparent);border-radius:999px;background:color-mix(in oklab,var(--mint) 8%,transparent);color:var(--mint);font-size:13.5px;font-weight:700;line-height:1.2}
+[dir="rtl"] .porb .porb-eyebrow{padding:6px 6px 6px 14px}
+.porb .porb-eyebrow-mark{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in oklab,var(--mint) 18%,transparent);color:var(--paper2);--di-accent:var(--mint)}
+.porb .porb-eyebrow-mark .digit-icon{width:20px;height:20px}
+.porb .porb-title{margin:0 0 14px;color:var(--paper2);font-size:clamp(32px,3.6vw,48px);line-height:1.15;font-weight:700}
+.porb .porb-lede{margin:0 0 16px;max-width:52ch;color:color-mix(in oklab,var(--light) 82%,transparent);font-size:18px;line-height:1.75}
+.porb .porb-hint{margin:0;color:color-mix(in oklab,var(--light) 64%,transparent);font-size:14px;line-height:1.7}
+.porb .porb-hint strong{color:var(--mint);font-weight:700}
+
+/* Named list (the accessible navigation); hovering a name lights its module in the orbit. */
+.porb .porb-legend ul{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
+.porb .porb-legend li{margin:0}
+.porb .porb-pill{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:6px 14px 6px 8px;border:1px solid color-mix(in oklab,var(--mint) 24%,transparent);border-radius:999px;background:color-mix(in oklab,var(--paper2) 5%,transparent);color:var(--light);font-size:14px;font-weight:600;line-height:1.25;text-decoration:none;transition:background-color .18s ease,border-color .18s ease,color .18s ease,transform .18s ease;--di-accent:var(--mint)}
+[dir="rtl"] .porb .porb-pill{padding:6px 8px 6px 14px}
+.porb .porb-pill .digit-icon{flex:none;width:24px;height:24px;color:var(--paper2)}
+.porb .porb-pill:hover,.porb .porb-pill.is-active{background:color-mix(in oklab,var(--mint) 16%,transparent);border-color:color-mix(in oklab,var(--mint) 80%,transparent);color:var(--paper2);transform:translateY(-1px)}
+.porb .porb-pill:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+
+/* Orbit */
+.porb .porb-lines{position:absolute;inset:0;overflow:visible;pointer-events:none}
+.porb .porb-ring{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);border:1px solid color-mix(in oklab,var(--mint) 16%,transparent);border-radius:50%;pointer-events:none}
+.porb .porb-ring + .porb-ring{border-color:color-mix(in oklab,var(--mint) 10%,transparent);border-style:dashed}
+.porb .porb-core{position:absolute;left:50%;top:50%;z-index:80;transform:translate(-50%,-50%);display:grid;place-items:center;pointer-events:none}
+.porb .porb-halo{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,color-mix(in oklab,var(--mint) 42%,transparent) 0%,color-mix(in oklab,var(--primary) 18%,transparent) 42%,transparent 70%);animation:porb-breathe 6s ease-in-out infinite}
+.porb .porb-halo::before{content:"";position:absolute;inset:-60px;border-radius:50%;opacity:.55;mix-blend-mode:screen;background:conic-gradient(from 0deg,transparent 0 12deg,color-mix(in oklab,var(--mint) 18%,transparent) 24deg,transparent 36deg 96deg,color-mix(in oklab,var(--mint) 16%,transparent) 108deg,transparent 120deg 190deg,color-mix(in oklab,var(--mint) 14%,transparent) 202deg,transparent 214deg 290deg,color-mix(in oklab,var(--mint) 15%,transparent) 302deg,transparent 314deg);-webkit-mask:radial-gradient(circle,transparent 70px,#000 110px,transparent 210px);mask:radial-gradient(circle,transparent 70px,#000 110px,transparent 210px);animation:porb-spin 52s linear infinite}
+.porb .porb-disc{position:relative;display:grid;place-items:center;width:128px;height:128px;border-radius:50%;border:1px solid color-mix(in oklab,var(--mint) 60%,transparent);background:radial-gradient(circle at 50% 30%,color-mix(in oklab,var(--deep) 80%,var(--dark)),var(--dark));box-shadow:0 0 0 7px color-mix(in oklab,var(--mint) 7%,transparent),0 0 60px color-mix(in oklab,var(--mint) 48%,transparent),0 0 130px color-mix(in oklab,var(--mint) 24%,transparent),inset 0 2px 0 color-mix(in oklab,var(--paper2) 14%,transparent);color:var(--paper2);--di-accent:var(--mint);animation:porb-pulse 6s ease-in-out infinite}
+.porb .porb-disc .digit-icon{width:64px;height:64px;filter:drop-shadow(0 0 12px color-mix(in oklab,var(--mint) 70%,transparent))}
+.porb .porb-core-name{position:absolute;top:calc(100% + 12px);white-space:nowrap;padding:4px 12px;border-radius:999px;background:color-mix(in oklab,var(--dark) 70%,transparent);border:1px solid color-mix(in oklab,var(--mint) 30%,transparent);color:var(--mint);font-size:13px;font-weight:700;line-height:1.3;direction:ltr}
+.porb .porb-chip{position:absolute;left:0;top:0;z-index:90;display:grid;place-items:center;width:66px;height:66px;border-radius:20px;border:1px solid color-mix(in oklab,var(--mint) 36%,transparent);background:linear-gradient(160deg,color-mix(in oklab,var(--deep) 70%,var(--dark)),var(--dark));box-shadow:0 10px 28px color-mix(in oklab,black 50%,transparent),0 0 20px color-mix(in oklab,var(--mint) 14%,transparent),inset 0 1px 0 color-mix(in oklab,var(--paper2) 8%,transparent);color:var(--paper2);--di-accent:var(--mint);text-decoration:none;cursor:pointer;opacity:0;transform:translate(-50%,-50%) translate(calc(50cqw + var(--ox) * 0.3cqw),calc(50cqh + var(--oy) * 0.3cqh)) scale(.6);will-change:transform,opacity;transition:border-color .18s ease,box-shadow .18s ease}
+.porb .porb-chip .digit-icon{width:38px;height:38px;filter:drop-shadow(0 0 6px color-mix(in oklab,var(--mint) 45%,transparent))}
+.porb .porb-chip[data-active]{border-color:var(--mint);box-shadow:0 12px 30px color-mix(in oklab,black 50%,transparent),0 0 44px color-mix(in oklab,var(--mint) 50%,transparent),inset 0 1px 0 color-mix(in oklab,var(--paper2) 12%,transparent)}
+.porb .porb-tip{position:absolute;top:calc(100% + 12px);left:50%;transform:translate(-50%,-4px);white-space:nowrap;padding:7px 14px;border-radius:999px;background:var(--paper2);color:var(--deep);font-size:14px;font-weight:700;line-height:1.2;box-shadow:0 10px 26px color-mix(in oklab,black 45%,transparent),0 0 0 1px color-mix(in oklab,var(--mint) 55%,transparent);opacity:0;pointer-events:none;transition:opacity .18s ease,transform .18s ease}
+.porb .porb-tip::before{content:"";position:absolute;bottom:100%;left:50%;margin-left:-6px;border:6px solid transparent;border-bottom-color:var(--paper2)}
+.porb .porb-chip[data-active] .porb-tip{opacity:1;transform:translate(-50%,0)}
+
+/* Entrance: copy lifts in (never transparent), the sun pops, rings open. */
+.porb .porb-head > *{animation:porb-lift .9s cubic-bezier(.2,.7,.2,1) backwards}
+.porb .porb-head > :nth-child(2){animation-delay:.08s}
+.porb .porb-head > :nth-child(3){animation-delay:.16s}
+.porb .porb-head > :nth-child(4){animation-delay:.24s}
+.porb .porb-legend li{animation:porb-lift .8s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(.3s + var(--i,0) * 40ms)}
+.porb .porb-ring{animation:porb-ring-in 1.4s cubic-bezier(.2,.7,.2,1) backwards}
+.porb .porb-ring + .porb-ring{animation-delay:.15s}
+.porb .porb-disc{animation:porb-pop 1s cubic-bezier(.34,1.56,.64,1) backwards,porb-pulse 6s ease-in-out 1s infinite}
+
+@keyframes porb-lift{from{transform:translateY(16px)}to{transform:none}}
+@keyframes porb-pop{from{transform:scale(.6)}to{transform:none}}
+@keyframes porb-ring-in{from{transform:translate(-50%,-50%) scale(.4);opacity:0}to{transform:translate(-50%,-50%);opacity:1}}
+@keyframes porb-breathe{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.08);opacity:1}}
+@keyframes porb-spin{to{transform:rotate(360deg)}}
+@keyframes porb-pulse{0%,100%{box-shadow:0 0 0 7px color-mix(in oklab,var(--mint) 7%,transparent),0 0 60px color-mix(in oklab,var(--mint) 44%,transparent),0 0 130px color-mix(in oklab,var(--mint) 22%,transparent)}50%{box-shadow:0 0 0 10px color-mix(in oklab,var(--mint) 10%,transparent),0 0 84px color-mix(in oklab,var(--mint) 60%,transparent),0 0 160px color-mix(in oklab,var(--mint) 32%,transparent)}}
+
+@media (max-width:1023px){
+  .porb{padding-block:40px 36px}
+  .porb .porb-wrap{grid-template-columns:minmax(0,1fr);grid-template-areas:"head" "stage" "legend";row-gap:20px}
+  .porb .porb-head{align-self:start;padding-top:0}
+  .porb .porb-stage{height:400px}
+  .porb .porb-legend ul{justify-content:center}
+  .porb{--porb-sun-x:50%}
+}
+@media (max-width:640px){
+  .porb .porb-stage{height:330px}
+  .porb .porb-chip{width:50px;height:50px;border-radius:16px}
+  .porb .porb-chip .digit-icon{width:28px;height:28px}
+  .porb .porb-disc{width:92px;height:92px}
+  .porb .porb-disc .digit-icon{width:46px;height:46px}
+  .porb .porb-core-name{top:calc(100% + 8px);font-size:12px}
+  .porb .porb-halo{width:220px;height:220px}
+  .porb .porb-tip{font-size:13px;padding:6px 12px}
+  .porb .porb-lede{font-size:16px}
+  .porb .porb-pill{font-size:13px;min-height:38px}
+}
+@media (prefers-reduced-motion:reduce){
+  .porb .porb-halo,.porb .porb-halo::before,.porb .porb-disc,.porb .porb-ring,.porb .porb-head > *,.porb .porb-legend li{animation:none!important}
+  .porb .porb-pill{transition:none}
+}
