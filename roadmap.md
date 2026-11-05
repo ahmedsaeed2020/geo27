@@ -10,7 +10,8 @@
 - [ ] (awaiting owner approval) One shared path normaliser (bare/en strip) and one bilingual t() helper instead of copies in catalog, pro-pages, sitemap and content files.
 - [ ] (awaiting owner approval) Chat widget: show a retry state when history fails to load instead of swallowing the error.
 - [ ] (awaiting owner approval) Footer colours to design tokens; split SpecialistBody / HubStories once tests exist.
-- [ ] SEO: read current findings, fix every actionable item (metadata, sitemap, structured data, internal links) so Google can index faster.
+- [x] SEO: read current findings, fix every actionable item (metadata, sitemap, structured data, internal links) so Google can index faster.
+- [ ] (owner) After publishing: submit https://digit-erp.com/sitemap.xml in Google Search Console and request indexing of the main overview pages.
 
 # Award-level motion & interaction (owner brief 2026-11-05, preview only)
 - [x] Shared motion system: per-product entrance identities (Pro, HR x7 arts, Construction, CRM, POS, FSM, site), home orbit/slider first-load beats, scroll reveals and step sequences, home product theater, mega-menu indicator/preview crossfade, lightbox grow-out, section rail, page view transitions.
