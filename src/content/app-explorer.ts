@@ -20,7 +20,7 @@ const CORE: App[] = [
 const SPECIALIST_ROLE: Record<string, string> = { construction: 'Projects', crm: 'Sales', fsm: 'Service' };
 const DEPARTMENT_APPS: App[] = [
   ...HR_INDEX.map(m => ({ path: `/hr/${m.slug}`, ar: m.label.ar, en: m.label.en, group: 'hr', role: 'HR', problem: 'people', industry: 'all' })),
-  ...SPECIALIST_INDEX.map(d => ({ path: specialistPath(d), ar: d.label.ar, en: d.label.en, group: d.product, role: SPECIALIST_ROLE[d.product] ?? 'Owner', problem: d.product === 'construction' ? 'projects' : 'visibility', industry: d.product === 'construction' ? 'contracting' : 'all' })),
+  ...SPECIALIST_INDEX.filter(d => d.product === 'construction').map(d => ({ path: specialistPath(d), ar: d.label.ar, en: d.label.en, group: d.product, role: SPECIALIST_ROLE[d.product] ?? 'Owner', problem: d.product === 'construction' ? 'projects' : 'visibility', industry: d.product === 'construction' ? 'contracting' : 'all' })),
 ];
 
 export const APPS: App[] = [...CORE, ...DEPARTMENT_APPS];
