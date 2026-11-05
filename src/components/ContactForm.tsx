@@ -22,6 +22,7 @@ const COPY = {
     demo: "احجز ديمو Digit",
     consultation: "استشارة",
     scope: "مناقشة نطاق العمل",
+    quote: "عرض سعر",
     jobRole: "دورك الوظيفي",
     message: "رسالتك",
     optional: " (اختياري)",
@@ -49,6 +50,7 @@ const COPY = {
     demo: "Book Digit demo",
     consultation: "Consultation",
     scope: "Discuss scope",
+    quote: "Price quote",
     jobRole: "Job role",
     message: "Your message",
     optional: " (optional)",
@@ -68,7 +70,7 @@ const COPY = {
 } as const;
 
 /** Contextual lead form. Field visibility and copy come from the published form settings; `demo` renders it without submitting. */
-export default function ContactForm({ kind, interest = '', demo = false, product, department }: { kind: "contact" | "demo"; interest?: string; demo?: boolean; product?: string; department?: string }) {
+export default function ContactForm({ kind, interest = '', demo = false, product, department }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string }) {
   const locale = useLocale();
   const t = COPY[locale];
   const settings = useSiteConfig().forms;
@@ -87,7 +89,9 @@ export default function ContactForm({ kind, interest = '', demo = false, product
     const element = event.currentTarget;
     const form = new FormData(element);
     // Product and department come from the page (or a department card that opened the form), never from the visitor.
-    const pageContext = contextForPath(window.location.pathname);
+    // On the standalone demo/quote pages the page that sent the visitor (?from=) names the product.
+    const from = new URLSearchParams(window.location.search).get('from');
+    const pageContext = contextForPath(from && from.startsWith('/') ? from : window.location.pathname);
     const chosenProduct = element.dataset['leadProduct'] ?? product ?? pageContext.product;
     const chosenDepartment = element.dataset['leadProduct'] !== undefined ? element.dataset['leadDepartment'] ?? '' : department ?? pageContext.department;
     const jobRole = String(form.get('jobRole') ?? '').trim();
@@ -99,10 +103,10 @@ export default function ContactForm({ kind, interest = '', demo = false, product
       company: form.get("company"),
       message,
       interest: settings.showInterest ? form.get('interest') ?? '' : interest,
-      requestType: settings.showRequestType ? form.get('requestType') : kind === 'demo' ? 'demo' : 'consultation',
+      requestType: settings.showRequestType ? form.get('requestType') : kind === 'contact' ? 'consultation' : kind,
       jobRole,
       locale,
-      pagePath: window.location.pathname,
+      pagePath: from && from.startsWith('/') ? from.slice(0, 300) : window.location.pathname,
       product: chosenProduct,
       department: chosenDepartment,
       topic: element.dataset['leadTopic'] ?? '',
@@ -170,10 +174,11 @@ export default function ContactForm({ kind, interest = '', demo = false, product
         {settings.showRequestType && (
           <label>
             {t.requestType}
-            <select name="requestType" defaultValue={kind === 'demo' ? 'demo' : 'consultation'} className="h-10 w-full rounded-md border border-input bg-background px-3">
+            <select name="requestType" defaultValue={kind === 'contact' ? 'consultation' : kind} className="h-10 w-full rounded-md border border-input bg-background px-3">
               <option value="demo">{t.demo}</option>
               <option value="consultation">{t.consultation}</option>
               <option value="scope">{t.scope}</option>
+              <option value="quote">{t.quote}</option>
             </select>
           </label>
         )}

@@ -29,6 +29,7 @@ import { Route as ModulesRouteImport } from './routes/modules'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ProRouteImport } from './routes/pro'
+import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
 import { Route as ServicesRouteImport } from './routes/services'
@@ -59,6 +60,7 @@ import { Route as EnModulesRouteImport } from './routes/en.modules'
 import { Route as EnPartnershipRouteImport } from './routes/en.partnership'
 import { Route as EnPricingRouteImport } from './routes/en.pricing'
 import { Route as EnProRouteImport } from './routes/en.pro'
+import { Route as EnQuoteRouteImport } from './routes/en.quote'
 import { Route as EnResourcesRouteImport } from './routes/en.resources'
 import { Route as EnSaudiLocalizationRouteImport } from './routes/en.saudi-localization'
 import { Route as EnServicesRouteImport } from './routes/en.services'
@@ -279,6 +281,11 @@ const ProRoute = ProRouteImport.update({
   path: '/pro',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuoteRoute = QuoteRouteImport.update({
+  id: '/quote',
+  path: '/quote',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
@@ -427,6 +434,11 @@ const EnPricingRoute = EnPricingRouteImport.update({
 const EnProRoute = EnProRouteImport.update({
   id: '/pro',
   path: '/pro',
+  getParentRoute: () => EnRoute,
+} as any)
+const EnQuoteRoute = EnQuoteRouteImport.update({
+  id: '/quote',
+  path: '/quote',
   getParentRoute: () => EnRoute,
 } as any)
 const EnResourcesRoute = EnResourcesRouteImport.update({
@@ -1074,6 +1086,7 @@ export interface FileRoutesByFullPath {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
@@ -1102,6 +1115,7 @@ export interface FileRoutesByFullPath {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/quote': typeof EnQuoteRoute
   '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
@@ -1242,6 +1256,7 @@ export interface FileRoutesByTo {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
@@ -1267,6 +1282,7 @@ export interface FileRoutesByTo {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/quote': typeof EnQuoteRoute
   '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
@@ -1411,6 +1427,7 @@ export interface FileRoutesById {
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
   '/pro': typeof ProRoute
+  '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services': typeof ServicesRouteWithChildren
@@ -1439,6 +1456,7 @@ export interface FileRoutesById {
   '/en/partnership': typeof EnPartnershipRoute
   '/en/pricing': typeof EnPricingRoute
   '/en/pro': typeof EnProRoute
+  '/en/quote': typeof EnQuoteRoute
   '/en/resources': typeof EnResourcesRoute
   '/en/saudi-localization': typeof EnSaudiLocalizationRoute
   '/en/services': typeof EnServicesRouteWithChildren
@@ -1584,6 +1602,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/quote'
     | '/resources'
     | '/saudi-localization'
     | '/services'
@@ -1612,6 +1631,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/quote'
     | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
@@ -1752,6 +1772,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/quote'
     | '/resources'
     | '/saudi-localization'
     | '/services'
@@ -1777,6 +1798,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/quote'
     | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
@@ -1920,6 +1942,7 @@ export interface FileRouteTypes {
     | '/partnership'
     | '/pricing'
     | '/pro'
+    | '/quote'
     | '/resources'
     | '/saudi-localization'
     | '/services'
@@ -1948,6 +1971,7 @@ export interface FileRouteTypes {
     | '/en/partnership'
     | '/en/pricing'
     | '/en/pro'
+    | '/en/quote'
     | '/en/resources'
     | '/en/saudi-localization'
     | '/en/services'
@@ -2093,6 +2117,7 @@ export interface RootRouteChildren {
   PartnershipRoute: typeof PartnershipRoute
   PricingRoute: typeof PricingRoute
   ProRoute: typeof ProRoute
+  QuoteRoute: typeof QuoteRoute
   ResourcesRoute: typeof ResourcesRoute
   SaudiLocalizationRoute: typeof SaudiLocalizationRoute
   ServicesRoute: typeof ServicesRouteWithChildren
@@ -2262,6 +2287,13 @@ declare module '@tanstack/react-router' {
       path: '/pro'
       fullPath: '/pro'
       preLoaderRoute: typeof ProRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/quote': {
+      id: '/quote'
+      path: '/quote'
+      fullPath: '/quote'
+      preLoaderRoute: typeof QuoteRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/resources': {
@@ -2472,6 +2504,13 @@ declare module '@tanstack/react-router' {
       path: '/pro'
       fullPath: '/en/pro'
       preLoaderRoute: typeof EnProRouteImport
+      parentRoute: typeof EnRoute
+    }
+    '/en/quote': {
+      id: '/en/quote'
+      path: '/quote'
+      fullPath: '/en/quote'
+      preLoaderRoute: typeof EnQuoteRouteImport
       parentRoute: typeof EnRoute
     }
     '/en/resources': {
@@ -3467,6 +3506,7 @@ interface EnRouteChildren {
   EnPartnershipRoute: typeof EnPartnershipRoute
   EnPricingRoute: typeof EnPricingRoute
   EnProRoute: typeof EnProRoute
+  EnQuoteRoute: typeof EnQuoteRoute
   EnResourcesRoute: typeof EnResourcesRoute
   EnSaudiLocalizationRoute: typeof EnSaudiLocalizationRoute
   EnServicesRoute: typeof EnServicesRouteWithChildren
@@ -3510,6 +3550,7 @@ const EnRouteChildren: EnRouteChildren = {
   EnPartnershipRoute: EnPartnershipRoute,
   EnPricingRoute: EnPricingRoute,
   EnProRoute: EnProRoute,
+  EnQuoteRoute: EnQuoteRoute,
   EnResourcesRoute: EnResourcesRoute,
   EnSaudiLocalizationRoute: EnSaudiLocalizationRoute,
   EnServicesRoute: EnServicesRouteWithChildren,
@@ -3682,6 +3723,7 @@ const rootRouteChildren: RootRouteChildren = {
   PartnershipRoute: PartnershipRoute,
   PricingRoute: PricingRoute,
   ProRoute: ProRoute,
+  QuoteRoute: QuoteRoute,
   ResourcesRoute: ResourcesRoute,
   SaudiLocalizationRoute: SaudiLocalizationRoute,
   ServicesRoute: ServicesRouteWithChildren,
