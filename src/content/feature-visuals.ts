@@ -14,7 +14,7 @@ export type FeatureVisual =
   | { kind: "screen"; id: string; caption?: L }
   | { kind: "icons"; caption: L; items: { icon: "api" | "store" | "payment" | "sync"; label: L }[] };
 
-const scene = scenes as Record<string, { background: string; body: string }>;
+const scene = scenes as Record<"trust-security" | "services-3-hosting", { background: string; body: string }>;
 
 export const FEATURE_VISUALS: Record<string, FeatureVisual> = {
   // التوقيع الرقمي

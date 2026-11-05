@@ -129,9 +129,10 @@ function RenderSourceNode({ node, pageKey }: RenderProps) {
     const children = node.children ?? [];
     const split = layout.split?.id === node.id ? layout.split : undefined;
     let body: ReactNode;
-    if (split?.mode === "first-child" && children.length) {
+    const firstChild = children[0];
+    if (split?.mode === "first-child" && firstChild) {
       body = <>
-        <div className="scene-split-head"><RenderNode node={children[0]} pageKey={pageKey} /><SplitPhotoFigure photo={split} /></div>
+        <div className="scene-split-head"><RenderNode node={firstChild} pageKey={pageKey} /><SplitPhotoFigure photo={split} /></div>
         {children.slice(1).map(child => <RenderNode node={child} pageKey={pageKey} key={child.id} />)}
       </>;
     } else if (split?.mode === "run") {
