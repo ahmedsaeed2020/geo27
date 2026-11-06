@@ -85,6 +85,13 @@
       "when": 1793801270252,
       "tag": "0011_contact_requests_topic",
       "breakpoints": true
+    },
+    {
+      "idx": 12,
+      "version": "7",
+      "when": 1793967896915,
+      "tag": "0012_close_direct_visitor_chat_access",
+      "breakpoints": true
     }
   ]
 }
