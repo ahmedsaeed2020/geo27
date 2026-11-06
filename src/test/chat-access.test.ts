@@ -1,4 +1,3 @@
-// @vitest-environment node
 import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { createClient } from '@supabase/supabase-js';
@@ -8,8 +7,10 @@ const env = Object.fromEntries(readFileSync('.env', 'utf8').split('\n').filter(l
   const at = line.indexOf('=');
   return [line.slice(0, at), line.slice(at + 1).trim().replace(/^["']|["']$/g, '')];
 }));
-const key = env.VITE_SUPABASE_PUBLISHABLE_KEY;
-const client = createClient(env.VITE_SUPABASE_URL, key, {
+const key = env['VITE_SUPABASE_PUBLISHABLE_KEY'];
+const url = env['VITE_SUPABASE_URL'];
+if (!key || !url) throw new Error('Missing public test configuration');
+const client = createClient(url, key, {
   auth: { persistSession: false, autoRefreshToken: false },
   global: { fetch: (input, init) => {
     const headers = new Headers(init?.headers);
