@@ -1,6 +1,6 @@
 # Orbit navigation, image audit, code review, SEO (owner 2026-11-05 18:38)
 - [x] Owner 2026-11-06: close anonymous direct chat-table access before publishing; preserve visitor-checked server handlers and CMS reads.
-- [ ] Owner 2026-11-06: publish the current site, verify Google ownership and submit the live sitemap.
+- [x] Owner 2026-11-06: published current site (live verification tag confirmed), verified Google ownership, added the root property and submitted the sitemap successfully.
 - [x] Home orbit: every module chip shows its name on hover/focus and opens its page on click (HR, CRM, accounting, sales, reports, settings, dashboards, e-signature, ...); orbit look unchanged.
 - [x] Shared product orbit section (green sun with the product at the core, its departments orbiting, names on hover, click opens the page) added above the existing first fold — existing hero untouched — on Pro, HR, Construction, CRM, FSM + ITM, POS overviews and the all-modules page; AR/EN, keyboard, touch, reduced motion.
 - [x] /pro overview: replace the faded, unrelated people photo and the empty price card area with system-relevant visuals.
