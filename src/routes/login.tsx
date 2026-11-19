@@ -5,11 +5,14 @@ import { getSiteSession, siteSignIn } from "@/lib/siteAuth.functions";
 import { markSignedIn, withNetworkRetry } from "@/lib/siteGate";
 
 type Search = { redirect?: string | undefined };
-const safe = (r?: string) => (r && r.startsWith("/") && !r.startsWith("//") && !r.startsWith("/login") ? r : "/");
+const safe = (r?: string) => (r && r.startsWith("/") && !r.startsWith("//") && !r.startsWith("/login") ? r : "/digit-crm/");
 
 export const Route = createFileRoute("/login")({
   validateSearch: (s: Record<string, unknown>): Search => ({ redirect: typeof s["redirect"] === "string" ? s["redirect"] : undefined }),
-  beforeLoad: () => { throw redirect({ href: "/auth" }); },
+  beforeLoad: async ({ search }) => {
+    const session = await withNetworkRetry(() => getSiteSession()).catch(() => ({ signedIn: false }));
+    if (session.signedIn) throw redirect({ href: safe(search.redirect) });
+  },
   head: () => ({
     meta: [
       { title: "Sign in — DIGIT Enterprise" },

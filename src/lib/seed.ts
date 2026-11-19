@@ -1,4 +1,5 @@
 import { seedCore } from "@/lib/coreShared/seed";
+import { isCrmDoctype, resetCrmOnce } from "@/lib/crmReset";
 import { isServerHosted } from "@/lib/serverHost";
 import { applyDemoRenames, resetRefIndex, resolveName, wasRenamed } from "./rename";
 import { arabizeSeed } from "@/lib/seedNamesAr";
@@ -181,7 +182,8 @@ export function seedErp() {
   // ledger rows from earlier seed versions were raw inserts; drop them so the posting engine is the only writer
   for (const g of adapter.list("GL Entry")) if (/^SYN-GL(E|2)?-/.test(g.name)) adapter.remove("GL Entry", g.name);
   for (const g of adapter.list("Stock Ledger Entry")) if (/^[A-Z]+-SLE-\d+-(IN|OUT)$/.test(g.name)) adapter.remove("Stock Ledger Entry", g.name);
-  const recs = records();
+  resetCrmOnce();
+  const recs = records().filter(([dt]) => !isCrmDoctype(dt));
   for (const [dt, name, data] of recs) {
     if (adapter.get(dt, name) || wasRenamed(dt, name) || gone.has(deletedKey(dt, name))) continue;
     adapter.insertDoc(dt, { ...data, name, __synthetic: 1 });
@@ -215,7 +217,7 @@ export function seedErp() {
   for (const [i, si] of adapter.list("Sales Invoice").slice(0, 6).entries()) {
     if (si["_user_tags"] === undefined) adapter.insertDocQuiet("Sales Invoice", { ...si, _assign: JSON.stringify(i % 2 ? ["Administrator"] : ["sales@example.test"]), _user_tags: i % 3 ? "Priority" : "Export,Priority", owner: si["owner"] ?? "Administrator" });
   }
-  for (const [dt, name, data] of shellRecords()) {
+  for (const [dt, name, data] of shellRecords().filter(([dt]) => !isCrmDoctype(dt))) {
     const cur = adapter.get(dt, name);
     // sample notifications/events saved before they carried an Arabic subject get it (seed-owned rows only, no Version)
     if (cur && cur["__synthetic"] && data["subject_ar"] && !cur["subject_ar"]) adapter.insertDocQuiet(dt, { ...cur, subject_ar: data["subject_ar"] });

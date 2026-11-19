@@ -69,7 +69,7 @@ export function Shell({ children, crumbs = [], sidebar, nav }: { children: React
   const unreadRaw = useUnreadNotifications();
   const hyd = useHydrated();
   const unread = hyd ? unreadRaw : 0;
-  useEffect(() => { if (!seeded) { seeded = true; seedErp(); } }, []);
+  useEffect(() => { if (!seeded) { seeded = true; seedErp(); void import("@/lib/crmReset").then((m) => m.syncSiteLeads()).catch(() => {}); } }, []);
   useActiveAppLocation();
   useSlotShellEffects();
   // active DIGIT app experience (enabled + active): its slots replace the module sidebar and breadcrumbs (display only)
