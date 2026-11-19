@@ -36,6 +36,20 @@
       "when": 1795099658495,
       "tag": "0004_landing_config_key",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1795103277243,
+      "tag": "0005_crm_markets",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1795103334684,
+      "tag": "0006_crm_manager_rules",
+      "breakpoints": true
     }
   ]
 }

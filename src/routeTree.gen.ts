@@ -25,6 +25,7 @@ import { Route as CustomizeFormRouteImport } from './routes/customize-form'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as Demo3RouteImport } from './routes/demo-3'
 import { Route as DeveloperRouteImport } from './routes/developer'
+import { Route as ERouteImport } from './routes/e'
 import { Route as EnRouteImport } from './routes/en'
 import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as FaqRouteImport } from './routes/faq'
@@ -41,6 +42,7 @@ import { Route as PrintviewRouteImport } from './routes/printview'
 import { Route as ProRouteImport } from './routes/pro'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as SRouteImport } from './routes/s'
 import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
 import { Route as Services3RouteImport } from './routes/services-3'
 import { Route as SettingsRouteImport } from './routes/settings'
@@ -401,6 +403,11 @@ const DeveloperRoute = DeveloperRouteImport.update({
   path: '/developer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ERoute = ERouteImport.update({
+  id: '/e',
+  path: '/e',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnRoute = EnRouteImport.update({
   id: '/en',
   path: '/en',
@@ -479,6 +486,11 @@ const QuoteRoute = QuoteRouteImport.update({
 const ResourcesRoute = ResourcesRouteImport.update({
   id: '/resources',
   path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SRoute = SRouteImport.update({
+  id: '/s',
+  path: '/s',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SaudiLocalizationRoute = SaudiLocalizationRouteImport.update({
@@ -1935,6 +1947,7 @@ export interface FileRoutesByFullPath {
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
   '/developer': typeof DeveloperRouteWithChildren
+  '/e': typeof ERoute
   '/en': typeof EnRouteWithChildren
   '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
@@ -1951,6 +1964,7 @@ export interface FileRoutesByFullPath {
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
+  '/s': typeof SRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services-3': typeof Services3RouteWithChildren
   '/settings': typeof SettingsRoute
@@ -2248,6 +2262,7 @@ export interface FileRoutesByTo {
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
   '/developer': typeof DeveloperRouteWithChildren
+  '/e': typeof ERoute
   '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
@@ -2260,6 +2275,7 @@ export interface FileRoutesByTo {
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
+  '/s': typeof SRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -2554,6 +2570,7 @@ export interface FileRoutesById {
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
   '/developer': typeof DeveloperRouteWithChildren
+  '/e': typeof ERoute
   '/en': typeof EnRouteWithChildren
   '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
@@ -2570,6 +2587,7 @@ export interface FileRoutesById {
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
+  '/s': typeof SRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services-3': typeof Services3RouteWithChildren
   '/settings': typeof SettingsRoute
@@ -2869,6 +2887,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/demo-3'
     | '/developer'
+    | '/e'
     | '/en'
     | '/enterprise'
     | '/faq'
@@ -2885,6 +2904,7 @@ export interface FileRouteTypes {
     | '/pro'
     | '/quote'
     | '/resources'
+    | '/s'
     | '/saudi-localization'
     | '/services-3'
     | '/settings'
@@ -3182,6 +3202,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/demo-3'
     | '/developer'
+    | '/e'
     | '/enterprise'
     | '/faq'
     | '/features'
@@ -3194,6 +3215,7 @@ export interface FileRouteTypes {
     | '/pro'
     | '/quote'
     | '/resources'
+    | '/s'
     | '/saudi-localization'
     | '/settings'
     | '/sitemap.xml'
@@ -3487,6 +3509,7 @@ export interface FileRouteTypes {
     | '/demo'
     | '/demo-3'
     | '/developer'
+    | '/e'
     | '/en'
     | '/enterprise'
     | '/faq'
@@ -3503,6 +3526,7 @@ export interface FileRouteTypes {
     | '/pro'
     | '/quote'
     | '/resources'
+    | '/s'
     | '/saudi-localization'
     | '/services-3'
     | '/settings'
@@ -3802,6 +3826,7 @@ export interface RootRouteChildren {
   DemoRoute: typeof DemoRoute
   Demo3Route: typeof Demo3Route
   DeveloperRoute: typeof DeveloperRouteWithChildren
+  ERoute: typeof ERoute
   EnRoute: typeof EnRouteWithChildren
   EnterpriseRoute: typeof EnterpriseRoute
   FaqRoute: typeof FaqRoute
@@ -3818,6 +3843,7 @@ export interface RootRouteChildren {
   ProRoute: typeof ProRoute
   QuoteRoute: typeof QuoteRoute
   ResourcesRoute: typeof ResourcesRoute
+  SRoute: typeof SRoute
   SaudiLocalizationRoute: typeof SaudiLocalizationRoute
   Services3Route: typeof Services3RouteWithChildren
   SettingsRoute: typeof SettingsRoute
@@ -4073,6 +4099,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DeveloperRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/e': {
+      id: '/e'
+      path: '/e'
+      fullPath: '/e'
+      preLoaderRoute: typeof ERouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en': {
       id: '/en'
       path: '/en'
@@ -4183,6 +4216,13 @@ declare module '@tanstack/react-router' {
       path: '/resources'
       fullPath: '/resources'
       preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/s': {
+      id: '/s'
+      path: '/s'
+      fullPath: '/s'
+      preLoaderRoute: typeof SRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/saudi-localization': {
@@ -6582,6 +6622,7 @@ const rootRouteChildren: RootRouteChildren = {
   DemoRoute: DemoRoute,
   Demo3Route: Demo3Route,
   DeveloperRoute: DeveloperRouteWithChildren,
+  ERoute: ERoute,
   EnRoute: EnRouteWithChildren,
   EnterpriseRoute: EnterpriseRoute,
   FaqRoute: FaqRoute,
@@ -6598,6 +6639,7 @@ const rootRouteChildren: RootRouteChildren = {
   ProRoute: ProRoute,
   QuoteRoute: QuoteRoute,
   ResourcesRoute: ResourcesRoute,
+  SRoute: SRoute,
   SaudiLocalizationRoute: SaudiLocalizationRoute,
   Services3Route: Services3RouteWithChildren,
   SettingsRoute: SettingsRoute,

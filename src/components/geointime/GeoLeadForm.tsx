@@ -7,7 +7,8 @@ import { leadSchema } from '@/lib/leads-schema';
 import { captureAttribution } from '@/lib/campaign-attribution';
 import { useSiteConfig } from '@/components/cms/CmsContext';
 import { GEO_CHALLENGES, GEO_COPY, type GeoChallenge, type GeoLocale } from '@/content/geointime';
-import { geoWhatsAppMessage, geoWhatsAppUrl, isGeoChallenge, isValidGeoPhone } from '@/lib/geointime-lead';
+import { geoMarketFromPath, geoWhatsAppMessage, geoWhatsAppUrl, isGeoChallenge, isValidGeoPhone, normalizeMarketPhone } from '@/lib/geointime-lead';
+import { useLocation } from '@tanstack/react-router';
 
 type State = { kind: 'idle' | 'sending' | 'error' } | { kind: 'success'; whatsapp: string };
 
@@ -23,6 +24,7 @@ export default function GeoLeadForm({ locale, challenge, onChallenge }: { locale
   const roleRequired = forms.showJobRole && forms.requireJobRole;
   const saveLead = useServerFn(submitLead);
   const hydrated = useHydrated();
+  const market = geoMarketFromPath(useLocation().pathname);
   const [state, setState] = useState<State>({ kind: 'idle' });
   const [invalid, setInvalid] = useState<{ field: string; message: string } | null>(null);
 
@@ -31,21 +33,22 @@ export default function GeoLeadForm({ locale, challenge, onChallenge }: { locale
     const element = event.currentTarget;
     const form = new FormData(element);
     const read = (key: string) => String(form.get(key) ?? '').trim();
-    const name = read('name'), company = read('company'), phone = read('phone'), role = read('role'), picked = read('challenge');
+    const name = read('name'), company = read('company'), rawPhone = read('phone'), role = read('role'), picked = read('challenge');
     const fail = (field: string, message: string) => {
       setInvalid({ field, message });
       element.querySelector<HTMLElement>(`[name="${field}"]`)?.focus();
     };
     if (name.length < 2) return fail('name', t.missingIdentity);
     if (company.length < 2) return fail('company', t.missingIdentity);
-    if (!isValidGeoPhone(phone)) return fail('phone', t.badPhone);
+    if (!isValidGeoPhone(rawPhone, market)) return fail('phone', t.badPhone);
+    const phone = market ? normalizeMarketPhone(rawPhone, market)! : rawPhone;
     if (roleRequired && !role) return fail('role', t.missingRole);
     if (!isGeoChallenge(picked)) return fail('challenge', t.missingChallenge);
     if (form.get('consent') !== 'on') return fail('consent', t.missingConsent);
     const label = t.challenges[picked];
     const parsed = leadSchema.safeParse({
       name, company, email: '', phone, interest: `GeoInTime · ${label}`, requestType: 'demo', jobRole: role,
-      message: `GeoInTime — ${label}`, locale, pagePath: window.location.pathname, product: '', department: '', topic: '',
+      message: `GeoInTime — ${label}${market ? ` · ${market === 'eg' ? 'Egypt' : 'Saudi Arabia'}` : ''}`, locale, pagePath: window.location.pathname, product: '', department: '', topic: '',
       ...captureAttribution(), consent: true, website: read('website'),
     });
     if (!parsed.success) return fail('phone', t.badPhone);
@@ -76,7 +79,7 @@ export default function GeoLeadForm({ locale, challenge, onChallenge }: { locale
     <form className="geo-form" onSubmit={handleSubmit} method="post" noValidate aria-label={`${t.title} ${t.titleB}`}>
       <div className="geo-field"><label htmlFor={`${id}-name`}>{t.name} <span aria-hidden="true">*</span></label><input id={`${id}-name`} name="name" type="text" autoComplete="name" required minLength={2} maxLength={100} placeholder={t.namePh} {...err('name')} /></div>
       <div className="geo-field"><label htmlFor={`${id}-company`}>{t.company} <span aria-hidden="true">*</span></label><input id={`${id}-company`} name="company" type="text" autoComplete="organization" required minLength={2} maxLength={160} placeholder={t.companyPh} {...err('company')} /></div>
-      <div className="geo-field"><label htmlFor={`${id}-phone`}>{t.phone} <span aria-hidden="true">*</span></label><input id={`${id}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" dir="ltr" required maxLength={22} placeholder={t.phonePh} {...err('phone')} /></div>
+      <div className="geo-field"><label htmlFor={`${id}-phone`}>{t.phone} <span aria-hidden="true">*</span></label><input id={`${id}-phone`} name="phone" type="tel" inputMode="tel" autoComplete="tel" dir="ltr" required maxLength={22} placeholder={market === 'eg' ? '01xxxxxxxxx (+20)' : market === 'sa' ? '05xxxxxxxx (+966)' : t.phonePh} {...err('phone')} /></div>
       <div className="geo-field"><label htmlFor={`${id}-role`}>{t.role}{roleRequired && <span aria-hidden="true"> *</span>}</label>
         <select id={`${id}-role`} name="role" defaultValue="" required={roleRequired} {...err('role')}><option value="">{t.rolePh}</option>{t.roles.map(r => <option key={r} value={r}>{r}</option>)}</select>
       </div>

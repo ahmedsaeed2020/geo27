@@ -48,3 +48,18 @@ describe('GeoInTime landing lead rules', () => {
     for (const banned of ['تجريبي', 'مؤقت', 'نموذج تصميم', 'prototype', 'DIGIT', 'Digit']) expect(text).not.toContain(banned);
   });
 });
+
+import { geoMarketFromPath, normalizeMarketPhone } from '@/lib/geointime-lead';
+describe('market landings', () => {
+  it('maps /s to Saudi and /e to Egypt', () => {
+    expect(geoMarketFromPath('/s')).toBe('sa');
+    expect(geoMarketFromPath('/e')).toBe('eg');
+    expect(geoMarketFromPath('/en')).toBe(null);
+  });
+  it('normalises Saudi +966 and Egypt +20 mobiles', () => {
+    expect(normalizeMarketPhone('0551234567', 'sa')).toBe('+966551234567');
+    expect(normalizeMarketPhone('01012345678', 'eg')).toBe('+201012345678');
+    expect(normalizeMarketPhone('01312345678', 'eg')).toBe(null);
+    expect(normalizeMarketPhone('01012345678', 'sa')).toBe(null);
+  });
+});

@@ -19,11 +19,11 @@ export function resetCrmOnce() {
 
 /** Copies website sign-ups (admin-readable leads) into DIGIT CRM as new, unassigned CRM Leads. */
 export async function syncSiteLeads() {
-  const { data, error } = await supabase.from("leads").select("id,name,email,phone,company,source,created_at").is("merged_into", null).order("created_at", { ascending: false }).limit(500);
+  const { data, error } = await supabase.from("leads").select("id,name,email,phone,company,source,market,attribution,created_at").is("merged_into", null).order("created_at", { ascending: false }).limit(500);
   if (error || !data) return;
   for (const l of data) {
     const name = `WEB-${l.id.slice(0, 8)}`;
     if (adapter.get("CRM Lead", name)) continue;
-    adapter.insertDocQuiet("CRM Lead", { name, first_name: l.name, lead_name: l.name, email: l.email ?? "", mobile_no: l.phone ?? "", organization: l.company ?? "", source: l.source || "Website", status: "New", lead_owner: "", converted: 0, creation: l.created_at });
+    adapter.insertDocQuiet("CRM Lead", { name, first_name: l.name, lead_name: l.name, email: l.email ?? "", mobile_no: l.phone ?? "", organization: l.company ?? "", source: l.source || "Website", territory: l.market === "eg" ? "Egypt" : "Saudi Arabia", custom_market: l.market, custom_campaign: String((l.attribution as Record<string, unknown> | null)?.["utm_campaign"] ?? ""), custom_attribution: JSON.stringify(l.attribution ?? {}), status: "New", lead_owner: "", converted: 0, creation: l.created_at });
   }
 }

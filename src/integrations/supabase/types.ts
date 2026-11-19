@@ -589,6 +589,7 @@ export type Database = {
           active: boolean
           created_at: string
           email: string
+          market: string | null
           role: string
           user_id: string
         }
@@ -596,6 +597,7 @@ export type Database = {
           active?: boolean
           created_at?: string
           email: string
+          market?: string | null
           role?: string
           user_id: string
         }
@@ -603,6 +605,7 @@ export type Database = {
           active?: boolean
           created_at?: string
           email?: string
+          market?: string | null
           role?: string
           user_id?: string
         }
@@ -682,6 +685,7 @@ export type Database = {
           email: string | null
           first_response_at: string | null
           id: string
+          market: string
           merged_into: string | null
           name: string
           owner: string | null
@@ -699,6 +703,7 @@ export type Database = {
           email?: string | null
           first_response_at?: string | null
           id?: string
+          market?: string
           merged_into?: string | null
           name: string
           owner?: string | null
@@ -716,6 +721,7 @@ export type Database = {
           email?: string | null
           first_response_at?: string | null
           id?: string
+          market?: string
           merged_into?: string | null
           name?: string
           owner?: string | null
@@ -824,6 +830,7 @@ export type Database = {
         Args: { ids: string[]; rep?: string; rotating?: boolean }
         Returns: undefined
       }
+      crm_market: { Args: never; Returns: string }
       crm_merge: {
         Args: { keep_id: string; remove_id: string }
         Returns: undefined
