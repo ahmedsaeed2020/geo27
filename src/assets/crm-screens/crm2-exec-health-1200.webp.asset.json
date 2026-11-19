@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "61dc9d57-5d61-4e9f-9090-bc82e3471a88",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/61dc9d57-5d61-4e9f-9090-bc82e3471a88/crm2-exec-health-1200.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/61dc9d57-5d61-4e9f-9090-bc82e3471a88/crm2-exec-health-1200.webp",
-  "original_filename": "crm2-exec-health-1200.webp",
-  "size": 6326,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T11:32:45Z"
+  "created_at": "2026-11-05T11:32:45Z",
+  "original_filename": "crm2-exec-health-1200.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/61dc9d57-5d61-4e9f-9090-bc82e3471a88/crm2-exec-health-1200.webp",
+  "size": 6326,
+  "url": "/__l5e/assets-v1/61dc9d57-5d61-4e9f-9090-bc82e3471a88/crm2-exec-health-1200.webp",
+  "version": 1
 }

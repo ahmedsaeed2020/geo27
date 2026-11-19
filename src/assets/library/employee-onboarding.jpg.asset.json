@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "1171f83a-3536-4921-b7e0-dfd65c6c2a1f",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/1171f83a-3536-4921-b7e0-dfd65c6c2a1f/digit-employee-onboarding.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/1171f83a-3536-4921-b7e0-dfd65c6c2a1f/digit-employee-onboarding.jpg",
-  "original_filename": "digit-employee-onboarding.jpg",
-  "size": 121457,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T10:09:24Z"
+  "created_at": "2026-10-11T10:09:24Z",
+  "original_filename": "digit-employee-onboarding.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/1171f83a-3536-4921-b7e0-dfd65c6c2a1f/digit-employee-onboarding.jpg",
+  "size": 121457,
+  "url": "/__l5e/assets-v1/1171f83a-3536-4921-b7e0-dfd65c6c2a1f/digit-employee-onboarding.jpg",
+  "version": 1
 }

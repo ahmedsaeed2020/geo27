@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "00538c30-d811-45e7-8196-ef9e361f6435",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
-  "original_filename": "hr-people-intelligence-cta.webp",
-  "size": 66878,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T13:35:04Z"
+  "created_at": "2026-11-04T13:35:04Z",
+  "original_filename": "hr-people-intelligence-cta.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
+  "size": 66878,
+  "url": "/__l5e/assets-v1/00538c30-d811-45e7-8196-ef9e361f6435/hr-people-intelligence-cta.webp",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "1092f3a4-1cf5-45e2-a69f-aba6dfc3896f",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
-  "original_filename": "hr-employee-experience-intro-960.webp",
-  "size": 38912,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T13:35:00Z"
+  "created_at": "2026-11-04T13:35:00Z",
+  "original_filename": "hr-employee-experience-intro-960.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
+  "size": 38912,
+  "url": "/__l5e/assets-v1/1092f3a4-1cf5-45e2-a69f-aba6dfc3896f/hr-employee-experience-intro-960.webp",
+  "version": 1
 }

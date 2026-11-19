@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "60fe460a-4669-426d-bf5f-19206f3b6494",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/60fe460a-4669-426d-bf5f-19206f3b6494/digit-finance-trace.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/60fe460a-4669-426d-bf5f-19206f3b6494/digit-finance-trace.jpg",
-  "original_filename": "digit-finance-trace.jpg",
-  "size": 126325,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T10:09:25Z"
+  "created_at": "2026-10-11T10:09:25Z",
+  "original_filename": "digit-finance-trace.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/60fe460a-4669-426d-bf5f-19206f3b6494/digit-finance-trace.jpg",
+  "size": 126325,
+  "url": "/__l5e/assets-v1/60fe460a-4669-426d-bf5f-19206f3b6494/digit-finance-trace.jpg",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "2dae59c3-7c0e-485a-96fc-b272680f7e90",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/2dae59c3-7c0e-485a-96fc-b272680f7e90/pos-solutions-pharmacies-background.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/2dae59c3-7c0e-485a-96fc-b272680f7e90/pos-solutions-pharmacies-background.jpg",
-  "original_filename": "pos-solutions-pharmacies-background.jpg",
-  "size": 119148,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:14Z"
+  "created_at": "2026-10-11T08:55:14Z",
+  "original_filename": "pos-solutions-pharmacies-background.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/2dae59c3-7c0e-485a-96fc-b272680f7e90/pos-solutions-pharmacies-background.jpg",
+  "size": 119148,
+  "url": "/__l5e/assets-v1/2dae59c3-7c0e-485a-96fc-b272680f7e90/pos-solutions-pharmacies-background.jpg",
+  "version": 1
 }

@@ -1,2 +1,0 @@
-ALTER TABLE public.contact_requests ADD COLUMN IF NOT EXISTS topic text NOT NULL DEFAULT '';
-COMMENT ON COLUMN public.contact_requests.topic IS 'Specific feature, workspace or executive question the visitor asked about (set by the page, never typed by the visitor).';

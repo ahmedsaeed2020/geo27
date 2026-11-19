@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "346834fb-6459-4c96-a0c3-f30b08a74688",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/346834fb-6459-4c96-a0c3-f30b08a74688/industries-distribution-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/346834fb-6459-4c96-a0c3-f30b08a74688/industries-distribution-body.jpg",
-  "original_filename": "industries-distribution-body.jpg",
-  "size": 210896,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:04Z"
+  "created_at": "2026-10-11T08:55:04Z",
+  "original_filename": "industries-distribution-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/346834fb-6459-4c96-a0c3-f30b08a74688/industries-distribution-body.jpg",
+  "size": 210896,
+  "url": "/__l5e/assets-v1/346834fb-6459-4c96-a0c3-f30b08a74688/industries-distribution-body.jpg",
+  "version": 1
 }

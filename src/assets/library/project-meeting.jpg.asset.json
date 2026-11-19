@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "ad13f1b0-5b0e-4cbc-b49f-f31b89ffc273",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/ad13f1b0-5b0e-4cbc-b49f-f31b89ffc273/digit-project-meeting.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/ad13f1b0-5b0e-4cbc-b49f-f31b89ffc273/digit-project-meeting.jpg",
-  "original_filename": "digit-project-meeting.jpg",
-  "size": 128734,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T10:09:31Z"
+  "created_at": "2026-10-11T10:09:31Z",
+  "original_filename": "digit-project-meeting.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/ad13f1b0-5b0e-4cbc-b49f-f31b89ffc273/digit-project-meeting.jpg",
+  "size": 128734,
+  "url": "/__l5e/assets-v1/ad13f1b0-5b0e-4cbc-b49f-f31b89ffc273/digit-project-meeting.jpg",
+  "version": 1
 }

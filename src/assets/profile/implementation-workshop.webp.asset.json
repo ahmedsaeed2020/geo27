@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0ecadb7e-434b-4f0c-9082-6ce33d7183e5",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/0ecadb7e-434b-4f0c-9082-6ce33d7183e5/implementation-workshop.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/0ecadb7e-434b-4f0c-9082-6ce33d7183e5/implementation-workshop.webp",
-  "original_filename": "implementation-workshop.webp",
-  "size": 113586,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T17:23:01Z"
+  "created_at": "2026-11-04T17:23:01Z",
+  "original_filename": "implementation-workshop.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/0ecadb7e-434b-4f0c-9082-6ce33d7183e5/implementation-workshop.webp",
+  "size": 113586,
+  "url": "/__l5e/assets-v1/0ecadb7e-434b-4f0c-9082-6ce33d7183e5/implementation-workshop.webp",
+  "version": 1
 }

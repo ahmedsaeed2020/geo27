@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "8e574500-9cee-4869-a4e2-d29a06e53665",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/8e574500-9cee-4869-a4e2-d29a06e53665/industries-education-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/8e574500-9cee-4869-a4e2-d29a06e53665/industries-education-body.jpg",
-  "original_filename": "industries-education-body.jpg",
-  "size": 162099,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:04Z"
+  "created_at": "2026-10-11T08:55:04Z",
+  "original_filename": "industries-education-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/8e574500-9cee-4869-a4e2-d29a06e53665/industries-education-body.jpg",
+  "size": 162099,
+  "url": "/__l5e/assets-v1/8e574500-9cee-4869-a4e2-d29a06e53665/industries-education-body.jpg",
+  "version": 1
 }

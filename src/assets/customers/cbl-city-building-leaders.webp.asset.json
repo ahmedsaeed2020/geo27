@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "aadb48cb-03d6-49d3-9e26-0889f24de555",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/aadb48cb-03d6-49d3-9e26-0889f24de555/cbl-city-building-leaders.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/aadb48cb-03d6-49d3-9e26-0889f24de555/cbl-city-building-leaders.webp",
-  "original_filename": "cbl-city-building-leaders.webp",
-  "size": 54106,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T07:54:44Z"
+  "created_at": "2026-11-05T07:54:44Z",
+  "original_filename": "cbl-city-building-leaders.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/aadb48cb-03d6-49d3-9e26-0889f24de555/cbl-city-building-leaders.webp",
+  "size": 54106,
+  "url": "/__l5e/assets-v1/aadb48cb-03d6-49d3-9e26-0889f24de555/cbl-city-building-leaders.webp",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "806c1184-dbf3-4c71-836d-abbeac55778f",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/806c1184-dbf3-4c71-836d-abbeac55778f/hr-s27-workforce-plans-cost-full.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/806c1184-dbf3-4c71-836d-abbeac55778f/hr-s27-workforce-plans-cost-full.webp",
-  "original_filename": "hr-s27-workforce-plans-cost-full.webp",
-  "size": 116128,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T12:09:20Z"
+  "created_at": "2026-11-04T12:09:20Z",
+  "original_filename": "hr-s27-workforce-plans-cost-full.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/806c1184-dbf3-4c71-836d-abbeac55778f/hr-s27-workforce-plans-cost-full.webp",
+  "size": 116128,
+  "url": "/__l5e/assets-v1/806c1184-dbf3-4c71-836d-abbeac55778f/hr-s27-workforce-plans-cost-full.webp",
+  "version": 1
 }

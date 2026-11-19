@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "7a7aa70e-d023-4885-b963-1065a4307a08",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/7a7aa70e-d023-4885-b963-1065a4307a08/faq-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/7a7aa70e-d023-4885-b963-1065a4307a08/faq-body.jpg",
-  "original_filename": "faq-body.jpg",
-  "size": 128578,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:48Z"
+  "created_at": "2026-10-11T08:55:48Z",
+  "original_filename": "faq-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/7a7aa70e-d023-4885-b963-1065a4307a08/faq-body.jpg",
+  "size": 128578,
+  "url": "/__l5e/assets-v1/7a7aa70e-d023-4885-b963-1065a4307a08/faq-body.jpg",
+  "version": 1
 }

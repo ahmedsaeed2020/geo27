@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "6998c8e8-9e10-403f-b8af-8d1e0b19e068",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/6998c8e8-9e10-403f-b8af-8d1e0b19e068/midad-alofoq.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/6998c8e8-9e10-403f-b8af-8d1e0b19e068/midad-alofoq.webp",
-  "original_filename": "midad-alofoq.webp",
-  "size": 15156,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T07:54:57Z"
+  "created_at": "2026-11-05T07:54:57Z",
+  "original_filename": "midad-alofoq.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/6998c8e8-9e10-403f-b8af-8d1e0b19e068/midad-alofoq.webp",
+  "size": 15156,
+  "url": "/__l5e/assets-v1/6998c8e8-9e10-403f-b8af-8d1e0b19e068/midad-alofoq.webp",
+  "version": 1
 }

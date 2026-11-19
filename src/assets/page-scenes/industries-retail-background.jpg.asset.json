@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "5a5471a3-721d-4e52-8464-f43cb0626e42",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/5a5471a3-721d-4e52-8464-f43cb0626e42/industries-retail-background.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/5a5471a3-721d-4e52-8464-f43cb0626e42/industries-retail-background.jpg",
-  "original_filename": "industries-retail-background.jpg",
-  "size": 131026,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:07Z"
+  "created_at": "2026-10-11T08:55:07Z",
+  "original_filename": "industries-retail-background.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/5a5471a3-721d-4e52-8464-f43cb0626e42/industries-retail-background.jpg",
+  "size": 131026,
+  "url": "/__l5e/assets-v1/5a5471a3-721d-4e52-8464-f43cb0626e42/industries-retail-background.jpg",
+  "version": 1
 }

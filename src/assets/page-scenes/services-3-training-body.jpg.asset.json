@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "4d2696fb-38b0-4774-a6fa-1e3de429852e",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/4d2696fb-38b0-4774-a6fa-1e3de429852e/services-3-training-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/4d2696fb-38b0-4774-a6fa-1e3de429852e/services-3-training-body.jpg",
-  "original_filename": "services-3-training-body.jpg",
-  "size": 119132,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:36Z"
+  "created_at": "2026-10-11T08:55:36Z",
+  "original_filename": "services-3-training-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/4d2696fb-38b0-4774-a6fa-1e3de429852e/services-3-training-body.jpg",
+  "size": 119132,
+  "url": "/__l5e/assets-v1/4d2696fb-38b0-4774-a6fa-1e3de429852e/services-3-training-body.jpg",
+  "version": 1
 }

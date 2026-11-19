@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "c4acbdc8-51b0-4f50-a78e-e6830c20a30d",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/c4acbdc8-51b0-4f50-a78e-e6830c20a30d/pos-solutions-salons-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/c4acbdc8-51b0-4f50-a78e-e6830c20a30d/pos-solutions-salons-body.jpg",
-  "original_filename": "pos-solutions-salons-body.jpg",
-  "size": 161134,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:18Z"
+  "created_at": "2026-10-11T08:55:18Z",
+  "original_filename": "pos-solutions-salons-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/c4acbdc8-51b0-4f50-a78e-e6830c20a30d/pos-solutions-salons-body.jpg",
+  "size": 161134,
+  "url": "/__l5e/assets-v1/c4acbdc8-51b0-4f50-a78e-e6830c20a30d/pos-solutions-salons-body.jpg",
+  "version": 1
 }

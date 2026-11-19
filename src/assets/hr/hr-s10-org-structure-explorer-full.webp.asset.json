@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "28f3da45-9e16-44a6-bd9d-cca6381e2a04",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/28f3da45-9e16-44a6-bd9d-cca6381e2a04/hr-s10-org-structure-explorer-full.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/28f3da45-9e16-44a6-bd9d-cca6381e2a04/hr-s10-org-structure-explorer-full.webp",
-  "original_filename": "hr-s10-org-structure-explorer-full.webp",
-  "size": 96586,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T12:08:58Z"
+  "created_at": "2026-11-04T12:08:58Z",
+  "original_filename": "hr-s10-org-structure-explorer-full.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/28f3da45-9e16-44a6-bd9d-cca6381e2a04/hr-s10-org-structure-explorer-full.webp",
+  "size": 96586,
+  "url": "/__l5e/assets-v1/28f3da45-9e16-44a6-bd9d-cca6381e2a04/hr-s10-org-structure-explorer-full.webp",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "1d2c85b4-bd4f-45f3-b39c-55187cd914cd",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/1d2c85b4-bd4f-45f3-b39c-55187cd914cd/pos-solutions-mobile-shops-body.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/1d2c85b4-bd4f-45f3-b39c-55187cd914cd/pos-solutions-mobile-shops-body.jpg",
-  "original_filename": "pos-solutions-mobile-shops-body.jpg",
-  "size": 138848,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:11Z"
+  "created_at": "2026-10-11T08:55:11Z",
+  "original_filename": "pos-solutions-mobile-shops-body.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/1d2c85b4-bd4f-45f3-b39c-55187cd914cd/pos-solutions-mobile-shops-body.jpg",
+  "size": 138848,
+  "url": "/__l5e/assets-v1/1d2c85b4-bd4f-45f3-b39c-55187cd914cd/pos-solutions-mobile-shops-body.jpg",
+  "version": 1
 }

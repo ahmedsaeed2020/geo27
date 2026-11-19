@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "46e5c02b-66f9-4c9c-a1fa-ef3650d9040b",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/46e5c02b-66f9-4c9c-a1fa-ef3650d9040b/services-3-training-background.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/46e5c02b-66f9-4c9c-a1fa-ef3650d9040b/services-3-training-background.jpg",
-  "original_filename": "services-3-training-background.jpg",
-  "size": 93319,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:30Z"
+  "created_at": "2026-10-11T08:55:30Z",
+  "original_filename": "services-3-training-background.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/46e5c02b-66f9-4c9c-a1fa-ef3650d9040b/services-3-training-background.jpg",
+  "size": 93319,
+  "url": "/__l5e/assets-v1/46e5c02b-66f9-4c9c-a1fa-ef3650d9040b/services-3-training-background.jpg",
+  "version": 1
 }

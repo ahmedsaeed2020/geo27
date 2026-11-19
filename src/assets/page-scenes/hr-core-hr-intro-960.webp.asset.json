@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "0086ab94-5e3a-40da-a746-c467c524acea",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
-  "original_filename": "hr-core-hr-intro-960.webp",
-  "size": 15720,
   "content_type": "image/webp",
-  "created_at": "2026-11-04T13:34:57Z"
+  "created_at": "2026-11-04T13:34:57Z",
+  "original_filename": "hr-core-hr-intro-960.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
+  "size": 15720,
+  "url": "/__l5e/assets-v1/0086ab94-5e3a-40da-a746-c467c524acea/hr-core-hr-intro-960.webp",
+  "version": 1
 }

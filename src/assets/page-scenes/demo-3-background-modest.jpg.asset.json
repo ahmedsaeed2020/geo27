@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "c1902958-2aaa-4aba-be96-1a026bb9cdaf",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
-  "original_filename": "demo-3-background-modest.jpg",
-  "size": 83233,
   "content_type": "image/jpeg",
-  "created_at": "2026-11-04T13:29:54Z"
+  "created_at": "2026-11-04T13:29:54Z",
+  "original_filename": "demo-3-background-modest.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
+  "size": 83233,
+  "url": "/__l5e/assets-v1/c1902958-2aaa-4aba-be96-1a026bb9cdaf/demo-3-background-modest.jpg",
+  "version": 1
 }

@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "665d93bf-bd69-4e7c-ac51-98f1faf5fa82",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/665d93bf-bd69-4e7c-ac51-98f1faf5fa82/con-cost-cash-chain-full.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/665d93bf-bd69-4e7c-ac51-98f1faf5fa82/con-cost-cash-chain-full.webp",
-  "original_filename": "con-cost-cash-chain-full.webp",
-  "size": 48970,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T09:56:59Z"
+  "created_at": "2026-11-05T09:56:59Z",
+  "original_filename": "con-cost-cash-chain-full.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/665d93bf-bd69-4e7c-ac51-98f1faf5fa82/con-cost-cash-chain-full.webp",
+  "size": 48970,
+  "url": "/__l5e/assets-v1/665d93bf-bd69-4e7c-ac51-98f1faf5fa82/con-cost-cash-chain-full.webp",
+  "version": 1
 }

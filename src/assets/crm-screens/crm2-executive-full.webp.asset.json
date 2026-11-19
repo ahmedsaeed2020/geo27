@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "5e05600d-14f4-4a10-b099-1d9bf0cee8af",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/5e05600d-14f4-4a10-b099-1d9bf0cee8af/crm2-executive-full.webp",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/5e05600d-14f4-4a10-b099-1d9bf0cee8af/crm2-executive-full.webp",
-  "original_filename": "crm2-executive-full.webp",
-  "size": 50990,
   "content_type": "image/webp",
-  "created_at": "2026-11-05T09:57:19Z"
+  "created_at": "2026-11-05T09:57:19Z",
+  "original_filename": "crm2-executive-full.webp",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/5e05600d-14f4-4a10-b099-1d9bf0cee8af/crm2-executive-full.webp",
+  "size": 50990,
+  "url": "/__l5e/assets-v1/5e05600d-14f4-4a10-b099-1d9bf0cee8af/crm2-executive-full.webp",
+  "version": 1
 }

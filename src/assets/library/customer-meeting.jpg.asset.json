@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "236e520e-fe46-4c35-a75d-8f91a832fd76",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/236e520e-fe46-4c35-a75d-8f91a832fd76/digit-customer-meeting.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/236e520e-fe46-4c35-a75d-8f91a832fd76/digit-customer-meeting.jpg",
-  "original_filename": "digit-customer-meeting.jpg",
-  "size": 192574,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T10:09:22Z"
+  "created_at": "2026-10-11T10:09:22Z",
+  "original_filename": "digit-customer-meeting.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/236e520e-fe46-4c35-a75d-8f91a832fd76/digit-customer-meeting.jpg",
+  "size": 192574,
+  "url": "/__l5e/assets-v1/236e520e-fe46-4c35-a75d-8f91a832fd76/digit-customer-meeting.jpg",
+  "version": 1
 }

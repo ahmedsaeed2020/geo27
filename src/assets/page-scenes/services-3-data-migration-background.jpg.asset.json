@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "63243187-040a-4abd-b0b6-12000c4935eb",
-  "project_id": "3372ad18-e04e-44f1-84bd-56d5bbdc487b",
-  "url": "/__l5e/assets-v1/63243187-040a-4abd-b0b6-12000c4935eb/services-3-data-migration-background.jpg",
-  "r2_key": "a/v1/3372ad18-e04e-44f1-84bd-56d5bbdc487b/63243187-040a-4abd-b0b6-12000c4935eb/services-3-data-migration-background.jpg",
-  "original_filename": "services-3-data-migration-background.jpg",
-  "size": 144496,
   "content_type": "image/jpeg",
-  "created_at": "2026-10-11T08:55:22Z"
+  "created_at": "2026-10-11T08:55:22Z",
+  "original_filename": "services-3-data-migration-background.jpg",
+  "project_id": "fabf53c5-647c-4021-a936-abcd594f0afc",
+  "r2_key": "a/v1/fabf53c5-647c-4021-a936-abcd594f0afc/63243187-040a-4abd-b0b6-12000c4935eb/services-3-data-migration-background.jpg",
+  "size": 144496,
+  "url": "/__l5e/assets-v1/63243187-040a-4abd-b0b6-12000c4935eb/services-3-data-migration-background.jpg",
+  "version": 1
 }
