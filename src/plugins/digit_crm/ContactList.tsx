@@ -46,7 +46,7 @@ function Body({ user, ar }: { user: string; ar: boolean }) {
   const reg = useQuery(capabilityQuery);
   const [, bump] = useState(0);
   const bulk: RlBulk[] = [{ key: "delete", label: tx(ar, "Delete", "حذف"), icon: "🗑", tone: "bad", run: (keys) => {
-    const meta = cachedMeta("Contact"); if (!meta) return toast.error(tx(ar, "Contacts are not ready yet", "جهات الاتصال غير جاهزة بعد"));
+    const meta = cachedMeta("Contact"); if (!meta || !reg.data) { toast.error(tx(ar, "Contacts are not ready yet", "جهات الاتصال غير جاهزة بعد")); return; }
     if (!window.confirm(tx(ar, `Delete ${keys.length} contacts?`, `حذف ${keys.length} جهة اتصال؟`))) return;
     const r = deleteDocuments(meta, keys, reg.data, user); bump((x) => x + 1);
     if (r.failed.length) toast.error(tx(ar, `${r.deleted.length} deleted, ${r.failed.length} refused`, `حُذف ${r.deleted.length} ورُفض ${r.failed.length}`), { description: r.failed.slice(0, 3).map((f) => `${f.name}: ${f.errors[0]}`).join(" · ") }); else toast.success(tx(ar, `${r.deleted.length} deleted`, `حُذف ${r.deleted.length}`));
