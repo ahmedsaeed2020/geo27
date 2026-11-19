@@ -1,94 +1,143 @@
-import { useRef, useState } from 'react';
+import { useCallback, useRef, useState, type CSSProperties, type MouseEvent } from 'react';
 import { Link } from '@tanstack/react-router';
-import { ArrowDown, ArrowLeft, ArrowRight, CalendarDays, ClipboardCheck, Clock3, Download, FileCheck2, Globe2, MapPin, Maximize2, Monitor, ShieldCheck, Users, Wallet } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent, DialogTitle, DialogDescription } from '@/components/ui/dialog';
-import ContactForm from '@/components/ContactForm';
+import { ArrowDown, ArrowLeft, ArrowRight, Globe2, Menu, MessageCircle, X } from 'lucide-react';
 import { useLocale } from '@/lib/i18n';
 import { usePageMotion } from '@/hooks/use-page-motion';
-import { GEO_COPY } from '@/content/geointime';
-import arrival from '@/assets/geointime/arrival.webp.asset.json';
-import manager from '@/assets/geointime/hr-manager.webp.asset.json';
-import field from '@/assets/geointime/field-team.webp.asset.json';
-import logo from '@/assets/geointime/logo.png.asset.json';
-import screen from '@/assets/geointime/operations.png.asset.json';
-import profile from '@/assets/geointime/profile.pdf.asset.json';
+import { useSlideshow } from '@/hooks/use-slideshow';
+import { GEO_COPY, GEO_PHONE_DISPLAY, GEO_SITE, type GeoChallenge, type GeoGroup, type GeoScenario } from '@/content/geointime';
+import { geoWhatsAppUrl } from '@/lib/geointime-lead';
+import { HERO_CIRCLES, MEDIA } from './geo-media';
+import GeoScenarios from './GeoScenarios';
+import GeoRequest from './GeoRequest';
+import GeoExperience from './GeoExperience';
 import '@/geointime.css';
 
-const ESSENTIAL_ICONS = [Users, Clock3, FileCheck2, Wallet];
-const OPERATIONS_ICONS = [MapPin, ClipboardCheck, ShieldCheck, Monitor];
+const GROUP_CHALLENGE: Record<GeoGroup, GeoChallenge> = { operations: 'sites', hr: 'presence', tasks: 'tasks' };
 
+/**
+ * GeoInTime landing on / and /en: the owner's landing design (circle hero, rounded situation band, dark request orbit,
+ * laptop of real screens, working-day rail, closing circle) carrying the owner's V5 content. Lead handling reuses the
+ * shared server-side lead boundary; DIGIT pages and admin stay behind it, unlinked.
+ */
 export default function GeoLanding() {
   const locale = useLocale();
   const t = GEO_COPY[locale];
   const main = useRef<HTMLElement>(null);
-  const [open, setOpen] = useState(false);
+  const [menu, setMenu] = useState(false);
+  const [challenge, setChallenge] = useState<GeoChallenge | ''>('');
+  const [proof, setProof] = useState<{ group: GeoGroup; view: string }>({ group: 'operations', view: 'main' });
+  const show = useSlideshow({ count: t.scenarios.items.length, locale, threshold: 0.3 });
   const Arrow = locale === 'ar' ? ArrowLeft : ArrowRight;
   usePageMotion(main, `geo-${locale}`);
-  const goToForm = () => {
-    document.getElementById('geo-request')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth', block: 'start' });
-    document.querySelector<HTMLInputElement>('#geo-request input[name="name"]')?.focus({ preventScroll: true });
-  };
-  const Request = ({ className = 'geo-cta' }: { className?: string }) => <Button className={className} onClick={goToForm}>{t.demo}<Arrow aria-hidden="true" /></Button>;
+
+  const jump = useCallback((id: string, focusForm = false) => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById(id)?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'start' });
+    if (focusForm) window.setTimeout(() => document.querySelector<HTMLInputElement>('#geo-form input[name="name"]')?.focus({ preventScroll: true }), reduced ? 0 : 650);
+  }, []);
+  const onAnchor = (id: string) => (event: MouseEvent<HTMLAnchorElement>) => { event.preventDefault(); setMenu(false); jump(id, id === 'request'); };
+  const requestFor = (value: GeoChallenge) => { setChallenge(value); jump('request', true); };
+  const showScreen = (scenario: GeoScenario) => { setProof({ group: scenario.proof[0], view: scenario.proof[1] }); jump('experience'); };
+  const pickNode = (value: GeoChallenge) => { setChallenge(value); window.setTimeout(() => document.querySelector<HTMLInputElement>('#geo-form input[name="name"]')?.focus({ preventScroll: false }), 0); };
+
   return (
     <div className="geo-page" dir={locale === 'ar' ? 'rtl' : 'ltr'} data-form-cta-ignore>
-      <main ref={main}>
-        <section className="geo-hero hero" aria-labelledby="geo-title">
-          <img className="geo-hero-image" src={arrival.url} width={1920} height={1088} alt={locale === 'ar' ? 'موظف ومشرف موقع في بداية يوم العمل' : 'An employee and site supervisor at the start of the working day'} fetchPriority="high" />
-          <header className="geo-header geo-wrap">
-            <Link to={locale === 'ar' ? '/' : '/en'} className="geo-logo" aria-label="GeoInTime"><img src={logo.url} width={2048} height={615} alt="GeoInTime" /></Link>
-            <div className="geo-header-actions">
-              <Button asChild variant="ghost" className="geo-language"><Link to={locale === 'ar' ? '/en' : '/'}><Globe2 aria-hidden="true" />{t.language}</Link></Button>
-              <Request />
-            </div>
-          </header>
-          <div className="geo-hero-content geo-wrap">
+      <a className="geo-skip" href="#geo-main" onClick={onAnchor('geo-main')}>{t.skip}</a>
+      <header className="geo-header">
+        <div className="geo-wrap geo-header-inner">
+          <Link to={locale === 'ar' ? '/' : '/en'} className="geo-logo" aria-label={t.home}><img src={MEDIA.logo.src} width={MEDIA.logo.width} height={MEDIA.logo.height} alt="GeoInTime" /></Link>
+          <nav id="geo-nav" className="geo-nav" data-open={menu} aria-label={t.navLabel}>
+            {t.nav.map(([id, label]) => <a key={id} href={`#${id}`} onClick={onAnchor(id)}>{label}</a>)}
+            <Link to={locale === 'ar' ? '/en' : '/'} className="geo-lang geo-lang-menu"><Globe2 aria-hidden="true" />{t.language}</Link>
+          </nav>
+          <div className="geo-header-actions">
+            <Link to={locale === 'ar' ? '/en' : '/'} className="geo-lang"><Globe2 aria-hidden="true" />{t.language}</Link>
+            <a className="geo-btn geo-btn-primary geo-btn-sm" href="#request" onClick={onAnchor('request')}>{t.headerCta}<Arrow aria-hidden="true" /></a>
+            <button type="button" className="geo-menu-toggle" aria-controls="geo-nav" aria-expanded={menu} aria-label={menu ? t.menuClose : t.menuOpen} onClick={() => setMenu(m => !m)}>{menu ? <X /> : <Menu />}</button>
+          </div>
+        </div>
+      </header>
+
+      <main id="geo-main" ref={main} tabIndex={-1}>
+        <section className="geo-hero hero" aria-labelledby="geo-hero-title">
+          <div className="geo-wrap">
             <div className="geo-hero-copy">
-              <div className="geo-eyebrow">{t.eyebrow}</div>
-              <h1 id="geo-title">GeoInTime</h1>
-              <p className="geo-hero-title">{t.hero}<span>{t.heroAccent}</span></p>
-              <p className="geo-intro">{t.intro}</p>
-              <div className="geo-actions"><Request /><Button asChild variant="outline" className="geo-outline"><a href={profile.url} target="_blank" rel="noreferrer"><Download aria-hidden="true" />{t.profile}</a></Button></div>
-              <p className="geo-hero-note">{t.heroNote}</p>
+              <p className="geo-overline"><span className="geo-dot" />{t.hero.overline}</p>
+              <h1 id="geo-hero-title"><span className="geo-hero-a">{t.hero.title}</span> <span className="geo-hero-b">{t.hero.titleB}<em>{t.hero.titleEm}</em>{t.hero.titleC}</span></h1>
+              <p className="geo-hero-lead">{t.hero.lead}</p>
+              <p className="geo-hero-text">{t.hero.description}</p>
+              <div className="geo-hero-actions">
+                <a className="geo-btn geo-btn-primary" href="#experience" onClick={onAnchor('experience')}>{t.hero.primary}<Arrow aria-hidden="true" /></a>
+                <a className="geo-btn geo-btn-link" href="#request" onClick={onAnchor('request')}>{t.hero.secondary}<Arrow aria-hidden="true" /></a>
+              </div>
             </div>
-          </div>
-          <div className="geo-journey" aria-hidden="true"><svg viewBox="0 0 500 130"><path className="geo-route" d="M5 10 C100 10 110 115 265 110 S420 30 490 30" /><circle className="geo-route-node" cx="265" cy="110" r="5" /><circle className="geo-route-ring" cx="265" cy="110" r="13" /><circle className="geo-route-node" cx="490" cy="30" r="4" /></svg></div>
-          <a className="geo-scroll" href="#geo-essentials">{t.scroll}<ArrowDown size={16} aria-hidden="true" /></a>
-        </section>
-
-        <section id="geo-essentials" className="geo-block" aria-labelledby="geo-essentials-title">
-          <div className="geo-wrap">
-            <div className="geo-section-head"><div><div className="geo-eyebrow">01 / {t.essentialsTag}</div><h2 id="geo-essentials-title">{t.essentialsTitle}<span>{t.essentialsAccent}</span></h2></div><p>{t.essentialsIntro}</p></div>
-            <div className="geo-essentials-layout">
-              <div><div className="geo-feature-grid">{t.essentialsItems.map(([title, description], i) => { const Icon = ESSENTIAL_ICONS[i] ?? Users; return <article className="geo-feature" data-motion-card key={title}><div className="geo-feature-icon"><Icon aria-hidden="true" /></div><div><span className="geo-number">0{i + 1}</span><h3>{title}</h3><p>{description}</p></div></article>; })}</div><Button variant="link" className="geo-text-link" onClick={goToForm}>{t.demo}<Arrow aria-hidden="true" /></Button></div>
-              <figure className="geo-people"><img src={manager.url} width={1088} height={1920} loading="lazy" alt={locale === 'ar' ? 'مسؤولة الموارد البشرية تراجع جداول العمل' : 'An HR manager reviewing workforce schedules'} /><figcaption><CalendarDays size={15} aria-hidden="true" />{t.essentials}</figcaption></figure>
+            <div className="geo-circles">
+              {HERO_CIRCLES.map((photo, i) => {
+                const circle = t.hero.circles[i]!;
+                return (
+                  <button key={circle.label} type="button" className="geo-circle" style={{ '--i': i } as CSSProperties} onClick={() => { show.go(i); jump('scenarios'); }} aria-label={`${circle.label} — ${t.hero.circleAction}`}>
+                    <span className="geo-circle-frame">
+                      <img src={photo.src} width={photo.width} height={photo.height} alt={circle.alt} fetchPriority={i === 0 ? 'high' : undefined} decoding="async" />
+                      <svg className="geo-circle-ring" viewBox="0 0 100 100" aria-hidden="true"><circle className="geo-ring-track" cx="50" cy="50" r="48" /><circle className="geo-ring-arc" cx="50" cy="50" r="48" /></svg>
+                      <span className="geo-circle-pin" aria-hidden="true" />
+                    </span>
+                    <span className="geo-circle-label">«{circle.label}»</span>
+                  </button>
+                );
+              })}
             </div>
-          </div>
-        </section>
-
-        <section className="geo-block geo-operations" aria-labelledby="geo-operations-title">
-          <div className="geo-wrap">
-            <div className="geo-operations-layout">
-              <div className="geo-section-copy"><div className="geo-eyebrow">02 / {t.operationsTag}</div><h2 id="geo-operations-title">{t.operationsTitle}<span>{t.operationsAccent}</span></h2><p>{t.operationsIntro}</p><div className="geo-feature-grid">{t.operationsItems.map(([title, description], i) => { const Icon = OPERATIONS_ICONS[i] ?? Monitor; return <article className="geo-feature" data-motion-card key={title}><div className="geo-feature-icon"><Icon aria-hidden="true" /></div><div><span className="geo-number">0{i + 1}</span><h3>{title}</h3><p>{description}</p></div></article>; })}</div></div>
-              <figure className="geo-people"><img src={field.url} width={1088} height={1920} loading="lazy" alt={locale === 'ar' ? 'موظف ومشرف سعودي يتابعان العمل في الموقع' : 'An employee and Saudi supervisor coordinating on site'} /></figure>
-            </div>
-            <ol className="geo-workflow hr-journey-rail">{t.steps.map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol>
-            <figure className="geo-screen"><figcaption className="geo-screen-bar"><span><Monitor aria-hidden="true" />{t.screen}</span><Button variant="ghost" className="geo-enlarge" onClick={() => setOpen(true)}><Maximize2 aria-hidden="true" />{t.enlarge}</Button></figcaption><img src={screen.url} width={2180} height={1360} loading="lazy" alt={t.screen} /></figure>
-            <div className="geo-sectors">{t.sectors.map(sector => <span key={sector}>{sector}</span>)}</div>
+            <ol className="geo-hero-path" aria-label={t.hero.pathLabel}>
+              {t.hero.path.map((step, i) => <li key={step} style={{ '--i': i } as CSSProperties}>{i === t.hero.path.length - 1 ? <strong>{step}</strong> : step}</li>)}
+            </ol>
+            <a className="geo-scroll" href="#scenarios" onClick={onAnchor('scenarios')}>{t.hero.scroll}<ArrowDown aria-hidden="true" /></a>
           </div>
         </section>
 
-        <section id="geo-request" className="geo-block geo-final" aria-labelledby="geo-final-title">
-          <div className="geo-wrap">
-            <div className="geo-final-layout">
-              <div className="geo-final-copy"><div className="geo-eyebrow">03 / {t.finalTag}</div><h2 id="geo-final-title">{t.finalTitle}<span>{t.finalAccent}</span></h2><p>{t.finalIntro}</p><div className="geo-final-orbit" aria-hidden="true"><span className="geo-orbit-core">GeoInTime</span><span className="geo-orbit-label">Workforce</span><span className="geo-orbit-label">Operations</span><span className="geo-orbit-label">Evidence</span></div><p className="geo-final-note">{t.finalNote}</p></div>
-              <div className="geo-form-shell"><h3>{t.demo}</h3><ContactForm kind="demo" interest="GeoInTime" interestChoices={['GeoInTime', 'Workforce Essentials', 'Workforce Operations']} product="" department="" brand="GeoInTime" stories={false} bare /></div>
+        <GeoScenarios locale={locale} show={show} onScreen={showScreen} onRequest={s => requestFor(s.challenge)} />
+        <GeoRequest locale={locale} challenge={challenge} onChallenge={setChallenge} onPick={pickNode} />
+        <GeoExperience locale={locale} group={proof.group} view={proof.view} onSelect={(group, view = 'main') => setProof({ group, view })} onRequest={group => requestFor(GROUP_CHALLENGE[group])} />
+
+        <section id="journey" className="geo-journey" aria-labelledby="geo-journey-title">
+          <div className="geo-wrap geo-journey-grid">
+            <div className="geo-journey-copy">
+              <p className="geo-overline"><span className="geo-dot" />{t.journey.overline}</p>
+              <h2 id="geo-journey-title">{t.journey.title}<span>{t.journey.titleAccent}</span></h2>
+              <p>{t.journey.intro}</p>
+              <a className="geo-btn geo-btn-link" href="#request" onClick={onAnchor('request')}>{t.journey.link}<Arrow aria-hidden="true" /></a>
             </div>
-            <footer className="geo-footer"><img src={logo.url} width={2048} height={615} alt="GeoInTime" /><p>{t.footer}</p><Link to={locale === 'ar' ? '/en' : '/'}><Globe2 size={15} aria-hidden="true" />{t.language}</Link></footer>
+            <ol className="geo-journey-track">
+              {t.journey.steps.map(([title, text], i) => <li key={title} data-motion-card><span className="geo-journey-n">0{i + 1}</span><div><h3>{title}</h3><p>{text}</p></div></li>)}
+            </ol>
           </div>
+        </section>
+
+        <section className="geo-closing" aria-labelledby="geo-closing-title">
+          <div className="geo-wrap geo-closing-grid">
+            <div className="geo-closing-copy">
+              <p className="geo-kicker">{t.closing.kicker}</p>
+              <h2 id="geo-closing-title">{t.closing.title}<em>{t.closing.titleEm}</em></h2>
+              <p>{t.closing.text}</p>
+              <a className="geo-btn geo-btn-primary" href="#request" onClick={onAnchor('request')}>{t.closing.cta}<Arrow aria-hidden="true" /></a>
+            </div>
+            <figure className="geo-closing-photo">
+              <img src={MEDIA.decision.src} width={MEDIA.decision.width} height={MEDIA.decision.height} alt={t.closing.photoAlt} loading="lazy" decoding="async" />
+              <svg viewBox="0 0 100 100" aria-hidden="true"><circle className="geo-ring-arc" cx="50" cy="50" r="48" /></svg>
+            </figure>
+          </div>
+          <footer className="geo-footer">
+            <div className="geo-wrap geo-footer-inner">
+              <a href="#geo-main" className="geo-footer-logo" onClick={onAnchor('geo-main')} aria-label={t.home}><img src={MEDIA.logoOnDark.src} width={MEDIA.logoOnDark.width} height={MEDIA.logoOnDark.height} alt="GeoInTime" loading="lazy" /></a>
+              <nav className="geo-footer-links" aria-label={t.footer.linksLabel}>
+                <a href={GEO_SITE} target="_blank" rel="noopener noreferrer">{t.footer.site}</a>
+                <a href={geoWhatsAppUrl()} target="_blank" rel="noopener noreferrer"><MessageCircle aria-hidden="true" />{t.footer.whatsapp} <span dir="ltr">{GEO_PHONE_DISPLAY}</span></a>
+                <a href="#experience" onClick={onAnchor('experience')}>{t.footer.platform}</a>
+                <Link to={locale === 'ar' ? '/en' : '/'}><Globe2 aria-hidden="true" />{t.language}</Link>
+              </nav>
+              <p className="geo-rights">{t.footer.rights}</p>
+            </div>
+          </footer>
         </section>
       </main>
-      <Dialog open={open} onOpenChange={setOpen}><DialogContent className="geo-dialog"><DialogTitle>{t.screen}</DialogTitle><DialogDescription className="sr-only">{t.enlarge}</DialogDescription><img src={screen.url} width={2180} height={1360} alt={t.screen} /></DialogContent></Dialog>
     </div>
   );
 }

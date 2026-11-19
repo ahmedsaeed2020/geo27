@@ -254,3 +254,8 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 - [x] One pass verified: /, /en, /admin button, /login, leads (120), a lead, pipeline, new quotation, back to site pages.
 - [ ] Re-enabling Pro/HR/Construction/FSM apps needs their app routes (now owned by website pages) and removing the @ts-nocheck markers.
 - [ ] Classic CRM contact/organization screens are not routed in this build; contacts open in the generic desk record.
+
+# GeoInTime landing V5 (owner design image + V5 content file, 2026-11-19)
+- [x] Generate brand characters from the GeoInTime atlases (sites, presence, tasks, band slides, warehouse team, supervisor).
+- [x] Rebuild / and /en landing on the owner's design with the V5 content file (hero circles, band slider, trial form, system screen, journey, closing).
+- [ ] Verify AR/EN, mobile, form submission, motion and reduced motion.

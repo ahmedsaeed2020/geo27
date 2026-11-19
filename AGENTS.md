@@ -9,7 +9,7 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
-- GeoInTime landing uses GeoLanding, bilingual source copy and scoped tokens on / and /en; retain legacy DIGIT pages/admin and reuse ContactForm/submitLead to preserve lead handling without exposing DIGIT navigation or claims.
+- GeoInTime landing (/ and /en) is GeoLanding plus GeoScenarios/GeoRequest/GeoExperience in src/components/geointime, copy in src/content/geointime.ts (owner V5 content on the owner's design), media pointers in geo-media.ts and styles scoped under .geo-page in src/geointime.css; GeoLeadForm saves through submitLead (admin/CRM capture) and only then offers a visitor-sent WhatsApp message, screens are only the authentic captures from the V5 file and people only the GeoInTime atlas characters, and legacy DIGIT pages/admin stay unlinked.
 
 - Render imported Elementor package pages through one shared React renderer with extracted content and scoped CSS so both pages preserve their source layout without WordPress dependencies.
 - Keep published preview metadata alongside extracted package content and implement motion in the shared renderer so both packages retain their original interactive layout without loading WordPress scripts.
