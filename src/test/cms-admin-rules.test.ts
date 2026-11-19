@@ -102,7 +102,7 @@ describe('home and pro section layout', () => {
 describe('admin sections by role', () => {
   it('shows sales staff only customer requests, chats and their own account areas', async () => {
     const { tabsFor } = await import('@/components/cms/admin/tabs');
-    expect(tabsFor('sales').map(t => t.id)).toEqual(['overview', 'leads', 'chats', 'security', 'audit']);
+    expect(tabsFor('sales').map(t => t.id)).toEqual(['overview', 'leads', 'chats', 'campaigns', 'security', 'audit']);
   });
   it('keeps customer data, team and branding away from editors', async () => {
     const { tabsFor } = await import('@/components/cms/admin/tabs');

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, type ReactNode } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { Save, Settings2, ShieldCheck } from 'lucide-react';
@@ -28,7 +28,7 @@ function IntegrationEditor({ initial, notice }: { initial: IntegrationSettings; 
     catch (e) { notice(errorText(e)); }
     finally { setBusy(false); }
   }
-  const panel = (name: string, configured: boolean, fields: React.ReactNode) => <article className="rounded-lg border border-border bg-card p-5 space-y-4">
+  const panel = (name: string, configured: boolean, fields: ReactNode) => <article className="rounded-lg border border-border bg-card p-5 space-y-4">
     <div className="flex flex-wrap items-center justify-between gap-2"><h3 className="flex items-center gap-2 font-bold"><Settings2 size={18} />{name}</h3><StatusPill tone="warn">{configured ? 'إعدادات محفوظة · غير متصل' : 'غير متصل'}</StatusPill></div>{fields}
   </article>;
   return <>
