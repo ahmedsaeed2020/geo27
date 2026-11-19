@@ -8,3 +8,8 @@ export const settingsSchema=z.object({sla_hours:z.number().int().min(1).max(720)
 export function duplicateContacts(a:{phone:string|null;email:string|null},b:{phone:string|null;email:string|null}){const phone=(v:string|null)=>(v||'').replace(/\D/g,'');const email=(v:string|null)=>(v||'').trim().toLowerCase();return !!phone(a.phone)&&phone(a.phone)===phone(b.phone)||!!email(a.email)&&email(a.email)===email(b.email);}
 export function responseOverdue(lead:{created_at:string;first_response_at:string|null;status:string},hours:number,now=Date.now()){return !lead.first_response_at&&!['unqualified'].includes(lead.status)&&now-new Date(lead.created_at).getTime()>hours*3600000;}
 export function mayAccess(role:string|null,active:boolean,owner:string|null,user:string){return active&&(role==='admin'||role==='sales'&&owner===user);}
+export const VAT_RATE=0.15;
+export const quoteItemSchema=z.object({name:z.string().trim().min(1).max(200),qty:z.number().min(0).max(1e6),price:z.number().min(0).max(1e10)});
+export const quoteSchema=z.object({deal_id:z.string().uuid(),number:z.string().max(40),valid_until:z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable(),discount:z.number().min(0).max(1e10).default(0),notes:z.string().max(4000).default(''),items:z.array(quoteItemSchema).min(1).max(100)});
+export type Quote=z.infer<typeof quoteSchema>;
+export function quoteTotals(q:{items:{qty:number;price:number}[];discount?:number}){const subtotal=q.items.reduce((s,i)=>s+i.qty*i.price,0);const net=Math.max(0,subtotal-(q.discount??0));const vat=Math.round(net*VAT_RATE*100)/100;return {subtotal,net,vat,total:Math.round((net+vat)*100)/100};}

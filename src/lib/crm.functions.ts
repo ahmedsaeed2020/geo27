@@ -2,7 +2,7 @@ import { createServerFn } from '@tanstack/react-start';
 import { requireSupabaseAuth } from '@/integrations/supabase/auth-middleware';
 import { z } from 'zod';
 import type { Db } from './cms-access';
-import { activitySchema,dealSchema,leadEditSchema,settingsSchema,DEFAULT_STAGES } from './crm-schema';
+import { quoteSchema,quoteTotals,activitySchema,dealSchema,leadEditSchema,settingsSchema,DEFAULT_STAGES } from './crm-schema';
 async function roleFor(db:Db){const {data,error}=await db.rpc('crm_role');if(error)throw new Error('CRM unavailable');if(data!=='admin'&&data!=='sales')throw new Error('Forbidden');return data;}
 async function adminOnly(db:Db){if(await roleFor(db)!=='admin')throw new Error('Forbidden');}
 function check(error:{message:string}|null){if(error)throw new Error(error.message);}
@@ -31,3 +31,4 @@ export const crmUser=createServerFn({method:'POST'}).middleware([requireSupabase
  if(!id)throw new Error('Could not invite user');
  const r=await supabaseAdmin.from('crm_users').upsert({user_id:id,email:data.email,role:data.role,active:data.active});check(r.error);return {saved:true,invited};
 });
+export const crmSaveQuote=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(quoteSchema).handler(async({context,data})=>{await roleFor(context.supabase);const {deal_id,...quote}=data;const totals=quoteTotals(quote);const r=await context.supabase.from('deals').update({quote:{...quote,...totals,updated_at:new Date().toISOString()},value:totals.total}).eq('id',deal_id).select('id').single();check(r.error);return totals;});

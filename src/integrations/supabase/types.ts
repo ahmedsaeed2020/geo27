@@ -615,6 +615,7 @@ export type Database = {
           id: string
           lead_id: string
           owner: string | null
+          quote: Json
           reason: string
           stage: string
           stage_changed_at: string
@@ -626,6 +627,7 @@ export type Database = {
           id?: string
           lead_id: string
           owner?: string | null
+          quote?: Json
           reason?: string
           stage?: string
           stage_changed_at?: string
@@ -637,6 +639,7 @@ export type Database = {
           id?: string
           lead_id?: string
           owner?: string | null
+          quote?: Json
           reason?: string
           stage?: string
           stage_changed_at?: string
