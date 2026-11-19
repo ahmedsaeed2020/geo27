@@ -676,3 +676,7 @@ html[data-enterprise] [data-form-head] > h1 { font-size: 26px; font-weight: 700;
 /* owner DOC-02: a read-only / disabled value reads as plain data (no border, no field fill); editable fields keep the white
    bordered box. Unlayered so it wins over the field-input utility's border and disabled fill. */
 html[data-enterprise] [data-shell-main] :is(input.field-input[readonly], input.field-input:disabled, textarea.field-input[readonly], textarea.field-input:disabled) { border-color: transparent; background-color: transparent; box-shadow: none; }
+
+/* Form "…" menu opens inside the dark document band: keep its labels on the popover colours */
+[data-form-menu-list], [data-form-menu-list] [role="menuitem"] { color: var(--popover-foreground); }
+[data-form-menu-list] [role="menuitem"].text-destructive { color: var(--destructive); }

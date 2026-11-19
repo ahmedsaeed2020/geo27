@@ -364,9 +364,9 @@ function FormMenu({ items }: { items: MenuItem[] }) {
     <div className="relative" data-form-menu>
       <button type="button" className="btn-ghost px-2" aria-label="Menu" aria-expanded={open} data-form-menu-toggle onClick={() => setOpen(!open)}>…</button>
       {open && (
-        <div role="menu" className="absolute end-0 top-full z-40 mt-1 w-60 rounded-md border border-border bg-popover py-1 text-sm shadow-lg" onMouseLeave={() => setOpen(false)}>
+        <div role="menu" className="absolute end-0 top-full z-40 mt-1 w-60 rounded-md border border-border bg-popover py-1 text-sm text-popover-foreground shadow-lg" data-form-menu-list onMouseLeave={() => setOpen(false)}>
           {items.map((i) => (
-            <button key={i.label} type="button" role="menuitem" disabled={i.disabled} data-menu-item={i.label} className={`flex w-full items-center px-3 py-1.5 text-start hover:bg-muted disabled:opacity-40 ${i.danger ? "text-destructive" : ""}`} onClick={() => { setOpen(false); i.run(); }}>
+            <button key={i.label} type="button" role="menuitem" disabled={i.disabled} data-menu-item={i.label} className={`flex w-full items-center gap-2 px-3 py-1.5 text-start hover:bg-muted disabled:opacity-40 ${i.danger ? "text-destructive" : "text-popover-foreground"}`} onClick={() => { setOpen(false); i.run(); }}>
               {menuIcon(i.label) && <EntGlyph name={menuIcon(i.label)!} />}<span className="flex flex-col"><span>{i.label}</span>{i.hint && <span className="text-[11px] text-muted-foreground" data-server-only>{i.hint}</span>}</span>{i.key && <span className="ms-auto text-[10px] text-muted-foreground" data-no-i18n>{i.key}</span>}
             </button>
           ))}
