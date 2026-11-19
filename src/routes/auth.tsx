@@ -1,19 +1,18 @@
 import { loadPublished } from '@/lib/cms-query';
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { supabase } from "@/integrations/supabase/client";
-import { lovable } from "@/integrations/lovable/index";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { withSeo } from "@/lib/seo";
-import "@lovable.dev/cloud-auth-js/styles.css";
+import { MEDIA } from "@/components/geointime/geo-media";
+import "@/lux-auth.css";
 
 export const Route = createFileRoute("/auth")({
- loader: ({ context, location }) => loadPublished(context.queryClient, location),
+  loader: ({ context, location }) => loadPublished(context.queryClient, location),
   head: ({ loaderData }) =>
     withSeo("/auth", {
       meta: [
-        { title: "تسجيل دخول الإدارة — Digit" },
+        { title: "تسجيل الدخول — GeoInTime" },
+        { name: "description", content: "بوابة الدخول الآمنة لفريق GeoInTime: الإدارة وإدارة العملاء." },
         { name: "robots", content: "noindex" },
       ],
     }, loaderData),
@@ -21,84 +20,55 @@ export const Route = createFileRoute("/auth")({
 });
 
 function AuthPage() {
-  const navigate = useNavigate();
+  const [ar, setAr] = useState(true);
+  const t = (a: string, e: string) => (ar ? a : e);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [show, setShow] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  async function handleEmailSignIn(event: FormEvent) {
+  async function submit(event: FormEvent) {
     event.preventDefault();
     setBusy(true);
     setError(null);
-    const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+    const { error: e } = await supabase.auth.signInWithPassword({ email, password });
     setBusy(false);
-    if (signInError) {
-      setError("بيانات الدخول غير صحيحة. تحقق من البريد وكلمة المرور.");
-      return;
-    }
-    window.location.assign("/digit-crm/");
-  }
-
-  async function handleOAuth(provider: "google" | "lovable") {
-    setError(null);
-    const result = await lovable.auth.signInWithOAuth(provider, {
-      redirect_uri: window.location.origin,
-    });
-    if (result.error) {
-      setError("تعذّر تسجيل الدخول. حاول مرة أخرى.");
-      return;
-    }
-    if (result.redirected) return;
+    if (e) return setError(t("بيانات الدخول غير صحيحة. تحقق من البريد وكلمة المرور.", "Incorrect email or password."));
     window.location.assign("/digit-crm/");
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4" dir="rtl">
-      <div className="w-full max-w-sm rounded-2xl border border-border bg-card p-8 shadow-lg">
-        <h1 className="text-xl font-bold text-foreground">تسجيل دخول الإدارة</h1>
-        <p className="mt-1 text-sm text-muted-foreground">لوحة تحكم موقع Digit — للمشرفين فقط.</p>
-
-        <form onSubmit={handleEmailSignIn} className="mt-6 flex flex-col gap-3">
-          <Input
-            type="email"
-            dir="ltr"
-            placeholder="البريد الإلكتروني"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            autoComplete="email"
-          />
-          <Input
-            type="password"
-            dir="ltr"
-            placeholder="كلمة المرور"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
-            autoComplete="current-password"
-          />
-          {error && <p className="text-sm text-destructive">{error}</p>}
-          <Button type="submit" disabled={busy}>
-            {busy ? "جارٍ الدخول…" : "تسجيل الدخول"}
-          </Button>
-        </form>
-
-        <div className="my-5 flex items-center gap-3 text-xs text-muted-foreground">
-          <span className="h-px flex-1 bg-border" />
-          أو
-          <span className="h-px flex-1 bg-border" />
-        </div>
-
-        <div className="flex flex-col gap-2">
-          <Button type="button" variant="outline" onClick={() => handleOAuth("google")}>
-            المتابعة بحساب Google
-          </Button>
-          <button type="button" className="lovable-auth-button" onClick={() => handleOAuth("lovable")}>
-            Continue with Lovable
+    <main className="lux-auth" dir={ar ? "rtl" : "ltr"}>
+      <div className="lux-glow lux-glow-a" aria-hidden />
+      <div className="lux-glow lux-glow-b" aria-hidden />
+      <div className="lux-grid" aria-hidden />
+      <section className="lux-card">
+        <img src={MEDIA.logoOnDark.src} alt="GeoInTime" className="lux-logo" width={2048} height={615} />
+        <h1>{t("تسجيل الدخول إلى النظام", "Sign in to your workspace")}</h1>
+        <p className="lux-sub">{t("الإدارة · إدارة العملاء · المبيعات", "Admin · CRM · Sales")}</p>
+        <form onSubmit={submit} className="lux-form">
+          <label>
+            <span>{t("البريد الإلكتروني", "Email")}</span>
+            <input type="email" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" autoFocus />
+          </label>
+          <label>
+            <span>{t("كلمة المرور", "Password")}</span>
+            <div className="lux-pass">
+              <input type={show ? "text" : "password"} dir="ltr" value={password} onChange={(e) => setPassword(e.target.value)} required autoComplete="current-password" />
+              <button type="button" onClick={() => setShow(!show)}>{show ? t("إخفاء", "Hide") : t("إظهار", "Show")}</button>
+            </div>
+          </label>
+          {error && <p role="alert" className="lux-error">{error}</p>}
+          <button type="submit" className="lux-submit" disabled={busy}>
+            {busy ? t("جارٍ الدخول…", "Signing in…") : t("دخول", "Sign in")}
           </button>
+        </form>
+        <div className="lux-foot">
+          <span>{t("اتصال آمن ومشفّر", "Secure, encrypted connection")}</span>
+          <button type="button" onClick={() => setAr(!ar)}>{ar ? "English" : "العربية"}</button>
         </div>
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }

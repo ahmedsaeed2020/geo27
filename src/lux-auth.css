@@ -1,0 +1,23 @@
+.lux-auth{--lx-mint:#11E497;--lx-ink:#0f0e18;--lx-ink2:#181725;--lx-text:#F4F4F4;--lx-muted:color-mix(in srgb,#F4F4F4 62%,transparent);--lx-line:color-mix(in srgb,#F4F4F4 14%,transparent);
+  position:relative;min-height:100vh;display:grid;place-items:center;padding:24px;overflow:hidden;background:radial-gradient(120% 90% at 50% 0%,var(--lx-ink2),var(--lx-ink));color:var(--lx-text);font-family:"Noto Sans Arabic","Dosis",system-ui,sans-serif}
+.lux-glow{position:absolute;width:520px;height:520px;border-radius:50%;filter:blur(90px);opacity:.35;background:var(--lx-mint);animation:lxFloat 14s ease-in-out infinite alternate}
+.lux-glow-a{top:-180px;inset-inline-start:-140px}.lux-glow-b{bottom:-220px;inset-inline-end:-160px;opacity:.18;animation-delay:-7s}
+.lux-grid{position:absolute;inset:0;background-image:linear-gradient(var(--lx-line) 1px,transparent 1px),linear-gradient(90deg,var(--lx-line) 1px,transparent 1px);background-size:56px 56px;mask-image:radial-gradient(circle at center,#000 20%,transparent 70%);opacity:.35}
+.lux-card{position:relative;width:100%;max-width:420px;padding:40px 34px 28px;border-radius:24px;background:color-mix(in srgb,var(--lx-ink2) 72%,transparent);border:1px solid var(--lx-line);backdrop-filter:blur(18px);box-shadow:0 30px 80px -20px #000a,0 0 0 1px color-mix(in srgb,var(--lx-mint) 10%,transparent) inset;animation:lxIn .7s cubic-bezier(.2,.76,.24,1) both}
+.lux-logo{display:block;height:44px;width:auto;margin:0 auto 22px}
+.lux-card h1{font-size:1.45rem;font-weight:700;text-align:center;margin:0}
+.lux-sub{text-align:center;color:var(--lx-muted);font-size:.85rem;margin:6px 0 26px}
+.lux-form{display:flex;flex-direction:column;gap:16px}
+.lux-form label span{display:block;font-size:.8rem;color:var(--lx-muted);margin-bottom:6px}
+.lux-form input{width:100%;height:48px;padding:0 14px;border-radius:12px;background:color-mix(in srgb,var(--lx-text) 6%,transparent);border:1px solid var(--lx-line);color:var(--lx-text);font-size:.95rem;outline:none;transition:border-color .2s,box-shadow .2s}
+.lux-form input:focus{border-color:var(--lx-mint);box-shadow:0 0 0 4px color-mix(in srgb,var(--lx-mint) 20%,transparent)}
+.lux-pass{position:relative}.lux-pass input{padding-inline-end:70px}
+.lux-pass button{position:absolute;top:50%;inset-inline-end:10px;transform:translateY(-50%);background:none;border:0;color:var(--lx-mint);font-size:.78rem;cursor:pointer}
+.lux-error{padding:10px 12px;border-radius:10px;font-size:.85rem;background:color-mix(in srgb,#CC0514 18%,transparent);border:1px solid color-mix(in srgb,#CC0514 45%,transparent);margin:0}
+.lux-submit{height:50px;border:0;border-radius:12px;background:var(--lx-mint);color:var(--lx-ink);font-weight:700;font-size:1rem;cursor:pointer;box-shadow:0 12px 30px -10px color-mix(in srgb,var(--lx-mint) 70%,transparent);transition:transform .2s,filter .2s}
+.lux-submit:hover{transform:translateY(-1px);filter:brightness(1.06)}.lux-submit:disabled{opacity:.6;cursor:wait}
+.lux-foot{display:flex;justify-content:space-between;align-items:center;margin-top:24px;padding-top:16px;border-top:1px solid var(--lx-line);font-size:.78rem;color:var(--lx-muted)}
+.lux-foot button{background:none;border:1px solid var(--lx-line);color:var(--lx-text);border-radius:999px;padding:5px 14px;cursor:pointer}
+@keyframes lxIn{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes lxFloat{to{transform:translate(60px,40px) scale(1.1)}}
+@media (prefers-reduced-motion:reduce){.lux-card,.lux-glow{animation:none}}
