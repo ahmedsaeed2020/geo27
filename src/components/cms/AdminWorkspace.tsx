@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
 import { useServerFn } from '@tanstack/react-start';
 import { useNavigate } from '@tanstack/react-router';
-import { LogOut } from 'lucide-react';
+import { Inbox, LogOut } from 'lucide-react';
 import { cmsWorkspace } from '@/lib/cms.functions';
 import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
@@ -121,9 +121,10 @@ export default function AdminWorkspace() {
           DIGIT <span className="text-primary">CMS</span>
         </h1>
         <p className="mb-6 text-xs text-muted-foreground">{ROLE_LABELS[role]}</p>
-        {/* DIGIT CRM (Core + Enterprise + CRM) lives in the same project under /digit-crm */}
-        <a href="/admin/crm" className="mb-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90" data-admin-digit-crm>
-          CRM
+        {/* The Lite CRM app opens straight from the admin sidebar at /admin/crm */}
+        <a href="/admin/crm" className="mb-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground hover:bg-primary/90" data-admin-digit-crm>
+          <Inbox size={17} />
+          تطبيق إدارة العملاء CRM
         </a>
         <nav aria-label="أقسام الإدارة" className="space-y-4">
           {groups.map(g => (
