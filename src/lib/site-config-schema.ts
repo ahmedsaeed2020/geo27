@@ -1,9 +1,9 @@
 import { z } from 'zod';
 
 /** Site-wide editable settings. Each key has its own draft/published snapshot in cms_site_config. */
-export const SITE_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'security', 'catalog'] as const;
+export const SITE_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'security', 'catalog', 'landing'] as const;
 export type SiteConfigKey = (typeof SITE_CONFIG_KEYS)[number];
-export const PUBLIC_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'catalog'] as const;
+export const PUBLIC_CONFIG_KEYS = ['branding', 'forms', 'home', 'pro', 'catalog', 'landing'] as const;
 
 export const CMS_MEDIA_PREFIX = '/api/public/cms-media/';
 const mediaRef = z
@@ -77,6 +77,12 @@ export const catalogSchema = z.object({
 });
 export type CatalogConfig = z.infer<typeof catalogSchema>;
 
+export const LANDING_FIELDS = ['headerCta', 'overline', 'title', 'titleB', 'titleEm', 'titleC', 'lead', 'description', 'primary', 'secondary'] as const;
+export type LandingField = (typeof LANDING_FIELDS)[number];
+const landingText = z.object(Object.fromEntries(LANDING_FIELDS.map(f => [f, z.string().trim().max(240).optional()])) as Record<LandingField, z.ZodOptional<z.ZodString>>).partial().default({});
+export const landingSchema = z.object({ ar: landingText, en: landingText });
+export type LandingConfig = z.infer<typeof landingSchema>;
+
 export const CONFIG_SCHEMAS = {
   branding: brandingSchema,
   forms: formsSchema,
@@ -84,6 +90,7 @@ export const CONFIG_SCHEMAS = {
   pro: sectionLayoutSchema,
   security: securitySchema,
   catalog: catalogSchema,
+  landing: landingSchema,
 } as const;
 
 export type SiteConfig = {
@@ -92,6 +99,7 @@ export type SiteConfig = {
   home: SectionLayoutConfig;
   pro: SectionLayoutConfig;
   catalog: CatalogConfig;
+  landing: LandingConfig;
 };
 
 export function parseConfig<K extends SiteConfigKey>(key: K, value: unknown): z.infer<(typeof CONFIG_SCHEMAS)[K]> {
@@ -106,6 +114,7 @@ export const DEFAULT_SITE_CONFIG: SiteConfig = {
   home: parseConfig('home', {}),
   pro: parseConfig('pro', {}),
   catalog: parseConfig('catalog', {}),
+  landing: parseConfig('landing', {}),
 };
 
 /** Applies a stored order/visibility list onto the source section list; unknown ids are dropped and new source sections are placed after the section that precedes them in the source order. */

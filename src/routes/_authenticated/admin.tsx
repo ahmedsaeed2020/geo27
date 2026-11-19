@@ -33,7 +33,7 @@ const TABS = [
 ] as const;
 
 export const Route = createFileRoute("/_authenticated/admin")({
-  head: () => ({ meta: [{ title: "إدارة المحتوى والعملاء — DIGIT" }, { name: "description", content: "لوحة إدارة Digit الخاصة للمحتوى والطلبات والصور." }, { property: "og:title", content: "إدارة DIGIT" }, { property: "og:description", content: "إدارة محتوى وطلبات Digit." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }, { name: "robots", content: "noindex, nofollow" }] }),
+  head: () => ({ meta: [{ title: "إدارة المحتوى والعملاء — GeoInTime" }, { name: "description", content: "لوحة إدارة GeoInTime الخاصة للمحتوى والطلبات." }, { property: "og:title", content: "إدارة GeoInTime" }, { property: "og:description", content: "إدارة محتوى وطلبات GeoInTime." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary" }, { name: "robots", content: "noindex, nofollow" }] }),
   component: AdminPage,
 });
 

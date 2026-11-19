@@ -1,3 +1,4 @@
+import { useSiteConfig } from '@/components/cms/CmsContext';
 import { useCallback, useRef, useState, type CSSProperties, type MouseEvent } from 'react';
 import { Link } from '@tanstack/react-router';
 import { ArrowDown, ArrowLeft, ArrowRight, Globe2, Menu, MessageCircle, X } from 'lucide-react';
@@ -21,7 +22,10 @@ const GROUP_CHALLENGE: Record<GeoGroup, GeoChallenge> = { operations: 'sites', h
  */
 export default function GeoLanding() {
   const locale = useLocale();
-  const t = GEO_COPY[locale];
+  const base = GEO_COPY[locale];
+  const o = useSiteConfig().landing?.[locale] ?? {};
+  const pick = (k: keyof typeof o) => (o[k] ? o[k] : undefined);
+  const t = { ...base, headerCta: pick('headerCta') ?? base.headerCta, hero: { ...base.hero, overline: pick('overline') ?? base.hero.overline, title: pick('title') ?? base.hero.title, titleB: pick('titleB') ?? base.hero.titleB, titleEm: pick('titleEm') ?? base.hero.titleEm, titleC: pick('titleC') ?? base.hero.titleC, lead: pick('lead') ?? base.hero.lead, description: pick('description') ?? base.hero.description, primary: pick('primary') ?? base.hero.primary, secondary: pick('secondary') ?? base.hero.secondary } };
   const main = useRef<HTMLElement>(null);
   const [menu, setMenu] = useState(false);
   const [challenge, setChallenge] = useState<GeoChallenge | ''>('');

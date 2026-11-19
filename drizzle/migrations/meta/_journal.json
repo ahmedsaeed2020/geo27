@@ -29,6 +29,13 @@
       "when": 1795096278991,
       "tag": "0003_migration",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1795099658495,
+      "tag": "0004_landing_config_key",
+      "breakpoints": true
     }
   ]
 }

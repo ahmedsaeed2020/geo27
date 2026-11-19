@@ -26,6 +26,7 @@ type Tab = { id: string; label: string; icon: ComponentType<{ size?: number }>; 
 export const TABS: Tab[] = [
   { id: 'crm', label: 'إدارة العملاء CRM', icon: ChartNoAxesCombined, roles: ['owner'], group: 'العملاء' },
   { id: 'overview', label: 'نظرة عامة', icon: LayoutDashboard, roles: ['owner', 'editor', 'sales'], group: '' },
+  { id: 'landing', label: 'الصفحة الرئيسية GeoInTime', icon: SquarePen, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'pages', label: 'الصفحات', icon: FileText, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'catalog', label: 'المنتجات والأقسام', icon: Boxes, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'stories', label: 'قصص الميزات', icon: BookOpen, roles: ['owner', 'editor'], group: 'المحتوى' },
@@ -49,6 +50,8 @@ export const TABS: Tab[] = [
 
 
 /** Admin sections visible to a role; the server enforces the same scopes on every action. */
+/** Legacy DIGIT site sections stay built and reachable in code but are hidden from the GeoInTime admin menu. */
+export const LEGACY_HIDDEN = new Set(['pages', 'catalog', 'stories', 'resources', 'home', 'pro', 'navigation']);
 export function tabsFor(role: Role): Tab[] {
-  return TABS.filter(t => t.roles.includes(role));
+  return TABS.filter(t => t.roles.includes(role) && !LEGACY_HIDDEN.has(t.id));
 }

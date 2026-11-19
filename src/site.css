@@ -130,7 +130,7 @@
   --geo-white: #ffffff;
   --geo-muted: #62616c;
   --geo-soft: #c7c6d0;
-  --geo-active-ink: #087953;
+  --geo-active-ink: var(--geo-green);
   --geo-border: #dedee3;
   --geo-line: #3d3c4a;
   --geo-font: 'Noto Sans Arabic', sans-serif;

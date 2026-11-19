@@ -22,6 +22,7 @@ import Redirects from './admin/Redirects';
 import FormsEditor from './admin/FormsEditor';
 import BrandingEditor from './admin/BrandingEditor';
 import SectionsEditor from './admin/SectionsEditor';
+import LandingEditor from './admin/LandingEditor';
 import CatalogEditor from './admin/CatalogEditor';
 import SecurityPanel, { MfaChallenge } from './admin/Security';
 import { ROLE_LABELS, WORKSPACE_KEY, type Doc } from './admin/shared';
@@ -87,7 +88,7 @@ export default function AdminWorkspace() {
   if (mfa === 'checking' || query.isPending)
     return (
       <p className="p-8 font-plex" dir="rtl">
-        جارٍ تحميل لوحة Digit…
+        جارٍ تحميل لوحة الإدارة…
       </p>
     );
   if (query.error)
@@ -118,7 +119,7 @@ export default function AdminWorkspace() {
     <div className="v3-cms-layout font-plex text-foreground" dir="rtl">
       <aside className="v3-cms-nav">
         <h1 className="mb-1 text-2xl font-bold">
-          DIGIT <span className="text-primary">CMS</span>
+          GeoInTime <span className="text-primary">Admin</span>
         </h1>
         <p className="mb-6 text-xs text-muted-foreground">{ROLE_LABELS[role]}</p>
         {/* The DIGIT CRM app opens straight from the admin sidebar */}
@@ -192,6 +193,7 @@ export default function AdminWorkspace() {
         {current?.id === 'media' && <MediaLibrary rows={w.media} docs={w.docs} config={w.config} owner={owner} notice={setNotice} />}
         {current?.id === 'redirects' && <Redirects rows={w.redirects} docs={w.docs} owner={owner} notice={setNotice} />}
         {(current?.id === 'home' || current?.id === 'pro') && <SectionsEditor key={current.id} page={current.id} rows={w.config} owner={owner} team={w.team} notice={setNotice} />}
+        {current?.id === 'landing' && <LandingEditor rows={w.config} owner={owner} notice={setNotice} />}
         {current?.id === 'forms' && <FormsEditor rows={w.config} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'branding' && <BrandingEditor rows={w.config} media={w.media} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'leads' && <Leads rows={w.leads} team={w.team} notice={setNotice} />}
