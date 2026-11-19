@@ -10,7 +10,11 @@ import { toast } from "sonner";
 import { useLang } from "@/i18n";
 import { EntDialog } from "@/components/enterprise/Surfaces";
 import { peekRow } from "@/components/enterprise/QuickView";
-import { RecordList, SplitButton, type RlChip, type RlColumn, type RlField, type RlRowAction, type RlView } from "@/components/enterprise/kit/RecordList";
+import { useQuery } from "@tanstack/react-query";
+import { cachedMeta } from "@/lib/catalog";
+import { capabilityQuery } from "@/lib/capabilities";
+import { deleteDocuments } from "@/lib/deleteDoc";
+import { RecordList, SplitButton, type RlBulk, type RlChip, type RlColumn, type RlField, type RlRowAction, type RlView } from "@/components/enterprise/kit/RecordList";
 import { Avatar, Pill } from "@/components/enterprise/kit/RecordFrame";
 import { Composer, type ComposerMode } from "@/components/enterprise/kit/RecordTimeline";
 import { KpiRow, type KpiItem } from "@/components/enterprise/kit/templates";
@@ -39,6 +43,14 @@ function ConsentIcons({ c, ar }: { c: ContactRow["consent"]; ar: boolean }) {
 function Body({ user, ar }: { user: string; ar: boolean }) {
   const nav = useNavigate();
   const rows = contactRows(user);
+  const reg = useQuery(capabilityQuery);
+  const [, bump] = useState(0);
+  const bulk: RlBulk[] = [{ key: "delete", label: tx(ar, "Delete", "حذف"), icon: "🗑", tone: "bad", run: (keys) => {
+    const meta = cachedMeta("Contact"); if (!meta) return toast.error(tx(ar, "Contacts are not ready yet", "جهات الاتصال غير جاهزة بعد"));
+    if (!window.confirm(tx(ar, `Delete ${keys.length} contacts?`, `حذف ${keys.length} جهة اتصال؟`))) return;
+    const r = deleteDocuments(meta, keys, reg.data, user); bump((x) => x + 1);
+    if (r.failed.length) toast.error(tx(ar, `${r.deleted.length} deleted, ${r.failed.length} refused`, `حُذف ${r.deleted.length} ورُفض ${r.failed.length}`), { description: r.failed.slice(0, 3).map((f) => `${f.name}: ${f.errors[0]}`).join(" · ") }); else toast.success(tx(ar, `${r.deleted.length} deleted`, `حُذف ${r.deleted.length}`));
+  } }];
   const [log, setLog] = useState<{ row: ContactRow; mode: ComposerMode } | null>(null);
   const idle = Math.max(7, crmRules().inactivityDays * 10);
   const now = Date.now(), d30 = 30 * 864e5;
@@ -113,7 +125,7 @@ function Body({ user, ar }: { user: string; ar: boolean }) {
         items={[{ key: "import", label: tx(ar, "Import", "استيراد"), hint: tx(ar, "CSV / Excel through Data Import", "ملف CSV / Excel عبر استيراد البيانات"), run: () => void nav({ to: "/app/data-import/new" }) },
           { key: "classic", label: tx(ar, "Classic list", "القائمة الكلاسيكية"), hint: tx(ar, "The standard contact list with its own views", "قائمة جهات الاتصال القياسية بعروضها"), run: () => void nav({ to: "/digit-crm/contacts" }) }]} />}
       strip={{ tabs: (xs) => contactStrip(xs), of: (r) => r.rel }} search={(r) => `${r.title} ${r.company} ${r.phone} ${r.email} ${r.name} ${r.role}`}
-      rowActions={rowActions} tone={(r) => (r.openDeals.length && !r.next ? "warn" : undefined)}
+      rowActions={rowActions} bulk={bulk} tone={(r) => (r.openDeals.length && !r.next ? "warn" : undefined)}
       kanban={{ columns: CONTACT_REL_ORDER.map((k) => ({ key: k, label: relLabel(k, ar), hue: LEAD_HUE_VAR[CONTACT_REL_HUE[k]]! })), of: (r) => r.rel,
         card: (r) => ({ key: r.name, title: <Link to="/app/$app/$doctype/$name" params={{ app: "frappe", doctype: "contact", name: r.name }} className="text-primary hover:underline" data-no-i18n>{r.title}</Link>, sub: <bdi data-no-i18n>{[r.role, r.company].filter(Boolean).join(" · ") || r.name}</bdi>, amountText: r.openValue ? sar(r.openValue) : undefined, onOpen: (el) => peekRow("Contact", r.name, rows.map((x) => x.name), el) }) }}
       groups={[{ key: "company", label: tx(ar, "Company", "الشركة"), of: (r) => r.company }, { key: "owner", label: tx(ar, "Owner", "المالك"), of: (r) => r.owner, labelOf: (v) => (v && v !== "—" ? personLabel(v, ar) || v : tx(ar, "No owner", "بدون مالك")) }, { key: "rel", label: tx(ar, "Relationship", "العلاقة"), of: (r) => r.rel, labelOf: (v) => relLabel(v, ar) }]}
