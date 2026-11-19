@@ -3,7 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 /** Owner decision: DIGIT CRM starts empty (no sample data); website sign-ups arrive as CRM Leads. */
 export const isCrmDoctype = (dt: string) => dt.startsWith("CRM ") || dt === "FCRM Note";
-const FLAG = "digit-crm:reset-v2";
+const FLAG = "digit-crm:reset-v3";
 
 export function resetCrmOnce() {
   if (typeof localStorage === "undefined" || localStorage.getItem(FLAG)) return;

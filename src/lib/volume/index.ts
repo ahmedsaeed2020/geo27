@@ -9,8 +9,7 @@ import { adapter, type Doc } from "@/lib/adapter";
 import { deletedIndex, deletedKey } from "@/lib/deletedDocs";
 import { postVouchers } from "@/lib/posting";
 import { wasRenamed } from "@/lib/rename";
-import { runCrmEngines } from "@/lib/crmLogic";
-import { crmVolume } from "./crm";
+
 import { erpVolume } from "./erp";
 import { hrVolume } from "./hr";
 import type { Rec } from "./kit";
@@ -65,7 +64,7 @@ export function seedVolume(): VolumeStats {
       const all = (recs: Rec[]) => { for (const [dt, name, data] of recs) put(dt, name, data); };
       const hr = hrVolume(); all(hr.records);
       const erp = erpVolume(hr.payroll); all(erp.records); erp.vouchers.forEach((v) => vouchers.add(v));
-      all(crmVolume()); runCrmEngines();
+      // owner decision: DIGIT CRM starts empty, so no CRM sample volume is built
       const ctx: VolumeContext = { put, voucher: (dt, name) => vouchers.add(`${dt}|${name}`) };
       for (const p of providers) { try { if (p.enabled()) p.run(ctx); } catch (e) { console.warn(`[sample volume] ${p.app}`, e); } }
       // post every registered voucher that exists and is submitted (a user-edited copy is posted as it is now)

@@ -9,6 +9,7 @@ import { adapter } from "./adapter";
 import { deletedIndex, deletedKey } from "./deletedDocs";
 import { crmSetup, crmExtra, statusHistory, EXTRA_ORGS, LOST_REASONS } from "./seedCrm";
 import { runCrmEngines } from "./crmLogic";
+import { isCrmDoctype } from "./crmReset";
 
 export const DEMO_COMPANY = "Digit Demo Trading Co.";
 const A = "DDT";
@@ -354,6 +355,7 @@ export function seedDemo() {
   }
   const gone = deletedIndex();
   for (const [dt, name, data] of demoRecords()) {
+    if (isCrmDoctype(dt)) continue;
     if (adapter.get(dt, name) || wasRenamed(dt, name) || gone.has(deletedKey(dt, name))) continue;
     adapter.insertDocQuiet(dt, { ...data, name, __synthetic: 1, ...(data["is_return"] ? { __ret_v2: 1 } : {}) });
     added++;
