@@ -121,7 +121,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       ...(loaderData?.preview ? [{ name: "robots", content: "noindex, nofollow" }] : []),
     ],
     styles: branding?.primary ? [{ children: `:root{--primary:${branding.primary};--ring:${branding.primary};}` }] : [],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(ORGANIZATION_JSONLD) }],
     links: [
       { rel: "stylesheet", href: appCss },
       { rel: "stylesheet", href: bilingualCss },
@@ -151,6 +150,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const landing = useRouterState({ select: state => /^\/(?:en\/?)?$/.test(state.location.pathname) });
   const english = useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) });
   // The product family's motion identity is server-rendered so first-fold choreography runs on first paint.
   const identity = useRouterState({ select: state => motionIdentity(state.location.pathname) });
@@ -159,6 +159,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="ar" dir="rtl" {...(english ? { lang: "en", dir: "ltr" } : {})} data-dm={identity}>
       <head>
         <HeadContent />
+        {!landing && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSONLD) }} />}
       </head>
       <body>
         {children}
@@ -200,6 +201,7 @@ function RootComponent() {
   const { queryClient } = Route.useRouteContext();
   const site = Route.useLoaderData();
   const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
+  const landing = useRouterState({ select: s => /^\/(?:en\/?)?$/.test(s.location.pathname) });
   const draft = useSettingsDraft();
   const config: SiteConfig = draft.status === 'ok' ? { ...site.config, [draft.key]: draft.value } : site.config;
 
@@ -212,8 +214,8 @@ function RootComponent() {
         <SettingsDraftBanner state={draft} />
       </CmsProvider>
       <ClientOnly fallback={null}>
-        {!privateArea && <ChatWidget />}
-        {!privateArea && <FormCtaRouting />}
+        {!privateArea && !landing && <ChatWidget />}
+        {!privateArea && !landing && <FormCtaRouting />}
       </ClientOnly>
     </QueryClientProvider>
   );

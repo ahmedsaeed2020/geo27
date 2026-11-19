@@ -1,3 +1,8 @@
+# GeoInTime landing conversion (2026-11-19)
+- [x] Replace Arabic/English home with four source-grounded blocks, original imagery and scoped brand motion; hide DIGIT navigation from landing.
+- [x] Preserve administration and existing lead functions; brand the landing form without DIGIT customer claims.
+- [x] Check desktop/mobile, reduced motion, language switching and saved lead (confirmed in Cloud, verification row removed); do not publish. Admin login gate preserved; signed-in admin verification unavailable because the remixed app has no account matching the owner. Email delivery remains not configured in the existing lead function.
+
 # Orbit navigation, image audit, code review, SEO (owner 2026-11-05 18:38)
 - [x] Owner 2026-11-06: close anonymous direct chat-table access before publishing; preserve visitor-checked server handlers and CMS reads.
 - [x] Owner 2026-11-06: published current site (live verification tag confirmed), verified Google ownership, added the root property and submitted the sitemap successfully.

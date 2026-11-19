@@ -75,9 +75,13 @@ const COPY = {
  * Every visitor form carries the «قصص النجاح» logo strip on top (boxed to the form's width); the demo panel renders its
  * own larger strip above its heading and passes `stories={false}`, and admin previews (`demo`) never show it.
  */
-export default function ContactForm({ kind, interest = '', demo = false, product, department, stories = !demo, bare = false, after }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string; stories?: boolean; /** Inside a card that already has its own frame and h2 (the meeting-scene lead section). */ bare?: boolean; /** Bare mode: a secondary action beside the submit button. */ after?: ReactNode }) {
+export default function ContactForm({ kind, interest = '', demo = false, product, department, stories = !demo, bare = false, after, brand = 'Digit', interestChoices }: { kind: "contact" | "demo" | "quote"; interest?: string; demo?: boolean; product?: string; department?: string; stories?: boolean; brand?: 'Digit' | 'GeoInTime'; interestChoices?: readonly string[]; /** Inside a card that already has its own frame and h2 (the meeting-scene lead section). */ bare?: boolean; /** Bare mode: a secondary action beside the submit button. */ after?: ReactNode }) {
   const locale = useLocale();
-  const t = COPY[locale];
+  const t = { ...COPY[locale], ...brand === 'GeoInTime' ? {
+    heading: locale === 'ar' ? 'ناقش احتياج منشأتك مع GeoInTime' : 'Discuss your needs with GeoInTime',
+    demo: locale === 'ar' ? 'عرض توضيحي لـ GeoInTime' : 'GeoInTime walkthrough',
+    success: locale === 'ar' ? 'تم حفظ طلبك. سيتواصل معك فريق GeoInTime.' : 'Your request is saved. The GeoInTime team will contact you.',
+  } : {} };
   const settings = useSiteConfig().forms;
   const [state, setState] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [invalid, setInvalid] = useState<string | false>(false);
@@ -86,7 +90,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
   const hydrated = useHydrated();
   const requireJob = settings.showJobRole && settings.requireJobRole;
   const requireMessage = settings.showMessage && settings.requireMessage;
-  const options = settings.interestOptions.map(o => o[locale]);
+  const options = interestChoices ?? settings.interestOptions.map(o => o[locale]);
   const interestOptions = options.length && interest && !options.includes(interest) ? [interest, ...options] : options;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
@@ -151,7 +155,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
   if (state === "success") {
     return withStories(
       <div role="status" className={bare ? 'rounded-2xl border border-primary/30 bg-primary/5 p-6 text-center' : 'border border-border bg-card p-6 text-center'}>
-        <p className="font-semibold text-foreground">{demo ? t.demoOnly : settings.success[locale] || t.success}</p>
+        <p className="font-semibold text-foreground">{demo ? t.demoOnly : brand === 'GeoInTime' ? t.success : settings.success[locale] || t.success}</p>
       </div>
     );
   }
@@ -159,7 +163,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
   const optional = (required: boolean) => (required ? '' : t.optional);
 
   return withStories(
-    <form onSubmit={handleSubmit} method="post" className={bare ? 'ls-form' : 'border border-border bg-card p-6'} noValidate data-contextual-form={demo ? undefined : true} aria-label={bare ? settings.heading[locale] || t.heading : undefined}>
+    <form onSubmit={handleSubmit} method="post" className={bare ? 'ls-form' : 'border border-border bg-card p-6'} noValidate data-contextual-form={demo ? undefined : true} aria-label={brand === 'GeoInTime' ? t.heading : bare ? settings.heading[locale] || t.heading : undefined}>
       {!bare && <h2 className="mb-4 text-lg font-bold text-foreground">{settings.heading[locale] || t.heading}</h2>}
       <div className="grid gap-3 sm:grid-cols-2">
         <label>{t.name}<Input name="name" autoComplete="name" required maxLength={100} /></label>

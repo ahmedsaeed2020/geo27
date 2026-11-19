@@ -9,6 +9,8 @@
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
 
+- GeoInTime landing uses GeoLanding, bilingual source copy and scoped tokens on / and /en; retain legacy DIGIT pages/admin and reuse ContactForm/submitLead to preserve lead handling without exposing DIGIT navigation or claims.
+
 - Render imported Elementor package pages through one shared React renderer with extracted content and scoped CSS so both pages preserve their source layout without WordPress dependencies.
 - Keep published preview metadata alongside extracted package content and implement motion in the shared renderer so both packages retain their original interactive layout without loading WordPress scripts.
 - Request calls to action route by wording through src/lib/form-cta.ts and the root click router: price/quote/subscribe wording opens /quote, every other request opens /demo, each with its own form and a ?from= path so the lead keeps its product context; visitors never leave for hosted pages.

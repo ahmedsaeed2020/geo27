@@ -123,6 +123,22 @@
   --scene-heading-wash: linear-gradient(90deg, color-mix(in oklab, var(--paper2) 6%, transparent) 0%, color-mix(in oklab, var(--paper2) 64%, transparent) 38%, var(--paper2) 72%);
   --scene-content-wash: linear-gradient(90deg, color-mix(in oklab, var(--paper2) 62%, transparent), color-mix(in oklab, var(--paper2) 88%, transparent) 55%, color-mix(in oklab, var(--paper2) 97%, transparent));
   --scene-content-dark-wash: linear-gradient(90deg, color-mix(in oklab, var(--dark) 28%, transparent), color-mix(in oklab, var(--dark) 78%, transparent) 58%, color-mix(in oklab, var(--dark) 94%, transparent));
+  /* GeoInTime foreground identity. Scoped by .geo-page; the existing admin keeps its theme. */
+  --geo-green: #11E497;
+  --geo-ink: #181725;
+  --geo-light: #F4F4F4;
+  --geo-white: #ffffff;
+  --geo-muted: #62616c;
+  --geo-soft: #c7c6d0;
+  --geo-active-ink: #087953;
+  --geo-border: #dedee3;
+  --geo-line: #3d3c4a;
+  --geo-font: 'Noto Sans Arabic', sans-serif;
+  --geo-hero-wash: linear-gradient(90deg, transparent 48%, color-mix(in srgb, var(--geo-ink) 82%, transparent) 64%, var(--geo-ink) 85%);
+  --geo-button-shadow: 0 4px 20px color-mix(in srgb, var(--geo-green) 12%, transparent);
+  --geo-hover-shadow: 0 8px 28px color-mix(in srgb, var(--geo-green) 20%, transparent);
+  --geo-screen-shadow: 0 28px 60px color-mix(in srgb, var(--geo-ink) 45%, transparent);
+  --geo-form-shadow: 0 12px 45px color-mix(in srgb, var(--geo-ink) 6%, transparent);
 }
 
 @layer base {
