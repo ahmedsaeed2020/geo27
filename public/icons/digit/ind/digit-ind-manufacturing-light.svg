@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="manufacturing">
+  <polygon points="22,76 22,46 40,56 40,46 58,56 58,46 78,56 78,76" fill="#0B1F17"></polygon>
+  <rect x="30" y="64" width="8" height="10" rx="2" fill="#0A8754"></rect>
+  <rect x="62" y="64" width="8" height="10" rx="2" fill="#0A8754"></rect>
+</svg>

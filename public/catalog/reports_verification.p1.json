@@ -1,0 +1,352 @@
+{
+ "runs": {
+  "en": {
+   "reports": {
+    "General Ledger": {
+     "pass": true,
+     "rows": 312,
+     "columns": [
+      "Posting Date",
+      "Account",
+      "Debit (SAR)",
+      "Credit (SAR)",
+      "Balance (SAR)",
+      "Voucher Type",
+      "Voucher No",
+      "Against Account",
+      "Party Type",
+      "Party"
+     ],
+     "total": [
+      "",
+      "Closing (Opening + Total)",
+      "22,027,584.17",
+      "22,027,584.17",
+      "0.00",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Period debit = credit (22027584.17 / 22027584.17)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "group_by=Group by Account",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_General_Ledger_en.jpg"
+    },
+    "Trial Balance": {
+     "pass": true,
+     "rows": 24,
+     "columns": [
+      "Account",
+      "Opening (Dr)",
+      "Opening (Cr)",
+      "Debit",
+      "Credit",
+      "Closing (Dr)",
+      "Closing (Cr)"
+     ],
+     "total": [
+      "Total",
+      "0.00",
+      "0.00",
+      "22,027,584.17",
+      "22,027,584.17",
+      "21,089,895.13",
+      "21,089,895.13"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Trial Balance totals balance (period Dr = Cr) (22027584.17 = 22027584.17)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Closing Dr = Closing Cr (21089895.13 = 21089895.13)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "show_zero_values=check",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Trial_Balance_en.jpg"
+    },
+    "Balance Sheet": {
+     "pass": true,
+     "rows": 18,
+     "columns": [
+      "Account",
+      "2026"
+     ],
+     "total": [
+      "Total (Credit)",
+      "16,559,412.18"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Balance Sheet balances (Asset = Liability + Equity + Provisional P/L) (16559412.18 = 16559412.18)"
+      }
+     ],
+     "summary": [
+      [
+       "Total Asset",
+       "16,559,412.18"
+      ],
+      [
+       "Total Liability",
+       "4,006,752.18"
+      ],
+      [
+       "Total Equity",
+       "16,692,832.40"
+      ],
+      [
+       "Provisional Profit / Loss (Credit)",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Balance_Sheet_en.jpg"
+    },
+    "Profit and Loss Statement": {
+     "pass": true,
+     "rows": 12,
+     "columns": [
+      "Account",
+      "2026",
+      "Total"
+     ],
+     "total": [
+      "Profit for the year",
+      "-4,140,172.40",
+      "-4,140,172.40"
+     ],
+     "checks": [],
+     "summary": [
+      [
+       "Total Income This Year",
+       "390,310.55"
+      ],
+      [
+       "Total Expense This Year",
+       "4,530,482.95"
+      ],
+      [
+       "Net Profit",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Monthly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Profit_and_Loss_Statement_en.jpg"
+    },
+    "Cash Flow": {
+     "pass": true,
+     "rows": 14,
+     "columns": [
+      "Section",
+      "2026",
+      "Total"
+     ],
+     "total": [
+      "Net Change in Cash",
+      "1,434,707.77",
+      "1,434,707.77"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net change in cash = movement on Cash/Bank accounts (1434707.77 = 1434707.77)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Cash_Flow_en.jpg"
+    }
+   },
+   "page_errors": []
+  },
+  "ar": {
+   "reports": {
+    "General Ledger": {
+     "pass": true,
+     "rows": 312,
+     "columns": [
+      "تاريخ الترحيل",
+      "حساب",
+      "Debit (SAR)",
+      "Credit (SAR)",
+      "Balance (SAR)",
+      "نوع السند",
+      "رقم السند",
+      "الحساب المقابل",
+      "نوع الطرف",
+      "الطرف"
+     ],
+     "total": [
+      "",
+      "الإغلاق (الافتتاحي + الإجمالي)",
+      "22,027,584.17",
+      "22,027,584.17",
+      "0.00",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Period debit = credit (22027584.17 / 22027584.17)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "group_by=Group by Account",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_General_Ledger_ar.jpg"
+    },
+    "Trial Balance": {
+     "pass": true,
+     "rows": 24,
+     "columns": [
+      "حساب",
+      "افتتاحي  (Dr)",
+      "افتتاحي (Cr)",
+      "مدين",
+      "دائن",
+      "إغلاق (مدين)",
+      "إغلاق (دائن)"
+     ],
+     "total": [
+      "الإجمالي",
+      "0.00",
+      "0.00",
+      "22,027,584.17",
+      "22,027,584.17",
+      "21,089,895.13",
+      "21,089,895.13"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Trial Balance totals balance (period Dr = Cr) (22027584.17 = 22027584.17)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Closing Dr = Closing Cr (21089895.13 = 21089895.13)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "show_zero_values=check",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Trial_Balance_ar.jpg"
+    },
+    "Balance Sheet": {
+     "pass": true,
+     "rows": 18,
+     "columns": [
+      "حساب",
+      "2026"
+     ],
+     "total": [
+      "الإجمالي (الائتمان)",
+      "16,559,412.18"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Balance Sheet balances (Asset = Liability + Equity + Provisional P/L) (16559412.18 = 16559412.18)"
+      }
+     ],
+     "summary": [
+      [
+       "Total Asset",
+       "16,559,412.18"
+      ],
+      [
+       "Total Liability",
+       "4,006,752.18"
+      ],
+      [
+       "Total Equity",
+       "16,692,832.40"
+      ],
+      [
+       "Provisional Profit / Loss (Credit)",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Balance_Sheet_ar.jpg"
+    },
+    "Profit and Loss Statement": {
+     "pass": true,
+     "rows": 12,
+     "columns": [
+      "حساب",
+      "2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "الربح السنوي",
+      "-4,140,172.40",
+      "-4,140,172.40"
+     ],
+     "checks": [],
+     "summary": [
+      [
+       "Total Income This Year",
+       "390,310.55"
+      ],
+      [
+       "Total Expense This Year",
+       "4,530,482.95"
+      ],
+      [
+       "Net Profit",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Monthly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Profit_and_Loss_Statement_ar.jpg"
+    },
+    "Cash Flow": {
+     "pass": true,
+     "rows": 14,
+     "columns": [
+      "قسم",
+      "2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "صافي التغير في النقد",
+      "1,434,707.77",
+      "1,434,707.77"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net change in cash = movement on Cash/Bank accounts (1434707.77 = 1434707.77)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Cash_Flow_ar.jpg"
+    }
+   },
+   "page_errors": []
+  }
+ }
+}

@@ -1,0 +1,2 @@
+/** Arabic names of the Construction roles (screens, layout editor and printed signature blocks share one map). */
+export const ROLE_AR: Record<string, string> = { "Digit Director": "مدير المقاولات", "Digit Project Manager": "مدير مشروع", "Digit QS": "مهندس كميات", "Digit Estimator": "مقدر", "Digit Procurement Officer": "مسؤول مشتريات", "Digit Site Engineer": "مهندس موقع", "Digit Accountant": "محاسب", "Digit Store Keeper": "أمين مخزن" };

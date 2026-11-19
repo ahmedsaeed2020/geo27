@@ -1,0 +1,5801 @@
+{
+ "doctypes": [
+  {
+   "name": "Digit RFI Reference",
+   "istable": 1,
+   "label_ar": "مرجع استفسار",
+   "writers": [
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "ref_type",
+     "label": "Reference Type",
+     "label_ar": "نوع المرجع",
+     "fieldtype": "Select",
+     "options": "Drawing\nSpecification\nBOQ Item\nTask\nWork Package\nPhoto\nOther",
+     "reqd": 1
+    },
+    {
+     "fieldname": "ref_name",
+     "label": "Reference",
+     "label_ar": "المرجع",
+     "fieldtype": "Data",
+     "reqd": 1
+    },
+    {
+     "fieldname": "revision",
+     "label": "Revision",
+     "label_ar": "المراجعة",
+     "fieldtype": "Data"
+    },
+    {
+     "fieldname": "note",
+     "label": "Note",
+     "label_ar": "ملاحظة",
+     "fieldtype": "Small Text"
+    }
+   ]
+  },
+  {
+   "name": "Digit PO Change Line",
+   "istable": 1,
+   "label_ar": "بند تعديل أمر شراء",
+   "writers": [
+    "EST",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "change_type",
+     "label": "Change Type",
+     "label_ar": "نوع التعديل",
+     "fieldtype": "Select",
+     "options": "Update\nNew Line",
+     "reqd": 1
+    },
+    {
+     "fieldname": "po_item",
+     "label": "PO Line",
+     "label_ar": "سطر أمر الشراء",
+     "fieldtype": "Data"
+    },
+    {
+     "fieldname": "item_code",
+     "label": "Item",
+     "label_ar": "العنصر",
+     "fieldtype": "Link",
+     "options": "Item",
+     "reqd": 1
+    },
+    {
+     "fieldname": "cost_code",
+     "label": "Cost Code",
+     "label_ar": "رمز تكلفة",
+     "fieldtype": "Data"
+    },
+    {
+     "fieldname": "old_qty",
+     "label": "Current Qty",
+     "label_ar": "الكمية الحالية",
+     "fieldtype": "Float",
+     "read_only": 1
+    },
+    {
+     "fieldname": "old_rate",
+     "label": "Current Rate",
+     "label_ar": "السعر الحالي",
+     "fieldtype": "Currency",
+     "read_only": 1
+    },
+    {
+     "fieldname": "new_qty",
+     "label": "New Qty",
+     "label_ar": "الكمية الجديدة",
+     "fieldtype": "Float",
+     "reqd": 1
+    },
+    {
+     "fieldname": "new_rate",
+     "label": "New Rate",
+     "label_ar": "السعر الجديد",
+     "fieldtype": "Currency",
+     "reqd": 1
+    },
+    {
+     "fieldname": "amount_change",
+     "label": "Amount Change",
+     "label_ar": "قيمة التغيير",
+     "fieldtype": "Currency",
+     "read_only": 1
+    }
+   ]
+  },
+  {
+   "name": "Digit PO Change",
+   "istable": 0,
+   "label_ar": "تعديل أمر شراء",
+   "autoname": "POC-.YYYY.-.####",
+   "writers": [
+    "EST",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "purchase_order",
+     "label": "Purchase Order",
+     "label_ar": "أمر الشراء",
+     "fieldtype": "Link",
+     "options": "Purchase Order",
+     "reqd": 1
+    },
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "options": "Project",
+     "reqd": 1
+    },
+    {
+     "fieldname": "company",
+     "label": "Company",
+     "label_ar": "شركة",
+     "fieldtype": "Link",
+     "options": "Company",
+     "read_only": 1
+    },
+    {
+     "fieldname": "supplier",
+     "label": "Supplier",
+     "label_ar": "المورّد",
+     "fieldtype": "Data",
+     "read_only": 1
+    },
+    {
+     "fieldname": "column_break_1",
+     "label": "",
+     "label_ar": "column_break_1",
+     "fieldtype": "Column Break"
+    },
+    {
+     "fieldname": "workflow_state",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "options": "Draft\nUnder Review\nApproved\nRejected",
+     "read_only": 1
+    },
+    {
+     "fieldname": "reason",
+     "label": "Reason",
+     "label_ar": "السبب",
+     "fieldtype": "Select",
+     "options": "Quantity Change\nPrice Change\nAdded Scope\nChange Event\nOther",
+     "reqd": 1
+    },
+    {
+     "fieldname": "change_event",
+     "label": "Change Event",
+     "label_ar": "حدث تغيير",
+     "fieldtype": "Link",
+     "options": "Digit Change Event"
+    },
+    {
+     "fieldname": "sb_l",
+     "label": "Lines",
+     "label_ar": "البنود",
+     "fieldtype": "Section Break"
+    },
+    {
+     "fieldname": "lines",
+     "label": "Lines",
+     "label_ar": "البنود",
+     "fieldtype": "Table",
+     "options": "Digit PO Change Line"
+    },
+    {
+     "fieldname": "sb_t",
+     "label": "Totals",
+     "label_ar": "الإجماليات",
+     "fieldtype": "Section Break"
+    },
+    {
+     "fieldname": "old_total",
+     "label": "Order Net Before",
+     "label_ar": "صافي الأمر قبل",
+     "fieldtype": "Currency",
+     "read_only": 1
+    },
+    {
+     "fieldname": "total_change",
+     "label": "Total Change",
+     "label_ar": "إجمالي التغيير",
+     "fieldtype": "Currency",
+     "read_only": 1
+    },
+    {
+     "fieldname": "new_total",
+     "label": "Order Net After",
+     "label_ar": "صافي الأمر بعد",
+     "fieldtype": "Currency",
+     "read_only": 1
+    },
+    {
+     "fieldname": "column_break_2",
+     "label": "",
+     "label_ar": "column_break_2",
+     "fieldtype": "Column Break"
+    },
+    {
+     "fieldname": "approved_by",
+     "label": "Approved By",
+     "label_ar": "اعتمد بواسطة",
+     "fieldtype": "Data",
+     "read_only": 1
+    },
+    {
+     "fieldname": "approved_on",
+     "label": "Approved On",
+     "label_ar": "تاريخ الاعتماد",
+     "fieldtype": "Date",
+     "read_only": 1
+    },
+    {
+     "fieldname": "applied",
+     "label": "Applied to Order",
+     "label_ar": "طُبق على الأمر",
+     "fieldtype": "Check",
+     "read_only": 1
+    },
+    {
+     "fieldname": "decision_note",
+     "label": "Decision Note",
+     "label_ar": "ملاحظة القرار",
+     "fieldtype": "Small Text"
+    }
+   ]
+  },
+  {
+   "name": "Digit PO Approval Level",
+   "istable": 0,
+   "label_ar": "مستوى اعتماد أمر الشراء",
+   "autoname": "POL-.##",
+   "writers": [
+    "EST",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "level",
+     "label": "Level",
+     "label_ar": "المستوى",
+     "fieldtype": "Int",
+     "reqd": 1
+    },
+    {
+     "fieldname": "role",
+     "label": "Approver Role",
+     "label_ar": "دور المعتمد",
+     "fieldtype": "Link",
+     "options": "Role",
+     "reqd": 1
+    },
+    {
+     "fieldname": "max_amount",
+     "label": "Max Order Total",
+     "label_ar": "الحد الأقصى لإجمالي الأمر",
+     "fieldtype": "Currency"
+    },
+    {
+     "fieldname": "material_request",
+     "label": "Request",
+     "label_ar": "طلب",
+     "fieldtype": "Link",
+     "tid": "T01858",
+     "options": "Material Request"
+    },
+    {
+     "fieldname": "supplier",
+     "label": "Supplier",
+     "label_ar": "مورد",
+     "fieldtype": "Link",
+     "tid": "T01859",
+     "options": "Supplier"
+    },
+    {
+     "fieldname": "item_code",
+     "label": "Item",
+     "label_ar": "صنف",
+     "fieldtype": "Link",
+     "tid": "T01860",
+     "options": "Item"
+    },
+    {
+     "fieldname": "qty",
+     "label": "Quantity",
+     "label_ar": "كمية",
+     "fieldtype": "Float",
+     "tid": "T01861"
+    },
+    {
+     "fieldname": "rate",
+     "label": "Rate",
+     "label_ar": "سعر",
+     "fieldtype": "Currency",
+     "tid": "T01862"
+    },
+    {
+     "fieldname": "warehouse",
+     "label": "Warehouse",
+     "label_ar": "مخزن",
+     "fieldtype": "Link",
+     "tid": "T01863",
+     "options": "Warehouse"
+    },
+    {
+     "fieldname": "approval_status",
+     "label": "Approval",
+     "label_ar": "اعتماد",
+     "fieldtype": "Select",
+     "tid": "T01864",
+     "options": "\nPending\nApproved\nRejected"
+    },
+    {
+     "fieldname": "delivery_date",
+     "label": "Delivery Date",
+     "label_ar": "تاريخ التسليم",
+     "fieldtype": "Date",
+     "tid": "T01865"
+    }
+   ]
+  },
+  {
+   "name": "Digit Labor Rate",
+   "istable": 0,
+   "label_ar": "سعر تصنيف العمالة",
+   "autoname": "field:classification",
+   "writers": [
+    "QS",
+    "ACC",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "classification",
+     "label": "Classification",
+     "label_ar": "التصنيف",
+     "fieldtype": "Data",
+     "reqd": 1
+    },
+    {
+     "fieldname": "hourly_rate",
+     "label": "Planning Hourly Rate",
+     "label_ar": "سعر الساعة التخطيطي",
+     "fieldtype": "Currency",
+     "reqd": 1
+    },
+    {
+     "fieldname": "overtime_factor",
+     "label": "Overtime Factor",
+     "label_ar": "معامل الإضافي",
+     "fieldtype": "Float"
+    },
+    {
+     "fieldname": "currency",
+     "label": "Currency",
+     "label_ar": "العملة",
+     "fieldtype": "Data"
+    }
+   ]
+  },
+  {
+   "name": "Digit Equipment Assignment",
+   "istable": 0,
+   "label_ar": "توزيع معدة",
+   "autoname": "EQA-.YYYY.-.####",
+   "writers": [
+    "QS",
+    "ACC",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "machinery",
+     "label": "Machinery",
+     "label_ar": "المعدة",
+     "fieldtype": "Link",
+     "options": "Digit Machinery",
+     "reqd": 1
+    },
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "options": "Project",
+     "reqd": 1
+    },
+    {
+     "fieldname": "company",
+     "label": "Company",
+     "label_ar": "شركة",
+     "fieldtype": "Link",
+     "options": "Company",
+     "read_only": 1
+    },
+    {
+     "fieldname": "column_break_1",
+     "label": "",
+     "label_ar": "column_break_1",
+     "fieldtype": "Column Break"
+    },
+    {
+     "fieldname": "from_date",
+     "label": "From",
+     "label_ar": "من",
+     "fieldtype": "Date",
+     "reqd": 1
+    },
+    {
+     "fieldname": "to_date",
+     "label": "To",
+     "label_ar": "إلى",
+     "fieldtype": "Date"
+    },
+    {
+     "fieldname": "status",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "options": "Planned\nActive\nReleased"
+    },
+    {
+     "fieldname": "note",
+     "label": "Note",
+     "label_ar": "ملاحظة",
+     "fieldtype": "Small Text"
+    }
+   ]
+  },
+  {
+   "name": "Digit Equipment Rate",
+   "istable": 0,
+   "label_ar": "سعر تحميل معدة",
+   "autoname": "EQR-.####",
+   "writers": [
+    "QS",
+    "ACC",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "options": "Project"
+    },
+    {
+     "fieldname": "company",
+     "label": "Company",
+     "label_ar": "شركة",
+     "fieldtype": "Link",
+     "options": "Company",
+     "read_only": 1
+    },
+    {
+     "fieldname": "machinery",
+     "label": "Machinery",
+     "label_ar": "المعدة",
+     "fieldtype": "Link",
+     "options": "Digit Machinery"
+    },
+    {
+     "fieldname": "machine_type",
+     "label": "Machine Type",
+     "label_ar": "نوع المعدة",
+     "fieldtype": "Select",
+     "options": "Excavator\nCrane\nLoader\nTruck\nConcrete Pump\nGenerator\nCompactor\nOther"
+    },
+    {
+     "fieldname": "column_break_1",
+     "label": "",
+     "label_ar": "column_break_1",
+     "fieldtype": "Column Break"
+    },
+    {
+     "fieldname": "hourly_rate",
+     "label": "Hourly",
+     "label_ar": "بالساعة",
+     "fieldtype": "Currency"
+    },
+    {
+     "fieldname": "daily_rate",
+     "label": "Daily",
+     "label_ar": "باليوم",
+     "fieldtype": "Currency"
+    },
+    {
+     "fieldname": "weekly_rate",
+     "label": "Weekly",
+     "label_ar": "بالأسبوع",
+     "fieldtype": "Currency"
+    },
+    {
+     "fieldname": "monthly_rate",
+     "label": "Monthly",
+     "label_ar": "بالشهر",
+     "fieldtype": "Currency"
+    },
+    {
+     "fieldname": "valid_from",
+     "label": "Valid From",
+     "label_ar": "ساري من",
+     "fieldtype": "Date"
+    },
+    {
+     "fieldname": "currency",
+     "label": "Currency",
+     "label_ar": "العملة",
+     "fieldtype": "Data"
+    }
+   ]
+  },
+  {
+   "name": "Digit Change RFQ",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "CR-.YYYY.-.####",
+   "writers": [
+    "QS",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "change_event",
+     "label": "Change Event",
+     "label_ar": "حدث التغيير",
+     "fieldtype": "Link",
+     "tid": "T01351",
+     "options": "Digit Change Event"
+    },
+    {
+     "fieldname": "work_order",
+     "label": "Work Order",
+     "label_ar": "أمر العمل",
+     "fieldtype": "Link",
+     "tid": "T01352",
+     "options": "Digit Subcontract Work Order"
+    },
+    {
+     "fieldname": "subcontractor",
+     "label": "Subcontractor",
+     "label_ar": "المقاول",
+     "fieldtype": "Link",
+     "tid": "T01353",
+     "options": "Supplier"
+    },
+    {
+     "fieldname": "status",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "tid": "T01354",
+     "options": "\nDraft\nOut for Pricing\nUnder Review\nAccepted\nRejected"
+    },
+    {
+     "fieldname": "due_date",
+     "label": "Due",
+     "label_ar": "موعد الرد",
+     "fieldtype": "Date",
+     "tid": "T01355"
+    },
+    {
+     "fieldname": "quote_amount",
+     "label": "Quote",
+     "label_ar": "قيمة العرض",
+     "fieldtype": "Currency",
+     "tid": "T01356"
+    },
+    {
+     "fieldname": "schedule_impact_days",
+     "label": "Schedule Impact",
+     "label_ar": "أثر زمني",
+     "fieldtype": "Int",
+     "tid": "T01357"
+    },
+    {
+     "fieldname": "lines",
+     "label": "Lines",
+     "label_ar": "الأسطر",
+     "fieldtype": "Table",
+     "tid": "T01358",
+     "options": "Digit Change RFQ Line"
+    },
+    {
+     "fieldname": "origin_document",
+     "label": "Origin Document",
+     "label_ar": "المستند المنشئ",
+     "fieldtype": "Data",
+     "tid": "T02824"
+    },
+    {
+     "fieldname": "change_no",
+     "label": "Change No.",
+     "label_ar": "رقم التغيير",
+     "fieldtype": "Data",
+     "tid": "T02825"
+    },
+    {
+     "fieldname": "estimated_cost",
+     "label": "Estimated Cost",
+     "label_ar": "التكلفة المقدرة",
+     "fieldtype": "Currency",
+     "tid": "T02826"
+    },
+    {
+     "fieldname": "approved_amount",
+     "label": "Approved",
+     "label_ar": "المعتمد",
+     "fieldtype": "Currency",
+     "tid": "T02827"
+    },
+    {
+     "fieldname": "commitment_amount",
+     "label": "Commitment",
+     "label_ar": "الالتزام",
+     "fieldtype": "Currency",
+     "tid": "T02828"
+    }
+   ]
+  },
+  {
+   "name": "Digit Change RFQ Line",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "QS",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "line_key",
+     "label": "Line Key",
+     "label_ar": "مفتاح البند",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "description",
+     "label": "Description",
+     "label_ar": "الوصف",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "reqd": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "qty",
+     "label": "Quantity",
+     "label_ar": "الكمية",
+     "fieldtype": "Float",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "unit_cost",
+     "label": "Unit Cost",
+     "label_ar": "تكلفة الوحدة",
+     "fieldtype": "Currency",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "quoted_amount",
+     "label": "Quoted Amount",
+     "label_ar": "المبلغ المعروض",
+     "fieldtype": "Currency",
+     "in_list_view": 1,
+     "tid": ""
+    }
+   ]
+  },
+  {
+   "name": "Digit Compliance Document",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "QS",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "doc_type",
+     "label": "Type",
+     "label_ar": "النوع",
+     "fieldtype": "Select",
+     "tid": "T01390",
+     "options": "\nCR\nVAT\nGOSI\nInsurance\nSaudization"
+    },
+    {
+     "fieldname": "number",
+     "label": "Number",
+     "label_ar": "الرقم",
+     "fieldtype": "Data",
+     "tid": "T01391"
+    },
+    {
+     "fieldname": "expiry",
+     "label": "Expiry",
+     "label_ar": "الانتهاء",
+     "fieldtype": "Date",
+     "tid": "T01392",
+     "reqd": 1
+    },
+    {
+     "fieldname": "file",
+     "label": "File",
+     "label_ar": "الملف",
+     "fieldtype": "Attach",
+     "tid": "T01393"
+    },
+    {
+     "fieldname": "verified_by",
+     "label": "Verified",
+     "label_ar": "تحقق",
+     "fieldtype": "Link",
+     "tid": "T01394",
+     "options": "User"
+    }
+   ]
+  },
+  {
+   "name": "Digit Allocation Split",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "QS",
+    "ACC",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "budget_line",
+     "label": "Budget Line",
+     "label_ar": "بند الموازنة",
+     "fieldtype": "Data",
+     "tid": "T01438"
+    },
+    {
+     "fieldname": "percent",
+     "label": "Percent",
+     "label_ar": "النسبة",
+     "fieldtype": "Percent",
+     "tid": "T01439"
+    },
+    {
+     "fieldname": "amount",
+     "label": "Amount",
+     "label_ar": "المبلغ",
+     "fieldtype": "Currency",
+     "tid": "T01440"
+    }
+   ]
+  },
+  {
+   "name": "Digit SOV Cost Link",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "QS",
+    "ACC",
+    "PM"
+   ],
+   "fields": [
+    {
+     "fieldname": "budget_line_key",
+     "label": "Budget Line",
+     "label_ar": "بند الموازنة",
+     "fieldtype": "Data",
+     "tid": "T01441"
+    },
+    {
+     "fieldname": "cost_code",
+     "label": "Cost Code",
+     "label_ar": "الكود",
+     "fieldtype": "Data",
+     "tid": "T01442"
+    },
+    {
+     "fieldname": "share_pct",
+     "label": "Share",
+     "label_ar": "الحصة",
+     "fieldtype": "Percent",
+     "tid": "T01443"
+    }
+   ]
+  },
+  {
+   "name": "Digit Adjustment Reason",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "AR-.YYYY.-.####",
+   "writers": [
+    "PROC",
+    "SK"
+   ],
+   "fields": [
+    {
+     "fieldname": "code",
+     "label": "Code",
+     "label_ar": "الرمز",
+     "fieldtype": "Data",
+     "tid": "T01460"
+    },
+    {
+     "fieldname": "reason_ar",
+     "label": "Reason AR",
+     "label_ar": "السبب",
+     "fieldtype": "Data",
+     "tid": "T01461"
+    },
+    {
+     "fieldname": "reason_en",
+     "label": "Reason EN",
+     "label_ar": "Reason",
+     "fieldtype": "Data",
+     "tid": "T01462"
+    },
+    {
+     "fieldname": "usage",
+     "label": "Usage",
+     "label_ar": "الاستخدام",
+     "fieldtype": "Select",
+     "tid": "T01463",
+     "options": "\nAdjustment\nTransfer\nWrite-off\nReturn"
+    },
+    {
+     "fieldname": "needs_approval",
+     "label": "Needs Approval",
+     "label_ar": "يحتاج اعتماد",
+     "fieldtype": "Check",
+     "tid": "T01464"
+    },
+    {
+     "fieldname": "item_code",
+     "label": "Item",
+     "label_ar": "الصنف",
+     "fieldtype": "Link",
+     "tid": "T01898",
+     "options": "Item"
+    },
+    {
+     "fieldname": "warehouse",
+     "label": "Warehouse",
+     "label_ar": "المخزن",
+     "fieldtype": "Link",
+     "tid": "T01899",
+     "options": "Warehouse"
+    },
+    {
+     "fieldname": "required_by",
+     "label": "Required By",
+     "label_ar": "تاريخ الحاجة",
+     "fieldtype": "Data",
+     "tid": "T01900"
+    }
+   ]
+  },
+  {
+   "name": "Digit Maintenance Order",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "MO-.YYYY.-.####",
+   "writers": [
+    "SE",
+    "PM",
+    "SK"
+   ],
+   "fields": [
+    {
+     "fieldname": "machinery",
+     "label": "Machinery",
+     "label_ar": "المعدة",
+     "fieldtype": "Link",
+     "tid": "T01469",
+     "options": "Digit Machinery"
+    },
+    {
+     "fieldname": "order_type",
+     "label": "Type",
+     "label_ar": "النوع",
+     "fieldtype": "Select",
+     "tid": "T01470",
+     "options": "\nCorrective\nPreventive"
+    },
+    {
+     "fieldname": "meter_at",
+     "label": "Meter",
+     "label_ar": "العداد عند الأمر",
+     "fieldtype": "Float",
+     "tid": "T01471"
+    },
+    {
+     "fieldname": "status",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "tid": "T01472",
+     "options": "\nOpen\nIn Progress\nDone"
+    },
+    {
+     "fieldname": "downtime_hours",
+     "label": "Downtime",
+     "label_ar": "ساعات التوقف",
+     "fieldtype": "Float",
+     "tid": "T01473"
+    },
+    {
+     "fieldname": "cost",
+     "label": "Cost",
+     "label_ar": "التكلفة",
+     "fieldtype": "Currency",
+     "tid": "T01474"
+    },
+    {
+     "fieldname": "next_due_meter",
+     "label": "Next Due Meter",
+     "label_ar": "الاستحقاق التالي (عداد)",
+     "fieldtype": "Float",
+     "tid": "T01475",
+     "read_only": 1
+    },
+    {
+     "fieldname": "next_due_date",
+     "label": "Next Due Date",
+     "label_ar": "الاستحقاق التالي (تاريخ)",
+     "fieldtype": "Date",
+     "tid": "T01476"
+    },
+    {
+     "fieldname": "employee_or_crew",
+     "label": "Employee / Crew",
+     "label_ar": "الموظف أو الفريق",
+     "fieldtype": "Link",
+     "tid": "T02011",
+     "options": "Employee"
+    },
+    {
+     "fieldname": "work_date",
+     "label": "Day",
+     "label_ar": "اليوم",
+     "fieldtype": "Date",
+     "tid": "T02012"
+    },
+    {
+     "fieldname": "approval_status",
+     "label": "Approval",
+     "label_ar": "الاعتماد",
+     "fieldtype": "Select",
+     "tid": "T02015",
+     "options": "\nPending\nApproved\nRejected"
+    }
+   ]
+  },
+  {
+   "name": "Digit Site Induction",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "SI-.YYYY.-.####",
+   "writers": [
+    "SE",
+    "PM",
+    "SK"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01485",
+     "options": "Project"
+    },
+    {
+     "fieldname": "person",
+     "label": "Person",
+     "label_ar": "الشخص",
+     "fieldtype": "Data",
+     "tid": "T01486"
+    },
+    {
+     "fieldname": "employee",
+     "label": "Employee",
+     "label_ar": "الموظف",
+     "fieldtype": "Link",
+     "tid": "T01487",
+     "options": "Employee"
+    },
+    {
+     "fieldname": "company_name",
+     "label": "Company",
+     "label_ar": "الشركة",
+     "fieldtype": "Data",
+     "tid": "T01488"
+    },
+    {
+     "fieldname": "inducted_on",
+     "label": "Date",
+     "label_ar": "التاريخ",
+     "fieldtype": "Date",
+     "tid": "T01489"
+    },
+    {
+     "fieldname": "valid_until",
+     "label": "Valid Until",
+     "label_ar": "صالح حتى",
+     "fieldtype": "Date",
+     "tid": "T01490"
+    },
+    {
+     "fieldname": "inductor",
+     "label": "Inductor",
+     "label_ar": "المعرِّف",
+     "fieldtype": "Link",
+     "tid": "T01491",
+     "options": "User"
+    },
+    {
+     "fieldname": "employee_or_crew",
+     "label": "Employee / Crew",
+     "label_ar": "الموظف أو الفريق",
+     "fieldtype": "Link",
+     "tid": "T02064",
+     "options": "Employee"
+    },
+    {
+     "fieldname": "work_date",
+     "label": "Day",
+     "label_ar": "اليوم",
+     "fieldtype": "Date",
+     "tid": "T02067"
+    },
+    {
+     "fieldname": "approval_status",
+     "label": "Approval",
+     "label_ar": "الاعتماد",
+     "fieldtype": "Select",
+     "tid": "T02068",
+     "options": "\nPending\nApproved\nRejected"
+    }
+   ]
+  },
+  {
+   "name": "Digit Work Permit",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "WP-.YYYY.-.####",
+   "writers": [
+    "SE",
+    "PM",
+    "SK"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01492",
+     "options": "Project"
+    },
+    {
+     "fieldname": "permit_type",
+     "label": "Type",
+     "label_ar": "النوع",
+     "fieldtype": "Select",
+     "tid": "T01493",
+     "options": "\nHot Work\nWork at Height\nConfined Space\nExcavation\nElectrical\nLifting"
+    },
+    {
+     "fieldname": "location",
+     "label": "Location",
+     "label_ar": "الموقع",
+     "fieldtype": "Data",
+     "tid": "T01494"
+    },
+    {
+     "fieldname": "valid_from",
+     "label": "From",
+     "label_ar": "من",
+     "fieldtype": "Datetime",
+     "tid": "T01495"
+    },
+    {
+     "fieldname": "valid_to",
+     "label": "To",
+     "label_ar": "إلى",
+     "fieldtype": "Datetime",
+     "tid": "T01496"
+    },
+    {
+     "fieldname": "issuer",
+     "label": "Issuer",
+     "label_ar": "المصدر",
+     "fieldtype": "Link",
+     "tid": "T01497",
+     "options": "User"
+    },
+    {
+     "fieldname": "receiver",
+     "label": "Receiver",
+     "label_ar": "المستلم",
+     "fieldtype": "Data",
+     "tid": "T01498"
+    },
+    {
+     "fieldname": "status",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "tid": "T01499",
+     "options": "\nRequested\nIssued\nSuspended\nClosed"
+    },
+    {
+     "fieldname": "precautions",
+     "label": "Precautions",
+     "label_ar": "الاحتياطات",
+     "fieldtype": "Table",
+     "tid": "T01500",
+     "options": "Digit Permit Precaution"
+    }
+   ]
+  },
+  {
+   "name": "Digit Permit Precaution",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "SE",
+    "PM",
+    "SK"
+   ],
+   "fields": [
+    {
+     "fieldname": "precaution",
+     "label": "Precaution",
+     "label_ar": "الاحتياط",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "reqd": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "checked",
+     "label": "Checked",
+     "label_ar": "تم التحقق",
+     "fieldtype": "Check",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "checked_by",
+     "label": "Checked By",
+     "label_ar": "تحقق بواسطة",
+     "fieldtype": "Link",
+     "options": "User",
+     "in_list_view": 1,
+     "tid": ""
+    }
+   ]
+  },
+  {
+   "name": "Digit WIP Adjustment",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "WA-.YYYY.-.####",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01503",
+     "options": "Project"
+    },
+    {
+     "fieldname": "period",
+     "label": "Period",
+     "label_ar": "الفترة YYYY-MM",
+     "fieldtype": "Data",
+     "tid": "T01504"
+    },
+    {
+     "fieldname": "billed",
+     "label": "Billed",
+     "label_ar": "المفوتر",
+     "fieldtype": "Currency",
+     "tid": "T01505"
+    },
+    {
+     "fieldname": "unposted_billings",
+     "label": "Unposted",
+     "label_ar": "فوترة غير مرحلة",
+     "fieldtype": "Currency",
+     "tid": "T01506"
+    },
+    {
+     "fieldname": "earned_revenue",
+     "label": "Earned",
+     "label_ar": "الإيراد المكتسب",
+     "fieldtype": "Currency",
+     "tid": "T01507"
+    },
+    {
+     "fieldname": "earned_override",
+     "label": "Override",
+     "label_ar": "تجاوز يدوي",
+     "fieldtype": "Currency",
+     "tid": "T01508"
+    },
+    {
+     "fieldname": "over_under",
+     "label": "Over/Under",
+     "label_ar": "زيادة/نقص الفوترة",
+     "fieldtype": "Currency",
+     "tid": "T01509",
+     "read_only": 1
+    },
+    {
+     "fieldname": "journal_entry",
+     "label": "Accrual JE",
+     "label_ar": "قيد الاستحقاق",
+     "fieldtype": "Link",
+     "tid": "T01510",
+     "options": "Journal Entry"
+    },
+    {
+     "fieldname": "reversal_entry",
+     "label": "Reversal JE",
+     "label_ar": "قيد العكس",
+     "fieldtype": "Link",
+     "tid": "T01511",
+     "options": "Journal Entry"
+    },
+    {
+     "fieldname": "fiscal_year_period",
+     "label": "Fiscal Year/Period",
+     "label_ar": "السنة/الفترة المالية",
+     "fieldtype": "Link",
+     "tid": "T02885",
+     "options": "Fiscal Year"
+    },
+    {
+     "fieldname": "job_snapshot",
+     "label": "Job Snapshot",
+     "label_ar": "لقطة المشروع",
+     "fieldtype": "Data",
+     "tid": "T02886"
+    },
+    {
+     "fieldname": "wip_adjustment",
+     "label": "Wip Adjustment",
+     "label_ar": "تسوية الأعمال تحت التنفيذ",
+     "fieldtype": "Currency",
+     "tid": "T02887"
+    },
+    {
+     "fieldname": "posted_unposted_status",
+     "label": "Posted/Unposted Status",
+     "label_ar": "حالة الترحيل",
+     "fieldtype": "Select",
+     "tid": "T02888",
+     "options": "\nUnposted\nPosted\nReversed"
+    }
+   ]
+  },
+  {
+   "name": "Digit Job Snapshot",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "JS-.YYYY.-.####",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01512",
+     "options": "Project"
+    },
+    {
+     "fieldname": "as_of",
+     "label": "As Of",
+     "label_ar": "حتى تاريخ",
+     "fieldtype": "Date",
+     "tid": "T01513"
+    },
+    {
+     "fieldname": "snapshot_code",
+     "label": "Code",
+     "label_ar": "الرمز",
+     "fieldtype": "Data",
+     "tid": "T01514"
+    },
+    {
+     "fieldname": "payload",
+     "label": "Figures",
+     "label_ar": "الأرقام",
+     "fieldtype": "JSON",
+     "tid": "T01515"
+    },
+    {
+     "fieldname": "created_by",
+     "label": "Created By",
+     "label_ar": "أنشأه",
+     "fieldtype": "Link",
+     "tid": "T01516",
+     "options": "User"
+    },
+    {
+     "fieldname": "posting_period",
+     "label": "Posting Period",
+     "label_ar": "فترة الترحيل",
+     "fieldtype": "Date",
+     "tid": "T02897"
+    },
+    {
+     "fieldname": "cost_source_state",
+     "label": "Cost Source State",
+     "label_ar": "حالة مصدر التكلفة",
+     "fieldtype": "Currency",
+     "tid": "T02898"
+    },
+    {
+     "fieldname": "reference_doctype",
+     "label": "Snapshot Identifier Type",
+     "label_ar": "نوع معرّف اللقطة",
+     "fieldtype": "Link",
+     "options": "DocType",
+     "tid": "T02899"
+    },
+    {
+     "fieldname": "snapshot_identifier",
+     "label": "Snapshot Identifier",
+     "label_ar": "معرّف اللقطة",
+     "fieldtype": "Dynamic Link",
+     "tid": "T02899",
+     "options": "reference_doctype"
+    }
+   ]
+  },
+  {
+   "name": "Digit Override Log",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "OL-.YYYY.-.####",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "ref_doctype",
+     "label": "DocType",
+     "label_ar": "النوع",
+     "fieldtype": "Data",
+     "tid": "T01517"
+    },
+    {
+     "fieldname": "ref_name_doctype",
+     "label": "Document Type",
+     "label_ar": "نوع المستند",
+     "fieldtype": "Link",
+     "options": "DocType",
+     "tid": "T01518"
+    },
+    {
+     "fieldname": "ref_name",
+     "label": "Document",
+     "label_ar": "المستند",
+     "fieldtype": "Dynamic Link",
+     "tid": "T01518",
+     "options": "ref_name_doctype"
+    },
+    {
+     "fieldname": "rule",
+     "label": "Rule",
+     "label_ar": "القاعدة",
+     "fieldtype": "Data",
+     "tid": "T01519"
+    },
+    {
+     "fieldname": "message",
+     "label": "Message",
+     "label_ar": "الرسالة",
+     "fieldtype": "Small Text",
+     "tid": "T01520"
+    },
+    {
+     "fieldname": "user",
+     "label": "User",
+     "label_ar": "المستخدم",
+     "fieldtype": "Link",
+     "tid": "T01521",
+     "options": "User"
+    },
+    {
+     "fieldname": "reason",
+     "label": "Reason",
+     "label_ar": "السبب",
+     "fieldtype": "Small Text",
+     "tid": "T01522"
+    },
+    {
+     "fieldname": "fiscal_period",
+     "label": "Fiscal Period",
+     "label_ar": "الفترة المالية",
+     "fieldtype": "Link",
+     "tid": "T02908",
+     "options": "Fiscal Year"
+    },
+    {
+     "fieldname": "actual_cost",
+     "label": "Actual Cost",
+     "label_ar": "تكاليف فعلية",
+     "fieldtype": "Currency",
+     "tid": "T02909"
+    },
+    {
+     "fieldname": "earned_revenue",
+     "label": "Earned Revenue",
+     "label_ar": "إيراد مستحق",
+     "fieldtype": "Currency",
+     "tid": "T02910"
+    },
+    {
+     "fieldname": "posted_adjustments",
+     "label": "Posted Adjustments",
+     "label_ar": "تعديلات مرحلة",
+     "fieldtype": "Currency",
+     "tid": "T02911"
+    }
+   ]
+  },
+  {
+   "name": "Digit Commissioning Test",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "CT-.YYYY.-.####",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01523",
+     "options": "Project"
+    },
+    {
+     "fieldname": "system",
+     "label": "System",
+     "label_ar": "النظام",
+     "fieldtype": "Select",
+     "tid": "T01524",
+     "options": "\nElectrical\nHVAC\nFire\nPlumbing\nLifts\nBMS"
+    },
+    {
+     "fieldname": "asset",
+     "label": "Asset",
+     "label_ar": "الأصل",
+     "fieldtype": "Link",
+     "tid": "T01525",
+     "options": "Digit Handover Asset"
+    },
+    {
+     "fieldname": "test_type",
+     "label": "Type",
+     "label_ar": "النوع",
+     "fieldtype": "Select",
+     "tid": "T01526",
+     "options": "\nPre-commissioning\nFunctional\nPerformance"
+    },
+    {
+     "fieldname": "planned_date",
+     "label": "Planned",
+     "label_ar": "المخطط",
+     "fieldtype": "Date",
+     "tid": "T01527"
+    },
+    {
+     "fieldname": "result",
+     "label": "Result",
+     "label_ar": "النتيجة",
+     "fieldtype": "Select",
+     "tid": "T01528",
+     "options": "\nPending\nPass\nFail"
+    },
+    {
+     "fieldname": "witness",
+     "label": "Witness",
+     "label_ar": "الشاهد",
+     "fieldtype": "Data",
+     "tid": "T01529"
+    },
+    {
+     "fieldname": "certificate",
+     "label": "Certificate",
+     "label_ar": "الشهادة",
+     "fieldtype": "Attach",
+     "tid": "T01530",
+     "reqd": 1
+    },
+    {
+     "fieldname": "zone",
+     "label": "Zone",
+     "label_ar": "المنطقة",
+     "fieldtype": "Data",
+     "tid": "T02489"
+    },
+    {
+     "fieldname": "test_date",
+     "label": "Test Date",
+     "label_ar": "تاريخ التنفيذ",
+     "fieldtype": "Date",
+     "tid": "T02490"
+    },
+    {
+     "fieldname": "result_note",
+     "label": "Result Note",
+     "label_ar": "ملاحظات النتائج",
+     "fieldtype": "Text",
+     "tid": "T02493"
+    },
+    {
+     "fieldname": "passed_count",
+     "label": "Passed Count",
+     "label_ar": "نجاحات",
+     "fieldtype": "Int",
+     "tid": "T02494"
+    },
+    {
+     "fieldname": "test_count",
+     "label": "Test Count",
+     "label_ar": "عدد الاختبارات",
+     "fieldtype": "Int",
+     "tid": "T02495"
+    }
+   ]
+  },
+  {
+   "name": "Digit Handover Asset",
+   "istable": 0,
+   "label_ar": "",
+   "autoname": "HA-.YYYY.-.####",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "project",
+     "label": "Project",
+     "label_ar": "المشروع",
+     "fieldtype": "Link",
+     "tid": "T01531",
+     "options": "Project"
+    },
+    {
+     "fieldname": "asset_tag",
+     "label": "Tag",
+     "label_ar": "رمز الأصل",
+     "fieldtype": "Data",
+     "tid": "T01532"
+    },
+    {
+     "fieldname": "system",
+     "label": "System",
+     "label_ar": "النظام",
+     "fieldtype": "Select",
+     "tid": "T01533",
+     "options": "\nElectrical\nHVAC\nFire\nPlumbing\nLifts\nBMS"
+    },
+    {
+     "fieldname": "location",
+     "label": "Location",
+     "label_ar": "الموقع",
+     "fieldtype": "Data",
+     "tid": "T01534"
+    },
+    {
+     "fieldname": "manufacturer",
+     "label": "Manufacturer",
+     "label_ar": "المصنع",
+     "fieldtype": "Data",
+     "tid": "T01535"
+    },
+    {
+     "fieldname": "model",
+     "label": "Model",
+     "label_ar": "الموديل",
+     "fieldtype": "Data",
+     "tid": "T01536"
+    },
+    {
+     "fieldname": "serial_no",
+     "label": "Serial",
+     "label_ar": "الرقم التسلسلي",
+     "fieldtype": "Data",
+     "tid": "T01537"
+    },
+    {
+     "fieldname": "warranty_until",
+     "label": "Warranty",
+     "label_ar": "الضمان حتى",
+     "fieldtype": "Date",
+     "tid": "T01538"
+    },
+    {
+     "fieldname": "status",
+     "label": "Status",
+     "label_ar": "الحالة",
+     "fieldtype": "Select",
+     "tid": "T01539",
+     "options": "\nDraft\nIn Progress\nReady for Review\nReviewed\nReturned"
+    },
+    {
+     "fieldname": "completeness_pct",
+     "label": "Completeness",
+     "label_ar": "الاكتمال",
+     "fieldtype": "Percent",
+     "tid": "T01540"
+    },
+    {
+     "fieldname": "asset_ref",
+     "label": "Asset Ref",
+     "label_ar": "مرجع الأصل",
+     "fieldtype": "Data",
+     "tid": "T02511"
+    },
+    {
+     "fieldname": "asset_type",
+     "label": "Asset Type",
+     "label_ar": "نوع الأصل",
+     "fieldtype": "Select",
+     "tid": "T02512",
+     "options": "\nEquipment\nSystem\nComponent"
+    },
+    {
+     "fieldname": "service",
+     "label": "Service",
+     "label_ar": "الخدمة",
+     "fieldtype": "Data",
+     "tid": "T02513"
+    },
+    {
+     "fieldname": "zone",
+     "label": "Zone",
+     "label_ar": "المنطقة",
+     "fieldtype": "Data",
+     "tid": "T02514"
+    },
+    {
+     "fieldname": "missing_required_count",
+     "label": "Missing Required Count",
+     "label_ar": "حقول ناقصة",
+     "fieldtype": "Int",
+     "tid": "T02517"
+    }
+   ]
+  },
+  {
+   "name": "Digit Invoice Allocation",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "ACC",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "payment_entry",
+     "label": "Payment Entry",
+     "label_ar": "سند الدفع",
+     "fieldtype": "Link",
+     "options": "Payment Entry",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "allocated_amount",
+     "label": "Allocated Amount",
+     "label_ar": "المبلغ المخصص",
+     "fieldtype": "Currency",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "allocation_date",
+     "label": "Allocation Date",
+     "label_ar": "تاريخ التخصيص",
+     "fieldtype": "Date",
+     "in_list_view": 1,
+     "tid": ""
+    }
+   ]
+  },
+  {
+   "name": "Digit Submittal Attachment",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "PM",
+    "SE"
+   ],
+   "fields": [
+    {
+     "fieldname": "description",
+     "label": "Description",
+     "label_ar": "الوصف",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "file",
+     "label": "File",
+     "label_ar": "الملف",
+     "fieldtype": "Attach",
+     "in_list_view": 1,
+     "reqd": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "revision",
+     "label": "Revision",
+     "label_ar": "المراجعة",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "tid": ""
+    }
+   ]
+  },
+  {
+   "name": "Digit Lookahead Blocker",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "PM",
+    "SE"
+   ],
+   "fields": [
+    {
+     "fieldname": "blocker",
+     "label": "Blocker",
+     "label_ar": "المعوق",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "reqd": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "constraint_type",
+     "label": "Constraint",
+     "label_ar": "القيد",
+     "fieldtype": "Select",
+     "options": "\nMaterial\nDrawing\nRFI\nEquipment\nPermit\nLabour\nOther",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "responsible",
+     "label": "Responsible",
+     "label_ar": "المسؤول",
+     "fieldtype": "Link",
+     "options": "User",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "due_date",
+     "label": "Due",
+     "label_ar": "الموعد",
+     "fieldtype": "Date",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "resolved",
+     "label": "Resolved",
+     "label_ar": "تمت المعالجة",
+     "fieldtype": "Check",
+     "in_list_view": 1,
+     "tid": ""
+    }
+   ]
+  },
+  {
+   "name": "Digit Resource Component",
+   "istable": 1,
+   "label_ar": "",
+   "writers": [
+    "EST",
+    "QS"
+   ],
+   "fields": [
+    {
+     "fieldname": "resource_type",
+     "label": "Resource Type",
+     "label_ar": "نوع المورد",
+     "fieldtype": "Select",
+     "options": "Labour\nEquipment\nMaterial\nSubcontract",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "description",
+     "label": "Description",
+     "label_ar": "الوصف",
+     "fieldtype": "Data",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "uom",
+     "label": "UOM",
+     "label_ar": "الوحدة",
+     "fieldtype": "Link",
+     "options": "UOM",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "qty",
+     "label": "Quantity",
+     "label_ar": "الكمية",
+     "fieldtype": "Float",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "rate",
+     "label": "Rate",
+     "label_ar": "السعر",
+     "fieldtype": "Currency",
+     "in_list_view": 1,
+     "tid": ""
+    },
+    {
+     "fieldname": "amount",
+     "label": "Amount",
+     "label_ar": "المبلغ",
+     "fieldtype": "Currency",
+     "in_list_view": 1,
+     "read_only": 1,
+     "tid": ""
+    }
+   ]
+  }
+ ],
+ "fields": {
+  "Digit RFI": [
+   {
+    "fieldname": "rfi_type",
+    "label": "RFI Type",
+    "label_ar": "نوع الاستفسار",
+    "fieldtype": "Select",
+    "options": "Technical\nDesign\nContractual\nSite",
+    "reqd": 1,
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "priority",
+    "label": "Priority",
+    "label_ar": "الأولوية",
+    "fieldtype": "Select",
+    "options": "Medium\nHigh\nLow",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "work_package",
+    "label": "Work Package",
+    "label_ar": "حزمة عمل",
+    "fieldtype": "Link",
+    "options": "Digit Work Package",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "column_break_1",
+    "label": "",
+    "label_ar": "column_break_1",
+    "fieldtype": "Column Break",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "sb_q",
+    "label": "Question",
+    "label_ar": "السؤال",
+    "fieldtype": "Section Break",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "proposed_solution",
+    "label": "Proposed Solution",
+    "label_ar": "الحل المقترح",
+    "fieldtype": "Small Text",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "time_impact",
+    "label": "Time Impact",
+    "label_ar": "أثر على المدة",
+    "fieldtype": "Select",
+    "options": "Not Determined\nYes\nNo",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "sb_a",
+    "label": "Official Response",
+    "label_ar": "الرد الرسمي",
+    "fieldtype": "Section Break",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "column_break_2",
+    "label": "",
+    "label_ar": "column_break_2",
+    "fieldtype": "Column Break",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "closed_on",
+    "label": "Closed On",
+    "label_ar": "تاريخ الإغلاق",
+    "fieldtype": "Date",
+    "read_only": 1,
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "sb_r",
+    "label": "References",
+    "label_ar": "المراجع",
+    "fieldtype": "Section Break",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "references",
+    "label": "References",
+    "label_ar": "المراجع",
+    "fieldtype": "Table",
+    "options": "Digit RFI Reference",
+    "tid": "T02931"
+   },
+   {
+    "fieldname": "schedule_impact",
+    "label": "Schedule Impact",
+    "label_ar": "تأثير زمني",
+    "fieldtype": "Select",
+    "tid": "T02542",
+    "options": "\nNot Determined\nYes\nNo"
+   },
+   {
+    "fieldname": "drawing_revision",
+    "label": "Drawing Revision",
+    "label_ar": "مراجعة الرسم المرتبطة",
+    "fieldtype": "Link",
+    "tid": "T02544",
+    "options": "Digit Drawing"
+   },
+   {
+    "fieldname": "submittal_ref",
+    "label": "Submittal Ref",
+    "label_ar": "اعتماد فني مرتبط",
+    "fieldtype": "Link",
+    "tid": "T02545",
+    "options": "Digit Submittal"
+   },
+   {
+    "fieldname": "revision_no",
+    "label": "Revision No",
+    "label_ar": "رقم إعادة الفتح",
+    "fieldtype": "Int",
+    "tid": "T02547"
+   },
+   {
+    "fieldname": "decision_note",
+    "label": "Decision Note",
+    "label_ar": "سبب إعادة الفتح أو الإلغاء",
+    "fieldtype": "Small Text",
+    "tid": "T02548"
+   },
+   {
+    "fieldname": "source_key",
+    "label": "Source Key",
+    "label_ar": "مفتاح مصدر",
+    "fieldtype": "Data",
+    "tid": "T02549"
+   },
+   {
+    "fieldname": "rfi_no",
+    "label": "RFI No.",
+    "label_ar": "رقم الاستفسار",
+    "fieldtype": "Data",
+    "tid": "T02550"
+   },
+   {
+    "fieldname": "location_or_drawing",
+    "label": "Location / Drawing",
+    "label_ar": "الموقع أو الرسم",
+    "fieldtype": "Data",
+    "tid": "T02552"
+   },
+   {
+    "fieldname": "requested_by",
+    "label": "Requested By",
+    "label_ar": "مقدم الطلب",
+    "fieldtype": "Link",
+    "tid": "T02553",
+    "options": "User"
+   },
+   {
+    "fieldname": "related_references",
+    "label": "Related References",
+    "label_ar": "المراجع المرتبطة",
+    "fieldtype": "Data",
+    "tid": "T02556"
+   }
+  ],
+  "Digit CE Line": [
+   {
+    "fieldname": "boq_line_key",
+    "label": "SOV / BOQ Line",
+    "label_ar": "بند جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "uom",
+    "label": "Unit",
+    "label_ar": "الوحدة",
+    "fieldtype": "Link",
+    "options": "UOM",
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "unit_price",
+    "label": "Unit Price",
+    "label_ar": "سعر البيع للوحدة",
+    "fieldtype": "Currency",
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "cost_amount",
+    "label": "Cost ROM",
+    "label_ar": "التكلفة التقديرية",
+    "fieldtype": "Currency",
+    "read_only": 1,
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "revenue_amount",
+    "label": "Revenue ROM",
+    "label_ar": "الإيراد التقديري",
+    "fieldtype": "Currency",
+    "read_only": 1,
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "work_order",
+    "label": "Subcontract Work Order",
+    "label_ar": "أمر عمل الباطن",
+    "fieldtype": "Link",
+    "options": "Digit Subcontract Work Order",
+    "tid": "T02950"
+   },
+   {
+    "fieldname": "variation_line_key",
+    "label": "Variation Line",
+    "label_ar": "بند الأمر التغييري",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "tid": "T02950"
+   }
+  ],
+  "Digit Change Event": [
+   {
+    "fieldname": "origin_type",
+    "label": "Origin",
+    "label_ar": "المصدر",
+    "fieldtype": "Select",
+    "options": "RFI\nClient Instruction\nSite Condition\nDesign Change\nOther",
+    "reqd": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "rfi",
+    "label": "Source RFI",
+    "label_ar": "الاستفسار المصدر",
+    "fieldtype": "Link",
+    "options": "Digit RFI",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "change_reason",
+    "label": "Reason",
+    "label_ar": "السبب",
+    "fieldtype": "Select",
+    "options": "Client Request\nDesign Error\nSite Condition\nValue Engineering\nOther",
+    "reqd": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "scope",
+    "label": "Scope",
+    "label_ar": "نطاق العمل",
+    "fieldtype": "Select",
+    "options": "Not Determined\nOut of Scope\nIn Scope",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "time_days",
+    "label": "Time Impact (days)",
+    "label_ar": "الأثر الزمني (أيام)",
+    "fieldtype": "Int",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "approved_by",
+    "label": "Approved By",
+    "label_ar": "اعتمد بواسطة",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "approved_on",
+    "label": "Approved On",
+    "label_ar": "تاريخ الاعتماد",
+    "fieldtype": "Date",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "sb_l",
+    "label": "Lines",
+    "label_ar": "البنود",
+    "fieldtype": "Section Break",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "sb_t",
+    "label": "Exposure",
+    "label_ar": "التعرض",
+    "fieldtype": "Section Break",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "total_cost_rom",
+    "label": "Total Cost ROM",
+    "label_ar": "إجمالي التكلفة التقديرية",
+    "fieldtype": "Currency",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "total_revenue_rom",
+    "label": "Total Revenue ROM",
+    "label_ar": "إجمالي الإيراد التقديري",
+    "fieldtype": "Currency",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "column_break_2",
+    "label": "",
+    "label_ar": "column_break_2",
+    "fieldtype": "Column Break",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "variation",
+    "label": "Client Variation",
+    "label_ar": "أمر تغييري للعميل",
+    "fieldtype": "Link",
+    "options": "Digit Client Variation",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "decision_note",
+    "label": "Decision Note",
+    "label_ar": "ملاحظة القرار",
+    "fieldtype": "Small Text",
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "change_event",
+    "label": "Source Change Event",
+    "label_ar": "حدث التغيير المصدر",
+    "fieldtype": "Link",
+    "options": "Digit Change Event",
+    "read_only": 1,
+    "tid": "T02951"
+   },
+   {
+    "fieldname": "origin_name_doctype",
+    "label": "origin_name Type",
+    "label_ar": "نوع رقم المصدر",
+    "fieldtype": "Link",
+    "options": "DocType",
+    "tid": "T02562"
+   },
+   {
+    "fieldname": "origin_name",
+    "label": "Origin Name",
+    "label_ar": "رقم المصدر",
+    "fieldtype": "Dynamic Link",
+    "tid": "T02562",
+    "options": "origin_name_doctype"
+   },
+   {
+    "fieldname": "stage",
+    "label": "Stage",
+    "label_ar": "مرحلة التسعير",
+    "fieldtype": "Select",
+    "tid": "T02565",
+    "options": "\nROM\nPricing\nNegotiation\nApproved"
+   },
+   {
+    "fieldname": "converted_revenue",
+    "label": "Converted Revenue",
+    "label_ar": "الإيراد المحول فعليًا",
+    "fieldtype": "Currency",
+    "tid": "T02570"
+   },
+   {
+    "fieldname": "source_hash",
+    "label": "Source Hash",
+    "label_ar": "بصمة ربط المصدر",
+    "fieldtype": "Data",
+    "tid": "T02572"
+   }
+  ],
+  "Digit Cost Forecast Snapshot": [
+   {
+    "fieldname": "sb_v",
+    "label": "Version & Promotion",
+    "label_ar": "الإصدار والترقية",
+    "fieldtype": "Section Break",
+    "tid": "T02974"
+   },
+   {
+    "fieldname": "previous_snapshot",
+    "label": "Previous Live Snapshot",
+    "label_ar": "اللقطة النافذة السابقة",
+    "fieldtype": "Link",
+    "options": "Digit Cost Forecast Snapshot",
+    "read_only": 1,
+    "tid": "T02974"
+   },
+   {
+    "fieldname": "promoted_from",
+    "label": "Promoted From",
+    "label_ar": "مُرقّى من",
+    "fieldtype": "Link",
+    "options": "Digit Cost Forecast Snapshot",
+    "read_only": 1,
+    "tid": "T02974"
+   },
+   {
+    "fieldname": "column_break_3",
+    "label": "",
+    "label_ar": "column_break_3",
+    "fieldtype": "Column Break",
+    "tid": "T02974"
+   },
+   {
+    "fieldname": "promoted_lines",
+    "label": "Promoted Lines",
+    "label_ar": "البنود المُرقّاة",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "tid": "T02974"
+   },
+   {
+    "fieldname": "rationale",
+    "label": "Forecast Rationale",
+    "label_ar": "مبرر التوقع",
+    "fieldtype": "Small Text",
+    "tid": "T02974"
+   }
+  ],
+  "Digit Machinery Usage": [
+   {
+    "fieldname": "sb_m",
+    "label": "Meter, Idle & Downtime",
+    "label_ar": "العداد والتوقف",
+    "fieldtype": "Section Break",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "meter_start",
+    "label": "Meter Start",
+    "label_ar": "قراءة العداد بداية",
+    "fieldtype": "Float",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "meter_end",
+    "label": "Meter End",
+    "label_ar": "قراءة العداد نهاية",
+    "fieldtype": "Float",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "fuel_litres",
+    "label": "Fuel (litres)",
+    "label_ar": "الوقود (لتر)",
+    "fieldtype": "Float",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "column_break_2",
+    "label": "",
+    "label_ar": "column_break_2",
+    "fieldtype": "Column Break",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "idle_hours",
+    "label": "Idle Hours",
+    "label_ar": "ساعات الخمول",
+    "fieldtype": "Float",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "downtime_hours",
+    "label": "Downtime Hours",
+    "label_ar": "ساعات التعطل",
+    "fieldtype": "Float",
+    "tid": "T02978"
+   },
+   {
+    "fieldname": "downtime_reason",
+    "label": "Downtime Reason",
+    "label_ar": "سبب التعطل",
+    "fieldtype": "Select",
+    "options": "Not Applicable\nBreakdown\nPlanned Maintenance\nWeather\nWaiting for Work\nOther",
+    "tid": "T02978"
+   }
+  ],
+  "Digit Field Attendance Employee": [
+   {
+    "fieldname": "cost_code",
+    "label": "Cost Code",
+    "label_ar": "رمز تكلفة",
+    "fieldtype": "Data",
+    "tid": "T02981"
+   },
+   {
+    "fieldname": "classification",
+    "label": "Labour Classification",
+    "label_ar": "تصنيف العمالة",
+    "fieldtype": "Link",
+    "options": "Digit Labor Rate",
+    "tid": "T02981"
+   }
+  ],
+  "Digit Field Attendance": [
+   {
+    "fieldname": "workflow_state",
+    "label": "Status",
+    "label_ar": "الحالة",
+    "fieldtype": "Select",
+    "options": "Draft\nReviewed\nApproved",
+    "read_only": 1,
+    "tid": "T02982"
+   },
+   {
+    "fieldname": "reviewed_by",
+    "label": "Reviewed By",
+    "label_ar": "روجع بواسطة",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "tid": "T02982"
+   },
+   {
+    "fieldname": "approved_by",
+    "label": "Approved By",
+    "label_ar": "اعتمد بواسطة",
+    "fieldtype": "Data",
+    "read_only": 1,
+    "tid": "T02982"
+   },
+   {
+    "fieldname": "approved_on",
+    "label": "Approved On",
+    "label_ar": "تاريخ الاعتماد",
+    "fieldtype": "Date",
+    "read_only": 1,
+    "tid": "T02982"
+   },
+   {
+    "fieldname": "return_reason",
+    "label": "Return Reason",
+    "label_ar": "سبب الإرجاع",
+    "fieldtype": "Small Text",
+    "tid": "T02982"
+   }
+  ],
+  "Digit Construction Settings": [
+   {
+    "fieldname": "budget_block_pct",
+    "label": "Budget Block Tolerance %",
+    "label_ar": "حد منع تجاوز الموازنة %",
+    "fieldtype": "Percent",
+    "tid": "T02996"
+   },
+   {
+    "fieldname": "mr_over_order_pct",
+    "label": "Over-order Tolerance %",
+    "label_ar": "حد زيادة الطلب عن طلب المواد %",
+    "fieldtype": "Percent",
+    "tid": "T02996"
+   },
+   {
+    "fieldname": "match_qty_tol_pct",
+    "label": "Match Quantity Tolerance %",
+    "label_ar": "حد فرق الكمية في المطابقة %",
+    "fieldtype": "Percent",
+    "tid": "T02996"
+   },
+   {
+    "fieldname": "match_price_tol_pct",
+    "label": "Match Price Tolerance %",
+    "label_ar": "حد فرق السعر في المطابقة %",
+    "fieldtype": "Percent",
+    "tid": "T02996"
+   }
+  ],
+  "Digit Schedule Baseline": [
+   {
+    "fieldname": "reason",
+    "label": "Reason",
+    "label_ar": "السبب",
+    "fieldtype": "Small Text",
+    "tid": "T01118",
+    "reqd": 1
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02694"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02694"
+   },
+   {
+    "fieldname": "approved_revision",
+    "label": "Approved Revision",
+    "label_ar": "المراجعة المعتمدة",
+    "fieldtype": "Data",
+    "tid": "T02695"
+   }
+  ],
+  "Digit Baseline Task": [
+   {
+    "fieldname": "weight",
+    "label": "Weight",
+    "label_ar": "الوزن",
+    "fieldtype": "Float",
+    "tid": "T01123"
+   }
+  ],
+  "Digit Lookahead": [
+   {
+    "fieldname": "weeks",
+    "label": "Weeks",
+    "label_ar": "عدد الأسابيع",
+    "fieldtype": "Int",
+    "tid": "T01126"
+   },
+   {
+    "fieldname": "look_ahead_week",
+    "label": "Look-Ahead Week",
+    "label_ar": "أسبوع النظرة المستقبلية",
+    "fieldtype": "Date",
+    "tid": "T02698"
+   },
+   {
+    "fieldname": "blockers",
+    "label": "Blockers",
+    "label_ar": "المعوقات",
+    "fieldtype": "Table",
+    "tid": "T02699",
+    "options": "Digit Lookahead Blocker"
+   }
+  ],
+  "Digit Lookahead Row": [
+   {
+    "fieldname": "planned_from",
+    "label": "From",
+    "label_ar": "من",
+    "fieldtype": "Date",
+    "tid": "T01130"
+   },
+   {
+    "fieldname": "planned_to",
+    "label": "To",
+    "label_ar": "إلى",
+    "fieldtype": "Date",
+    "tid": "T01131"
+   },
+   {
+    "fieldname": "constraint",
+    "label": "Constraint",
+    "label_ar": "قيد",
+    "fieldtype": "Select",
+    "tid": "T01132",
+    "options": "\nNone\nMaterial\nDrawing\nRFI\nEquipment\nPermit"
+   },
+   {
+    "fieldname": "miss_reason",
+    "label": "Miss Reason",
+    "label_ar": "سبب عدم الإنجاز",
+    "fieldtype": "Select",
+    "tid": "T01135",
+    "options": "\nMaterial\nDrawing\nRFI\nEquipment\nPermit\nLabour\nWeather\nOther",
+    "reqd": 1
+   }
+  ],
+  "Digit Site Activity Report": [
+   {
+    "fieldname": "delay_hours",
+    "label": "Delay Hours",
+    "label_ar": "ساعات توقف",
+    "fieldtype": "Float",
+    "tid": "T01136"
+   },
+   {
+    "fieldname": "delay_cause",
+    "label": "Delay Cause",
+    "label_ar": "سبب التوقف",
+    "fieldtype": "Select",
+    "tid": "T01137",
+    "options": "\nWeather\nClient\nSupply\nDesign\nOther"
+   },
+   {
+    "fieldname": "visitors",
+    "label": "Visitors",
+    "label_ar": "الزوار",
+    "fieldtype": "Small Text",
+    "tid": "T01138"
+   },
+   {
+    "fieldname": "photos",
+    "label": "Photos",
+    "label_ar": "صور",
+    "fieldtype": "Attach",
+    "tid": "T01139"
+   },
+   {
+    "fieldname": "site",
+    "label": "Site",
+    "label_ar": "الموقع",
+    "fieldtype": "Link",
+    "tid": "T02701",
+    "options": "Project"
+   },
+   {
+    "fieldname": "crew",
+    "label": "Crew",
+    "label_ar": "الطاقم",
+    "fieldtype": "Link",
+    "tid": "T02703",
+    "options": "Digit Crew"
+   },
+   {
+    "fieldname": "progress_quantity",
+    "label": "Progress Quantity",
+    "label_ar": "كمية التقدم",
+    "fieldtype": "Float",
+    "tid": "T02704"
+   }
+  ],
+  "Digit Drawing Revision": [
+   {
+    "fieldname": "transmittal",
+    "label": "Transmittal",
+    "label_ar": "الإحالة",
+    "fieldtype": "Link",
+    "tid": "T01171",
+    "options": "Digit Transmittal"
+   }
+  ],
+  "Digit Review Workflow": [
+   {
+    "fieldname": "status",
+    "label": "Status",
+    "label_ar": "الحالة",
+    "fieldtype": "Select",
+    "tid": "T01185",
+    "options": "\nIn Progress\nCompleted\nTerminated"
+   },
+   {
+    "fieldname": "document_code",
+    "label": "Document Code",
+    "label_ar": "رمز المستند",
+    "fieldtype": "Data",
+    "tid": "T02712"
+   },
+   {
+    "fieldname": "revision",
+    "label": "Revision",
+    "label_ar": "المراجعة",
+    "fieldtype": "Data",
+    "tid": "T02713"
+   },
+   {
+    "fieldname": "reviewer_group",
+    "label": "Reviewer Group",
+    "label_ar": "مجموعة المراجعين",
+    "fieldtype": "Link",
+    "tid": "T02714",
+    "options": "User"
+   },
+   {
+    "fieldname": "deadline",
+    "label": "Deadline",
+    "label_ar": "الموعد النهائي",
+    "fieldtype": "Date",
+    "tid": "T02715"
+   },
+   {
+    "fieldname": "decision",
+    "label": "Decision",
+    "label_ar": "القرار",
+    "fieldtype": "Link",
+    "tid": "T02716",
+    "options": "Digit Policy Decision"
+   },
+   {
+    "fieldname": "comment",
+    "label": "Comment",
+    "label_ar": "التعليق",
+    "fieldtype": "Small Text",
+    "tid": "T02717"
+   }
+  ],
+  "Digit Correspondence": [
+   {
+    "fieldname": "change_event",
+    "label": "Change Event",
+    "label_ar": "حدث تغيير",
+    "fieldtype": "Link",
+    "tid": "T01204",
+    "options": "Digit Change Event"
+   },
+   {
+    "fieldname": "attachment",
+    "label": "File",
+    "label_ar": "المرفق",
+    "fieldtype": "Attach",
+    "tid": "T01205"
+   },
+   {
+    "fieldname": "owner_user",
+    "label": "Owner",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02720",
+    "options": "User"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02721"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02721"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02722",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Field Task": [
+   {
+    "fieldname": "title",
+    "label": "Title",
+    "label_ar": "العنوان",
+    "fieldtype": "Data",
+    "tid": "T01207"
+   },
+   {
+    "fieldname": "category",
+    "label": "Category",
+    "label_ar": "الفئة",
+    "fieldtype": "Select",
+    "tid": "T01208",
+    "options": "\nQuality\nSafety\nCoordination\nCleaning\nOther"
+   },
+   {
+    "fieldname": "pin_x",
+    "label": "Pin X",
+    "label_ar": "X على الرسم",
+    "fieldtype": "Float",
+    "tid": "T01211"
+   },
+   {
+    "fieldname": "pin_y",
+    "label": "Pin Y",
+    "label_ar": "Y",
+    "fieldtype": "Float",
+    "tid": "T01212"
+   },
+   {
+    "fieldname": "due_date",
+    "label": "Due",
+    "label_ar": "الموعد",
+    "fieldtype": "Date",
+    "tid": "T01214"
+   },
+   {
+    "fieldname": "photos",
+    "label": "Photos",
+    "label_ar": "صور",
+    "fieldtype": "Attach",
+    "tid": "T01216"
+   },
+   {
+    "fieldname": "owner_user",
+    "label": "Owner",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02724",
+    "options": "User"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02726"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02726"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02727",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Checklist Template": [
+   {
+    "fieldname": "discipline",
+    "label": "Discipline",
+    "label_ar": "التخصص",
+    "fieldtype": "Select",
+    "tid": "T01218",
+    "options": "\nArchitecture\nStructure\nMEP\nCivil\nLandscape\nOther"
+   },
+   {
+    "fieldname": "checklist_item",
+    "label": "Checklist Item",
+    "label_ar": "بند الفحص",
+    "fieldtype": "Data",
+    "tid": "T02729"
+   },
+   {
+    "fieldname": "inspection_result",
+    "label": "Result",
+    "label_ar": "نتيجة الفحص",
+    "fieldtype": "Select",
+    "tid": "T02730",
+    "options": "\nPass\nFail\nPartial"
+   },
+   {
+    "fieldname": "inspector",
+    "label": "Inspector",
+    "label_ar": "المفتش",
+    "fieldtype": "Link",
+    "tid": "T02731",
+    "options": "User"
+   },
+   {
+    "fieldname": "photos",
+    "label": "Photos",
+    "label_ar": "الصور",
+    "fieldtype": "Attach",
+    "tid": "T02732"
+   }
+  ],
+  "Digit Checklist Item": [
+   {
+    "fieldname": "evidence_required",
+    "label": "Evidence",
+    "label_ar": "دليل مطلوب",
+    "fieldtype": "Check",
+    "tid": "T01221"
+   }
+  ],
+  "Digit Inspection": [
+   {
+    "fieldname": "location",
+    "label": "Location",
+    "label_ar": "الموقع",
+    "fieldtype": "Data",
+    "tid": "T01225"
+   },
+   {
+    "fieldname": "result",
+    "label": "Result",
+    "label_ar": "النتيجة",
+    "fieldtype": "Select",
+    "tid": "T01227",
+    "options": "\nPass\nFail\nPartial",
+    "read_only": 1
+   }
+  ],
+  "Digit Inspection Line": [
+   {
+    "fieldname": "comment",
+    "label": "Comment",
+    "label_ar": "تعليق",
+    "fieldtype": "Small Text",
+    "tid": "T01231"
+   }
+  ],
+  "Digit Defect": [
+   {
+    "fieldname": "title",
+    "label": "Title",
+    "label_ar": "الوصف المختصر",
+    "fieldtype": "Data",
+    "tid": "T01235"
+   },
+   {
+    "fieldname": "defect_type",
+    "label": "Type",
+    "label_ar": "النوع",
+    "fieldtype": "Select",
+    "tid": "T01236",
+    "options": "\nDefect\nNCR\nObservation"
+   },
+   {
+    "fieldname": "responsible_party",
+    "label": "Responsible",
+    "label_ar": "الجهة المسؤولة",
+    "fieldtype": "Select",
+    "tid": "T01239",
+    "options": "\nOwn Forces\nSubcontractor\nSupplier"
+   },
+   {
+    "fieldname": "workflow_state",
+    "label": "Status",
+    "label_ar": "الحالة",
+    "fieldtype": "Select",
+    "tid": "T01241",
+    "options": "\nOpen\nIn Progress\nReady to Inspect\nClosed\nDisputed"
+   },
+   {
+    "fieldname": "verified_by",
+    "label": "Verified By",
+    "label_ar": "تحقق بواسطة",
+    "fieldtype": "Link",
+    "tid": "T01245",
+    "options": "User"
+   },
+   {
+    "fieldname": "backcharge",
+    "label": "Back-charge",
+    "label_ar": "يُحمّل على المقاول",
+    "fieldtype": "Check",
+    "tid": "T01247"
+   },
+   {
+    "fieldname": "zone",
+    "label": "Zone",
+    "label_ar": "المنطقة",
+    "fieldtype": "Data",
+    "tid": "T02474"
+   },
+   {
+    "fieldname": "detected_on",
+    "label": "Detected On",
+    "label_ar": "تاريخ الاكتشاف",
+    "fieldtype": "Date",
+    "tid": "T02476"
+   },
+   {
+    "fieldname": "retest_on",
+    "label": "Retest On",
+    "label_ar": "موعد الإعادة",
+    "fieldtype": "Date",
+    "tid": "T02482"
+   },
+   {
+    "fieldname": "ncr",
+    "label": "Ncr Id",
+    "label_ar": "تقرير عدم المطابقة",
+    "fieldtype": "Link",
+    "tid": "T02483",
+    "options": "Digit Defect"
+   },
+   {
+    "fieldname": "finding",
+    "label": "Finding",
+    "label_ar": "الملاحظة",
+    "fieldtype": "Small Text",
+    "tid": "T02485"
+   },
+   {
+    "fieldname": "corrective_evidence",
+    "label": "Corrective Evidence",
+    "label_ar": "دليل التصحيح",
+    "fieldtype": "Attach",
+    "tid": "T02487"
+   }
+  ],
+  "Digit Punch Item": [
+   {
+    "fieldname": "area",
+    "label": "Area",
+    "label_ar": "المنطقة/الغرفة",
+    "fieldtype": "Data",
+    "tid": "T01253"
+   },
+   {
+    "fieldname": "trade",
+    "label": "Trade",
+    "label_ar": "التخصص",
+    "fieldtype": "Select",
+    "tid": "T01255",
+    "options": "\nCivil\nStructural\nMEP\nFinishing\nLandscaping\nSteel\nOther"
+   },
+   {
+    "fieldname": "work_order",
+    "label": "Work Order",
+    "label_ar": "أمر عمل",
+    "fieldtype": "Link",
+    "tid": "T01257",
+    "options": "Digit Subcontract Work Order"
+   },
+   {
+    "fieldname": "due_date",
+    "label": "Due",
+    "label_ar": "الموعد",
+    "fieldtype": "Date",
+    "tid": "T01259"
+   },
+   {
+    "fieldname": "work_package",
+    "label": "Work Package",
+    "label_ar": "حزمة العمل",
+    "fieldtype": "Link",
+    "tid": "T02458",
+    "options": "Digit Work Package"
+   },
+   {
+    "fieldname": "evidence_count",
+    "label": "Evidence Count",
+    "label_ar": "عدد الأدلة",
+    "fieldtype": "Int",
+    "tid": "T02466"
+   },
+   {
+    "fieldname": "owner_user",
+    "label": "Owner",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02468",
+    "options": "User"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02469"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02469"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02470",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Handover Requirement": [
+   {
+    "fieldname": "status",
+    "label": "Status",
+    "label_ar": "الحالة",
+    "fieldtype": "Select",
+    "tid": "T01269",
+    "options": "\nMissing\nSubmitted\nAccepted\nReturned"
+   }
+  ],
+  "Digit Takeoff Sheet": [
+   {
+    "fieldname": "source_kind",
+    "label": "Source",
+    "label_ar": "المصدر",
+    "fieldtype": "Select",
+    "tid": "T01302",
+    "options": "\n2D\nBIM Import"
+   },
+   {
+    "fieldname": "bim_file",
+    "label": "BIM Quantities File",
+    "label_ar": "ملف الكميات",
+    "fieldtype": "Attach",
+    "tid": "T01303"
+   },
+   {
+    "fieldname": "scale",
+    "label": "Scale",
+    "label_ar": "المقياس",
+    "fieldtype": "Data",
+    "tid": "T02752"
+   },
+   {
+    "fieldname": "unit",
+    "label": "Unit",
+    "label_ar": "الوحدة",
+    "fieldtype": "Data",
+    "tid": "T02753"
+   },
+   {
+    "fieldname": "measurement_method",
+    "label": "Measurement Method",
+    "label_ar": "طريقة القياس",
+    "fieldtype": "Select",
+    "tid": "T02754",
+    "options": "\nLinear\nArea\nVolume\nCount\nWeight"
+   },
+   {
+    "fieldname": "segment_polyline_quantity",
+    "label": "Segment/Polyline Quantity",
+    "label_ar": "كمية المقطع/الخط",
+    "fieldtype": "Float",
+    "tid": "T02755"
+   },
+   {
+    "fieldname": "model_version",
+    "label": "Model Version",
+    "label_ar": "نسخة النموذج",
+    "fieldtype": "Data",
+    "tid": "T02756"
+   },
+   {
+    "fieldname": "bim_object",
+    "label": "BIM Bim Object",
+    "label_ar": "عنصر",
+    "fieldtype": "Data",
+    "tid": "T02757"
+   },
+   {
+    "fieldname": "classification",
+    "label": "Classification",
+    "label_ar": "التصنيف",
+    "fieldtype": "Select",
+    "tid": "T02758",
+    "options": "\nUniclass\nMasterFormat\nUniFormat\nOther"
+   },
+   {
+    "fieldname": "measured_parameter",
+    "label": "Measured Parameter",
+    "label_ar": "المعامل المقاس",
+    "fieldtype": "Data",
+    "tid": "T02759"
+   }
+  ],
+  "Digit Commercial Claim": [
+   {
+    "fieldname": "claim_basis",
+    "label": "Basis",
+    "label_ar": "الأساس",
+    "fieldtype": "Select",
+    "tid": "T01361",
+    "options": "\nVariation Not Agreed\nDelay & Disruption\nProlongation\nAcceleration\nOther"
+   },
+   {
+    "fieldname": "offered_amount",
+    "label": "Offered",
+    "label_ar": "المعروض",
+    "fieldtype": "Currency",
+    "tid": "T01367"
+   },
+   {
+    "fieldname": "agreed_days",
+    "label": "Agreed Days",
+    "label_ar": "الأيام المتفق عليها",
+    "fieldtype": "Int",
+    "tid": "T01369"
+   },
+   {
+    "fieldname": "eot",
+    "label": "EOT",
+    "label_ar": "التمديد الناتج",
+    "fieldtype": "Link",
+    "tid": "T01371",
+    "options": "Digit EOT"
+   },
+   {
+    "fieldname": "claim_number",
+    "label": "Claim Number",
+    "label_ar": "رقم المطالبة",
+    "fieldtype": "Data",
+    "tid": "T02839"
+   },
+   {
+    "fieldname": "related_event",
+    "label": "Related Event",
+    "label_ar": "الحدث المرتبط",
+    "fieldtype": "Data",
+    "tid": "T02840"
+   },
+   {
+    "fieldname": "supporting_evidence",
+    "label": "Supporting Evidence",
+    "label_ar": "الأدلة الداعمة",
+    "fieldtype": "Attach",
+    "tid": "T02841"
+   },
+   {
+    "fieldname": "disputed_portion",
+    "label": "Disputed Portion",
+    "label_ar": "الجزء المتنازع عليه",
+    "fieldtype": "Data",
+    "tid": "T02842"
+   }
+  ],
+  "Digit EOT": [
+   {
+    "fieldname": "costs_claimed",
+    "label": "With Costs",
+    "label_ar": "يطالب بتكاليف",
+    "fieldtype": "Check",
+    "tid": "T01378"
+   },
+   {
+    "fieldname": "origin_document",
+    "label": "Origin Document",
+    "label_ar": "المستند المنشئ",
+    "fieldtype": "Data",
+    "tid": "T02843"
+   },
+   {
+    "fieldname": "change_no",
+    "label": "Change No.",
+    "label_ar": "رقم التغيير",
+    "fieldtype": "Data",
+    "tid": "T02844"
+   },
+   {
+    "fieldname": "estimated_cost",
+    "label": "Estimated Cost",
+    "label_ar": "التكلفة المقدرة",
+    "fieldtype": "Currency",
+    "tid": "T02845"
+   },
+   {
+    "fieldname": "approved_amount",
+    "label": "Approved",
+    "label_ar": "المعتمد",
+    "fieldtype": "Currency",
+    "tid": "T02846"
+   },
+   {
+    "fieldname": "commitment_amount",
+    "label": "Commitment",
+    "label_ar": "الالتزام",
+    "fieldtype": "Currency",
+    "tid": "T02847"
+   }
+  ],
+  "Digit EOT Delay Event": [
+   {
+    "fieldname": "excusable",
+    "label": "Excusable",
+    "label_ar": "مبرر",
+    "fieldtype": "Check",
+    "tid": "T01382"
+   },
+   {
+    "fieldname": "site_report",
+    "label": "Daily Report",
+    "label_ar": "التقرير اليومي",
+    "fieldtype": "Link",
+    "tid": "T01384",
+    "options": "Digit Site Activity Report"
+   }
+  ],
+  "Digit Claim Line": [
+   {
+    "fieldname": "total_completed_stored",
+    "label": "Completed & Stored",
+    "label_ar": "المنجز والمخزن حتى تاريخه",
+    "fieldtype": "Currency",
+    "tid": "T01387",
+    "read_only": 1
+   },
+   {
+    "fieldname": "payment_application",
+    "label": "Payment Application Id",
+    "label_ar": "طلب الدفع",
+    "fieldtype": "Link",
+    "tid": "T02182",
+    "options": "Digit Client Claim"
+   },
+   {
+    "fieldname": "certified_lines",
+    "label": "Certified Lines",
+    "label_ar": "السطور المعتمدة",
+    "fieldtype": "Data",
+    "tid": "T02183"
+   },
+   {
+    "fieldname": "requested_amount",
+    "label": "Requested Amount",
+    "label_ar": "المبلغ المطلوب",
+    "fieldtype": "Currency",
+    "tid": "T02184"
+   },
+   {
+    "fieldname": "vat_basis",
+    "label": "Vat Basis",
+    "label_ar": "أساس ضريبة القيمة المضافة",
+    "fieldtype": "Select",
+    "tid": "T02186",
+    "options": "\nStandard 15%\nZero Rated\nExempt\nOut of Scope"
+   }
+  ],
+  "Digit Subcontractor Profile": [
+   {
+    "fieldname": "compliance_status",
+    "label": "Compliance",
+    "label_ar": "حالة الامتثال",
+    "fieldtype": "Select",
+    "tid": "T01388",
+    "options": "\nCompliant\nExpiring\nNon-compliant",
+    "read_only": 1
+   },
+   {
+    "fieldname": "max_contract_value",
+    "label": "Max Contract Value",
+    "label_ar": "أقصى قيمة عقد",
+    "fieldtype": "Currency",
+    "tid": "T01389"
+   },
+   {
+    "fieldname": "compliance_documents",
+    "label": "Compliance Documents",
+    "label_ar": "",
+    "fieldtype": "Table",
+    "options": "Digit Compliance Document",
+    "tid": ""
+   },
+   {
+    "fieldname": "sov",
+    "label": "Sov",
+    "label_ar": "جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02853"
+   },
+   {
+    "fieldname": "boq_item",
+    "label": "BOQ Item",
+    "label_ar": "بند الكمية",
+    "fieldtype": "Link",
+    "tid": "T02854",
+    "options": "Digit BOQ Item"
+   },
+   {
+    "fieldname": "rate",
+    "label": "Rate",
+    "label_ar": "معدل",
+    "fieldtype": "Currency",
+    "tid": "T02855"
+   },
+   {
+    "fieldname": "amount",
+    "label": "Value",
+    "label_ar": "القيمة",
+    "fieldtype": "Currency",
+    "tid": "T02856"
+   },
+   {
+    "fieldname": "percent_complete",
+    "label": "Percent Complete",
+    "label_ar": "النسبة المنجزة",
+    "fieldtype": "Percent",
+    "tid": "T02857"
+   },
+   {
+    "fieldname": "previous_certificates",
+    "label": "Previous Certificates",
+    "label_ar": "شهادات سابقة",
+    "fieldtype": "Data",
+    "tid": "T02858"
+   }
+  ],
+  "Digit Subcontract Change": [
+   {
+    "fieldname": "change_rfq",
+    "label": "Change RFQ",
+    "label_ar": "طلب التسعير",
+    "fieldtype": "Link",
+    "tid": "T01398",
+    "options": "Digit Change RFQ"
+   },
+   {
+    "fieldname": "time_days",
+    "label": "Time Impact",
+    "label_ar": "أثر زمني",
+    "fieldtype": "Int",
+    "tid": "T01401"
+   },
+   {
+    "fieldname": "sov",
+    "label": "Sov",
+    "label_ar": "جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02423"
+   },
+   {
+    "fieldname": "boq_item",
+    "label": "BOQ Item",
+    "label_ar": "بند الكمية",
+    "fieldtype": "Link",
+    "tid": "T02424",
+    "options": "Digit BOQ Item"
+   },
+   {
+    "fieldname": "rate",
+    "label": "Rate",
+    "label_ar": "معدل",
+    "fieldtype": "Currency",
+    "tid": "T02425"
+   },
+   {
+    "fieldname": "amount",
+    "label": "Value",
+    "label_ar": "القيمة",
+    "fieldtype": "Currency",
+    "tid": "T02426"
+   },
+   {
+    "fieldname": "percent_complete",
+    "label": "Percent Complete",
+    "label_ar": "النسبة المنجزة",
+    "fieldtype": "Percent",
+    "tid": "T02427"
+   },
+   {
+    "fieldname": "previous_certificates",
+    "label": "Previous Certificates",
+    "label_ar": "شهادات سابقة",
+    "fieldtype": "Data",
+    "tid": "T02428"
+   }
+  ],
+  "Digit Subcontract Change Line": [
+   {
+    "fieldname": "change_type",
+    "label": "Type",
+    "label_ar": "النوع",
+    "fieldtype": "Select",
+    "tid": "T01402",
+    "options": "\nUpdate\nNew Line"
+   },
+   {
+    "fieldname": "old_rate",
+    "label": "Old Rate",
+    "label_ar": "السعر الحالي",
+    "fieldtype": "Currency",
+    "tid": "T01408"
+   },
+   {
+    "fieldname": "new_rate",
+    "label": "New Rate",
+    "label_ar": "الجديد",
+    "fieldtype": "Currency",
+    "tid": "T01409"
+   }
+  ],
+  "Digit Back Charge": [
+   {
+    "fieldname": "source",
+    "label": "Source",
+    "label_ar": "المصدر",
+    "fieldtype": "Select",
+    "tid": "T01412",
+    "options": "\nDefect Repair\nMaterials Issued\nDelay Penalty\nServices\nOther"
+   },
+   {
+    "fieldname": "notified_on",
+    "label": "Notified",
+    "label_ar": "تاريخ إخطار المقاول",
+    "fieldtype": "Date",
+    "tid": "T01416",
+    "reqd": 1
+   },
+   {
+    "fieldname": "status",
+    "label": "Status",
+    "label_ar": "الحالة",
+    "fieldtype": "Select",
+    "tid": "T01417",
+    "options": "\nDraft\nNotified\nAgreed\nDisputed\nDeducted"
+   },
+   {
+    "fieldname": "sov",
+    "label": "Sov",
+    "label_ar": "جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02872"
+   },
+   {
+    "fieldname": "boq_item",
+    "label": "BOQ Item",
+    "label_ar": "بند الكمية",
+    "fieldtype": "Link",
+    "tid": "T02873",
+    "options": "Digit BOQ Item"
+   },
+   {
+    "fieldname": "rate",
+    "label": "Rate",
+    "label_ar": "معدل",
+    "fieldtype": "Currency",
+    "tid": "T02874"
+   },
+   {
+    "fieldname": "percent_complete",
+    "label": "Percent Complete",
+    "label_ar": "النسبة المنجزة",
+    "fieldtype": "Percent",
+    "tid": "T02875"
+   },
+   {
+    "fieldname": "previous_certificates",
+    "label": "Previous Certificates",
+    "label_ar": "شهادات سابقة",
+    "fieldtype": "Data",
+    "tid": "T02876"
+   }
+  ],
+  "Digit Subcontract Final Account": [
+   {
+    "fieldname": "approved_changes",
+    "label": "Changes",
+    "label_ar": "التغييرات",
+    "fieldtype": "Currency",
+    "tid": "T01421"
+   },
+   {
+    "fieldname": "release_retention",
+    "label": "Release Retention",
+    "label_ar": "إفراج الاحتجاز",
+    "fieldtype": "Check",
+    "tid": "T01427"
+   },
+   {
+    "fieldname": "sov",
+    "label": "Sov",
+    "label_ar": "جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02299"
+   },
+   {
+    "fieldname": "boq_item",
+    "label": "BOQ Item",
+    "label_ar": "بند الكمية",
+    "fieldtype": "Link",
+    "tid": "T02300",
+    "options": "Digit BOQ Item"
+   },
+   {
+    "fieldname": "rate",
+    "label": "Rate",
+    "label_ar": "معدل",
+    "fieldtype": "Currency",
+    "tid": "T02301"
+   },
+   {
+    "fieldname": "amount",
+    "label": "Value",
+    "label_ar": "القيمة",
+    "fieldtype": "Currency",
+    "tid": "T02302"
+   },
+   {
+    "fieldname": "percent_complete",
+    "label": "Percent Complete",
+    "label_ar": "النسبة المنجزة",
+    "fieldtype": "Percent",
+    "tid": "T02303"
+   },
+   {
+    "fieldname": "previous_certificates",
+    "label": "Previous Certificates",
+    "label_ar": "شهادات سابقة",
+    "fieldtype": "Data",
+    "tid": "T02304"
+   }
+  ],
+  "Digit Cost Code": [
+   {
+    "fieldname": "title",
+    "label": "Title (AR)",
+    "label_ar": "العنوان عربي",
+    "fieldtype": "Data",
+    "tid": "T01431"
+   },
+   {
+    "fieldname": "project",
+    "label": "Project",
+    "label_ar": "المشروع",
+    "fieldtype": "Link",
+    "tid": "T01434",
+    "options": "Project"
+   },
+   {
+    "fieldname": "active",
+    "label": "Active",
+    "label_ar": "نشط",
+    "fieldtype": "Check",
+    "tid": "T01435"
+   },
+   {
+    "fieldname": "valid_from",
+    "label": "Valid From",
+    "label_ar": "ساري من",
+    "fieldtype": "Date",
+    "tid": "T01436"
+   },
+   {
+    "fieldname": "expense_account",
+    "label": "Expense Account",
+    "label_ar": "حساب المصروف",
+    "fieldtype": "Link",
+    "tid": "T01437",
+    "options": "Account"
+   },
+   {
+    "fieldname": "cbs_code",
+    "label": "Cbs Code",
+    "label_ar": "رمز هيكل التكلفة",
+    "fieldtype": "Link",
+    "tid": "T01548",
+    "options": "Digit Cost Code"
+   },
+   {
+    "fieldname": "allowed_mapping",
+    "label": "Allowed Mapping",
+    "label_ar": "الربط المسموح",
+    "fieldtype": "Data",
+    "tid": "T01551"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01552"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01552"
+   }
+  ],
+  "Digit Cost Allocation": [
+   {
+    "fieldname": "allocation_splits",
+    "label": "Allocation Splits",
+    "label_ar": "",
+    "fieldtype": "Table",
+    "options": "Digit Allocation Split",
+    "tid": ""
+   },
+   {
+    "fieldname": "source_item",
+    "label": "Source Item",
+    "label_ar": "البند المصدر",
+    "fieldtype": "Link",
+    "tid": "T01663",
+    "options": "Item"
+   },
+   {
+    "fieldname": "cbs_cost_code",
+    "label": "Cbs Cost Code",
+    "label_ar": "رمز تكلفة الهيكل",
+    "fieldtype": "Link",
+    "tid": "T01664",
+    "options": "Digit Cost Code"
+   },
+   {
+    "fieldname": "allocation_basis",
+    "label": "Allocation Basis",
+    "label_ar": "أساس التوزيع",
+    "fieldtype": "Select",
+    "tid": "T01665",
+    "options": "\nPercent\nAmount\nQuantity"
+   },
+   {
+    "fieldname": "percentage_amount",
+    "label": "Percentage/Amount",
+    "label_ar": "النسبة/المبلغ",
+    "fieldtype": "Percent",
+    "tid": "T01666"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01667"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01667"
+   }
+  ],
+  "Digit Client Contract": [
+   {
+    "fieldname": "sov_cost_links",
+    "label": "SOV Cost Links",
+    "label_ar": "",
+    "fieldtype": "Table",
+    "options": "Digit SOV Cost Link",
+    "tid": ""
+   },
+   {
+    "fieldname": "sales_invoice",
+    "label": "Sales Invoice",
+    "label_ar": "مصدر الفاتورة",
+    "fieldtype": "Link",
+    "tid": "T02103",
+    "options": "Sales Invoice"
+   }
+  ],
+  "Digit Forecast Line": [
+   {
+    "fieldname": "qty_budget",
+    "label": "Budget Qty",
+    "label_ar": "الكمية الموازنة",
+    "fieldtype": "Float",
+    "tid": "T01444"
+   },
+   {
+    "fieldname": "qty_installed",
+    "label": "Installed Qty",
+    "label_ar": "الكمية المنفذة",
+    "fieldtype": "Float",
+    "tid": "T01445"
+   },
+   {
+    "fieldname": "unit_rate",
+    "label": "Remaining Unit Rate",
+    "label_ar": "سعر الوحدة للباقي",
+    "fieldtype": "Currency",
+    "tid": "T01446"
+   },
+   {
+    "fieldname": "forecast_version",
+    "label": "Forecast Version",
+    "label_ar": "نسخة التوقع",
+    "fieldtype": "Link",
+    "tid": "T01745",
+    "options": "Digit Cost Forecast Snapshot"
+   },
+   {
+    "fieldname": "open_commitment",
+    "label": "Open Commitment",
+    "label_ar": "الالتزام المفتوح",
+    "fieldtype": "Currency",
+    "tid": "T01749"
+   },
+   {
+    "fieldname": "comparison_date",
+    "label": "Comparison Date",
+    "label_ar": "تاريخ المقارنة",
+    "fieldtype": "Date",
+    "tid": "T01751"
+   }
+  ],
+  "Digit Revenue Earning Rule": [
+   {
+    "fieldname": "sov_line_key",
+    "label": "SOV Line",
+    "label_ar": "بند العقد",
+    "fieldtype": "Data",
+    "tid": "T01449"
+   },
+   {
+    "fieldname": "method",
+    "label": "Method",
+    "label_ar": "الطريقة",
+    "fieldtype": "Select",
+    "tid": "T01450",
+    "options": "\nCertified\nPercent Complete\nStart\nFinish"
+   },
+   {
+    "fieldname": "source",
+    "label": "Source",
+    "label_ar": "مصدر النسبة",
+    "fieldtype": "Select",
+    "tid": "T01451",
+    "options": "\nCertificates\nProgress Update\nCost-to-Cost"
+   },
+   {
+    "fieldname": "cost_earned_quantity",
+    "label": "Cost Earned Quantity",
+    "label_ar": "كمية التكلفة المكتسبة",
+    "fieldtype": "Float",
+    "tid": "T01806"
+   },
+   {
+    "fieldname": "contract_revenue",
+    "label": "Contract Revenue",
+    "label_ar": "إيراد العقد",
+    "fieldtype": "Currency",
+    "tid": "T01807"
+   },
+   {
+    "fieldname": "earning_method",
+    "label": "Earning Method",
+    "label_ar": "طريقة الاكتساب",
+    "fieldtype": "Select",
+    "tid": "T01808",
+    "options": "\nCertified\nPercent Complete\nStart/Finish"
+   },
+   {
+    "fieldname": "baseline_rate",
+    "label": "Baseline Rate",
+    "label_ar": "سعر خط الأساس",
+    "fieldtype": "Currency",
+    "tid": "T01809"
+   }
+  ],
+  "Digit Crew Member": [
+   {
+    "fieldname": "classification",
+    "label": "Classification",
+    "label_ar": "التصنيف",
+    "fieldtype": "Link",
+    "tid": "T01466",
+    "options": "Digit Labor Rate"
+   },
+   {
+    "fieldname": "manager",
+    "label": "Manager",
+    "label_ar": "المسؤول",
+    "fieldtype": "Link",
+    "tid": "T01924",
+    "options": "User"
+   },
+   {
+    "fieldname": "trade",
+    "label": "Trade",
+    "label_ar": "الحرفة",
+    "fieldtype": "Select",
+    "tid": "T01927",
+    "options": "\nCivil\nStructural\nMEP\nFinishing\nLandscaping\nSteel\nOther"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01928"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T01928"
+   }
+  ],
+  "Digit Machinery": [
+   {
+    "fieldname": "pm_interval_hours",
+    "label": "PM Interval Hours",
+    "label_ar": "فترة الصيانة (ساعات)",
+    "fieldtype": "Float",
+    "tid": "T01477"
+   },
+   {
+    "fieldname": "pm_interval_days",
+    "label": "PM Interval Days",
+    "label_ar": "فترة الصيانة (أيام)",
+    "fieldtype": "Int",
+    "tid": "T01478"
+   },
+   {
+    "fieldname": "last_meter",
+    "label": "Last Meter",
+    "label_ar": "آخر قراءة",
+    "fieldtype": "Float",
+    "tid": "T01479"
+   },
+   {
+    "fieldname": "fuel_rate",
+    "label": "Fuel Rate",
+    "label_ar": "سعر اللتر",
+    "fieldtype": "Currency",
+    "tid": "T01480"
+   }
+  ],
+  "Digit Site Expense": [
+   {
+    "fieldname": "cost_code",
+    "label": "Cost Code",
+    "label_ar": "كود التكلفة",
+    "fieldtype": "Data",
+    "tid": "T01481"
+   },
+   {
+    "fieldname": "billable",
+    "label": "Billable",
+    "label_ar": "قابل للفوترة للعميل",
+    "fieldtype": "Check",
+    "tid": "T01482"
+   },
+   {
+    "fieldname": "employee_part",
+    "label": "Employee Part",
+    "label_ar": "حصة الموظف",
+    "fieldtype": "Currency",
+    "tid": "T01483"
+   },
+   {
+    "fieldname": "claim_amount",
+    "label": "Claim Amount",
+    "label_ar": "مبلغ المطالبة",
+    "fieldtype": "Currency",
+    "tid": "T01484"
+   },
+   {
+    "fieldname": "expense_claim",
+    "label": "Expense Claim Id",
+    "label_ar": "مطالبة المصروف",
+    "fieldtype": "Link",
+    "tid": "T02031",
+    "options": "Expense Claim"
+   },
+   {
+    "fieldname": "employee_site",
+    "label": "Employee/Site",
+    "label_ar": "الموظف/الموقع",
+    "fieldtype": "Link",
+    "tid": "T02032",
+    "options": "Employee"
+   },
+   {
+    "fieldname": "receipts",
+    "label": "Receipts",
+    "label_ar": "الإيصالات",
+    "fieldtype": "Attach",
+    "tid": "T02033"
+   },
+   {
+    "fieldname": "approval_role",
+    "label": "Approval Role",
+    "label_ar": "دور الاعتماد",
+    "fieldtype": "Select",
+    "tid": "T02035",
+    "options": "\nDigit Project Manager\nDigit Accountant\nDigit Director"
+   }
+  ],
+  "Digit Contract SOV Line": [
+   {
+    "fieldname": "pay_item",
+    "label": "Pay Item",
+    "label_ar": "بند الدفع",
+    "fieldtype": "Link",
+    "tid": "T01699",
+    "options": "Digit Contract SOV Line"
+   },
+   {
+    "fieldname": "revenue_rule",
+    "label": "Revenue Rule",
+    "label_ar": "قاعدة الإيراد",
+    "fieldtype": "Select",
+    "tid": "T01700",
+    "options": "\nCertified\nPercent Complete\nMilestone\nStart/Finish"
+   },
+   {
+    "fieldname": "related_cost_item",
+    "label": "Related Cost Item",
+    "label_ar": "بند التكلفة المرتبط",
+    "fieldtype": "Currency",
+    "tid": "T01701"
+   },
+   {
+    "fieldname": "allocation_amount",
+    "label": "Allocation Amount",
+    "label_ar": "مبلغ التوزيع",
+    "fieldtype": "Currency",
+    "tid": "T01702"
+   },
+   {
+    "fieldname": "earned_value_basis",
+    "label": "Earned Value Basis",
+    "label_ar": "أساس القيمة المكتسبة",
+    "fieldtype": "Select",
+    "tid": "T01703",
+    "options": "\nPhysical Progress\nCost-to-Cost\nCertified Quantity"
+   }
+  ],
+  "Digit Subcontract Work Order": [
+   {
+    "fieldname": "approval_map",
+    "label": "Approval Map",
+    "label_ar": "خريطة الاعتماد",
+    "fieldtype": "Data",
+    "tid": "T02216"
+   },
+   {
+    "fieldname": "unbilled_amount",
+    "label": "Unbilled Amount",
+    "label_ar": "غير المفوتر",
+    "fieldtype": "Currency",
+    "tid": "T02219"
+   },
+   {
+    "fieldname": "retainage_amount",
+    "label": "Retainage Amount",
+    "label_ar": "الاحتجاز",
+    "fieldtype": "Currency",
+    "tid": "T02220"
+   },
+   {
+    "fieldname": "prepayment_open",
+    "label": "Prepayment Open",
+    "label_ar": "دفعة مقدمة معلقة",
+    "fieldtype": "Currency",
+    "tid": "T02221"
+   },
+   {
+    "fieldname": "change_ref",
+    "label": "Change Ref",
+    "label_ar": "مرجع التغيير",
+    "fieldtype": "Data",
+    "tid": "T02415"
+   },
+   {
+    "fieldname": "source_event",
+    "label": "Source Event",
+    "label_ar": "حدث المصدر",
+    "fieldtype": "Data",
+    "tid": "T02416"
+   },
+   {
+    "fieldname": "net_delta",
+    "label": "Net Delta",
+    "label_ar": "صافي الفرق",
+    "fieldtype": "Currency",
+    "tid": "T02419"
+   },
+   {
+    "fieldname": "baseline_wo",
+    "label": "Baseline Wo",
+    "label_ar": "قيمة الأمر الأصلية",
+    "fieldtype": "Currency",
+    "tid": "T02420"
+   },
+   {
+    "fieldname": "proposed_revised",
+    "label": "Proposed Revised",
+    "label_ar": "القيمة المقترحة",
+    "fieldtype": "Currency",
+    "tid": "T02421"
+   }
+  ],
+  "Digit Client Variation": [
+   {
+    "fieldname": "revenue_rom",
+    "label": "Revenue Rom",
+    "label_ar": "إيراد تقديري",
+    "fieldtype": "Currency",
+    "tid": "T02400"
+   },
+   {
+    "fieldname": "cost_rom",
+    "label": "Cost Rom",
+    "label_ar": "تكلفة تقديرية",
+    "fieldtype": "Currency",
+    "tid": "T02401"
+   },
+   {
+    "fieldname": "expect_revenue",
+    "label": "Expect Revenue",
+    "label_ar": "متوقع إيراد",
+    "fieldtype": "Check",
+    "tid": "T02402"
+   },
+   {
+    "fieldname": "description",
+    "label": "Description",
+    "label_ar": "وصف التغيير",
+    "fieldtype": "Text",
+    "tid": "T02403"
+   },
+   {
+    "fieldname": "revision_no",
+    "label": "Revision No",
+    "label_ar": "مراجعة",
+    "fieldtype": "Int",
+    "tid": "T02405"
+   }
+  ],
+  "Digit Tender": [
+   {
+    "fieldname": "bid_form",
+    "label": "Bid Form",
+    "label_ar": "نموذج العرض",
+    "fieldtype": "Data",
+    "tid": "T02430"
+   },
+   {
+    "fieldname": "bid_count",
+    "label": "Bid Count",
+    "label_ar": "عدد العروض",
+    "fieldtype": "Int",
+    "tid": "T02434"
+   },
+   {
+    "fieldname": "lowest_normalized",
+    "label": "Lowest Normalized",
+    "label_ar": "أقل عرض مُعادِل",
+    "fieldtype": "Currency",
+    "tid": "T02435"
+   },
+   {
+    "fieldname": "decision_note",
+    "label": "Decision Note",
+    "label_ar": "سبب القرار",
+    "fieldtype": "Text",
+    "tid": "T02436"
+   },
+   {
+    "fieldname": "pricing_item",
+    "label": "Pricing Item",
+    "label_ar": "بند التسعير",
+    "fieldtype": "Data",
+    "tid": "T02742"
+   },
+   {
+    "fieldname": "rate_code",
+    "label": "Rate Code",
+    "label_ar": "كود المعدل",
+    "fieldtype": "Link",
+    "tid": "T02743",
+    "options": "Digit Construction Rate"
+   },
+   {
+    "fieldname": "uom",
+    "label": "Unit",
+    "label_ar": "وحدة",
+    "fieldtype": "Data",
+    "tid": "T02744"
+   },
+   {
+    "fieldname": "resource_components",
+    "label": "Labour / Equipment / Material Components",
+    "label_ar": "مركبات عمالة/معدات/مواد",
+    "fieldtype": "Table",
+    "tid": "T02745",
+    "options": "Digit Resource Component"
+   },
+   {
+    "fieldname": "effective_date",
+    "label": "Effective Date",
+    "label_ar": "تاريخ سريان",
+    "fieldtype": "Date",
+    "tid": "T02746"
+   }
+  ],
+  "Digit Bid Leveling": [
+   {
+    "fieldname": "bidder",
+    "label": "Bidder",
+    "label_ar": "المناقص",
+    "fieldtype": "Link",
+    "tid": "T02437",
+    "options": "Supplier"
+   },
+   {
+    "fieldname": "same_scope_item",
+    "label": "Same Scope Item",
+    "label_ar": "بند النطاق المماثل",
+    "fieldtype": "Data",
+    "tid": "T02438"
+   },
+   {
+    "fieldname": "unit_rate",
+    "label": "Unit Rate",
+    "label_ar": "سعر الوحدة",
+    "fieldtype": "Currency",
+    "tid": "T02439"
+   },
+   {
+    "fieldname": "exclusions",
+    "label": "Exclusions",
+    "label_ar": "الاستثناءات",
+    "fieldtype": "Small Text",
+    "tid": "T02440"
+   },
+   {
+    "fieldname": "compliance",
+    "label": "Compliance",
+    "label_ar": "الامتثال",
+    "fieldtype": "Check",
+    "tid": "T02441"
+   }
+  ],
+  "Digit Portfolio Scenario": [
+   {
+    "fieldname": "owner_user",
+    "label": "Owner User",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02443",
+    "options": "User"
+   },
+   {
+    "fieldname": "period_start",
+    "label": "Period Start",
+    "label_ar": "بداية التخطيط",
+    "fieldtype": "Date",
+    "tid": "T02444"
+   },
+   {
+    "fieldname": "period_end",
+    "label": "Period End",
+    "label_ar": "نهاية التخطيط",
+    "fieldtype": "Date",
+    "tid": "T02445"
+   },
+   {
+    "fieldname": "period_unit",
+    "label": "Period Unit",
+    "label_ar": "وحدة الفترة",
+    "fieldtype": "Select",
+    "tid": "T02446",
+    "options": "\nMonth\nQuarter\nYear"
+   },
+   {
+    "fieldname": "source_cutoff",
+    "label": "Source Cutoff",
+    "label_ar": "تاريخ المصدر",
+    "fieldtype": "Date",
+    "tid": "T02447"
+   },
+   {
+    "fieldname": "total_proposed",
+    "label": "Total Proposed",
+    "label_ar": "الموازنة المقترحة",
+    "fieldtype": "Currency",
+    "tid": "T02448"
+   },
+   {
+    "fieldname": "net_delta",
+    "label": "Net Delta",
+    "label_ar": "صافي الفرق",
+    "fieldtype": "Currency",
+    "tid": "T02450"
+   },
+   {
+    "fieldname": "revision_no",
+    "label": "Revision No",
+    "label_ar": "رقم النسخة",
+    "fieldtype": "Int",
+    "tid": "T02451"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02456",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Handover Package": [
+   {
+    "fieldname": "package_type",
+    "label": "Package Type",
+    "label_ar": "نوع الحزمة",
+    "fieldtype": "Select",
+    "tid": "T02496",
+    "options": "\nAs-built\nO&M Manual\nWarranty\nTest Certificates\nFull Handover"
+   },
+   {
+    "fieldname": "revision_policy",
+    "label": "Revision Policy",
+    "label_ar": "سياسة النسخ",
+    "fieldtype": "Select",
+    "tid": "T02497",
+    "options": "\nLatest Revision\nAll Revisions"
+   },
+   {
+    "fieldname": "include_references",
+    "label": "Include References",
+    "label_ar": "ضم المراجع",
+    "fieldtype": "Check",
+    "tid": "T02498"
+   },
+   {
+    "fieldname": "version_no",
+    "label": "Version No",
+    "label_ar": "رقم النسخة",
+    "fieldtype": "Int",
+    "tid": "T02501"
+   },
+   {
+    "fieldname": "manifest_hash",
+    "label": "Manifest Hash",
+    "label_ar": "بصمة الفهرس",
+    "fieldtype": "Data",
+    "tid": "T02502"
+   },
+   {
+    "fieldname": "file_count",
+    "label": "File Count",
+    "label_ar": "عدد الملفات",
+    "fieldtype": "Int",
+    "tid": "T02503"
+   },
+   {
+    "fieldname": "missing_count",
+    "label": "Missing Count",
+    "label_ar": "روابط مفقودة",
+    "fieldtype": "Int",
+    "tid": "T02504"
+   },
+   {
+    "fieldname": "generated_at",
+    "label": "Generated At",
+    "label_ar": "تاريخ التوليد",
+    "fieldtype": "Datetime",
+    "tid": "T02505"
+   },
+   {
+    "fieldname": "asset_document",
+    "label": "Asset/Document Id",
+    "label_ar": "الأصل/المستند",
+    "fieldtype": "Link",
+    "tid": "T02506",
+    "options": "Asset"
+   },
+   {
+    "fieldname": "discipline",
+    "label": "Discipline",
+    "label_ar": "التخصص",
+    "fieldtype": "Select",
+    "tid": "T02508",
+    "options": "\nArchitecture\nStructure\nMEP\nCivil\nLandscape\nOther"
+   },
+   {
+    "fieldname": "required_closeout_evidence",
+    "label": "Required Closeout Evidence",
+    "label_ar": "أدلة الإغلاق المطلوبة",
+    "fieldtype": "Attach",
+    "tid": "T02509"
+   },
+   {
+    "fieldname": "transmittal_recipient",
+    "label": "Transmittal Recipient",
+    "label_ar": "مستلم الإحالة",
+    "fieldtype": "Link",
+    "tid": "T02510",
+    "options": "User"
+   },
+   {
+    "fieldname": "manual_name",
+    "label": "Manual Name",
+    "label_ar": "اسم الدليل",
+    "fieldtype": "Data",
+    "tid": "T02520"
+   },
+   {
+    "fieldname": "discipline_map",
+    "label": "Discipline Map",
+    "label_ar": "خريطة التخصصات",
+    "fieldtype": "Text",
+    "tid": "T02522"
+   },
+   {
+    "fieldname": "as_of_date",
+    "label": "As Of Date",
+    "label_ar": "تاريخ المصدر",
+    "fieldtype": "Date",
+    "tid": "T02523"
+   },
+   {
+    "fieldname": "doc_count",
+    "label": "Doc Count",
+    "label_ar": "عدد الوثائق",
+    "fieldtype": "Int",
+    "tid": "T02526"
+   },
+   {
+    "fieldname": "missing_tag_count",
+    "label": "Missing Tag Count",
+    "label_ar": "وسوم ناقصة",
+    "fieldtype": "Int",
+    "tid": "T02527"
+   },
+   {
+    "fieldname": "asset_count",
+    "label": "Asset Count",
+    "label_ar": "عدد الأصول",
+    "fieldtype": "Int",
+    "tid": "T02528"
+   }
+  ],
+  "Digit Submittal": [
+   {
+    "fieldname": "contractor_supplier",
+    "label": "Contractor Supplier",
+    "label_ar": "مقدم الطلب",
+    "fieldtype": "Link",
+    "tid": "T02578",
+    "options": "Supplier"
+   },
+   {
+    "fieldname": "work_package",
+    "label": "Work Package",
+    "label_ar": "حزمة العمل",
+    "fieldtype": "Link",
+    "tid": "T02579",
+    "options": "Digit Work Package"
+   },
+   {
+    "fieldname": "drawing_revision",
+    "label": "Drawing Revision",
+    "label_ar": "مراجعة رسم",
+    "fieldtype": "Link",
+    "tid": "T02580",
+    "options": "Digit Drawing"
+   },
+   {
+    "fieldname": "due_date",
+    "label": "Due Date",
+    "label_ar": "موعد المراجعة",
+    "fieldtype": "Date",
+    "tid": "T02582"
+   },
+   {
+    "fieldname": "final_response",
+    "label": "Final Response",
+    "label_ar": "القرار النهائي",
+    "fieldtype": "Select",
+    "tid": "T02584",
+    "options": "\nApproved\nApproved as Noted\nRevise & Resubmit\nRejected"
+   },
+   {
+    "fieldname": "revision_no",
+    "label": "Revision No",
+    "label_ar": "رقم المراجعة",
+    "fieldtype": "Int",
+    "tid": "T02585"
+   },
+   {
+    "fieldname": "decision_note",
+    "label": "Decision Note",
+    "label_ar": "تعليق القرار",
+    "fieldtype": "Small Text",
+    "tid": "T02587"
+   },
+   {
+    "fieldname": "distribution_date",
+    "label": "Distribution Date",
+    "label_ar": "تاريخ التوزيع",
+    "fieldtype": "Datetime",
+    "tid": "T02588"
+   },
+   {
+    "fieldname": "attachments",
+    "label": "Attachments",
+    "label_ar": "مرفقات التقديم",
+    "fieldtype": "Table",
+    "tid": "T02589",
+    "options": "Digit Submittal Attachment"
+   },
+   {
+    "fieldname": "material_or_drawing",
+    "label": "Material / Drawing",
+    "label_ar": "مادة أو مخطط",
+    "fieldtype": "Data",
+    "tid": "T02590"
+   }
+  ],
+  "Digit Drawing": [
+   {
+    "fieldname": "issue_set",
+    "label": "Issue Set",
+    "label_ar": "مجموعة الإصدار",
+    "fieldtype": "Data",
+    "tid": "T02597"
+   },
+   {
+    "fieldname": "drawing_status",
+    "label": "Drawing Status",
+    "label_ar": "حالة الرسم",
+    "fieldtype": "Select",
+    "tid": "T02598",
+    "options": "\nFor Information\nFor Construction\nSuperseded\nVoid"
+   },
+   {
+    "fieldname": "file_name",
+    "label": "File Name",
+    "label_ar": "اسم الملف",
+    "fieldtype": "Data",
+    "tid": "T02599"
+   },
+   {
+    "fieldname": "file_attachment",
+    "label": "File Attachment",
+    "label_ar": "ملف الرسم",
+    "fieldtype": "Attach",
+    "tid": "T02600"
+   },
+   {
+    "fieldname": "upload_date",
+    "label": "Upload Date",
+    "label_ar": "تاريخ الرفع",
+    "fieldtype": "Datetime",
+    "tid": "T02601"
+   },
+   {
+    "fieldname": "publish_date",
+    "label": "Publish Date",
+    "label_ar": "تاريخ النشر",
+    "fieldtype": "Datetime",
+    "tid": "T02602"
+   },
+   {
+    "fieldname": "supersedes_revision",
+    "label": "Supersedes Revision",
+    "label_ar": "تحل محل",
+    "fieldtype": "Link",
+    "tid": "T02607",
+    "options": "Digit Drawing"
+   },
+   {
+    "fieldname": "owner_user",
+    "label": "Owner",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02609",
+    "options": "User"
+   },
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02610"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02610"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02611",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Project Team Member": [
+   {
+    "fieldname": "owner_user",
+    "label": "Owner",
+    "label_ar": "المالك",
+    "fieldtype": "Link",
+    "tid": "T02643",
+    "options": "User"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02645",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Risk": [
+   {
+    "fieldname": "from_date",
+    "label": "From Date",
+    "label_ar": "من تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02659"
+   },
+   {
+    "fieldname": "to_date",
+    "label": "To Date",
+    "label_ar": "إلى تاريخ",
+    "fieldtype": "Date",
+    "tid": "T02659"
+   },
+   {
+    "fieldname": "execution_stage",
+    "label": "Execution Stage",
+    "label_ar": "مرحلة التنفيذ",
+    "fieldtype": "Select",
+    "tid": "T02660",
+    "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout"
+   }
+  ],
+  "Digit Transmittal": [
+   {
+    "fieldname": "document_code",
+    "label": "Document Code",
+    "label_ar": "معرف المستند",
+    "fieldtype": "Data",
+    "tid": "T02708"
+   },
+   {
+    "fieldname": "revision_no",
+    "label": "Revision No.",
+    "label_ar": "رقم المراجعة",
+    "fieldtype": "Data",
+    "tid": "T02709"
+   },
+   {
+    "fieldname": "from_party",
+    "label": "From",
+    "label_ar": "جهة الإرسال",
+    "fieldtype": "Data",
+    "tid": "T02710"
+   }
+  ],
+  "Digit Tender Addendum": [
+   {
+    "fieldname": "pricing_item",
+    "label": "Pricing Item",
+    "label_ar": "بند التسعير",
+    "fieldtype": "Data",
+    "tid": "T02747"
+   },
+   {
+    "fieldname": "rate_code",
+    "label": "Rate Code",
+    "label_ar": "كود المعدل",
+    "fieldtype": "Link",
+    "tid": "T02748",
+    "options": "Digit Construction Rate"
+   },
+   {
+    "fieldname": "uom",
+    "label": "Unit",
+    "label_ar": "وحدة",
+    "fieldtype": "Data",
+    "tid": "T02749"
+   },
+   {
+    "fieldname": "resource_components",
+    "label": "Labour / Equipment / Material Components",
+    "label_ar": "مركبات عمالة/معدات/مواد",
+    "fieldtype": "Table",
+    "tid": "T02750",
+    "options": "Digit Resource Component"
+   },
+   {
+    "fieldname": "effective_date",
+    "label": "Effective Date",
+    "label_ar": "تاريخ سريان",
+    "fieldtype": "Date",
+    "tid": "T02751"
+   }
+  ],
+  "Digit Assembly Component": [
+   {
+    "fieldname": "pricing_item",
+    "label": "Pricing Item",
+    "label_ar": "بند التسعير",
+    "fieldtype": "Data",
+    "tid": "T02768"
+   },
+   {
+    "fieldname": "rate_code",
+    "label": "Rate Code",
+    "label_ar": "كود المعدل",
+    "fieldtype": "Link",
+    "tid": "T02769",
+    "options": "Digit Construction Rate"
+   },
+   {
+    "fieldname": "effective_date",
+    "label": "Effective Date",
+    "label_ar": "تاريخ سريان",
+    "fieldtype": "Date",
+    "tid": "T02772"
+   }
+  ],
+  "Digit Estimate Line": [
+   {
+    "fieldname": "item_code",
+    "label": "Item",
+    "label_ar": "الصنف",
+    "fieldtype": "Link",
+    "tid": "T02779",
+    "options": "Item"
+   },
+   {
+    "fieldname": "warehouse",
+    "label": "Warehouse",
+    "label_ar": "المخزن",
+    "fieldtype": "Link",
+    "tid": "T02780",
+    "options": "Warehouse"
+   },
+   {
+    "fieldname": "required_by",
+    "label": "Required By",
+    "label_ar": "تاريخ الحاجة",
+    "fieldtype": "Data",
+    "tid": "T02783"
+   }
+  ],
+  "Digit Bid Package": [
+   {
+    "fieldname": "sov",
+    "label": "Sov",
+    "label_ar": "جدول القيم",
+    "fieldtype": "Data",
+    "tid": "T02785"
+   },
+   {
+    "fieldname": "boq_item",
+    "label": "BOQ Item",
+    "label_ar": "بند الكمية",
+    "fieldtype": "Link",
+    "tid": "T02786",
+    "options": "Digit BOQ Item"
+   },
+   {
+    "fieldname": "rate",
+    "label": "Rate",
+    "label_ar": "معدل",
+    "fieldtype": "Currency",
+    "tid": "T02787"
+   },
+   {
+    "fieldname": "amount",
+    "label": "Value",
+    "label_ar": "القيمة",
+    "fieldtype": "Currency",
+    "tid": "T02788"
+   },
+   {
+    "fieldname": "percent_complete",
+    "label": "Percent Complete",
+    "label_ar": "النسبة المنجزة",
+    "fieldtype": "Percent",
+    "tid": "T02789"
+   },
+   {
+    "fieldname": "previous_certificates",
+    "label": "Previous Certificates",
+    "label_ar": "شهادات سابقة",
+    "fieldtype": "Data",
+    "tid": "T02790"
+   }
+  ],
+  "Digit Estimate Version": [
+   {
+    "fieldname": "pricing_item",
+    "label": "Pricing Item",
+    "label_ar": "بند التسعير",
+    "fieldtype": "Data",
+    "tid": "T02791"
+   },
+   {
+    "fieldname": "rate_code",
+    "label": "Rate Code",
+    "label_ar": "كود المعدل",
+    "fieldtype": "Link",
+    "tid": "T02792",
+    "options": "Digit Construction Rate"
+   },
+   {
+    "fieldname": "uom",
+    "label": "Unit",
+    "label_ar": "وحدة",
+    "fieldtype": "Data",
+    "tid": "T02793"
+   },
+   {
+    "fieldname": "resource_components",
+    "label": "Labour / Equipment / Material Components",
+    "label_ar": "مركبات عمالة/معدات/مواد",
+    "fieldtype": "Table",
+    "tid": "T02794",
+    "options": "Digit Resource Component"
+   },
+   {
+    "fieldname": "effective_date",
+    "label": "Effective Date",
+    "label_ar": "تاريخ سريان",
+    "fieldtype": "Date",
+    "tid": "T02795"
+   }
+  ]
+ },
+ "options": {
+  "Digit Schedule Baseline": {
+   "baseline_type": [
+    "Primary",
+    "Secondary",
+    "Tertiary"
+   ]
+  },
+  "Digit Submittal": {
+   "decision_code": [
+    "A Approved",
+    "B Approved as Noted",
+    "C Revise & Resubmit",
+    "D Rejected"
+   ]
+  },
+  "Digit Drawing": {
+   "discipline": [
+    "LAND"
+   ],
+   "status": [
+    "For Information",
+    "For Construction",
+    "Void"
+   ]
+  },
+  "Digit Inspection Line": {
+   "outcome": [
+    "N/A"
+   ]
+  },
+  "Digit Punch Item": {
+   "status": [
+    "Work Required"
+   ]
+  },
+  "Digit Handover Package": {
+   "status": [
+    "In Review",
+    "Accepted"
+   ]
+  },
+  "Digit Handover Requirement": {
+   "requirement_type": [
+    "As-built",
+    "Test Certificate",
+    "Spare Parts",
+    "Training"
+   ]
+  },
+  "Digit Commercial Claim": {
+   "workflow_state": [
+    "Notice",
+    "Under Negotiation"
+   ]
+  },
+  "Digit EOT Delay Event": {
+   "delay_category": [
+    "Client",
+    "Consultant",
+    "Weather",
+    "Authority"
+   ]
+  },
+  "Digit Subcontract Change": {
+   "workflow_state": [
+    "Under Review"
+   ]
+  },
+  "Digit Cost Code": {
+   "category": [
+    "Overhead",
+    "Contingency"
+   ]
+  }
+ },
+ "props": {
+  "Digit Schedule Baseline": {
+   "captured_on": {
+    "fieldtype": "Datetime"
+   }
+  },
+  "Digit Submittal Review Step": {
+   "step": {
+    "fieldtype": "Int"
+   }
+  },
+  "Digit Tender": {
+   "source_channel": {
+    "fieldtype": "Select",
+    "options": "\nEtimad\nDirect Invitation\nPrivate\nOther"
+   },
+   "gng_decision_by": {
+    "fieldtype": "Link",
+    "options": "User"
+   },
+   "gng_decision_note": {
+    "mandatory_depends_on": "eval:doc.gng_decision && doc.gng_decision != 'Pending'"
+   }
+  },
+  "Digit Tender Criterion": {
+   "criterion": {
+    "fieldtype": "Select",
+    "options": "\nCapability\nCapacity\nExpected Margin\nRisk\nClient Relationship\nCash Requirement\nCompetition"
+   },
+   "weight_pct": {
+    "fieldtype": "Percent"
+   }
+  },
+  "Digit Forecast Line": {
+   "cost_code": {
+    "fieldtype": "Link",
+    "options": "Digit Cost Code"
+   }
+  },
+  "Digit Drawing Revision": {
+   "attachment": {
+    "reqd": 1
+   }
+  },
+  "Digit Punch Item": {
+   "evidence": {
+    "mandatory_depends_on": "eval:doc.status=='Closed'"
+   }
+  },
+  "Digit Risk": {
+   "change_event": {
+    "options": "Digit Change Event"
+   },
+   "owner_user": {
+    "reqd": 1
+   }
+  }
+ },
+ "custom_fields": [
+  {
+   "fieldname": "digit_site_location",
+   "label": "Site Location",
+   "label_ar": "موقع الموقع (إحداثيات)",
+   "fieldtype": "Data",
+   "tid": "T01111",
+   "dt": "Project",
+   "insert_after": "digit_team"
+  },
+  {
+   "fieldname": "digit_handover_date",
+   "label": "Planned Handover",
+   "label_ar": "تاريخ التسليم المخطط",
+   "fieldtype": "Date",
+   "tid": "T01112",
+   "dt": "Project",
+   "insert_after": "digit_site_location"
+  },
+  {
+   "fieldname": "digit_dlp_months",
+   "label": "Defects Liability Months",
+   "label_ar": "فترة الضمان (شهور)",
+   "fieldtype": "Int",
+   "tid": "T01113",
+   "dt": "Project",
+   "insert_after": "digit_handover_date"
+  },
+  {
+   "fieldname": "digit_hold_point",
+   "label": "Hold Point",
+   "label_ar": "تحتاج نقطة توقف",
+   "fieldtype": "Check",
+   "tid": "T01250",
+   "dt": "Task",
+   "insert_after": "digit_hold_point_template"
+  },
+  {
+   "fieldname": "digit_hold_template",
+   "label": "Hold Template",
+   "label_ar": "قالب نقطة التوقف",
+   "fieldtype": "Link",
+   "tid": "T01251",
+   "options": "Digit Checklist Template",
+   "dt": "Task",
+   "insert_after": "digit_hold_point"
+  },
+  {
+   "fieldname": "digit_lead_days",
+   "label": "Lead Days",
+   "label_ar": "مدة التوريد",
+   "fieldtype": "Int",
+   "tid": "T01453",
+   "dt": "Material Request Item",
+   "insert_after": "digit_cost_code"
+  },
+  {
+   "fieldname": "digit_order_by",
+   "label": "Order By",
+   "label_ar": "اطلب قبل",
+   "fieldtype": "Date",
+   "tid": "T01454",
+   "read_only": 1,
+   "dt": "Material Request Item",
+   "insert_after": "digit_lead_days"
+  },
+  {
+   "fieldname": "digit_excluded",
+   "label": "Excluded",
+   "label_ar": "مستبعد من المقارنة",
+   "fieldtype": "Check",
+   "tid": "T01455",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "ordered_qty"
+  },
+  {
+   "fieldname": "digit_exclude_reason",
+   "label": "Reason",
+   "label_ar": "سبب الاستبعاد",
+   "fieldtype": "Data",
+   "tid": "T01456",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "digit_excluded"
+  },
+  {
+   "fieldname": "digit_leveled_amount",
+   "label": "Leveled Amount",
+   "label_ar": "مبلغ معدل للمقارنة",
+   "fieldtype": "Currency",
+   "tid": "T01457",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "digit_exclude_reason"
+  },
+  {
+   "fieldname": "digit_claimed_qty",
+   "label": "Claimed Qty",
+   "label_ar": "الكمية التي يطالب بها المورد",
+   "fieldtype": "Float",
+   "tid": "T01458",
+   "dt": "Purchase Receipt Item",
+   "insert_after": "subcontracting_receipt_item"
+  },
+  {
+   "fieldname": "digit_inspection",
+   "label": "Inspection",
+   "label_ar": "الفحص",
+   "fieldtype": "Link",
+   "tid": "T01459",
+   "options": "Digit Inspection",
+   "dt": "Purchase Receipt Item",
+   "insert_after": "digit_claimed_qty"
+  },
+  {
+   "fieldname": "digit_reason",
+   "label": "Reason",
+   "label_ar": "السبب",
+   "fieldtype": "Link",
+   "tid": "T01465",
+   "options": "Digit Adjustment Reason",
+   "reqd": 1,
+   "dt": "Stock Entry",
+   "insert_after": "is_return"
+  },
+  {
+   "fieldname": "digit_planned_manhours",
+   "label": "Planned Man-hours",
+   "label_ar": "الساعات المخططة",
+   "fieldtype": "Float",
+   "tid": "T01467",
+   "dt": "Task",
+   "insert_after": "digit_hold_template"
+  },
+  {
+   "fieldname": "digit_trade",
+   "label": "Trade",
+   "label_ar": "التخصص",
+   "fieldtype": "Select",
+   "tid": "T01468",
+   "options": "\nCivil\nStructural\nMEP\nFinishing\nLandscaping\nSteel\nOther",
+   "dt": "Task",
+   "insert_after": "digit_planned_manhours"
+  },
+  {
+   "fieldname": "digit_payment_hold",
+   "label": "Payment Hold",
+   "label_ar": "إيقاف الدفع",
+   "fieldtype": "Check",
+   "tid": "T01501",
+   "dt": "Purchase Invoice",
+   "insert_after": "digit_subcontractor_bill"
+  },
+  {
+   "fieldname": "digit_hold_reason",
+   "label": "Hold Reason",
+   "label_ar": "سبب الإيقاف",
+   "fieldtype": "Select",
+   "tid": "T01502",
+   "options": "\nDispute\nCompliance\nDefects\nOther",
+   "dt": "Purchase Invoice",
+   "insert_after": "digit_payment_hold"
+  },
+  {
+   "fieldname": "material_request",
+   "label": "Material Request Id",
+   "label_ar": "طلب المواد",
+   "fieldtype": "Link",
+   "tid": "T01821",
+   "options": "Material Request",
+   "dt": "Material Request Item",
+   "insert_after": "digit_order_by"
+  },
+  {
+   "fieldname": "site",
+   "label": "Site",
+   "label_ar": "الموقع",
+   "fieldtype": "Link",
+   "tid": "T01823",
+   "options": "Project",
+   "dt": "Material Request Item",
+   "insert_after": "material_request"
+  },
+  {
+   "fieldname": "normalized_uom",
+   "label": "Normalized Uom",
+   "label_ar": "وحدة القياس الموحدة",
+   "fieldtype": "Data",
+   "tid": "T01847",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "digit_leveled_amount"
+  },
+  {
+   "fieldname": "quotation_rate",
+   "label": "Quotation Rate",
+   "label_ar": "سعر العرض",
+   "fieldtype": "Currency",
+   "tid": "T01848",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "normalized_uom"
+  },
+  {
+   "fieldname": "delivery_terms",
+   "label": "Delivery Terms",
+   "label_ar": "شروط التسليم",
+   "fieldtype": "Small Text",
+   "tid": "T01849",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "quotation_rate"
+  },
+  {
+   "fieldname": "exclusions",
+   "label": "Exclusions",
+   "label_ar": "الاستثناءات",
+   "fieldtype": "Small Text",
+   "tid": "T01851",
+   "dt": "Supplier Quotation Item",
+   "insert_after": "delivery_terms"
+  },
+  {
+   "fieldname": "po_line",
+   "label": "Po Line",
+   "label_ar": "سطر أمر الشراء",
+   "fieldtype": "Data",
+   "tid": "T01883",
+   "dt": "Purchase Receipt Item",
+   "insert_after": "digit_inspection"
+  },
+  {
+   "fieldname": "accepted_rejected_qty",
+   "label": "Accepted/Rejected Qty",
+   "label_ar": "الكمية المقبولة/المرفوضة",
+   "fieldtype": "Float",
+   "tid": "T01885",
+   "dt": "Purchase Receipt Item",
+   "insert_after": "po_line"
+  },
+  {
+   "fieldname": "lot_serial_if_applicable",
+   "label": "Lot/Serial If Applicable",
+   "label_ar": "الدفعة/الرقم التسلسلي",
+   "fieldtype": "Data",
+   "tid": "T01886",
+   "dt": "Purchase Receipt Item",
+   "insert_after": "accepted_rejected_qty"
+  },
+  {
+   "fieldname": "owner_user",
+   "label": "Owner",
+   "label_ar": "المالك",
+   "fieldtype": "Link",
+   "tid": "T01933",
+   "options": "User",
+   "dt": "Task",
+   "insert_after": "digit_trade"
+  },
+  {
+   "fieldname": "execution_stage",
+   "label": "Execution Stage",
+   "label_ar": "مرحلة التنفيذ",
+   "fieldtype": "Select",
+   "tid": "T01935",
+   "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout",
+   "dt": "Task",
+   "insert_after": "owner_user"
+  },
+  {
+   "fieldname": "payment_entry",
+   "label": "Payment Entry Id",
+   "label_ar": "سند الدفع",
+   "fieldtype": "Link",
+   "tid": "T02314",
+   "options": "Payment Entry",
+   "dt": "Purchase Invoice",
+   "insert_after": "digit_hold_reason"
+  },
+  {
+   "fieldname": "invoice_allocations",
+   "label": "Invoice Allocations",
+   "label_ar": "تخصيصات الفواتير",
+   "fieldtype": "Table",
+   "tid": "T02315",
+   "options": "Digit Invoice Allocation",
+   "dt": "Purchase Invoice",
+   "insert_after": "payment_entry"
+  },
+  {
+   "fieldname": "payment_mode",
+   "label": "Payment Mode",
+   "label_ar": "طريقة الدفع",
+   "fieldtype": "Select",
+   "tid": "T02317",
+   "options": "\nBank Transfer\nCheque\nCash",
+   "dt": "Purchase Invoice",
+   "insert_after": "invoice_allocations"
+  },
+  {
+   "fieldname": "project_manager",
+   "label": "Project Manager",
+   "label_ar": "مدير المشروع",
+   "fieldtype": "Link",
+   "tid": "T02383",
+   "options": "User",
+   "dt": "Project",
+   "insert_after": "digit_dlp_months"
+  },
+  {
+   "fieldname": "revised_budget",
+   "label": "Revised Budget",
+   "label_ar": "موازنة التكلفة",
+   "fieldtype": "Currency",
+   "tid": "T02385",
+   "dt": "Project",
+   "insert_after": "project_manager"
+  },
+  {
+   "fieldname": "eac",
+   "label": "Eac",
+   "label_ar": "التكلفة المتوقعة النهائية",
+   "fieldtype": "Currency",
+   "tid": "T02387",
+   "dt": "Project",
+   "insert_after": "revised_budget"
+  },
+  {
+   "fieldname": "forecast_revenue",
+   "label": "Forecast Revenue",
+   "label_ar": "الإيراد المتوقع",
+   "fieldtype": "Currency",
+   "tid": "T02388",
+   "dt": "Project",
+   "insert_after": "eac"
+  },
+  {
+   "fieldname": "unresolved_approvals",
+   "label": "Unresolved Approvals",
+   "label_ar": "اعتمادات معلقة",
+   "fieldtype": "Int",
+   "tid": "T02390",
+   "dt": "Project",
+   "insert_after": "forecast_revenue"
+  },
+  {
+   "fieldname": "last_refreshed",
+   "label": "Last Refreshed",
+   "label_ar": "آخر تحديث",
+   "fieldtype": "Datetime",
+   "tid": "T02391",
+   "dt": "Project",
+   "insert_after": "unresolved_approvals"
+  },
+  {
+   "fieldname": "owner_user",
+   "label": "Owner",
+   "label_ar": "المالك",
+   "fieldtype": "Link",
+   "tid": "T02392",
+   "options": "User",
+   "dt": "Project",
+   "insert_after": "last_refreshed"
+  },
+  {
+   "fieldname": "execution_stage",
+   "label": "Execution Stage",
+   "label_ar": "مرحلة التنفيذ",
+   "fieldtype": "Select",
+   "tid": "T02394",
+   "options": "\nPlanning\nMobilisation\nExecution\nTesting & Commissioning\nHandover\nCloseout",
+   "dt": "Project",
+   "insert_after": "owner_user"
+  },
+  {
+   "fieldname": "ordered_qty",
+   "label": "Ordered Qty",
+   "label_ar": "الكمية المطلوبة",
+   "fieldtype": "Float",
+   "tid": "T02623",
+   "dt": "Purchase Receipt",
+   "insert_after": "other_details"
+  },
+  {
+   "fieldname": "open_accepted_qty",
+   "label": "Open Accepted Qty",
+   "label_ar": "كمية لم تستكمل مقبولة",
+   "fieldtype": "Float",
+   "tid": "T02626",
+   "dt": "Purchase Receipt",
+   "insert_after": "ordered_qty"
+  },
+  {
+   "fieldname": "shortage_note",
+   "label": "Shortage Note",
+   "label_ar": "سبب النقص",
+   "fieldtype": "Small Text",
+   "tid": "T02633",
+   "dt": "Purchase Receipt",
+   "insert_after": "open_accepted_qty"
+  },
+  {
+   "fieldname": "source_receipt_key",
+   "label": "Source Receipt Key",
+   "label_ar": "مفتاح المصدر",
+   "fieldtype": "Data",
+   "tid": "T02634",
+   "dt": "Purchase Receipt",
+   "insert_after": "shortage_note"
+  },
+  {
+   "fieldname": "hold_point",
+   "label": "Hold Point Id",
+   "label_ar": "نقطة التوقف",
+   "fieldtype": "Link",
+   "tid": "T02734",
+   "options": "Digit Inspection",
+   "dt": "Task",
+   "insert_after": "execution_stage"
+  },
+  {
+   "fieldname": "inspector",
+   "label": "Inspector",
+   "label_ar": "المفتش",
+   "fieldtype": "Link",
+   "tid": "T02736",
+   "options": "User",
+   "dt": "Task",
+   "insert_after": "hold_point"
+  },
+  {
+   "fieldname": "gate_condition",
+   "label": "Gate Condition",
+   "label_ar": "شرط البوابة",
+   "fieldtype": "Select",
+   "tid": "T02737",
+   "options": "\nInspection Passed\nHold Point Released\nApproval Received",
+   "dt": "Task",
+   "insert_after": "inspector"
+  },
+  {
+   "fieldname": "acceptance_date",
+   "label": "Acceptance Date",
+   "label_ar": "تاريخ القبول",
+   "fieldtype": "Date",
+   "tid": "T02738",
+   "dt": "Task",
+   "insert_after": "gate_condition"
+  }
+ ],
+ "ar": {
+  "RFI Type": "نوع الاستفسار",
+  "Priority": "الأولوية",
+  "Work Package": "حزمة عمل",
+  "Question": "السؤال",
+  "Proposed Solution": "الحل المقترح",
+  "Time Impact": "أثر على المدة",
+  "Official Response": "الرد الرسمي",
+  "Closed On": "تاريخ الإغلاق",
+  "References": "المراجع",
+  "SOV / BOQ Line": "بند جدول القيم",
+  "Unit": "الوحدة",
+  "Unit Price": "سعر البيع للوحدة",
+  "Cost ROM": "التكلفة التقديرية",
+  "Revenue ROM": "الإيراد التقديري",
+  "Subcontract Work Order": "أمر عمل الباطن",
+  "Variation Line": "بند الأمر التغييري",
+  "Origin": "المصدر",
+  "Source RFI": "الاستفسار المصدر",
+  "Reason": "السبب",
+  "Scope": "نطاق العمل",
+  "Time Impact (days)": "الأثر الزمني (أيام)",
+  "Approved By": "اعتمد بواسطة",
+  "Approved On": "تاريخ الاعتماد",
+  "Lines": "البنود",
+  "Exposure": "التعرض",
+  "Total Cost ROM": "إجمالي التكلفة التقديرية",
+  "Total Revenue ROM": "إجمالي الإيراد التقديري",
+  "Client Variation": "أمر تغييري للعميل",
+  "Decision Note": "ملاحظة القرار",
+  "Source Change Event": "حدث التغيير المصدر",
+  "Version & Promotion": "الإصدار والترقية",
+  "Previous Live Snapshot": "اللقطة النافذة السابقة",
+  "Promoted From": "مُرقّى من",
+  "Promoted Lines": "البنود المُرقّاة",
+  "Forecast Rationale": "مبرر التوقع",
+  "Meter, Idle & Downtime": "العداد والتوقف",
+  "Meter Start": "قراءة العداد بداية",
+  "Meter End": "قراءة العداد نهاية",
+  "Fuel (litres)": "الوقود (لتر)",
+  "Idle Hours": "ساعات الخمول",
+  "Downtime Hours": "ساعات التعطل",
+  "Downtime Reason": "سبب التعطل",
+  "Cost Code": "رمز تكلفة",
+  "Labour Classification": "تصنيف العمالة",
+  "Status": "الحالة",
+  "Reviewed By": "روجع بواسطة",
+  "Return Reason": "سبب الإرجاع",
+  "Budget Block Tolerance %": "حد منع تجاوز الموازنة %",
+  "Over-order Tolerance %": "حد زيادة الطلب عن طلب المواد %",
+  "Match Quantity Tolerance %": "حد فرق الكمية في المطابقة %",
+  "Match Price Tolerance %": "حد فرق السعر في المطابقة %",
+  "Site Location": "موقع الموقع (إحداثيات)",
+  "Planned Handover": "تاريخ التسليم المخطط",
+  "Defects Liability Months": "فترة الضمان (شهور)",
+  "Weight": "الوزن",
+  "Weeks": "عدد الأسابيع",
+  "From": "من",
+  "To": "إلى",
+  "Constraint": "قيد",
+  "Miss Reason": "سبب عدم الإنجاز",
+  "Delay Hours": "ساعات توقف",
+  "Delay Cause": "سبب التوقف",
+  "Visitors": "الزوار",
+  "Photos": "صور",
+  "Transmittal": "الإحالة",
+  "Change Event": "حدث تغيير",
+  "File": "المرفق",
+  "Title": "العنوان",
+  "Category": "الفئة",
+  "Pin X": "X على الرسم",
+  "Pin Y": "Y",
+  "Due": "الموعد",
+  "Discipline": "التخصص",
+  "Evidence": "دليل مطلوب",
+  "Location": "الموقع",
+  "Result": "النتيجة",
+  "Comment": "تعليق",
+  "Type": "النوع",
+  "Responsible": "الجهة المسؤولة",
+  "Verified By": "تحقق بواسطة",
+  "Back-charge": "يُحمّل على المقاول",
+  "Hold Point": "تحتاج نقطة توقف",
+  "Hold Template": "قالب نقطة التوقف",
+  "Area": "المنطقة/الغرفة",
+  "Trade": "التخصص",
+  "Work Order": "أمر عمل",
+  "Source": "المصدر",
+  "BIM Quantities File": "ملف الكميات",
+  "Subcontractor": "المقاول",
+  "Quote": "قيمة العرض",
+  "Schedule Impact": "أثر زمني",
+  "Basis": "الأساس",
+  "Offered": "المعروض",
+  "Agreed Days": "الأيام المتفق عليها",
+  "EOT": "التمديد الناتج",
+  "With Costs": "يطالب بتكاليف",
+  "Excusable": "مبرر",
+  "Daily Report": "التقرير اليومي",
+  "Completed & Stored": "المنجز والمخزن حتى تاريخه",
+  "Compliance": "حالة الامتثال",
+  "Max Contract Value": "أقصى قيمة عقد",
+  "Number": "الرقم",
+  "Expiry": "الانتهاء",
+  "Verified": "تحقق",
+  "Change RFQ": "طلب التسعير",
+  "Old Rate": "السعر الحالي",
+  "New Rate": "الجديد",
+  "Notified": "تاريخ إخطار المقاول",
+  "Changes": "التغييرات",
+  "Release Retention": "إفراج الاحتجاز",
+  "Title (AR)": "العنوان عربي",
+  "Project": "المشروع",
+  "Active": "نشط",
+  "Valid From": "ساري من",
+  "Expense Account": "حساب المصروف",
+  "Budget Line": "بند الموازنة",
+  "Percent": "النسبة",
+  "Amount": "المبلغ",
+  "Share": "الحصة",
+  "Budget Qty": "الكمية الموازنة",
+  "Installed Qty": "الكمية المنفذة",
+  "Remaining Unit Rate": "سعر الوحدة للباقي",
+  "SOV Line": "بند العقد",
+  "Method": "الطريقة",
+  "Lead Days": "مدة التوريد",
+  "Order By": "اطلب قبل",
+  "Excluded": "مستبعد من المقارنة",
+  "Leveled Amount": "مبلغ معدل للمقارنة",
+  "Claimed Qty": "الكمية التي يطالب بها المورد",
+  "Inspection": "الفحص",
+  "Code": "الرمز",
+  "Reason AR": "السبب",
+  "Reason EN": "Reason",
+  "Usage": "الاستخدام",
+  "Needs Approval": "يحتاج اعتماد",
+  "Classification": "التصنيف",
+  "Planned Man-hours": "الساعات المخططة",
+  "Machinery": "المعدة",
+  "Meter": "العداد عند الأمر",
+  "Downtime": "ساعات التوقف",
+  "Cost": "التكلفة",
+  "Next Due Meter": "الاستحقاق التالي (عداد)",
+  "Next Due Date": "الاستحقاق التالي (تاريخ)",
+  "PM Interval Hours": "فترة الصيانة (ساعات)",
+  "PM Interval Days": "فترة الصيانة (أيام)",
+  "Last Meter": "آخر قراءة",
+  "Fuel Rate": "سعر اللتر",
+  "Billable": "قابل للفوترة للعميل",
+  "Employee Part": "حصة الموظف",
+  "Claim Amount": "مبلغ المطالبة",
+  "Person": "الشخص",
+  "Employee": "الموظف",
+  "Company": "الشركة",
+  "Date": "التاريخ",
+  "Valid Until": "صالح حتى",
+  "Inductor": "المعرِّف",
+  "Issuer": "المصدر",
+  "Receiver": "المستلم",
+  "Precautions": "الاحتياطات",
+  "Payment Hold": "إيقاف الدفع",
+  "Hold Reason": "سبب الإيقاف",
+  "Period": "الفترة YYYY-MM",
+  "Billed": "المفوتر",
+  "Unposted": "فوترة غير مرحلة",
+  "Earned": "الإيراد المكتسب",
+  "Override": "تجاوز يدوي",
+  "Over/Under": "زيادة/نقص الفوترة",
+  "Accrual JE": "قيد الاستحقاق",
+  "Reversal JE": "قيد العكس",
+  "As Of": "حتى تاريخ",
+  "Figures": "الأرقام",
+  "Created By": "أنشأه",
+  "DocType": "النوع",
+  "Document Type": "نوع المستند",
+  "Document": "المستند",
+  "Rule": "القاعدة",
+  "Message": "الرسالة",
+  "User": "المستخدم",
+  "System": "النظام",
+  "Asset": "الأصل",
+  "Planned": "المخطط",
+  "Witness": "الشاهد",
+  "Certificate": "الشهادة",
+  "Tag": "رمز الأصل",
+  "Manufacturer": "المصنع",
+  "Model": "الموديل",
+  "Serial": "الرقم التسلسلي",
+  "Warranty": "الضمان حتى",
+  "Completeness": "الاكتمال",
+  "Cbs Code": "رمز هيكل التكلفة",
+  "Allowed Mapping": "الربط المسموح",
+  "From Date": "من تاريخ",
+  "To Date": "إلى تاريخ",
+  "Source Item": "البند المصدر",
+  "Cbs Cost Code": "رمز تكلفة الهيكل",
+  "Allocation Basis": "أساس التوزيع",
+  "Percentage/Amount": "النسبة/المبلغ",
+  "Pay Item": "بند الدفع",
+  "Revenue Rule": "قاعدة الإيراد",
+  "Related Cost Item": "بند التكلفة المرتبط",
+  "Allocation Amount": "مبلغ التوزيع",
+  "Earned Value Basis": "أساس القيمة المكتسبة",
+  "Forecast Version": "نسخة التوقع",
+  "Open Commitment": "الالتزام المفتوح",
+  "Comparison Date": "تاريخ المقارنة",
+  "Cost Earned Quantity": "كمية التكلفة المكتسبة",
+  "Contract Revenue": "إيراد العقد",
+  "Earning Method": "طريقة الاكتساب",
+  "Baseline Rate": "سعر خط الأساس",
+  "Material Request Id": "طلب المواد",
+  "Site": "الموقع",
+  "Normalized Uom": "وحدة القياس الموحدة",
+  "Quotation Rate": "سعر العرض",
+  "Delivery Terms": "شروط التسليم",
+  "Exclusions": "الاستثناءات",
+  "Request": "طلب",
+  "Supplier": "مورد",
+  "Item": "صنف",
+  "Quantity": "كمية",
+  "Rate": "سعر",
+  "Warehouse": "مخزن",
+  "Approval": "اعتماد",
+  "Delivery Date": "تاريخ التسليم",
+  "Po Line": "سطر أمر الشراء",
+  "Accepted/Rejected Qty": "الكمية المقبولة/المرفوضة",
+  "Lot/Serial If Applicable": "الدفعة/الرقم التسلسلي",
+  "Required By": "تاريخ الحاجة",
+  "Manager": "المسؤول",
+  "Owner": "المالك",
+  "Execution Stage": "مرحلة التنفيذ",
+  "Employee / Crew": "الموظف أو الفريق",
+  "Day": "اليوم",
+  "Expense Claim Id": "مطالبة المصروف",
+  "Employee/Site": "الموظف/الموقع",
+  "Receipts": "الإيصالات",
+  "Approval Role": "دور الاعتماد",
+  "Sales Invoice": "مصدر الفاتورة",
+  "Payment Application Id": "طلب الدفع",
+  "Certified Lines": "السطور المعتمدة",
+  "Requested Amount": "المبلغ المطلوب",
+  "Vat Basis": "أساس ضريبة القيمة المضافة",
+  "Approval Map": "خريطة الاعتماد",
+  "Unbilled Amount": "غير المفوتر",
+  "Retainage Amount": "الاحتجاز",
+  "Prepayment Open": "دفعة مقدمة معلقة",
+  "Sov": "جدول القيم",
+  "BOQ Item": "بند الكمية",
+  "Value": "القيمة",
+  "Percent Complete": "النسبة المنجزة",
+  "Previous Certificates": "شهادات سابقة",
+  "Payment Entry Id": "سند الدفع",
+  "Invoice Allocations": "تخصيصات الفواتير",
+  "Payment Mode": "طريقة الدفع",
+  "Project Manager": "مدير المشروع",
+  "Revised Budget": "موازنة التكلفة",
+  "Eac": "التكلفة المتوقعة النهائية",
+  "Forecast Revenue": "الإيراد المتوقع",
+  "Unresolved Approvals": "اعتمادات معلقة",
+  "Last Refreshed": "آخر تحديث",
+  "Revenue Rom": "إيراد تقديري",
+  "Cost Rom": "تكلفة تقديرية",
+  "Expect Revenue": "متوقع إيراد",
+  "Description": "وصف التغيير",
+  "Revision No": "مراجعة",
+  "Change Ref": "مرجع التغيير",
+  "Source Event": "حدث المصدر",
+  "Net Delta": "صافي الفرق",
+  "Baseline Wo": "قيمة الأمر الأصلية",
+  "Proposed Revised": "القيمة المقترحة",
+  "Bid Form": "نموذج العرض",
+  "Bid Count": "عدد العروض",
+  "Lowest Normalized": "أقل عرض مُعادِل",
+  "Bidder": "المناقص",
+  "Same Scope Item": "بند النطاق المماثل",
+  "Unit Rate": "سعر الوحدة",
+  "Owner User": "المالك",
+  "Period Start": "بداية التخطيط",
+  "Period End": "نهاية التخطيط",
+  "Period Unit": "وحدة الفترة",
+  "Source Cutoff": "تاريخ المصدر",
+  "Total Proposed": "الموازنة المقترحة",
+  "Evidence Count": "عدد الأدلة",
+  "Zone": "المنطقة",
+  "Detected On": "تاريخ الاكتشاف",
+  "Retest On": "موعد الإعادة",
+  "Ncr Id": "تقرير عدم المطابقة",
+  "Finding": "الملاحظة",
+  "Corrective Evidence": "دليل التصحيح",
+  "Test Date": "تاريخ التنفيذ",
+  "Result Note": "ملاحظات النتائج",
+  "Passed Count": "نجاحات",
+  "Test Count": "عدد الاختبارات",
+  "Package Type": "نوع الحزمة",
+  "Revision Policy": "سياسة النسخ",
+  "Include References": "ضم المراجع",
+  "Version No": "رقم النسخة",
+  "Manifest Hash": "بصمة الفهرس",
+  "File Count": "عدد الملفات",
+  "Missing Count": "روابط مفقودة",
+  "Generated At": "تاريخ التوليد",
+  "Asset/Document Id": "الأصل/المستند",
+  "Required Closeout Evidence": "أدلة الإغلاق المطلوبة",
+  "Transmittal Recipient": "مستلم الإحالة",
+  "Asset Ref": "مرجع الأصل",
+  "Asset Type": "نوع الأصل",
+  "Service": "الخدمة",
+  "Missing Required Count": "حقول ناقصة",
+  "Manual Name": "اسم الدليل",
+  "Discipline Map": "خريطة التخصصات",
+  "As Of Date": "تاريخ المصدر",
+  "Doc Count": "عدد الوثائق",
+  "Missing Tag Count": "وسوم ناقصة",
+  "Asset Count": "عدد الأصول",
+  "Drawing Revision": "مراجعة الرسم المرتبطة",
+  "Submittal Ref": "اعتماد فني مرتبط",
+  "Source Key": "مفتاح مصدر",
+  "RFI No.": "رقم الاستفسار",
+  "Location / Drawing": "الموقع أو الرسم",
+  "Requested By": "مقدم الطلب",
+  "Related References": "المراجع المرتبطة",
+  "origin_name Type": "نوع رقم المصدر",
+  "Origin Name": "رقم المصدر",
+  "Stage": "مرحلة التسعير",
+  "Converted Revenue": "الإيراد المحول فعليًا",
+  "Source Hash": "بصمة ربط المصدر",
+  "Contractor Supplier": "مقدم الطلب",
+  "Due Date": "موعد المراجعة",
+  "Final Response": "القرار النهائي",
+  "Distribution Date": "تاريخ التوزيع",
+  "Attachments": "مرفقات التقديم",
+  "Material / Drawing": "مادة أو مخطط",
+  "Issue Set": "مجموعة الإصدار",
+  "Drawing Status": "حالة الرسم",
+  "File Name": "اسم الملف",
+  "File Attachment": "ملف الرسم",
+  "Upload Date": "تاريخ الرفع",
+  "Publish Date": "تاريخ النشر",
+  "Supersedes Revision": "تحل محل",
+  "Ordered Qty": "الكمية المطلوبة",
+  "Open Accepted Qty": "كمية لم تستكمل مقبولة",
+  "Shortage Note": "سبب النقص",
+  "Source Receipt Key": "مفتاح المصدر",
+  "Approved Revision": "المراجعة المعتمدة",
+  "Look-Ahead Week": "أسبوع النظرة المستقبلية",
+  "Blockers": "المعوقات",
+  "Crew": "الطاقم",
+  "Progress Quantity": "كمية التقدم",
+  "Document Code": "معرف المستند",
+  "Revision No.": "رقم المراجعة",
+  "Revision": "المراجعة",
+  "Reviewer Group": "مجموعة المراجعين",
+  "Deadline": "الموعد النهائي",
+  "Decision": "القرار",
+  "Checklist Item": "بند الفحص",
+  "Inspector": "المفتش",
+  "Hold Point Id": "نقطة التوقف",
+  "Gate Condition": "شرط البوابة",
+  "Acceptance Date": "تاريخ القبول",
+  "Pricing Item": "بند التسعير",
+  "Rate Code": "كود المعدل",
+  "Labour / Equipment / Material Components": "مركبات عمالة/معدات/مواد",
+  "Effective Date": "تاريخ سريان",
+  "Scale": "المقياس",
+  "Measurement Method": "طريقة القياس",
+  "Segment/Polyline Quantity": "كمية المقطع/الخط",
+  "Model Version": "نسخة النموذج",
+  "BIM Bim Object": "عنصر",
+  "Measured Parameter": "المعامل المقاس",
+  "Origin Document": "المستند المنشئ",
+  "Change No.": "رقم التغيير",
+  "Estimated Cost": "التكلفة المقدرة",
+  "Approved": "المعتمد",
+  "Commitment": "الالتزام",
+  "Claim Number": "رقم المطالبة",
+  "Related Event": "الحدث المرتبط",
+  "Supporting Evidence": "الأدلة الداعمة",
+  "Disputed Portion": "الجزء المتنازع عليه",
+  "Fiscal Year/Period": "السنة/الفترة المالية",
+  "Job Snapshot": "لقطة المشروع",
+  "Wip Adjustment": "تسوية الأعمال تحت التنفيذ",
+  "Posted/Unposted Status": "حالة الترحيل",
+  "Posting Period": "فترة الترحيل",
+  "Cost Source State": "حالة مصدر التكلفة",
+  "Snapshot Identifier Type": "نوع معرّف اللقطة",
+  "Snapshot Identifier": "معرّف اللقطة",
+  "Fiscal Period": "الفترة المالية",
+  "Actual Cost": "تكاليف فعلية",
+  "Earned Revenue": "إيراد مستحق",
+  "Posted Adjustments": "تعديلات مرحلة",
+  "Reference Type": "نوع المرجع",
+  "Reference": "المرجع",
+  "Note": "ملاحظة",
+  "Change Type": "نوع التعديل",
+  "PO Line": "سطر أمر الشراء",
+  "Current Qty": "الكمية الحالية",
+  "Current Rate": "السعر الحالي",
+  "New Qty": "الكمية الجديدة",
+  "Amount Change": "قيمة التغيير",
+  "Purchase Order": "أمر الشراء",
+  "Totals": "الإجماليات",
+  "Order Net Before": "صافي الأمر قبل",
+  "Total Change": "إجمالي التغيير",
+  "Order Net After": "صافي الأمر بعد",
+  "Applied to Order": "طُبق على الأمر",
+  "Level": "المستوى",
+  "Approver Role": "دور المعتمد",
+  "Max Order Total": "الحد الأقصى لإجمالي الأمر",
+  "Planning Hourly Rate": "سعر الساعة التخطيطي",
+  "Overtime Factor": "معامل الإضافي",
+  "Currency": "العملة",
+  "Machine Type": "نوع المعدة",
+  "Hourly": "بالساعة",
+  "Daily": "باليوم",
+  "Weekly": "بالأسبوع",
+  "Monthly": "بالشهر",
+  "Line Key": "مفتاح البند",
+  "Unit Cost": "تكلفة الوحدة",
+  "Quoted Amount": "المبلغ المعروض",
+  "Precaution": "الاحتياط",
+  "Checked": "تم التحقق",
+  "Checked By": "تحقق بواسطة",
+  "Payment Entry": "سند الدفع",
+  "Allocated Amount": "المبلغ المخصص",
+  "Allocation Date": "تاريخ التخصيص",
+  "Blocker": "المعوق",
+  "Resolved": "تمت المعالجة",
+  "Resource Type": "نوع المورد",
+  "UOM": "الوحدة"
+ }
+}

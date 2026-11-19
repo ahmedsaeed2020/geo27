@@ -1,0 +1,318 @@
+{
+ "crm_frontend": [
+  {
+   "path": "/",
+   "name": "Home",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/notifications",
+   "name": "Notifications",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/dashboard",
+   "name": "Dashboard",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/leads/view/:viewType?",
+   "name": "Leads",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/leads/:leadId",
+   "name": "Lead",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/deals/view/:viewType?",
+   "name": "Deals",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/deals/:dealId",
+   "name": "Deal",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/notes/view/:viewType?",
+   "name": "Notes",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/tasks/view/:viewType?",
+   "name": "Tasks",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/contacts/view/:viewType?",
+   "name": "Contacts",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/contacts/:contactId",
+   "name": "Contact",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/organizations/view/:viewType?",
+   "name": "Organizations",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/organizations/:organizationId",
+   "name": "Organization",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/call-logs/view/:viewType?",
+   "name": "Call Logs",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/data-import",
+   "name": "DataImportList",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/data-import/doctype/:doctype",
+   "name": "NewDataImport",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/data-import/:importName",
+   "name": "DataImport",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/welcome",
+   "name": "Welcome",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/onboarding",
+   "name": "Onboarding",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/:invalidpath",
+   "name": "Invalid Page",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  },
+  {
+   "path": "/not-permitted",
+   "name": "Not Permitted",
+   "source": "crm/crm-develop/frontend/src/router.js"
+  }
+ ],
+ "hrms_frontend": [
+  {
+   "path": "/",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/home",
+   "name": "Home",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/dashboard/attendance",
+   "name": "AttendanceDashboard",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/dashboard/leaves",
+   "name": "LeavesDashboard",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/dashboard/expense-claims",
+   "name": "ExpenseClaimsDashboard",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/dashboard/salary-slips",
+   "name": "SalarySlipsDashboard",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/login",
+   "name": "Login",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/forgot-password",
+   "name": "ForgotPassword",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/profile",
+   "name": "Profile",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/notifications",
+   "name": "Notifications",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/settings",
+   "name": "Settings",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/change-password",
+   "name": "ChangePassword",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/invalid-employee",
+   "name": "InvalidEmployee",
+   "source": "hrms/hrms-develop/frontend/src/index.js"
+  },
+  {
+   "path": "/attendance-requests",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/attendance-requests/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/attendance-requests/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-requests",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-requests/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-requests/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-assignments",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-assignments/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/shift-assignments/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/employee-checkins",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/attendance.js"
+  },
+  {
+   "path": "/leave-applications",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/leaves.js"
+  },
+  {
+   "path": "/leave-applications/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/leaves.js"
+  },
+  {
+   "path": "/leave-applications/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/leaves.js"
+  },
+  {
+   "path": "/employee-advances",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/advances.js"
+  },
+  {
+   "path": "/employee-advances/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/advances.js"
+  },
+  {
+   "path": "/employee-advances/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/advances.js"
+  },
+  {
+   "path": "/expense-claims",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/claims.js"
+  },
+  {
+   "path": "/expense-claims/new",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/claims.js"
+  },
+  {
+   "path": "/expense-claims/:id",
+   "name": "(redirect)",
+   "source": "hrms/hrms-develop/frontend/src/claims.js"
+  },
+  {
+   "path": "/salary-slips/:id",
+   "name": "SalarySlipDetailView",
+   "source": "hrms/hrms-develop/frontend/src/salary_slips.js"
+  }
+ ],
+ "hrms_roster": [
+  {
+   "path": "/",
+   "name": "Home",
+   "source": "hrms/hrms-develop/roster/src/router.ts"
+  }
+ ],
+ "frappe_desk_pages": [
+  "backups",
+  "component_explorer",
+  "dashboard_view",
+  "desktop",
+  "permission_manager",
+  "print",
+  "print_format_builder",
+  "setup_wizard",
+  "workflow_builder",
+  "workspace_restore"
+ ],
+ "erpnext_desk_pages": [
+  "bom_comparison_tool",
+  "point_of_sale",
+  "production_plan_visualizer",
+  "sales_funnel",
+  "shop_floor",
+  "stock_balance",
+  "visual_plant_floor",
+  "warehouse_capacity_summary"
+ ],
+ "hrms_desk_pages": [
+  "organizational_chart"
+ ]
+}

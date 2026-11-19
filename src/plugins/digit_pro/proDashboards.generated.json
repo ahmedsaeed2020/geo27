@@ -1,0 +1,3841 @@
+{
+ "source": "digit_pro-main/digit_pro/dashboards.py (R5-1) + digit_pro/dash92.py (V9.2-1), static definitions only",
+ "departments": {
+  "finance": {
+   "route": "/digit/pro/finance",
+   "question": [
+    "What is our financial position, what requires attention, and what must be investigated or closed?",
+    "ما وضعنا المالي، وما الذي يحتاج انتباهاً، وما الذي يجب التحقيق فيه أو إقفاله؟"
+   ],
+   "metrics": [
+    {
+     "metric_id": "FIN.CASH_BANK",
+     "department": "finance",
+     "title_en": "Cash & bank position",
+     "title_ar": "رصيد النقد والبنوك",
+     "business_meaning": "Money held in cash and bank accounts today.",
+     "formula": "SUM(debit - credit) of GL Entry (is_cancelled = 0) on ledger accounts of account_type Cash or Bank, posting_date <= today",
+     "native_source": "GL Entry + Account (native General Ledger basis)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "all postings up to today",
+     "date_basis": "posting_date",
+     "unit": "company currency",
+     "exclusions": "cancelled GL entries",
+     "source_route": "/digit/pro/general-ledger",
+     "drill_action": "open the General Ledger filtered to the cash/bank accounts",
+     "empty_state": "No cash or bank account has postings.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.CASH_BANK",
+     "business_meaning_ar": "الأموال المحتفظ بها في حسابات النقدية والبنوك اليوم.",
+     "formula_ar": "مجموع (المدين − الدائن) لقيود دفتر الأستاذ غير الملغاة (is_cancelled = 0) على حسابات من نوع نقدية أو بنك، بتاريخ ترحيل حتى اليوم",
+     "native_source_ar": "قيود دفتر الأستاذ + دليل الحسابات (أساس دفتر الأستاذ العام الأصلي)",
+     "period_ar": "كل الترحيلات حتى اليوم",
+     "exclusions_ar": "قيود دفتر الأستاذ الملغاة"
+    },
+    {
+     "metric_id": "FIN.AR_OVERDUE",
+     "department": "finance",
+     "title_en": "Overdue receivables",
+     "title_ar": "ذمم مدينة متأخرة",
+     "business_meaning": "Customer invoices past their due date and not yet settled.",
+     "formula": "COUNT and SUM(outstanding_amount) of submitted Sales Invoices with outstanding_amount > 0 and due_date < today",
+     "native_source": "Sales Invoice.outstanding_amount (maintained by ERPNext's Payment Ledger)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "open items as of today",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "draft/cancelled invoices; credit notes (negative outstanding)",
+     "source_route": "/digit/app/erpnext/sales_invoice",
+     "drill_action": "open the native Sales Invoice list with exactly this KPI's filters (company, submitted, outstanding > 0, due before today)",
+     "empty_state": "No overdue customer invoice.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.AR_OVERDUE",
+     "business_meaning_ar": "فواتير العملاء التي تجاوزت تاريخ استحقاقها ولم تُسدَّد بعد.",
+     "formula_ar": "عدد ومجموع المبلغ القائم (outstanding_amount) لفواتير المبيعات المعتمدة التي مبلغها القائم > 0 وتاريخ استحقاقها قبل اليوم",
+     "native_source_ar": "المبلغ القائم في فاتورة المبيعات (يحدّثه دفتر المدفوعات في ERPNext)",
+     "period_ar": "البنود المفتوحة حتى اليوم",
+     "exclusions_ar": "الفواتير المسودة والملغاة؛ إشعارات الدائن (مبلغ قائم سالب)"
+    },
+    {
+     "metric_id": "FIN.AP_DUE_SOON",
+     "department": "finance",
+     "title_en": "Payables due in 14 days",
+     "title_ar": "مستحقات للموردين خلال 14 يوماً",
+     "business_meaning": "Supplier invoices to pay in the next two weeks.",
+     "formula": "COUNT and SUM(outstanding_amount) of submitted Purchase Invoices with outstanding_amount > 0 and today <= due_date <= today + 14",
+     "native_source": "Purchase Invoice.outstanding_amount",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "next 14 days",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "overdue invoices (separate metric)",
+     "source_route": "/digit/app/erpnext/purchase_invoice",
+     "drill_action": "open the native Purchase Invoice list with exactly this KPI's filters (company, submitted, outstanding > 0, due today .. today + 14)",
+     "empty_state": "Nothing falls due in the next 14 days.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.AP_DUE_SOON",
+     "business_meaning_ar": "فواتير الموردين المستحق دفعها خلال الأسبوعين القادمين.",
+     "formula_ar": "عدد ومجموع المبلغ القائم لفواتير المشتريات المعتمدة التي مبلغها القائم > 0 وتاريخ استحقاقها من اليوم حتى 14 يومًا قادمة",
+     "native_source_ar": "المبلغ القائم في فاتورة المشتريات",
+     "period_ar": "الأيام الـ14 القادمة",
+     "exclusions_ar": "الفواتير المتأخرة (لها مقياس مستقل)"
+    },
+    {
+     "metric_id": "FIN.AP_OVERDUE",
+     "department": "finance",
+     "title_en": "Overdue payables",
+     "title_ar": "ذمم دائنة متأخرة",
+     "business_meaning": "Supplier invoices past their due date.",
+     "formula": "COUNT and SUM(outstanding_amount) of submitted Purchase Invoices with outstanding_amount > 0 and due_date < today",
+     "native_source": "Purchase Invoice.outstanding_amount",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "open items as of today",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "debit notes",
+     "source_route": "/digit/app/erpnext/purchase_invoice",
+     "drill_action": "open the native Purchase Invoice list with exactly this KPI's filters (company, submitted, outstanding > 0, due before today)",
+     "empty_state": "No overdue supplier invoice.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.AP_OVERDUE",
+     "business_meaning_ar": "فواتير الموردين التي تجاوزت تاريخ استحقاقها.",
+     "formula_ar": "عدد ومجموع المبلغ القائم لفواتير المشتريات المعتمدة التي مبلغها القائم > 0 وتاريخ استحقاقها قبل اليوم",
+     "native_source_ar": "المبلغ القائم في فاتورة المشتريات",
+     "period_ar": "البنود المفتوحة حتى اليوم",
+     "exclusions_ar": "إشعارات المدين"
+    },
+    {
+     "metric_id": "FIN.CLOSE_BLOCKERS",
+     "department": "finance",
+     "title_en": "Period close blockers",
+     "title_ar": "عوائق إقفال الفترة",
+     "business_meaning": "Checks that still find records blocking a clean period close.",
+     "formula": "close_checks.get_close_blockers(company) summary.open (restricted and not-applicable checks reported separately, never as clear)",
+     "native_source": "digit_pro.close_checks (drafts, bank, unallocated payments, credit balances, dimensions, trial balance, period closing)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "current fiscal year",
+     "date_basis": "posting_date",
+     "unit": "checks (count)",
+     "exclusions": "checks the role cannot read",
+     "source_route": "/digit/pro/period-control",
+     "drill_action": "open period control",
+     "empty_state": "All evaluable checks are clear.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.CLOSE_BLOCKERS",
+     "business_meaning_ar": "الفحوص التي ما زالت تجد سجلات تمنع إقفال الفترة إقفالًا سليمًا.",
+     "formula_ar": "عدد الفحوص المفتوحة في ملخص get_close_blockers للشركة (الفحوص المقيّدة بالصلاحية وغير المنطبقة تُعرض منفصلة ولا تُحسب سليمة)",
+     "native_source_ar": "فحوص الإقفال في ديجيت برو (المسودات، البنك، الدفعات غير المخصّصة، الأرصدة الدائنة، الأبعاد، ميزان المراجعة، إقفال الفترة)",
+     "period_ar": "السنة المالية الحالية",
+     "exclusions_ar": "الفحوص التي لا يستطيع الدور قراءتها"
+    },
+    {
+     "metric_id": "FIN.JE_DRAFT",
+     "department": "finance",
+     "title_en": "Draft journal entries",
+     "title_ar": "قيود يومية مسودة",
+     "business_meaning": "Journal entries saved but not posted.",
+     "formula": "COUNT of Journal Entries with docstatus = 0",
+     "native_source": "Journal Entry",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "all",
+     "date_basis": "—",
+     "unit": "documents",
+     "exclusions": "submitted/cancelled",
+     "source_route": "/digit/app/erpnext/journal_entry?docstatus=0",
+     "drill_action": "open the draft list",
+     "empty_state": "No draft journal entry.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.JE_DRAFT",
+     "business_meaning_ar": "قيود يومية محفوظة ولم تُرحَّل.",
+     "formula_ar": "عدد قيود اليومية بحالة مسودة (docstatus = 0)",
+     "native_source_ar": "قيد اليومية",
+     "period_ar": "الكل",
+     "exclusions_ar": "القيود المعتمدة والملغاة"
+    },
+    {
+     "metric_id": "FIN.BANK_UNMATCHED",
+     "department": "finance",
+     "title_en": "Unmatched bank transactions",
+     "title_ar": "حركات بنكية غير مطابقة",
+     "business_meaning": "Imported bank lines not yet matched to payments.",
+     "formula": "COUNT of submitted Bank Transactions with status not in (Reconciled, Settled, Cancelled)",
+     "native_source": "Bank Transaction",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "all",
+     "date_basis": "date",
+     "unit": "transactions",
+     "exclusions": "reconciled/settled/cancelled",
+     "source_route": "/digit/pro/bank-reconciliation",
+     "drill_action": "open bank reconciliation",
+     "empty_state": "NOT_CONFIGURED when the company has no bank account.",
+     "kind": "metric",
+     "test_id": "R5-DASH-FIN.BANK_UNMATCHED",
+     "business_meaning_ar": "حركات بنكية مستوردة لم تُطابَق بعد مع الدفعات.",
+     "formula_ar": "عدد الحركات البنكية المعتمدة التي حالتها ليست (مسوّاة، مسدّدة، ملغاة)",
+     "native_source_ar": "الحركة البنكية",
+     "period_ar": "الكل",
+     "exclusions_ar": "الحركات المسوّاة والمسدّدة والملغاة"
+    },
+    {
+     "metric_id": "FIN.CASH_TREND",
+     "department": "finance",
+     "title_en": "Cash movement by month",
+     "title_ar": "حركة النقد شهرياً",
+     "business_meaning": "Net movement of cash and bank accounts per month (last 12 months).",
+     "formula": "SUM(debit - credit) per posting month of GL Entry on Cash/Bank ledger accounts",
+     "native_source": "GL Entry (General Ledger basis)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "last 12 months",
+     "date_basis": "posting_date",
+     "unit": "company currency",
+     "exclusions": "cancelled entries",
+     "source_route": "/digit/pro/general-ledger",
+     "drill_action": "open the ledger for the month",
+     "empty_state": "No cash movement.",
+     "kind": "insight",
+     "test_id": "R5-DASH-FIN.CASH_TREND",
+     "business_meaning_ar": "صافي حركة حسابات النقدية والبنوك لكل شهر (آخر 12 شهرًا).",
+     "formula_ar": "مجموع (المدين − الدائن) لكل شهر ترحيل لقيود دفتر الأستاذ على حسابات النقدية والبنوك",
+     "native_source_ar": "قيود دفتر الأستاذ (أساس دفتر الأستاذ العام)",
+     "period_ar": "آخر 12 شهرًا",
+     "exclusions_ar": "القيود الملغاة"
+    },
+    {
+     "metric_id": "FIN.AGING",
+     "department": "finance",
+     "title_en": "Receivables / payables ageing",
+     "title_ar": "أعمار الذمم المدينة والدائنة",
+     "business_meaning": "Outstanding by days past due, same basis as the native AR/AP reports.",
+     "formula": "digit_pro.api.get_aging (invoice outstanding by due-date buckets; net on the Payment Ledger basis)",
+     "native_source": "Sales/Purchase Invoice, Payment Ledger Entry",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "as of today",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "draft/cancelled",
+     "source_route": "/digit/report/Accounts Receivable",
+     "drill_action": "open the native Accounts Receivable report",
+     "empty_state": "No outstanding invoice.",
+     "kind": "insight",
+     "test_id": "R5-DASH-FIN.AGING",
+     "business_meaning_ar": "المبالغ القائمة موزعة حسب أيام التأخر عن الاستحقاق، بنفس أساس تقريري الذمم المدينة والدائنة الأصليين.",
+     "formula_ar": "get_aging في ديجيت برو: المبلغ القائم للفواتير موزعًا على شرائح تاريخ الاستحقاق، صافيًا على أساس دفتر المدفوعات",
+     "native_source_ar": "فواتير المبيعات والمشتريات، قيود دفتر المدفوعات",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "المسودات والملغاة"
+    }
+   ],
+   "reports": [
+    [
+     "General Ledger",
+     "/digit/pro/general-ledger"
+    ],
+    [
+     "Trial Balance",
+     "/digit/pro/trial-balance"
+    ],
+    [
+     "Profit and Loss Statement",
+     "/digit/pro/statements?report=Profit and Loss Statement"
+    ],
+    [
+     "Balance Sheet",
+     "/digit/pro/statements?report=Balance Sheet"
+    ],
+    [
+     "Cash Flow",
+     "/digit/pro/statements?report=Cash Flow"
+    ],
+    [
+     "Accounts Receivable",
+     "/digit/report/Accounts Receivable"
+    ],
+    [
+     "Accounts Payable",
+     "/digit/report/Accounts Payable"
+    ],
+    [
+     "Bank Reconciliation Statement",
+     "/digit/report/Bank Reconciliation Statement"
+    ],
+    [
+     "Payment Ledger",
+     "/digit/report/Payment Ledger"
+    ]
+   ],
+   "work": [
+    [
+     "digit_pro.api.get_queue_counts",
+     {
+      "dept": "accounting"
+     }
+    ],
+    [
+     "digit_pro.close_checks.get_close_blockers",
+     {}
+    ],
+    [
+     "digit_pro.anomalies.get_anomalies",
+     {}
+    ]
+   ]
+  },
+  "selling": {
+   "route": "/digit/pro/selling-overview",
+   "question": [
+    "What can be sold, fulfilled, invoiced and collected, and what is delayed?",
+    "ما الذي يمكن بيعه وتسليمه وفوترته وتحصيله، وما المتأخر؟"
+   ],
+   "metrics": [
+    {
+     "metric_id": "SEL.QTN_OPEN",
+     "department": "selling",
+     "title_en": "Open quotations",
+     "title_ar": "عروض أسعار مفتوحة",
+     "business_meaning": "Submitted offers waiting for the customer's decision.",
+     "formula": "COUNT and SUM(base_grand_total) of submitted Quotations with status in (Open, Replied, Partially Ordered)",
+     "native_source": "Quotation.status (native)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "open as of today",
+     "date_basis": "transaction_date",
+     "unit": "company currency",
+     "exclusions": "Ordered, Lost, Expired, Cancelled",
+     "source_route": "/digit/app/erpnext/quotation",
+     "drill_action": "open quotations",
+     "empty_state": "No open quotation.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.QTN_OPEN",
+     "business_meaning_ar": "عروض أسعار معتمدة تنتظر قرار العميل.",
+     "formula_ar": "عدد ومجموع الإجمالي بعملة الشركة (base_grand_total) لعروض الأسعار المعتمدة بحالة (مفتوح، تم الرد، تم طلبه جزئيًا)",
+     "native_source_ar": "حالة عرض السعر (أصلية)",
+     "period_ar": "المفتوح حتى اليوم",
+     "exclusions_ar": "المطلوبة، المفقودة، المنتهية، الملغاة"
+    },
+    {
+     "metric_id": "SEL.SO_OPEN",
+     "department": "selling",
+     "title_en": "Open sales orders",
+     "title_ar": "أوامر بيع مفتوحة",
+     "business_meaning": "Orders still to deliver and/or bill.",
+     "formula": "COUNT of submitted Sales Orders with status in (To Deliver and Bill, To Deliver, To Bill)",
+     "native_source": "Sales Order.status",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "open as of today",
+     "date_basis": "transaction_date",
+     "unit": "documents",
+     "exclusions": "Completed, Closed, On Hold",
+     "source_route": "/digit/app/erpnext/sales_order",
+     "drill_action": "open sales orders",
+     "empty_state": "No open sales order.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.SO_OPEN",
+     "business_meaning_ar": "أوامر بيع ما زال تسليمها و/أو فوترتها قائمًا.",
+     "formula_ar": "عدد أوامر البيع المعتمدة بحالة (للتسليم والفوترة، للتسليم، للفوترة)",
+     "native_source_ar": "حالة أمر البيع",
+     "period_ar": "المفتوح حتى اليوم",
+     "exclusions_ar": "المكتملة، المغلقة، المعلّقة"
+    },
+    {
+     "metric_id": "SEL.LATE_DELIVERY",
+     "department": "selling",
+     "title_en": "Orders past delivery date",
+     "title_ar": "أوامر تجاوزت تاريخ التسليم",
+     "business_meaning": "Orders not fully delivered after their delivery date.",
+     "formula": "COUNT of submitted Sales Orders with status in (To Deliver and Bill, To Deliver) and delivery_date < today",
+     "native_source": "Sales Order.delivery_date, per_delivered",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "as of today",
+     "date_basis": "delivery_date",
+     "unit": "documents",
+     "exclusions": "orders already delivered",
+     "source_route": "/digit/app/erpnext/sales_order",
+     "drill_action": "open late orders",
+     "empty_state": "No late order.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.LATE_DELIVERY",
+     "business_meaning_ar": "أوامر لم تُسلَّم بالكامل بعد تاريخ تسليمها.",
+     "formula_ar": "عدد أوامر البيع المعتمدة بحالة (للتسليم والفوترة، للتسليم) وتاريخ تسليمها قبل اليوم",
+     "native_source_ar": "تاريخ التسليم ونسبة التسليم في أمر البيع",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "الأوامر المسلَّمة بالكامل"
+    },
+    {
+     "metric_id": "SEL.DN_TO_BILL",
+     "department": "selling",
+     "title_en": "Delivered not billed",
+     "title_ar": "مُسلَّم غير مفوتر",
+     "business_meaning": "Deliveries made but not yet invoiced.",
+     "formula": "COUNT of submitted Delivery Notes with status To Bill",
+     "native_source": "Delivery Note.status (native per_billed)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "open",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "returns",
+     "source_route": "/digit/report/Delivered Items To Be Billed",
+     "drill_action": "open the native Delivered Items To Be Billed report",
+     "empty_state": "Every delivery is billed.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.DN_TO_BILL",
+     "business_meaning_ar": "تسليمات تمّت ولم تُفوتَر بعد.",
+     "formula_ar": "عدد إذونات التسليم المعتمدة بحالة (للفوترة)",
+     "native_source_ar": "حالة إذن التسليم (نسبة الفوترة الأصلية)",
+     "period_ar": "المفتوح",
+     "exclusions_ar": "المرتجعات"
+    },
+    {
+     "metric_id": "SEL.AR_OVERDUE",
+     "department": "selling",
+     "title_en": "Overdue collections",
+     "title_ar": "تحصيلات متأخرة",
+     "business_meaning": "Same canonical metric as FIN.AR_OVERDUE, shown in the selling context.",
+     "formula": "= FIN.AR_OVERDUE",
+     "native_source": "Sales Invoice.outstanding_amount",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "open as of today",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "credit notes",
+     "source_route": "/digit/pro/receivables?overdue=1",
+     "drill_action": "open receivables filtered to overdue",
+     "empty_state": "No overdue customer invoice.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.AR_OVERDUE",
+     "business_meaning_ar": "المقياس المعتمد نفسه FIN.AR_OVERDUE معروضًا في سياق المبيعات.",
+     "formula_ar": "= FIN.AR_OVERDUE",
+     "native_source_ar": "المبلغ القائم في فاتورة المبيعات",
+     "period_ar": "المفتوح حتى اليوم",
+     "exclusions_ar": "إشعارات الدائن"
+    },
+    {
+     "metric_id": "SEL.RETURNS_DRAFT",
+     "department": "selling",
+     "title_en": "Returns awaiting submission",
+     "title_ar": "مرتجعات بانتظار الاعتماد",
+     "business_meaning": "Credit notes / return deliveries saved but not posted.",
+     "formula": "COUNT of draft Sales Invoices and Delivery Notes with is_return = 1",
+     "native_source": "Sales Invoice, Delivery Note (is_return)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "all",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "submitted returns",
+     "source_route": "/digit/app/erpnext/sales_invoice?is_return=1&docstatus=0",
+     "drill_action": "open draft returns",
+     "empty_state": "No draft return.",
+     "kind": "metric",
+     "test_id": "R5-DASH-SEL.RETURNS_DRAFT",
+     "business_meaning_ar": "إشعارات دائن أو مرتجعات تسليم محفوظة ولم تُرحَّل.",
+     "formula_ar": "عدد فواتير المبيعات وإذونات التسليم المسودة التي هي مرتجع (is_return = 1)",
+     "native_source_ar": "فاتورة المبيعات وإذن التسليم (مرتجع)",
+     "period_ar": "الكل",
+     "exclusions_ar": "المرتجعات المعتمدة"
+    },
+    {
+     "metric_id": "SEL.CONVERSION",
+     "department": "selling",
+     "title_en": "Quotation-to-order conversion",
+     "title_ar": "تحويل العروض إلى أوامر",
+     "business_meaning": "Share of this year's submitted quotations that became orders.",
+     "formula": "COUNT(status = Ordered or Partially Ordered) / COUNT(submitted, not cancelled) of Quotations with transaction_date in the current fiscal year; denominator shown",
+     "native_source": "Quotation.status (native, set by the Sales Order mapper)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "current fiscal year",
+     "date_basis": "transaction_date",
+     "unit": "percent (with denominator)",
+     "exclusions": "cancelled quotations",
+     "source_route": "/digit/report/Quotation Trends",
+     "drill_action": "open the native Quotation Trends report",
+     "empty_state": "No quotation submitted this year.",
+     "kind": "insight",
+     "test_id": "R5-DASH-SEL.CONVERSION",
+     "business_meaning_ar": "نسبة عروض الأسعار المعتمدة هذا العام التي تحولت إلى أوامر بيع.",
+     "formula_ar": "عدد عروض الأسعار بحالة (مطلوب أو مطلوب جزئيًا) ÷ عدد عروض الأسعار المعتمدة غير الملغاة بتاريخ ضمن السنة المالية الحالية؛ ويُعرض المقام",
+     "native_source_ar": "حالة عرض السعر (أصلية، يضبطها إنشاء أمر البيع)",
+     "period_ar": "السنة المالية الحالية",
+     "exclusions_ar": "عروض الأسعار الملغاة"
+    },
+    {
+     "metric_id": "SEL.SALES_TREND",
+     "department": "selling",
+     "title_en": "Invoiced sales by month",
+     "title_ar": "المبيعات المفوترة شهرياً",
+     "business_meaning": "Submitted sales invoices per month (last 12 months).",
+     "formula": "SUM(base_grand_total) per posting month of submitted Sales Invoices (returns negative)",
+     "native_source": "Sales Invoice",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Sales User, Sales Manager",
+     "period": "last 12 months",
+     "date_basis": "posting_date",
+     "unit": "company currency",
+     "exclusions": "drafts, cancelled",
+     "source_route": "/digit/report/Sales Analytics",
+     "drill_action": "open the native Sales Analytics report",
+     "empty_state": "No sales invoice.",
+     "kind": "insight",
+     "test_id": "R5-DASH-SEL.SALES_TREND",
+     "business_meaning_ar": "فواتير المبيعات المعتمدة لكل شهر (آخر 12 شهرًا).",
+     "formula_ar": "مجموع الإجمالي بعملة الشركة لكل شهر ترحيل لفواتير المبيعات المعتمدة (المرتجعات بالسالب)",
+     "native_source_ar": "فاتورة المبيعات",
+     "period_ar": "آخر 12 شهرًا",
+     "exclusions_ar": "المسودات والملغاة"
+    }
+   ],
+   "reports": [
+    [
+     "Sales Analytics",
+     "/digit/report/Sales Analytics"
+    ],
+    [
+     "Sales Register",
+     "/digit/report/Sales Register"
+    ],
+    [
+     "Delivered Items To Be Billed",
+     "/digit/report/Delivered Items To Be Billed"
+    ],
+    [
+     "Sales Order Analysis",
+     "/digit/report/Sales Order Analysis"
+    ],
+    [
+     "Quotation Trends",
+     "/digit/report/Quotation Trends"
+    ],
+    [
+     "Accounts Receivable",
+     "/digit/report/Accounts Receivable"
+    ],
+    [
+     "Gross Profit",
+     "/digit/report/Gross Profit"
+    ]
+   ],
+   "work": [
+    [
+     "digit_pro.api.get_queue_counts",
+     {
+      "dept": "selling"
+     }
+    ],
+    [
+     "digit_pro.picking.get_pick_waves",
+     {}
+    ]
+   ]
+  },
+  "purchasing": {
+   "route": "/digit/pro/purchasing-overview",
+   "question": [
+    "What must be requested, approved, ordered, received and paid?",
+    "ما الذي يجب طلبه واعتماده وشراؤه واستلامه ودفعه؟"
+   ],
+   "metrics": [
+    {
+     "metric_id": "PUR.MR_PENDING",
+     "department": "purchasing",
+     "title_en": "Pending material requests",
+     "title_ar": "طلبات مواد معلّقة",
+     "business_meaning": "Approved requests not yet ordered or transferred.",
+     "formula": "COUNT of submitted Material Requests with status Pending or Partially Ordered",
+     "native_source": "Material Request.status",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "open",
+     "date_basis": "transaction_date",
+     "unit": "documents",
+     "exclusions": "Ordered, Stopped, Cancelled",
+     "source_route": "/digit/app/erpnext/material_request",
+     "drill_action": "open pending requests",
+     "empty_state": "No pending material request.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.MR_PENDING",
+     "business_meaning_ar": "طلبات مواد معتمدة لم يُطلب شراؤها أو تحويلها بعد.",
+     "formula_ar": "عدد طلبات المواد المعتمدة بحالة (معلّق، تم طلبه جزئيًا)",
+     "native_source_ar": "حالة طلب المواد",
+     "period_ar": "المفتوح",
+     "exclusions_ar": "المطلوبة، الموقوفة، الملغاة"
+    },
+    {
+     "metric_id": "PUR.RFQ_AWAITING",
+     "department": "purchasing",
+     "title_en": "RFQs awaiting supplier response",
+     "title_ar": "طلبات عروض بانتظار رد الموردين",
+     "business_meaning": "Requests for quotation with at least one supplier not yet quoted.",
+     "formula": "COUNT of submitted Requests for Quotation having a supplier row with quote_status = Pending",
+     "native_source": "Request for Quotation Supplier.quote_status",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "open",
+     "date_basis": "transaction_date",
+     "unit": "documents",
+     "exclusions": "draft/cancelled RFQs",
+     "source_route": "/digit/app/erpnext/request_for_quotation",
+     "drill_action": "open RFQs",
+     "empty_state": "No RFQ is waiting.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.RFQ_AWAITING",
+     "business_meaning_ar": "طلبات عروض أسعار فيها مورد واحد على الأقل لم يقدّم عرضه بعد.",
+     "formula_ar": "عدد طلبات عروض الأسعار المعتمدة التي فيها سطر مورد حالة عرضه (quote_status) معلّقة",
+     "native_source_ar": "حالة العرض في سطر مورد طلب عرض السعر",
+     "period_ar": "المفتوح",
+     "exclusions_ar": "طلبات عروض الأسعار المسودة والملغاة"
+    },
+    {
+     "metric_id": "PUR.PO_OPEN",
+     "department": "purchasing",
+     "title_en": "Open purchase orders",
+     "title_ar": "أوامر شراء مفتوحة",
+     "business_meaning": "Orders still to receive and/or bill.",
+     "formula": "COUNT of submitted Purchase Orders with status in (To Receive and Bill, To Receive, To Bill)",
+     "native_source": "Purchase Order.status",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "open",
+     "date_basis": "transaction_date",
+     "unit": "documents",
+     "exclusions": "Completed, Closed, On Hold",
+     "source_route": "/digit/pro/open-purchase-orders",
+     "drill_action": "open the open purchase orders screen",
+     "empty_state": "No open purchase order.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.PO_OPEN",
+     "business_meaning_ar": "أوامر شراء ما زال استلامها و/أو فوترتها قائمًا.",
+     "formula_ar": "عدد أوامر الشراء المعتمدة بحالة (للاستلام والفوترة، للاستلام، للفوترة)",
+     "native_source_ar": "حالة أمر الشراء",
+     "period_ar": "المفتوح",
+     "exclusions_ar": "المكتملة، المغلقة، المعلّقة"
+    },
+    {
+     "metric_id": "PUR.PO_LATE",
+     "department": "purchasing",
+     "title_en": "Overdue deliveries",
+     "title_ar": "توريدات متأخرة",
+     "business_meaning": "Orders not fully received after their required-by date.",
+     "formula": "COUNT of submitted Purchase Orders with status in (To Receive and Bill, To Receive) and schedule_date < today",
+     "native_source": "Purchase Order.schedule_date, per_received",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "as of today",
+     "date_basis": "schedule_date",
+     "unit": "documents",
+     "exclusions": "fully received orders",
+     "source_route": "/digit/pro/open-purchase-orders?band=overdue",
+     "drill_action": "open late orders",
+     "empty_state": "No late delivery.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.PO_LATE",
+     "business_meaning_ar": "أوامر لم تُستلم بالكامل بعد تاريخ الحاجة إليها.",
+     "formula_ar": "عدد أوامر الشراء المعتمدة بحالة (للاستلام والفوترة، للاستلام) وتاريخ الحاجة (schedule_date) قبل اليوم",
+     "native_source_ar": "تاريخ الحاجة ونسبة الاستلام في أمر الشراء",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "الأوامر المستلمة بالكامل"
+    },
+    {
+     "metric_id": "PUR.PR_TO_BILL",
+     "department": "purchasing",
+     "title_en": "Received not billed",
+     "title_ar": "مُستلم غير مفوتر",
+     "business_meaning": "Receipts not yet invoiced by the supplier.",
+     "formula": "COUNT of submitted Purchase Receipts with status To Bill",
+     "native_source": "Purchase Receipt.status (native per_billed)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "open",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "returns",
+     "source_route": "/digit/report/Received Items To Be Billed",
+     "drill_action": "open the native Received Items To Be Billed report",
+     "empty_state": "Every receipt is billed.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.PR_TO_BILL",
+     "business_meaning_ar": "إيصالات استلام لم يفوترها المورد بعد.",
+     "formula_ar": "عدد إيصالات الاستلام المعتمدة بحالة (للفوترة)",
+     "native_source_ar": "حالة إيصال الاستلام (نسبة الفوترة الأصلية)",
+     "period_ar": "المفتوح",
+     "exclusions_ar": "المرتجعات"
+    },
+    {
+     "metric_id": "PUR.AP_DUE_SOON",
+     "department": "purchasing",
+     "title_en": "Supplier payments due in 14 days",
+     "title_ar": "مدفوعات موردين خلال 14 يوماً",
+     "business_meaning": "Same canonical metric as FIN.AP_DUE_SOON.",
+     "formula": "= FIN.AP_DUE_SOON",
+     "native_source": "Purchase Invoice.outstanding_amount",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "next 14 days",
+     "date_basis": "due_date",
+     "unit": "company currency",
+     "exclusions": "overdue invoices",
+     "source_route": "/digit/pro/payables",
+     "drill_action": "open payables",
+     "empty_state": "Nothing falls due in the next 14 days.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.AP_DUE_SOON",
+     "business_meaning_ar": "المقياس المعتمد نفسه FIN.AP_DUE_SOON.",
+     "formula_ar": "= FIN.AP_DUE_SOON",
+     "native_source_ar": "المبلغ القائم في فاتورة المشتريات",
+     "period_ar": "الأيام الـ14 القادمة",
+     "exclusions_ar": "الفواتير المتأخرة"
+    },
+    {
+     "metric_id": "PUR.MATCH_EXCEPTIONS",
+     "department": "purchasing",
+     "title_en": "Three-way match exceptions",
+     "title_ar": "استثناءات المطابقة الثلاثية",
+     "business_meaning": "Purchase invoices whose lines do not fully match order/receipt (CF-01).",
+     "formula": "COUNT of invoices returned by digit_pro.matching.variance_queue for the current fiscal year",
+     "native_source": "Purchase Invoice + PO/PR lines (ERPNext over-billing / same-rate rules)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "current fiscal year",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "debit notes; lines the user cannot compare are NOT_EVALUATED",
+     "source_route": "/digit/pro/purchasing",
+     "drill_action": "open the match review list",
+     "empty_state": "Every invoice line matches its order and receipt.",
+     "kind": "metric",
+     "test_id": "R5-DASH-PUR.MATCH_EXCEPTIONS",
+     "business_meaning_ar": "فواتير مشتريات لا تتطابق سطورها بالكامل مع أمر الشراء أو إيصال الاستلام (CF-01).",
+     "formula_ar": "عدد الفواتير التي تعيدها قائمة الفروقات variance_queue في ديجيت برو للسنة المالية الحالية",
+     "native_source_ar": "فاتورة المشتريات + سطور أمر الشراء وإيصال الاستلام (قواعد ERPNext للفوترة الزائدة وتطابق السعر)",
+     "period_ar": "السنة المالية الحالية",
+     "exclusions_ar": "إشعارات المدين؛ السطور التي لا يستطيع المستخدم مقارنتها تُعرض «لم تُقيَّم»"
+    },
+    {
+     "metric_id": "PUR.COMMITMENT",
+     "department": "purchasing",
+     "title_en": "Open purchase commitment",
+     "title_ar": "التزامات الشراء المفتوحة",
+     "business_meaning": "Value ordered and not yet billed on open purchase orders.",
+     "formula": "SUM(amount - billed_amt) of Purchase Order Items of submitted, open Purchase Orders (company currency via base rate)",
+     "native_source": "Purchase Order Item.amount, billed_amt",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Purchase User, Purchase Manager",
+     "period": "open as of today",
+     "date_basis": "transaction_date",
+     "unit": "PO currency (base when single currency)",
+     "exclusions": "closed/completed orders",
+     "source_route": "/digit/report/Purchase Order Analysis",
+     "drill_action": "open the native Purchase Order Analysis report",
+     "empty_state": "No open commitment.",
+     "kind": "insight",
+     "test_id": "R5-DASH-PUR.COMMITMENT",
+     "business_meaning_ar": "القيمة المطلوبة ولم تُفوتَر بعد في أوامر الشراء المفتوحة.",
+     "formula_ar": "مجموع (المبلغ − المفوتر) لسطور أوامر الشراء المعتمدة المفتوحة (بعملة الشركة عبر السعر الأساسي)",
+     "native_source_ar": "مبلغ سطر أمر الشراء والمبلغ المفوتر منه",
+     "period_ar": "المفتوح حتى اليوم",
+     "exclusions_ar": "الأوامر المغلقة والمكتملة"
+    }
+   ],
+   "reports": [
+    [
+     "Purchase Analytics",
+     "/digit/report/Purchase Analytics"
+    ],
+    [
+     "Purchase Register",
+     "/digit/report/Purchase Register"
+    ],
+    [
+     "Purchase Order Analysis",
+     "/digit/report/Purchase Order Analysis"
+    ],
+    [
+     "Received Items To Be Billed",
+     "/digit/report/Received Items To Be Billed"
+    ],
+    [
+     "Supplier Quotation Comparison",
+     "/digit/report/Supplier Quotation Comparison"
+    ],
+    [
+     "Accounts Payable",
+     "/digit/report/Accounts Payable"
+    ]
+   ],
+   "work": [
+    [
+     "digit_pro.api.get_queue_counts",
+     {
+      "dept": "purchasing"
+     }
+    ],
+    [
+     "digit_pro.matching.variance_queue",
+     {}
+    ]
+   ]
+  },
+  "inventory": {
+   "route": "/digit/pro/inventory-overview",
+   "question": [
+    "What stock is available, what is at risk, and is its value supported?",
+    "ما المخزون المتاح، وما المعرّض للخطر، وهل قيمته مسندة؟"
+   ],
+   "metrics": [
+    {
+     "metric_id": "INV.STOCK_VALUE",
+     "department": "inventory",
+     "title_en": "Stock value (stock ledger)",
+     "title_ar": "قيمة المخزون (دفتر المخزون)",
+     "business_meaning": "Value of stock on hand as posted in the stock ledger, with its reconciliation bases.",
+     "formula": "SUM(stock_value_difference) of Stock Ledger Entries (is_cancelled = 0) of the company up to today; shown with GL balance of Stock accounts and the Bin snapshot",
+     "native_source": "Stock Ledger Entry (authoritative), GL Entry on account_type Stock, Bin.stock_value (snapshot)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "up to today",
+     "date_basis": "posting_date",
+     "unit": "company currency",
+     "exclusions": "cancelled entries",
+     "source_route": "/digit/pro/stock-ledger",
+     "drill_action": "open the stock ledger",
+     "empty_state": "No posted stock.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.STOCK_VALUE",
+     "business_meaning_ar": "قيمة المخزون المتاح كما رُحّلت في دفتر المخزون، مع أسس المطابقة.",
+     "formula_ar": "مجموع فرق قيمة المخزون (stock_value_difference) لقيود دفتر المخزون غير الملغاة للشركة حتى اليوم؛ ويُعرض معه رصيد حسابات المخزون في دفتر الأستاذ ولقطة الأرصدة (Bin)",
+     "native_source_ar": "دفتر المخزون (المرجع)، قيود دفتر الأستاذ على حسابات من نوع مخزون، قيمة المخزون في Bin (لقطة)",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "القيود الملغاة"
+    },
+    {
+     "metric_id": "INV.SHORTAGE",
+     "department": "inventory",
+     "title_en": "Demand above supply",
+     "title_ar": "طلب يتجاوز المتاح",
+     "business_meaning": "Item/warehouse positions whose projected quantity is negative.",
+     "formula": "COUNT of Bins with projected_qty < 0 (projected = actual + ordered + indented + planned - reserved - reserved for production)",
+     "native_source": "Bin.projected_qty (maintained by ERPNext)",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "as of now",
+     "date_basis": "—",
+     "unit": "item-warehouse positions",
+     "exclusions": "positions with projected >= 0",
+     "source_route": "/digit/report/Stock Projected Qty",
+     "drill_action": "open the native Stock Projected Qty report",
+     "empty_state": "No projected shortage.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.SHORTAGE",
+     "business_meaning_ar": "مواضع صنف/مستودع كميتها المتوقعة سالبة.",
+     "formula_ar": "عدد أرصدة Bin التي كميتها المتوقعة < 0 (المتوقعة = الفعلية + المطلوبة + المطلوبة داخليًا + المخططة − المحجوزة − المحجوزة للإنتاج)",
+     "native_source_ar": "الكمية المتوقعة في Bin (يحدّثها ERPNext)",
+     "period_ar": "حتى الآن",
+     "exclusions_ar": "المواضع التي كميتها المتوقعة ≥ 0"
+    },
+    {
+     "metric_id": "INV.RESERVED",
+     "department": "inventory",
+     "title_en": "Positions with reserved stock",
+     "title_ar": "أرصدة بها حجز",
+     "business_meaning": "Item/warehouse positions where open orders reserve stock.",
+     "formula": "COUNT of Bins with reserved_qty > 0",
+     "native_source": "Bin.reserved_qty",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "as of now",
+     "date_basis": "—",
+     "unit": "item-warehouse positions",
+     "exclusions": "—",
+     "source_route": "/digit/report/Stock Projected Qty",
+     "drill_action": "open the native Stock Projected Qty report",
+     "empty_state": "Nothing is reserved.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.RESERVED",
+     "business_meaning_ar": "مواضع صنف/مستودع تحجز فيها الأوامر المفتوحة مخزونًا.",
+     "formula_ar": "عدد أرصدة Bin التي كميتها المحجوزة > 0",
+     "native_source_ar": "الكمية المحجوزة في Bin",
+     "period_ar": "حتى الآن",
+     "exclusions_ar": "—"
+    },
+    {
+     "metric_id": "INV.MOVES_DRAFT",
+     "department": "inventory",
+     "title_en": "Stock movements awaiting posting",
+     "title_ar": "حركات مخزون بانتظار الترحيل",
+     "business_meaning": "Receipts, issues and transfers saved but not posted.",
+     "formula": "COUNT of Stock Entries with docstatus = 0",
+     "native_source": "Stock Entry",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "all",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "submitted/cancelled",
+     "source_route": "/digit/app/erpnext/stock_entry?docstatus=0",
+     "drill_action": "open draft stock entries",
+     "empty_state": "No draft movement.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.MOVES_DRAFT",
+     "business_meaning_ar": "استلامات وصرف وتحويلات محفوظة ولم تُرحَّل.",
+     "formula_ar": "عدد القيود المخزنية بحالة مسودة (docstatus = 0)",
+     "native_source_ar": "القيد المخزني",
+     "period_ar": "الكل",
+     "exclusions_ar": "المعتمدة والملغاة"
+    },
+    {
+     "metric_id": "INV.RECON_DRAFT",
+     "department": "inventory",
+     "title_en": "Stock counts awaiting posting",
+     "title_ar": "جرد بانتظار الترحيل",
+     "business_meaning": "Stock reconciliations saved but not posted (differences not yet in the ledger).",
+     "formula": "COUNT of Stock Reconciliations with docstatus = 0",
+     "native_source": "Stock Reconciliation",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "all",
+     "date_basis": "posting_date",
+     "unit": "documents",
+     "exclusions": "submitted",
+     "source_route": "/digit/app/erpnext/stock_reconciliation?docstatus=0",
+     "drill_action": "open draft counts",
+     "empty_state": "No draft count.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.RECON_DRAFT",
+     "business_meaning_ar": "تسويات مخزون محفوظة ولم تُرحَّل (فروقاتها لم تدخل الدفتر بعد).",
+     "formula_ar": "عدد تسويات المخزون بحالة مسودة (docstatus = 0)",
+     "native_source_ar": "تسوية المخزون",
+     "period_ar": "الكل",
+     "exclusions_ar": "المعتمدة"
+    },
+    {
+     "metric_id": "INV.BATCH_EXPIRY",
+     "department": "inventory",
+     "title_en": "Batches expiring in 30 days",
+     "title_ar": "دفعات تنتهي خلال 30 يوماً",
+     "business_meaning": "Batches with stock that expire soon.",
+     "formula": "COUNT of Batches with expiry_date between today and today + 30 and batch_qty > 0",
+     "native_source": "Batch.expiry_date, batch_qty",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "next 30 days",
+     "date_basis": "expiry_date",
+     "unit": "batches",
+     "exclusions": "batches without expiry",
+     "source_route": "/digit/report/Batch Item Expiry Status",
+     "drill_action": "open the native Batch Item Expiry Status report",
+     "empty_state": "NOT_CONFIGURED when no batch exists.",
+     "kind": "metric",
+     "test_id": "R5-DASH-INV.BATCH_EXPIRY",
+     "business_meaning_ar": "دفعات لها رصيد وتنتهي صلاحيتها قريبًا.",
+     "formula_ar": "عدد الدفعات التي تاريخ انتهائها بين اليوم و30 يومًا قادمة وكميتها > 0",
+     "native_source_ar": "تاريخ انتهاء الدفعة وكميتها",
+     "period_ar": "الأيام الـ30 القادمة",
+     "exclusions_ar": "الدفعات بلا تاريخ انتهاء"
+    },
+    {
+     "metric_id": "INV.VALUE_TREND",
+     "department": "inventory",
+     "title_en": "Stock value by month",
+     "title_ar": "قيمة المخزون شهرياً",
+     "business_meaning": "Stock ledger value at each month end (last 12 months).",
+     "formula": "cumulative SUM(stock_value_difference) of Stock Ledger Entries up to each month end",
+     "native_source": "Stock Ledger Entry",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Stock User, Stock Manager",
+     "period": "last 12 months",
+     "date_basis": "posting_date",
+     "unit": "company currency",
+     "exclusions": "cancelled",
+     "source_route": "/digit/pro/stock-balance",
+     "drill_action": "open the Stock Balance",
+     "empty_state": "No posted stock.",
+     "kind": "insight",
+     "test_id": "R5-DASH-INV.VALUE_TREND",
+     "business_meaning_ar": "قيمة دفتر المخزون في نهاية كل شهر (آخر 12 شهرًا).",
+     "formula_ar": "المجموع التراكمي لفرق قيمة المخزون في قيود دفتر المخزون حتى نهاية كل شهر",
+     "native_source_ar": "دفتر المخزون",
+     "period_ar": "آخر 12 شهرًا",
+     "exclusions_ar": "الملغاة"
+    }
+   ],
+   "reports": [
+    [
+     "Stock Ledger",
+     "/digit/pro/stock-ledger"
+    ],
+    [
+     "Stock Balance",
+     "/digit/pro/stock-balance"
+    ],
+    [
+     "Stock Projected Qty",
+     "/digit/report/Stock Projected Qty"
+    ],
+    [
+     "Stock Ageing",
+     "/digit/report/Stock Ageing"
+    ],
+    [
+     "Warehouse wise Item Balance Age and Value",
+     "/digit/report/Warehouse wise Item Balance Age and Value"
+    ],
+    [
+     "Batch-Wise Balance History",
+     "/digit/report/Batch-Wise Balance History"
+    ]
+   ],
+   "work": [
+    [
+     "digit_pro.api.get_queue_counts",
+     {
+      "dept": "inventory"
+     }
+    ],
+    [
+     "digit_pro.replenishment.get_reorder_advice",
+     {}
+    ],
+    [
+     "digit_pro.picking.get_pick_waves",
+     {}
+    ]
+   ]
+  },
+  "assets": {
+   "route": "/digit/pro/assets-overview",
+   "question": [
+    "What assets do we own, what is their financial position, and what action is due?",
+    "ما الأصول التي نملكها، وما وضعها المالي، وما الإجراء المستحق؟"
+   ],
+   "metrics": [
+    {
+     "metric_id": "AST.COST",
+     "department": "assets",
+     "title_en": "Acquisition cost in register",
+     "title_ar": "تكلفة اقتناء الأصول",
+     "business_meaning": "Purchase cost of submitted assets not sold or scrapped.",
+     "formula": "SUM(net_purchase_amount) of submitted Assets with status not in (Sold, Scrapped)",
+     "native_source": "Asset.net_purchase_amount",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "as of today",
+     "date_basis": "purchase_date",
+     "unit": "company currency",
+     "exclusions": "sold/scrapped/cancelled assets",
+     "source_route": "/digit/pro/asset-register",
+     "drill_action": "open the Fixed Asset Register",
+     "empty_state": "No asset in the register.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.COST",
+     "business_meaning_ar": "تكلفة شراء الأصول المعتمدة غير المبيعة وغير المستبعدة.",
+     "formula_ar": "مجموع صافي مبلغ الشراء (net_purchase_amount) للأصول المعتمدة التي حالتها ليست (مباع، مستبعد)",
+     "native_source_ar": "صافي مبلغ الشراء في الأصل",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "الأصول المبيعة والمستبعدة والملغاة"
+    },
+    {
+     "metric_id": "AST.DEP_POSTED",
+     "department": "assets",
+     "title_en": "Accumulated depreciation (posted)",
+     "title_ar": "مجمع الإهلاك (المرحّل)",
+     "business_meaning": "Opening accumulated depreciation plus depreciation actually posted to the GL.",
+     "formula": "SUM(opening_accumulated_depreciation) + SUM(depreciation_amount of Depreciation Schedule rows with journal_entry set) for those assets",
+     "native_source": "Asset, Asset Depreciation Schedule / Depreciation Schedule.journal_entry",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "up to today",
+     "date_basis": "schedule_date",
+     "unit": "company currency",
+     "exclusions": "planned rows without a journal entry",
+     "source_route": "/digit/report/Asset Depreciation Ledger",
+     "drill_action": "open the native Asset Depreciation Ledger",
+     "empty_state": "No posted depreciation.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.DEP_POSTED",
+     "business_meaning_ar": "مجمع الإهلاك الافتتاحي مضافًا إليه الإهلاك المرحّل فعلًا إلى دفتر الأستاذ.",
+     "formula_ar": "مجموع مجمع الإهلاك الافتتاحي + مجموع مبالغ إهلاك سطور جدول الإهلاك التي لها قيد يومية، لتلك الأصول",
+     "native_source_ar": "الأصل، جدول إهلاك الأصل / قيد اليومية في سطر الجدول",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "السطور المخططة بلا قيد يومية"
+    },
+    {
+     "metric_id": "AST.NBV",
+     "department": "assets",
+     "title_en": "Net book value",
+     "title_ar": "صافي القيمة الدفترية",
+     "business_meaning": "Acquisition cost less posted accumulated depreciation.",
+     "formula": "AST.COST - AST.DEP_POSTED (cross-check: SUM(Asset.value_after_depreciation))",
+     "native_source": "derived from AST.COST and AST.DEP_POSTED",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "as of today",
+     "date_basis": "—",
+     "unit": "company currency",
+     "exclusions": "sold/scrapped assets",
+     "source_route": "/digit/report/Asset Depreciations and Balances",
+     "drill_action": "open the native Asset Depreciations and Balances report",
+     "empty_state": "No asset.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.NBV",
+     "business_meaning_ar": "تكلفة الاقتناء ناقص مجمع الإهلاك المرحّل.",
+     "formula_ar": "AST.COST − AST.DEP_POSTED (تحقق مقابل: مجموع القيمة بعد الإهلاك في الأصل)",
+     "native_source_ar": "مشتق من AST.COST وAST.DEP_POSTED",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "الأصول المبيعة والمستبعدة"
+    },
+    {
+     "metric_id": "AST.DEP_DUE",
+     "department": "assets",
+     "title_en": "Depreciation due, not posted",
+     "title_ar": "إهلاك مستحق غير مرحّل",
+     "business_meaning": "Scheduled depreciation dated today or earlier without a journal entry.",
+     "formula": "COUNT and SUM(depreciation_amount) of Depreciation Schedule rows with schedule_date <= today and no journal_entry (submitted, active schedules)",
+     "native_source": "Depreciation Schedule",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "up to today",
+     "date_basis": "schedule_date",
+     "unit": "company currency",
+     "exclusions": "future rows",
+     "source_route": "/digit/pro/assets",
+     "drill_action": "open depreciation",
+     "empty_state": "No depreciation is overdue.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.DEP_DUE",
+     "business_meaning_ar": "إهلاك مجدول بتاريخ اليوم أو قبله بلا قيد يومية.",
+     "formula_ar": "عدد ومجموع مبالغ الإهلاك لسطور جدول الإهلاك التي تاريخها ≤ اليوم وبلا قيد يومية (جداول معتمدة نشطة)",
+     "native_source_ar": "جدول الإهلاك",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "السطور المستقبلية"
+    },
+    {
+     "metric_id": "AST.MOVES_30",
+     "department": "assets",
+     "title_en": "Asset movements (30 days)",
+     "title_ar": "حركات الأصول (30 يوماً)",
+     "business_meaning": "Transfers, issues and receipts of assets in the last 30 days.",
+     "formula": "COUNT of submitted Asset Movements with transaction_date >= today - 30",
+     "native_source": "Asset Movement",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "last 30 days",
+     "date_basis": "transaction_date",
+     "unit": "documents",
+     "exclusions": "drafts",
+     "source_route": "/digit/app/erpnext/asset_movement",
+     "drill_action": "open asset movements",
+     "empty_state": "No movement in 30 days.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.MOVES_30",
+     "business_meaning_ar": "تحويلات الأصول وصرفها واستلامها في آخر 30 يومًا.",
+     "formula_ar": "عدد حركات الأصول المعتمدة بتاريخ خلال آخر 30 يومًا",
+     "native_source_ar": "حركة الأصل",
+     "period_ar": "آخر 30 يومًا",
+     "exclusions_ar": "المسودات"
+    },
+    {
+     "metric_id": "AST.MAINT_DUE",
+     "department": "assets",
+     "title_en": "Maintenance overdue",
+     "title_ar": "صيانة متأخرة",
+     "business_meaning": "Asset maintenance tasks past their next due date.",
+     "formula": "COUNT of Asset Maintenance Tasks with next_due_date < today and maintenance_status not in (Completed, Cancelled)",
+     "native_source": "Asset Maintenance Task",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "as of today",
+     "date_basis": "next_due_date",
+     "unit": "tasks",
+     "exclusions": "completed/cancelled",
+     "source_route": "/digit/app/erpnext/asset_maintenance",
+     "drill_action": "open asset maintenance",
+     "empty_state": "NOT_CONFIGURED when no asset maintenance is set up.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.MAINT_DUE",
+     "business_meaning_ar": "مهام صيانة أصول تجاوزت تاريخ استحقاقها التالي.",
+     "formula_ar": "عدد مهام صيانة الأصول التي تاريخ استحقاقها التالي قبل اليوم وحالتها ليست (مكتملة، ملغاة)",
+     "native_source_ar": "مهمة صيانة الأصل",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "المكتملة والملغاة"
+    },
+    {
+     "metric_id": "AST.DISPOSAL_EXC",
+     "department": "assets",
+     "title_en": "Disposals without accounting document",
+     "title_ar": "استبعاد دون مستند محاسبي",
+     "business_meaning": "Sold/scrapped assets with no visible scrap entry or sales invoice.",
+     "formula": "COUNT of Assets with status in (Sold, Scrapped) where journal_entry_for_scrap is empty and no Sales Invoice Item references the asset",
+     "native_source": "Asset.status, journal_entry_for_scrap, Sales Invoice Item.asset",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "all",
+     "date_basis": "disposal_date",
+     "unit": "assets",
+     "exclusions": "—",
+     "source_route": "/digit/app/erpnext/asset",
+     "drill_action": "open disposed assets",
+     "empty_state": "No disposal exception.",
+     "kind": "metric",
+     "test_id": "R5-DASH-AST.DISPOSAL_EXC",
+     "business_meaning_ar": "أصول مبيعة أو مستبعدة بلا قيد استبعاد ظاهر أو فاتورة مبيعات.",
+     "formula_ar": "عدد الأصول بحالة (مباع، مستبعد) التي ليس لها قيد استبعاد ولا يشير إليها أي سطر فاتورة مبيعات",
+     "native_source_ar": "حالة الأصل، قيد الاستبعاد، سطر فاتورة المبيعات (الأصل)",
+     "period_ar": "الكل",
+     "exclusions_ar": "—"
+    },
+    {
+     "metric_id": "AST.BY_CATEGORY",
+     "department": "assets",
+     "title_en": "Cost by asset category",
+     "title_ar": "التكلفة حسب فئة الأصل",
+     "business_meaning": "Composition of the register by category.",
+     "formula": "SUM(net_purchase_amount) of submitted, not disposed Assets grouped by asset_category",
+     "native_source": "Asset",
+     "company": "selected company (digit_pro.api._company: a company the user may read)",
+     "role": "Accounts User, Accounts Manager",
+     "period": "as of today",
+     "date_basis": "purchase_date",
+     "unit": "company currency",
+     "exclusions": "sold/scrapped",
+     "source_route": "/digit/pro/asset-register",
+     "drill_action": "open the register grouped by category",
+     "empty_state": "No asset.",
+     "kind": "insight",
+     "test_id": "R5-DASH-AST.BY_CATEGORY",
+     "business_meaning_ar": "تكوين سجل الأصول حسب الفئة.",
+     "formula_ar": "مجموع صافي مبلغ الشراء للأصول المعتمدة غير المستبعدة مجمّعًا حسب فئة الأصل",
+     "native_source_ar": "الأصل",
+     "period_ar": "حتى اليوم",
+     "exclusions_ar": "المبيعة والمستبعدة"
+    }
+   ],
+   "reports": [
+    [
+     "Fixed Asset Register",
+     "/digit/pro/asset-register"
+    ],
+    [
+     "Asset Depreciation Ledger",
+     "/digit/report/Asset Depreciation Ledger"
+    ],
+    [
+     "Asset Depreciations and Balances",
+     "/digit/report/Asset Depreciations and Balances"
+    ]
+   ],
+   "work": [
+    [
+     "digit_pro.api.get_queue_counts",
+     {
+      "dept": "assets"
+     }
+    ],
+    [
+     "digit_pro.journey.get_journey",
+     {
+      "doctype": "Asset"
+     }
+    ]
+   ]
+  }
+ },
+ "dash92": {
+  "cfo-01": {
+   "title": [
+    "Financial command",
+    "الموقف المالي والقيادة"
+   ],
+   "blocks": [
+    {
+     "type": "metrics",
+     "span": 100,
+     "source": [
+      "Finance metric contracts (dashboards.get_department_dashboard)",
+      "عقود المؤشرات المالية المعتمدة"
+     ]
+    },
+    {
+     "type": "close",
+     "label": [
+      "Risks & decisions — close checks",
+      "المخاطر والقرارات — فحوص الإقفال"
+     ],
+     "span": 65,
+     "source": [
+      "digit_pro.close_checks — native records blocking the period close",
+      "فحوص الإقفال من السجلات الأصلية"
+     ]
+    },
+    {
+     "type": "insight",
+     "metric": "FIN.CASH_TREND",
+     "span": 35,
+     "source": [
+      "Finance metric contracts (dashboards.get_department_dashboard)",
+      "عقود المؤشرات المالية المعتمدة"
+     ]
+    },
+    {
+     "type": "aging",
+     "party_type": "Customer",
+     "label": [
+      "Receivables ageing",
+      "أعمار الذمم المدينة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "aging",
+     "party_type": "Supplier",
+     "label": [
+      "Payables ageing",
+      "أعمار الذمم الدائنة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "si-overdue",
+      "label": [
+       "Overdue customer invoices (oldest first)",
+       "فواتير عملاء متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "customer",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pi-overdue",
+      "label": [
+       "Overdue supplier invoices (oldest first)",
+       "فواتير موردين متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "supplier",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    }
+   ]
+  },
+  "cfo-02": {
+   "title": [
+    "Performance & profit",
+    "الأداء والربحية"
+   ],
+   "blocks": [
+    {
+     "type": "performance",
+     "part": "kpis",
+     "span": 100,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "performance",
+     "part": "bridge",
+     "span": 50,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "performance",
+     "part": "mix",
+     "span": 50,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "performance",
+     "part": "trend",
+     "span": 65,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "dimensions",
+     "part": "cost_centers",
+     "span": 35,
+     "source": [
+      "Native Profitability Analysis by cost center",
+      "تحليل الربحية الأصلي حسب مركز التكلفة"
+     ]
+    },
+    {
+     "type": "reports",
+     "items": [
+      "Profit and Loss Statement",
+      "Gross and Net Profit Report",
+      "Gross Profit",
+      "Profitability Analysis",
+      "General Ledger"
+     ],
+     "span": 100,
+     "source": [
+      "Report registry",
+      "سجل التقارير"
+     ]
+    }
+   ]
+  },
+  "cfo-03": {
+   "title": [
+    "Cash & liquidity",
+    "النقد والسيولة"
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "items": [
+      {
+       "id": "pe-in90",
+       "label": [
+        "Received in 90 days",
+        "قبض خلال 90 يومًا"
+       ],
+       "hint": [
+        "Submitted receipts, company currency",
+        "سندات قبض معتمدة، بعملة الشركة"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Receive"
+        ],
+        [
+         "posting_date",
+         ">=",
+         "{from90}"
+        ]
+       ],
+       "measure": "base_received_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "pe-out90",
+       "label": [
+        "Paid in 90 days",
+        "صرف خلال 90 يومًا"
+       ],
+       "hint": [
+        "Submitted payments, company currency",
+        "سندات صرف معتمدة، بعملة الشركة"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Pay"
+        ],
+        [
+         "posting_date",
+         ">=",
+         "{from90}"
+        ]
+       ],
+       "measure": "base_paid_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "pe-unalloc",
+       "label": [
+        "Unallocated amounts",
+        "مبالغ غير مخصصة"
+       ],
+       "hint": [
+        "Submitted, not allocated to invoices",
+        "معتمدة وغير مخصصة لفواتير"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ]
+       ],
+       "measure": "unallocated_amount",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "pe-draft",
+       "label": [
+        "Draft payment entries",
+        "سندات دفع مسودة"
+       ],
+       "hint": [
+        "Not yet submitted",
+        "لم تُعتمد بعد"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ],
+       "measure": "paid_amount",
+       "tone": "warn",
+       "cur": null
+      }
+     ],
+     "span": 100,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "insight",
+     "metric": "FIN.CASH_TREND",
+     "span": 50,
+     "source": [
+      "Finance metric contracts (dashboards.get_department_dashboard)",
+      "عقود المؤشرات المالية المعتمدة"
+     ]
+    },
+    {
+     "type": "compare",
+     "label": [
+      "Receipts and payments per month",
+      "القبض والصرف شهريًا"
+     ],
+     "series": [
+      {
+       "id": "pe-in",
+       "label": [
+        "Received",
+        "القبض"
+       ],
+       "kind": "month",
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Receive"
+        ]
+       ],
+       "field": "posting_date",
+       "measure": "base_received_amount"
+      },
+      {
+       "id": "pe-out",
+       "label": [
+        "Paid",
+        "الصرف"
+       ],
+       "kind": "month",
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Pay"
+        ]
+       ],
+       "field": "posting_date",
+       "measure": "base_paid_amount"
+      }
+     ],
+     "span": 50,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ar-weeks",
+      "label": [
+       "Customer dues by week",
+       "استحقاقات العملاء حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ap-weeks",
+      "label": [
+       "Supplier dues by week",
+       "استحقاقات الموردين حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "bank",
+     "span": 35,
+     "source": [
+      "Company bank account setup (bank_match.setup_state)",
+      "إعداد الحساب البنكي للشركة"
+     ]
+    },
+    {
+     "type": "chart",
+     "spec": {
+      "id": "pe-mode",
+      "label": [
+       "Payments by mode of payment",
+       "السندات حسب طريقة الدفع"
+      ],
+      "kind": "field",
+      "doctype": "Payment Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ]
+      ],
+      "field": "mode_of_payment",
+      "measure": null
+     },
+     "span": 65,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "reports",
+     "items": [
+      "Cash Flow",
+      "Bank Reconciliation Statement",
+      "Bank Clearance Summary",
+      "Payment Ledger",
+      "General Ledger"
+     ],
+     "span": 100,
+     "source": [
+      "Report registry",
+      "سجل التقارير"
+     ]
+    }
+   ]
+  },
+  "cfo-04": {
+   "title": [
+    "Receivables & payables",
+    "الذمم والتحصيل والسداد"
+   ],
+   "blocks": [
+    {
+     "type": "aging",
+     "party_type": "Customer",
+     "label": [
+      "Receivables ageing",
+      "أعمار الذمم المدينة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "aging",
+     "party_type": "Supplier",
+     "label": [
+      "Payables ageing",
+      "أعمار الذمم الدائنة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ar-weeks",
+      "label": [
+       "Customer dues by week",
+       "استحقاقات العملاء حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ap-weeks",
+      "label": [
+       "Supplier dues by week",
+       "استحقاقات الموردين حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "parties",
+     "party_type": "Customer",
+     "label": [
+      "Top customers by open balance",
+      "أعلى العملاء رصيدًا مفتوحًا"
+     ],
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "parties",
+     "party_type": "Supplier",
+     "label": [
+      "Top suppliers by open balance",
+      "أعلى الموردين رصيدًا مفتوحًا"
+     ],
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "states",
+     "label": [
+      "Payment allocation status",
+      "حالات تخصيص المدفوعات"
+     ],
+     "doctype": "Payment Entry",
+     "base": [
+      [
+       "company",
+       "=",
+       "{company}"
+      ],
+      [
+       "docstatus",
+       "=",
+       1
+      ],
+      [
+       "payment_type",
+       "in",
+       [
+        "Receive",
+        "Pay"
+       ]
+      ]
+     ],
+     "states": [
+      [
+       [
+        "Fully allocated",
+        "مخصصة بالكامل"
+       ],
+       [
+        [
+         "unallocated_amount",
+         "=",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         ">",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Partly allocated",
+        "مخصصة جزئيًا"
+       ],
+       [
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         ">",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Not allocated (on account)",
+        "غير مخصصة (على الحساب)"
+       ],
+       [
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         "=",
+         0
+        ]
+       ]
+      ]
+     ],
+     "span": 35,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pe-unalloc",
+      "label": [
+       "Unallocated receipts and payments",
+       "سندات قبض وصرف غير مخصصة"
+      ],
+      "doctype": "Payment Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "unallocated_amount",
+        ">",
+        0
+       ]
+      ],
+      "date": "posting_date",
+      "amount": "unallocated_amount",
+      "party": "party",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info"
+     },
+     "span": 65,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "si-overdue",
+      "label": [
+       "Overdue customer invoices (oldest first)",
+       "فواتير عملاء متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "customer",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pi-overdue",
+      "label": [
+       "Overdue supplier invoices (oldest first)",
+       "فواتير موردين متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "supplier",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    }
+   ]
+  },
+  "cfo-05": {
+   "title": [
+    "Close, tax & controls",
+    "الإقفال والضرائب والرقابة"
+   ],
+   "blocks": [
+    {
+     "type": "close",
+     "label": [
+      "Close readiness checks",
+      "جاهزية الإقفال"
+     ],
+     "span": 65,
+     "source": [
+      "digit_pro.close_checks — native records blocking the period close",
+      "فحوص الإقفال من السجلات الأصلية"
+     ]
+    },
+    {
+     "type": "statement",
+     "report": "Trial Balance",
+     "span": 35,
+     "source": [
+      "Native Trial Balance (financial_reports.run_report)",
+      "ميزان المراجعة الأصلي"
+     ]
+    },
+    {
+     "type": "statement",
+     "report": "Balance Sheet",
+     "span": 50,
+     "source": [
+      "Native Balance Sheet",
+      "الميزانية العمومية الأصلية"
+     ]
+    },
+    {
+     "type": "states",
+     "label": [
+      "Journal entries by status",
+      "القيود حسب الحالة"
+     ],
+     "doctype": "Journal Entry",
+     "base": [
+      [
+       "company",
+       "=",
+       "{company}"
+      ]
+     ],
+     "states": [
+      [
+       [
+        "Draft",
+        "مسودة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Submitted",
+        "معتمدة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         1
+        ]
+       ]
+      ],
+      [
+       [
+        "Cancelled",
+        "ملغاة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         2
+        ]
+       ]
+      ]
+     ],
+     "span": 50,
+     "source": [
+      "Journal Entry (native docstatus)",
+      "قيد اليومية (حالة المستند الأصلية)"
+     ]
+    },
+    {
+     "type": "reports",
+     "items": [
+      "Trial Balance",
+      "General and Payment Ledger Comparison",
+      "Invalid Ledger Entries",
+      "Tax Withholding Details",
+      "Zatca Integration Summary",
+      "Zatca Integration Details",
+      "Voucher-wise Balance"
+     ],
+     "span": 100,
+     "source": [
+      "Report registry",
+      "سجل التقارير"
+     ]
+    }
+   ]
+  },
+  "cfo-06": {
+   "title": [
+    "Dimensions & budgets",
+    "الأبعاد والموازنات"
+   ],
+   "blocks": [
+    {
+     "type": "dimensions",
+     "part": "cost_centers",
+     "span": 65,
+     "source": [
+      "Native Profitability Analysis by cost center",
+      "تحليل الربحية الأصلي حسب مركز التكلفة"
+     ]
+    },
+    {
+     "type": "dimensions",
+     "part": "budgets",
+     "span": 35,
+     "source": [
+      "Budget (submitted) / Budget Variance Report",
+      "الموازنات المعتمدة / تقرير انحراف الموازنة"
+     ]
+    },
+    {
+     "type": "dimensions",
+     "part": "dimensions",
+     "span": 50,
+     "source": [
+      "Accounting Dimension (enabled)",
+      "الأبعاد المحاسبية المفعّلة"
+     ]
+    },
+    {
+     "type": "reports",
+     "items": [
+      "Budget Variance Report",
+      "Profitability Analysis",
+      "Dimension-wise Accounts Balance Report",
+      "Deferred Revenue and Expense"
+     ],
+     "span": 50,
+     "source": [
+      "Report registry",
+      "سجل التقارير"
+     ]
+    }
+   ]
+  },
+  "acc-ops": {
+   "title": [
+    "Operations & journals",
+    "العمليات والقيود"
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "items": [
+      {
+       "id": "je-draft",
+       "label": [
+        "Draft journal entries",
+        "قيود يومية مسودة"
+       ],
+       "hint": [
+        "docstatus = Draft",
+        "حالة المستند = مسودة"
+       ],
+       "doctype": "Journal Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ],
+       "measure": "total_debit",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "je-month",
+       "label": [
+        "Journal entries posted this month",
+        "قيود مرحّلة هذا الشهر"
+       ],
+       "hint": [
+        "Submitted, posting date in the as-of month",
+        "معتمدة وتاريخ الترحيل ضمن الشهر"
+       ],
+       "doctype": "Journal Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "posting_date",
+         "between",
+         [
+          "{month_from}",
+          "{as_of}"
+         ]
+        ]
+       ],
+       "measure": "total_debit",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "je-cancel",
+       "label": [
+        "Cancelled journal entries (12 months)",
+        "قيود ملغاة (12 شهرًا)"
+       ],
+       "hint": [
+        "Cancelled within 12 months",
+        "ملغاة خلال 12 شهرًا"
+       ],
+       "doctype": "Journal Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         2
+        ],
+        [
+         "posting_date",
+         "between",
+         [
+          "{from12}",
+          "{as_of}"
+         ]
+        ]
+       ],
+       "measure": "total_debit",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "pe-unalloc",
+       "label": [
+        "Unallocated amounts",
+        "مبالغ غير مخصصة"
+       ],
+       "hint": [
+        "Submitted, not allocated to invoices",
+        "معتمدة وغير مخصصة لفواتير"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ]
+       ],
+       "measure": "unallocated_amount",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "pe-draft",
+       "label": [
+        "Draft payment entries",
+        "سندات دفع مسودة"
+       ],
+       "hint": [
+        "Not yet submitted",
+        "لم تُعتمد بعد"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ],
+       "measure": "paid_amount",
+       "tone": "warn",
+       "cur": null
+      }
+     ],
+     "span": 100,
+     "source": [
+      "Journal Entry / Payment Entry (native docstatus)",
+      "قيد اليومية / سند الدفع"
+     ]
+    },
+    {
+     "type": "chart",
+     "spec": {
+      "id": "je-month",
+      "label": [
+       "Posted journal entries by month",
+       "القيود المرحّلة حسب الشهر"
+      ],
+      "kind": "month",
+      "doctype": "Journal Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ]
+      ],
+      "field": "posting_date",
+      "measure": "total_debit"
+     },
+     "span": 65,
+     "source": [
+      "Journal Entry (submitted), total_debit by posting month",
+      "قيود معتمدة حسب شهر الترحيل"
+     ]
+    },
+    {
+     "type": "states",
+     "label": [
+      "Journal entries by status",
+      "القيود حسب الحالة"
+     ],
+     "doctype": "Journal Entry",
+     "base": [
+      [
+       "company",
+       "=",
+       "{company}"
+      ]
+     ],
+     "states": [
+      [
+       [
+        "Draft",
+        "مسودة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Submitted",
+        "معتمدة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         1
+        ]
+       ]
+      ],
+      [
+       [
+        "Cancelled",
+        "ملغاة"
+       ],
+       [
+        [
+         "docstatus",
+         "=",
+         2
+        ]
+       ]
+      ]
+     ],
+     "span": 35,
+     "source": [
+      "Journal Entry (native docstatus)",
+      "قيد اليومية (حالة المستند)"
+     ]
+    },
+    {
+     "type": "chart",
+     "spec": {
+      "id": "je-type",
+      "label": [
+       "Journal entries by voucher type",
+       "القيود حسب نوع السند"
+      ],
+      "kind": "field",
+      "doctype": "Journal Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "posting_date",
+        "between",
+        [
+         "{from12}",
+         "{as_of}"
+        ]
+       ]
+      ],
+      "field": "voucher_type",
+      "measure": null
+     },
+     "span": 50,
+     "source": [
+      "Journal Entry (submitted, 12 months)",
+      "القيود المعتمدة (12 شهرًا)"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "je-draft",
+      "label": [
+       "Draft journal entries to review",
+       "قيود يومية مسودة للمراجعة"
+      ],
+      "doctype": "Journal Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        0
+       ]
+      ],
+      "date": "posting_date",
+      "amount": "total_debit",
+      "party": null,
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info"
+     },
+     "span": 50,
+     "source": [
+      "Journal Entry (draft)",
+      "القيود المسودة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "je-recent",
+      "label": [
+       "Latest posted journal entries",
+       "أحدث القيود المرحّلة"
+      ],
+      "doctype": "Journal Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ]
+      ],
+      "date": "posting_date",
+      "amount": "total_debit",
+      "party": null,
+      "order": "desc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info"
+     },
+     "span": 50,
+     "source": [
+      "Journal Entry (submitted)",
+      "القيود المعتمدة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pe-draft",
+      "label": [
+       "Draft payment entries",
+       "سندات دفع مسودة"
+      ],
+      "doctype": "Payment Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        0
+       ]
+      ],
+      "date": "posting_date",
+      "amount": "paid_amount",
+      "party": "party",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info"
+     },
+     "span": 50,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    }
+   ]
+  },
+  "acc-dues": {
+   "title": [
+    "Receivables & payables",
+    "الذمم المدينة والدائنة"
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "items": [
+      {
+       "id": "ar-total",
+       "label": [
+        "Total receivables",
+        "إجمالي المستحقات"
+       ],
+       "hint": [
+        "Outstanding of submitted invoices (Payment Ledger maintained; credit notes net)",
+        "المستحق على الفواتير المعتمدة (يحدّثه دفتر المدفوعات؛ صافي إشعارات الدائن)"
+       ],
+       "doctype": "Sales Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         "!=",
+         0
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "ar-overdue",
+       "label": [
+        "Overdue receivables",
+        "المتأخر من الذمم"
+       ],
+       "hint": [
+        "Due date before today, still outstanding",
+        "تاريخ الاستحقاق قبل اليوم وما زالت مستحقة"
+       ],
+       "doctype": "Sales Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         ">",
+         0
+        ],
+        [
+         "due_date",
+         "<",
+         "{as_of}"
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "risk",
+       "cur": null
+      },
+      {
+       "id": "ar-unalloc",
+       "label": [
+        "Unallocated receipts",
+        "مقبوضات غير مخصصة"
+       ],
+       "hint": [
+        "Customer receipts not yet allocated to invoices",
+        "مقبوضات العملاء غير المخصصة لفواتير"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Receive"
+        ],
+        [
+         "party_type",
+         "=",
+         "Customer"
+        ],
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ]
+       ],
+       "measure": "unallocated_amount",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "ar-due30",
+       "label": [
+        "Due within 30 days",
+        "المستحق خلال 30 يومًا"
+       ],
+       "hint": [
+        "Due from today to 30 days ahead",
+        "يستحق من اليوم حتى 30 يومًا"
+       ],
+       "doctype": "Sales Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         ">",
+         0
+        ],
+        [
+         "due_date",
+         ">=",
+         "{as_of}"
+        ],
+        [
+         "due_date",
+         "<=",
+         "{d30}"
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "info",
+       "cur": null
+      }
+     ],
+     "span": 100,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "kpis",
+     "items": [
+      {
+       "id": "ap-total",
+       "label": [
+        "Total supplier payables",
+        "إجمالي مستحقات الموردين"
+       ],
+       "hint": [
+        "Outstanding of submitted supplier invoices (Payment Ledger maintained; debit notes net)",
+        "المستحق على فواتير الموردين المعتمدة (صافي إشعارات المدين)"
+       ],
+       "doctype": "Purchase Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         "!=",
+         0
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "ap-week",
+       "label": [
+        "Due within a week",
+        "المستحق خلال أسبوع"
+       ],
+       "hint": [
+        "Due from today to 7 days ahead (the Finance Home 14-day KPI is separate)",
+        "يستحق من اليوم حتى 7 أيام (مؤشر الـ14 يومًا في الصفحة الرئيسية منفصل)"
+       ],
+       "doctype": "Purchase Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         ">",
+         0
+        ],
+        [
+         "due_date",
+         ">=",
+         "{as_of}"
+        ],
+        [
+         "due_date",
+         "<=",
+         "{d7}"
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "ap-overdue",
+       "label": [
+        "Overdue invoices",
+        "الفواتير المتأخرة"
+       ],
+       "hint": [
+        "Due date before today, still outstanding",
+        "تاريخ الاستحقاق قبل اليوم وما زالت مستحقة"
+       ],
+       "doctype": "Purchase Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "outstanding_amount",
+         ">",
+         0
+        ],
+        [
+         "due_date",
+         "<",
+         "{as_of}"
+        ]
+       ],
+       "measure": "outstanding_amount",
+       "tone": "risk",
+       "cur": null
+      },
+      {
+       "id": "ap-review",
+       "label": [
+        "Invoices needing review",
+        "فواتير تحتاج مراجعة"
+       ],
+       "hint": [
+        "Draft supplier invoices not yet submitted",
+        "فواتير موردين مسودة لم تُعتمد بعد"
+       ],
+       "doctype": "Purchase Invoice",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ],
+       "measure": "grand_total",
+       "tone": "warn",
+       "cur": null
+      }
+     ],
+     "span": 100,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "aging",
+     "party_type": "Customer",
+     "label": [
+      "Receivables ageing",
+      "أعمار الذمم المدينة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "aging",
+     "party_type": "Supplier",
+     "label": [
+      "Payables ageing",
+      "أعمار الذمم الدائنة"
+     ],
+     "span": 50,
+     "source": [
+      "digit_pro.api.get_aging — native AR/AP basis, Payment Ledger net",
+      "أعمار الذمم بأساس تقرير الذمم الأصلي وصافي دفتر المدفوعات"
+     ]
+    },
+    {
+     "type": "top",
+     "spec": {
+      "id": "ar-top",
+      "label": [
+       "Customer concentration",
+       "تركيز ذمم العملاء"
+      ],
+      "kind": "top",
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "customer",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "top",
+     "spec": {
+      "id": "ap-top",
+      "label": [
+       "Supplier concentration",
+       "تركيز التزامات الموردين"
+      ],
+      "kind": "top",
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "supplier",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ar-weeks",
+      "label": [
+       "Customer dues by week",
+       "استحقاقات العملاء حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "week",
+     "spec": {
+      "id": "ap-weeks",
+      "label": [
+       "Supplier dues by week",
+       "استحقاقات الموردين حسب الأسبوع"
+      ],
+      "kind": "week",
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ]
+      ],
+      "field": "due_date",
+      "measure": "outstanding_amount"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "states",
+     "label": [
+      "Payment allocation status",
+      "حالات تخصيص المدفوعات"
+     ],
+     "doctype": "Payment Entry",
+     "base": [
+      [
+       "company",
+       "=",
+       "{company}"
+      ],
+      [
+       "docstatus",
+       "=",
+       1
+      ],
+      [
+       "payment_type",
+       "in",
+       [
+        "Receive",
+        "Pay"
+       ]
+      ]
+     ],
+     "states": [
+      [
+       [
+        "Fully allocated",
+        "مخصصة بالكامل"
+       ],
+       [
+        [
+         "unallocated_amount",
+         "=",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         ">",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Partly allocated",
+        "مخصصة جزئيًا"
+       ],
+       [
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         ">",
+         0
+        ]
+       ]
+      ],
+      [
+       [
+        "Not allocated (on account)",
+        "غير مخصصة (على الحساب)"
+       ],
+       [
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ],
+        [
+         "total_allocated_amount",
+         "=",
+         0
+        ]
+       ]
+      ]
+     ],
+     "span": 35,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pe-unalloc",
+      "label": [
+       "Unallocated receipts and payments",
+       "سندات قبض وصرف غير مخصصة"
+      ],
+      "doctype": "Payment Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "unallocated_amount",
+        ">",
+        0
+       ]
+      ],
+      "date": "posting_date",
+      "amount": "unallocated_amount",
+      "party": "party",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info"
+     },
+     "span": 65,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "si-overdue",
+      "label": [
+       "Overdue customer invoices (oldest first)",
+       "فواتير عملاء متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Sales Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "customer",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Sales Invoice (submitted), outstanding_amount",
+      "فاتورة المبيعات (معتمدة)، المبلغ المستحق"
+     ]
+    },
+    {
+     "type": "queue",
+     "spec": {
+      "id": "pi-overdue",
+      "label": [
+       "Overdue supplier invoices (oldest first)",
+       "فواتير موردين متأخرة (الأقدم أولًا)"
+      ],
+      "doctype": "Purchase Invoice",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ],
+       [
+        "outstanding_amount",
+        ">",
+        0
+       ],
+       [
+        "due_date",
+        "<",
+        "{as_of}"
+       ]
+      ],
+      "date": "due_date",
+      "amount": "outstanding_amount",
+      "party": "supplier",
+      "order": "asc",
+      "action": [
+       "Open",
+       "فتح"
+      ],
+      "severity": "info",
+      "overdueFrom": "{as_of}"
+     },
+     "span": 50,
+     "source": [
+      "Purchase Invoice (submitted), outstanding_amount",
+      "فاتورة المشتريات (معتمدة)، المبلغ المستحق"
+     ]
+    }
+   ]
+  },
+  "acc-cash": {
+   "title": [
+    "Cash & banking",
+    "النقد والبنوك"
+   ],
+   "blocks": [
+    {
+     "type": "kpis",
+     "items": [
+      {
+       "id": "pe-in90",
+       "label": [
+        "Received in 90 days",
+        "قبض خلال 90 يومًا"
+       ],
+       "hint": [
+        "Submitted receipts, company currency",
+        "سندات قبض معتمدة، بعملة الشركة"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Receive"
+        ],
+        [
+         "posting_date",
+         ">=",
+         "{from90}"
+        ]
+       ],
+       "measure": "base_received_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "pe-out90",
+       "label": [
+        "Paid in 90 days",
+        "صرف خلال 90 يومًا"
+       ],
+       "hint": [
+        "Submitted payments, company currency",
+        "سندات صرف معتمدة، بعملة الشركة"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Pay"
+        ],
+        [
+         "posting_date",
+         ">=",
+         "{from90}"
+        ]
+       ],
+       "measure": "base_paid_amount",
+       "tone": "info",
+       "cur": null
+      },
+      {
+       "id": "pe-unalloc",
+       "label": [
+        "Unallocated amounts",
+        "مبالغ غير مخصصة"
+       ],
+       "hint": [
+        "Submitted, not allocated to invoices",
+        "معتمدة وغير مخصصة لفواتير"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "unallocated_amount",
+         ">",
+         0
+        ]
+       ],
+       "measure": "unallocated_amount",
+       "tone": "warn",
+       "cur": null
+      },
+      {
+       "id": "pe-draft",
+       "label": [
+        "Draft payment entries",
+        "سندات دفع مسودة"
+       ],
+       "hint": [
+        "Not yet submitted",
+        "لم تُعتمد بعد"
+       ],
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         0
+        ]
+       ],
+       "measure": "paid_amount",
+       "tone": "warn",
+       "cur": null
+      }
+     ],
+     "span": 100,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "insight",
+     "metric": "FIN.CASH_TREND",
+     "span": 50,
+     "source": [
+      "Finance metric contracts (dashboards.get_department_dashboard)",
+      "عقود المؤشرات المالية المعتمدة"
+     ]
+    },
+    {
+     "type": "compare",
+     "label": [
+      "Receipts and payments per month",
+      "القبض والصرف شهريًا"
+     ],
+     "series": [
+      {
+       "id": "pe-in",
+       "label": [
+        "Received",
+        "القبض"
+       ],
+       "kind": "month",
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Receive"
+        ]
+       ],
+       "field": "posting_date",
+       "measure": "base_received_amount"
+      },
+      {
+       "id": "pe-out",
+       "label": [
+        "Paid",
+        "الصرف"
+       ],
+       "kind": "month",
+       "doctype": "Payment Entry",
+       "filters": [
+        [
+         "company",
+         "=",
+         "{company}"
+        ],
+        [
+         "docstatus",
+         "=",
+         1
+        ],
+        [
+         "payment_type",
+         "=",
+         "Pay"
+        ]
+       ],
+       "field": "posting_date",
+       "measure": "base_paid_amount"
+      }
+     ],
+     "span": 50,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "bank",
+     "span": 35,
+     "source": [
+      "Company bank account setup (bank_match.setup_state)",
+      "إعداد الحساب البنكي للشركة"
+     ]
+    },
+    {
+     "type": "chart",
+     "spec": {
+      "id": "pe-mode",
+      "label": [
+       "Payments by mode of payment",
+       "السندات حسب طريقة الدفع"
+      ],
+      "kind": "field",
+      "doctype": "Payment Entry",
+      "filters": [
+       [
+        "company",
+        "=",
+        "{company}"
+       ],
+       [
+        "docstatus",
+        "=",
+        1
+       ]
+      ],
+      "field": "mode_of_payment",
+      "measure": null
+     },
+     "span": 65,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    },
+    {
+     "type": "allocations",
+     "label": [
+      "Latest payment allocations",
+      "أحدث تخصيصات المدفوعات"
+     ],
+     "span": 100,
+     "source": [
+      "Payment Entry (submitted), company currency",
+      "سند الدفع (معتمد)، بعملة الشركة"
+     ]
+    }
+   ]
+  },
+  "acc-report": {
+   "title": [
+    "Reports & controls",
+    "التقارير والرقابة"
+   ],
+   "blocks": [
+    {
+     "type": "performance",
+     "part": "kpis",
+     "span": 50,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "performance",
+     "part": "bridge",
+     "span": 50,
+     "source": [
+      "Native Profit and Loss Statement (financial_reports.run_report)",
+      "قائمة الدخل الأصلية من ERPNext"
+     ]
+    },
+    {
+     "type": "statement",
+     "report": "Trial Balance",
+     "span": 35,
+     "source": [
+      "Native Trial Balance",
+      "ميزان المراجعة الأصلي"
+     ]
+    },
+    {
+     "type": "close",
+     "label": [
+      "Close readiness checks",
+      "جاهزية الإقفال"
+     ],
+     "span": 65,
+     "source": [
+      "digit_pro.close_checks — native records blocking the period close",
+      "فحوص الإقفال من السجلات الأصلية"
+     ]
+    },
+    {
+     "type": "dimensions",
+     "part": "cost_centers",
+     "span": 65,
+     "source": [
+      "Native Profitability Analysis by cost center",
+      "تحليل الربحية الأصلي حسب مركز التكلفة"
+     ]
+    },
+    {
+     "type": "dimensions",
+     "part": "budgets",
+     "span": 35,
+     "source": [
+      "Budget (submitted)",
+      "الموازنات المعتمدة"
+     ]
+    }
+   ]
+  }
+ }
+}

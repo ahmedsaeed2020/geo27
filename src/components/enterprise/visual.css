@@ -1,0 +1,240 @@
+/*
+ * DIGIT visual system R3 (owner 2026-11-15, docs/VISUAL_SYSTEM.md) — the presentation layer every DIGIT app inherits:
+ * Phase 3 type scale, links, cards, tables, status pills, chart chrome, hero chips and highlights. Colours only through
+ * tokens.css. Scoped to the shared Shell's [data-visual="r3"] (every DIGIT app except CRM, which keeps its look until its
+ * own round). Loaded last from src/routes/__root.tsx so it is the final word on presentation; no logic depends on it.
+ */
+/* ---------------------------------------------------------------- typography ---------------------------------------------------------------- */
+[data-visual="r3"] { font-family: var(--font-text); color: var(--ink); font-size: 14px; line-height: 22px; }
+html[lang="ar"] [data-visual="r3"] { font-family: var(--font-text-ar); }
+/* Arabic is never letter-spaced and never italic */
+html[lang="ar"] [data-visual="r3"] :is(*, *::before, *::after) { letter-spacing: 0 !important; font-style: normal !important; }
+[data-visual="r3"] :is(.ek-h1, .ent-title) { font-family: var(--font-title); font-size: 28px; line-height: 36px; font-weight: 700; }
+html[lang="en"] [data-visual="r3"] :is(.ek-h1, .ent-title) { font-weight: 800; }
+[data-visual="r3"] :is(.ek-h3, [data-dash-frame] > header > h3, .ek-h2) { font-family: var(--font-title); font-size: 16px; line-height: 24px; font-weight: 600; color: var(--ink); }
+html[lang="en"] [data-visual="r3"] :is(.ek-h3, [data-dash-frame] > header > h3, .ek-h2) { font-weight: 700; }
+[data-visual="r3"] :is(.ek-sub, .ek-card-sub, .ek-note, [data-dash-meta], .r3-caption) { font-size: 12px; line-height: 18px; color: var(--grey); }
+[data-visual="r3"] :is(.ek-eyebrow) { font-size: 12px; line-height: 18px; }
+html[lang="en"] [data-visual="r3"] .ek-eyebrow { text-transform: uppercase; letter-spacing: .06em; }
+[data-visual="r3"] :is(.btn-primary, .btn-secondary, .btn-ghost, .ek-context-btn, .ek-btn-on-dark) { font-size: 14px; line-height: 20px; font-weight: 600; }
+/* codes, IDs and hashes: Space Mono 12 grey — never amounts */
+[data-visual="r3"] :is(.font-mono, code, kbd, samp, [data-code]) { font-family: var(--font-code); font-size: 12px; font-weight: 400; color: var(--grey); }
+/* every number is tabular */
+[data-visual="r3"] :is(td, th, [data-no-i18n], .ek-kpi-value, [data-kpi-value], .tabular-nums) { font-variant-numeric: tabular-nums; }
+@media (max-width: 767px) {
+  [data-visual="r3"] :is(.ek-h1, .ent-title) { font-size: 22px; line-height: 30px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  [data-visual="r3"] :is(p, li, td, label, input, select, textarea) { font-size: max(14px, 1em); }
+  [data-visual="r3"] :is(button, a.btn-primary, a.btn-secondary, [role="tab"], select, input:not([type="checkbox"]):not([type="radio"])) { min-height: 44px; }
+}
+
+/* ---------------------------------------------------------------- colour roles ---------------------------------------------------------------- */
+/* small links use Deep, underline on hover (Emerald is never text under 16px on white) */
+[data-visual="r3"] :is(.text-primary, .ek-card-link, .ek-card-action a, .ek-kpi-open, .ek-more-btn, [data-dash-frame] a.text-primary) { color: var(--link); }
+[data-visual="r3"] :is(a.text-primary, .ek-card-link, .ek-card-action a, button.text-primary, .ek-more-btn):hover { color: var(--link); text-decoration: underline; }
+[data-visual="r3"] .ek-rank-l :is(a, button):hover { color: var(--link); }
+/* emerald stays for primary buttons, the active nav item, focus rings and large positive numbers */
+[data-visual="r3"] :focus-visible { outline-color: var(--emerald); }
+.dark [data-visual="r3"] :focus-visible { outline-color: var(--mint); }
+/* Round 1 §4: KPI cards take their variant tint (round1.css); no flat-white override here */
+[data-visual="r3"] :is(.ek-card, .ek-kpi, .panel, [data-dash-frame]) { box-shadow: 0 1px 2px rgb(11 31 23 / .05); }
+[data-visual="r3"] .ek-rank-bar > span { background: var(--emerald); }
+[data-visual="r3"] .ek-h2::before { background: var(--emerald); }
+[data-visual="r3"] .ent-sf-head[data-tone="warn"] { background: var(--warning-bg); }
+[data-visual="r3"] .ek-area-hit:hover, [data-visual="r3"] .ek-area-hits > a:hover { background: color-mix(in oklab, var(--emerald) 6%, transparent); }
+
+/* ---------------------------------------------------------------- status pills (semantic pairs) ---------------------------------------------------------------- */
+.r3-pill { display: inline-flex; align-items: center; gap: 4px; min-height: 22px; padding: 0 9px; border-radius: 999px; font-size: 12px; line-height: 18px; font-weight: 600; white-space: nowrap; background: var(--surface); color: var(--grey); }
+.r3-pill[data-tone="success"], .r3-pill[data-tone="ok"] { background: var(--success-bg); color: var(--success); }
+.r3-pill[data-tone="warning"], .r3-pill[data-tone="warn"] { background: var(--warning-bg); color: var(--warning); }
+.r3-pill[data-tone="error"], .r3-pill[data-tone="bad"] { background: var(--error-bg); color: var(--error); }
+.r3-pill[data-tone="info"] { background: var(--info-bg); color: var(--info); }
+[data-visual="r3"] .dhr-badge[data-tone="success"] { background: var(--success-bg); color: var(--success); }
+[data-visual="r3"] .dhr-badge[data-tone="warn"] { background: var(--warning-bg); color: var(--warning); }
+[data-visual="r3"] .dhr-badge[data-tone="danger"] { background: var(--error-bg); color: var(--error); }
+[data-visual="r3"] .dhr-badge[data-tone="info"] { background: var(--info-bg); color: var(--info); }
+[data-visual="r3"] .dhr-badge[data-tone="neutral"] { background: var(--surface); color: var(--grey); }
+/* money: positive / negative with a real minus, neutral amounts uncoloured */
+.r3-pos { color: var(--positive); } .r3-neg { color: var(--negative); }
+
+/* ---------------------------------------------------------------- hero (command band) ---------------------------------------------------------------- */
+[data-visual="r3"] .ek-context[data-tone="brand"] { padding: 18px 24px; min-height: 92px; background: var(--deep); color: var(--on-deep);
+  grid-template-columns: minmax(min(100%, 24rem), 1fr) minmax(0, auto); column-gap: 20px; }
+[data-visual="r3"] .ek-context[data-tone="brand"] > .ek-context-side { grid-column: 1 / -1; }
+[data-visual="r3"] .ek-band-mark { display: none; }
+.ek-hero-chips { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-end; gap: 8px; position: relative; z-index: 1; min-width: 0; max-width: 46rem; }
+.ek-hero-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; padding: 4px 12px; border-radius: 999px; font-size: 13px; line-height: 20px; font-weight: 600;
+  color: var(--on-deep); background: color-mix(in oklab, var(--on-deep) 10%, transparent); border: 1px solid color-mix(in oklab, var(--on-deep) 22%, transparent); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.ek-hero-chip:is(a):hover { background: color-mix(in oklab, var(--on-deep) 18%, transparent); }
+.ek-hero-chip-l { font-weight: 500; color: var(--on-deep-muted); }
+.ek-hero-chip-d { font-size: 12px; font-weight: 600; color: var(--mint); }
+.ek-hero-chip-d[data-good="no"] { color: var(--night-error); }
+@media (max-width: 767px) {
+  [data-visual="r3"] .ek-context[data-tone="brand"] { grid-template-columns: minmax(0, 1fr); padding: 14px 16px; }
+  .ek-hero-chips { justify-content: flex-start; }
+  /* phones: one line per chip (label, value and change never split); a long label ends with an ellipsis */
+  .ek-hero-chip { white-space: nowrap; max-width: 100%; }
+  .ek-hero-chip-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+}
+
+/* ---------------------------------------------------------------- KPI cards ---------------------------------------------------------------- */
+[data-visual="r3"] [data-dash-view="kpi"] { height: 100%; }
+[data-visual="r3"] .r3-kpi-label { font-size: 13px; line-height: 20px; font-weight: 500; color: var(--grey); }
+[data-visual="r3"] :is([data-kpi-value], .ek-kpi-value) { font-family: var(--font-title); font-size: var(--dx-fs-kpi); line-height: 36px; font-weight: 700; color: var(--ink); }
+[data-visual="r3"] :is(.ek-kpi-hero .ek-kpi-value, .ek-hero-cell .ek-kpi-value) { font-size: var(--dx-fs-kpi); line-height: 36px; }
+[data-visual="r3"] .ek-kpi-label { font-size: 13px; line-height: 20px; font-weight: 500; color: var(--grey); }
+[data-visual="r3"] .ek-kpi-grid { align-items: stretch; }
+[data-visual="r3"] .ek-kpi-grid > :is(.ek-kpi, .ek-kpi-cell > *, [data-dash-frame]) { height: 100%; }
+[data-visual="r3"] .r3-kpi-meta { margin-top: auto; font-size: 12px; line-height: 18px; color: var(--grey); }
+.r3-moved { position: relative; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--info); box-shadow: 0 0 0 3px var(--info-bg); cursor: help; }
+@media (max-width: 767px) { [data-visual="r3"] :is([data-kpi-value], .ek-kpi-value) { line-height: 30px; } }
+
+/* ---------------------------------------------------------------- tables ---------------------------------------------------------------- */
+[data-visual="r3"] .r3-table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; line-height: 20px; }
+[data-visual="r3"] .r3-table thead th { font-size: 12px; line-height: 16px; font-weight: 600; color: var(--grey); background: var(--paper); padding: 10px 12px; text-align: start; border-bottom: 1px solid var(--line); white-space: nowrap; }
+[data-visual="r3"] .r3-table tbody td { padding: 12px; border-bottom: 1px solid var(--surface); vertical-align: middle; }
+[data-visual="r3"] .r3-table[data-density="compact"] tbody td { padding-block: 8px; }
+[data-visual="r3"] .r3-table :is(td, th)[data-num] { text-align: end; font-variant-numeric: tabular-nums; white-space: nowrap; }
+[data-visual="r3"] .r3-table tr[data-total] td, [data-visual="r3"] .r3-table tfoot td { font-weight: 600; background: var(--paper); border-top: 1px solid var(--line); }
+/* row highlight: rows that need action get a 3px start border; a selected row gets the em-50 background */
+[data-visual="r3"] tr:is([data-row-tone="bad"], [data-row-tone="error"]) > :first-child { box-shadow: inset 3px 0 0 var(--error); }
+[data-visual="r3"] tr:is([data-row-tone="warn"], [data-row-tone="warning"]) > :first-child { box-shadow: inset 3px 0 0 var(--warning); }
+html[dir="rtl"] [data-visual="r3"] tr:is([data-row-tone="bad"], [data-row-tone="error"]) > :first-child { box-shadow: inset -3px 0 0 var(--error); }
+html[dir="rtl"] [data-visual="r3"] tr:is([data-row-tone="warn"], [data-row-tone="warning"]) > :first-child { box-shadow: inset -3px 0 0 var(--warning); }
+[data-visual="r3"] tr:is([aria-selected="true"], [data-selected]) > td { background: var(--em-50); }
+/* inline data bar behind a % or amount (thin em-100 bar) */
+[data-visual="r3"] .r3-bar { position: relative; display: inline-flex; justify-content: flex-end; min-width: 4.5rem; isolation: isolate; }
+[data-visual="r3"] .r3-bar > i { position: absolute; inset-block: 2px; inset-inline-end: 0; z-index: -1; border-radius: 3px; background: var(--em-100); }
+[data-visual="r3"] .r3-bar[data-over] > span { color: var(--error); font-weight: 600; }
+[data-visual="r3"] .r3-bar[data-over] > i { background: var(--error-bg); }
+
+/* ---------------------------------------------------------------- chart chrome ---------------------------------------------------------------- */
+[data-visual="r3"] .ek-grid { stroke: var(--surface); }
+[data-visual="r3"] :is(.ek-axis, .ek-axis text, svg text.ek-axis-t) { font-size: 12px; fill: var(--grey); color: var(--grey); }
+[data-visual="r3"] .ek-tip { background: var(--white); color: var(--ink); border: 1px solid var(--line); box-shadow: 0 4px 14px rgb(11 31 23 / .08); }
+[data-visual="r3"] .ek-legend { font-size: 12px; color: var(--grey); }
+.r3-insight { margin-top: 2px; font-size: 12px; line-height: 18px; color: var(--ink-700); }
+.r3-range { font-size: 12px; line-height: 18px; color: var(--grey); white-space: nowrap; }
+.r3-chart-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 4px 12px; margin-top: 8px; }
+.r3-toggle { display: inline-flex; gap: 2px; padding: 2px; border-radius: 8px; background: var(--surface); }
+.r3-toggle > button { min-height: 28px; padding: 0 10px; border-radius: 6px; font-size: 12px; font-weight: 600; color: var(--grey); }
+.r3-toggle > button[aria-pressed="true"] { background: var(--white); color: var(--ink); box-shadow: 0 1px 2px rgb(11 31 23 / .08); }
+
+/* ---------------------------------------------------------------- empty states ---------------------------------------------------------------- */
+[data-visual="r3"] :is([data-dash-empty], .ek-empty) { font-size: 13px; color: var(--grey); }
+
+/* ---------------------------------------------------------------- night ---------------------------------------------------------------- */
+.dark [data-visual="r3"] :is(.dx-aside, .dp-sidebar, [data-dp-sidebar], .us-module-sidebar) { background: var(--deep); }
+.dark [data-visual="r3"] .ek-context[data-tone="brand"] { background: var(--deep); }
+
+/* ---------------------------------------------------------------- KPI card as one click target ---------------------------------------------------------------- */
+[data-visual="r3"] [data-dash-kind="number"] { position: relative; }
+[data-visual="r3"] [data-dash-kind="number"] > header { position: relative; z-index: 2; margin-bottom: 6px; }
+[data-visual="r3"] [data-dash-kind="number"] > header > h3 { font-family: inherit; font-size: 13px; line-height: 20px; font-weight: 500; color: var(--grey); }
+[data-visual="r3"] [data-dash-kind="number"] .r3-stretch::after { content: ""; position: absolute; inset: 0; z-index: 1; border-radius: inherit; }
+[data-visual="r3"] [data-dash-kind="number"]:has(.r3-stretch:hover) { border-color: var(--em-300); }
+[data-visual="r3"] [data-dash-kind="number"] [data-dash-view="kpi"] > * { position: relative; }
+[data-visual="r3"] [data-dash-kind="number"] [data-kpi-moved] { z-index: 2; }
+
+/* ---------------------------------------------------------------- ranking bars with value + change ---------------------------------------------------------------- */
+.r3-hbars { display: grid; gap: 8px; }
+.r3-hbar { display: grid; grid-template-columns: minmax(6rem, 11rem) minmax(0, 1fr) 4.5rem; align-items: center; gap: 10px; font-size: 13px; line-height: 20px; }
+.r3-hbar-l { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--ink-700); }
+.r3-hbar-track { position: relative; display: flex; align-items: center; height: 24px; }
+.r3-hbar-track > i { height: 100%; border-radius: 4px; }
+.r3-hbar-track > b { position: absolute; inset-inline-start: 8px; font-size: 12px; font-weight: 600; color: var(--on-deep); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.r3-hbar[data-other] .r3-hbar-track > b { color: var(--ink); }
+.r3-hbar-d { text-align: end; font-size: 12px; font-weight: 600; font-variant-numeric: tabular-nums; color: var(--grey); }
+.r3-hbar-d[data-good="yes"] { color: var(--positive); } .r3-hbar-d[data-good="no"] { color: var(--negative); }
+@media (max-width: 767px) { .r3-hbar { grid-template-columns: minmax(5rem, 8rem) minmax(0, 1fr) 3.75rem; gap: 6px; } }
+
+/* ---------------------------------------------------------------- table headline + open action ---------------------------------------------------------------- */
+.r3-headline { display: inline-flex; align-items: center; min-height: 28px; padding: 2px 12px; border-radius: 8px; font-size: 13px; font-weight: 600; background: var(--surface); color: var(--ink-700); }
+.r3-headline[data-tone="error"] { background: var(--error-bg); color: var(--error); }
+.r3-headline[data-tone="warning"] { background: var(--warning-bg); color: var(--warning); }
+.r3-headline[data-tone="success"] { background: var(--success-bg); color: var(--success); }
+.r3-headline[data-tone="info"] { background: var(--info-bg); color: var(--info); }
+.r3-pill[data-tone="neutral"] { background: var(--surface); color: var(--grey); }
+.r3-open { font-size: 13px; font-weight: 600; color: var(--link); }
+.r3-open:hover { text-decoration: underline; }
+
+/* ---------------------------------------------------------------- bars, bridge ---------------------------------------------------------------- */
+[data-visual="r3"] .ek-col-bar { border-radius: 4px 4px 0 0; }
+.ek-wf-x > span { display: flex; flex-direction: column; align-items: center; white-space: normal; overflow: visible; text-overflow: clip; }
+.ek-wf-l { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-align: center; line-height: 16px; }
+.ek-wf-rows { display: none; }
+/* the bridge reads as rows (full labels) on phones and whenever its panel is narrower than 560px */
+[data-ek-chart="waterfall"] { container: ek-wf / inline-size; }
+.ek-wf-rows > li { display: grid; grid-template-columns: minmax(0, 7.5rem) minmax(0, 1fr) auto; align-items: center; gap: 8px; font-size: 13px; line-height: 18px; }
+.ek-wf-rl { overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.ek-wf-rt { position: relative; height: 16px; background: var(--surface); border-radius: 3px; }
+.ek-wf-rt > i { position: absolute; inset-block: 0; border-radius: 3px; }
+.ek-wf-rv { font-variant-numeric: tabular-nums; font-weight: 600; font-size: 12px; }
+.ek-wf-rows > li[data-tone="total"] .ek-wf-rl { font-weight: 600; }
+@media (max-width: 767px) {
+  [data-ek-chart="waterfall"] > .ek-wf, [data-ek-chart="waterfall"] > .ek-wf-x { display: none; }
+  .ek-wf-rows { display: grid; gap: 6px; }
+}
+@container ek-wf (max-width: 560px) {
+  .ek-wf, .ek-wf-x { display: none !important; }
+  .ek-wf-rows { display: grid; gap: 6px; }
+}
+
+/* ---------------------------------------------------------------- record hero (Employee 360 …) ---------------------------------------------------------------- */
+.r3-avatar { display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: var(--em-900); color: var(--on-deep); font-weight: 700; font-size: 16px; object-fit: cover; }
+.r3-code-on-deep { font-family: var(--font-code); font-size: 12px; color: var(--on-deep); }
+.r3-live { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--mint); }
+.r3-live[data-tone="off"] { background: var(--on-deep-muted); }
+[data-visual="r3"] .r3-facts { padding: 16px 20px; background: var(--white); }
+[data-visual="r3"] .r3-pairs { gap: 0; }
+[data-visual="r3"] .r3-pairs > div { padding: 10px 12px; border-bottom: 1px solid var(--surface); }
+@media (min-width: 640px) { [data-visual="r3"] .r3-pairs > div:not(:nth-child(2n)) { border-inline-end: 1px solid var(--surface); } }
+@media (min-width: 1024px) { [data-visual="r3"] .r3-pairs > div { border-inline-end: 1px solid var(--surface); } [data-visual="r3"] .r3-pairs > div:nth-child(4n) { border-inline-end: 0; } }
+.r3-missing { min-height: 28px; font-weight: 600; }
+.r3-missing:hover { text-decoration: underline; }
+
+/* ---------------------------------------------------------------- record rail ---------------------------------------------------------------- */
+[data-visual="r3"] [data-emp-rail] .r3-rail-item { border-inline-start: 3px solid transparent; border-radius: 6px; }
+[data-visual="r3"] [data-emp-rail] .r3-rail-item[aria-selected="true"] { background: var(--em-50); border-inline-start-color: var(--deep); color: var(--deep); font-weight: 600; }
+.r3-count { display: inline-flex; min-width: 24px; height: 20px; align-items: center; justify-content: center; padding: 0 7px; border-radius: 999px; font-size: 11.5px; font-weight: 600; background: var(--em-100); color: var(--deep); font-variant-numeric: tabular-nums; }
+.r3-count[data-zero] { background: var(--surface); color: var(--grey); font-weight: 500; }
+
+/* ---------------------------------------------------------------- reports hub ---------------------------------------------------------------- */
+.r3-thumb { flex: none; width: 48px; height: 32px; border-radius: 6px; background: var(--paper); border: 1px solid var(--line); }
+.r3-fav { display: inline-grid; place-items: center; width: 32px; height: 32px; border-radius: 8px; color: var(--quiet); }
+.r3-fav:hover { background: var(--surface); color: var(--grey); }
+.r3-fav[aria-pressed="true"] { color: var(--tone-warning); }
+.r3-search { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; padding: 0 10px; border: 1px solid var(--line); border-radius: 8px; background: var(--white); color: var(--grey); }
+.r3-search > input { min-width: 12rem; border: 0; outline: 0; background: transparent; color: var(--ink); font-size: 14px; }
+[data-visual="r3"] .r3-report-card { min-height: 9.5rem; }
+@media (max-width: 767px) { .r3-search { width: 100%; min-height: 44px; } .r3-search > input { min-width: 0; flex: 1; } .r3-fav { width: 44px; height: 44px; } }
+[data-ek-chart="waterfall"] .ek-cols-x > span, [data-ek-chart="waterfall"] .ek-cols-x > span * { white-space: normal !important; text-overflow: clip !important; overflow-wrap: anywhere; }
+[data-ek-chart="waterfall"] .ek-cols-x { align-items: start; gap: 2px; font-size: 11px; }
+[data-ek-chart="waterfall"] .ek-wf-l { max-width: 100%; }
+[data-visual="r3"] .ek-context[data-tone="brand"] :is([data-code], .r3-code-on-deep) { color: var(--on-deep); }
+
+/* small links read Deep with an underline on hover (never Emerald under 16px on white); on Deep bands they stay white,
+   in dark mode they take the night text colour */
+[data-visual="r3"] :is(.dhr-back, .dhr-related a) { color: var(--deep); }
+[data-visual="r3"] :is(.dhr-back, .dhr-related a):hover { text-decoration: underline; text-underline-offset: 2px; }
+[data-visual="r3"] :is(.dhr-cmdband, .ek-context[data-tone="brand"]) :is(.dhr-back, .dhr-related a) { color: var(--on-deep); }
+html.dark [data-visual="r3"] :is(.dhr-back, .dhr-related a) { color: var(--night-text); }
+[data-visual="r3"] .ek-home-app-go { color: var(--deep); }
+html.dark [data-visual="r3"] .ek-home-app-go { color: var(--night-action); }
+[data-visual="r3"] .ek-hero-chip-d[data-good="flat"] { color: var(--on-deep-muted); }
+[data-visual="r3"] button.ek-hero-chip { cursor: pointer; font: inherit; font-size: 13px; }
+[data-visual="r3"] button.ek-hero-chip:hover { background: color-mix(in oklab, var(--on-deep) 18%, transparent); }
+[data-visual="r3"] .ek-hero-chip bdi :is(.ek-kpi-unit, small) { font-size: inherit; }
+/* KPI numbers fit their card: the type scale is the ceiling, the card width the limit (no clipped figures) */
+[data-visual="r3"] .ek-kpi-tile { container-type: inline-size; }
+[data-visual="r3"] .ek-kpi .ek-kpi-value, [data-visual="r3"] .ek-kpi-tile :is(.dp-cc-value, .ek-tile-value, [data-kpi-value]) { font-size: clamp(17px, 11cqi, var(--dx-fs-kpi)); line-height: 1.2; }
+/* treemap labels sit on a card chip, so text keeps 4.5:1 on any tile colour */
+.r3-tm-label { display: inline-block; max-width: 100%; padding: 0 4px; border-radius: 4px; background: var(--card); color: var(--foreground); line-height: 16px; }
+.r3-tm-label a { color: inherit; }
+/* night: ranked-list numbers and negative band changes stay readable */
+.dark [data-visual="r3"] .ek-ranked-n { color: var(--night-action); background: color-mix(in oklab, var(--night-action) 16%, var(--night-card)); }
+[data-visual="r3"] .ek-hero-chip-d[data-good="no"] { color: color-mix(in oklab, var(--night-error) 62%, var(--on-deep)); }
+[data-visual="r3"] .ek-tree-tile :is(.ek-tree-l, .ek-tree-v) { display: inline-block; max-width: 100%; padding: 0 4px; border-radius: 4px; background: var(--card); color: var(--foreground); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+[data-visual="r3"] .ek-tree-tile .ek-tree-l a { color: inherit; }
+.dark [data-visual="r3"] [data-emp-rail] .r3-rail-item[aria-selected="true"] { color: var(--night-action); border-inline-start-color: var(--night-action); }
+.dark .r3-count { color: var(--night-text); }
+.dark .r3-count[data-zero] { color: var(--night-text-muted); }

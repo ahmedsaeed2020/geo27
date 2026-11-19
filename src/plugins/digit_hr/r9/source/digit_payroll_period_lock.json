@@ -1,0 +1,147 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:DPL-{YYYY}-{#####}",
+ "creation": "2026-10-28 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "from_date",
+  "to_date",
+  "column_break_1",
+  "lock_status",
+  "locked_by",
+  "locked_on",
+  "section_reopen",
+  "reopen_reason",
+  "reopened_by",
+  "reopened_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "label": "From Date",
+   "reqd": 1,
+   "in_list_view": 1,
+   "idx": 2
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "label": "To Date",
+   "reqd": 1,
+   "in_list_view": 1,
+   "idx": 3
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 4
+  },
+  {
+   "fieldname": "lock_status",
+   "fieldtype": "Select",
+   "label": "Lock Status",
+   "options": "Locked\nReopened",
+   "default": "Locked",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "idx": 5
+  },
+  {
+   "fieldname": "locked_by",
+   "fieldtype": "Link",
+   "label": "Locked By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 6
+  },
+  {
+   "fieldname": "locked_on",
+   "fieldtype": "Datetime",
+   "label": "Locked On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 7
+  },
+  {
+   "fieldname": "section_reopen",
+   "fieldtype": "Section Break",
+   "label": "Controlled Reopen",
+   "idx": 8
+  },
+  {
+   "fieldname": "reopen_reason",
+   "fieldtype": "Small Text",
+   "label": "Reopen Reason",
+   "no_copy": 1,
+   "idx": 9
+  },
+  {
+   "fieldname": "reopened_by",
+   "fieldtype": "Link",
+   "label": "Reopened By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 10
+  },
+  {
+   "fieldname": "reopened_on",
+   "fieldtype": "Datetime",
+   "label": "Reopened On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 11
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "name": "DIGIT Payroll Period Lock",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "permlevel": 0,
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "permlevel": 0,
+   "role": "HR User",
+   "read": 1,
+   "report": 1,
+   "print": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "company",
+ "track_changes": 1
+}

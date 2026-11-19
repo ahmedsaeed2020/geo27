@@ -1,0 +1,441 @@
+{
+ "app": "insights",
+ "version": "4.0.0-dev",
+ "zip_sha256": "cb5abdde0c7e86eb606520ca6076560a3d9fdaec3224682a68dc54413758b9a0",
+ "files": 887,
+ "python_dependencies": [
+  "pandas~=2.3.3",
+  "SQLAlchemy==2.0.41",
+  "python-telegram-bot==21.4",
+  "duckdb~=1.4.3",
+  "sqlglot>=30.12.0,<30.18",
+  "ibis-framework~=11.0.0",
+  "ibis-framework[duckdb]",
+  "ibis-framework[mysql]",
+  "ibis-framework[sqlite]",
+  "ibis-framework[clickhouse]",
+  "ibis-framework[postgres]",
+  "psycopg[binary]"
+ ],
+ "frappe_dependency": {
+  "frappe": ">=15.0.0"
+ },
+ "frontend_dependencies": {
+  "@codemirror/lang-javascript": "^6.0.2",
+  "@codemirror/lang-python": "^6.1.3",
+  "@codemirror/lang-sql": "^6.4.0",
+  "@formkit/auto-animate": "^0.8.1",
+  "@tanstack/vue-table": "^8.10.7",
+  "@types/vue-router": "^2.0.0",
+  "@vue-flow/core": "^1.23.0",
+  "@vueuse/core": "^10.7.2",
+  "codemirror": "^6.0.1",
+  "dayjs": "^1.11.6",
+  "dompurify": "^3.4.0",
+  "echarts": "^6.1.0",
+  "es-toolkit": "^1.34.1",
+  "feather-icons": "^4.28.0",
+  "frappe-ui": "github:frappe/frappe-ui#80c37f8d9d0c73803f112225e2b2f61a3925b2b1",
+  "html-to-image": "^1.11.13",
+  "lucide-vue-next": "^0.484.0",
+  "pinia": "^2.0.30",
+  "reka-ui": "^2.9.9",
+  "socket.io-client": "^4.5.1",
+  "thememirror": "^2.0.1",
+  "vue": "^3.5.13",
+  "vue-codemirror": "^6.0.1",
+  "vue-router": "^4.2.2",
+  "vuedraggable": "^4.1.0"
+ },
+ "doctypes": [
+  {
+   "name": "Insights Alert",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 16,
+   "links": [
+    {
+     "field": "query",
+     "type": "Link",
+     "to": "Insights Query v3"
+    },
+    {
+     "field": "permission_user",
+     "type": "Link",
+     "to": "User"
+    }
+   ]
+  },
+  {
+   "name": "Insights Chart v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 15,
+   "links": [
+    {
+     "field": "query",
+     "type": "Link",
+     "to": "Insights Query v3"
+    },
+    {
+     "field": "workbook",
+     "type": "Link",
+     "to": "Insights Workbook"
+    },
+    {
+     "field": "visible_to_roles",
+     "type": "Table MultiSelect",
+     "to": "Has Role"
+    }
+   ]
+  },
+  {
+   "name": "Insights Dashboard Chart v3",
+   "issingle": 0,
+   "istable": 1,
+   "autoname": null,
+   "fields": 1,
+   "links": [
+    {
+     "field": "chart",
+     "type": "Link",
+     "to": "Insights Chart v3"
+    }
+   ]
+  },
+  {
+   "name": "Insights Dashboard v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 13,
+   "links": [
+    {
+     "field": "workbook",
+     "type": "Link",
+     "to": "Insights Workbook"
+    },
+    {
+     "field": "linked_charts",
+     "type": "Table MultiSelect",
+     "to": "Insights Dashboard Chart v3"
+    },
+    {
+     "field": "visible_to_roles",
+     "type": "Table MultiSelect",
+     "to": "Has Role"
+    }
+   ]
+  },
+  {
+   "name": "Insights Data Source v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 27,
+   "links": []
+  },
+  {
+   "name": "Insights Folder",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 5,
+   "links": [
+    {
+     "field": "workbook",
+     "type": "Link",
+     "to": "Insights Workbook"
+    }
+   ]
+  },
+  {
+   "name": "Insights Query Execution Log",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 5,
+   "links": []
+  },
+  {
+   "name": "Insights Query Reference",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": "hash",
+   "fields": 5,
+   "links": [
+    {
+     "field": "query",
+     "type": "Link",
+     "to": "Insights Query v3"
+    },
+    {
+     "field": "ref_query",
+     "type": "Link",
+     "to": "Insights Query v3"
+    }
+   ]
+  },
+  {
+   "name": "Insights Query v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 12,
+   "links": [
+    {
+     "field": "workbook",
+     "type": "Link",
+     "to": "Insights Workbook"
+    },
+    {
+     "field": "variables",
+     "type": "Table",
+     "to": "Insights Query Variable"
+    }
+   ]
+  },
+  {
+   "name": "Insights Query Variable",
+   "issingle": 0,
+   "istable": 1,
+   "autoname": null,
+   "fields": 2,
+   "links": []
+  },
+  {
+   "name": "Insights Resource Permission",
+   "issingle": 0,
+   "istable": 1,
+   "autoname": "autoincrement",
+   "fields": 3,
+   "links": [
+    {
+     "field": "resource_type",
+     "type": "Link",
+     "to": "DocType"
+    },
+    {
+     "field": "resource_name",
+     "type": "Dynamic Link",
+     "to": "resource_type"
+    }
+   ]
+  },
+  {
+   "name": "Insights Secret Key",
+   "issingle": 0,
+   "istable": 1,
+   "autoname": null,
+   "fields": 2,
+   "links": []
+  },
+  {
+   "name": "Insights Settings",
+   "issingle": 1,
+   "istable": 0,
+   "autoname": null,
+   "fields": 18,
+   "links": []
+  },
+  {
+   "name": "Insights Table Import Job",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": "field:title",
+   "fields": 11,
+   "links": [
+    {
+     "field": "data_source",
+     "type": "Link",
+     "to": "Insights Data Source v3"
+    },
+    {
+     "field": "secrets",
+     "type": "Table",
+     "to": "Insights Secret Key"
+    },
+    {
+     "field": "last_log",
+     "type": "Link",
+     "to": "Insights Table Import Log"
+    }
+   ]
+  },
+  {
+   "name": "Insights Table Import Log",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 16,
+   "links": [
+    {
+     "field": "import_job",
+     "type": "Link",
+     "to": "Insights Table Import Job"
+    }
+   ]
+  },
+  {
+   "name": "Insights Table Link v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": "autoincrement",
+   "fields": 5,
+   "links": [
+    {
+     "field": "data_source",
+     "type": "Link",
+     "to": "Insights Data Source v3"
+    }
+   ]
+  },
+  {
+   "name": "Insights Table v3",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 17,
+   "links": [
+    {
+     "field": "data_source",
+     "type": "Link",
+     "to": "Insights Data Source v3"
+    }
+   ]
+  },
+  {
+   "name": "Insights Team",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": "field:team_name",
+   "fields": 3,
+   "links": [
+    {
+     "field": "team_members",
+     "type": "Table",
+     "to": "Insights Team Member"
+    },
+    {
+     "field": "team_permissions",
+     "type": "Table",
+     "to": "Insights Resource Permission"
+    }
+   ]
+  },
+  {
+   "name": "Insights Team Member",
+   "issingle": 0,
+   "istable": 1,
+   "autoname": "autoincrement",
+   "fields": 1,
+   "links": [
+    {
+     "field": "user",
+     "type": "Link",
+     "to": "User"
+    }
+   ]
+  },
+  {
+   "name": "Insights User Invitation",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": "autoincrement",
+   "fields": 6,
+   "links": [
+    {
+     "field": "invited_by",
+     "type": "Link",
+     "to": "User"
+    }
+   ]
+  },
+  {
+   "name": "Insights Workbook",
+   "issingle": 0,
+   "istable": 0,
+   "autoname": null,
+   "fields": 4,
+   "links": [
+    {
+     "field": "module",
+     "type": "Link",
+     "to": "Module Def"
+    }
+   ]
+  }
+ ],
+ "routes": [
+  {
+   "name": "Login",
+   "path": "/login"
+  },
+  {
+   "name": "Home",
+   "path": "/"
+  },
+  {
+   "name": "DashboardList",
+   "path": "/dashboards"
+  },
+  {
+   "name": "WorkbookList",
+   "path": "/workbook"
+  },
+  {
+   "name": "WorkbookQuery",
+   "path": "query/:query_name"
+  },
+  {
+   "name": "WorkbookChart",
+   "path": "chart/:chart_name"
+  },
+  {
+   "name": "WorkbookDashboard",
+   "path": "dashboard/:dashboard_name"
+  },
+  {
+   "name": "DataSourceList",
+   "path": "/data-source"
+  },
+  {
+   "name": "DataSourceTableList",
+   "path": "/data-source/:name"
+  },
+  {
+   "name": "DataSourceTable",
+   "path": "/data-source/:data_source/:table_name"
+  },
+  {
+   "name": "DataStoreList",
+   "path": "/data-store"
+  },
+  {
+   "name": "Dashboard",
+   "path": "/dashboards/:name"
+  },
+  {
+   "name": "Workbook",
+   "path": "/workbook/:workbook_name"
+  },
+  {
+   "name": "SharedChart",
+   "path": "/shared/chart/:chart_name"
+  },
+  {
+   "name": "SharedDashboard",
+   "path": "/shared/dashboard/:dashboard_name"
+  }
+ ],
+ "vue_files": 231,
+ "sidebar": [
+  "Dashboards",
+  "Workbooks",
+  "Data Sources",
+  "Data Store (when enable_data_store)",
+  "Settings (dialog)"
+ ]
+}

@@ -1,0 +1,42 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe import _
+from frappe.model.document import Document
+
+SUPPORTED = ("DIGIT Compensation Review", "DIGIT Position Budget", "DIGIT Workforce Plan")
+
+
+class DIGITParallelApproval(Document):
+	"""APR-02 parallel approval round on one DIGIT submittable document (digit_hr.api.parallel_approval).
+	Decisions are recorded only by the API (approver or substitute, once, never the document's creator)."""
+
+	def validate(self):
+		if self.reference_doctype not in SUPPORTED:
+			frappe.throw(_("Parallel approval is available for: {0}").format(", ".join(_(d) for d in SUPPORTED)))
+		ref = frappe.db.get_value(self.reference_doctype, self.reference_name, ["owner", "docstatus", "company"], as_dict=True)
+		if not ref:
+			frappe.throw(_("Document {0} not found").format(self.reference_name))
+		self.company = ref.company
+		users = [r.approver for r in self.approvers]
+		if not users or len(set(users)) != len(users):
+			frappe.throw(_("List each approver once"))
+		for r in self.approvers:
+			if ref.owner in (r.approver, r.substitute):
+				frappe.throw(_("The creator of the document cannot be one of its approvers"))
+			if r.substitute and r.substitute == r.approver:
+				frappe.throw(_("A substitute must be a different user"))
+			for u in (r.approver, r.substitute):
+				if u and not frappe.db.get_value("User", u, "enabled"):
+					frappe.throw(_("User {0} is not active").format(u))
+				# no blind approvals: every approver / substitute must already be able to read the document (no access is granted)
+				if u and not frappe.has_permission(self.reference_doctype, "read", doc=self.reference_name, user=u):
+					frappe.throw(_("{0} cannot read this document, so cannot approve it").format(u))
+		if self.rule == "Quorum" and not (1 <= (self.quorum or 0) <= len(users)):
+			frappe.throw(_("Quorum must be between 1 and the number of approvers"))
+		before = self.get_doc_before_save()
+		if not frappe.flags.get("digit_parallel_action") and before:
+			if [(r.approver, r.decision, r.decided_by) for r in before.approvers] != [(r.approver, r.decision, r.decided_by) for r in self.approvers] \
+				or before.approval_status != self.approval_status or before.rule != self.rule or before.quorum != self.quorum:
+				frappe.throw(_("Approvers, rule and decisions change only through the approval actions"), frappe.PermissionError)

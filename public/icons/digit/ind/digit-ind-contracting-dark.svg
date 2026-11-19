@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="contracting">
+  <rect x="24" y="66" width="52" height="12" rx="5" fill="#FFFFFF"></rect>
+  <rect x="30" y="40" width="10" height="26" rx="4" fill="#FFFFFF"></rect>
+  <polygon points="35,20 78,30 78,40 35,34" fill="#34D399"></polygon>
+  <rect x="58" y="40" width="7" height="28" rx="3" fill="#FFFFFF"></rect>
+</svg>

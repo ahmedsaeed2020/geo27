@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100" role="img" aria-label="support">
+  <rect x="20" y="24" width="60" height="38" rx="10" fill="#0B1F17"></rect>
+  <polygon points="34,60 34,78 50,62" fill="#0B1F17"></polygon>
+  <path d="M38 42 l8 8 l17 -18" fill="none" stroke="#0A8754" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>

@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "app": "digit_hr",
+  "title": "DIGIT HR",
+  "title_ar": "ديجيت للموارد البشرية",
+  "frappe_package": "frappe_apps/digit_hr",
+  "frontend": {
+    "kind": "hosted-spa",
+    "summary": "Frappe-hosted single-page app served at /digit-hr by www/digit-hr.html, reading and writing native HRMS/ERPNext records through digit_hr.api.bridge (permission-scoped reads, allowlisted transactional writes).",
+    "entry_html": "www/digit-hr.html",
+    "bundle_dir": "public/frontend",
+    "build": null,
+    "gap": "The compiled SPA bundle is not in this repository and cannot be built here: the HR snapshot's hosted entry (src/host/frappe, vite.frappe.config.ts, scripts/frappe/build-spa.ts) needs a Frappe host bridge in the shared Core (src/lib/host.ts plus adapter read/write hooks) that the approved Final Core does not have. Porting it changes protected Core files and needs owner approval (HR-B7)."
+  },
+  "sources": [
+    "src/plugins/digit_hr",
+    "src/components/digithr",
+    "src/routes/digit-hr.*",
+    "public/icons/digit_hr"
+  ],
+  "docs": [
+    "docs/digit_hr",
+    "docs/digit-app-builder/HR_INTEGRATION_BLOCKERS.md"
+  ],
+  "required_apps": ["frappe", "erpnext", "hrms"],
+  "target": {
+    "frappe": ">=16.0.0,<17.0.0",
+    "erpnext": ">=16.0.0,<17.0.0",
+    "hrms": ">=16.0.0,<17.0.0",
+    "python": ">=3.14,<3.15"
+  },
+  "integrations": [
+    { "name": "GeoInTime attendance", "status": "OPTIONAL_NOT_CONFIGURED", "needs": "Optional. No signed technical specification or credentials were provided; no connector is shipped." },
+    { "name": "Qiwa / GOSI / Mudad", "status": "NOT_INCLUDED", "needs": "Not included. Requires signed technical specifications and explicit permission before any connector is built." }
+  ],
+  "env": [
+    { "name": "digit_hr_allow_demo (site config)", "purpose": "Disposable test sites only: allows `bench execute digit_hr.demo.load`. Never set on staging/production data.", "required": false }
+  ],
+  "preflight": [
+    "(cd sites && ../env/bin/python -m digit_hr.preflight <staging-site>)"
+  ],
+  "staging_checks": [
+    "After install, open /digit-hr as HR Manager, HR User and Employee; each sees only permitted companies, employees and salary data.",
+    "Open each of the seven modules and a section workspace; KPI counts match the native lists they drill into.",
+    "Create and submit a Leave Application from DIGIT HR; it appears in the native HRMS list with the same status.",
+    "Switch the user language to Arabic: the app renders RTL with Arabic labels.",
+    "bench --site <staging-site> execute digit_hr.api.health.check reports no blocking issue.",
+    "bench --site <staging-site> run-tests --app digit_hr passes.",
+    "bench --site <staging-site> uninstall-app digit_hr removes DIGIT DocTypes only; native HRMS/ERPNext records stay."
+  ],
+  "known_limitations": [
+    "The compiled /digit-hr frontend bundle is absent (see frontend gap, HR-B7); without it the /digit-hr page cannot load on Frappe. Desk DocTypes, reports, workflow, sidebar and dock entries still install.",
+    "Integration blockers HR-B1..B6 from the Final Core import remain open (docs/digit-app-builder/HR_INTEGRATION_BLOCKERS.md).",
+    "The package README reports an install on a disposable Frappe 16.52 sandbox from the HR snapshot; that evidence is not part of this repository and was not re-run for this build.",
+    "pyproject requires Python >=3.14,<3.15 while the package README table says >=3.10; the release follows pyproject.",
+    "The virtual plugin manifest (0.1.0) and the Frappe package (1.0.0) are independent version lines."
+  ]
+}

@@ -1,0 +1,48 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe import _
+from frappe.model.document import Document
+
+from digit_hr.utils import set_employee_context
+
+DECISION_FIELDS = ("decided_by", "decided_on", "decision_note", "applied_by", "applied_on", "previous_account_masked")
+
+
+def iban_ok(iban: str) -> bool:
+	"""ISO 13616 check digits (mod 97); Saudi IBANs (SA) are 24 characters."""
+	s = (iban or "").replace(" ", "").upper()
+	if len(s) < 15 or len(s) > 34 or not s[:2].isalpha() or not s[2:4].isdigit() or not s.isalnum():
+		return False
+	if s.startswith("SA") and len(s) != 24:
+		return False
+	num = "".join(str(int(c, 36)) for c in s[4:] + s[:4])
+	return int(num) % 97 == 1
+
+
+class DIGITBankChangeRequest(Document):
+	"""POR-04 bank-detail change request. The employee files and submits it; an HR user decides it (never their own) and
+	applies it to the native Employee record (digit_hr.api.bank_change). Employees never write the Employee bank fields."""
+
+	def validate(self):
+		set_employee_context(self)
+		if self.new_iban:
+			self.new_iban = self.new_iban.replace(" ", "").upper()
+			if not iban_ok(self.new_iban):
+				frappe.throw(_("IBAN {0} is not valid").format(self.new_iban))
+		if not (self.new_bank_ac_no or self.new_iban):
+			frappe.throw(_("Enter the new account number or IBAN"))
+		before = self.get_doc_before_save()
+		action = frappe.flags.get("digit_bank_action")  # set only by digit_hr.api.bank_change (decide / apply)
+		old_status = before.request_status if before else "Draft"
+		if self.request_status != old_status and not action and not (old_status == "Draft" and self.request_status == "Submitted"):
+			frappe.throw(_("Use the Approve, Reject or Apply action to change the status"), frappe.PermissionError)
+		if not action and any((self.get(f) or "") != ((before.get(f) if before else None) or "") for f in DECISION_FIELDS):
+			frappe.throw(_("Only HR can decide or apply a bank change request"), frappe.PermissionError)
+		if before and old_status != "Draft" and self.has_value_changed_any(("employee", "new_bank_name", "new_bank_ac_no", "new_iban")):
+			frappe.throw(_("A submitted request can no longer be changed; reject it and file a new one"), frappe.PermissionError)
+
+	def has_value_changed_any(self, fields) -> bool:
+		before = self.get_doc_before_save()
+		return bool(before) and any((self.get(f) or "") != (before.get(f) or "") for f in fields)

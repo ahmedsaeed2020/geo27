@@ -1,0 +1,84 @@
+{
+ "_source": "crm/crm-develop/crm/install.py",
+ "lead_statuses": {
+  "New": {
+   "color": "gray",
+   "type": "Open",
+   "position": 1
+  },
+  "Contacted": {
+   "color": "orange",
+   "type": "Ongoing",
+   "position": 2
+  },
+  "Nurture": {
+   "color": "blue",
+   "type": "Ongoing",
+   "position": 3
+  },
+  "Qualified": {
+   "color": "green",
+   "type": "Won",
+   "position": 4
+  },
+  "Converted": {
+   "color": "teal",
+   "type": "Won",
+   "position": 5
+  },
+  "Unqualified": {
+   "color": "red",
+   "type": "Lost",
+   "position": 6
+  },
+  "Junk": {
+   "color": "purple",
+   "type": "Lost",
+   "position": 7
+  }
+ },
+ "deal_statuses": {
+  "Qualification": {
+   "color": "gray",
+   "type": "Open",
+   "probability": 10,
+   "position": 1
+  },
+  "Demo/Making": {
+   "color": "orange",
+   "type": "Ongoing",
+   "probability": 25,
+   "position": 2
+  },
+  "Proposal/Quotation": {
+   "color": "blue",
+   "type": "Ongoing",
+   "probability": 50,
+   "position": 3
+  },
+  "Negotiation": {
+   "color": "yellow",
+   "type": "Ongoing",
+   "probability": 70,
+   "position": 4
+  },
+  "Ready to Close": {
+   "color": "purple",
+   "type": "Ongoing",
+   "probability": 90,
+   "position": 5
+  },
+  "Won": {
+   "color": "green",
+   "type": "Won",
+   "probability": 100,
+   "position": 6
+  },
+  "Lost": {
+   "color": "red",
+   "type": "Lost",
+   "probability": 0,
+   "position": 7
+  }
+ }
+}

@@ -11,7 +11,8 @@ import {
   useRouterState,
   type ErrorComponentProps,
 } from "@tanstack/react-router";
-import { useEffect, useState, type ReactNode } from "react";
+import { lazy, Suspense, useEffect, useState, type ReactNode } from "react";
+import { coreHead } from "@/core/coreHead";
 import { useServerFn } from '@tanstack/react-start';
 import { getDraftSiteConfig } from '@/lib/cms-admin.functions';
 import type { SiteConfig } from '@/lib/site-config-schema';
@@ -26,7 +27,7 @@ import motionCss from '../motion.css?url';
 import { motionIdentity } from '@/motion/identity';
 import { captureAttribution } from '@/lib/campaign-attribution';
 
-import appCss from "../styles.css?url";
+import appCss from "../site.css?url";
 import bilingualCss from "../bilingual.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { localizeTree, useLocale } from "@/lib/i18n";
@@ -93,10 +94,18 @@ function ErrorComponent({ error, reset }: ErrorComponentProps) {
   ), locale);
 }
 
+/** DIGIT app paths (Core + Enterprise + CRM). Everything else is the website. */
+export const isCorePath = (p: string) => /^\/(digit-crm|digit-hr|digit-pro|digit-fsm|digit|app|desk|enterprise|login|insights|finance|stock|tax|report|page|selling|buying|control|developer|plugins|settings|printview|my-space|help|dev|department|dashboard|customize-form|coverage|compliance)(\/|$)/.test(p);
+const CoreRoot = lazy(() => import("@/core/coreRoot").then((m) => ({ default: m.CoreRootComponent })));
+
 export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
   loaderDeps: ({ search }) => ({ preview: previewTokenFrom(search) }),
-  loader: ({ context, deps }) => loadSite(context.queryClient, deps),
-  head: ({ loaderData }) => {
+  beforeLoad: async ({ location }) => {
+    if (isCorePath(location.pathname)) { const m = await import("@/core/coreRoot"); await m.coreBeforeLoad(location); }
+  },
+  loader: ({ context, deps, location }) => (isCorePath(location.pathname) ? null : loadSite(context.queryClient, deps)),
+  head: ({ loaderData, matches }) => {
+    if (isCorePath(matches[matches.length - 1]?.pathname ?? "/")) return coreHead();
     const branding = loaderData?.config.branding;
     const icon = branding?.faviconUrl;
     return {
@@ -151,6 +160,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: ReactNode }) {
+  const core = useRouterState({ select: state => isCorePath(state.location.pathname) });
+  if (core) return (
+    <html lang="ar" dir="rtl" suppressHydrationWarning>
+      <head><HeadContent /></head>
+      <body>{children}<Scripts /></body>
+    </html>
+  );
   const landing = useRouterState({ select: state => /^\/(?:en\/?)?$/.test(state.location.pathname) });
   const english = useRouterState({ select: state => /^\/en(?:\/|$)/.test(state.location.pathname) });
   // The product family's motion identity is server-rendered so first-fold choreography runs on first paint.
@@ -200,7 +216,14 @@ function useSettingsDraft(): SettingsDraftState {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
-  const site = Route.useLoaderData();
+  const core = useRouterState({ select: s => isCorePath(s.location.pathname) });
+  if (core) return <QueryClientProvider client={queryClient}><Suspense fallback={null}><CoreRoot /></Suspense></QueryClientProvider>;
+  return <SiteRoot />;
+}
+
+function SiteRoot() {
+  const { queryClient } = Route.useRouteContext();
+  const site = Route.useLoaderData()!;
   const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
   const landing = useRouterState({ select: s => /^\/(?:en\/?)?$/.test(s.location.pathname) });
   const draft = useSettingsDraft();

@@ -1,0 +1,157 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+"""CMP-04 total compensation statement of one employee for a year (read-only).
+
+	GET /api/method/digit_hr.api.compensation.statement?employee=<Employee>&year=2026
+
+The caller must be the employee themself or hold an HR role, and be able to read the Employee. Every section is read with
+frappe.get_list, so it follows the native permissions for that DocType: a section the caller may not read is «denied»,
+never 0. Sources: current submitted Salary Structure Assignment; submitted Salary Slips of the year (totals and per
+component from their Salary Detail rows); submitted Additional Salary of the year. CMP-07 employer contributions: HRMS keeps them off the salary slip, so they come
+from the current assignment's own native evaluation (SalaryStructureAssignment.get_evaluated_components — the same rows
+HRMS adds to the assignment's CTC); nothing is computed or assumed here (no statutory rate is invented)."""
+
+import frappe
+from frappe import _
+from frappe.utils import cint, flt, getdate, nowdate
+
+from digit_hr.api import permission as P
+
+
+def _section(doctype: str, fn):
+	if not frappe.has_permission(doctype, "read"):
+		return {"state": "denied"}
+	return fn()
+
+
+def employer_totals(evaluated: list, periods: int) -> dict:
+	"""Employer-contribution rows evaluated by HRMS -> per period / per year; statistical rows are listed, never totalled
+	(the same rule HRMS applies to CTC)."""
+	items = [{"component": r.get("salary_component"), "per_period": round(flt(r.get("default_amount")), 2),
+		"per_year": round(flt(r.get("default_amount")) * periods, 2), "statistical": bool(r.get("statistical_component"))} for r in evaluated]
+	counted = [i for i in items if not i["statistical"]]
+	return {"items": items, "total_per_period": round(sum(i["per_period"] for i in counted), 2),
+		"total_per_year": round(sum(i["per_year"] for i in counted), 2)}
+
+
+@frappe.whitelist(methods=["GET"])
+def statement(employee: str | None = None, year: int | None = None) -> dict:
+	if not P.has_app_permission():
+		frappe.throw(_("You do not have access to DIGIT HR"), frappe.PermissionError)
+	own = P.own_employees()
+	employee = employee or (own[0] if own else None)
+	# own record, or an HR role (pay visibility for line managers / viewers is not granted here; it is a policy decision)
+	if not employee or not frappe.db.exists("Employee", employee) or not frappe.has_permission("Employee", "read", doc=employee) \
+		or (employee not in own and not P.is_hr()):
+		frappe.throw(_("You do not have permission to view this employee's compensation"), frappe.PermissionError)
+	year = cint(year) or getdate(nowdate()).year
+	start, end = f"{year}-01-01", f"{year}-12-31"
+	emp = frappe.db.get_value("Employee", employee, ["employee_name", "company"], as_dict=True)
+
+	def assignment():
+		rows = frappe.get_list("Salary Structure Assignment", filters={"employee": employee, "docstatus": 1, "from_date": ["<=", min(end, nowdate())]},
+			fields=["name", "salary_structure", "from_date", "base", "variable", "currency"], order_by="from_date desc", limit=1)
+		return {"state": "ok", **rows[0]} if rows else {"state": "no_data"}
+
+	def slips():
+		rows = frappe.get_list("Salary Slip", filters={"employee": employee, "docstatus": 1, "start_date": ["between", [start, end]]},
+			fields=["name", "start_date", "gross_pay", "total_deduction", "net_pay", "currency"], order_by="start_date asc", limit=0)
+		if not rows:
+			return {"state": "no_data", "count": 0}
+		comps = {}
+		for d in frappe.get_all("Salary Detail", filters={"parenttype": "Salary Slip", "parent": ["in", [r.name for r in rows]]},
+			fields=["parentfield", "salary_component", "amount"]):
+			key = ("earnings" if d.parentfield == "earnings" else "deductions", d.salary_component)
+			comps[key] = comps.get(key, 0.0) + flt(d.amount)
+		return {"state": "ok", "count": len(rows), "currency": rows[0].currency,
+			"gross": round(sum(flt(r.gross_pay) for r in rows), 2), "deductions": round(sum(flt(r.total_deduction) for r in rows), 2),
+			"net": round(sum(flt(r.net_pay) for r in rows), 2),
+			"components": [{"type": t, "component": c, "amount": round(a, 2)} for (t, c), a in sorted(comps.items())],
+			"months": [{"slip": r.name, "start_date": str(r.start_date), "gross": flt(r.gross_pay), "net": flt(r.net_pay)} for r in rows]}
+
+	def employer():
+		# CMP-07: the employer's share per payroll period, evaluated by HRMS from the employee's current submitted assignment
+		rows = frappe.get_list("Salary Structure Assignment", filters={"employee": employee, "docstatus": 1, "from_date": ["<=", min(end, nowdate())]},
+			fields=["name", "salary_structure", "currency"], order_by="from_date desc", limit=1)
+		if not rows:
+			return {"state": "no_data"}
+		from hrms.payroll.doctype.salary_structure_assignment.salary_structure_assignment import PERIODS_PER_YEAR
+
+		ssa = frappe.get_doc("Salary Structure Assignment", rows[0].name)
+		freq = frappe.db.get_value("Salary Structure", ssa.salary_structure, "payroll_frequency")
+		periods = PERIODS_PER_YEAR.get(freq, 12)
+		try:
+			evaluated = ssa.get_evaluated_components().employer_contributions or []
+		except Exception:  # a structure formula HRMS cannot evaluate for this employee: report it, do not guess an amount
+			frappe.clear_last_message()
+			frappe.log_error(title="DIGIT HR CMP-07 employer contribution evaluation", reference_doctype="Salary Structure Assignment", reference_name=ssa.name)
+			return {"state": "error", "assignment": ssa.name, "reason": _("The salary structure formulas could not be evaluated for this employee")}
+		if not evaluated:
+			return {"state": "not_configured", "assignment": ssa.name, "salary_structure": ssa.salary_structure,
+				"reason": _("The salary structure has no Employer Contribution components")}
+		return {"state": "ok", "assignment": ssa.name, "salary_structure": ssa.salary_structure, "payroll_frequency": freq, "currency": ssa.currency,
+			**employer_totals(evaluated, periods),
+			"ctc_per_year": flt(ssa.get("ctc")) or None, "annual_gross_earning": flt(ssa.get("annual_gross_earning")) or None,
+			"basis": "HRMS SalaryStructureAssignment.get_evaluated_components (full period, no proration); off the salary slip"}
+
+	def additional():
+		rows = frappe.get_list("Additional Salary", filters={"employee": employee, "docstatus": 1, "payroll_date": ["between", [start, end]]},
+			fields=["salary_component", "type", "amount"], limit=0)
+		agg = {}
+		for r in rows:
+			agg[(r.type, r.salary_component)] = agg.get((r.type, r.salary_component), 0.0) + flt(r.amount)
+		return {"state": "ok" if rows else "no_data", "items": [{"type": t, "component": c, "amount": round(a, 2)} for (t, c), a in sorted(agg.items())]}
+
+	return {"contract": "digit-hr-compensation-statement", "version": 1, "employee": employee, "employee_name": emp.employee_name,
+		"company": emp.company, "year": year, "self": employee in own,
+		"current_assignment": _section("Salary Structure Assignment", assignment), "salary_slips": _section("Salary Slip", slips),
+		"additional_salary": _section("Additional Salary", additional),
+		"employer_contributions": _section("Salary Structure Assignment", employer)}
+
+
+# ---------------------------------------------------------------- CMP-03 post an approved review to payroll (flag OFF)
+POSTING_FLAG = "digit_hr_compensation_posting"
+
+
+@frappe.whitelist(methods=["POST"])
+def post_approved(review: str, from_date: str) -> dict:
+	"""Draft Salary Structure Assignment from a SUBMITTED DIGIT Compensation Review — never submitted here.
+
+	INERT unless site_config digit_hr_compensation_posting = 1 (OWNER_APPROVALS #7). The draft copies the employee's current
+	submitted assignment (structure, company, currency, variable, payroll payable account) with base = the review's proposed
+	base from `from_date` (explicit effective date; the review has none). Created with the caller's own native permission
+	(no ignore_permissions); approval of the assignment stays in the native form. One assignment per employee and date: a
+	second call returns the existing one."""
+	from digit_hr.api.permission import has_management_permission
+
+	if not has_management_permission():
+		frappe.throw(_("You do not have access to HR management"), frappe.PermissionError)
+	if not cint(frappe.conf.get(POSTING_FLAG)):
+		return {"state": "disabled", "reason": "OWNER_APPROVALS #7 (site_config digit_hr_compensation_posting)"}
+	if not review or not frappe.db.exists("DIGIT Compensation Review", review) or not frappe.has_permission("DIGIT Compensation Review", "read", doc=review):
+		frappe.throw(_("You do not have permission to view this document"), frappe.PermissionError)
+	rv = frappe.get_doc("DIGIT Compensation Review", review)
+	if rv.docstatus != 1:
+		frappe.throw(_("Only an approved (submitted) compensation review can be posted"), frappe.ValidationError)
+	if not from_date:
+		frappe.throw(_("Value missing for {0}").format(_("From Date")), frappe.ValidationError)
+	start = getdate(from_date)
+	if rv.review_date and start < getdate(rv.review_date):
+		frappe.throw(_("The effective date cannot be before the review date {0}").format(rv.review_date), frappe.ValidationError)
+	SSA = "Salary Structure Assignment"
+	existing = frappe.get_list(SSA, filters={"employee": rv.employee, "from_date": start, "docstatus": ["!=", 2]}, fields=["name", "docstatus", "base"], limit=1)
+	if existing:
+		return {"state": "exists", "assignment": existing[0].name, "docstatus": existing[0].docstatus, "base": flt(existing[0].base),
+			"route": f"/digit/app/hrms/salary-structure-assignment/{existing[0].name}"}
+	cur = frappe.get_list(SSA, filters={"employee": rv.employee, "docstatus": 1, "from_date": ["<=", start]},
+		fields=["name", "salary_structure", "company", "currency", "variable", "base", "payroll_payable_account"], order_by="from_date desc", limit=1)
+	if not cur:
+		frappe.throw(_("Employee {0} has no submitted salary structure assignment to base the change on").format(rv.employee), frappe.ValidationError)
+	c = cur[0]
+	doc = frappe.get_doc({"doctype": SSA, "employee": rv.employee, "company": c.company, "salary_structure": c.salary_structure, "currency": c.currency,
+		"from_date": start, "base": flt(rv.proposed_base), "variable": flt(c.variable), "payroll_payable_account": c.payroll_payable_account})
+	doc.insert()  # native permission and validation (duplicate date, joining date, income tax slab ...)
+	rv.add_comment("Info", _("Draft salary structure assignment {0} created from this review (base {1} -> {2}, from {3})").format(
+		doc.name, flt(c.base), flt(rv.proposed_base), start))
+	return {"state": "created", "assignment": doc.name, "docstatus": 0, "base_before": flt(c.base), "base_after": flt(rv.proposed_base),
+		"from_date": str(start), "route": f"/digit/app/hrms/salary-structure-assignment/{doc.name}"}

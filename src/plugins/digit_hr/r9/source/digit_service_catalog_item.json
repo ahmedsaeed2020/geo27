@@ -1,0 +1,186 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-28 18:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 18:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "owner": "Administrator",
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "name": "DIGIT Service Catalog Item",
+ "autoname": "hash",
+ "naming_rule": "Random",
+ "istable": 0,
+ "track_changes": 1,
+ "title_field": "service_title",
+ "show_title_field_in_link": 1,
+ "search_fields": "service_title,title_ar,category",
+ "field_order": [
+  "service_title",
+  "title_ar",
+  "category",
+  "enabled",
+  "column_break_1",
+  "company",
+  "default_severity",
+  "sla_hours",
+  "sort_order",
+  "section_text",
+  "description",
+  "description_ar",
+  "form_fields",
+  "keywords",
+  "section_elig",
+  "eligibility"
+ ],
+ "fields": [
+  {
+   "fieldname": "service_title",
+   "fieldtype": "Data",
+   "label": "Service",
+   "reqd": 1,
+   "in_list_view": 1,
+   "bold": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "title_ar",
+   "fieldtype": "Data",
+   "label": "Service (Arabic)",
+   "idx": 2
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Case Category",
+   "options": "HR Letter\nPayroll Query\nLeave Query\nDocument Request\nIT & Access\nConfidential",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "idx": 3
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled",
+   "default": "1",
+   "in_list_view": 1,
+   "idx": 4
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 5
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "description": "Empty = every company",
+   "in_standard_filter": 1,
+   "idx": 6
+  },
+  {
+   "fieldname": "default_severity",
+   "fieldtype": "Select",
+   "label": "Default Severity",
+   "options": "Low\nMedium\nHigh\nCritical",
+   "default": "Medium",
+   "idx": 7
+  },
+  {
+   "fieldname": "sla_hours",
+   "fieldtype": "Int",
+   "label": "SLA (hours)",
+   "description": "Due date of a new case = opened on + these hours (empty = no SLA)",
+   "idx": 8
+  },
+  {
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order",
+   "idx": 9
+  },
+  {
+   "fieldname": "section_text",
+   "fieldtype": "Section Break",
+   "label": "Description",
+   "idx": 10
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "idx": 11
+  },
+  {
+   "fieldname": "description_ar",
+   "fieldtype": "Small Text",
+   "label": "Description (Arabic)",
+   "idx": 12
+  },
+  {
+   "fieldname": "form_fields",
+   "fieldtype": "Small Text",
+   "label": "Information to provide",
+   "description": "One prompt per line; shown to the employee and copied into the case details",
+   "idx": 13
+  },
+  {
+   "fieldname": "keywords",
+   "fieldtype": "Small Text",
+   "label": "Topic keywords",
+   "description": "Comma or line separated, Arabic and English; used to suggest this service from a free-text subject",
+   "idx": 14
+  },
+  {
+   "fieldname": "section_elig",
+   "fieldtype": "Section Break",
+   "label": "Eligibility",
+   "idx": 15
+  },
+  {
+   "fieldname": "eligibility",
+   "fieldtype": "Table",
+   "label": "Eligibility",
+   "options": "DIGIT Service Catalog Eligibility",
+   "description": "Empty = every employee. Rules of the same type: any matches; different types: all must match",
+   "idx": 16
+  }
+ ],
+ "permissions": [
+  {
+   "role": "HR Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "HR User",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1
+  }
+ ]
+}

@@ -1,0 +1,697 @@
+{
+ "generated": "2026-10-11 09:31",
+ "runs": {
+  "en": {
+   "checks": [
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Dock + module sidebar + list head (layout switcher · Refresh · … · + Add)",
+     "pass": true,
+     "note": "dock, bell, switcher, … menu",
+     "shot": "docs/parity/s0_list_head_en.jpg",
+     "lang": "en",
+     "ms": 1823
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Row relative time, comment count, heart; Filters N ×; sort ⇅",
+     "pass": true,
+     "note": "relative time, comments, heart, Filters N",
+     "shot": "docs/parity/s0_rows_en.jpg",
+     "lang": "en",
+     "ms": 58
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Footer page sizes 20/100/500/2500 + Load More",
+     "pass": true,
+     "note": "page sizes 20/100/500/2500",
+     "shot": "docs/parity/s0_footer_en.jpg",
+     "lang": "en",
+     "ms": 56
+    },
+    {
+     "section": "§0",
+     "doc": "Shell",
+     "bullet": "Notifications panel: tabs, mark all read, events",
+     "pass": true,
+     "note": "unread 3 → 0 after Mark all as read; events 3",
+     "shot": "docs/parity/s0_notifications_en.jpg",
+     "lang": "en",
+     "ms": 663
+    },
+    {
+     "section": "§6",
+     "doc": "Sales Invoice",
+     "bullet": "Lists › Show sidebar and Preferences › Show My Space change UI",
+     "pass": true,
+     "note": "Show sidebar off hides list sidebar; Show My Space toggles entry",
+     "shot": "docs/parity/s6_list_sidebar_en.jpg",
+     "lang": "en",
+     "ms": 6068
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "List sidebar: Assigned To / Created By / Tags / group-by counts, saved filters, Kanban, Reports",
+     "pass": true,
+     "note": "6 groups with counts",
+     "shot": "docs/parity/s0_sidebar_en.jpg",
+     "lang": "en",
+     "ms": 296
+    },
+    {
+     "section": "§3",
+     "doc": "Sales Invoice",
+     "bullet": "Switcher: List/Report/Dashboard/Kanban + default layouts (Drafts, Unpaid, Overdue, Credit Notes, This Month); URL state",
+     "pass": true,
+     "note": "6 layouts; URL layout=st-Unpaid",
+     "shot": "docs/parity/s3_switcher_en.jpg",
+     "lang": "en",
+     "ms": 2413
+    },
+    {
+     "section": "§3",
+     "doc": "Sales Invoice",
+     "bullet": "Layout stores filters/sort/columns/order/widths (resize + drag reorder), personal/shared",
+     "pass": true,
+     "note": "reorder posting_date→due_date, widths 248px, saved+reloaded active 'Parity Layout'",
+     "shot": "docs/parity/s3_layout_saved_en.jpg",
+     "lang": "en",
+     "ms": 4572
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "… menu items + Settings modal with grouped left nav",
+     "pass": true,
+     "note": "… menu 10 items; 9 sections",
+     "shot": "docs/parity/s2_sales_invoice_nav_en.jpg",
+     "lang": "en",
+     "ms": 3380
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "General: fields grouped by source Settings doctype; edits save to the real Settings doc",
+     "pass": true,
+     "note": "4 groups; toggle False→True saved to Settings doc",
+     "shot": "docs/parity/s2_sales_invoice_general_en.jpg",
+     "lang": "en",
+     "ms": 636
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Naming: series table with preview, + Add Series, default star, Naming Rules",
+     "pass": true,
+     "note": "\tSeries\tPreview ★\tACC-SINV-.YYYY.-\tACC-SINV-2026-00001 ☆\tACC-SINV-RET-.YYYY.-\tACC-SINV-RET-2026-00001",
+     "shot": "docs/parity/s2_sales_invoice_naming_en.jpg",
+     "lang": "en",
+     "ms": 145
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Print Formats: card grid, Default badge, click sets default (toast)",
+     "pass": true,
+     "note": "10 print format cards; default set",
+     "shot": "docs/parity/s2_sales_invoice_print_en.jpg",
+     "lang": "en",
+     "ms": 436
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Roles: Role | Level | Read…Amend matrix, toggle on click, + Add role",
+     "pass": true,
+     "note": "matrix toggle 1→0",
+     "shot": "docs/parity/s2_sales_invoice_roles_en.jpg",
+     "lang": "en",
+     "ms": 150
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Workflow / User Permissions / Notifications / Email Templates lists with empty states + New",
+     "pass": true,
+     "note": "Workflow:1, User Permissions:1, Notifications:1, Email Templates:1",
+     "shot": "docs/parity/s2_sales_invoice_lists_en.jpg",
+     "lang": "en",
+     "ms": 746
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Global Search: include toggle, Configure fields checklist with search, Manage priority, Save",
+     "pass": true,
+     "note": "148 configurable fields; saved",
+     "shot": "docs/parity/s2_sales_invoice_globalsearch_en.jpg",
+     "lang": "en",
+     "ms": 146
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "… menu items + Settings modal with grouped left nav",
+     "pass": true,
+     "note": "… menu 10 items; 9 sections",
+     "shot": "docs/parity/s2_customer_nav_en.jpg",
+     "lang": "en",
+     "ms": 3405
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "General: fields grouped by source Settings doctype; edits save to the real Settings doc",
+     "pass": true,
+     "note": "2 groups; toggle False→True saved to Settings doc",
+     "shot": "docs/parity/s2_customer_general_en.jpg",
+     "lang": "en",
+     "ms": 599
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Naming: series table with preview, + Add Series, default star, Naming Rules",
+     "pass": true,
+     "note": "\tSeries\tPreview ★\tCUST-.YYYY.-\tCUST-2026-00001",
+     "shot": "docs/parity/s2_customer_naming_en.jpg",
+     "lang": "en",
+     "ms": 99
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Print Formats: card grid, Default badge, click sets default (toast)",
+     "pass": true,
+     "note": "1 print format cards; default set",
+     "shot": "docs/parity/s2_customer_print_en.jpg",
+     "lang": "en",
+     "ms": 416
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Roles: Role | Level | Read…Amend matrix, toggle on click, + Add role",
+     "pass": true,
+     "note": "matrix toggle 1→0",
+     "shot": "docs/parity/s2_customer_roles_en.jpg",
+     "lang": "en",
+     "ms": 169
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Workflow / User Permissions / Notifications / Email Templates lists with empty states + New",
+     "pass": true,
+     "note": "Workflow:1, User Permissions:1, Notifications:1, Email Templates:1",
+     "shot": "docs/parity/s2_customer_lists_en.jpg",
+     "lang": "en",
+     "ms": 798
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Global Search: include toggle, Configure fields checklist with search, Manage priority, Save",
+     "pass": true,
+     "note": "46 configurable fields; saved",
+     "shot": "docs/parity/s2_customer_globalsearch_en.jpg",
+     "lang": "en",
+     "ms": 135
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Config: stepper, Import settings, dropzone, Upload dialog, file card with row count",
+     "pass": true,
+     "note": "CSV v1650_customers.csv CSV · 10 rows Clear",
+     "shot": "docs/parity/s1_config_en.jpg",
+     "lang": "en",
+     "ms": 1953
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Preview: two header rows (field mapping + file column), linked Address/Contact columns, Map values",
+     "pass": true,
+     "note": "two header rows; linked mappings ['Address Line 1 (Address)', 'City/Town (Address)', 'Email Address (Contact)']; value-map selects 1",
+     "shot": "docs/parity/s1_preview_en.jpg",
+     "lang": "en",
+     "ms": 277
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Fix issues: stats cards, empty state or row errors with inline edit + Skip invalid rows",
+     "pass": true,
+     "note": "Rows checked 10 Columns matched 7 Rows skipped 10 · issues 10",
+     "shot": "docs/parity/s1_fix_en.jpg",
+     "lang": "en",
+     "ms": 137
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Import Log: summary, All/Success/Failed tabs, row links; Done refreshes list",
+     "pass": true,
+     "note": "log tabs ok; linked addresses created 25; list refreshed 0",
+     "shot": "docs/parity/s1_log_en.jpg",
+     "lang": "en",
+     "ms": 1044
+    },
+    {
+     "section": "§5",
+     "doc": "Sales Invoice",
+     "bullet": "Resize handles + gear → Configure Columns (Fieldname | Width | Sticky, reorder, add/remove, reset, Update)",
+     "pass": true,
+     "note": "5 columns configurable (width/sticky/reorder)",
+     "shot": "docs/parity/s5_configure_en.jpg",
+     "lang": "en",
+     "ms": 2554
+    },
+    {
+     "section": "§5",
+     "doc": "Sales Invoice",
+     "bullet": "Row checkboxes + select all → Delete/Edit/Duplicate N rows; Bulk Edit dialog; footer Add row/Add multiple/Download/Upload",
+     "pass": true,
+     "note": "3 bulk actions (Delete/Edit/Duplicate N rows); footer: Add row Add multiple Download Upload",
+     "shot": "docs/parity/s5_bulk_en.jpg",
+     "lang": "en",
+     "ms": 611
+    },
+    {
+     "section": "§6",
+     "doc": "Sales Invoice",
+     "bullet": "Forms › Show navigation buttons + Show absolute datetime in timeline",
+     "pass": true,
+     "note": "nav arrows 2→0; timeline relative 0 → absolute 0",
+     "shot": "docs/parity/s6_form_toggles_en.jpg",
+     "lang": "en",
+     "ms": 1881
+    },
+    {
+     "section": "§6",
+     "doc": "Shell",
+     "bullet": "Preferences › Mute sounds suppresses the notification sound; My Space page",
+     "pass": true,
+     "note": "sounds played 0, suppressed 1",
+     "shot": "docs/parity/s6_myspace_en.jpg",
+     "lang": "en",
+     "ms": 1827
+    },
+    {
+     "section": "§7",
+     "doc": "General Ledger",
+     "bullet": "Link opens full form in right panel (~45%), report stays visible, ↗ / ×, swaps on next link, Execution Time",
+     "pass": true,
+     "note": "panel Debtors - DDT → DDT-SINV-010; width 45%; Execution Time shown",
+     "shot": "docs/parity/s7_split_en.jpg",
+     "lang": "en",
+     "ms": 2855
+    },
+    {
+     "section": "§7",
+     "doc": "General Ledger",
+     "bullet": "Controlled by User Settings › Reports › Split view",
+     "pass": true,
+     "note": "Split view off → links navigate instead",
+     "shot": "docs/parity/s7_setting_en.jpg",
+     "lang": "en",
+     "ms": 2458
+    },
+    {
+     "section": "§6",
+     "doc": "Shell",
+     "bullet": "Avatar → Settings modal with 9 sections (accepted in Part A)",
+     "pass": true,
+     "note": "User Settings modal opened from avatar menu",
+     "shot": "docs/parity/s6_user_settings_en.jpg",
+     "lang": "en",
+     "ms": 2460
+    },
+    {
+     "section": "§2",
+     "doc": "Shell",
+     "bullet": "Ctrl/Cmd+G opens tabular global search",
+     "pass": true,
+     "note": "Ctrl+G opens tabular global search",
+     "shot": "docs/parity/s2_ctrlg_en.jpg",
+     "lang": "en",
+     "ms": 605
+    }
+   ],
+   "english_on_ar": {},
+   "page_errors": []
+  },
+  "ar": {
+   "checks": [
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Dock + module sidebar + list head (layout switcher · Refresh · … · + Add)",
+     "pass": true,
+     "note": "dock, bell, switcher, … menu",
+     "shot": "docs/parity/s0_list_head_ar.jpg",
+     "lang": "ar",
+     "ms": 1826
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Row relative time, comment count, heart; Filters N ×; sort ⇅",
+     "pass": true,
+     "note": "relative time, comments, heart, Filters N",
+     "shot": "docs/parity/s0_rows_ar.jpg",
+     "lang": "ar",
+     "ms": 71
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "Footer page sizes 20/100/500/2500 + Load More",
+     "pass": true,
+     "note": "page sizes 20/100/500/2500",
+     "shot": "docs/parity/s0_footer_ar.jpg",
+     "lang": "ar",
+     "ms": 63
+    },
+    {
+     "section": "§0",
+     "doc": "Shell",
+     "bullet": "Notifications panel: tabs, mark all read, events",
+     "pass": true,
+     "note": "unread 3 → 0 after Mark all as read; events 3",
+     "shot": "docs/parity/s0_notifications_ar.jpg",
+     "lang": "ar",
+     "ms": 679
+    },
+    {
+     "section": "§6",
+     "doc": "Sales Invoice",
+     "bullet": "Lists › Show sidebar and Preferences › Show My Space change UI",
+     "pass": true,
+     "note": "Show sidebar off hides list sidebar; Show My Space toggles entry",
+     "shot": "docs/parity/s6_list_sidebar_ar.jpg",
+     "lang": "ar",
+     "ms": 6016
+    },
+    {
+     "section": "§0",
+     "doc": "Sales Invoice",
+     "bullet": "List sidebar: Assigned To / Created By / Tags / group-by counts, saved filters, Kanban, Reports",
+     "pass": true,
+     "note": "6 groups with counts",
+     "shot": "docs/parity/s0_sidebar_ar.jpg",
+     "lang": "ar",
+     "ms": 301
+    },
+    {
+     "section": "§3",
+     "doc": "Sales Invoice",
+     "bullet": "Switcher: List/Report/Dashboard/Kanban + default layouts (Drafts, Unpaid, Overdue, Credit Notes, This Month); URL state",
+     "pass": true,
+     "note": "6 layouts; URL layout=st-Unpaid",
+     "shot": "docs/parity/s3_switcher_ar.jpg",
+     "lang": "ar",
+     "ms": 2415
+    },
+    {
+     "section": "§3",
+     "doc": "Sales Invoice",
+     "bullet": "Layout stores filters/sort/columns/order/widths (resize + drag reorder), personal/shared",
+     "pass": true,
+     "note": "reorder posting_date→due_date, widths 252px, saved+reloaded active 'Parity Layout'",
+     "shot": "docs/parity/s3_layout_saved_ar.jpg",
+     "lang": "ar",
+     "ms": 4584
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "… menu items + Settings modal with grouped left nav",
+     "pass": true,
+     "note": "… menu 10 items; 9 sections",
+     "shot": "docs/parity/s2_sales_invoice_nav_ar.jpg",
+     "lang": "ar",
+     "ms": 3594
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "General: fields grouped by source Settings doctype; edits save to the real Settings doc",
+     "pass": true,
+     "note": "4 groups; toggle False→True saved to Settings doc",
+     "shot": "docs/parity/s2_sales_invoice_general_ar.jpg",
+     "lang": "ar",
+     "ms": 732
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Naming: series table with preview, + Add Series, default star, Naming Rules",
+     "pass": true,
+     "note": "\tالسلسلة\tمعاينة ★\tACC-SINV-.YYYY.-\tACC-SINV-2026-00001 ☆\tACC-SINV-RET-.YYYY.-\tACC-SINV-RET-2026-00001",
+     "shot": "docs/parity/s2_sales_invoice_naming_ar.jpg",
+     "lang": "ar",
+     "ms": 201
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Print Formats: card grid, Default badge, click sets default (toast)",
+     "pass": true,
+     "note": "10 print format cards; default set",
+     "shot": "docs/parity/s2_sales_invoice_print_ar.jpg",
+     "lang": "ar",
+     "ms": 487
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Roles: Role | Level | Read…Amend matrix, toggle on click, + Add role",
+     "pass": true,
+     "note": "matrix toggle 1→0",
+     "shot": "docs/parity/s2_sales_invoice_roles_ar.jpg",
+     "lang": "ar",
+     "ms": 194
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Workflow / User Permissions / Notifications / Email Templates lists with empty states + New",
+     "pass": true,
+     "note": "Workflow:1, User Permissions:1, Notifications:1, Email Templates:1",
+     "shot": "docs/parity/s2_sales_invoice_lists_ar.jpg",
+     "lang": "ar",
+     "ms": 801
+    },
+    {
+     "section": "§2",
+     "doc": "Sales Invoice",
+     "bullet": "Global Search: include toggle, Configure fields checklist with search, Manage priority, Save",
+     "pass": true,
+     "note": "148 configurable fields; saved",
+     "shot": "docs/parity/s2_sales_invoice_globalsearch_ar.jpg",
+     "lang": "ar",
+     "ms": 143
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "… menu items + Settings modal with grouped left nav",
+     "pass": true,
+     "note": "… menu 10 items; 9 sections",
+     "shot": "docs/parity/s2_customer_nav_ar.jpg",
+     "lang": "ar",
+     "ms": 3441
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "General: fields grouped by source Settings doctype; edits save to the real Settings doc",
+     "pass": true,
+     "note": "2 groups; toggle False→True saved to Settings doc",
+     "shot": "docs/parity/s2_customer_general_ar.jpg",
+     "lang": "ar",
+     "ms": 600
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Naming: series table with preview, + Add Series, default star, Naming Rules",
+     "pass": true,
+     "note": "\tالسلسلة\tمعاينة ★\tCUST-.YYYY.-\tCUST-2026-00001",
+     "shot": "docs/parity/s2_customer_naming_ar.jpg",
+     "lang": "ar",
+     "ms": 111
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Print Formats: card grid, Default badge, click sets default (toast)",
+     "pass": true,
+     "note": "1 print format cards; default set",
+     "shot": "docs/parity/s2_customer_print_ar.jpg",
+     "lang": "ar",
+     "ms": 421
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Roles: Role | Level | Read…Amend matrix, toggle on click, + Add role",
+     "pass": true,
+     "note": "matrix toggle 1→0",
+     "shot": "docs/parity/s2_customer_roles_ar.jpg",
+     "lang": "ar",
+     "ms": 183
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Workflow / User Permissions / Notifications / Email Templates lists with empty states + New",
+     "pass": true,
+     "note": "Workflow:1, User Permissions:1, Notifications:1, Email Templates:1",
+     "shot": "docs/parity/s2_customer_lists_ar.jpg",
+     "lang": "ar",
+     "ms": 796
+    },
+    {
+     "section": "§2",
+     "doc": "Customer",
+     "bullet": "Global Search: include toggle, Configure fields checklist with search, Manage priority, Save",
+     "pass": true,
+     "note": "46 configurable fields; saved",
+     "shot": "docs/parity/s2_customer_globalsearch_ar.jpg",
+     "lang": "ar",
+     "ms": 139
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Config: stepper, Import settings, dropzone, Upload dialog, file card with row count",
+     "pass": true,
+     "note": "CSV v1650_customers.csv CSV · 10 صفوف مسح",
+     "shot": "docs/parity/s1_config_ar.jpg",
+     "lang": "ar",
+     "ms": 1932
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Preview: two header rows (field mapping + file column), linked Address/Contact columns, Map values",
+     "pass": true,
+     "note": "two header rows; linked mappings ['Address Line 1 (Address)', 'City/Town (Address)', 'Email Address (Contact)']; value-map selects 1",
+     "shot": "docs/parity/s1_preview_ar.jpg",
+     "lang": "ar",
+     "ms": 272
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Fix issues: stats cards, empty state or row errors with inline edit + Skip invalid rows",
+     "pass": true,
+     "note": "الصفوف المفحوصة 10 الأعمدة المطابقة 7 الصفوف المتخطاة 10 · issues 10",
+     "shot": "docs/parity/s1_fix_ar.jpg",
+     "lang": "ar",
+     "ms": 173
+    },
+    {
+     "section": "§1",
+     "doc": "Customer",
+     "bullet": "Import Log: summary, All/Success/Failed tabs, row links; Done refreshes list",
+     "pass": true,
+     "note": "log tabs ok; linked addresses created 25; list refreshed 1",
+     "shot": "docs/parity/s1_log_ar.jpg",
+     "lang": "ar",
+     "ms": 1082
+    },
+    {
+     "section": "§5",
+     "doc": "Sales Invoice",
+     "bullet": "Resize handles + gear → Configure Columns (Fieldname | Width | Sticky, reorder, add/remove, reset, Update)",
+     "pass": true,
+     "note": "5 columns configurable (width/sticky/reorder)",
+     "shot": "docs/parity/s5_configure_ar.jpg",
+     "lang": "ar",
+     "ms": 2563
+    },
+    {
+     "section": "§5",
+     "doc": "Sales Invoice",
+     "bullet": "Row checkboxes + select all → Delete/Edit/Duplicate N rows; Bulk Edit dialog; footer Add row/Add multiple/Download/Upload",
+     "pass": true,
+     "note": "3 bulk actions (Delete/Edit/Duplicate N rows); footer: إضافة صف إضافة متعددة تنزيل رفع",
+     "shot": "docs/parity/s5_bulk_ar.jpg",
+     "lang": "ar",
+     "ms": 572
+    },
+    {
+     "section": "§6",
+     "doc": "Sales Invoice",
+     "bullet": "Forms › Show navigation buttons + Show absolute datetime in timeline",
+     "pass": true,
+     "note": "nav arrows 2→0; timeline relative 0 → absolute 0",
+     "shot": "docs/parity/s6_form_toggles_ar.jpg",
+     "lang": "ar",
+     "ms": 1748
+    },
+    {
+     "section": "§6",
+     "doc": "Shell",
+     "bullet": "Preferences › Mute sounds suppresses the notification sound; My Space page",
+     "pass": true,
+     "note": "sounds played 0, suppressed 1",
+     "shot": "docs/parity/s6_myspace_ar.jpg",
+     "lang": "ar",
+     "ms": 1799
+    },
+    {
+     "section": "§7",
+     "doc": "General Ledger",
+     "bullet": "Link opens full form in right panel (~45%), report stays visible, ↗ / ×, swaps on next link, Execution Time",
+     "pass": true,
+     "note": "panel Debtors - DDT → DDT-SINV-010; width 45%; Execution Time shown",
+     "shot": "docs/parity/s7_split_ar.jpg",
+     "lang": "ar",
+     "ms": 2644
+    },
+    {
+     "section": "§7",
+     "doc": "General Ledger",
+     "bullet": "Controlled by User Settings › Reports › Split view",
+     "pass": true,
+     "note": "Split view off → links navigate instead",
+     "shot": "docs/parity/s7_setting_ar.jpg",
+     "lang": "ar",
+     "ms": 2442
+    },
+    {
+     "section": "§6",
+     "doc": "Shell",
+     "bullet": "Avatar → Settings modal with 9 sections (accepted in Part A)",
+     "pass": true,
+     "note": "User Settings modal opened from avatar menu",
+     "shot": "docs/parity/s6_user_settings_ar.jpg",
+     "lang": "ar",
+     "ms": 2498
+    },
+    {
+     "section": "§2",
+     "doc": "Shell",
+     "bullet": "Ctrl/Cmd+G opens tabular global search",
+     "pass": true,
+     "note": "Ctrl+G opens tabular global search",
+     "shot": "docs/parity/s2_ctrlg_ar.jpg",
+     "lang": "ar",
+     "ms": 631
+    }
+   ],
+   "english_on_ar": {},
+   "page_errors": []
+  }
+ }
+}

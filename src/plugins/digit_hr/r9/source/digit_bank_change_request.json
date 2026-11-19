@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:DBC-{YYYY}-{#####}",
+ "creation": "2026-10-28 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee",
+  "employee_name",
+  "company",
+  "column_break_1",
+  "request_status",
+  "reason",
+  "section_new",
+  "new_bank_name",
+  "new_bank_ac_no",
+  "new_iban",
+  "proof_attachment",
+  "section_decision",
+  "decided_by",
+  "decided_on",
+  "decision_note",
+  "column_break_2",
+  "applied_by",
+  "applied_on",
+  "previous_account_masked"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "in_list_view": 1,
+   "idx": 2
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "in_standard_filter": 1,
+   "idx": 3
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 4
+  },
+  {
+   "fieldname": "request_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nSubmitted\nApproved\nRejected\nApplied",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "no_copy": 1,
+   "idx": 5
+  },
+  {
+   "fieldname": "reason",
+   "fieldtype": "Small Text",
+   "label": "Reason",
+   "reqd": 1,
+   "idx": 6
+  },
+  {
+   "fieldname": "section_new",
+   "fieldtype": "Section Break",
+   "label": "New Bank Details",
+   "idx": 7
+  },
+  {
+   "fieldname": "new_bank_name",
+   "fieldtype": "Data",
+   "label": "Bank Name",
+   "reqd": 1,
+   "idx": 8
+  },
+  {
+   "fieldname": "new_bank_ac_no",
+   "fieldtype": "Data",
+   "label": "Bank Account No",
+   "idx": 9
+  },
+  {
+   "fieldname": "new_iban",
+   "fieldtype": "Data",
+   "label": "IBAN",
+   "idx": 10
+  },
+  {
+   "fieldname": "proof_attachment",
+   "fieldtype": "Attach",
+   "label": "Proof (bank letter)",
+   "idx": 11
+  },
+  {
+   "fieldname": "section_decision",
+   "fieldtype": "Section Break",
+   "label": "Decision",
+   "idx": 12
+  },
+  {
+   "fieldname": "decided_by",
+   "fieldtype": "Link",
+   "label": "Decided By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 13
+  },
+  {
+   "fieldname": "decided_on",
+   "fieldtype": "Datetime",
+   "label": "Decided On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 14
+  },
+  {
+   "fieldname": "decision_note",
+   "fieldtype": "Small Text",
+   "label": "Decision Note",
+   "no_copy": 1,
+   "idx": 15
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break",
+   "idx": 16
+  },
+  {
+   "fieldname": "applied_by",
+   "fieldtype": "Link",
+   "label": "Applied By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 17
+  },
+  {
+   "fieldname": "applied_on",
+   "fieldtype": "Datetime",
+   "label": "Applied On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 18
+  },
+  {
+   "fieldname": "previous_account_masked",
+   "fieldtype": "Data",
+   "label": "Previous Account (masked)",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 19
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "name": "DIGIT Bank Change Request",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "permlevel": 0,
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1
+  },
+  {
+   "permlevel": 0,
+   "role": "HR User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "print": 1
+  },
+  {
+   "permlevel": 0,
+   "role": "Employee",
+   "read": 1,
+   "write": 1,
+   "create": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

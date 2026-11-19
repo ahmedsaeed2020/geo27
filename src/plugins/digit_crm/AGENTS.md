@@ -1,0 +1,6 @@
+## DIGIT CRM rules
+- Pipeline board, win funnel, salesperson day (queue, target ring, upcoming, bulk reschedule) and Customer 360 blocks read only the salesDesk.ts read models over the existing wf0x engines and render through Enterprise kit pieces (StageBoard, QueueSplit, RemainingRing, FocusList, InvoiceStatus), so CRM computes no figure of its own and Pro, Construction and CRM share one look.
+- Working rules (inactivity days, finance roles) live in FCRM Settings custom fields read by salesDesk.ts crmRules, and balances, aging and payment score render only when canSeeFinance passes, so one setting drives every CRM screen.
+- Receivable/payable read models live in src/lib/coreShared/receivables.ts (Pro re-exports them), so a customer's invoice states are computed once for Pro and CRM.
+- New CRM fields, settings and rules are recorded in docs/crm/FRAPPE_DEVELOPER_GUIDE.md in the same round, so the hosted build can match the preview.
+- Lead and deal list/record screens read only leadDesk.ts / dealDesk.ts with rules from FCRM Settings via leadRules.ts and render through the Enterprise kit Record* pieces (RecordList, RecordFrame, RecordTimeline, RecordForm), so Lead and Deal share one record frame and every score, SLA and stage gate follows one setting.

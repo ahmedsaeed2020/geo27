@@ -1,0 +1,67 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "hash",
+ "creation": "2026-10-28 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "reference_doctype",
+  "reference_name",
+  "shared_on",
+  "revoked"
+ ],
+ "fields": [
+  {
+   "fieldname": "reference_doctype",
+   "fieldtype": "Link",
+   "label": "Document Type",
+   "options": "DocType",
+   "in_list_view": 1,
+   "read_only": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "reference_name",
+   "fieldtype": "Dynamic Link",
+   "label": "Document",
+   "options": "reference_doctype",
+   "in_list_view": 1,
+   "read_only": 1,
+   "idx": 2
+  },
+  {
+   "fieldname": "shared_on",
+   "fieldtype": "Datetime",
+   "label": "Shared On",
+   "in_list_view": 1,
+   "read_only": 1,
+   "idx": 3
+  },
+  {
+   "fieldname": "revoked",
+   "fieldtype": "Check",
+   "label": "Revoked",
+   "in_list_view": 1,
+   "read_only": 1,
+   "idx": 4
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 1,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "name": "DIGIT Approval Delegation Item",
+ "naming_rule": "Random",
+ "owner": "Administrator",
+ "permissions": [],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

@@ -1,0 +1,34 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe import _
+from frappe.model.document import Document
+from frappe.utils import getdate, now_datetime
+
+
+class DIGITPayrollPeriodLock(Document):
+	"""PAY-04 payroll period lock for one company. While Locked, native Salary Slips and Additional Salary in the period
+	cannot be saved, submitted or cancelled (digit_hr.api.payroll_lock). Reopening needs a reason and is recorded; only
+	roles with write on this DocType (HR Manager) can lock or reopen. Nothing native is changed by the lock itself."""
+
+	def validate(self):
+		if getdate(self.to_date) < getdate(self.from_date):
+			frappe.throw(_("To Date cannot be before From Date"))
+		before = self.get_doc_before_save()
+		if self.lock_status == "Locked":
+			overlap = frappe.get_all("DIGIT Payroll Period Lock", filters={"company": self.company, "lock_status": "Locked",
+				"name": ["!=", self.name or ""], "from_date": ["<=", self.to_date], "to_date": [">=", self.from_date]}, pluck="name", limit=1)
+			if overlap:
+				frappe.throw(_("This period overlaps the locked period {0}").format(overlap[0]))
+			if not before or before.lock_status != "Locked":
+				self.locked_by, self.locked_on = frappe.session.user, now_datetime()
+		elif self.lock_status == "Reopened" and (not before or before.lock_status != "Reopened"):
+			if not before:
+				frappe.throw(_("A new lock starts as Locked"))
+			if not (self.reopen_reason or "").strip():
+				frappe.throw(_("A reason is required to reopen a locked payroll period"))
+			self.reopened_by, self.reopened_on = frappe.session.user, now_datetime()
+		if before and before.lock_status == "Locked" and (before.company != self.company or getdate(before.from_date) != getdate(self.from_date)
+			or getdate(before.to_date) != getdate(self.to_date)):
+			frappe.throw(_("Reopen the lock before changing its company or dates"))

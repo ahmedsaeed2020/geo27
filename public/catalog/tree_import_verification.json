@@ -1,0 +1,90 @@
+{
+ "en": {
+  "Item Group": {
+   "pass": true,
+   "depth": {
+    "TI Electronics": 0,
+    "TI Phones": 1,
+    "TI Smartphones": 2,
+    "TI Laptops": 1,
+    "TI Orphan": 0
+   },
+   "missing_parents_flagged": 1,
+   "reparented": {
+    "TI Orphan": 1
+   },
+   "imported_parents": {
+    "TI Electronics": null,
+    "TI Phones": "TI Electronics",
+    "TI Laptops": "TI Electronics",
+    "TI Orphan": "TI Electronics",
+    "TI Smartphones": "TI Phones"
+   },
+   "screenshot": "docs/parity/tree_import_Item_Group_en.jpg"
+  },
+  "Account": {
+   "pass": true,
+   "depth": {
+    "TI Current Assets": 0,
+    "TI Petty Cash": 1,
+    "TI Bank Sub": 1,
+    "TI Lost": 0
+   },
+   "missing_parents_flagged": 1,
+   "reparented": {
+    "TI Lost": 1
+   },
+   "imported_parents": {
+    "TI Current Assets": "Application of Funds (Assets) - DDT",
+    "TI Petty Cash": "TI Current Assets - DDT",
+    "TI Bank Sub": "TI Current Assets - DDT",
+    "TI Lost": "TI Current Assets - DDT"
+   },
+   "screenshot": "docs/parity/tree_import_Account_en.jpg"
+  }
+ },
+ "ar": {
+  "Item Group": {
+   "pass": true,
+   "depth": {
+    "TI Electronics": 0,
+    "TI Phones": 1,
+    "TI Smartphones": 2,
+    "TI Laptops": 1,
+    "TI Orphan": 0
+   },
+   "missing_parents_flagged": 1,
+   "reparented": {
+    "TI Orphan": 1
+   },
+   "imported_parents": {
+    "TI Electronics": null,
+    "TI Phones": "TI Electronics",
+    "TI Laptops": "TI Electronics",
+    "TI Orphan": "TI Electronics",
+    "TI Smartphones": "TI Phones"
+   },
+   "screenshot": "docs/parity/tree_import_Item_Group_ar.jpg"
+  },
+  "Account": {
+   "pass": true,
+   "depth": {
+    "TI Current Assets": 0,
+    "TI Petty Cash": 1,
+    "TI Bank Sub": 1,
+    "TI Lost": 0
+   },
+   "missing_parents_flagged": 1,
+   "reparented": {
+    "TI Lost": 1
+   },
+   "imported_parents": {
+    "TI Current Assets": "Application of Funds (Assets) - DDT",
+    "TI Petty Cash": "TI Current Assets - DDT",
+    "TI Bank Sub": "TI Current Assets - DDT",
+    "TI Lost": "TI Current Assets - DDT"
+   },
+   "screenshot": "docs/parity/tree_import_Account_ar.jpg"
+  }
+ }
+}

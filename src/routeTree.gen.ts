@@ -17,32 +17,96 @@ import { Route as About4RouteImport } from './routes/about-4'
 import { Route as AuthRouteImport } from './routes/auth'
 import { Route as BlueprintRouteImport } from './routes/blueprint'
 import { Route as CareersRouteImport } from './routes/careers'
+import { Route as ComplianceRouteImport } from './routes/compliance'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as Contact4RouteImport } from './routes/contact-4'
+import { Route as CoverageRouteImport } from './routes/coverage'
+import { Route as CustomizeFormRouteImport } from './routes/customize-form'
 import { Route as DemoRouteImport } from './routes/demo'
 import { Route as Demo3RouteImport } from './routes/demo-3'
+import { Route as DeveloperRouteImport } from './routes/developer'
 import { Route as EnRouteImport } from './routes/en'
+import { Route as EnterpriseRouteImport } from './routes/enterprise'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as FeaturesRouteImport } from './routes/features'
+import { Route as HelpRouteImport } from './routes/help'
 import { Route as IndustriesRouteImport } from './routes/industries'
+import { Route as InsightsRouteImport } from './routes/insights'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as ModulesRouteImport } from './routes/modules'
+import { Route as MySpaceRouteImport } from './routes/my-space'
 import { Route as PartnershipRouteImport } from './routes/partnership'
 import { Route as PricingRouteImport } from './routes/pricing'
+import { Route as PrintviewRouteImport } from './routes/printview'
 import { Route as ProRouteImport } from './routes/pro'
 import { Route as QuoteRouteImport } from './routes/quote'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SaudiLocalizationRouteImport } from './routes/saudi-localization'
 import { Route as Services3RouteImport } from './routes/services-3'
+import { Route as SettingsRouteImport } from './routes/settings'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as StarterRouteImport } from './routes/starter'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TrustSecurityRouteImport } from './routes/trust-security'
 import { Route as AuthenticatedAdminRouteImport } from './routes/_authenticated/admin'
+import { Route as ApiAssistantRouteImport } from './routes/api/assistant'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
+import { Route as AppDataExportRouteImport } from './routes/app.data-export'
+import { Route as BuyingInvoiceCaptureRouteImport } from './routes/buying.invoice-capture'
+import { Route as BuyingRfqFollowUpRouteImport } from './routes/buying.rfq-follow-up'
 import { Route as ConstructionIndexRouteImport } from './routes/construction.index'
 import { Route as ConstructionDepartmentRouteImport } from './routes/construction.$department'
+import { Route as ControlApprovalsRouteImport } from './routes/control.approvals'
+import { Route as ControlBackgroundJobsRouteImport } from './routes/control.background-jobs'
+import { Route as ControlProcurementPoliciesRouteImport } from './routes/control.procurement-policies'
+import { Route as ControlSetupGuideRouteImport } from './routes/control.setup-guide'
 import { Route as CrmDepartmentRouteImport } from './routes/crm.$department'
+import { Route as DashboardNameRouteImport } from './routes/dashboard.$name'
+import { Route as DepartmentDeptRouteImport } from './routes/department.$dept'
+import { Route as DeskIndexRouteImport } from './routes/desk.index'
+import { Route as DeskSidebarRouteImport } from './routes/desk.$sidebar'
+import { Route as DevVisualAuditRouteImport } from './routes/dev.visual-audit'
+import { Route as DeveloperExperienceRouteImport } from './routes/developer.experience'
+import { Route as DeveloperFormRulesRouteImport } from './routes/developer.form-rules'
+import { Route as DeveloperI18nRouteImport } from './routes/developer.i18n'
+import { Route as DeveloperScenariosRouteImport } from './routes/developer.scenarios'
+import { Route as DeveloperSdkRouteImport } from './routes/developer.sdk'
+import { Route as DigitCrmIndexRouteImport } from './routes/digit-crm.index'
+import { Route as DigitCrmActivitiesRouteImport } from './routes/digit-crm.activities'
+import { Route as DigitCrmAutomationRouteImport } from './routes/digit-crm.automation'
+import { Route as DigitCrmCampaignsRouteImport } from './routes/digit-crm.campaigns'
+import { Route as DigitCrmCommissionsRouteImport } from './routes/digit-crm.commissions'
+import { Route as DigitCrmContactsRouteImport } from './routes/digit-crm.contacts'
+import { Route as DigitCrmDashboardsRouteImport } from './routes/digit-crm.dashboards'
+import { Route as DigitCrmDemoRouteImport } from './routes/digit-crm.demo'
+import { Route as DigitCrmFollowUpsRouteImport } from './routes/digit-crm.follow-ups'
+import { Route as DigitCrmForecastRouteImport } from './routes/digit-crm.forecast'
+import { Route as DigitCrmHomeRouteImport } from './routes/digit-crm.home'
+import { Route as DigitCrmManagerRouteImport } from './routes/digit-crm.manager'
+import { Route as DigitCrmMobileRouteImport } from './routes/digit-crm.mobile'
+import { Route as DigitCrmPipelineRouteImport } from './routes/digit-crm.pipeline'
+import { Route as DigitCrmQualificationRouteImport } from './routes/digit-crm.qualification'
+import { Route as DigitCrmReportsRouteImport } from './routes/digit-crm.reports'
+import { Route as DigitCrmSalesTeamsRouteImport } from './routes/digit-crm.sales-teams'
+import { Route as DigitCrmSettingsRouteImport } from './routes/digit-crm.settings'
+import { Route as DigitCrmTargetsRouteImport } from './routes/digit-crm.targets'
+import { Route as DigitCrmTerritoriesRouteImport } from './routes/digit-crm.territories'
+import { Route as DigitHrIndexRouteImport } from './routes/digit-hr.index'
+import { Route as DigitHrComplianceRouteImport } from './routes/digit-hr.compliance'
+import { Route as DigitHrDocumentsRouteImport } from './routes/digit-hr.documents'
+import { Route as DigitHrHiringRouteImport } from './routes/digit-hr.hiring'
+import { Route as DigitHrInsightsRouteImport } from './routes/digit-hr.insights'
+import { Route as DigitHrLeaveRouteImport } from './routes/digit-hr.leave'
+import { Route as DigitHrLifecycleRouteImport } from './routes/digit-hr.lifecycle'
+import { Route as DigitHrOrganizationRouteImport } from './routes/digit-hr.organization'
+import { Route as DigitHrPayrollRouteImport } from './routes/digit-hr.payroll'
+import { Route as DigitHrReportsRouteImport } from './routes/digit-hr.reports'
+import { Route as DigitHrSeparationRouteImport } from './routes/digit-hr.separation'
+import { Route as DigitHrTalentRouteImport } from './routes/digit-hr.talent'
+import { Route as DigitHrWorkforceRouteImport } from './routes/digit-hr.workforce'
+import { Route as DigitIndexRouteImport } from './routes/digit.index'
+import { Route as DigitSplatRouteImport } from './routes/digit.$'
 import { Route as EnIndexRouteImport } from './routes/en.index'
 import { Route as EnAboutRouteImport } from './routes/en.about'
 import { Route as EnAbout4RouteImport } from './routes/en.about-4'
@@ -68,6 +132,19 @@ import { Route as EnStarterRouteImport } from './routes/en.starter'
 import { Route as EnSupportRouteImport } from './routes/en.support'
 import { Route as EnTermsRouteImport } from './routes/en.terms'
 import { Route as EnTrustSecurityRouteImport } from './routes/en.trust-security'
+import { Route as FinanceApControlRouteImport } from './routes/finance.ap-control'
+import { Route as FinanceAssetControlsRouteImport } from './routes/finance.asset-controls'
+import { Route as FinanceBankMatchingRouteImport } from './routes/finance.bank-matching'
+import { Route as FinanceCashForecastRouteImport } from './routes/finance.cash-forecast'
+import { Route as FinanceCloseRouteImport } from './routes/finance.close'
+import { Route as FinanceCollectionsRouteImport } from './routes/finance.collections'
+import { Route as FinanceConsolidationRouteImport } from './routes/finance.consolidation'
+import { Route as FinanceNettingRouteImport } from './routes/finance.netting'
+import { Route as FinancePaymentRunRouteImport } from './routes/finance.payment-run'
+import { Route as FinanceRecurringRouteImport } from './routes/finance.recurring'
+import { Route as FinanceRisksRouteImport } from './routes/finance.risks'
+import { Route as FinanceStatementsRouteImport } from './routes/finance.statements'
+import { Route as FinanceSustainabilityRouteImport } from './routes/finance.sustainability'
 import { Route as FsmDepartmentRouteImport } from './routes/fsm.$department'
 import { Route as HrIndexRouteImport } from './routes/hr.index'
 import { Route as HrDepartmentRouteImport } from './routes/hr.$department'
@@ -80,6 +157,9 @@ import { Route as IndustriesManufacturingIndustryRouteImport } from './routes/in
 import { Route as IndustriesProfessionalServicesRouteImport } from './routes/industries.professional-services'
 import { Route as IndustriesRealEstate2RouteImport } from './routes/industries.real-estate-2'
 import { Route as IndustriesRetailRouteImport } from './routes/industries.retail'
+import { Route as InsightsIndexRouteImport } from './routes/insights.index'
+import { Route as InsightsDataStoreRouteImport } from './routes/insights.data-store'
+import { Route as InsightsSettingsRouteImport } from './routes/insights.settings'
 import { Route as ModulesIndexRouteImport } from './routes/modules.index'
 import { Route as ModulesAccountingRouteImport } from './routes/modules.accounting'
 import { Route as ModulesContractingRouteImport } from './routes/modules.contracting'
@@ -95,6 +175,9 @@ import { Route as ModulesProjectsRouteImport } from './routes/modules.projects'
 import { Route as ModulesPurchasingRouteImport } from './routes/modules.purchasing'
 import { Route as ModulesReportsRouteImport } from './routes/modules.reports'
 import { Route as ModulesSalesRouteImport } from './routes/modules.sales'
+import { Route as PageIndexRouteImport } from './routes/page.index'
+import { Route as PageNameRouteImport } from './routes/page.$name'
+import { Route as PluginsIndexRouteImport } from './routes/plugins.index'
 import { Route as PosSolutionsElectricalAppliancesRouteImport } from './routes/pos-solutions.electrical-appliances'
 import { Route as PosSolutionsFloristRouteImport } from './routes/pos-solutions.florist'
 import { Route as PosSolutionsFurnitureRouteImport } from './routes/pos-solutions.furniture'
@@ -105,6 +188,11 @@ import { Route as PosSolutionsRestaurantsCafesRouteImport } from './routes/pos-s
 import { Route as PosSolutionsSalonsRouteImport } from './routes/pos-solutions.salons'
 import { Route as PosSolutionsSweetsRouteImport } from './routes/pos-solutions.sweets'
 import { Route as ProAreaRouteImport } from './routes/pro_.$area'
+import { Route as ReportIndexRouteImport } from './routes/report.index'
+import { Route as ReportNameRouteImport } from './routes/report.$name'
+import { Route as ReportStudioRouteImport } from './routes/report.studio'
+import { Route as SellingChannelsRouteImport } from './routes/selling.channels'
+import { Route as SellingInboxRouteImport } from './routes/selling.inbox'
 import { Route as Services3IndexRouteImport } from './routes/services-3.index'
 import { Route as Services3CustomizationRouteImport } from './routes/services-3.customization'
 import { Route as Services3DataMigrationRouteImport } from './routes/services-3.data-migration'
@@ -123,6 +211,36 @@ import { Route as ServicesHostingRouteImport } from './routes/services.hosting'
 import { Route as ServicesImplementationRouteImport } from './routes/services.implementation'
 import { Route as ServicesSupportRouteImport } from './routes/services.support'
 import { Route as ServicesTrainingRouteImport } from './routes/services.training'
+import { Route as StockDemandForecastRouteImport } from './routes/stock.demand-forecast'
+import { Route as StockDockRouteImport } from './routes/stock.dock'
+import { Route as StockReceivingControlsRouteImport } from './routes/stock.receiving-controls'
+import { Route as StockScanRouteImport } from './routes/stock.scan'
+import { Route as StockWavePickingRouteImport } from './routes/stock.wave-picking'
+import { Route as TaxEInvoicingRouteImport } from './routes/tax.e-invoicing'
+import { Route as TaxVatReturnRouteImport } from './routes/tax.vat-return'
+import { Route as TaxZakatRouteImport } from './routes/tax.zakat'
+import { Route as AppAppIndexRouteImport } from './routes/app.$app.index'
+import { Route as AppDataImportIndexRouteImport } from './routes/app.data-import.index'
+import { Route as AppDataImportNameRouteImport } from './routes/app.data-import.$name'
+import { Route as AppDataImportNewRouteImport } from './routes/app.data-import.new'
+import { Route as DigitCrmCustomersIndexRouteImport } from './routes/digit-crm.customers.index'
+import { Route as DigitCrmCustomersOrgRouteImport } from './routes/digit-crm.customers.$org'
+import { Route as DigitCrmDealDealIdRouteImport } from './routes/digit-crm.deal.$dealId'
+import { Route as DigitCrmDealsDealIdRouteImport } from './routes/digit-crm.deals.$dealId'
+import { Route as DigitCrmLeadLeadIdRouteImport } from './routes/digit-crm.lead.$leadId'
+import { Route as DigitCrmLeadsIndexRouteImport } from './routes/digit-crm.leads.index'
+import { Route as DigitCrmLeadsLeadIdRouteImport } from './routes/digit-crm.leads.$leadId'
+import { Route as DigitCrmLeadsNewRouteImport } from './routes/digit-crm.leads.new'
+import { Route as DigitCrmWorkspaceModuleRouteImport } from './routes/digit-crm.workspace.$module'
+import { Route as DigitHrApplicantsNameRouteImport } from './routes/digit-hr.applicants.$name'
+import { Route as DigitHrCasesNameRouteImport } from './routes/digit-hr.cases.$name'
+import { Route as DigitHrContractsNameRouteImport } from './routes/digit-hr.contracts.$name'
+import { Route as DigitHrEmployeesIndexRouteImport } from './routes/digit-hr.employees.index'
+import { Route as DigitHrEmployeesNameRouteImport } from './routes/digit-hr.employees.$name'
+import { Route as DigitHrMModuleRouteImport } from './routes/digit-hr.m.$module'
+import { Route as DigitHrMetricsMetricRouteImport } from './routes/digit-hr.metrics.$metric'
+import { Route as DigitHrPositionsNameRouteImport } from './routes/digit-hr.positions.$name'
+import { Route as DigitHrSSectionRouteImport } from './routes/digit-hr.s.$section'
 import { Route as EnConstructionIndexRouteImport } from './routes/en.construction.index'
 import { Route as EnConstructionDepartmentRouteImport } from './routes/en.construction.$department'
 import { Route as EnCrmDepartmentRouteImport } from './routes/en.crm.$department'
@@ -180,9 +298,29 @@ import { Route as EnServicesHostingRouteImport } from './routes/en.services.host
 import { Route as EnServicesImplementationRouteImport } from './routes/en.services.implementation'
 import { Route as EnServicesSupportRouteImport } from './routes/en.services.support'
 import { Route as EnServicesTrainingRouteImport } from './routes/en.services.training'
+import { Route as InsightsDashboardsIndexRouteImport } from './routes/insights.dashboards.index'
+import { Route as InsightsDashboardsNameRouteImport } from './routes/insights.dashboards.$name'
+import { Route as InsightsDataSourceIndexRouteImport } from './routes/insights.data-source.index'
+import { Route as InsightsWorkbookIndexRouteImport } from './routes/insights.workbook.index'
+import { Route as InsightsWorkbookWorkbookNameRouteImport } from './routes/insights.workbook.$workbookName'
+import { Route as PluginsNameIndexRouteImport } from './routes/plugins.$name.index'
+import { Route as PluginsNameSplatRouteImport } from './routes/plugins.$name.$'
 import { Route as AuthenticatedAdminCrmIndexRouteImport } from './routes/_authenticated/admin.crm.index'
 import { Route as ApiPublicCmsMediaFileRouteImport } from './routes/api/public/cms-media.$file'
+import { Route as AppAppDoctypeIndexRouteImport } from './routes/app.$app.$doctype.index'
+import { Route as AppAppDoctypeNameRouteImport } from './routes/app.$app.$doctype.$name'
+import { Route as InsightsDataSourceNameIndexRouteImport } from './routes/insights.data-source.$name.index'
+import { Route as InsightsDataSourceNameTableNameRouteImport } from './routes/insights.data-source.$name.$tableName'
+import { Route as InsightsSharedChartChartNameRouteImport } from './routes/insights.shared.chart.$chartName'
+import { Route as InsightsSharedDashboardDashboardNameRouteImport } from './routes/insights.shared.dashboard.$dashboardName'
+import { Route as InsightsWorkbookWorkbookNameIndexRouteImport } from './routes/insights.workbook.$workbookName.index'
+import { Route as PluginsNameReportReportRouteImport } from './routes/plugins.$name.report.$report'
 import { Route as AuthenticatedAdminCrmLeadIdRouteImport } from './routes/_authenticated/admin.crm.lead.$id'
+import { Route as AppAppDoctypeViewTreeRouteImport } from './routes/app.$app.$doctype.view.tree'
+import { Route as InsightsWorkbookWorkbookNameChartChartNameRouteImport } from './routes/insights.workbook.$workbookName.chart.$chartName'
+import { Route as InsightsWorkbookWorkbookNameDashboardDashboardNameRouteImport } from './routes/insights.workbook.$workbookName.dashboard.$dashboardName'
+import { Route as InsightsWorkbookWorkbookNameQueryQueryNameRouteImport } from './routes/insights.workbook.$workbookName.query.$queryName'
+import { Route as PluginsNamePrintFormatDocRouteImport } from './routes/plugins.$name.print.$format.$doc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -223,6 +361,11 @@ const CareersRoute = CareersRouteImport.update({
   path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ComplianceRoute = ComplianceRouteImport.update({
+  id: '/compliance',
+  path: '/compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ContactRoute = ContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -231,6 +374,16 @@ const ContactRoute = ContactRouteImport.update({
 const Contact4Route = Contact4RouteImport.update({
   id: '/contact-4',
   path: '/contact-4',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoverageRoute = CoverageRouteImport.update({
+  id: '/coverage',
+  path: '/coverage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CustomizeFormRoute = CustomizeFormRouteImport.update({
+  id: '/customize-form',
+  path: '/customize-form',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DemoRoute = DemoRouteImport.update({
@@ -243,9 +396,19 @@ const Demo3Route = Demo3RouteImport.update({
   path: '/demo-3',
   getParentRoute: () => rootRouteImport,
 } as any)
+const DeveloperRoute = DeveloperRouteImport.update({
+  id: '/developer',
+  path: '/developer',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnRoute = EnRouteImport.update({
   id: '/en',
   path: '/en',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnterpriseRoute = EnterpriseRouteImport.update({
+  id: '/enterprise',
+  path: '/enterprise',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FaqRoute = FaqRouteImport.update({
@@ -258,14 +421,34 @@ const FeaturesRoute = FeaturesRouteImport.update({
   path: '/features',
   getParentRoute: () => rootRouteImport,
 } as any)
+const HelpRoute = HelpRouteImport.update({
+  id: '/help',
+  path: '/help',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndustriesRoute = IndustriesRouteImport.update({
   id: '/industries',
   path: '/industries',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InsightsRoute = InsightsRouteImport.update({
+  id: '/insights',
+  path: '/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ModulesRoute = ModulesRouteImport.update({
   id: '/modules',
   path: '/modules',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MySpaceRoute = MySpaceRouteImport.update({
+  id: '/my-space',
+  path: '/my-space',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PartnershipRoute = PartnershipRouteImport.update({
@@ -276,6 +459,11 @@ const PartnershipRoute = PartnershipRouteImport.update({
 const PricingRoute = PricingRouteImport.update({
   id: '/pricing',
   path: '/pricing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrintviewRoute = PrintviewRouteImport.update({
+  id: '/printview',
+  path: '/printview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProRoute = ProRouteImport.update({
@@ -301,6 +489,11 @@ const SaudiLocalizationRoute = SaudiLocalizationRouteImport.update({
 const Services3Route = Services3RouteImport.update({
   id: '/services-3',
   path: '/services-3',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SettingsRoute = SettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -333,9 +526,29 @@ const AuthenticatedAdminRoute = AuthenticatedAdminRouteImport.update({
   path: '/admin',
   getParentRoute: () => AuthenticatedRouteRoute,
 } as any)
+const ApiAssistantRoute = ApiAssistantRouteImport.update({
+  id: '/api/assistant',
+  path: '/api/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ApiChatRoute = ApiChatRouteImport.update({
   id: '/api/chat',
   path: '/api/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppDataExportRoute = AppDataExportRouteImport.update({
+  id: '/app/data-export',
+  path: '/app/data-export',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyingInvoiceCaptureRoute = BuyingInvoiceCaptureRouteImport.update({
+  id: '/buying/invoice-capture',
+  path: '/buying/invoice-capture',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BuyingRfqFollowUpRoute = BuyingRfqFollowUpRouteImport.update({
+  id: '/buying/rfq-follow-up',
+  path: '/buying/rfq-follow-up',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConstructionIndexRoute = ConstructionIndexRouteImport.update({
@@ -348,9 +561,255 @@ const ConstructionDepartmentRoute = ConstructionDepartmentRouteImport.update({
   path: '/construction/$department',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ControlApprovalsRoute = ControlApprovalsRouteImport.update({
+  id: '/control/approvals',
+  path: '/control/approvals',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlBackgroundJobsRoute = ControlBackgroundJobsRouteImport.update({
+  id: '/control/background-jobs',
+  path: '/control/background-jobs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ControlProcurementPoliciesRoute =
+  ControlProcurementPoliciesRouteImport.update({
+    id: '/control/procurement-policies',
+    path: '/control/procurement-policies',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const ControlSetupGuideRoute = ControlSetupGuideRouteImport.update({
+  id: '/control/setup-guide',
+  path: '/control/setup-guide',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CrmDepartmentRoute = CrmDepartmentRouteImport.update({
   id: '/crm/$department',
   path: '/crm/$department',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardNameRoute = DashboardNameRouteImport.update({
+  id: '/dashboard/$name',
+  path: '/dashboard/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DepartmentDeptRoute = DepartmentDeptRouteImport.update({
+  id: '/department/$dept',
+  path: '/department/$dept',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeskIndexRoute = DeskIndexRouteImport.update({
+  id: '/desk/',
+  path: '/desk/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeskSidebarRoute = DeskSidebarRouteImport.update({
+  id: '/desk/$sidebar',
+  path: '/desk/$sidebar',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevVisualAuditRoute = DevVisualAuditRouteImport.update({
+  id: '/dev/visual-audit',
+  path: '/dev/visual-audit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DeveloperExperienceRoute = DeveloperExperienceRouteImport.update({
+  id: '/experience',
+  path: '/experience',
+  getParentRoute: () => DeveloperRoute,
+} as any)
+const DeveloperFormRulesRoute = DeveloperFormRulesRouteImport.update({
+  id: '/form-rules',
+  path: '/form-rules',
+  getParentRoute: () => DeveloperRoute,
+} as any)
+const DeveloperI18nRoute = DeveloperI18nRouteImport.update({
+  id: '/i18n',
+  path: '/i18n',
+  getParentRoute: () => DeveloperRoute,
+} as any)
+const DeveloperScenariosRoute = DeveloperScenariosRouteImport.update({
+  id: '/scenarios',
+  path: '/scenarios',
+  getParentRoute: () => DeveloperRoute,
+} as any)
+const DeveloperSdkRoute = DeveloperSdkRouteImport.update({
+  id: '/sdk',
+  path: '/sdk',
+  getParentRoute: () => DeveloperRoute,
+} as any)
+const DigitCrmIndexRoute = DigitCrmIndexRouteImport.update({
+  id: '/digit-crm/',
+  path: '/digit-crm/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmActivitiesRoute = DigitCrmActivitiesRouteImport.update({
+  id: '/digit-crm/activities',
+  path: '/digit-crm/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmAutomationRoute = DigitCrmAutomationRouteImport.update({
+  id: '/digit-crm/automation',
+  path: '/digit-crm/automation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmCampaignsRoute = DigitCrmCampaignsRouteImport.update({
+  id: '/digit-crm/campaigns',
+  path: '/digit-crm/campaigns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmCommissionsRoute = DigitCrmCommissionsRouteImport.update({
+  id: '/digit-crm/commissions',
+  path: '/digit-crm/commissions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmContactsRoute = DigitCrmContactsRouteImport.update({
+  id: '/digit-crm/contacts',
+  path: '/digit-crm/contacts',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmDashboardsRoute = DigitCrmDashboardsRouteImport.update({
+  id: '/digit-crm/dashboards',
+  path: '/digit-crm/dashboards',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmDemoRoute = DigitCrmDemoRouteImport.update({
+  id: '/digit-crm/demo',
+  path: '/digit-crm/demo',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmFollowUpsRoute = DigitCrmFollowUpsRouteImport.update({
+  id: '/digit-crm/follow-ups',
+  path: '/digit-crm/follow-ups',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmForecastRoute = DigitCrmForecastRouteImport.update({
+  id: '/digit-crm/forecast',
+  path: '/digit-crm/forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmHomeRoute = DigitCrmHomeRouteImport.update({
+  id: '/digit-crm/home',
+  path: '/digit-crm/home',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmManagerRoute = DigitCrmManagerRouteImport.update({
+  id: '/digit-crm/manager',
+  path: '/digit-crm/manager',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmMobileRoute = DigitCrmMobileRouteImport.update({
+  id: '/digit-crm/mobile',
+  path: '/digit-crm/mobile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmPipelineRoute = DigitCrmPipelineRouteImport.update({
+  id: '/digit-crm/pipeline',
+  path: '/digit-crm/pipeline',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmQualificationRoute = DigitCrmQualificationRouteImport.update({
+  id: '/digit-crm/qualification',
+  path: '/digit-crm/qualification',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmReportsRoute = DigitCrmReportsRouteImport.update({
+  id: '/digit-crm/reports',
+  path: '/digit-crm/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmSalesTeamsRoute = DigitCrmSalesTeamsRouteImport.update({
+  id: '/digit-crm/sales-teams',
+  path: '/digit-crm/sales-teams',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmSettingsRoute = DigitCrmSettingsRouteImport.update({
+  id: '/digit-crm/settings',
+  path: '/digit-crm/settings',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmTargetsRoute = DigitCrmTargetsRouteImport.update({
+  id: '/digit-crm/targets',
+  path: '/digit-crm/targets',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmTerritoriesRoute = DigitCrmTerritoriesRouteImport.update({
+  id: '/digit-crm/territories',
+  path: '/digit-crm/territories',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrIndexRoute = DigitHrIndexRouteImport.update({
+  id: '/digit-hr/',
+  path: '/digit-hr/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrComplianceRoute = DigitHrComplianceRouteImport.update({
+  id: '/digit-hr/compliance',
+  path: '/digit-hr/compliance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrDocumentsRoute = DigitHrDocumentsRouteImport.update({
+  id: '/digit-hr/documents',
+  path: '/digit-hr/documents',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrHiringRoute = DigitHrHiringRouteImport.update({
+  id: '/digit-hr/hiring',
+  path: '/digit-hr/hiring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrInsightsRoute = DigitHrInsightsRouteImport.update({
+  id: '/digit-hr/insights',
+  path: '/digit-hr/insights',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrLeaveRoute = DigitHrLeaveRouteImport.update({
+  id: '/digit-hr/leave',
+  path: '/digit-hr/leave',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrLifecycleRoute = DigitHrLifecycleRouteImport.update({
+  id: '/digit-hr/lifecycle',
+  path: '/digit-hr/lifecycle',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrOrganizationRoute = DigitHrOrganizationRouteImport.update({
+  id: '/digit-hr/organization',
+  path: '/digit-hr/organization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrPayrollRoute = DigitHrPayrollRouteImport.update({
+  id: '/digit-hr/payroll',
+  path: '/digit-hr/payroll',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrReportsRoute = DigitHrReportsRouteImport.update({
+  id: '/digit-hr/reports',
+  path: '/digit-hr/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrSeparationRoute = DigitHrSeparationRouteImport.update({
+  id: '/digit-hr/separation',
+  path: '/digit-hr/separation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrTalentRoute = DigitHrTalentRouteImport.update({
+  id: '/digit-hr/talent',
+  path: '/digit-hr/talent',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrWorkforceRoute = DigitHrWorkforceRouteImport.update({
+  id: '/digit-hr/workforce',
+  path: '/digit-hr/workforce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitIndexRoute = DigitIndexRouteImport.update({
+  id: '/digit/',
+  path: '/digit/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitSplatRoute = DigitSplatRouteImport.update({
+  id: '/digit/$',
+  path: '/digit/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnIndexRoute = EnIndexRouteImport.update({
@@ -478,6 +937,71 @@ const EnTrustSecurityRoute = EnTrustSecurityRouteImport.update({
   path: '/trust-security',
   getParentRoute: () => EnRoute,
 } as any)
+const FinanceApControlRoute = FinanceApControlRouteImport.update({
+  id: '/finance/ap-control',
+  path: '/finance/ap-control',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceAssetControlsRoute = FinanceAssetControlsRouteImport.update({
+  id: '/finance/asset-controls',
+  path: '/finance/asset-controls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceBankMatchingRoute = FinanceBankMatchingRouteImport.update({
+  id: '/finance/bank-matching',
+  path: '/finance/bank-matching',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceCashForecastRoute = FinanceCashForecastRouteImport.update({
+  id: '/finance/cash-forecast',
+  path: '/finance/cash-forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceCloseRoute = FinanceCloseRouteImport.update({
+  id: '/finance/close',
+  path: '/finance/close',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceCollectionsRoute = FinanceCollectionsRouteImport.update({
+  id: '/finance/collections',
+  path: '/finance/collections',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceConsolidationRoute = FinanceConsolidationRouteImport.update({
+  id: '/finance/consolidation',
+  path: '/finance/consolidation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceNettingRoute = FinanceNettingRouteImport.update({
+  id: '/finance/netting',
+  path: '/finance/netting',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinancePaymentRunRoute = FinancePaymentRunRouteImport.update({
+  id: '/finance/payment-run',
+  path: '/finance/payment-run',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceRecurringRoute = FinanceRecurringRouteImport.update({
+  id: '/finance/recurring',
+  path: '/finance/recurring',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceRisksRoute = FinanceRisksRouteImport.update({
+  id: '/finance/risks',
+  path: '/finance/risks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceStatementsRoute = FinanceStatementsRouteImport.update({
+  id: '/finance/statements',
+  path: '/finance/statements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FinanceSustainabilityRoute = FinanceSustainabilityRouteImport.update({
+  id: '/finance/sustainability',
+  path: '/finance/sustainability',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FsmDepartmentRoute = FsmDepartmentRouteImport.update({
   id: '/fsm/$department',
   path: '/fsm/$department',
@@ -540,6 +1064,21 @@ const IndustriesRetailRoute = IndustriesRetailRouteImport.update({
   id: '/retail',
   path: '/retail',
   getParentRoute: () => IndustriesRoute,
+} as any)
+const InsightsIndexRoute = InsightsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsDataStoreRoute = InsightsDataStoreRouteImport.update({
+  id: '/data-store',
+  path: '/data-store',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsSettingsRoute = InsightsSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => InsightsRoute,
 } as any)
 const ModulesIndexRoute = ModulesIndexRouteImport.update({
   id: '/',
@@ -616,6 +1155,21 @@ const ModulesSalesRoute = ModulesSalesRouteImport.update({
   path: '/sales',
   getParentRoute: () => ModulesRoute,
 } as any)
+const PageIndexRoute = PageIndexRouteImport.update({
+  id: '/page/',
+  path: '/page/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PageNameRoute = PageNameRouteImport.update({
+  id: '/page/$name',
+  path: '/page/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PluginsIndexRoute = PluginsIndexRouteImport.update({
+  id: '/plugins/',
+  path: '/plugins/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PosSolutionsElectricalAppliancesRoute =
   PosSolutionsElectricalAppliancesRouteImport.update({
     id: '/pos-solutions/electrical-appliances',
@@ -666,6 +1220,31 @@ const PosSolutionsSweetsRoute = PosSolutionsSweetsRouteImport.update({
 const ProAreaRoute = ProAreaRouteImport.update({
   id: '/pro_/$area',
   path: '/pro/$area',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportIndexRoute = ReportIndexRouteImport.update({
+  id: '/report/',
+  path: '/report/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportNameRoute = ReportNameRouteImport.update({
+  id: '/report/$name',
+  path: '/report/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportStudioRoute = ReportStudioRouteImport.update({
+  id: '/report/studio',
+  path: '/report/studio',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SellingChannelsRoute = SellingChannelsRouteImport.update({
+  id: '/selling/channels',
+  path: '/selling/channels',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SellingInboxRoute = SellingInboxRouteImport.update({
+  id: '/selling/inbox',
+  path: '/selling/inbox',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Services3IndexRoute = Services3IndexRouteImport.update({
@@ -758,6 +1337,156 @@ const ServicesSupportRoute = ServicesSupportRouteImport.update({
 const ServicesTrainingRoute = ServicesTrainingRouteImport.update({
   id: '/services/training',
   path: '/services/training',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockDemandForecastRoute = StockDemandForecastRouteImport.update({
+  id: '/stock/demand-forecast',
+  path: '/stock/demand-forecast',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockDockRoute = StockDockRouteImport.update({
+  id: '/stock/dock',
+  path: '/stock/dock',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockReceivingControlsRoute = StockReceivingControlsRouteImport.update({
+  id: '/stock/receiving-controls',
+  path: '/stock/receiving-controls',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockScanRoute = StockScanRouteImport.update({
+  id: '/stock/scan',
+  path: '/stock/scan',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StockWavePickingRoute = StockWavePickingRouteImport.update({
+  id: '/stock/wave-picking',
+  path: '/stock/wave-picking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaxEInvoicingRoute = TaxEInvoicingRouteImport.update({
+  id: '/tax/e-invoicing',
+  path: '/tax/e-invoicing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaxVatReturnRoute = TaxVatReturnRouteImport.update({
+  id: '/tax/vat-return',
+  path: '/tax/vat-return',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TaxZakatRoute = TaxZakatRouteImport.update({
+  id: '/tax/zakat',
+  path: '/tax/zakat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAppIndexRoute = AppAppIndexRouteImport.update({
+  id: '/app/$app/',
+  path: '/app/$app/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppDataImportIndexRoute = AppDataImportIndexRouteImport.update({
+  id: '/app/data-import/',
+  path: '/app/data-import/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppDataImportNameRoute = AppDataImportNameRouteImport.update({
+  id: '/app/data-import/$name',
+  path: '/app/data-import/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppDataImportNewRoute = AppDataImportNewRouteImport.update({
+  id: '/app/data-import/new',
+  path: '/app/data-import/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmCustomersIndexRoute = DigitCrmCustomersIndexRouteImport.update({
+  id: '/digit-crm/customers/',
+  path: '/digit-crm/customers/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmCustomersOrgRoute = DigitCrmCustomersOrgRouteImport.update({
+  id: '/digit-crm/customers/$org',
+  path: '/digit-crm/customers/$org',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmDealDealIdRoute = DigitCrmDealDealIdRouteImport.update({
+  id: '/digit-crm/deal/$dealId',
+  path: '/digit-crm/deal/$dealId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmDealsDealIdRoute = DigitCrmDealsDealIdRouteImport.update({
+  id: '/digit-crm/deals/$dealId',
+  path: '/digit-crm/deals/$dealId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmLeadLeadIdRoute = DigitCrmLeadLeadIdRouteImport.update({
+  id: '/digit-crm/lead/$leadId',
+  path: '/digit-crm/lead/$leadId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmLeadsIndexRoute = DigitCrmLeadsIndexRouteImport.update({
+  id: '/digit-crm/leads/',
+  path: '/digit-crm/leads/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmLeadsLeadIdRoute = DigitCrmLeadsLeadIdRouteImport.update({
+  id: '/digit-crm/leads/$leadId',
+  path: '/digit-crm/leads/$leadId',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmLeadsNewRoute = DigitCrmLeadsNewRouteImport.update({
+  id: '/digit-crm/leads/new',
+  path: '/digit-crm/leads/new',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitCrmWorkspaceModuleRoute = DigitCrmWorkspaceModuleRouteImport.update({
+  id: '/digit-crm/workspace/$module',
+  path: '/digit-crm/workspace/$module',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrApplicantsNameRoute = DigitHrApplicantsNameRouteImport.update({
+  id: '/digit-hr/applicants/$name',
+  path: '/digit-hr/applicants/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrCasesNameRoute = DigitHrCasesNameRouteImport.update({
+  id: '/digit-hr/cases/$name',
+  path: '/digit-hr/cases/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrContractsNameRoute = DigitHrContractsNameRouteImport.update({
+  id: '/digit-hr/contracts/$name',
+  path: '/digit-hr/contracts/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrEmployeesIndexRoute = DigitHrEmployeesIndexRouteImport.update({
+  id: '/digit-hr/employees/',
+  path: '/digit-hr/employees/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrEmployeesNameRoute = DigitHrEmployeesNameRouteImport.update({
+  id: '/digit-hr/employees/$name',
+  path: '/digit-hr/employees/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrMModuleRoute = DigitHrMModuleRouteImport.update({
+  id: '/digit-hr/m/$module',
+  path: '/digit-hr/m/$module',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrMetricsMetricRoute = DigitHrMetricsMetricRouteImport.update({
+  id: '/digit-hr/metrics/$metric',
+  path: '/digit-hr/metrics/$metric',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrPositionsNameRoute = DigitHrPositionsNameRouteImport.update({
+  id: '/digit-hr/positions/$name',
+  path: '/digit-hr/positions/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitHrSSectionRoute = DigitHrSSectionRouteImport.update({
+  id: '/digit-hr/s/$section',
+  path: '/digit-hr/s/$section',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EnConstructionIndexRoute = EnConstructionIndexRouteImport.update({
@@ -1062,6 +1791,42 @@ const EnServicesTrainingRoute = EnServicesTrainingRouteImport.update({
   path: '/training',
   getParentRoute: () => EnServicesRoute,
 } as any)
+const InsightsDashboardsIndexRoute = InsightsDashboardsIndexRouteImport.update({
+  id: '/dashboards/',
+  path: '/dashboards/',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsDashboardsNameRoute = InsightsDashboardsNameRouteImport.update({
+  id: '/dashboards/$name',
+  path: '/dashboards/$name',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsDataSourceIndexRoute = InsightsDataSourceIndexRouteImport.update({
+  id: '/data-source/',
+  path: '/data-source/',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsWorkbookIndexRoute = InsightsWorkbookIndexRouteImport.update({
+  id: '/workbook/',
+  path: '/workbook/',
+  getParentRoute: () => InsightsRoute,
+} as any)
+const InsightsWorkbookWorkbookNameRoute =
+  InsightsWorkbookWorkbookNameRouteImport.update({
+    id: '/workbook/$workbookName',
+    path: '/workbook/$workbookName',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const PluginsNameIndexRoute = PluginsNameIndexRouteImport.update({
+  id: '/plugins/$name/',
+  path: '/plugins/$name/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PluginsNameSplatRoute = PluginsNameSplatRouteImport.update({
+  id: '/plugins/$name/$',
+  path: '/plugins/$name/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAdminCrmIndexRoute =
   AuthenticatedAdminCrmIndexRouteImport.update({
     id: '/crm/',
@@ -1073,11 +1838,85 @@ const ApiPublicCmsMediaFileRoute = ApiPublicCmsMediaFileRouteImport.update({
   path: '/api/public/cms-media/$file',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AppAppDoctypeIndexRoute = AppAppDoctypeIndexRouteImport.update({
+  id: '/app/$app/$doctype/',
+  path: '/app/$app/$doctype/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AppAppDoctypeNameRoute = AppAppDoctypeNameRouteImport.update({
+  id: '/app/$app/$doctype/$name',
+  path: '/app/$app/$doctype/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsDataSourceNameIndexRoute =
+  InsightsDataSourceNameIndexRouteImport.update({
+    id: '/data-source/$name/',
+    path: '/data-source/$name/',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsDataSourceNameTableNameRoute =
+  InsightsDataSourceNameTableNameRouteImport.update({
+    id: '/data-source/$name/$tableName',
+    path: '/data-source/$name/$tableName',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsSharedChartChartNameRoute =
+  InsightsSharedChartChartNameRouteImport.update({
+    id: '/shared/chart/$chartName',
+    path: '/shared/chart/$chartName',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsSharedDashboardDashboardNameRoute =
+  InsightsSharedDashboardDashboardNameRouteImport.update({
+    id: '/shared/dashboard/$dashboardName',
+    path: '/shared/dashboard/$dashboardName',
+    getParentRoute: () => InsightsRoute,
+  } as any)
+const InsightsWorkbookWorkbookNameIndexRoute =
+  InsightsWorkbookWorkbookNameIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => InsightsWorkbookWorkbookNameRoute,
+  } as any)
+const PluginsNameReportReportRoute = PluginsNameReportReportRouteImport.update({
+  id: '/plugins/$name/report/$report',
+  path: '/plugins/$name/report/$report',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const AuthenticatedAdminCrmLeadIdRoute =
   AuthenticatedAdminCrmLeadIdRouteImport.update({
     id: '/crm/lead/$id',
     path: '/crm/lead/$id',
     getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
+const AppAppDoctypeViewTreeRoute = AppAppDoctypeViewTreeRouteImport.update({
+  id: '/app/$app/$doctype/view/tree',
+  path: '/app/$app/$doctype/view/tree',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InsightsWorkbookWorkbookNameChartChartNameRoute =
+  InsightsWorkbookWorkbookNameChartChartNameRouteImport.update({
+    id: '/chart/$chartName',
+    path: '/chart/$chartName',
+    getParentRoute: () => InsightsWorkbookWorkbookNameRoute,
+  } as any)
+const InsightsWorkbookWorkbookNameDashboardDashboardNameRoute =
+  InsightsWorkbookWorkbookNameDashboardDashboardNameRouteImport.update({
+    id: '/dashboard/$dashboardName',
+    path: '/dashboard/$dashboardName',
+    getParentRoute: () => InsightsWorkbookWorkbookNameRoute,
+  } as any)
+const InsightsWorkbookWorkbookNameQueryQueryNameRoute =
+  InsightsWorkbookWorkbookNameQueryQueryNameRouteImport.update({
+    id: '/query/$queryName',
+    path: '/query/$queryName',
+    getParentRoute: () => InsightsWorkbookWorkbookNameRoute,
+  } as any)
+const PluginsNamePrintFormatDocRoute =
+  PluginsNamePrintFormatDocRouteImport.update({
+    id: '/plugins/$name/print/$format/$doc',
+    path: '/plugins/$name/print/$format/$doc',
+    getParentRoute: () => rootRouteImport,
   } as any)
 
 export interface FileRoutesByFullPath {
@@ -1088,31 +1927,91 @@ export interface FileRoutesByFullPath {
   '/auth': typeof AuthRoute
   '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
+  '/coverage': typeof CoverageRoute
+  '/customize-form': typeof CustomizeFormRoute
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
+  '/developer': typeof DeveloperRouteWithChildren
   '/en': typeof EnRouteWithChildren
+  '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
+  '/help': typeof HelpRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/insights': typeof InsightsRouteWithChildren
+  '/login': typeof LoginRoute
   '/modules': typeof ModulesRouteWithChildren
+  '/my-space': typeof MySpaceRoute
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
+  '/printview': typeof PrintviewRoute
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services-3': typeof Services3RouteWithChildren
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/api/assistant': typeof ApiAssistantRoute
   '/api/chat': typeof ApiChatRoute
+  '/app/data-export': typeof AppDataExportRoute
+  '/buying/invoice-capture': typeof BuyingInvoiceCaptureRoute
+  '/buying/rfq-follow-up': typeof BuyingRfqFollowUpRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/control/approvals': typeof ControlApprovalsRoute
+  '/control/background-jobs': typeof ControlBackgroundJobsRoute
+  '/control/procurement-policies': typeof ControlProcurementPoliciesRoute
+  '/control/setup-guide': typeof ControlSetupGuideRoute
   '/crm/$department': typeof CrmDepartmentRoute
+  '/dashboard/$name': typeof DashboardNameRoute
+  '/department/$dept': typeof DepartmentDeptRoute
+  '/desk/$sidebar': typeof DeskSidebarRoute
+  '/dev/visual-audit': typeof DevVisualAuditRoute
+  '/developer/experience': typeof DeveloperExperienceRoute
+  '/developer/form-rules': typeof DeveloperFormRulesRoute
+  '/developer/i18n': typeof DeveloperI18nRoute
+  '/developer/scenarios': typeof DeveloperScenariosRoute
+  '/developer/sdk': typeof DeveloperSdkRoute
+  '/digit-crm/activities': typeof DigitCrmActivitiesRoute
+  '/digit-crm/automation': typeof DigitCrmAutomationRoute
+  '/digit-crm/campaigns': typeof DigitCrmCampaignsRoute
+  '/digit-crm/commissions': typeof DigitCrmCommissionsRoute
+  '/digit-crm/contacts': typeof DigitCrmContactsRoute
+  '/digit-crm/dashboards': typeof DigitCrmDashboardsRoute
+  '/digit-crm/demo': typeof DigitCrmDemoRoute
+  '/digit-crm/follow-ups': typeof DigitCrmFollowUpsRoute
+  '/digit-crm/forecast': typeof DigitCrmForecastRoute
+  '/digit-crm/home': typeof DigitCrmHomeRoute
+  '/digit-crm/manager': typeof DigitCrmManagerRoute
+  '/digit-crm/mobile': typeof DigitCrmMobileRoute
+  '/digit-crm/pipeline': typeof DigitCrmPipelineRoute
+  '/digit-crm/qualification': typeof DigitCrmQualificationRoute
+  '/digit-crm/reports': typeof DigitCrmReportsRoute
+  '/digit-crm/sales-teams': typeof DigitCrmSalesTeamsRoute
+  '/digit-crm/settings': typeof DigitCrmSettingsRoute
+  '/digit-crm/targets': typeof DigitCrmTargetsRoute
+  '/digit-crm/territories': typeof DigitCrmTerritoriesRoute
+  '/digit-hr/compliance': typeof DigitHrComplianceRoute
+  '/digit-hr/documents': typeof DigitHrDocumentsRoute
+  '/digit-hr/hiring': typeof DigitHrHiringRoute
+  '/digit-hr/insights': typeof DigitHrInsightsRoute
+  '/digit-hr/leave': typeof DigitHrLeaveRoute
+  '/digit-hr/lifecycle': typeof DigitHrLifecycleRoute
+  '/digit-hr/organization': typeof DigitHrOrganizationRoute
+  '/digit-hr/payroll': typeof DigitHrPayrollRoute
+  '/digit-hr/reports': typeof DigitHrReportsRoute
+  '/digit-hr/separation': typeof DigitHrSeparationRoute
+  '/digit-hr/talent': typeof DigitHrTalentRoute
+  '/digit-hr/workforce': typeof DigitHrWorkforceRoute
+  '/digit/$': typeof DigitSplatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/blueprint': typeof EnBlueprintRoute
@@ -1137,6 +2036,19 @@ export interface FileRoutesByFullPath {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/finance/ap-control': typeof FinanceApControlRoute
+  '/finance/asset-controls': typeof FinanceAssetControlsRoute
+  '/finance/bank-matching': typeof FinanceBankMatchingRoute
+  '/finance/cash-forecast': typeof FinanceCashForecastRoute
+  '/finance/close': typeof FinanceCloseRoute
+  '/finance/collections': typeof FinanceCollectionsRoute
+  '/finance/consolidation': typeof FinanceConsolidationRoute
+  '/finance/netting': typeof FinanceNettingRoute
+  '/finance/payment-run': typeof FinancePaymentRunRoute
+  '/finance/recurring': typeof FinanceRecurringRoute
+  '/finance/risks': typeof FinanceRisksRoute
+  '/finance/statements': typeof FinanceStatementsRoute
+  '/finance/sustainability': typeof FinanceSustainabilityRoute
   '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
@@ -1147,6 +2059,8 @@ export interface FileRoutesByFullPath {
   '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
   '/industries/real-estate-2': typeof IndustriesRealEstate2Route
   '/industries/retail': typeof IndustriesRetailRoute
+  '/insights/data-store': typeof InsightsDataStoreRoute
+  '/insights/settings': typeof InsightsSettingsRoute
   '/modules/accounting': typeof ModulesAccountingRoute
   '/modules/contracting': typeof ModulesContractingRoute
   '/modules/crm': typeof ModulesCrmRoute
@@ -1161,6 +2075,7 @@ export interface FileRoutesByFullPath {
   '/modules/purchasing': typeof ModulesPurchasingRoute
   '/modules/reports': typeof ModulesReportsRoute
   '/modules/sales': typeof ModulesSalesRoute
+  '/page/$name': typeof PageNameRoute
   '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
   '/pos-solutions/florist': typeof PosSolutionsFloristRoute
   '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
@@ -1171,6 +2086,10 @@ export interface FileRoutesByFullPath {
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
   '/pro/$area': typeof ProAreaRoute
+  '/report/$name': typeof ReportNameRoute
+  '/report/studio': typeof ReportStudioRoute
+  '/selling/channels': typeof SellingChannelsRoute
+  '/selling/inbox': typeof SellingInboxRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1187,13 +2106,46 @@ export interface FileRoutesByFullPath {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/stock/demand-forecast': typeof StockDemandForecastRoute
+  '/stock/dock': typeof StockDockRoute
+  '/stock/receiving-controls': typeof StockReceivingControlsRoute
+  '/stock/scan': typeof StockScanRoute
+  '/stock/wave-picking': typeof StockWavePickingRoute
+  '/tax/e-invoicing': typeof TaxEInvoicingRoute
+  '/tax/vat-return': typeof TaxVatReturnRoute
+  '/tax/zakat': typeof TaxZakatRoute
   '/construction/': typeof ConstructionIndexRoute
+  '/desk/': typeof DeskIndexRoute
+  '/digit-crm/': typeof DigitCrmIndexRoute
+  '/digit-hr/': typeof DigitHrIndexRoute
+  '/digit/': typeof DigitIndexRoute
   '/en/': typeof EnIndexRoute
   '/hr/': typeof HrIndexRoute
   '/industries/': typeof IndustriesIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/modules/': typeof ModulesIndexRoute
+  '/page/': typeof PageIndexRoute
+  '/plugins/': typeof PluginsIndexRoute
+  '/report/': typeof ReportIndexRoute
   '/services-3/': typeof Services3IndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/app/data-import/$name': typeof AppDataImportNameRoute
+  '/app/data-import/new': typeof AppDataImportNewRoute
+  '/digit-crm/customers/$org': typeof DigitCrmCustomersOrgRoute
+  '/digit-crm/deal/$dealId': typeof DigitCrmDealDealIdRoute
+  '/digit-crm/deals/$dealId': typeof DigitCrmDealsDealIdRoute
+  '/digit-crm/lead/$leadId': typeof DigitCrmLeadLeadIdRoute
+  '/digit-crm/leads/$leadId': typeof DigitCrmLeadsLeadIdRoute
+  '/digit-crm/leads/new': typeof DigitCrmLeadsNewRoute
+  '/digit-crm/workspace/$module': typeof DigitCrmWorkspaceModuleRoute
+  '/digit-hr/applicants/$name': typeof DigitHrApplicantsNameRoute
+  '/digit-hr/cases/$name': typeof DigitHrCasesNameRoute
+  '/digit-hr/contracts/$name': typeof DigitHrContractsNameRoute
+  '/digit-hr/employees/$name': typeof DigitHrEmployeesNameRoute
+  '/digit-hr/m/$module': typeof DigitHrMModuleRoute
+  '/digit-hr/metrics/$metric': typeof DigitHrMetricsMetricRoute
+  '/digit-hr/positions/$name': typeof DigitHrPositionsNameRoute
+  '/digit-hr/s/$section': typeof DigitHrSSectionRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1246,14 +2198,39 @@ export interface FileRoutesByFullPath {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/insights/dashboards/$name': typeof InsightsDashboardsNameRoute
+  '/insights/workbook/$workbookName': typeof InsightsWorkbookWorkbookNameRouteWithChildren
+  '/plugins/$name/$': typeof PluginsNameSplatRoute
+  '/app/$app/': typeof AppAppIndexRoute
+  '/app/data-import/': typeof AppDataImportIndexRoute
+  '/digit-crm/customers/': typeof DigitCrmCustomersIndexRoute
+  '/digit-crm/leads/': typeof DigitCrmLeadsIndexRoute
+  '/digit-hr/employees/': typeof DigitHrEmployeesIndexRoute
   '/en/construction/': typeof EnConstructionIndexRoute
   '/en/hr/': typeof EnHrIndexRoute
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
+  '/insights/dashboards/': typeof InsightsDashboardsIndexRoute
+  '/insights/data-source/': typeof InsightsDataSourceIndexRoute
+  '/insights/workbook/': typeof InsightsWorkbookIndexRoute
+  '/plugins/$name/': typeof PluginsNameIndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/app/$app/$doctype/$name': typeof AppAppDoctypeNameRoute
+  '/insights/data-source/$name/$tableName': typeof InsightsDataSourceNameTableNameRoute
+  '/insights/shared/chart/$chartName': typeof InsightsSharedChartChartNameRoute
+  '/insights/shared/dashboard/$dashboardName': typeof InsightsSharedDashboardDashboardNameRoute
+  '/plugins/$name/report/$report': typeof PluginsNameReportReportRoute
   '/admin/crm/': typeof AuthenticatedAdminCrmIndexRoute
+  '/app/$app/$doctype/': typeof AppAppDoctypeIndexRoute
+  '/insights/data-source/$name/': typeof InsightsDataSourceNameIndexRoute
+  '/insights/workbook/$workbookName/': typeof InsightsWorkbookWorkbookNameIndexRoute
   '/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
+  '/app/$app/$doctype/view/tree': typeof AppAppDoctypeViewTreeRoute
+  '/insights/workbook/$workbookName/chart/$chartName': typeof InsightsWorkbookWorkbookNameChartChartNameRoute
+  '/insights/workbook/$workbookName/dashboard/$dashboardName': typeof InsightsWorkbookWorkbookNameDashboardDashboardNameRoute
+  '/insights/workbook/$workbookName/query/$queryName': typeof InsightsWorkbookWorkbookNameQueryQueryNameRoute
+  '/plugins/$name/print/$format/$doc': typeof PluginsNamePrintFormatDocRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -1263,27 +2240,86 @@ export interface FileRoutesByTo {
   '/auth': typeof AuthRoute
   '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
+  '/coverage': typeof CoverageRoute
+  '/customize-form': typeof CustomizeFormRoute
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
+  '/developer': typeof DeveloperRouteWithChildren
+  '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
+  '/help': typeof HelpRoute
+  '/login': typeof LoginRoute
+  '/my-space': typeof MySpaceRoute
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
+  '/printview': typeof PrintviewRoute
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
   '/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/api/assistant': typeof ApiAssistantRoute
   '/api/chat': typeof ApiChatRoute
+  '/app/data-export': typeof AppDataExportRoute
+  '/buying/invoice-capture': typeof BuyingInvoiceCaptureRoute
+  '/buying/rfq-follow-up': typeof BuyingRfqFollowUpRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/control/approvals': typeof ControlApprovalsRoute
+  '/control/background-jobs': typeof ControlBackgroundJobsRoute
+  '/control/procurement-policies': typeof ControlProcurementPoliciesRoute
+  '/control/setup-guide': typeof ControlSetupGuideRoute
   '/crm/$department': typeof CrmDepartmentRoute
+  '/dashboard/$name': typeof DashboardNameRoute
+  '/department/$dept': typeof DepartmentDeptRoute
+  '/desk/$sidebar': typeof DeskSidebarRoute
+  '/dev/visual-audit': typeof DevVisualAuditRoute
+  '/developer/experience': typeof DeveloperExperienceRoute
+  '/developer/form-rules': typeof DeveloperFormRulesRoute
+  '/developer/i18n': typeof DeveloperI18nRoute
+  '/developer/scenarios': typeof DeveloperScenariosRoute
+  '/developer/sdk': typeof DeveloperSdkRoute
+  '/digit-crm/activities': typeof DigitCrmActivitiesRoute
+  '/digit-crm/automation': typeof DigitCrmAutomationRoute
+  '/digit-crm/campaigns': typeof DigitCrmCampaignsRoute
+  '/digit-crm/commissions': typeof DigitCrmCommissionsRoute
+  '/digit-crm/contacts': typeof DigitCrmContactsRoute
+  '/digit-crm/dashboards': typeof DigitCrmDashboardsRoute
+  '/digit-crm/demo': typeof DigitCrmDemoRoute
+  '/digit-crm/follow-ups': typeof DigitCrmFollowUpsRoute
+  '/digit-crm/forecast': typeof DigitCrmForecastRoute
+  '/digit-crm/home': typeof DigitCrmHomeRoute
+  '/digit-crm/manager': typeof DigitCrmManagerRoute
+  '/digit-crm/mobile': typeof DigitCrmMobileRoute
+  '/digit-crm/pipeline': typeof DigitCrmPipelineRoute
+  '/digit-crm/qualification': typeof DigitCrmQualificationRoute
+  '/digit-crm/reports': typeof DigitCrmReportsRoute
+  '/digit-crm/sales-teams': typeof DigitCrmSalesTeamsRoute
+  '/digit-crm/settings': typeof DigitCrmSettingsRoute
+  '/digit-crm/targets': typeof DigitCrmTargetsRoute
+  '/digit-crm/territories': typeof DigitCrmTerritoriesRoute
+  '/digit-hr/compliance': typeof DigitHrComplianceRoute
+  '/digit-hr/documents': typeof DigitHrDocumentsRoute
+  '/digit-hr/hiring': typeof DigitHrHiringRoute
+  '/digit-hr/insights': typeof DigitHrInsightsRoute
+  '/digit-hr/leave': typeof DigitHrLeaveRoute
+  '/digit-hr/lifecycle': typeof DigitHrLifecycleRoute
+  '/digit-hr/organization': typeof DigitHrOrganizationRoute
+  '/digit-hr/payroll': typeof DigitHrPayrollRoute
+  '/digit-hr/reports': typeof DigitHrReportsRoute
+  '/digit-hr/separation': typeof DigitHrSeparationRoute
+  '/digit-hr/talent': typeof DigitHrTalentRoute
+  '/digit-hr/workforce': typeof DigitHrWorkforceRoute
+  '/digit/$': typeof DigitSplatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/blueprint': typeof EnBlueprintRoute
@@ -1305,6 +2341,19 @@ export interface FileRoutesByTo {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/finance/ap-control': typeof FinanceApControlRoute
+  '/finance/asset-controls': typeof FinanceAssetControlsRoute
+  '/finance/bank-matching': typeof FinanceBankMatchingRoute
+  '/finance/cash-forecast': typeof FinanceCashForecastRoute
+  '/finance/close': typeof FinanceCloseRoute
+  '/finance/collections': typeof FinanceCollectionsRoute
+  '/finance/consolidation': typeof FinanceConsolidationRoute
+  '/finance/netting': typeof FinanceNettingRoute
+  '/finance/payment-run': typeof FinancePaymentRunRoute
+  '/finance/recurring': typeof FinanceRecurringRoute
+  '/finance/risks': typeof FinanceRisksRoute
+  '/finance/statements': typeof FinanceStatementsRoute
+  '/finance/sustainability': typeof FinanceSustainabilityRoute
   '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
@@ -1315,6 +2364,8 @@ export interface FileRoutesByTo {
   '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
   '/industries/real-estate-2': typeof IndustriesRealEstate2Route
   '/industries/retail': typeof IndustriesRetailRoute
+  '/insights/data-store': typeof InsightsDataStoreRoute
+  '/insights/settings': typeof InsightsSettingsRoute
   '/modules/accounting': typeof ModulesAccountingRoute
   '/modules/contracting': typeof ModulesContractingRoute
   '/modules/crm': typeof ModulesCrmRoute
@@ -1329,6 +2380,7 @@ export interface FileRoutesByTo {
   '/modules/purchasing': typeof ModulesPurchasingRoute
   '/modules/reports': typeof ModulesReportsRoute
   '/modules/sales': typeof ModulesSalesRoute
+  '/page/$name': typeof PageNameRoute
   '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
   '/pos-solutions/florist': typeof PosSolutionsFloristRoute
   '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
@@ -1339,6 +2391,10 @@ export interface FileRoutesByTo {
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
   '/pro/$area': typeof ProAreaRoute
+  '/report/$name': typeof ReportNameRoute
+  '/report/studio': typeof ReportStudioRoute
+  '/selling/channels': typeof SellingChannelsRoute
+  '/selling/inbox': typeof SellingInboxRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1355,13 +2411,46 @@ export interface FileRoutesByTo {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/stock/demand-forecast': typeof StockDemandForecastRoute
+  '/stock/dock': typeof StockDockRoute
+  '/stock/receiving-controls': typeof StockReceivingControlsRoute
+  '/stock/scan': typeof StockScanRoute
+  '/stock/wave-picking': typeof StockWavePickingRoute
+  '/tax/e-invoicing': typeof TaxEInvoicingRoute
+  '/tax/vat-return': typeof TaxVatReturnRoute
+  '/tax/zakat': typeof TaxZakatRoute
   '/construction': typeof ConstructionIndexRoute
+  '/desk': typeof DeskIndexRoute
+  '/digit-crm': typeof DigitCrmIndexRoute
+  '/digit-hr': typeof DigitHrIndexRoute
+  '/digit': typeof DigitIndexRoute
   '/en': typeof EnIndexRoute
   '/hr': typeof HrIndexRoute
   '/industries': typeof IndustriesIndexRoute
+  '/insights': typeof InsightsIndexRoute
   '/modules': typeof ModulesIndexRoute
+  '/page': typeof PageIndexRoute
+  '/plugins': typeof PluginsIndexRoute
+  '/report': typeof ReportIndexRoute
   '/services-3': typeof Services3IndexRoute
   '/services': typeof ServicesIndexRoute
+  '/app/data-import/$name': typeof AppDataImportNameRoute
+  '/app/data-import/new': typeof AppDataImportNewRoute
+  '/digit-crm/customers/$org': typeof DigitCrmCustomersOrgRoute
+  '/digit-crm/deal/$dealId': typeof DigitCrmDealDealIdRoute
+  '/digit-crm/deals/$dealId': typeof DigitCrmDealsDealIdRoute
+  '/digit-crm/lead/$leadId': typeof DigitCrmLeadLeadIdRoute
+  '/digit-crm/leads/$leadId': typeof DigitCrmLeadsLeadIdRoute
+  '/digit-crm/leads/new': typeof DigitCrmLeadsNewRoute
+  '/digit-crm/workspace/$module': typeof DigitCrmWorkspaceModuleRoute
+  '/digit-hr/applicants/$name': typeof DigitHrApplicantsNameRoute
+  '/digit-hr/cases/$name': typeof DigitHrCasesNameRoute
+  '/digit-hr/contracts/$name': typeof DigitHrContractsNameRoute
+  '/digit-hr/employees/$name': typeof DigitHrEmployeesNameRoute
+  '/digit-hr/m/$module': typeof DigitHrMModuleRoute
+  '/digit-hr/metrics/$metric': typeof DigitHrMetricsMetricRoute
+  '/digit-hr/positions/$name': typeof DigitHrPositionsNameRoute
+  '/digit-hr/s/$section': typeof DigitHrSSectionRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1414,14 +2503,38 @@ export interface FileRoutesByTo {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/insights/dashboards/$name': typeof InsightsDashboardsNameRoute
+  '/plugins/$name/$': typeof PluginsNameSplatRoute
+  '/app/$app': typeof AppAppIndexRoute
+  '/app/data-import': typeof AppDataImportIndexRoute
+  '/digit-crm/customers': typeof DigitCrmCustomersIndexRoute
+  '/digit-crm/leads': typeof DigitCrmLeadsIndexRoute
+  '/digit-hr/employees': typeof DigitHrEmployeesIndexRoute
   '/en/construction': typeof EnConstructionIndexRoute
   '/en/hr': typeof EnHrIndexRoute
   '/en/industries': typeof EnIndustriesIndexRoute
   '/en/modules': typeof EnModulesIndexRoute
   '/en/services-3': typeof EnServices3IndexRoute
+  '/insights/dashboards': typeof InsightsDashboardsIndexRoute
+  '/insights/data-source': typeof InsightsDataSourceIndexRoute
+  '/insights/workbook': typeof InsightsWorkbookIndexRoute
+  '/plugins/$name': typeof PluginsNameIndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/app/$app/$doctype/$name': typeof AppAppDoctypeNameRoute
+  '/insights/data-source/$name/$tableName': typeof InsightsDataSourceNameTableNameRoute
+  '/insights/shared/chart/$chartName': typeof InsightsSharedChartChartNameRoute
+  '/insights/shared/dashboard/$dashboardName': typeof InsightsSharedDashboardDashboardNameRoute
+  '/plugins/$name/report/$report': typeof PluginsNameReportReportRoute
   '/admin/crm': typeof AuthenticatedAdminCrmIndexRoute
+  '/app/$app/$doctype': typeof AppAppDoctypeIndexRoute
+  '/insights/data-source/$name': typeof InsightsDataSourceNameIndexRoute
+  '/insights/workbook/$workbookName': typeof InsightsWorkbookWorkbookNameIndexRoute
   '/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
+  '/app/$app/$doctype/view/tree': typeof AppAppDoctypeViewTreeRoute
+  '/insights/workbook/$workbookName/chart/$chartName': typeof InsightsWorkbookWorkbookNameChartChartNameRoute
+  '/insights/workbook/$workbookName/dashboard/$dashboardName': typeof InsightsWorkbookWorkbookNameDashboardDashboardNameRoute
+  '/insights/workbook/$workbookName/query/$queryName': typeof InsightsWorkbookWorkbookNameQueryQueryNameRoute
+  '/plugins/$name/print/$format/$doc': typeof PluginsNamePrintFormatDocRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1433,31 +2546,91 @@ export interface FileRoutesById {
   '/auth': typeof AuthRoute
   '/blueprint': typeof BlueprintRoute
   '/careers': typeof CareersRoute
+  '/compliance': typeof ComplianceRoute
   '/contact': typeof ContactRoute
   '/contact-4': typeof Contact4Route
+  '/coverage': typeof CoverageRoute
+  '/customize-form': typeof CustomizeFormRoute
   '/demo': typeof DemoRoute
   '/demo-3': typeof Demo3Route
+  '/developer': typeof DeveloperRouteWithChildren
   '/en': typeof EnRouteWithChildren
+  '/enterprise': typeof EnterpriseRoute
   '/faq': typeof FaqRoute
   '/features': typeof FeaturesRoute
+  '/help': typeof HelpRoute
   '/industries': typeof IndustriesRouteWithChildren
+  '/insights': typeof InsightsRouteWithChildren
+  '/login': typeof LoginRoute
   '/modules': typeof ModulesRouteWithChildren
+  '/my-space': typeof MySpaceRoute
   '/partnership': typeof PartnershipRoute
   '/pricing': typeof PricingRoute
+  '/printview': typeof PrintviewRoute
   '/pro': typeof ProRoute
   '/quote': typeof QuoteRoute
   '/resources': typeof ResourcesRoute
   '/saudi-localization': typeof SaudiLocalizationRoute
   '/services-3': typeof Services3RouteWithChildren
+  '/settings': typeof SettingsRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/starter': typeof StarterRoute
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
   '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
+  '/api/assistant': typeof ApiAssistantRoute
   '/api/chat': typeof ApiChatRoute
+  '/app/data-export': typeof AppDataExportRoute
+  '/buying/invoice-capture': typeof BuyingInvoiceCaptureRoute
+  '/buying/rfq-follow-up': typeof BuyingRfqFollowUpRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
+  '/control/approvals': typeof ControlApprovalsRoute
+  '/control/background-jobs': typeof ControlBackgroundJobsRoute
+  '/control/procurement-policies': typeof ControlProcurementPoliciesRoute
+  '/control/setup-guide': typeof ControlSetupGuideRoute
   '/crm/$department': typeof CrmDepartmentRoute
+  '/dashboard/$name': typeof DashboardNameRoute
+  '/department/$dept': typeof DepartmentDeptRoute
+  '/desk/$sidebar': typeof DeskSidebarRoute
+  '/dev/visual-audit': typeof DevVisualAuditRoute
+  '/developer/experience': typeof DeveloperExperienceRoute
+  '/developer/form-rules': typeof DeveloperFormRulesRoute
+  '/developer/i18n': typeof DeveloperI18nRoute
+  '/developer/scenarios': typeof DeveloperScenariosRoute
+  '/developer/sdk': typeof DeveloperSdkRoute
+  '/digit-crm/activities': typeof DigitCrmActivitiesRoute
+  '/digit-crm/automation': typeof DigitCrmAutomationRoute
+  '/digit-crm/campaigns': typeof DigitCrmCampaignsRoute
+  '/digit-crm/commissions': typeof DigitCrmCommissionsRoute
+  '/digit-crm/contacts': typeof DigitCrmContactsRoute
+  '/digit-crm/dashboards': typeof DigitCrmDashboardsRoute
+  '/digit-crm/demo': typeof DigitCrmDemoRoute
+  '/digit-crm/follow-ups': typeof DigitCrmFollowUpsRoute
+  '/digit-crm/forecast': typeof DigitCrmForecastRoute
+  '/digit-crm/home': typeof DigitCrmHomeRoute
+  '/digit-crm/manager': typeof DigitCrmManagerRoute
+  '/digit-crm/mobile': typeof DigitCrmMobileRoute
+  '/digit-crm/pipeline': typeof DigitCrmPipelineRoute
+  '/digit-crm/qualification': typeof DigitCrmQualificationRoute
+  '/digit-crm/reports': typeof DigitCrmReportsRoute
+  '/digit-crm/sales-teams': typeof DigitCrmSalesTeamsRoute
+  '/digit-crm/settings': typeof DigitCrmSettingsRoute
+  '/digit-crm/targets': typeof DigitCrmTargetsRoute
+  '/digit-crm/territories': typeof DigitCrmTerritoriesRoute
+  '/digit-hr/compliance': typeof DigitHrComplianceRoute
+  '/digit-hr/documents': typeof DigitHrDocumentsRoute
+  '/digit-hr/hiring': typeof DigitHrHiringRoute
+  '/digit-hr/insights': typeof DigitHrInsightsRoute
+  '/digit-hr/leave': typeof DigitHrLeaveRoute
+  '/digit-hr/lifecycle': typeof DigitHrLifecycleRoute
+  '/digit-hr/organization': typeof DigitHrOrganizationRoute
+  '/digit-hr/payroll': typeof DigitHrPayrollRoute
+  '/digit-hr/reports': typeof DigitHrReportsRoute
+  '/digit-hr/separation': typeof DigitHrSeparationRoute
+  '/digit-hr/talent': typeof DigitHrTalentRoute
+  '/digit-hr/workforce': typeof DigitHrWorkforceRoute
+  '/digit/$': typeof DigitSplatRoute
   '/en/about': typeof EnAboutRoute
   '/en/about-4': typeof EnAbout4Route
   '/en/blueprint': typeof EnBlueprintRoute
@@ -1482,6 +2655,19 @@ export interface FileRoutesById {
   '/en/support': typeof EnSupportRoute
   '/en/terms': typeof EnTermsRoute
   '/en/trust-security': typeof EnTrustSecurityRoute
+  '/finance/ap-control': typeof FinanceApControlRoute
+  '/finance/asset-controls': typeof FinanceAssetControlsRoute
+  '/finance/bank-matching': typeof FinanceBankMatchingRoute
+  '/finance/cash-forecast': typeof FinanceCashForecastRoute
+  '/finance/close': typeof FinanceCloseRoute
+  '/finance/collections': typeof FinanceCollectionsRoute
+  '/finance/consolidation': typeof FinanceConsolidationRoute
+  '/finance/netting': typeof FinanceNettingRoute
+  '/finance/payment-run': typeof FinancePaymentRunRoute
+  '/finance/recurring': typeof FinanceRecurringRoute
+  '/finance/risks': typeof FinanceRisksRoute
+  '/finance/statements': typeof FinanceStatementsRoute
+  '/finance/sustainability': typeof FinanceSustainabilityRoute
   '/fsm/$department': typeof FsmDepartmentRoute
   '/hr/$department': typeof HrDepartmentRoute
   '/industries/contracting-industry': typeof IndustriesContractingIndustryRoute
@@ -1492,6 +2678,8 @@ export interface FileRoutesById {
   '/industries/professional-services': typeof IndustriesProfessionalServicesRoute
   '/industries/real-estate-2': typeof IndustriesRealEstate2Route
   '/industries/retail': typeof IndustriesRetailRoute
+  '/insights/data-store': typeof InsightsDataStoreRoute
+  '/insights/settings': typeof InsightsSettingsRoute
   '/modules/accounting': typeof ModulesAccountingRoute
   '/modules/contracting': typeof ModulesContractingRoute
   '/modules/crm': typeof ModulesCrmRoute
@@ -1506,6 +2694,7 @@ export interface FileRoutesById {
   '/modules/purchasing': typeof ModulesPurchasingRoute
   '/modules/reports': typeof ModulesReportsRoute
   '/modules/sales': typeof ModulesSalesRoute
+  '/page/$name': typeof PageNameRoute
   '/pos-solutions/electrical-appliances': typeof PosSolutionsElectricalAppliancesRoute
   '/pos-solutions/florist': typeof PosSolutionsFloristRoute
   '/pos-solutions/furniture': typeof PosSolutionsFurnitureRoute
@@ -1516,6 +2705,10 @@ export interface FileRoutesById {
   '/pos-solutions/salons': typeof PosSolutionsSalonsRoute
   '/pos-solutions/sweets': typeof PosSolutionsSweetsRoute
   '/pro_/$area': typeof ProAreaRoute
+  '/report/$name': typeof ReportNameRoute
+  '/report/studio': typeof ReportStudioRoute
+  '/selling/channels': typeof SellingChannelsRoute
+  '/selling/inbox': typeof SellingInboxRoute
   '/services-3/customization': typeof Services3CustomizationRoute
   '/services-3/data-migration': typeof Services3DataMigrationRoute
   '/services-3/discovery-workshop': typeof Services3DiscoveryWorkshopRoute
@@ -1532,13 +2725,46 @@ export interface FileRoutesById {
   '/services/implementation': typeof ServicesImplementationRoute
   '/services/support': typeof ServicesSupportRoute
   '/services/training': typeof ServicesTrainingRoute
+  '/stock/demand-forecast': typeof StockDemandForecastRoute
+  '/stock/dock': typeof StockDockRoute
+  '/stock/receiving-controls': typeof StockReceivingControlsRoute
+  '/stock/scan': typeof StockScanRoute
+  '/stock/wave-picking': typeof StockWavePickingRoute
+  '/tax/e-invoicing': typeof TaxEInvoicingRoute
+  '/tax/vat-return': typeof TaxVatReturnRoute
+  '/tax/zakat': typeof TaxZakatRoute
   '/construction/': typeof ConstructionIndexRoute
+  '/desk/': typeof DeskIndexRoute
+  '/digit-crm/': typeof DigitCrmIndexRoute
+  '/digit-hr/': typeof DigitHrIndexRoute
+  '/digit/': typeof DigitIndexRoute
   '/en/': typeof EnIndexRoute
   '/hr/': typeof HrIndexRoute
   '/industries/': typeof IndustriesIndexRoute
+  '/insights/': typeof InsightsIndexRoute
   '/modules/': typeof ModulesIndexRoute
+  '/page/': typeof PageIndexRoute
+  '/plugins/': typeof PluginsIndexRoute
+  '/report/': typeof ReportIndexRoute
   '/services-3/': typeof Services3IndexRoute
   '/services/': typeof ServicesIndexRoute
+  '/app/data-import/$name': typeof AppDataImportNameRoute
+  '/app/data-import/new': typeof AppDataImportNewRoute
+  '/digit-crm/customers/$org': typeof DigitCrmCustomersOrgRoute
+  '/digit-crm/deal/$dealId': typeof DigitCrmDealDealIdRoute
+  '/digit-crm/deals/$dealId': typeof DigitCrmDealsDealIdRoute
+  '/digit-crm/lead/$leadId': typeof DigitCrmLeadLeadIdRoute
+  '/digit-crm/leads/$leadId': typeof DigitCrmLeadsLeadIdRoute
+  '/digit-crm/leads/new': typeof DigitCrmLeadsNewRoute
+  '/digit-crm/workspace/$module': typeof DigitCrmWorkspaceModuleRoute
+  '/digit-hr/applicants/$name': typeof DigitHrApplicantsNameRoute
+  '/digit-hr/cases/$name': typeof DigitHrCasesNameRoute
+  '/digit-hr/contracts/$name': typeof DigitHrContractsNameRoute
+  '/digit-hr/employees/$name': typeof DigitHrEmployeesNameRoute
+  '/digit-hr/m/$module': typeof DigitHrMModuleRoute
+  '/digit-hr/metrics/$metric': typeof DigitHrMetricsMetricRoute
+  '/digit-hr/positions/$name': typeof DigitHrPositionsNameRoute
+  '/digit-hr/s/$section': typeof DigitHrSSectionRoute
   '/en/construction/$department': typeof EnConstructionDepartmentRoute
   '/en/crm/$department': typeof EnCrmDepartmentRoute
   '/en/fsm/$department': typeof EnFsmDepartmentRoute
@@ -1591,14 +2817,39 @@ export interface FileRoutesById {
   '/en/services/implementation': typeof EnServicesImplementationRoute
   '/en/services/support': typeof EnServicesSupportRoute
   '/en/services/training': typeof EnServicesTrainingRoute
+  '/insights/dashboards/$name': typeof InsightsDashboardsNameRoute
+  '/insights/workbook/$workbookName': typeof InsightsWorkbookWorkbookNameRouteWithChildren
+  '/plugins/$name/$': typeof PluginsNameSplatRoute
+  '/app/$app/': typeof AppAppIndexRoute
+  '/app/data-import/': typeof AppDataImportIndexRoute
+  '/digit-crm/customers/': typeof DigitCrmCustomersIndexRoute
+  '/digit-crm/leads/': typeof DigitCrmLeadsIndexRoute
+  '/digit-hr/employees/': typeof DigitHrEmployeesIndexRoute
   '/en/construction/': typeof EnConstructionIndexRoute
   '/en/hr/': typeof EnHrIndexRoute
   '/en/industries/': typeof EnIndustriesIndexRoute
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
+  '/insights/dashboards/': typeof InsightsDashboardsIndexRoute
+  '/insights/data-source/': typeof InsightsDataSourceIndexRoute
+  '/insights/workbook/': typeof InsightsWorkbookIndexRoute
+  '/plugins/$name/': typeof PluginsNameIndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/app/$app/$doctype/$name': typeof AppAppDoctypeNameRoute
+  '/insights/data-source/$name/$tableName': typeof InsightsDataSourceNameTableNameRoute
+  '/insights/shared/chart/$chartName': typeof InsightsSharedChartChartNameRoute
+  '/insights/shared/dashboard/$dashboardName': typeof InsightsSharedDashboardDashboardNameRoute
+  '/plugins/$name/report/$report': typeof PluginsNameReportReportRoute
   '/_authenticated/admin/crm/': typeof AuthenticatedAdminCrmIndexRoute
+  '/app/$app/$doctype/': typeof AppAppDoctypeIndexRoute
+  '/insights/data-source/$name/': typeof InsightsDataSourceNameIndexRoute
+  '/insights/workbook/$workbookName/': typeof InsightsWorkbookWorkbookNameIndexRoute
   '/_authenticated/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
+  '/app/$app/$doctype/view/tree': typeof AppAppDoctypeViewTreeRoute
+  '/insights/workbook/$workbookName/chart/$chartName': typeof InsightsWorkbookWorkbookNameChartChartNameRoute
+  '/insights/workbook/$workbookName/dashboard/$dashboardName': typeof InsightsWorkbookWorkbookNameDashboardDashboardNameRoute
+  '/insights/workbook/$workbookName/query/$queryName': typeof InsightsWorkbookWorkbookNameQueryQueryNameRoute
+  '/plugins/$name/print/$format/$doc': typeof PluginsNamePrintFormatDocRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1610,31 +2861,91 @@ export interface FileRouteTypes {
     | '/auth'
     | '/blueprint'
     | '/careers'
+    | '/compliance'
     | '/contact'
     | '/contact-4'
+    | '/coverage'
+    | '/customize-form'
     | '/demo'
     | '/demo-3'
+    | '/developer'
     | '/en'
+    | '/enterprise'
     | '/faq'
     | '/features'
+    | '/help'
     | '/industries'
+    | '/insights'
+    | '/login'
     | '/modules'
+    | '/my-space'
     | '/partnership'
     | '/pricing'
+    | '/printview'
     | '/pro'
     | '/quote'
     | '/resources'
     | '/saudi-localization'
     | '/services-3'
+    | '/settings'
     | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
     | '/trust-security'
     | '/admin'
+    | '/api/assistant'
     | '/api/chat'
+    | '/app/data-export'
+    | '/buying/invoice-capture'
+    | '/buying/rfq-follow-up'
     | '/construction/$department'
+    | '/control/approvals'
+    | '/control/background-jobs'
+    | '/control/procurement-policies'
+    | '/control/setup-guide'
     | '/crm/$department'
+    | '/dashboard/$name'
+    | '/department/$dept'
+    | '/desk/$sidebar'
+    | '/dev/visual-audit'
+    | '/developer/experience'
+    | '/developer/form-rules'
+    | '/developer/i18n'
+    | '/developer/scenarios'
+    | '/developer/sdk'
+    | '/digit-crm/activities'
+    | '/digit-crm/automation'
+    | '/digit-crm/campaigns'
+    | '/digit-crm/commissions'
+    | '/digit-crm/contacts'
+    | '/digit-crm/dashboards'
+    | '/digit-crm/demo'
+    | '/digit-crm/follow-ups'
+    | '/digit-crm/forecast'
+    | '/digit-crm/home'
+    | '/digit-crm/manager'
+    | '/digit-crm/mobile'
+    | '/digit-crm/pipeline'
+    | '/digit-crm/qualification'
+    | '/digit-crm/reports'
+    | '/digit-crm/sales-teams'
+    | '/digit-crm/settings'
+    | '/digit-crm/targets'
+    | '/digit-crm/territories'
+    | '/digit-hr/compliance'
+    | '/digit-hr/documents'
+    | '/digit-hr/hiring'
+    | '/digit-hr/insights'
+    | '/digit-hr/leave'
+    | '/digit-hr/lifecycle'
+    | '/digit-hr/organization'
+    | '/digit-hr/payroll'
+    | '/digit-hr/reports'
+    | '/digit-hr/separation'
+    | '/digit-hr/talent'
+    | '/digit-hr/workforce'
+    | '/digit/$'
     | '/en/about'
     | '/en/about-4'
     | '/en/blueprint'
@@ -1659,6 +2970,19 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/finance/ap-control'
+    | '/finance/asset-controls'
+    | '/finance/bank-matching'
+    | '/finance/cash-forecast'
+    | '/finance/close'
+    | '/finance/collections'
+    | '/finance/consolidation'
+    | '/finance/netting'
+    | '/finance/payment-run'
+    | '/finance/recurring'
+    | '/finance/risks'
+    | '/finance/statements'
+    | '/finance/sustainability'
     | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
@@ -1669,6 +2993,8 @@ export interface FileRouteTypes {
     | '/industries/professional-services'
     | '/industries/real-estate-2'
     | '/industries/retail'
+    | '/insights/data-store'
+    | '/insights/settings'
     | '/modules/accounting'
     | '/modules/contracting'
     | '/modules/crm'
@@ -1683,6 +3009,7 @@ export interface FileRouteTypes {
     | '/modules/purchasing'
     | '/modules/reports'
     | '/modules/sales'
+    | '/page/$name'
     | '/pos-solutions/electrical-appliances'
     | '/pos-solutions/florist'
     | '/pos-solutions/furniture'
@@ -1693,6 +3020,10 @@ export interface FileRouteTypes {
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
     | '/pro/$area'
+    | '/report/$name'
+    | '/report/studio'
+    | '/selling/channels'
+    | '/selling/inbox'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -1709,13 +3040,46 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/stock/demand-forecast'
+    | '/stock/dock'
+    | '/stock/receiving-controls'
+    | '/stock/scan'
+    | '/stock/wave-picking'
+    | '/tax/e-invoicing'
+    | '/tax/vat-return'
+    | '/tax/zakat'
     | '/construction/'
+    | '/desk/'
+    | '/digit-crm/'
+    | '/digit-hr/'
+    | '/digit/'
     | '/en/'
     | '/hr/'
     | '/industries/'
+    | '/insights/'
     | '/modules/'
+    | '/page/'
+    | '/plugins/'
+    | '/report/'
     | '/services-3/'
     | '/services/'
+    | '/app/data-import/$name'
+    | '/app/data-import/new'
+    | '/digit-crm/customers/$org'
+    | '/digit-crm/deal/$dealId'
+    | '/digit-crm/deals/$dealId'
+    | '/digit-crm/lead/$leadId'
+    | '/digit-crm/leads/$leadId'
+    | '/digit-crm/leads/new'
+    | '/digit-crm/workspace/$module'
+    | '/digit-hr/applicants/$name'
+    | '/digit-hr/cases/$name'
+    | '/digit-hr/contracts/$name'
+    | '/digit-hr/employees/$name'
+    | '/digit-hr/m/$module'
+    | '/digit-hr/metrics/$metric'
+    | '/digit-hr/positions/$name'
+    | '/digit-hr/s/$section'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -1768,14 +3132,39 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/insights/dashboards/$name'
+    | '/insights/workbook/$workbookName'
+    | '/plugins/$name/$'
+    | '/app/$app/'
+    | '/app/data-import/'
+    | '/digit-crm/customers/'
+    | '/digit-crm/leads/'
+    | '/digit-hr/employees/'
     | '/en/construction/'
     | '/en/hr/'
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
+    | '/insights/dashboards/'
+    | '/insights/data-source/'
+    | '/insights/workbook/'
+    | '/plugins/$name/'
     | '/api/public/cms-media/$file'
+    | '/app/$app/$doctype/$name'
+    | '/insights/data-source/$name/$tableName'
+    | '/insights/shared/chart/$chartName'
+    | '/insights/shared/dashboard/$dashboardName'
+    | '/plugins/$name/report/$report'
     | '/admin/crm/'
+    | '/app/$app/$doctype/'
+    | '/insights/data-source/$name/'
+    | '/insights/workbook/$workbookName/'
     | '/admin/crm/lead/$id'
+    | '/app/$app/$doctype/view/tree'
+    | '/insights/workbook/$workbookName/chart/$chartName'
+    | '/insights/workbook/$workbookName/dashboard/$dashboardName'
+    | '/insights/workbook/$workbookName/query/$queryName'
+    | '/plugins/$name/print/$format/$doc'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1785,27 +3174,86 @@ export interface FileRouteTypes {
     | '/auth'
     | '/blueprint'
     | '/careers'
+    | '/compliance'
     | '/contact'
     | '/contact-4'
+    | '/coverage'
+    | '/customize-form'
     | '/demo'
     | '/demo-3'
+    | '/developer'
+    | '/enterprise'
     | '/faq'
     | '/features'
+    | '/help'
+    | '/login'
+    | '/my-space'
     | '/partnership'
     | '/pricing'
+    | '/printview'
     | '/pro'
     | '/quote'
     | '/resources'
     | '/saudi-localization'
+    | '/settings'
     | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
     | '/trust-security'
     | '/admin'
+    | '/api/assistant'
     | '/api/chat'
+    | '/app/data-export'
+    | '/buying/invoice-capture'
+    | '/buying/rfq-follow-up'
     | '/construction/$department'
+    | '/control/approvals'
+    | '/control/background-jobs'
+    | '/control/procurement-policies'
+    | '/control/setup-guide'
     | '/crm/$department'
+    | '/dashboard/$name'
+    | '/department/$dept'
+    | '/desk/$sidebar'
+    | '/dev/visual-audit'
+    | '/developer/experience'
+    | '/developer/form-rules'
+    | '/developer/i18n'
+    | '/developer/scenarios'
+    | '/developer/sdk'
+    | '/digit-crm/activities'
+    | '/digit-crm/automation'
+    | '/digit-crm/campaigns'
+    | '/digit-crm/commissions'
+    | '/digit-crm/contacts'
+    | '/digit-crm/dashboards'
+    | '/digit-crm/demo'
+    | '/digit-crm/follow-ups'
+    | '/digit-crm/forecast'
+    | '/digit-crm/home'
+    | '/digit-crm/manager'
+    | '/digit-crm/mobile'
+    | '/digit-crm/pipeline'
+    | '/digit-crm/qualification'
+    | '/digit-crm/reports'
+    | '/digit-crm/sales-teams'
+    | '/digit-crm/settings'
+    | '/digit-crm/targets'
+    | '/digit-crm/territories'
+    | '/digit-hr/compliance'
+    | '/digit-hr/documents'
+    | '/digit-hr/hiring'
+    | '/digit-hr/insights'
+    | '/digit-hr/leave'
+    | '/digit-hr/lifecycle'
+    | '/digit-hr/organization'
+    | '/digit-hr/payroll'
+    | '/digit-hr/reports'
+    | '/digit-hr/separation'
+    | '/digit-hr/talent'
+    | '/digit-hr/workforce'
+    | '/digit/$'
     | '/en/about'
     | '/en/about-4'
     | '/en/blueprint'
@@ -1827,6 +3275,19 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/finance/ap-control'
+    | '/finance/asset-controls'
+    | '/finance/bank-matching'
+    | '/finance/cash-forecast'
+    | '/finance/close'
+    | '/finance/collections'
+    | '/finance/consolidation'
+    | '/finance/netting'
+    | '/finance/payment-run'
+    | '/finance/recurring'
+    | '/finance/risks'
+    | '/finance/statements'
+    | '/finance/sustainability'
     | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
@@ -1837,6 +3298,8 @@ export interface FileRouteTypes {
     | '/industries/professional-services'
     | '/industries/real-estate-2'
     | '/industries/retail'
+    | '/insights/data-store'
+    | '/insights/settings'
     | '/modules/accounting'
     | '/modules/contracting'
     | '/modules/crm'
@@ -1851,6 +3314,7 @@ export interface FileRouteTypes {
     | '/modules/purchasing'
     | '/modules/reports'
     | '/modules/sales'
+    | '/page/$name'
     | '/pos-solutions/electrical-appliances'
     | '/pos-solutions/florist'
     | '/pos-solutions/furniture'
@@ -1861,6 +3325,10 @@ export interface FileRouteTypes {
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
     | '/pro/$area'
+    | '/report/$name'
+    | '/report/studio'
+    | '/selling/channels'
+    | '/selling/inbox'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -1877,13 +3345,46 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/stock/demand-forecast'
+    | '/stock/dock'
+    | '/stock/receiving-controls'
+    | '/stock/scan'
+    | '/stock/wave-picking'
+    | '/tax/e-invoicing'
+    | '/tax/vat-return'
+    | '/tax/zakat'
     | '/construction'
+    | '/desk'
+    | '/digit-crm'
+    | '/digit-hr'
+    | '/digit'
     | '/en'
     | '/hr'
     | '/industries'
+    | '/insights'
     | '/modules'
+    | '/page'
+    | '/plugins'
+    | '/report'
     | '/services-3'
     | '/services'
+    | '/app/data-import/$name'
+    | '/app/data-import/new'
+    | '/digit-crm/customers/$org'
+    | '/digit-crm/deal/$dealId'
+    | '/digit-crm/deals/$dealId'
+    | '/digit-crm/lead/$leadId'
+    | '/digit-crm/leads/$leadId'
+    | '/digit-crm/leads/new'
+    | '/digit-crm/workspace/$module'
+    | '/digit-hr/applicants/$name'
+    | '/digit-hr/cases/$name'
+    | '/digit-hr/contracts/$name'
+    | '/digit-hr/employees/$name'
+    | '/digit-hr/m/$module'
+    | '/digit-hr/metrics/$metric'
+    | '/digit-hr/positions/$name'
+    | '/digit-hr/s/$section'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -1936,14 +3437,38 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/insights/dashboards/$name'
+    | '/plugins/$name/$'
+    | '/app/$app'
+    | '/app/data-import'
+    | '/digit-crm/customers'
+    | '/digit-crm/leads'
+    | '/digit-hr/employees'
     | '/en/construction'
     | '/en/hr'
     | '/en/industries'
     | '/en/modules'
     | '/en/services-3'
+    | '/insights/dashboards'
+    | '/insights/data-source'
+    | '/insights/workbook'
+    | '/plugins/$name'
     | '/api/public/cms-media/$file'
+    | '/app/$app/$doctype/$name'
+    | '/insights/data-source/$name/$tableName'
+    | '/insights/shared/chart/$chartName'
+    | '/insights/shared/dashboard/$dashboardName'
+    | '/plugins/$name/report/$report'
     | '/admin/crm'
+    | '/app/$app/$doctype'
+    | '/insights/data-source/$name'
+    | '/insights/workbook/$workbookName'
     | '/admin/crm/lead/$id'
+    | '/app/$app/$doctype/view/tree'
+    | '/insights/workbook/$workbookName/chart/$chartName'
+    | '/insights/workbook/$workbookName/dashboard/$dashboardName'
+    | '/insights/workbook/$workbookName/query/$queryName'
+    | '/plugins/$name/print/$format/$doc'
   id:
     | '__root__'
     | '/'
@@ -1954,31 +3479,91 @@ export interface FileRouteTypes {
     | '/auth'
     | '/blueprint'
     | '/careers'
+    | '/compliance'
     | '/contact'
     | '/contact-4'
+    | '/coverage'
+    | '/customize-form'
     | '/demo'
     | '/demo-3'
+    | '/developer'
     | '/en'
+    | '/enterprise'
     | '/faq'
     | '/features'
+    | '/help'
     | '/industries'
+    | '/insights'
+    | '/login'
     | '/modules'
+    | '/my-space'
     | '/partnership'
     | '/pricing'
+    | '/printview'
     | '/pro'
     | '/quote'
     | '/resources'
     | '/saudi-localization'
     | '/services-3'
+    | '/settings'
     | '/sitemap.xml'
     | '/starter'
     | '/support'
     | '/terms'
     | '/trust-security'
     | '/_authenticated/admin'
+    | '/api/assistant'
     | '/api/chat'
+    | '/app/data-export'
+    | '/buying/invoice-capture'
+    | '/buying/rfq-follow-up'
     | '/construction/$department'
+    | '/control/approvals'
+    | '/control/background-jobs'
+    | '/control/procurement-policies'
+    | '/control/setup-guide'
     | '/crm/$department'
+    | '/dashboard/$name'
+    | '/department/$dept'
+    | '/desk/$sidebar'
+    | '/dev/visual-audit'
+    | '/developer/experience'
+    | '/developer/form-rules'
+    | '/developer/i18n'
+    | '/developer/scenarios'
+    | '/developer/sdk'
+    | '/digit-crm/activities'
+    | '/digit-crm/automation'
+    | '/digit-crm/campaigns'
+    | '/digit-crm/commissions'
+    | '/digit-crm/contacts'
+    | '/digit-crm/dashboards'
+    | '/digit-crm/demo'
+    | '/digit-crm/follow-ups'
+    | '/digit-crm/forecast'
+    | '/digit-crm/home'
+    | '/digit-crm/manager'
+    | '/digit-crm/mobile'
+    | '/digit-crm/pipeline'
+    | '/digit-crm/qualification'
+    | '/digit-crm/reports'
+    | '/digit-crm/sales-teams'
+    | '/digit-crm/settings'
+    | '/digit-crm/targets'
+    | '/digit-crm/territories'
+    | '/digit-hr/compliance'
+    | '/digit-hr/documents'
+    | '/digit-hr/hiring'
+    | '/digit-hr/insights'
+    | '/digit-hr/leave'
+    | '/digit-hr/lifecycle'
+    | '/digit-hr/organization'
+    | '/digit-hr/payroll'
+    | '/digit-hr/reports'
+    | '/digit-hr/separation'
+    | '/digit-hr/talent'
+    | '/digit-hr/workforce'
+    | '/digit/$'
     | '/en/about'
     | '/en/about-4'
     | '/en/blueprint'
@@ -2003,6 +3588,19 @@ export interface FileRouteTypes {
     | '/en/support'
     | '/en/terms'
     | '/en/trust-security'
+    | '/finance/ap-control'
+    | '/finance/asset-controls'
+    | '/finance/bank-matching'
+    | '/finance/cash-forecast'
+    | '/finance/close'
+    | '/finance/collections'
+    | '/finance/consolidation'
+    | '/finance/netting'
+    | '/finance/payment-run'
+    | '/finance/recurring'
+    | '/finance/risks'
+    | '/finance/statements'
+    | '/finance/sustainability'
     | '/fsm/$department'
     | '/hr/$department'
     | '/industries/contracting-industry'
@@ -2013,6 +3611,8 @@ export interface FileRouteTypes {
     | '/industries/professional-services'
     | '/industries/real-estate-2'
     | '/industries/retail'
+    | '/insights/data-store'
+    | '/insights/settings'
     | '/modules/accounting'
     | '/modules/contracting'
     | '/modules/crm'
@@ -2027,6 +3627,7 @@ export interface FileRouteTypes {
     | '/modules/purchasing'
     | '/modules/reports'
     | '/modules/sales'
+    | '/page/$name'
     | '/pos-solutions/electrical-appliances'
     | '/pos-solutions/florist'
     | '/pos-solutions/furniture'
@@ -2037,6 +3638,10 @@ export interface FileRouteTypes {
     | '/pos-solutions/salons'
     | '/pos-solutions/sweets'
     | '/pro_/$area'
+    | '/report/$name'
+    | '/report/studio'
+    | '/selling/channels'
+    | '/selling/inbox'
     | '/services-3/customization'
     | '/services-3/data-migration'
     | '/services-3/discovery-workshop'
@@ -2053,13 +3658,46 @@ export interface FileRouteTypes {
     | '/services/implementation'
     | '/services/support'
     | '/services/training'
+    | '/stock/demand-forecast'
+    | '/stock/dock'
+    | '/stock/receiving-controls'
+    | '/stock/scan'
+    | '/stock/wave-picking'
+    | '/tax/e-invoicing'
+    | '/tax/vat-return'
+    | '/tax/zakat'
     | '/construction/'
+    | '/desk/'
+    | '/digit-crm/'
+    | '/digit-hr/'
+    | '/digit/'
     | '/en/'
     | '/hr/'
     | '/industries/'
+    | '/insights/'
     | '/modules/'
+    | '/page/'
+    | '/plugins/'
+    | '/report/'
     | '/services-3/'
     | '/services/'
+    | '/app/data-import/$name'
+    | '/app/data-import/new'
+    | '/digit-crm/customers/$org'
+    | '/digit-crm/deal/$dealId'
+    | '/digit-crm/deals/$dealId'
+    | '/digit-crm/lead/$leadId'
+    | '/digit-crm/leads/$leadId'
+    | '/digit-crm/leads/new'
+    | '/digit-crm/workspace/$module'
+    | '/digit-hr/applicants/$name'
+    | '/digit-hr/cases/$name'
+    | '/digit-hr/contracts/$name'
+    | '/digit-hr/employees/$name'
+    | '/digit-hr/m/$module'
+    | '/digit-hr/metrics/$metric'
+    | '/digit-hr/positions/$name'
+    | '/digit-hr/s/$section'
     | '/en/construction/$department'
     | '/en/crm/$department'
     | '/en/fsm/$department'
@@ -2112,14 +3750,39 @@ export interface FileRouteTypes {
     | '/en/services/implementation'
     | '/en/services/support'
     | '/en/services/training'
+    | '/insights/dashboards/$name'
+    | '/insights/workbook/$workbookName'
+    | '/plugins/$name/$'
+    | '/app/$app/'
+    | '/app/data-import/'
+    | '/digit-crm/customers/'
+    | '/digit-crm/leads/'
+    | '/digit-hr/employees/'
     | '/en/construction/'
     | '/en/hr/'
     | '/en/industries/'
     | '/en/modules/'
     | '/en/services-3/'
+    | '/insights/dashboards/'
+    | '/insights/data-source/'
+    | '/insights/workbook/'
+    | '/plugins/$name/'
     | '/api/public/cms-media/$file'
+    | '/app/$app/$doctype/$name'
+    | '/insights/data-source/$name/$tableName'
+    | '/insights/shared/chart/$chartName'
+    | '/insights/shared/dashboard/$dashboardName'
+    | '/plugins/$name/report/$report'
     | '/_authenticated/admin/crm/'
+    | '/app/$app/$doctype/'
+    | '/insights/data-source/$name/'
+    | '/insights/workbook/$workbookName/'
     | '/_authenticated/admin/crm/lead/$id'
+    | '/app/$app/$doctype/view/tree'
+    | '/insights/workbook/$workbookName/chart/$chartName'
+    | '/insights/workbook/$workbookName/dashboard/$dashboardName'
+    | '/insights/workbook/$workbookName/query/$queryName'
+    | '/plugins/$name/print/$format/$doc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -2131,32 +3794,101 @@ export interface RootRouteChildren {
   AuthRoute: typeof AuthRoute
   BlueprintRoute: typeof BlueprintRoute
   CareersRoute: typeof CareersRoute
+  ComplianceRoute: typeof ComplianceRoute
   ContactRoute: typeof ContactRoute
   Contact4Route: typeof Contact4Route
+  CoverageRoute: typeof CoverageRoute
+  CustomizeFormRoute: typeof CustomizeFormRoute
   DemoRoute: typeof DemoRoute
   Demo3Route: typeof Demo3Route
+  DeveloperRoute: typeof DeveloperRouteWithChildren
   EnRoute: typeof EnRouteWithChildren
+  EnterpriseRoute: typeof EnterpriseRoute
   FaqRoute: typeof FaqRoute
   FeaturesRoute: typeof FeaturesRoute
+  HelpRoute: typeof HelpRoute
   IndustriesRoute: typeof IndustriesRouteWithChildren
+  InsightsRoute: typeof InsightsRouteWithChildren
+  LoginRoute: typeof LoginRoute
   ModulesRoute: typeof ModulesRouteWithChildren
+  MySpaceRoute: typeof MySpaceRoute
   PartnershipRoute: typeof PartnershipRoute
   PricingRoute: typeof PricingRoute
+  PrintviewRoute: typeof PrintviewRoute
   ProRoute: typeof ProRoute
   QuoteRoute: typeof QuoteRoute
   ResourcesRoute: typeof ResourcesRoute
   SaudiLocalizationRoute: typeof SaudiLocalizationRoute
   Services3Route: typeof Services3RouteWithChildren
+  SettingsRoute: typeof SettingsRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   StarterRoute: typeof StarterRoute
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   TrustSecurityRoute: typeof TrustSecurityRoute
+  ApiAssistantRoute: typeof ApiAssistantRoute
   ApiChatRoute: typeof ApiChatRoute
+  AppDataExportRoute: typeof AppDataExportRoute
+  BuyingInvoiceCaptureRoute: typeof BuyingInvoiceCaptureRoute
+  BuyingRfqFollowUpRoute: typeof BuyingRfqFollowUpRoute
   ConstructionDepartmentRoute: typeof ConstructionDepartmentRoute
+  ControlApprovalsRoute: typeof ControlApprovalsRoute
+  ControlBackgroundJobsRoute: typeof ControlBackgroundJobsRoute
+  ControlProcurementPoliciesRoute: typeof ControlProcurementPoliciesRoute
+  ControlSetupGuideRoute: typeof ControlSetupGuideRoute
   CrmDepartmentRoute: typeof CrmDepartmentRoute
+  DashboardNameRoute: typeof DashboardNameRoute
+  DepartmentDeptRoute: typeof DepartmentDeptRoute
+  DeskSidebarRoute: typeof DeskSidebarRoute
+  DevVisualAuditRoute: typeof DevVisualAuditRoute
+  DigitCrmActivitiesRoute: typeof DigitCrmActivitiesRoute
+  DigitCrmAutomationRoute: typeof DigitCrmAutomationRoute
+  DigitCrmCampaignsRoute: typeof DigitCrmCampaignsRoute
+  DigitCrmCommissionsRoute: typeof DigitCrmCommissionsRoute
+  DigitCrmContactsRoute: typeof DigitCrmContactsRoute
+  DigitCrmDashboardsRoute: typeof DigitCrmDashboardsRoute
+  DigitCrmDemoRoute: typeof DigitCrmDemoRoute
+  DigitCrmFollowUpsRoute: typeof DigitCrmFollowUpsRoute
+  DigitCrmForecastRoute: typeof DigitCrmForecastRoute
+  DigitCrmHomeRoute: typeof DigitCrmHomeRoute
+  DigitCrmManagerRoute: typeof DigitCrmManagerRoute
+  DigitCrmMobileRoute: typeof DigitCrmMobileRoute
+  DigitCrmPipelineRoute: typeof DigitCrmPipelineRoute
+  DigitCrmQualificationRoute: typeof DigitCrmQualificationRoute
+  DigitCrmReportsRoute: typeof DigitCrmReportsRoute
+  DigitCrmSalesTeamsRoute: typeof DigitCrmSalesTeamsRoute
+  DigitCrmSettingsRoute: typeof DigitCrmSettingsRoute
+  DigitCrmTargetsRoute: typeof DigitCrmTargetsRoute
+  DigitCrmTerritoriesRoute: typeof DigitCrmTerritoriesRoute
+  DigitHrComplianceRoute: typeof DigitHrComplianceRoute
+  DigitHrDocumentsRoute: typeof DigitHrDocumentsRoute
+  DigitHrHiringRoute: typeof DigitHrHiringRoute
+  DigitHrInsightsRoute: typeof DigitHrInsightsRoute
+  DigitHrLeaveRoute: typeof DigitHrLeaveRoute
+  DigitHrLifecycleRoute: typeof DigitHrLifecycleRoute
+  DigitHrOrganizationRoute: typeof DigitHrOrganizationRoute
+  DigitHrPayrollRoute: typeof DigitHrPayrollRoute
+  DigitHrReportsRoute: typeof DigitHrReportsRoute
+  DigitHrSeparationRoute: typeof DigitHrSeparationRoute
+  DigitHrTalentRoute: typeof DigitHrTalentRoute
+  DigitHrWorkforceRoute: typeof DigitHrWorkforceRoute
+  DigitSplatRoute: typeof DigitSplatRoute
+  FinanceApControlRoute: typeof FinanceApControlRoute
+  FinanceAssetControlsRoute: typeof FinanceAssetControlsRoute
+  FinanceBankMatchingRoute: typeof FinanceBankMatchingRoute
+  FinanceCashForecastRoute: typeof FinanceCashForecastRoute
+  FinanceCloseRoute: typeof FinanceCloseRoute
+  FinanceCollectionsRoute: typeof FinanceCollectionsRoute
+  FinanceConsolidationRoute: typeof FinanceConsolidationRoute
+  FinanceNettingRoute: typeof FinanceNettingRoute
+  FinancePaymentRunRoute: typeof FinancePaymentRunRoute
+  FinanceRecurringRoute: typeof FinanceRecurringRoute
+  FinanceRisksRoute: typeof FinanceRisksRoute
+  FinanceStatementsRoute: typeof FinanceStatementsRoute
+  FinanceSustainabilityRoute: typeof FinanceSustainabilityRoute
   FsmDepartmentRoute: typeof FsmDepartmentRoute
   HrDepartmentRoute: typeof HrDepartmentRoute
+  PageNameRoute: typeof PageNameRoute
   PosSolutionsElectricalAppliancesRoute: typeof PosSolutionsElectricalAppliancesRoute
   PosSolutionsFloristRoute: typeof PosSolutionsFloristRoute
   PosSolutionsFurnitureRoute: typeof PosSolutionsFurnitureRoute
@@ -2167,16 +3899,64 @@ export interface RootRouteChildren {
   PosSolutionsSalonsRoute: typeof PosSolutionsSalonsRoute
   PosSolutionsSweetsRoute: typeof PosSolutionsSweetsRoute
   ProAreaRoute: typeof ProAreaRoute
+  ReportNameRoute: typeof ReportNameRoute
+  ReportStudioRoute: typeof ReportStudioRoute
+  SellingChannelsRoute: typeof SellingChannelsRoute
+  SellingInboxRoute: typeof SellingInboxRoute
   ServicesCustomizationRoute: typeof ServicesCustomizationRoute
   ServicesDataMigrationRoute: typeof ServicesDataMigrationRoute
   ServicesHostingRoute: typeof ServicesHostingRoute
   ServicesImplementationRoute: typeof ServicesImplementationRoute
   ServicesSupportRoute: typeof ServicesSupportRoute
   ServicesTrainingRoute: typeof ServicesTrainingRoute
+  StockDemandForecastRoute: typeof StockDemandForecastRoute
+  StockDockRoute: typeof StockDockRoute
+  StockReceivingControlsRoute: typeof StockReceivingControlsRoute
+  StockScanRoute: typeof StockScanRoute
+  StockWavePickingRoute: typeof StockWavePickingRoute
+  TaxEInvoicingRoute: typeof TaxEInvoicingRoute
+  TaxVatReturnRoute: typeof TaxVatReturnRoute
+  TaxZakatRoute: typeof TaxZakatRoute
   ConstructionIndexRoute: typeof ConstructionIndexRoute
+  DeskIndexRoute: typeof DeskIndexRoute
+  DigitCrmIndexRoute: typeof DigitCrmIndexRoute
+  DigitHrIndexRoute: typeof DigitHrIndexRoute
+  DigitIndexRoute: typeof DigitIndexRoute
   HrIndexRoute: typeof HrIndexRoute
+  PageIndexRoute: typeof PageIndexRoute
+  PluginsIndexRoute: typeof PluginsIndexRoute
+  ReportIndexRoute: typeof ReportIndexRoute
   ServicesIndexRoute: typeof ServicesIndexRoute
+  AppDataImportNameRoute: typeof AppDataImportNameRoute
+  AppDataImportNewRoute: typeof AppDataImportNewRoute
+  DigitCrmCustomersOrgRoute: typeof DigitCrmCustomersOrgRoute
+  DigitCrmDealDealIdRoute: typeof DigitCrmDealDealIdRoute
+  DigitCrmDealsDealIdRoute: typeof DigitCrmDealsDealIdRoute
+  DigitCrmLeadLeadIdRoute: typeof DigitCrmLeadLeadIdRoute
+  DigitCrmLeadsLeadIdRoute: typeof DigitCrmLeadsLeadIdRoute
+  DigitCrmLeadsNewRoute: typeof DigitCrmLeadsNewRoute
+  DigitCrmWorkspaceModuleRoute: typeof DigitCrmWorkspaceModuleRoute
+  DigitHrApplicantsNameRoute: typeof DigitHrApplicantsNameRoute
+  DigitHrCasesNameRoute: typeof DigitHrCasesNameRoute
+  DigitHrContractsNameRoute: typeof DigitHrContractsNameRoute
+  DigitHrEmployeesNameRoute: typeof DigitHrEmployeesNameRoute
+  DigitHrMModuleRoute: typeof DigitHrMModuleRoute
+  DigitHrMetricsMetricRoute: typeof DigitHrMetricsMetricRoute
+  DigitHrPositionsNameRoute: typeof DigitHrPositionsNameRoute
+  DigitHrSSectionRoute: typeof DigitHrSSectionRoute
+  PluginsNameSplatRoute: typeof PluginsNameSplatRoute
+  AppAppIndexRoute: typeof AppAppIndexRoute
+  AppDataImportIndexRoute: typeof AppDataImportIndexRoute
+  DigitCrmCustomersIndexRoute: typeof DigitCrmCustomersIndexRoute
+  DigitCrmLeadsIndexRoute: typeof DigitCrmLeadsIndexRoute
+  DigitHrEmployeesIndexRoute: typeof DigitHrEmployeesIndexRoute
+  PluginsNameIndexRoute: typeof PluginsNameIndexRoute
   ApiPublicCmsMediaFileRoute: typeof ApiPublicCmsMediaFileRoute
+  AppAppDoctypeNameRoute: typeof AppAppDoctypeNameRoute
+  PluginsNameReportReportRoute: typeof PluginsNameReportReportRoute
+  AppAppDoctypeIndexRoute: typeof AppAppDoctypeIndexRoute
+  AppAppDoctypeViewTreeRoute: typeof AppAppDoctypeViewTreeRoute
+  PluginsNamePrintFormatDocRoute: typeof PluginsNamePrintFormatDocRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -2237,6 +4017,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/compliance': {
+      id: '/compliance'
+      path: '/compliance'
+      fullPath: '/compliance'
+      preLoaderRoute: typeof ComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/contact': {
       id: '/contact'
       path: '/contact'
@@ -2249,6 +4036,20 @@ declare module '@tanstack/react-router' {
       path: '/contact-4'
       fullPath: '/contact-4'
       preLoaderRoute: typeof Contact4RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/coverage': {
+      id: '/coverage'
+      path: '/coverage'
+      fullPath: '/coverage'
+      preLoaderRoute: typeof CoverageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/customize-form': {
+      id: '/customize-form'
+      path: '/customize-form'
+      fullPath: '/customize-form'
+      preLoaderRoute: typeof CustomizeFormRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/demo': {
@@ -2265,11 +4066,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Demo3RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/developer': {
+      id: '/developer'
+      path: '/developer'
+      fullPath: '/developer'
+      preLoaderRoute: typeof DeveloperRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en': {
       id: '/en'
       path: '/en'
       fullPath: '/en'
       preLoaderRoute: typeof EnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/enterprise': {
+      id: '/enterprise'
+      path: '/enterprise'
+      fullPath: '/enterprise'
+      preLoaderRoute: typeof EnterpriseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/faq': {
@@ -2286,6 +4101,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FeaturesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/help': {
+      id: '/help'
+      path: '/help'
+      fullPath: '/help'
+      preLoaderRoute: typeof HelpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/industries': {
       id: '/industries'
       path: '/industries'
@@ -2293,11 +4115,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndustriesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/insights': {
+      id: '/insights'
+      path: '/insights'
+      fullPath: '/insights'
+      preLoaderRoute: typeof InsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/modules': {
       id: '/modules'
       path: '/modules'
       fullPath: '/modules'
       preLoaderRoute: typeof ModulesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/my-space': {
+      id: '/my-space'
+      path: '/my-space'
+      fullPath: '/my-space'
+      preLoaderRoute: typeof MySpaceRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/partnership': {
@@ -2312,6 +4155,13 @@ declare module '@tanstack/react-router' {
       path: '/pricing'
       fullPath: '/pricing'
       preLoaderRoute: typeof PricingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/printview': {
+      id: '/printview'
+      path: '/printview'
+      fullPath: '/printview'
+      preLoaderRoute: typeof PrintviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/pro': {
@@ -2347,6 +4197,13 @@ declare module '@tanstack/react-router' {
       path: '/services-3'
       fullPath: '/services-3'
       preLoaderRoute: typeof Services3RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/settings': {
+      id: '/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof SettingsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -2391,11 +4248,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedAdminRouteImport
       parentRoute: typeof AuthenticatedRouteRoute
     }
+    '/api/assistant': {
+      id: '/api/assistant'
+      path: '/api/assistant'
+      fullPath: '/api/assistant'
+      preLoaderRoute: typeof ApiAssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/api/chat': {
       id: '/api/chat'
       path: '/api/chat'
       fullPath: '/api/chat'
       preLoaderRoute: typeof ApiChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/data-export': {
+      id: '/app/data-export'
+      path: '/app/data-export'
+      fullPath: '/app/data-export'
+      preLoaderRoute: typeof AppDataExportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buying/invoice-capture': {
+      id: '/buying/invoice-capture'
+      path: '/buying/invoice-capture'
+      fullPath: '/buying/invoice-capture'
+      preLoaderRoute: typeof BuyingInvoiceCaptureRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/buying/rfq-follow-up': {
+      id: '/buying/rfq-follow-up'
+      path: '/buying/rfq-follow-up'
+      fullPath: '/buying/rfq-follow-up'
+      preLoaderRoute: typeof BuyingRfqFollowUpRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/construction/': {
@@ -2412,11 +4297,354 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ConstructionDepartmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/control/approvals': {
+      id: '/control/approvals'
+      path: '/control/approvals'
+      fullPath: '/control/approvals'
+      preLoaderRoute: typeof ControlApprovalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control/background-jobs': {
+      id: '/control/background-jobs'
+      path: '/control/background-jobs'
+      fullPath: '/control/background-jobs'
+      preLoaderRoute: typeof ControlBackgroundJobsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control/procurement-policies': {
+      id: '/control/procurement-policies'
+      path: '/control/procurement-policies'
+      fullPath: '/control/procurement-policies'
+      preLoaderRoute: typeof ControlProcurementPoliciesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/control/setup-guide': {
+      id: '/control/setup-guide'
+      path: '/control/setup-guide'
+      fullPath: '/control/setup-guide'
+      preLoaderRoute: typeof ControlSetupGuideRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/crm/$department': {
       id: '/crm/$department'
       path: '/crm/$department'
       fullPath: '/crm/$department'
       preLoaderRoute: typeof CrmDepartmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard/$name': {
+      id: '/dashboard/$name'
+      path: '/dashboard/$name'
+      fullPath: '/dashboard/$name'
+      preLoaderRoute: typeof DashboardNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/department/$dept': {
+      id: '/department/$dept'
+      path: '/department/$dept'
+      fullPath: '/department/$dept'
+      preLoaderRoute: typeof DepartmentDeptRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desk/': {
+      id: '/desk/'
+      path: '/desk'
+      fullPath: '/desk/'
+      preLoaderRoute: typeof DeskIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/desk/$sidebar': {
+      id: '/desk/$sidebar'
+      path: '/desk/$sidebar'
+      fullPath: '/desk/$sidebar'
+      preLoaderRoute: typeof DeskSidebarRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dev/visual-audit': {
+      id: '/dev/visual-audit'
+      path: '/dev/visual-audit'
+      fullPath: '/dev/visual-audit'
+      preLoaderRoute: typeof DevVisualAuditRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/developer/experience': {
+      id: '/developer/experience'
+      path: '/experience'
+      fullPath: '/developer/experience'
+      preLoaderRoute: typeof DeveloperExperienceRouteImport
+      parentRoute: typeof DeveloperRoute
+    }
+    '/developer/form-rules': {
+      id: '/developer/form-rules'
+      path: '/form-rules'
+      fullPath: '/developer/form-rules'
+      preLoaderRoute: typeof DeveloperFormRulesRouteImport
+      parentRoute: typeof DeveloperRoute
+    }
+    '/developer/i18n': {
+      id: '/developer/i18n'
+      path: '/i18n'
+      fullPath: '/developer/i18n'
+      preLoaderRoute: typeof DeveloperI18nRouteImport
+      parentRoute: typeof DeveloperRoute
+    }
+    '/developer/scenarios': {
+      id: '/developer/scenarios'
+      path: '/scenarios'
+      fullPath: '/developer/scenarios'
+      preLoaderRoute: typeof DeveloperScenariosRouteImport
+      parentRoute: typeof DeveloperRoute
+    }
+    '/developer/sdk': {
+      id: '/developer/sdk'
+      path: '/sdk'
+      fullPath: '/developer/sdk'
+      preLoaderRoute: typeof DeveloperSdkRouteImport
+      parentRoute: typeof DeveloperRoute
+    }
+    '/digit-crm/': {
+      id: '/digit-crm/'
+      path: '/digit-crm'
+      fullPath: '/digit-crm/'
+      preLoaderRoute: typeof DigitCrmIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/activities': {
+      id: '/digit-crm/activities'
+      path: '/digit-crm/activities'
+      fullPath: '/digit-crm/activities'
+      preLoaderRoute: typeof DigitCrmActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/automation': {
+      id: '/digit-crm/automation'
+      path: '/digit-crm/automation'
+      fullPath: '/digit-crm/automation'
+      preLoaderRoute: typeof DigitCrmAutomationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/campaigns': {
+      id: '/digit-crm/campaigns'
+      path: '/digit-crm/campaigns'
+      fullPath: '/digit-crm/campaigns'
+      preLoaderRoute: typeof DigitCrmCampaignsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/commissions': {
+      id: '/digit-crm/commissions'
+      path: '/digit-crm/commissions'
+      fullPath: '/digit-crm/commissions'
+      preLoaderRoute: typeof DigitCrmCommissionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/contacts': {
+      id: '/digit-crm/contacts'
+      path: '/digit-crm/contacts'
+      fullPath: '/digit-crm/contacts'
+      preLoaderRoute: typeof DigitCrmContactsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/dashboards': {
+      id: '/digit-crm/dashboards'
+      path: '/digit-crm/dashboards'
+      fullPath: '/digit-crm/dashboards'
+      preLoaderRoute: typeof DigitCrmDashboardsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/demo': {
+      id: '/digit-crm/demo'
+      path: '/digit-crm/demo'
+      fullPath: '/digit-crm/demo'
+      preLoaderRoute: typeof DigitCrmDemoRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/follow-ups': {
+      id: '/digit-crm/follow-ups'
+      path: '/digit-crm/follow-ups'
+      fullPath: '/digit-crm/follow-ups'
+      preLoaderRoute: typeof DigitCrmFollowUpsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/forecast': {
+      id: '/digit-crm/forecast'
+      path: '/digit-crm/forecast'
+      fullPath: '/digit-crm/forecast'
+      preLoaderRoute: typeof DigitCrmForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/home': {
+      id: '/digit-crm/home'
+      path: '/digit-crm/home'
+      fullPath: '/digit-crm/home'
+      preLoaderRoute: typeof DigitCrmHomeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/manager': {
+      id: '/digit-crm/manager'
+      path: '/digit-crm/manager'
+      fullPath: '/digit-crm/manager'
+      preLoaderRoute: typeof DigitCrmManagerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/mobile': {
+      id: '/digit-crm/mobile'
+      path: '/digit-crm/mobile'
+      fullPath: '/digit-crm/mobile'
+      preLoaderRoute: typeof DigitCrmMobileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/pipeline': {
+      id: '/digit-crm/pipeline'
+      path: '/digit-crm/pipeline'
+      fullPath: '/digit-crm/pipeline'
+      preLoaderRoute: typeof DigitCrmPipelineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/qualification': {
+      id: '/digit-crm/qualification'
+      path: '/digit-crm/qualification'
+      fullPath: '/digit-crm/qualification'
+      preLoaderRoute: typeof DigitCrmQualificationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/reports': {
+      id: '/digit-crm/reports'
+      path: '/digit-crm/reports'
+      fullPath: '/digit-crm/reports'
+      preLoaderRoute: typeof DigitCrmReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/sales-teams': {
+      id: '/digit-crm/sales-teams'
+      path: '/digit-crm/sales-teams'
+      fullPath: '/digit-crm/sales-teams'
+      preLoaderRoute: typeof DigitCrmSalesTeamsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/settings': {
+      id: '/digit-crm/settings'
+      path: '/digit-crm/settings'
+      fullPath: '/digit-crm/settings'
+      preLoaderRoute: typeof DigitCrmSettingsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/targets': {
+      id: '/digit-crm/targets'
+      path: '/digit-crm/targets'
+      fullPath: '/digit-crm/targets'
+      preLoaderRoute: typeof DigitCrmTargetsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/territories': {
+      id: '/digit-crm/territories'
+      path: '/digit-crm/territories'
+      fullPath: '/digit-crm/territories'
+      preLoaderRoute: typeof DigitCrmTerritoriesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/': {
+      id: '/digit-hr/'
+      path: '/digit-hr'
+      fullPath: '/digit-hr/'
+      preLoaderRoute: typeof DigitHrIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/compliance': {
+      id: '/digit-hr/compliance'
+      path: '/digit-hr/compliance'
+      fullPath: '/digit-hr/compliance'
+      preLoaderRoute: typeof DigitHrComplianceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/documents': {
+      id: '/digit-hr/documents'
+      path: '/digit-hr/documents'
+      fullPath: '/digit-hr/documents'
+      preLoaderRoute: typeof DigitHrDocumentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/hiring': {
+      id: '/digit-hr/hiring'
+      path: '/digit-hr/hiring'
+      fullPath: '/digit-hr/hiring'
+      preLoaderRoute: typeof DigitHrHiringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/insights': {
+      id: '/digit-hr/insights'
+      path: '/digit-hr/insights'
+      fullPath: '/digit-hr/insights'
+      preLoaderRoute: typeof DigitHrInsightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/leave': {
+      id: '/digit-hr/leave'
+      path: '/digit-hr/leave'
+      fullPath: '/digit-hr/leave'
+      preLoaderRoute: typeof DigitHrLeaveRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/lifecycle': {
+      id: '/digit-hr/lifecycle'
+      path: '/digit-hr/lifecycle'
+      fullPath: '/digit-hr/lifecycle'
+      preLoaderRoute: typeof DigitHrLifecycleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/organization': {
+      id: '/digit-hr/organization'
+      path: '/digit-hr/organization'
+      fullPath: '/digit-hr/organization'
+      preLoaderRoute: typeof DigitHrOrganizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/payroll': {
+      id: '/digit-hr/payroll'
+      path: '/digit-hr/payroll'
+      fullPath: '/digit-hr/payroll'
+      preLoaderRoute: typeof DigitHrPayrollRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/reports': {
+      id: '/digit-hr/reports'
+      path: '/digit-hr/reports'
+      fullPath: '/digit-hr/reports'
+      preLoaderRoute: typeof DigitHrReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/separation': {
+      id: '/digit-hr/separation'
+      path: '/digit-hr/separation'
+      fullPath: '/digit-hr/separation'
+      preLoaderRoute: typeof DigitHrSeparationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/talent': {
+      id: '/digit-hr/talent'
+      path: '/digit-hr/talent'
+      fullPath: '/digit-hr/talent'
+      preLoaderRoute: typeof DigitHrTalentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/workforce': {
+      id: '/digit-hr/workforce'
+      path: '/digit-hr/workforce'
+      fullPath: '/digit-hr/workforce'
+      preLoaderRoute: typeof DigitHrWorkforceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit/': {
+      id: '/digit/'
+      path: '/digit'
+      fullPath: '/digit/'
+      preLoaderRoute: typeof DigitIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit/$': {
+      id: '/digit/$'
+      path: '/digit/$'
+      fullPath: '/digit/$'
+      preLoaderRoute: typeof DigitSplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en/': {
@@ -2594,6 +4822,97 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnTrustSecurityRouteImport
       parentRoute: typeof EnRoute
     }
+    '/finance/ap-control': {
+      id: '/finance/ap-control'
+      path: '/finance/ap-control'
+      fullPath: '/finance/ap-control'
+      preLoaderRoute: typeof FinanceApControlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/asset-controls': {
+      id: '/finance/asset-controls'
+      path: '/finance/asset-controls'
+      fullPath: '/finance/asset-controls'
+      preLoaderRoute: typeof FinanceAssetControlsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/bank-matching': {
+      id: '/finance/bank-matching'
+      path: '/finance/bank-matching'
+      fullPath: '/finance/bank-matching'
+      preLoaderRoute: typeof FinanceBankMatchingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/cash-forecast': {
+      id: '/finance/cash-forecast'
+      path: '/finance/cash-forecast'
+      fullPath: '/finance/cash-forecast'
+      preLoaderRoute: typeof FinanceCashForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/close': {
+      id: '/finance/close'
+      path: '/finance/close'
+      fullPath: '/finance/close'
+      preLoaderRoute: typeof FinanceCloseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/collections': {
+      id: '/finance/collections'
+      path: '/finance/collections'
+      fullPath: '/finance/collections'
+      preLoaderRoute: typeof FinanceCollectionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/consolidation': {
+      id: '/finance/consolidation'
+      path: '/finance/consolidation'
+      fullPath: '/finance/consolidation'
+      preLoaderRoute: typeof FinanceConsolidationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/netting': {
+      id: '/finance/netting'
+      path: '/finance/netting'
+      fullPath: '/finance/netting'
+      preLoaderRoute: typeof FinanceNettingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/payment-run': {
+      id: '/finance/payment-run'
+      path: '/finance/payment-run'
+      fullPath: '/finance/payment-run'
+      preLoaderRoute: typeof FinancePaymentRunRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/recurring': {
+      id: '/finance/recurring'
+      path: '/finance/recurring'
+      fullPath: '/finance/recurring'
+      preLoaderRoute: typeof FinanceRecurringRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/risks': {
+      id: '/finance/risks'
+      path: '/finance/risks'
+      fullPath: '/finance/risks'
+      preLoaderRoute: typeof FinanceRisksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/statements': {
+      id: '/finance/statements'
+      path: '/finance/statements'
+      fullPath: '/finance/statements'
+      preLoaderRoute: typeof FinanceStatementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/finance/sustainability': {
+      id: '/finance/sustainability'
+      path: '/finance/sustainability'
+      fullPath: '/finance/sustainability'
+      preLoaderRoute: typeof FinanceSustainabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/fsm/$department': {
       id: '/fsm/$department'
       path: '/fsm/$department'
@@ -2677,6 +4996,27 @@ declare module '@tanstack/react-router' {
       fullPath: '/industries/retail'
       preLoaderRoute: typeof IndustriesRetailRouteImport
       parentRoute: typeof IndustriesRoute
+    }
+    '/insights/': {
+      id: '/insights/'
+      path: '/'
+      fullPath: '/insights/'
+      preLoaderRoute: typeof InsightsIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/data-store': {
+      id: '/insights/data-store'
+      path: '/data-store'
+      fullPath: '/insights/data-store'
+      preLoaderRoute: typeof InsightsDataStoreRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/settings': {
+      id: '/insights/settings'
+      path: '/settings'
+      fullPath: '/insights/settings'
+      preLoaderRoute: typeof InsightsSettingsRouteImport
+      parentRoute: typeof InsightsRoute
     }
     '/modules/': {
       id: '/modules/'
@@ -2783,6 +5123,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ModulesSalesRouteImport
       parentRoute: typeof ModulesRoute
     }
+    '/page/': {
+      id: '/page/'
+      path: '/page'
+      fullPath: '/page/'
+      preLoaderRoute: typeof PageIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/page/$name': {
+      id: '/page/$name'
+      path: '/page/$name'
+      fullPath: '/page/$name'
+      preLoaderRoute: typeof PageNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plugins/': {
+      id: '/plugins/'
+      path: '/plugins'
+      fullPath: '/plugins/'
+      preLoaderRoute: typeof PluginsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/pos-solutions/electrical-appliances': {
       id: '/pos-solutions/electrical-appliances'
       path: '/pos-solutions/electrical-appliances'
@@ -2851,6 +5212,41 @@ declare module '@tanstack/react-router' {
       path: '/pro/$area'
       fullPath: '/pro/$area'
       preLoaderRoute: typeof ProAreaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/': {
+      id: '/report/'
+      path: '/report'
+      fullPath: '/report/'
+      preLoaderRoute: typeof ReportIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/$name': {
+      id: '/report/$name'
+      path: '/report/$name'
+      fullPath: '/report/$name'
+      preLoaderRoute: typeof ReportNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/report/studio': {
+      id: '/report/studio'
+      path: '/report/studio'
+      fullPath: '/report/studio'
+      preLoaderRoute: typeof ReportStudioRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/selling/channels': {
+      id: '/selling/channels'
+      path: '/selling/channels'
+      fullPath: '/selling/channels'
+      preLoaderRoute: typeof SellingChannelsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/selling/inbox': {
+      id: '/selling/inbox'
+      path: '/selling/inbox'
+      fullPath: '/selling/inbox'
+      preLoaderRoute: typeof SellingInboxRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/services-3/': {
@@ -2977,6 +5373,216 @@ declare module '@tanstack/react-router' {
       path: '/services/training'
       fullPath: '/services/training'
       preLoaderRoute: typeof ServicesTrainingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/demand-forecast': {
+      id: '/stock/demand-forecast'
+      path: '/stock/demand-forecast'
+      fullPath: '/stock/demand-forecast'
+      preLoaderRoute: typeof StockDemandForecastRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/dock': {
+      id: '/stock/dock'
+      path: '/stock/dock'
+      fullPath: '/stock/dock'
+      preLoaderRoute: typeof StockDockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/receiving-controls': {
+      id: '/stock/receiving-controls'
+      path: '/stock/receiving-controls'
+      fullPath: '/stock/receiving-controls'
+      preLoaderRoute: typeof StockReceivingControlsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/scan': {
+      id: '/stock/scan'
+      path: '/stock/scan'
+      fullPath: '/stock/scan'
+      preLoaderRoute: typeof StockScanRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/stock/wave-picking': {
+      id: '/stock/wave-picking'
+      path: '/stock/wave-picking'
+      fullPath: '/stock/wave-picking'
+      preLoaderRoute: typeof StockWavePickingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tax/e-invoicing': {
+      id: '/tax/e-invoicing'
+      path: '/tax/e-invoicing'
+      fullPath: '/tax/e-invoicing'
+      preLoaderRoute: typeof TaxEInvoicingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tax/vat-return': {
+      id: '/tax/vat-return'
+      path: '/tax/vat-return'
+      fullPath: '/tax/vat-return'
+      preLoaderRoute: typeof TaxVatReturnRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tax/zakat': {
+      id: '/tax/zakat'
+      path: '/tax/zakat'
+      fullPath: '/tax/zakat'
+      preLoaderRoute: typeof TaxZakatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/$app/': {
+      id: '/app/$app/'
+      path: '/app/$app'
+      fullPath: '/app/$app/'
+      preLoaderRoute: typeof AppAppIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/data-import/': {
+      id: '/app/data-import/'
+      path: '/app/data-import'
+      fullPath: '/app/data-import/'
+      preLoaderRoute: typeof AppDataImportIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/data-import/$name': {
+      id: '/app/data-import/$name'
+      path: '/app/data-import/$name'
+      fullPath: '/app/data-import/$name'
+      preLoaderRoute: typeof AppDataImportNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/data-import/new': {
+      id: '/app/data-import/new'
+      path: '/app/data-import/new'
+      fullPath: '/app/data-import/new'
+      preLoaderRoute: typeof AppDataImportNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/customers/': {
+      id: '/digit-crm/customers/'
+      path: '/digit-crm/customers'
+      fullPath: '/digit-crm/customers/'
+      preLoaderRoute: typeof DigitCrmCustomersIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/customers/$org': {
+      id: '/digit-crm/customers/$org'
+      path: '/digit-crm/customers/$org'
+      fullPath: '/digit-crm/customers/$org'
+      preLoaderRoute: typeof DigitCrmCustomersOrgRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/deal/$dealId': {
+      id: '/digit-crm/deal/$dealId'
+      path: '/digit-crm/deal/$dealId'
+      fullPath: '/digit-crm/deal/$dealId'
+      preLoaderRoute: typeof DigitCrmDealDealIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/deals/$dealId': {
+      id: '/digit-crm/deals/$dealId'
+      path: '/digit-crm/deals/$dealId'
+      fullPath: '/digit-crm/deals/$dealId'
+      preLoaderRoute: typeof DigitCrmDealsDealIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/lead/$leadId': {
+      id: '/digit-crm/lead/$leadId'
+      path: '/digit-crm/lead/$leadId'
+      fullPath: '/digit-crm/lead/$leadId'
+      preLoaderRoute: typeof DigitCrmLeadLeadIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/leads/': {
+      id: '/digit-crm/leads/'
+      path: '/digit-crm/leads'
+      fullPath: '/digit-crm/leads/'
+      preLoaderRoute: typeof DigitCrmLeadsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/leads/$leadId': {
+      id: '/digit-crm/leads/$leadId'
+      path: '/digit-crm/leads/$leadId'
+      fullPath: '/digit-crm/leads/$leadId'
+      preLoaderRoute: typeof DigitCrmLeadsLeadIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/leads/new': {
+      id: '/digit-crm/leads/new'
+      path: '/digit-crm/leads/new'
+      fullPath: '/digit-crm/leads/new'
+      preLoaderRoute: typeof DigitCrmLeadsNewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-crm/workspace/$module': {
+      id: '/digit-crm/workspace/$module'
+      path: '/digit-crm/workspace/$module'
+      fullPath: '/digit-crm/workspace/$module'
+      preLoaderRoute: typeof DigitCrmWorkspaceModuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/applicants/$name': {
+      id: '/digit-hr/applicants/$name'
+      path: '/digit-hr/applicants/$name'
+      fullPath: '/digit-hr/applicants/$name'
+      preLoaderRoute: typeof DigitHrApplicantsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/cases/$name': {
+      id: '/digit-hr/cases/$name'
+      path: '/digit-hr/cases/$name'
+      fullPath: '/digit-hr/cases/$name'
+      preLoaderRoute: typeof DigitHrCasesNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/contracts/$name': {
+      id: '/digit-hr/contracts/$name'
+      path: '/digit-hr/contracts/$name'
+      fullPath: '/digit-hr/contracts/$name'
+      preLoaderRoute: typeof DigitHrContractsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/employees/': {
+      id: '/digit-hr/employees/'
+      path: '/digit-hr/employees'
+      fullPath: '/digit-hr/employees/'
+      preLoaderRoute: typeof DigitHrEmployeesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/employees/$name': {
+      id: '/digit-hr/employees/$name'
+      path: '/digit-hr/employees/$name'
+      fullPath: '/digit-hr/employees/$name'
+      preLoaderRoute: typeof DigitHrEmployeesNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/m/$module': {
+      id: '/digit-hr/m/$module'
+      path: '/digit-hr/m/$module'
+      fullPath: '/digit-hr/m/$module'
+      preLoaderRoute: typeof DigitHrMModuleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/metrics/$metric': {
+      id: '/digit-hr/metrics/$metric'
+      path: '/digit-hr/metrics/$metric'
+      fullPath: '/digit-hr/metrics/$metric'
+      preLoaderRoute: typeof DigitHrMetricsMetricRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/positions/$name': {
+      id: '/digit-hr/positions/$name'
+      path: '/digit-hr/positions/$name'
+      fullPath: '/digit-hr/positions/$name'
+      preLoaderRoute: typeof DigitHrPositionsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digit-hr/s/$section': {
+      id: '/digit-hr/s/$section'
+      path: '/digit-hr/s/$section'
+      fullPath: '/digit-hr/s/$section'
+      preLoaderRoute: typeof DigitHrSSectionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/en/construction/': {
@@ -3378,6 +5984,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnServicesTrainingRouteImport
       parentRoute: typeof EnServicesRoute
     }
+    '/insights/dashboards/': {
+      id: '/insights/dashboards/'
+      path: '/dashboards'
+      fullPath: '/insights/dashboards/'
+      preLoaderRoute: typeof InsightsDashboardsIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/dashboards/$name': {
+      id: '/insights/dashboards/$name'
+      path: '/dashboards/$name'
+      fullPath: '/insights/dashboards/$name'
+      preLoaderRoute: typeof InsightsDashboardsNameRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/data-source/': {
+      id: '/insights/data-source/'
+      path: '/data-source'
+      fullPath: '/insights/data-source/'
+      preLoaderRoute: typeof InsightsDataSourceIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/workbook/': {
+      id: '/insights/workbook/'
+      path: '/workbook'
+      fullPath: '/insights/workbook/'
+      preLoaderRoute: typeof InsightsWorkbookIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/workbook/$workbookName': {
+      id: '/insights/workbook/$workbookName'
+      path: '/workbook/$workbookName'
+      fullPath: '/insights/workbook/$workbookName'
+      preLoaderRoute: typeof InsightsWorkbookWorkbookNameRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/plugins/$name/': {
+      id: '/plugins/$name/'
+      path: '/plugins/$name'
+      fullPath: '/plugins/$name/'
+      preLoaderRoute: typeof PluginsNameIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/plugins/$name/$': {
+      id: '/plugins/$name/$'
+      path: '/plugins/$name/$'
+      fullPath: '/plugins/$name/$'
+      preLoaderRoute: typeof PluginsNameSplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/admin/crm/': {
       id: '/_authenticated/admin/crm/'
       path: '/crm'
@@ -3392,12 +6047,103 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicCmsMediaFileRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/app/$app/$doctype/': {
+      id: '/app/$app/$doctype/'
+      path: '/app/$app/$doctype'
+      fullPath: '/app/$app/$doctype/'
+      preLoaderRoute: typeof AppAppDoctypeIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/app/$app/$doctype/$name': {
+      id: '/app/$app/$doctype/$name'
+      path: '/app/$app/$doctype/$name'
+      fullPath: '/app/$app/$doctype/$name'
+      preLoaderRoute: typeof AppAppDoctypeNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/data-source/$name/': {
+      id: '/insights/data-source/$name/'
+      path: '/data-source/$name'
+      fullPath: '/insights/data-source/$name/'
+      preLoaderRoute: typeof InsightsDataSourceNameIndexRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/data-source/$name/$tableName': {
+      id: '/insights/data-source/$name/$tableName'
+      path: '/data-source/$name/$tableName'
+      fullPath: '/insights/data-source/$name/$tableName'
+      preLoaderRoute: typeof InsightsDataSourceNameTableNameRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/shared/chart/$chartName': {
+      id: '/insights/shared/chart/$chartName'
+      path: '/shared/chart/$chartName'
+      fullPath: '/insights/shared/chart/$chartName'
+      preLoaderRoute: typeof InsightsSharedChartChartNameRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/shared/dashboard/$dashboardName': {
+      id: '/insights/shared/dashboard/$dashboardName'
+      path: '/shared/dashboard/$dashboardName'
+      fullPath: '/insights/shared/dashboard/$dashboardName'
+      preLoaderRoute: typeof InsightsSharedDashboardDashboardNameRouteImport
+      parentRoute: typeof InsightsRoute
+    }
+    '/insights/workbook/$workbookName/': {
+      id: '/insights/workbook/$workbookName/'
+      path: '/'
+      fullPath: '/insights/workbook/$workbookName/'
+      preLoaderRoute: typeof InsightsWorkbookWorkbookNameIndexRouteImport
+      parentRoute: typeof InsightsWorkbookWorkbookNameRoute
+    }
+    '/plugins/$name/report/$report': {
+      id: '/plugins/$name/report/$report'
+      path: '/plugins/$name/report/$report'
+      fullPath: '/plugins/$name/report/$report'
+      preLoaderRoute: typeof PluginsNameReportReportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/_authenticated/admin/crm/lead/$id': {
       id: '/_authenticated/admin/crm/lead/$id'
       path: '/crm/lead/$id'
       fullPath: '/admin/crm/lead/$id'
       preLoaderRoute: typeof AuthenticatedAdminCrmLeadIdRouteImport
       parentRoute: typeof AuthenticatedAdminRoute
+    }
+    '/app/$app/$doctype/view/tree': {
+      id: '/app/$app/$doctype/view/tree'
+      path: '/app/$app/$doctype/view/tree'
+      fullPath: '/app/$app/$doctype/view/tree'
+      preLoaderRoute: typeof AppAppDoctypeViewTreeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/insights/workbook/$workbookName/chart/$chartName': {
+      id: '/insights/workbook/$workbookName/chart/$chartName'
+      path: '/chart/$chartName'
+      fullPath: '/insights/workbook/$workbookName/chart/$chartName'
+      preLoaderRoute: typeof InsightsWorkbookWorkbookNameChartChartNameRouteImport
+      parentRoute: typeof InsightsWorkbookWorkbookNameRoute
+    }
+    '/insights/workbook/$workbookName/dashboard/$dashboardName': {
+      id: '/insights/workbook/$workbookName/dashboard/$dashboardName'
+      path: '/dashboard/$dashboardName'
+      fullPath: '/insights/workbook/$workbookName/dashboard/$dashboardName'
+      preLoaderRoute: typeof InsightsWorkbookWorkbookNameDashboardDashboardNameRouteImport
+      parentRoute: typeof InsightsWorkbookWorkbookNameRoute
+    }
+    '/insights/workbook/$workbookName/query/$queryName': {
+      id: '/insights/workbook/$workbookName/query/$queryName'
+      path: '/query/$queryName'
+      fullPath: '/insights/workbook/$workbookName/query/$queryName'
+      preLoaderRoute: typeof InsightsWorkbookWorkbookNameQueryQueryNameRouteImport
+      parentRoute: typeof InsightsWorkbookWorkbookNameRoute
+    }
+    '/plugins/$name/print/$format/$doc': {
+      id: '/plugins/$name/print/$format/$doc'
+      path: '/plugins/$name/print/$format/$doc'
+      fullPath: '/plugins/$name/print/$format/$doc'
+      preLoaderRoute: typeof PluginsNamePrintFormatDocRouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -3425,6 +6171,26 @@ const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
 
 const AuthenticatedRouteRouteWithChildren =
   AuthenticatedRouteRoute._addFileChildren(AuthenticatedRouteRouteChildren)
+
+interface DeveloperRouteChildren {
+  DeveloperExperienceRoute: typeof DeveloperExperienceRoute
+  DeveloperFormRulesRoute: typeof DeveloperFormRulesRoute
+  DeveloperI18nRoute: typeof DeveloperI18nRoute
+  DeveloperScenariosRoute: typeof DeveloperScenariosRoute
+  DeveloperSdkRoute: typeof DeveloperSdkRoute
+}
+
+const DeveloperRouteChildren: DeveloperRouteChildren = {
+  DeveloperExperienceRoute: DeveloperExperienceRoute,
+  DeveloperFormRulesRoute: DeveloperFormRulesRoute,
+  DeveloperI18nRoute: DeveloperI18nRoute,
+  DeveloperScenariosRoute: DeveloperScenariosRoute,
+  DeveloperSdkRoute: DeveloperSdkRoute,
+}
+
+const DeveloperRouteWithChildren = DeveloperRoute._addFileChildren(
+  DeveloperRouteChildren,
+)
 
 interface EnIndustriesRouteChildren {
   EnIndustriesContractingIndustryRoute: typeof EnIndustriesContractingIndustryRoute
@@ -3668,6 +6434,66 @@ const IndustriesRouteWithChildren = IndustriesRoute._addFileChildren(
   IndustriesRouteChildren,
 )
 
+interface InsightsWorkbookWorkbookNameRouteChildren {
+  InsightsWorkbookWorkbookNameIndexRoute: typeof InsightsWorkbookWorkbookNameIndexRoute
+  InsightsWorkbookWorkbookNameChartChartNameRoute: typeof InsightsWorkbookWorkbookNameChartChartNameRoute
+  InsightsWorkbookWorkbookNameDashboardDashboardNameRoute: typeof InsightsWorkbookWorkbookNameDashboardDashboardNameRoute
+  InsightsWorkbookWorkbookNameQueryQueryNameRoute: typeof InsightsWorkbookWorkbookNameQueryQueryNameRoute
+}
+
+const InsightsWorkbookWorkbookNameRouteChildren: InsightsWorkbookWorkbookNameRouteChildren =
+  {
+    InsightsWorkbookWorkbookNameIndexRoute:
+      InsightsWorkbookWorkbookNameIndexRoute,
+    InsightsWorkbookWorkbookNameChartChartNameRoute:
+      InsightsWorkbookWorkbookNameChartChartNameRoute,
+    InsightsWorkbookWorkbookNameDashboardDashboardNameRoute:
+      InsightsWorkbookWorkbookNameDashboardDashboardNameRoute,
+    InsightsWorkbookWorkbookNameQueryQueryNameRoute:
+      InsightsWorkbookWorkbookNameQueryQueryNameRoute,
+  }
+
+const InsightsWorkbookWorkbookNameRouteWithChildren =
+  InsightsWorkbookWorkbookNameRoute._addFileChildren(
+    InsightsWorkbookWorkbookNameRouteChildren,
+  )
+
+interface InsightsRouteChildren {
+  InsightsDataStoreRoute: typeof InsightsDataStoreRoute
+  InsightsSettingsRoute: typeof InsightsSettingsRoute
+  InsightsIndexRoute: typeof InsightsIndexRoute
+  InsightsDashboardsNameRoute: typeof InsightsDashboardsNameRoute
+  InsightsWorkbookWorkbookNameRoute: typeof InsightsWorkbookWorkbookNameRouteWithChildren
+  InsightsDashboardsIndexRoute: typeof InsightsDashboardsIndexRoute
+  InsightsDataSourceIndexRoute: typeof InsightsDataSourceIndexRoute
+  InsightsWorkbookIndexRoute: typeof InsightsWorkbookIndexRoute
+  InsightsDataSourceNameTableNameRoute: typeof InsightsDataSourceNameTableNameRoute
+  InsightsSharedChartChartNameRoute: typeof InsightsSharedChartChartNameRoute
+  InsightsSharedDashboardDashboardNameRoute: typeof InsightsSharedDashboardDashboardNameRoute
+  InsightsDataSourceNameIndexRoute: typeof InsightsDataSourceNameIndexRoute
+}
+
+const InsightsRouteChildren: InsightsRouteChildren = {
+  InsightsDataStoreRoute: InsightsDataStoreRoute,
+  InsightsSettingsRoute: InsightsSettingsRoute,
+  InsightsIndexRoute: InsightsIndexRoute,
+  InsightsDashboardsNameRoute: InsightsDashboardsNameRoute,
+  InsightsWorkbookWorkbookNameRoute:
+    InsightsWorkbookWorkbookNameRouteWithChildren,
+  InsightsDashboardsIndexRoute: InsightsDashboardsIndexRoute,
+  InsightsDataSourceIndexRoute: InsightsDataSourceIndexRoute,
+  InsightsWorkbookIndexRoute: InsightsWorkbookIndexRoute,
+  InsightsDataSourceNameTableNameRoute: InsightsDataSourceNameTableNameRoute,
+  InsightsSharedChartChartNameRoute: InsightsSharedChartChartNameRoute,
+  InsightsSharedDashboardDashboardNameRoute:
+    InsightsSharedDashboardDashboardNameRoute,
+  InsightsDataSourceNameIndexRoute: InsightsDataSourceNameIndexRoute,
+}
+
+const InsightsRouteWithChildren = InsightsRoute._addFileChildren(
+  InsightsRouteChildren,
+)
+
 interface ModulesRouteChildren {
   ModulesAccountingRoute: typeof ModulesAccountingRoute
   ModulesContractingRoute: typeof ModulesContractingRoute
@@ -3748,32 +6574,101 @@ const rootRouteChildren: RootRouteChildren = {
   AuthRoute: AuthRoute,
   BlueprintRoute: BlueprintRoute,
   CareersRoute: CareersRoute,
+  ComplianceRoute: ComplianceRoute,
   ContactRoute: ContactRoute,
   Contact4Route: Contact4Route,
+  CoverageRoute: CoverageRoute,
+  CustomizeFormRoute: CustomizeFormRoute,
   DemoRoute: DemoRoute,
   Demo3Route: Demo3Route,
+  DeveloperRoute: DeveloperRouteWithChildren,
   EnRoute: EnRouteWithChildren,
+  EnterpriseRoute: EnterpriseRoute,
   FaqRoute: FaqRoute,
   FeaturesRoute: FeaturesRoute,
+  HelpRoute: HelpRoute,
   IndustriesRoute: IndustriesRouteWithChildren,
+  InsightsRoute: InsightsRouteWithChildren,
+  LoginRoute: LoginRoute,
   ModulesRoute: ModulesRouteWithChildren,
+  MySpaceRoute: MySpaceRoute,
   PartnershipRoute: PartnershipRoute,
   PricingRoute: PricingRoute,
+  PrintviewRoute: PrintviewRoute,
   ProRoute: ProRoute,
   QuoteRoute: QuoteRoute,
   ResourcesRoute: ResourcesRoute,
   SaudiLocalizationRoute: SaudiLocalizationRoute,
   Services3Route: Services3RouteWithChildren,
+  SettingsRoute: SettingsRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   StarterRoute: StarterRoute,
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
   TrustSecurityRoute: TrustSecurityRoute,
+  ApiAssistantRoute: ApiAssistantRoute,
   ApiChatRoute: ApiChatRoute,
+  AppDataExportRoute: AppDataExportRoute,
+  BuyingInvoiceCaptureRoute: BuyingInvoiceCaptureRoute,
+  BuyingRfqFollowUpRoute: BuyingRfqFollowUpRoute,
   ConstructionDepartmentRoute: ConstructionDepartmentRoute,
+  ControlApprovalsRoute: ControlApprovalsRoute,
+  ControlBackgroundJobsRoute: ControlBackgroundJobsRoute,
+  ControlProcurementPoliciesRoute: ControlProcurementPoliciesRoute,
+  ControlSetupGuideRoute: ControlSetupGuideRoute,
   CrmDepartmentRoute: CrmDepartmentRoute,
+  DashboardNameRoute: DashboardNameRoute,
+  DepartmentDeptRoute: DepartmentDeptRoute,
+  DeskSidebarRoute: DeskSidebarRoute,
+  DevVisualAuditRoute: DevVisualAuditRoute,
+  DigitCrmActivitiesRoute: DigitCrmActivitiesRoute,
+  DigitCrmAutomationRoute: DigitCrmAutomationRoute,
+  DigitCrmCampaignsRoute: DigitCrmCampaignsRoute,
+  DigitCrmCommissionsRoute: DigitCrmCommissionsRoute,
+  DigitCrmContactsRoute: DigitCrmContactsRoute,
+  DigitCrmDashboardsRoute: DigitCrmDashboardsRoute,
+  DigitCrmDemoRoute: DigitCrmDemoRoute,
+  DigitCrmFollowUpsRoute: DigitCrmFollowUpsRoute,
+  DigitCrmForecastRoute: DigitCrmForecastRoute,
+  DigitCrmHomeRoute: DigitCrmHomeRoute,
+  DigitCrmManagerRoute: DigitCrmManagerRoute,
+  DigitCrmMobileRoute: DigitCrmMobileRoute,
+  DigitCrmPipelineRoute: DigitCrmPipelineRoute,
+  DigitCrmQualificationRoute: DigitCrmQualificationRoute,
+  DigitCrmReportsRoute: DigitCrmReportsRoute,
+  DigitCrmSalesTeamsRoute: DigitCrmSalesTeamsRoute,
+  DigitCrmSettingsRoute: DigitCrmSettingsRoute,
+  DigitCrmTargetsRoute: DigitCrmTargetsRoute,
+  DigitCrmTerritoriesRoute: DigitCrmTerritoriesRoute,
+  DigitHrComplianceRoute: DigitHrComplianceRoute,
+  DigitHrDocumentsRoute: DigitHrDocumentsRoute,
+  DigitHrHiringRoute: DigitHrHiringRoute,
+  DigitHrInsightsRoute: DigitHrInsightsRoute,
+  DigitHrLeaveRoute: DigitHrLeaveRoute,
+  DigitHrLifecycleRoute: DigitHrLifecycleRoute,
+  DigitHrOrganizationRoute: DigitHrOrganizationRoute,
+  DigitHrPayrollRoute: DigitHrPayrollRoute,
+  DigitHrReportsRoute: DigitHrReportsRoute,
+  DigitHrSeparationRoute: DigitHrSeparationRoute,
+  DigitHrTalentRoute: DigitHrTalentRoute,
+  DigitHrWorkforceRoute: DigitHrWorkforceRoute,
+  DigitSplatRoute: DigitSplatRoute,
+  FinanceApControlRoute: FinanceApControlRoute,
+  FinanceAssetControlsRoute: FinanceAssetControlsRoute,
+  FinanceBankMatchingRoute: FinanceBankMatchingRoute,
+  FinanceCashForecastRoute: FinanceCashForecastRoute,
+  FinanceCloseRoute: FinanceCloseRoute,
+  FinanceCollectionsRoute: FinanceCollectionsRoute,
+  FinanceConsolidationRoute: FinanceConsolidationRoute,
+  FinanceNettingRoute: FinanceNettingRoute,
+  FinancePaymentRunRoute: FinancePaymentRunRoute,
+  FinanceRecurringRoute: FinanceRecurringRoute,
+  FinanceRisksRoute: FinanceRisksRoute,
+  FinanceStatementsRoute: FinanceStatementsRoute,
+  FinanceSustainabilityRoute: FinanceSustainabilityRoute,
   FsmDepartmentRoute: FsmDepartmentRoute,
   HrDepartmentRoute: HrDepartmentRoute,
+  PageNameRoute: PageNameRoute,
   PosSolutionsElectricalAppliancesRoute: PosSolutionsElectricalAppliancesRoute,
   PosSolutionsFloristRoute: PosSolutionsFloristRoute,
   PosSolutionsFurnitureRoute: PosSolutionsFurnitureRoute,
@@ -3784,16 +6679,64 @@ const rootRouteChildren: RootRouteChildren = {
   PosSolutionsSalonsRoute: PosSolutionsSalonsRoute,
   PosSolutionsSweetsRoute: PosSolutionsSweetsRoute,
   ProAreaRoute: ProAreaRoute,
+  ReportNameRoute: ReportNameRoute,
+  ReportStudioRoute: ReportStudioRoute,
+  SellingChannelsRoute: SellingChannelsRoute,
+  SellingInboxRoute: SellingInboxRoute,
   ServicesCustomizationRoute: ServicesCustomizationRoute,
   ServicesDataMigrationRoute: ServicesDataMigrationRoute,
   ServicesHostingRoute: ServicesHostingRoute,
   ServicesImplementationRoute: ServicesImplementationRoute,
   ServicesSupportRoute: ServicesSupportRoute,
   ServicesTrainingRoute: ServicesTrainingRoute,
+  StockDemandForecastRoute: StockDemandForecastRoute,
+  StockDockRoute: StockDockRoute,
+  StockReceivingControlsRoute: StockReceivingControlsRoute,
+  StockScanRoute: StockScanRoute,
+  StockWavePickingRoute: StockWavePickingRoute,
+  TaxEInvoicingRoute: TaxEInvoicingRoute,
+  TaxVatReturnRoute: TaxVatReturnRoute,
+  TaxZakatRoute: TaxZakatRoute,
   ConstructionIndexRoute: ConstructionIndexRoute,
+  DeskIndexRoute: DeskIndexRoute,
+  DigitCrmIndexRoute: DigitCrmIndexRoute,
+  DigitHrIndexRoute: DigitHrIndexRoute,
+  DigitIndexRoute: DigitIndexRoute,
   HrIndexRoute: HrIndexRoute,
+  PageIndexRoute: PageIndexRoute,
+  PluginsIndexRoute: PluginsIndexRoute,
+  ReportIndexRoute: ReportIndexRoute,
   ServicesIndexRoute: ServicesIndexRoute,
+  AppDataImportNameRoute: AppDataImportNameRoute,
+  AppDataImportNewRoute: AppDataImportNewRoute,
+  DigitCrmCustomersOrgRoute: DigitCrmCustomersOrgRoute,
+  DigitCrmDealDealIdRoute: DigitCrmDealDealIdRoute,
+  DigitCrmDealsDealIdRoute: DigitCrmDealsDealIdRoute,
+  DigitCrmLeadLeadIdRoute: DigitCrmLeadLeadIdRoute,
+  DigitCrmLeadsLeadIdRoute: DigitCrmLeadsLeadIdRoute,
+  DigitCrmLeadsNewRoute: DigitCrmLeadsNewRoute,
+  DigitCrmWorkspaceModuleRoute: DigitCrmWorkspaceModuleRoute,
+  DigitHrApplicantsNameRoute: DigitHrApplicantsNameRoute,
+  DigitHrCasesNameRoute: DigitHrCasesNameRoute,
+  DigitHrContractsNameRoute: DigitHrContractsNameRoute,
+  DigitHrEmployeesNameRoute: DigitHrEmployeesNameRoute,
+  DigitHrMModuleRoute: DigitHrMModuleRoute,
+  DigitHrMetricsMetricRoute: DigitHrMetricsMetricRoute,
+  DigitHrPositionsNameRoute: DigitHrPositionsNameRoute,
+  DigitHrSSectionRoute: DigitHrSSectionRoute,
+  PluginsNameSplatRoute: PluginsNameSplatRoute,
+  AppAppIndexRoute: AppAppIndexRoute,
+  AppDataImportIndexRoute: AppDataImportIndexRoute,
+  DigitCrmCustomersIndexRoute: DigitCrmCustomersIndexRoute,
+  DigitCrmLeadsIndexRoute: DigitCrmLeadsIndexRoute,
+  DigitHrEmployeesIndexRoute: DigitHrEmployeesIndexRoute,
+  PluginsNameIndexRoute: PluginsNameIndexRoute,
   ApiPublicCmsMediaFileRoute: ApiPublicCmsMediaFileRoute,
+  AppAppDoctypeNameRoute: AppAppDoctypeNameRoute,
+  PluginsNameReportReportRoute: PluginsNameReportReportRoute,
+  AppAppDoctypeIndexRoute: AppAppDoctypeIndexRoute,
+  AppAppDoctypeViewTreeRoute: AppAppDoctypeViewTreeRoute,
+  PluginsNamePrintFormatDocRoute: PluginsNamePrintFormatDocRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

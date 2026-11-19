@@ -1,0 +1,212 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "format:DOI-{YYYY}-{#####}",
+ "creation": "2026-10-28 09:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "employee_onboarding",
+  "employee_name",
+  "company",
+  "column_break_1",
+  "invite_status",
+  "expires_on",
+  "token_hash",
+  "section_data",
+  "personal_email",
+  "cell_number",
+  "current_address",
+  "column_break_2",
+  "person_to_be_contacted",
+  "emergency_phone_number",
+  "relation",
+  "submitted_on",
+  "section_apply",
+  "applied_by",
+  "applied_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee_onboarding",
+   "fieldtype": "Link",
+   "label": "Employee Onboarding",
+   "options": "Employee Onboarding",
+   "reqd": 1,
+   "in_list_view": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "employee_name",
+   "fieldtype": "Data",
+   "label": "Employee Name",
+   "read_only": 1,
+   "in_list_view": 1,
+   "idx": 2
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "in_standard_filter": 1,
+   "idx": 3
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break",
+   "idx": 4
+  },
+  {
+   "fieldname": "invite_status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nSubmitted\nApplied\nRevoked",
+   "default": "Active",
+   "read_only": 1,
+   "in_list_view": 1,
+   "no_copy": 1,
+   "idx": 5
+  },
+  {
+   "fieldname": "expires_on",
+   "fieldtype": "Datetime",
+   "label": "Expires On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 6
+  },
+  {
+   "fieldname": "token_hash",
+   "fieldtype": "Data",
+   "label": "Token Hash",
+   "read_only": 1,
+   "hidden": 1,
+   "no_copy": 1,
+   "idx": 7
+  },
+  {
+   "fieldname": "section_data",
+   "fieldtype": "Section Break",
+   "label": "Submitted by the joiner",
+   "idx": 8
+  },
+  {
+   "fieldname": "personal_email",
+   "fieldtype": "Data",
+   "label": "Personal Email",
+   "options": "Email",
+   "read_only": 1,
+   "idx": 9
+  },
+  {
+   "fieldname": "cell_number",
+   "fieldtype": "Data",
+   "label": "Mobile",
+   "read_only": 1,
+   "idx": 10
+  },
+  {
+   "fieldname": "current_address",
+   "fieldtype": "Small Text",
+   "label": "Current Address",
+   "read_only": 1,
+   "idx": 11
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break",
+   "idx": 12
+  },
+  {
+   "fieldname": "person_to_be_contacted",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Name",
+   "read_only": 1,
+   "idx": 13
+  },
+  {
+   "fieldname": "emergency_phone_number",
+   "fieldtype": "Data",
+   "label": "Emergency Phone",
+   "read_only": 1,
+   "idx": 14
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Data",
+   "label": "Relation",
+   "read_only": 1,
+   "idx": 15
+  },
+  {
+   "fieldname": "submitted_on",
+   "fieldtype": "Datetime",
+   "label": "Submitted On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 16
+  },
+  {
+   "fieldname": "section_apply",
+   "fieldtype": "Section Break",
+   "label": "Review",
+   "idx": 17
+  },
+  {
+   "fieldname": "applied_by",
+   "fieldtype": "Link",
+   "label": "Applied By",
+   "options": "User",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 18
+  },
+  {
+   "fieldname": "applied_on",
+   "fieldtype": "Datetime",
+   "label": "Applied On",
+   "read_only": 1,
+   "no_copy": 1,
+   "idx": 19
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "istable": 0,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 09:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "name": "DIGIT Onboarding Invite",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "permlevel": 0,
+   "role": "HR Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "print": 1
+  },
+  {
+   "permlevel": 0,
+   "role": "HR User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "report": 1,
+   "print": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "employee_name",
+ "track_changes": 1
+}

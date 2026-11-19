@@ -246,3 +246,11 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 
 # Owner note 2026-11-05 17:56 (menu icons must be Digit's own)
 - [x] Replace the generic menu icons with the DIGIT icon set: original digit-erp.com glyphs where a match exists (Pro departments, dashboard, calendar, signature, settings, search, warning, cost centres, WPS card, POS, pharmacy…), new glyphs drawn in the same grammar for the rest (hard hat, wrench, map pin, ruler, POS activities); desktop mega menu, systems menu and mobile menu, AR/EN; tests.
+
+# DIGIT Core + Enterprise + CRM pack (owner brief 2026-11-19)
+- [x] Save a version, copy the pack (website /crm, /pro, /hr, /admin, /auth stay the website; app paths load DIGIT Core), add its packages (spreadsheet library from the patched official build).
+- [x] «DIGIT CRM» button in admin; /login gate uses site admin accounts with a server-held signing secret; assistant requires the gate.
+- [x] Type errors from the copy fixed; classic /crm/* links inside DIGIT CRM point at existing /digit-crm or desk screens.
+- [x] One pass verified: /, /en, /admin button, /login, leads (120), a lead, pipeline, new quotation, back to site pages.
+- [ ] Re-enabling Pro/HR/Construction/FSM apps needs their app routes (now owned by website pages) and removing the @ts-nocheck markers.
+- [ ] Classic CRM contact/organization screens are not routed in this build; contacts open in the generic desk record.

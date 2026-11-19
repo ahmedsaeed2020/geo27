@@ -1,0 +1,13 @@
+{
+ "zip": "digit_sales_cockpit-1.0.0.zip",
+ "app": "digit_sales_cockpit",
+ "files": 35,
+ "checked": {
+  "files": 14,
+  "records": 16,
+  "python": 11
+ },
+ "errors": [],
+ "ok": true,
+ "translations": 19
+}

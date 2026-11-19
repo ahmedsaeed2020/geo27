@@ -1,0 +1,137 @@
+/*
+ * DIGIT Enterprise theme (Phase 3 colour system, owner visual round R3 2026-11-15; extended by Enterprise Visual Round 1,
+ * owner 2026-11-16). This file is the only place a raw colour value may be written (token lint:
+ * src/test/visual/visualSystem.test.ts); every stylesheet and component uses these tokens by name. Where a Phase 3 name is
+ * already a shadcn theme variable with a different meaning, the Phase 3 value is published under a sibling name:
+ *   Phase 3 --border  → --line   (shadcn --border = --line inside DIGIT apps)
+ *   Phase 3 --muted   → --quiet  (shadcn --muted stays a tinted background = --surface)
+ *   Phase 3 --success / --warning / --info → --tone-* (shadcn --success / --warning / --info = the tone inside DIGIT apps)
+ * Rules that stay (docs/VISUAL_SYSTEM.md): tokens only, text contrast >= 4.5:1, fixed semantic meaning (red bad, green good,
+ * amber attention, blue info), Emerald text >= 16px on white. Round 1 adds eight hues with soft twins, five tints, a module
+ * colour per app area (html[data-module]) and five 8-colour chart palettes (Emerald is the default).
+ * Loaded first from src/routes/__root.tsx. Values on :root are inert until a DIGIT app turns html[data-enterprise] on.
+ */
+:root {
+  /* Brand */
+  --deep: #064E3B; --emerald: #0A8754; --mint: #34D399; --ink: #0B1F17;
+  /* Neutrals */
+  --white: #FFFFFF; --paper: #F4F3EE; --surface: #EBEFEC; --line: #D7DEDA; --quiet: #AEB8B2; --grey: #5B6B63; --ink-700: #243B32;
+  /* Emerald scale */
+  --em-50: #E7F4EE; --em-100: #C2E6D5; --em-300: #7DCBAA; --em-900: #04362A;
+  /* Semantic */
+  --tone-success: #15935E; --success-bg: #E7F4EE;
+  --tone-warning: #B8862B; --warning-bg: #FBF1DD;
+  --error: #C0392B;        --error-bg: #F8E5DF;
+  --tone-info: #2563A8;    --info-bg: #E4EDF7;
+  --positive: #15935E; --negative: #C0392B;
+  /* Enterprise Visual Round 1: eight hues, each with its soft background twin */
+  --teal: #0E8F8F;   --teal-bg: #DDF2F1;
+  --blue: #2563A8;   --blue-bg: #E4EDF7;
+  --violet: #6B4FB3; --violet-bg: #ECE7F7;
+  --amber: #B8862B;  --amber-bg: #FBF1DD;
+  --coral: #D2643F;  --coral-bg: #FBE8DF;
+  --rose: #C0392B;   --rose-bg: #F8E5DF;
+  --gold: #C9A227;   --gold-bg: #F8F1D6;
+  --lime: #6BA539;   --lime-bg: #EAF4DF;
+  /* five tints (cards may be tinted) */
+  --tint-emerald: linear-gradient(135deg, #E7F4EE 0%, #F6FBF8 100%);
+  --tint-deep: linear-gradient(135deg, #064E3B 0%, #0A8754 100%);
+  --tint-blue: linear-gradient(135deg, #E4EDF7 0%, #F5F9FD 100%);
+  --tint-amber: linear-gradient(135deg, #FBF1DD 0%, #FEFAF0 100%);
+  --tint-rose: linear-gradient(135deg, #F8E5DF 0%, #FDF5F2 100%);
+  /* the emerald tint at 40% (owner page rule 13: rails and info cards) */
+  --tint-emerald-40: linear-gradient(135deg, color-mix(in oklab, #E7F4EE 40%, #FFFFFF) 0%, color-mix(in oklab, #F6FBF8 40%, #FFFFFF) 100%);
+  /* five chart palettes, eight colours each (Emerald = default; the chooser comes in Round 2) */
+  --pal-emerald-1: #064E3B; --pal-emerald-2: #0A8754; --pal-emerald-3: #34D399; --pal-emerald-4: #0E8F8F; --pal-emerald-5: #2563A8; --pal-emerald-6: #B8862B; --pal-emerald-7: #D2643F; --pal-emerald-8: #6B4FB3;
+  --pal-gulf-1: #0A8754; --pal-gulf-2: #2563A8; --pal-gulf-3: #0E8F8F; --pal-gulf-4: #7DCBAA; --pal-gulf-5: #6FA8E0; --pal-gulf-6: #064E3B; --pal-gulf-7: #1B3F73; --pal-gulf-8: #AEB8B2;
+  --pal-desert-1: #B8862B; --pal-desert-2: #D2643F; --pal-desert-3: #C9A227; --pal-desert-4: #C0392B; --pal-desert-5: #0A8754; --pal-desert-6: #7A5A1E; --pal-desert-7: #E0B056; --pal-desert-8: #5B6B63;
+  --pal-vivid-1: #0A8754; --pal-vivid-2: #2563A8; --pal-vivid-3: #D2643F; --pal-vivid-4: #6B4FB3; --pal-vivid-5: #C9A227; --pal-vivid-6: #0E8F8F; --pal-vivid-7: #C0392B; --pal-vivid-8: #6BA539;
+  --pal-mono-1: #04362A; --pal-mono-2: #064E3B; --pal-mono-3: #0A8754; --pal-mono-4: #15935E; --pal-mono-5: #34D399; --pal-mono-6: #7DCBAA; --pal-mono-7: #C2E6D5; --pal-mono-8: #E7F4EE;
+  /* the active palette (html[data-palette] switches it) feeds the eight categorical chart colours */
+  --pal-1: var(--pal-emerald-1); --pal-2: var(--pal-emerald-2); --pal-3: var(--pal-emerald-3); --pal-4: var(--pal-emerald-4); --pal-5: var(--pal-emerald-5); --pal-6: var(--pal-emerald-6); --pal-7: var(--pal-emerald-7); --pal-8: var(--pal-emerald-8);
+  --cat-1: var(--pal-1); --cat-2: var(--pal-2); --cat-3: var(--pal-3); --cat-4: var(--pal-4); --cat-5: var(--pal-5); --cat-6: var(--pal-6); --cat-7: var(--pal-7); --cat-8: var(--pal-8); --cat-other: var(--quiet);
+  /* module colour (icon tiles, tab underline, hero chip dot, first chart colour); html[data-module] sets it per app area */
+  --module: var(--emerald); --module-bg: var(--em-50);
+  /* sequential (heatmaps, ordered buckets) and diverging (variance, Δ) */
+  --seq-1: var(--em-50); --seq-2: var(--em-100); --seq-3: var(--em-300); --seq-4: var(--emerald); --seq-5: var(--deep);
+  --div-neg: var(--negative); --div-mid: var(--surface); --div-pos: var(--positive);
+  /* night values (applied below) */
+  --night-bg: #0B1F17; --night-card: #143124; --night-text: #F4F3EE; --night-text-muted: rgba(244, 243, 238, .65); --night-line: rgba(244, 243, 238, .10);
+  --night-action: #34D399; --night-success: #34D399; --night-warning: #E0B056; --night-error: #F08A7A; --night-info: #6FA8E0;
+  /* dark twins of the Round 1 hues: each hue +25 points of lightness (text on #143124 >= 4.5:1) */
+  --night-teal: #32EBEB; --night-blue: #6EA3DF; --night-violet: #B6A8D9; --night-amber: #E2BF81; --night-coral: #EAB7A6; --night-rose: #E48F86; --night-gold: #E8D188; --night-lime: #ACD688;
+  /* type: Arabic IBM Plex Sans Arabic · Latin titles Archivo · Latin text IBM Plex Sans · codes Space Mono (never amounts) */
+  --font-title: "DIGIT Riyal", "Archivo", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-text: "DIGIT Riyal", "IBM Plex Sans", "IBM Plex Sans Arabic", ui-sans-serif, system-ui, sans-serif;
+  --font-text-ar: "DIGIT Riyal", "IBM Plex Sans Arabic", "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-code: "Space Mono", ui-monospace, monospace;
+}
+
+/* ---------- DIGIT apps (light): shadcn theme variables take the Phase 3 values ---------- */
+html[data-enterprise]:not(.dark) {
+  --background: var(--paper); --foreground: var(--ink);
+  --card: var(--white); --card-foreground: var(--ink); --popover: var(--white); --popover-foreground: var(--ink);
+  --primary: var(--emerald); --primary-foreground: var(--white);
+  --secondary: var(--surface); --secondary-foreground: var(--ink-700);
+  --muted: var(--surface); --muted-foreground: var(--grey);
+  --accent: var(--em-50); --accent-foreground: var(--deep);
+  --destructive: var(--error); --destructive-foreground: var(--white);
+  --success: var(--tone-success); --warning: var(--tone-warning); --info: var(--tone-info);
+  --success-text: var(--tone-success); --warning-text: var(--tone-warning);
+  --border: var(--line); --input: var(--line); --ring: var(--emerald);
+  --link: var(--deep);
+}
+/* ---------- DIGIT apps (dark, owner Phase 3 night tokens): the sidebar stays Deep, cards #143124, action Mint ---------- */
+html[data-enterprise].dark, [data-theme="dark"] {
+  --bg: var(--night-bg); --text: var(--night-text); --text-muted: var(--night-text-muted); --action: var(--night-action);
+  --background: var(--night-bg); --foreground: var(--night-text);
+  --card: var(--night-card); --card-foreground: var(--night-text); --popover: var(--night-card); --popover-foreground: var(--night-text);
+  --primary: var(--night-action); --primary-foreground: var(--night-bg);
+  --secondary: color-mix(in oklab, var(--night-text) 8%, var(--night-card)); --secondary-foreground: var(--night-text);
+  --muted: color-mix(in oklab, var(--night-text) 6%, var(--night-card)); --muted-foreground: var(--night-text-muted);
+  --accent: color-mix(in oklab, var(--night-action) 14%, var(--night-card)); --accent-foreground: var(--night-text);
+  --tone-success: var(--night-success); --tone-warning: var(--night-warning); --error: var(--night-error); --tone-info: var(--night-info);
+  --positive: var(--night-success); --negative: var(--night-error);
+  --success-bg: color-mix(in oklab, var(--night-success) 16%, var(--night-card)); --warning-bg: color-mix(in oklab, var(--night-warning) 16%, var(--night-card));
+  --error-bg: color-mix(in oklab, var(--night-error) 16%, var(--night-card)); --info-bg: color-mix(in oklab, var(--night-info) 16%, var(--night-card));
+  --destructive: var(--night-error); --destructive-foreground: var(--night-bg);
+  --success: var(--night-success); --warning: var(--night-warning); --info: var(--night-info);
+  --success-text: var(--night-success); --warning-text: var(--night-warning);
+  --border: var(--night-line); --input: color-mix(in oklab, var(--night-text) 16%, transparent); --ring: var(--night-action);
+  --paper: var(--night-bg); --white: var(--night-card); --surface: color-mix(in oklab, var(--night-text) 8%, var(--night-card)); --line: var(--night-line);
+  --ink: var(--night-text); --grey: var(--night-text-muted); --ink-700: color-mix(in oklab, var(--night-text) 85%, transparent);
+  --em-50: color-mix(in oklab, var(--night-action) 12%, var(--night-card)); --em-100: color-mix(in oklab, var(--night-action) 24%, var(--night-card));
+  --link: var(--night-action);
+  /* Round 1 hues in dark: lighter hue, -bg = the hue at 16% on the night card; tints fade into the night card */
+  --teal: var(--night-teal); --blue: var(--night-blue); --violet: var(--night-violet); --amber: var(--night-amber); --coral: var(--night-coral); --rose: var(--night-rose); --gold: var(--night-gold); --lime: var(--night-lime);
+  --teal-bg: color-mix(in oklab, var(--night-teal) 16%, var(--night-card)); --blue-bg: color-mix(in oklab, var(--night-blue) 16%, var(--night-card));
+  --violet-bg: color-mix(in oklab, var(--night-violet) 16%, var(--night-card)); --amber-bg: color-mix(in oklab, var(--night-amber) 16%, var(--night-card));
+  --coral-bg: color-mix(in oklab, var(--night-coral) 16%, var(--night-card)); --rose-bg: color-mix(in oklab, var(--night-rose) 16%, var(--night-card));
+  --gold-bg: color-mix(in oklab, var(--night-gold) 16%, var(--night-card)); --lime-bg: color-mix(in oklab, var(--night-lime) 16%, var(--night-card));
+  --tint-emerald: linear-gradient(135deg, color-mix(in oklab, var(--night-action) 16%, var(--night-card)) 0%, var(--night-card) 100%);
+  --tint-blue: linear-gradient(135deg, color-mix(in oklab, var(--night-blue) 16%, var(--night-card)) 0%, var(--night-card) 100%);
+  --tint-amber: linear-gradient(135deg, color-mix(in oklab, var(--night-amber) 16%, var(--night-card)) 0%, var(--night-card) 100%);
+  --tint-rose: linear-gradient(135deg, color-mix(in oklab, var(--night-rose) 16%, var(--night-card)) 0%, var(--night-card) 100%);
+  --tint-emerald-40: linear-gradient(135deg, color-mix(in oklab, var(--night-action) 7%, var(--night-card)) 0%, var(--night-card) 100%);
+  --module-bg: color-mix(in oklab, var(--module) 16%, var(--night-card));
+}
+/* palette switch (Round 2 adds the chooser; the five palettes are registered here and in kit/palettes.ts) */
+html[data-palette="gulf"] { --pal-1: var(--pal-gulf-1); --pal-2: var(--pal-gulf-2); --pal-3: var(--pal-gulf-3); --pal-4: var(--pal-gulf-4); --pal-5: var(--pal-gulf-5); --pal-6: var(--pal-gulf-6); --pal-7: var(--pal-gulf-7); --pal-8: var(--pal-gulf-8); }
+html[data-palette="desert"] { --pal-1: var(--pal-desert-1); --pal-2: var(--pal-desert-2); --pal-3: var(--pal-desert-3); --pal-4: var(--pal-desert-4); --pal-5: var(--pal-desert-5); --pal-6: var(--pal-desert-6); --pal-7: var(--pal-desert-7); --pal-8: var(--pal-desert-8); }
+html[data-palette="vivid"] { --pal-1: var(--pal-vivid-1); --pal-2: var(--pal-vivid-2); --pal-3: var(--pal-vivid-3); --pal-4: var(--pal-vivid-4); --pal-5: var(--pal-vivid-5); --pal-6: var(--pal-vivid-6); --pal-7: var(--pal-vivid-7); --pal-8: var(--pal-vivid-8); }
+html[data-palette="mono"] { --pal-1: var(--pal-mono-1); --pal-2: var(--pal-mono-2); --pal-3: var(--pal-mono-3); --pal-4: var(--pal-mono-4); --pal-5: var(--pal-mono-5); --pal-6: var(--pal-mono-6); --pal-7: var(--pal-mono-7); --pal-8: var(--pal-mono-8); }
+/* module colour per app area (Shell sets html[data-module]); the module hue is also the first chart colour */
+html[data-module="finance"] { --module: var(--emerald); --module-bg: var(--em-50); --cat-1: var(--emerald); --cat-2: var(--pal-1); }
+html[data-module="sales"] { --module: var(--blue); --module-bg: var(--blue-bg); --cat-1: var(--blue); --cat-5: var(--pal-1); }
+html[data-module="purchasing"] { --module: var(--teal); --module-bg: var(--teal-bg); --cat-1: var(--teal); --cat-4: var(--pal-1); }
+html[data-module="inventory"] { --module: var(--amber); --module-bg: var(--amber-bg); --cat-1: var(--amber); --cat-6: var(--pal-1); }
+html[data-module="hr"] { --module: var(--violet); --module-bg: var(--violet-bg); --cat-1: var(--violet); --cat-8: var(--pal-1); }
+html[data-module="payroll"] { --module: var(--gold); --module-bg: var(--gold-bg); --cat-1: var(--gold); --cat-2: var(--pal-1); --cat-3: var(--pal-2); --cat-4: var(--pal-3); --cat-5: var(--pal-4); --cat-6: var(--pal-5); --cat-7: var(--pal-6); --cat-8: var(--pal-7); }
+html[data-module="projects"] { --module: var(--coral); --module-bg: var(--coral-bg); --cat-1: var(--coral); --cat-7: var(--pal-1); }
+html[data-module="manufacturing"] { --module: var(--lime); --module-bg: var(--lime-bg); --cat-1: var(--lime); --cat-2: var(--pal-1); --cat-3: var(--pal-2); --cat-4: var(--pal-3); --cat-5: var(--pal-4); --cat-6: var(--pal-5); --cat-7: var(--pal-6); --cat-8: var(--pal-7); }
+html[data-module="crm"] { --module: var(--blue); --module-bg: var(--blue-bg); --cat-1: var(--blue); --cat-5: var(--pal-1); }
+html[data-module="pos"] { --module: var(--teal); --module-bg: var(--teal-bg); --cat-1: var(--teal); --cat-4: var(--pal-1); }
+/* the on-dark white used by text on Deep bands keeps its value in both modes */
+:root { --on-deep: #FFFFFF; --on-deep-muted: rgba(255, 255, 255, .72); }
+
+/* CRM, POS and Manufacturing take the same Enterprise theme (owner 2026-11-16 Round 1 §0: the Enterprise frame owns all colour) */

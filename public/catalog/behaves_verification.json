@@ -1,0 +1,842 @@
+{
+ "Activity Type": {
+  "en": {
+   "pass": true,
+   "note": "Activity Cost per Employee on AT-0001 → navigated to Activity Cost list (erpnext/activity_cost)",
+   "url": "http://localhost:8080/app/erpnext/activity_cost"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Activity Cost per Employee on AT-0003 → navigated to Activity Cost list (erpnext/activity_cost)",
+   "url": "http://localhost:8080/app/erpnext/activity_cost"
+  }
+ },
+ "Asset": {
+  "en": {
+   "pass": true,
+   "note": "Asset Value Adjustment on DDT-AST-001 → new draft Asset Value Adjustment AVA-0006; carried ['company', 'asset_category', 'cost_center', 'asset']",
+   "url": "http://localhost:8080/app/erpnext/asset_value_adjustment/AVA-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Asset Value Adjustment on DDT-AST-001 → new draft Asset Value Adjustment AVA-0006; carried ['company', 'asset_category', 'cost_center', 'asset']",
+   "url": "http://localhost:8080/app/erpnext/asset_value_adjustment/AVA-0006"
+  }
+ },
+ "Attendance": {
+  "en": {
+   "pass": true,
+   "note": "Attendance Request on DDT-ATT-00052 → new draft Attendance Request AR-0007; carried ['employee', 'employee_name', 'company', 'department', 'shift']",
+   "url": "http://localhost:8080/app/hrms/attendance_request/AR-0007"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Attendance Request on DDT-ATT-00052 → new draft Attendance Request AR-0007; carried ['employee', 'employee_name', 'company', 'department', 'shift']",
+   "url": "http://localhost:8080/app/hrms/attendance_request/AR-0007"
+  }
+ },
+ "BOM": {
+  "en": {
+   "pass": true,
+   "note": "New Version on SYN-BOM-002 → new draft BOM B-0003; carried ['company', 'item', 'quantity', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/bom/B-0003"
+  },
+  "ar": {
+   "pass": true,
+   "note": "New Version on SYN-BOM-002 → new draft BOM B-0003; carried ['company', 'item', 'quantity', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/bom/B-0003"
+  }
+ },
+ "BOM Update Tool": {
+  "en": {
+   "pass": true,
+   "note": "View BOM Update Log on BOM Update Tool → navigated to BOM Update Log list (erpnext/bom_update_log)",
+   "url": "http://localhost:8080/app/erpnext/bom_update_log"
+  },
+  "ar": {
+   "pass": true,
+   "note": "View BOM Update Log on BOM Update Tool → navigated to BOM Update Log list (erpnext/bom_update_log)",
+   "url": "http://localhost:8080/app/erpnext/bom_update_log"
+  }
+ },
+ "Blanket Order": {
+  "en": {
+   "pass": true,
+   "note": "Sales Order on BO-0001 → new draft Sales Order SO-0019; carried ['customer', 'customer_name', 'company', 'currency', 'conversion_rate']",
+   "url": "http://localhost:8080/app/erpnext/sales_order/SO-0019"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Sales Order on BO-0003 → new draft Sales Order SO-0019; carried ['customer', 'customer_name', 'company', 'currency', 'conversion_rate']",
+   "url": "http://localhost:8080/app/erpnext/sales_order/SO-0019"
+  }
+ },
+ "Bulk Transaction Log": {
+  "en": {
+   "pass": true,
+   "note": "Succeeded Entries on BTL-0001 → navigated to Bulk Transaction Log Detail list (erpnext/bulk_transaction_log_detail?filters=%22%5B%5B%5C%22date%5C%22%2C%5C%22%3)",
+   "url": "http://localhost:8080/app/erpnext/bulk_transaction_log_detail?filters=%22%5B%5B%5C%22date%5C%22%2C%5C%22%3D%5C%22%2C%5C%222026-06-06%5C%22%5D%2C%5B%5C%22transaction_status%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Success%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Succeeded Entries on BTL-0001 → navigated to Bulk Transaction Log Detail list (erpnext/bulk_transaction_log_detail?filters=%22%5B%5B%5C%22date%5C%22%2C%5C%22%3)",
+   "url": "http://localhost:8080/app/erpnext/bulk_transaction_log_detail?filters=%22%5B%5B%5C%22date%5C%22%2C%5C%22%3D%5C%22%2C%5C%222026-06-06%5C%22%5D%2C%5B%5C%22transaction_status%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Success%5C%22%5D%5D%22"
+  }
+ },
+ "Campaign": {
+  "en": {
+   "pass": true,
+   "note": "View Leads on C-0001 → navigated to Lead list (erpnext/lead)",
+   "url": "http://localhost:8080/app/erpnext/lead"
+  },
+  "ar": {
+   "pass": true,
+   "note": "View Leads on C-0001 → navigated to Lead list (erpnext/lead)",
+   "url": "http://localhost:8080/app/erpnext/lead"
+  }
+ },
+ "Communication": {
+  "en": {
+   "pass": true,
+   "note": "Contact on C-0001 → new draft Contact C-0051; carried ['user']",
+   "url": "http://localhost:8080/app/frappe/contact/C-0051"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Contact on C-0001 → new draft Contact C-0051; carried ['user']",
+   "url": "http://localhost:8080/app/frappe/contact/C-0051"
+  }
+ },
+ "Company": {
+  "en": {
+   "pass": true,
+   "note": "Sales Tax Template on Digit Synthetic Co → navigated to Sales Taxes and Charges Template list (erpnext/sales_taxes_and_charges_template?filters=%22%5B%5B%5C%22company%5C%22%2C)",
+   "url": "http://localhost:8080/app/erpnext/sales_taxes_and_charges_template?filters=%22%5B%5B%5C%22company%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Digit+Synthetic+Co%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Sales Tax Template on Digit Synthetic Co → navigated to Sales Taxes and Charges Template list (erpnext/sales_taxes_and_charges_template?filters=%22%5B%5B%5C%22company%5C%22%2C)",
+   "url": "http://localhost:8080/app/erpnext/sales_taxes_and_charges_template?filters=%22%5B%5B%5C%22company%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Digit+Synthetic+Co%5C%22%5D%5D%22"
+  }
+ },
+ "Console Log": {
+  "en": {
+   "pass": true,
+   "note": "Re-Run in Console on CL-0001 → new draft System Console SC-0001; carried ['type']",
+   "url": "http://localhost:8080/app/frappe/system_console/SC-0001"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Re-Run in Console on CL-0002 → new draft System Console SC-0001; carried ['type']",
+   "url": "http://localhost:8080/app/frappe/system_console/SC-0001"
+  }
+ },
+ "Cost Center": {
+  "en": {
+   "pass": true,
+   "note": "Budget on Main - DDT → navigated to Budget list (erpnext/budget?filters=%22%5B%5B%5C%22cost_center%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/erpnext/budget?filters=%22%5B%5B%5C%22cost_center%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Main+-+DDT%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Budget on Main - DDT → navigated to Budget list (erpnext/budget?filters=%22%5B%5B%5C%22cost_center%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/erpnext/budget?filters=%22%5B%5B%5C%22cost_center%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Main+-+DDT%5C%22%5D%5D%22"
+  }
+ },
+ "Coupon Code": {
+  "en": {
+   "pass": true,
+   "note": "Add/Edit Coupon Conditions on CC-0002 → new draft Pricing Rule PR-0006; carried ['customer', 'valid_from', 'valid_upto']",
+   "url": "http://localhost:8080/app/erpnext/pricing_rule/PR-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Add/Edit Coupon Conditions on CC-0001 → new draft Pricing Rule PR-0006; carried ['customer', 'valid_from', 'valid_upto']",
+   "url": "http://localhost:8080/app/erpnext/pricing_rule/PR-0006"
+  }
+ },
+ "Dashboard Chart Source": {
+  "en": {
+   "pass": true,
+   "note": "Dashboard Chart on DCS-0001 → new draft Dashboard Chart DC-0001; carried ['module']",
+   "url": "http://localhost:8080/app/frappe/dashboard_chart/DC-0001"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Dashboard Chart on DCS-0001 → new draft Dashboard Chart DC-0001; carried ['module']",
+   "url": "http://localhost:8080/app/frappe/dashboard_chart/DC-0001"
+  }
+ },
+ "Delivery Note": {
+  "en": {
+   "pass": true,
+   "note": "Credit Note on DDT-DN-010 → new draft Sales Invoice SI-0019; carried ['customer', 'customer_name', 'company', 'cost_center', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/sales_invoice/SI-0019"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Credit Note on DDT-DN-010 → new draft Sales Invoice SI-0019; carried ['customer', 'customer_name', 'company', 'cost_center', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/sales_invoice/SI-0019"
+  }
+ },
+ "Delivery Trip": {
+  "en": {
+   "pass": true,
+   "note": "Delivery Notes on DT-0001 → navigated to Delivery Note list (erpnext/delivery_note?filters=%22%5B%5B%5C%22name%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/erpnext/delivery_note?filters=%22%5B%5B%5C%22name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22%5B%5C%5Cn%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5C%5C%22in%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Delivery Notes on DT-0001 → navigated to Delivery Note list (erpnext/delivery_note?filters=%22%5B%5B%5C%22name%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/erpnext/delivery_note?filters=%22%5B%5B%5C%22name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22%5B%5C%5Cn%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5Ct%5C%5C%5C%22in%5C%22%5D%5D%22"
+  }
+ },
+ "Dunning": {
+  "en": {
+   "pass": true,
+   "note": "after simulated Submit: Payment on D-0002 → new draft Payment Entry PE-0011; carried ['company', 'posting_date', 'letter_head', 'cost_center', 'contact_person']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0011"
+  },
+  "ar": {
+   "pass": true,
+   "note": "after simulated Submit: Payment on D-0001 → new draft Payment Entry PE-0011; carried ['company', 'posting_date', 'letter_head', 'cost_center', 'contact_person']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0011"
+  }
+ },
+ "Employee Advance": {
+  "en": {
+   "pass": true,
+   "note": "Payment on DDT-EAD-001 → new draft Payment Entry PE-0012; carried ['posting_date', 'company', 'paid_amount', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0012"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Payment on DDT-EAD-001 → new draft Payment Entry PE-0012; carried ['posting_date', 'company', 'paid_amount', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0012"
+  }
+ },
+ "Employee Onboarding": {
+  "en": {
+   "pass": true,
+   "note": "Employee on EO-0001 → new draft Employee E-0035; carried ['company', 'employee_name', 'department', 'designation', 'holiday_list']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0035"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Employee on EO-0001 → new draft Employee E-0035; carried ['company', 'employee_name', 'department', 'designation', 'holiday_list']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0035"
+  }
+ },
+ "Employee Separation": {
+  "en": {
+   "pass": true,
+   "note": "Employee on ES-0001 → new draft Employee E-0036; carried ['employee_name', 'department', 'designation', 'company', 'resignation_letter_date']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0036"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Employee on ES-0001 → new draft Employee E-0036; carried ['employee_name', 'department', 'designation', 'company', 'resignation_letter_date']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0036"
+  }
+ },
+ "Error Log": {
+  "en": {
+   "pass": true,
+   "note": "Show Similar Errors on EL-0001 → navigated to Error Log list (frappe/error_log?filters=%22%5B%5B%5C%22fingerprint%5C%22%2C%5C%22%3D%5C%22%2C%5)",
+   "url": "http://localhost:8080/app/frappe/error_log?filters=%22%5B%5B%5C%22fingerprint%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Orion+Fingerprint+1%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Show Similar Errors on EL-0001 → navigated to Error Log list (frappe/error_log?filters=%22%5B%5B%5C%22fingerprint%5C%22%2C%5C%22%3D%5C%22%2C%5)",
+   "url": "http://localhost:8080/app/frappe/error_log?filters=%22%5B%5B%5C%22fingerprint%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Orion+Fingerprint+1%5C%22%5D%5D%22"
+  }
+ },
+ "Expense Claim": {
+  "en": {
+   "pass": true,
+   "note": "View Exchange Gain/Loss Journals on SYN-EXC-0001 → navigated to Journal Entry list (erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%2)",
+   "url": "http://localhost:8080/app/erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Exchange+Gain+Or+Loss%5C%22%5D%2C%5B%5C%22reference_name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22SYN-EXC-0001%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "View Exchange Gain/Loss Journals on SYN-EXC-0001 → navigated to Journal Entry list (erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%2)",
+   "url": "http://localhost:8080/app/erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Exchange+Gain+Or+Loss%5C%22%5D%2C%5B%5C%22reference_name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22SYN-EXC-0001%5C%22%5D%5D%22"
+  }
+ },
+ "Income Tax Slab": {
+  "en": {
+   "pass": true,
+   "note": "Salary Structure Assignment on ITS-0001 → new draft Salary Structure Assignment SSA-0031; carried ['company', 'currency', 'income_tax_slab']",
+   "url": "http://localhost:8080/app/hrms/salary_structure_assignment/SSA-0031"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Salary Structure Assignment on ITS-0004 → new draft Salary Structure Assignment SSA-0031; carried ['company', 'currency', 'income_tax_slab']",
+   "url": "http://localhost:8080/app/hrms/salary_structure_assignment/SSA-0031"
+  }
+ },
+ "Installation Note": {
+  "en": {
+   "pass": true,
+   "note": "From Delivery Note on IN-0002 → new draft Installation Note IN-0006; carried ['customer', 'customer_address', 'contact_person', 'customer_name', 'address_display']",
+   "url": "http://localhost:8080/app/erpnext/installation_note/IN-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "From Delivery Note on IN-0001 → new draft Installation Note IN-0006; carried ['customer', 'customer_address', 'contact_person', 'customer_name', 'address_display']",
+   "url": "http://localhost:8080/app/erpnext/installation_note/IN-0006"
+  }
+ },
+ "Issue": {
+  "en": {
+   "pass": true,
+   "note": "Task on DDT-ISS-010 → new draft Task T-0020; carried ['subject', 'priority', 'company', 'issue']",
+   "url": "http://localhost:8080/app/erpnext/task/T-0020"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Task on DDT-ISS-008 → new draft Task T-0020; carried ['subject', 'priority', 'company', 'issue']",
+   "url": "http://localhost:8080/app/erpnext/task/T-0020"
+  }
+ },
+ "Item": {
+  "en": {
+   "pass": true,
+   "note": "Duplicate on SYN-ITEM-004 → new draft Item I-0045; carried ['item_code', 'item_name', 'item_group', 'stock_uom', 'standard_rate']",
+   "url": "http://localhost:8080/app/erpnext/item/I-0045"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Duplicate on SYN-ITEM-004 → new draft Item I-0045; carried ['item_code', 'item_name', 'item_group', 'stock_uom', 'standard_rate']",
+   "url": "http://localhost:8080/app/erpnext/item/I-0045"
+  }
+ },
+ "Item Group": {
+  "en": {
+   "pass": true,
+   "note": "Items on Products → navigated to Item list (erpnext/item?filters=%22%5B%5B%5C%22item_group%5C%22%2C%5C%22%3D%5C%22%2C%5C%22P)",
+   "url": "http://localhost:8080/app/erpnext/item?filters=%22%5B%5B%5C%22item_group%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Products%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Items on Products → navigated to Item list (erpnext/item?filters=%22%5B%5B%5C%22item_group%5C%22%2C%5C%22%3D%5C%22%2C%5C%22P)",
+   "url": "http://localhost:8080/app/erpnext/item?filters=%22%5B%5B%5C%22item_group%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Products%5C%22%5D%5D%22"
+  }
+ },
+ "Job Applicant": {
+  "en": {
+   "pass": true,
+   "note": "View Job Offer on JA-0005 → new draft Job Offer JO-0006; carried ['applicant_name', 'designation', 'job_applicant']",
+   "url": "http://localhost:8080/app/hrms/job_offer/JO-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Show Employee on JA-0005 → new draft Employee E-0035; carried ['designation', 'first_name', 'personal_email', 'cell_number', 'salary_currency']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0035"
+  }
+ },
+ "Job Card": {
+  "en": {
+   "pass": true,
+   "note": "Material Request on SYN-JC-0002 → new draft Material Request MR-0011; carried ['work_order', 'company', 'job_card']",
+   "url": "http://localhost:8080/app/erpnext/material_request/MR-0011"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Material Request on SYN-JC-0002 → new draft Material Request MR-0011; carried ['work_order', 'company', 'job_card']",
+   "url": "http://localhost:8080/app/erpnext/material_request/MR-0011"
+  }
+ },
+ "Job Offer": {
+  "en": {
+   "pass": true,
+   "note": "Show Employee on JO-0001 → new draft Employee E-0037; carried ['designation', 'company', 'employee_name', 'scheduled_confirmation_date', 'personal_email']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0037"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Show Employee on JO-0002 → new draft Employee E-0037; carried ['designation', 'company', 'employee_name', 'scheduled_confirmation_date', 'personal_email']",
+   "url": "http://localhost:8080/app/erpnext/employee/E-0037"
+  }
+ },
+ "Job Requisition": {
+  "en": {
+   "pass": true,
+   "note": "Create Job Opening on JR-0001 → new draft Job Opening JO-0006; carried ['designation', 'department', 'company', 'description', 'job_requisition']",
+   "url": "http://localhost:8080/app/hrms/job_opening/JO-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Create Job Opening on JR-0001 → new draft Job Opening JO-0006; carried ['designation', 'department', 'company', 'description', 'job_requisition']",
+   "url": "http://localhost:8080/app/hrms/job_opening/JO-0006"
+  }
+ },
+ "Lead": {
+  "en": {
+   "pass": true,
+   "note": "Customer on SYN-LEAD-0003 → new draft Customer C-0029; carried ['lead_name', 'customer_name']",
+   "url": "http://localhost:8080/app/erpnext/customer/C-0029"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Customer on SYN-LEAD-0003 → new draft Customer C-0029; carried ['lead_name', 'customer_name']",
+   "url": "http://localhost:8080/app/erpnext/customer/C-0029"
+  }
+ },
+ "Leave Encashment": {
+  "en": {
+   "pass": true,
+   "note": "Payment on SYN-LE-0001 → new draft Payment Entry PE-0011; carried ['company', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0011"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Payment on SYN-LE-0001 → new draft Payment Entry PE-0011; carried ['company', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0011"
+  }
+ },
+ "Leave Policy": {
+  "en": {
+   "pass": true,
+   "note": "Single Assignment on LP-0001 → new draft Leave Policy Assignment LPA-0001; carried ['leave_policy']",
+   "url": "http://localhost:8080/app/hrms/leave_policy_assignment/LPA-0001"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Single Assignment on LP-0001 → new draft Leave Policy Assignment LPA-0001; carried ['leave_policy']",
+   "url": "http://localhost:8080/app/hrms/leave_policy_assignment/LPA-0001"
+  }
+ },
+ "Maintenance Schedule": {
+  "en": {
+   "pass": true,
+   "note": "Sales Order on MS-0002 → new draft Maintenance Schedule MS-0006; carried ['customer', 'transaction_date', 'customer_name', 'contact_person', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_schedule/MS-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Sales Order on MS-0001 → new draft Maintenance Schedule MS-0006; carried ['customer', 'transaction_date', 'customer_name', 'contact_person', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_schedule/MS-0006"
+  }
+ },
+ "Maintenance Visit": {
+  "en": {
+   "pass": true,
+   "note": "Warranty Claim on MV-0001 → new draft Maintenance Visit MV-0006; carried ['customer', 'customer_name', 'address_display', 'contact_display', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_visit/MV-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Maintenance Schedule on MV-0002 → new draft Maintenance Visit MV-0006; carried ['customer', 'customer_name', 'address_display', 'contact_display', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_visit/MV-0006"
+  }
+ },
+ "Material Request": {
+  "en": {
+   "pass": true,
+   "note": "Issue Material on MR-0011 → new draft Stock Entry SE-0010; carried ['company', 'job_card', 'work_order']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0010"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Issue Material on MR-0011 → new draft Stock Entry SE-0010; carried ['company', 'job_card', 'work_order']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0010"
+  }
+ },
+ "Notification Settings": {
+  "en": {
+   "pass": true,
+   "note": "Go to Notification Settings List on NS-0001 → navigated to Notification Settings list (frappe/notification_settings)",
+   "url": "http://localhost:8080/app/frappe/notification_settings"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Go to Notification Settings List on NS-0001 → navigated to Notification Settings list (frappe/notification_settings)",
+   "url": "http://localhost:8080/app/frappe/notification_settings"
+  }
+ },
+ "Opportunity": {
+  "en": {
+   "pass": true,
+   "note": "Supplier Quotation on DDT-OPP-010 → new draft Supplier Quotation SQ-0009; carried ['currency', 'company', 'transaction_date', 'opportunity']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0009"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Supplier Quotation on DDT-OPP-010 → new draft Supplier Quotation SQ-0009; carried ['currency', 'company', 'transaction_date', 'opportunity']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0009"
+  }
+ },
+ "Payment Entry": {
+  "en": {
+   "pass": true,
+   "note": "View Exchange Gain/Loss Journals on DDT-PE-R-010 → navigated to Journal Entry list (erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%2)",
+   "url": "http://localhost:8080/app/erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Exchange+Gain+Or+Loss%5C%22%5D%2C%5B%5C%22reference_name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22DDT-PE-R-010%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "View Exchange Gain/Loss Journals on DDT-PE-R-010 → navigated to Journal Entry list (erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%2)",
+   "url": "http://localhost:8080/app/erpnext/journal_entry?filters=%22%5B%5B%5C%22voucher_type%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Exchange+Gain+Or+Loss%5C%22%5D%2C%5B%5C%22reference_name%5C%22%2C%5C%22%3D%5C%22%2C%5C%22DDT-PE-R-010%5C%22%5D%5D%22"
+  }
+ },
+ "Payment Request": {
+  "en": {
+   "pass": true,
+   "note": "Create Payment Entry on SYN-PR-0001 → new draft Payment Entry PE-0012; carried ['company', 'party_type', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0012"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Create Payment Entry on SYN-PR-0001 → new draft Payment Entry PE-0012; carried ['company', 'party_type', 'party']",
+   "url": "http://localhost:8080/app/erpnext/payment_entry/PE-0012"
+  }
+ },
+ "Pick List": {
+  "en": {
+   "pass": true,
+   "note": "after simulated Submit: Delivery Note on PL-0001 → new draft Delivery Note DN-0015; carried ['company', 'customer', 'scan_barcode', 'customer_name']",
+   "url": "http://localhost:8080/app/erpnext/delivery_note/DN-0015"
+  },
+  "ar": {
+   "pass": true,
+   "note": "after simulated Submit: Delivery Note on PL-0001 → new draft Delivery Note DN-0015; carried ['company', 'customer', 'scan_barcode', 'customer_name']",
+   "url": "http://localhost:8080/app/erpnext/delivery_note/DN-0015"
+  }
+ },
+ "Plant Floor": {
+  "en": {
+   "pass": true,
+   "note": "Create Workstation on Main Floor → new draft Workstation W-0003; carried ['plant_floor']",
+   "url": "http://localhost:8080/app/erpnext/workstation/W-0003"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Create Workstation on Main Floor → new draft Workstation W-0003; carried ['plant_floor']",
+   "url": "http://localhost:8080/app/erpnext/workstation/W-0003"
+  }
+ },
+ "Print Style": {
+  "en": {
+   "pass": true,
+   "note": "Print Settings on PS-0001 → new draft Print Settings PS-0001; carried ['print_style']",
+   "url": "http://localhost:8080/app/frappe/print_settings/PS-0001"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Print Settings on PS-0001 → new draft Print Settings PS-0001; carried ['print_style']",
+   "url": "http://localhost:8080/app/frappe/print_settings/PS-0001"
+  }
+ },
+ "Production Plan": {
+  "en": {
+   "pass": true,
+   "note": "Work Order / Subcontract PO on PP-0001 → new draft Work Order WO-0006; carried ['company', 'project', 'production_plan']",
+   "url": "http://localhost:8080/app/erpnext/work_order/WO-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Work Order / Subcontract PO on PP-0001 → new draft Work Order WO-0006; carried ['company', 'project', 'production_plan']",
+   "url": "http://localhost:8080/app/erpnext/work_order/WO-0006"
+  }
+ },
+ "Project": {
+  "en": {
+   "pass": true,
+   "note": "Gantt Chart on SYN-PROJ-001 → navigated to Task list (erpnext/task)",
+   "url": "http://localhost:8080/app/erpnext/task"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Gantt Chart on SYN-PROJ-001 → navigated to Task list (erpnext/task)",
+   "url": "http://localhost:8080/app/erpnext/task"
+  }
+ },
+ "Prospect": {
+  "en": {
+   "pass": true,
+   "note": "Customer on P-0001 → new draft Customer C-0029; carried ['customer_group', 'market_segment', 'industry', 'territory', 'website']",
+   "url": "http://localhost:8080/app/erpnext/customer/C-0029"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Customer on P-0001 → new draft Customer C-0029; carried ['customer_group', 'market_segment', 'industry', 'territory', 'website']",
+   "url": "http://localhost:8080/app/erpnext/customer/C-0029"
+  }
+ },
+ "Purchase Invoice": {
+  "en": {
+   "pass": true,
+   "note": "Purchase Receipt on DDT-PINV-RET-001 → navigated to Purchase Receipt list (erpnext/purchase_receipt)",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Purchase Receipt on DDT-PINV-RET-001 → navigated to Purchase Receipt list (erpnext/purchase_receipt)",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt"
+  }
+ },
+ "Purchase Order": {
+  "en": {
+   "pass": true,
+   "note": "Purchase Receipt on SYN-PO-0001 → new draft Purchase Receipt PR-0008; carried ['company', 'supplier', 'supplier_name', 'currency', 'set_warehouse']",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt/PR-0008"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Purchase Receipt on SYN-PO-0001 → new draft Purchase Receipt PR-0008; carried ['company', 'supplier', 'supplier_name', 'currency', 'set_warehouse']",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt/PR-0008"
+  }
+ },
+ "Purchase Receipt": {
+  "en": {
+   "pass": true,
+   "note": "Purchase Invoice on PR-0008 → new draft Purchase Receipt PR-0009; carried ['supplier', 'supplier_name', 'company', 'currency', 'set_warehouse']",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt/PR-0009"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Purchase Invoice on PR-0008 → new draft Purchase Receipt PR-0009; carried ['supplier', 'supplier_name', 'company', 'currency', 'set_warehouse']",
+   "url": "http://localhost:8080/app/erpnext/purchase_receipt/PR-0009"
+  }
+ },
+ "Quotation": {
+  "en": {
+   "pass": true,
+   "note": "Sales Order on DDT-QTN-010 → new draft Sales Order SO-0019; carried ['customer_name', 'company', 'currency', 'conversion_rate', 'selling_price_list']",
+   "url": "http://localhost:8080/app/erpnext/sales_order/SO-0019"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Sales Order on DDT-QTN-010 → new draft Sales Order SO-0019; carried ['customer_name', 'company', 'currency', 'conversion_rate', 'selling_price_list']",
+   "url": "http://localhost:8080/app/erpnext/sales_order/SO-0019"
+  }
+ },
+ "Request for Quotation": {
+  "en": {
+   "pass": true,
+   "note": "Supplier Quotation on DDT-RFQ-008 → new draft Supplier Quotation SQ-0009; carried ['company', 'transaction_date']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0009"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Supplier Quotation on DDT-RFQ-008 → new draft Supplier Quotation SQ-0009; carried ['company', 'transaction_date']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0009"
+  }
+ },
+ "Salary Component": {
+  "en": {
+   "pass": true,
+   "note": "Salary Structure on Basic Salary → new draft Salary Structure SS-0002; carried ['salary_component']",
+   "url": "http://localhost:8080/app/hrms/salary_structure/SS-0002"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Salary Structure on Basic Salary → new draft Salary Structure SS-0002; carried ['salary_component']",
+   "url": "http://localhost:8080/app/hrms/salary_structure/SS-0002"
+  }
+ },
+ "Salary Structure": {
+  "en": {
+   "pass": true,
+   "note": "Single Assignment on DDT Monthly 2026 → new draft Salary Structure Assignment SSA-0031; carried ['company', 'currency', 'salary_structure']",
+   "url": "http://localhost:8080/app/hrms/salary_structure_assignment/SSA-0031"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Single Assignment on DDT Monthly 2026 → new draft Salary Structure Assignment SSA-0031; carried ['company', 'currency', 'salary_structure']",
+   "url": "http://localhost:8080/app/hrms/salary_structure_assignment/SSA-0031"
+  }
+ },
+ "Salary Structure Assignment": {
+  "en": {
+   "pass": true,
+   "note": "Payroll Entry on SSA-0031 → new draft Payroll Entry PE-0003; carried ['company', 'currency']",
+   "url": "http://localhost:8080/app/hrms/payroll_entry/PE-0003"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Payroll Entry on SSA-0031 → new draft Payroll Entry PE-0003; carried ['company', 'currency']",
+   "url": "http://localhost:8080/app/hrms/payroll_entry/PE-0003"
+  }
+ },
+ "Sales Invoice": {
+  "en": {
+   "pass": true,
+   "note": "Sales Order on DDT-SINV-010 → new draft Sales Invoice SI-0019; carried ['company', 'customer', 'customer_name', 'cost_center', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/sales_invoice/SI-0019"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Quotation on DDT-SINV-D01 → new draft Sales Invoice SI-0019; carried ['company', 'customer', 'customer_name', 'currency', 'conversion_rate']",
+   "url": "http://localhost:8080/app/erpnext/sales_invoice/SI-0019"
+  }
+ },
+ "Sales Order": {
+  "en": {
+   "pass": true,
+   "note": "Subcontracting Inward Order on DDT-SO-010 → new draft Subcontracting Inward Order SIO-0006; carried ['company', 'customer', 'customer_name', 'transaction_date', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/subcontracting_inward_order/SIO-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Subcontracting Inward Order on DDT-SO-010 → new draft Subcontracting Inward Order SIO-0006; carried ['company', 'customer', 'customer_name', 'transaction_date', 'currency']",
+   "url": "http://localhost:8080/app/erpnext/subcontracting_inward_order/SIO-0006"
+  }
+ },
+ "Sidebar": {
+  "en": {
+   "pass": true,
+   "note": "Unmark as Standard on S-0001 → new draft Sidebar S-0006; carried ['title', 'module', 'merged_from']",
+   "url": "http://localhost:8080/app/frappe/sidebar/S-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Unmark as Standard on S-0001 → new draft Sidebar S-0006; carried ['title', 'module', 'merged_from']",
+   "url": "http://localhost:8080/app/frappe/sidebar/S-0006"
+  }
+ },
+ "Stock Entry": {
+  "en": {
+   "pass": true,
+   "note": "Purchase Invoice on SE-0010 → new draft Stock Entry SE-0011; carried ['company', 'work_order', 'job_card']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0011"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Purchase Invoice on SE-0010 → new draft Stock Entry SE-0011; carried ['company', 'work_order', 'job_card']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0011"
+  }
+ },
+ "Subcontracting Inward Order": {
+  "en": {
+   "pass": true,
+   "note": "after simulated Submit: Material from Customer on SIO-0006 → new draft Stock Entry SE-0012; carried ['company', 'subcontracting_inward_order']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0012"
+  },
+  "ar": {
+   "pass": true,
+   "note": "after simulated Submit: Material from Customer on SIO-0006 → new draft Stock Entry SE-0012; carried ['company', 'subcontracting_inward_order']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0012"
+  }
+ },
+ "Subcontracting Order": {
+  "en": {
+   "pass": true,
+   "note": "after simulated Submit: Material to Supplier on SO-0001 → new draft Stock Entry SE-0013; carried ['purchase_order', 'company', 'cost_center', 'project', 'address_display']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0013"
+  },
+  "ar": {
+   "pass": true,
+   "note": "after simulated Submit: Material to Supplier on SO-0001 → new draft Stock Entry SE-0013; carried ['purchase_order', 'company', 'cost_center', 'project', 'address_display']",
+   "url": "http://localhost:8080/app/erpnext/stock_entry/SE-0013"
+  }
+ },
+ "Subcontracting Receipt": {
+  "en": {
+   "pass": true,
+   "note": "Subcontracting Order on SR-0002 → new draft Subcontracting Receipt SR-0006; carried ['supplier', 'supplier_name', 'supplier_delivery_note', 'company', 'cost_center']",
+   "url": "http://localhost:8080/app/erpnext/subcontracting_receipt/SR-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Subcontracting Order on SR-0001 → new draft Subcontracting Receipt SR-0006; carried ['supplier', 'supplier_name', 'supplier_delivery_note', 'company', 'cost_center']",
+   "url": "http://localhost:8080/app/erpnext/subcontracting_receipt/SR-0006"
+  }
+ },
+ "Supplier Quotation": {
+  "en": {
+   "pass": true,
+   "note": "Material Request on SQ-0009 → new draft Supplier Quotation SQ-0010; carried ['company', 'transaction_date']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0010"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Material Request on SQ-0009 → new draft Supplier Quotation SQ-0010; carried ['company', 'transaction_date']",
+   "url": "http://localhost:8080/app/erpnext/supplier_quotation/SQ-0010"
+  }
+ },
+ "ToDo": {
+  "en": {
+   "pass": true,
+   "note": "Close on T-0001 → navigated to ToDo list (frappe/todo)",
+   "url": "http://localhost:8080/app/frappe/todo"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Close on T-0001 → navigated to ToDo list (frappe/todo)",
+   "url": "http://localhost:8080/app/frappe/todo"
+  }
+ },
+ "Training Event": {
+  "en": {
+   "pass": true,
+   "note": "Training Result on TE-0002 → navigated to Training Result list (hrms/training_result)",
+   "url": "http://localhost:8080/app/hrms/training_result"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Training Result on TE-0001 → navigated to Training Result list (hrms/training_result)",
+   "url": "http://localhost:8080/app/hrms/training_result"
+  }
+ },
+ "User": {
+  "en": {
+   "pass": true,
+   "note": "Set User Permissions on U-0001 → navigated to User Permission list (frappe/user_permission)",
+   "url": "http://localhost:8080/app/frappe/user_permission"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Set User Permissions on U-0004 → navigated to User Permission list (frappe/user_permission)",
+   "url": "http://localhost:8080/app/frappe/user_permission"
+  }
+ },
+ "Vehicle Log": {
+  "en": {
+   "pass": true,
+   "note": "after simulated Submit: Expense Claim on VL-0003 → new draft Expense Claim EC-0014; carried ['employee', 'vehicle_log']",
+   "url": "http://localhost:8080/app/hrms/expense_claim/EC-0014"
+  },
+  "ar": {
+   "pass": true,
+   "note": "after simulated Submit: Expense Claim on VL-0001 → new draft Expense Claim EC-0014; carried ['employee', 'vehicle_log']",
+   "url": "http://localhost:8080/app/hrms/expense_claim/EC-0014"
+  }
+ },
+ "Version": {
+  "en": {
+   "pass": true,
+   "note": "Show all Versions on VER-00170 → navigated to Version list (frappe/version?filters=%22%5B%5B%5C%22ref_doctype%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/frappe/version?filters=%22%5B%5B%5C%22ref_doctype%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Expense+Claim%5C%22%5D%2C%5B%5C%22docname%5C%22%2C%5C%22%3D%5C%22%2C%5C%22EC-0014%5C%22%5D%5D%22"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Show all Versions on VER-00169 → navigated to Version list (frappe/version?filters=%22%5B%5B%5C%22ref_doctype%5C%22%2C%5C%22%3D%5C%22%2C%5C%)",
+   "url": "http://localhost:8080/app/frappe/version?filters=%22%5B%5B%5C%22ref_doctype%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Expense+Claim%5C%22%5D%2C%5B%5C%22docname%5C%22%2C%5C%22%3D%5C%22%2C%5C%22EC-0014%5C%22%5D%5D%22"
+  }
+ },
+ "Warranty Claim": {
+  "en": {
+   "pass": true,
+   "note": "Maintenance Visit on WC-0003 → new draft Maintenance Visit MV-0007; carried ['customer', 'customer_name', 'contact_person', 'contact_display', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_visit/MV-0007"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Maintenance Visit on WC-0003 → new draft Maintenance Visit MV-0007; carried ['customer', 'customer_name', 'contact_person', 'contact_display', 'contact_mobile']",
+   "url": "http://localhost:8080/app/erpnext/maintenance_visit/MV-0007"
+  }
+ },
+ "Work Order": {
+  "en": {
+   "pass": true,
+   "note": "Pick List on WO-0006 → new draft Pick List PL-0006; carried ['company', 'work_order']",
+   "url": "http://localhost:8080/app/erpnext/pick_list/PL-0006"
+  },
+  "ar": {
+   "pass": true,
+   "note": "Pick List on WO-0006 → new draft Pick List PL-0006; carried ['company', 'work_order']",
+   "url": "http://localhost:8080/app/erpnext/pick_list/PL-0006"
+  }
+ }
+}

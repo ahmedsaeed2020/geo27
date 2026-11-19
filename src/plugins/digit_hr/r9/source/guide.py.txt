@@ -1,0 +1,251 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+"""Smart Guide rules for native HR documents (Preserve & Elevate V2, GUIDE-01): M01 lifecycle and contracts, M02 offers and
+onboarding, M03 leave / shift / attendance requests, M04 payroll / expenses / advances, 05.3 service cases.
+
+	POST /api/method/digit_hr.api.guide.document  {doctype, name?, values?: JSON of the form's current (unsaved) values}
+
+The host renders the guide next to the FULL native form (never instead of it). Everything here comes from the source:
+- will_block_save: Frappe's own server mandatory check (meta reqd + child tables) on the current values;
+- form_rules: fields whose requirement / visibility is a form expression (mandatory_depends_on / depends_on) — the host
+  evaluates them exactly as the native form does; the server never claims them;
+- server_check: a dry run of the document's own before_validate + validate (HRMS / DIGIT HR controllers, including the
+  DIGIT HR server defaults), inside a savepoint that is ALWAYS rolled back — the exact message Save would show (overlap,
+  insufficient balance, missing handler...). Nothing is saved, submitted, shared or emailed;
+- facts: source values with their native records (HRMS leave balance, approver, overlapping shift assignments, ADV-11
+  payroll readiness);
+- actions: the next steps the user may really take (save / submit / cancel / workflow transitions), from permissions,
+  docstatus and the active workflow;
+- readback (saved documents): docstatus, status / workflow state and modified, for the host to confirm after Save.
+Only the DocTypes below (validators reviewed for side effects); any other DocType is refused."""
+
+import frappe
+from frappe import _
+from frappe.utils import cint, getdate
+
+from digit_hr.api.permission import has_app_permission
+
+GUIDED = {
+	"Leave Application": {"section": "03.1", "dry_run": True},
+	"Shift Request": {"section": "03.3", "dry_run": True},
+	"Expense Claim": {"section": "04.5", "dry_run": True},
+	"DIGIT HR Service Case": {"section": "05.3", "dry_run": True},
+	"Payroll Entry": {"section": "04.1", "dry_run": False},  # its readiness is the ADV-11 preflight, never a validate run
+	# validators reviewed 2026-10-24 (call graph of validate / before_validate: no e-mail, enqueue, realtime or direct write;
+	# Employee Advance's set_status / set_pending_amount run with update=False inside validate)
+	"Employee Promotion": {"section": "01.5", "dry_run": True},
+	"Employee Transfer": {"section": "01.5", "dry_run": True},  # no validate of its own: framework checks + HR hooks only
+	"DIGIT Employment Contract": {"section": "01.6", "dry_run": True},
+	"DIGIT Contract Amendment": {"section": "01.6", "dry_run": True},
+	"DIGIT Document Renewal": {"section": "01.6", "dry_run": True},
+	"Job Offer": {"section": "02.1", "dry_run": True},
+	"Employee Onboarding": {"section": "02.2", "dry_run": True},
+	"Attendance Request": {"section": "03.2", "dry_run": True},
+	"Employee Advance": {"section": "04.5", "dry_run": True},
+}
+LIFECYCLE_DATE = {"Employee Promotion": "promotion_date", "Employee Transfer": "transfer_date"}
+STATE_FIELDS = ("status", "approval_status", "case_status", "workflow_state")
+
+
+def _route(doctype: str, name: str) -> str:
+	module = frappe.get_meta(doctype).module
+	app = frappe.db.get_value("Module Def", module, "app_name") or "frappe"
+	return f"/digit/app/{app}/{frappe.scrub(doctype).replace('_', '-')}/{name}"
+
+
+def _label(meta, fieldname: str) -> str:
+	return _(meta.get_label(fieldname)) if meta.get_field(fieldname) else fieldname
+
+
+def _missing(doc) -> list[dict]:
+	rows = [{"fieldname": f, "label": _label(doc.meta, f)} for f, _msg in doc._get_missing_mandatory_fields()]
+	for child in doc.get_all_children():
+		rows += [{"fieldname": f, "label": _label(child.meta, f), "table": child.parentfield, "row": child.idx}
+			for f, _msg in child._get_missing_mandatory_fields()]
+	return rows
+
+
+def _form_rules(meta) -> list[dict]:
+	return [{"fieldname": df.fieldname, "label": _(df.label), **({"mandatory_if": df.mandatory_depends_on} if df.mandatory_depends_on else {}),
+		**({"visible_if": df.depends_on} if df.depends_on and df.mandatory_depends_on else {})}
+		for df in meta.fields if df.mandatory_depends_on]
+
+
+def _message_text(exc) -> str:
+	"""The refusal as a user reads it. frappe.throw(..., as_table=True) carries a list of rows (header first)."""
+	arg = exc.args[0] if exc.args else ""
+	if isinstance(arg, (list, tuple)) and arg and all(isinstance(r, (list, tuple)) for r in arg):
+		head, *rows = arg
+		return "; ".join(" · ".join(f"{h}: {v}" for h, v in zip(head, r)) for r in rows) if rows else " · ".join(map(str, head))
+	return frappe.utils.strip_html(str(arg if isinstance(arg, str) else exc))
+
+
+def _dry_run(doc) -> dict:
+	"""The document's own server validation on the current values; always rolled back (savepoint)."""
+	sp = "digit_hr_guide"
+	frappe.db.savepoint(sp)
+	log_before = len(frappe.local.message_log or [])
+	try:
+		doc.run_method("before_validate")
+		doc.run_method("validate")
+		return {"state": "ok"}
+	except frappe.ValidationError as e:
+		return {"state": "blocked", "exc_type": type(e).__name__, "message": _message_text(e)[:500]}
+	except Exception as e:  # a controller that cannot run on partial values is said, not raised
+		return {"state": "not_evaluated", "exc_type": type(e).__name__}
+	finally:
+		frappe.db.rollback(save_point=sp)
+		if frappe.local.message_log is not None:
+			del frappe.local.message_log[log_before:]
+
+
+def _facts(doc) -> list[dict]:
+	out = []
+	if doc.doctype == "Leave Application" and doc.get("employee") and doc.get("leave_type") and doc.get("from_date"):
+		from hrms.hr.doctype.leave_application.leave_application import get_leave_details
+
+		details = get_leave_details(doc.employee, doc.from_date)
+		alloc = (details.get("leave_allocation") or {}).get(doc.leave_type)
+		out.append({"key": "leave_balance", "source": "hrms.get_leave_details", "as_of": str(getdate(doc.from_date)),
+			**({"state": "ok", "remaining": alloc.get("remaining_leaves"), "allocated": alloc.get("total_leaves"),
+				"taken": alloc.get("leaves_taken"), "pending_approval": alloc.get("leaves_pending_approval")} if alloc
+				else {"state": "no_allocation"}),
+			"route": f"/digit/app/hrms/leave-allocation?employee={doc.employee}&leave_type={frappe.utils.quote(doc.leave_type)}"})
+		if doc.get("leave_approver"):
+			out.append({"key": "leave_approver", "state": "ok", "value": doc.leave_approver, "source": "HRMS approver (employee / department)"})
+	if doc.doctype == "Shift Request" and doc.get("employee") and doc.get("from_date"):
+		from digit_hr.api.approvals import _flag_shift_overlaps
+
+		row = {"employee": doc.employee, "date": str(doc.from_date), "to_date": str(doc.get("to_date") or doc.from_date), "can_decide": True}
+		_flag_shift_overlaps([row])
+		out.append({"key": "shift_overlap", "state": "blocked" if row.get("approve_blocked") else "ok",
+			"blocking_records": [{"name": n, "route": _route("Shift Assignment", n)} for n in row.get("blocking_records", [])],
+			"source": "HRMS Shift Assignment overlap rule (HR Settings «allow multiple shift assignments»)"})
+	if doc.doctype == "Expense Claim":
+		out += [{"key": k, "state": "ok", "value": doc.get(k)} for k in ("expense_approver", "currency", "exchange_rate", "cost_center")
+			if doc.get(k) not in (None, "")]
+	if doc.doctype in LIFECYCLE_DATE and doc.get(LIFECYCLE_DATE[doc.doctype]):
+		date = getdate(doc.get(LIFECYCLE_DATE[doc.doctype]))
+		out.append({"key": "effective_date", "state": "ok" if date <= getdate() else "blocked", "value": str(date),
+			"source": "HRMS: applied to the Employee record only on submit, and not before this date"})
+	if doc.doctype == "Job Offer" and doc.get("job_applicant"):
+		status = frappe.db.get_value("Job Applicant", doc.job_applicant, "status") if frappe.has_permission(
+			"Job Applicant", "read", doc=doc.job_applicant) else None
+		if status:
+			out.append({"key": "applicant_status", "state": "ok", "value": status, "route": _route("Job Applicant", doc.job_applicant)})
+	if doc.doctype == "Employee Onboarding" and doc.get("job_offer"):
+		if frappe.has_permission("Job Offer", "read", doc=doc.job_offer):
+			status = frappe.db.get_value("Job Offer", doc.job_offer, "status")
+			out.append({"key": "job_offer_status", "state": "ok" if status == "Accepted" else "blocked", "value": status,
+				"route": _route("Job Offer", doc.job_offer)})
+	if doc.doctype == "Employee Advance" and doc.get("employee"):
+		out.append({"key": "pending_advance_amount", "state": "ok", "value": doc.get("pending_amount"),
+			"source": "HRMS: submitted advances of this employee not yet paid (computed by the document itself)"})
+	if doc.doctype == "DIGIT Employment Contract" and doc.get("end_date"):
+		days = (getdate(doc.end_date) - getdate()).days
+		out.append({"key": "contract_end", "state": "blocked" if days < 0 else ("ok" if days > 60 else "warning"),
+			"value": str(getdate(doc.end_date)), "days_left": days})
+	if doc.doctype == "DIGIT Contract Amendment" and doc.get("contract"):
+		if frappe.has_permission("DIGIT Employment Contract", "read", doc=doc.contract):
+			c = frappe.db.get_value("DIGIT Employment Contract", doc.contract, ["contract_status", "end_date"], as_dict=True) or {}
+			out.append({"key": "amended_contract", "state": "ok", "value": doc.contract, "contract_status": c.get("contract_status"),
+				"end_date": str(c.get("end_date") or ""), "route": _route("DIGIT Employment Contract", doc.contract)})
+	if doc.doctype == "Payroll Entry" and not doc.is_new():
+		from digit_hr.api.payroll_preflight import check
+
+		pf = check(doc.name)
+		out.append({"key": "payroll_readiness", "state": "ok", "value": pf.get("status"), "source": "ADV-11 preflight",
+			"checks": [{"key": c["key"], "severity": c["severity"], "count": c["count"], "label": c.get("label_translated") or c.get("label")}
+				for c in pf.get("checks", []) if c.get("count")], "latest_record": pf.get("latest_record")})
+	return out
+
+
+def _workflow_edit_allowed(doc) -> bool:
+	"""The native form's rule (frappe.ui.form.States): under an active Workflow a saved document is editable only by the
+	current state's «Allow Edit» role; a new document always is (Frappe never locks __islocal). The server does not
+	re-check this on save, so the guide must not offer what the native form would not."""
+	from frappe.model.workflow import get_workflow, get_workflow_name
+
+	if doc.is_new() or not get_workflow_name(doc.doctype) or frappe.session.user == "Administrator":
+		return True
+	wf = get_workflow(doc.doctype)
+	state = doc.get(wf.workflow_state_field) or (wf.states[0].state if wf.states else None)
+	row = next((r for r in wf.states if r.state == state), None)
+	return bool(row and row.allow_edit in frappe.get_roles())
+
+
+def _actions(doc) -> list[dict]:
+	meta = doc.meta
+	new = doc.is_new()
+	can = lambda op: bool(frappe.has_permission(doc.doctype, op, doc=None if new else doc))
+	out = []
+	workflow = None if new else frappe.model.workflow.get_workflow_name(doc.doctype)
+	if new:
+		if can("create"):
+			out.append({"action": "save"})
+		return out
+	if workflow:
+		from frappe.model.workflow import get_transitions
+
+		try:
+			out += [{"action": "workflow", "transition": t["action"], "label": _(t["action"]), "next_state": t["next_state"]}
+				for t in get_transitions(doc)]
+		except Exception:
+			pass  # no state yet / not permitted: the native form shows its own message
+		if doc.docstatus == 0 and can("write") and _workflow_edit_allowed(doc):
+			out.append({"action": "save"})
+		return out
+	if doc.docstatus == 0 and can("write"):
+		out.append({"action": "save"})
+	if meta.is_submittable and doc.docstatus == 0 and can("submit"):
+		out.append({"action": "submit"})
+	if meta.is_submittable and doc.docstatus == 1 and can("cancel"):
+		out.append({"action": "cancel"})
+	return out
+
+
+@frappe.whitelist(methods=["GET", "POST"])
+def document(doctype: str, name: str | None = None, values: str | dict | None = None) -> dict:
+	if not has_app_permission():
+		frappe.throw(_("You do not have access to DIGIT HR"), frappe.PermissionError)
+	if doctype not in GUIDED:
+		frappe.throw(_("Invalid value for {0}").format("doctype"), frappe.ValidationError)
+	values = frappe.parse_json(values) if values else {}
+	if not isinstance(values, dict):
+		frappe.throw(_("Invalid value for {0}").format("values"), frappe.ValidationError)
+	for k in ("doctype", "name", "docstatus", "owner", "creation", "modified", "modified_by", "amended_from"):
+		values.pop(k, None)  # identity and state come from the source record, never from the client
+	if name:
+		doc = frappe.get_doc(doctype, name)
+		doc.check_permission("read")
+		editable = doc.docstatus == 0 and frappe.has_permission(doctype, "write", doc=doc) and _workflow_edit_allowed(doc)
+	else:
+		if not frappe.has_permission(doctype, "create"):
+			frappe.throw(_("Not permitted"), frappe.PermissionError)
+		doc = frappe.new_doc(doctype)
+		editable = True
+	spec = GUIDED[doctype]
+	# state, transitions and readback come from the SAVED record; only the checks below see the form's unsaved values
+	out = {"contract": "digit-hr-guide", "version": 1, "doctype": doctype, "name": None if doc.is_new() else doc.name,
+		"section": spec["section"], "docstatus": cint(doc.docstatus), "editable": bool(editable),
+		"state": {f: doc.get(f) for f in STATE_FIELDS if doc.meta.has_field(f) and doc.get(f)},
+		"form_rules": _form_rules(doc.meta), "actions": _actions(doc)}
+	if not doc.is_new():
+		out["readback"] = {"modified": str(doc.modified), "docstatus": cint(doc.docstatus), "route": _route(doctype, doc.name),
+			**{f: doc.get(f) for f in STATE_FIELDS if doc.meta.has_field(f)}}
+	if values and editable:
+		doc.update(values)  # in memory only: shows what Save would do with the form's current values
+	if editable:
+		out["server_check"] = _dry_run(doc) if spec["dry_run"] else {"state": "not_applicable"}
+		out["will_block_save"] = _missing(doc)  # after the dry run: includes the server defaults it applied
+	out["facts"] = _facts(doc)
+	check = (out.get("server_check") or {}).get("state")
+	blocked_facts = [f["key"] for f in out["facts"] if f.get("state") == "blocked"]
+	for a in out["actions"]:  # an action the source already says will fail is flagged, never hidden
+		if a["action"] in ("save", "submit") and check == "blocked":
+			a["will_fail"] = "server_check"
+		elif a["action"] == "submit" and blocked_facts:
+			a["will_fail"] = blocked_facts[0]
+		if a["action"] in ("save", "submit") and out.get("will_block_save"):
+			a.setdefault("will_fail", "missing_fields")
+	return out

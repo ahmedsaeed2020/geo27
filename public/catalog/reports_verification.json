@@ -1,0 +1,1442 @@
+{
+ "runs": {
+  "en": {
+   "reports": {
+    "General Ledger": {
+     "pass": true,
+     "rows": 312,
+     "columns": [
+      "Posting Date",
+      "Account",
+      "Debit (SAR)",
+      "Credit (SAR)",
+      "Balance (SAR)",
+      "Voucher Type",
+      "Voucher No",
+      "Against Account",
+      "Party Type",
+      "Party"
+     ],
+     "total": [
+      "",
+      "Closing (Opening + Total)",
+      "22,027,584.17",
+      "22,027,584.17",
+      "0.00",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Period debit = credit (22027584.17 / 22027584.17)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "group_by=Group by Account",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_General_Ledger_en.jpg"
+    },
+    "Trial Balance": {
+     "pass": true,
+     "rows": 24,
+     "columns": [
+      "Account",
+      "Opening (Dr)",
+      "Opening (Cr)",
+      "Debit",
+      "Credit",
+      "Closing (Dr)",
+      "Closing (Cr)"
+     ],
+     "total": [
+      "Total",
+      "0.00",
+      "0.00",
+      "22,027,584.17",
+      "22,027,584.17",
+      "21,089,895.13",
+      "21,089,895.13"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Trial Balance totals balance (period Dr = Cr) (22027584.17 = 22027584.17)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Closing Dr = Closing Cr (21089895.13 = 21089895.13)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "show_zero_values=check",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Trial_Balance_en.jpg"
+    },
+    "Balance Sheet": {
+     "pass": true,
+     "rows": 18,
+     "columns": [
+      "Account",
+      "2026"
+     ],
+     "total": [
+      "Total (Credit)",
+      "16,559,412.18"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Balance Sheet balances (Asset = Liability + Equity + Provisional P/L) (16559412.18 = 16559412.18)"
+      }
+     ],
+     "summary": [
+      [
+       "Total Asset",
+       "16,559,412.18"
+      ],
+      [
+       "Total Liability",
+       "4,006,752.18"
+      ],
+      [
+       "Total Equity",
+       "16,692,832.40"
+      ],
+      [
+       "Provisional Profit / Loss (Credit)",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Balance_Sheet_en.jpg"
+    },
+    "Profit and Loss Statement": {
+     "pass": true,
+     "rows": 12,
+     "columns": [
+      "Account",
+      "2026",
+      "Total"
+     ],
+     "total": [
+      "Profit for the year",
+      "-4,140,172.40",
+      "-4,140,172.40"
+     ],
+     "checks": [],
+     "summary": [
+      [
+       "Total Income This Year",
+       "390,310.55"
+      ],
+      [
+       "Total Expense This Year",
+       "4,530,482.95"
+      ],
+      [
+       "Net Profit",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Monthly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Profit_and_Loss_Statement_en.jpg"
+    },
+    "Cash Flow": {
+     "pass": true,
+     "rows": 14,
+     "columns": [
+      "Section",
+      "2026",
+      "Total"
+     ],
+     "total": [
+      "Net Change in Cash",
+      "1,434,707.77",
+      "1,434,707.77"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net change in cash = movement on Cash/Bank accounts (1434707.77 = 1434707.77)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Cash_Flow_en.jpg"
+    },
+    "Accounts Receivable": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "Posting Date",
+      "Customer",
+      "Voucher Type",
+      "Voucher No",
+      "Due Date",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Credit Note",
+      "Outstanding Amount",
+      "Age (Days)",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_en.jpg"
+    },
+    "Accounts Payable": {
+     "pass": true,
+     "rows": 7,
+     "columns": [
+      "Posting Date",
+      "Supplier",
+      "Voucher Type",
+      "Voucher No",
+      "Due Date",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Debit Note",
+      "Outstanding Amount",
+      "Age (Days)",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_en.jpg"
+    },
+    "Accounts Receivable Summary": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "Customer",
+      "Customer Name",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Credit Note Amount",
+      "Outstanding Amount",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_Summary_en.jpg"
+    },
+    "Accounts Payable Summary": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "Supplier",
+      "Supplier Name",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Debit Note Amount",
+      "Outstanding Amount",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_Summary_en.jpg"
+    },
+    "Stock Balance": {
+     "pass": true,
+     "rows": 97,
+     "columns": [
+      "Item",
+      "Item Name",
+      "Item Group",
+      "Warehouse",
+      "Opening Qty",
+      "Opening Value",
+      "In Qty",
+      "In Value",
+      "Out Qty",
+      "Out Value",
+      "Balance Qty",
+      "Balance Value",
+      "Valuation Rate"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "0",
+      "0.00",
+      "6032",
+      "15,916,541.85",
+      "280",
+      "1,046,215.34",
+      "5752",
+      "14,870,326.51",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Stock Balance closing = Stock Ledger closing (per item and warehouse) (96/96 item-warehouse pairs match)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Perpetual inventory: stock account value (stock vouchers) = Stock Ledger value (14870326.51 = 14870326.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Balance_en.jpg"
+    },
+    "Stock Ledger": {
+     "pass": true,
+     "rows": 149,
+     "columns": [
+      "Date",
+      "Item",
+      "Item Name",
+      "Warehouse",
+      "In Qty",
+      "Out Qty",
+      "Balance Qty",
+      "Incoming Rate",
+      "Valuation Rate",
+      "Balance Value",
+      "Value Change",
+      "Voucher Type",
+      "Voucher #"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Ledger_en.jpg"
+    },
+    "Stock Projected Qty": {
+     "pass": true,
+     "rows": 98,
+     "columns": [
+      "Item Code",
+      "Item Name",
+      "Warehouse",
+      "Actual Qty",
+      "Planned Qty",
+      "Requested Qty",
+      "Ordered Qty",
+      "Reserved Qty",
+      "Reserved for Production",
+      "Projected Qty"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "5752",
+      "0",
+      "164",
+      "56",
+      "1",
+      "0",
+      "5971"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "warehouse=__first",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Projected_Qty_en.jpg"
+    },
+    "Gross Profit": {
+     "pass": true,
+     "rows": 16,
+     "columns": [
+      "Sales Invoice",
+      "Posting Date",
+      "Customer",
+      "Qty",
+      "Selling Amount",
+      "Buying Amount",
+      "Gross Profit",
+      "Gross Profit %"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "302",
+      "392,874.55",
+      "284,201.61",
+      "108,672.94",
+      "27.66%"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "group_by=Item Code",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Gross_Profit_en.jpg"
+    },
+    "Sales Analytics": {
+     "pass": true,
+     "rows": 15,
+     "columns": [
+      "Customer",
+      "Customer Name",
+      "Jan 2026",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026",
+      "May 2026",
+      "Jun 2026",
+      "Jul 2026",
+      "Aug 2026",
+      "Sep 2026",
+      "Oct 2026",
+      "Nov 2026",
+      "Dec 2026",
+      "Total"
+     ],
+     "total": [
+      "Total",
+      "",
+      "52,220.00",
+      "10,717.65",
+      "88,269.50",
+      "75,998.00",
+      "58,900.00",
+      "3,127.00",
+      "51,195.00",
+      "36,480.00",
+      "2,633.40",
+      "10,770.00",
+      "0.00",
+      "0.00",
+      "390,310.55"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "tree_type=Item",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Sales_Analytics_en.jpg"
+    },
+    "Purchase Analytics": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "Supplier",
+      "Supplier Name",
+      "Jan 2026",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026",
+      "May 2026",
+      "Jun 2026",
+      "Jul 2026",
+      "Aug 2026",
+      "Sep 2026",
+      "Oct 2026",
+      "Nov 2026",
+      "Dec 2026",
+      "Total"
+     ],
+     "total": [
+      "Total",
+      "",
+      "5,387.20",
+      "40,624.50",
+      "8,736.00",
+      "494.86",
+      "-3,698.10",
+      "1,356.60",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "52,901.06"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "tree_type=Item",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Purchase_Analytics_en.jpg"
+    },
+    "Item-wise Sales Register": {
+     "pass": true,
+     "rows": 37,
+     "columns": [
+      "Item Code",
+      "Item Name",
+      "Item Group",
+      "Invoice",
+      "Posting Date",
+      "Customer",
+      "Stock Qty",
+      "Rate",
+      "Amount",
+      "Total Tax",
+      "Total"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "302",
+      "",
+      "392,874.55",
+      "58,931.18",
+      "451,805.73"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Item-wise_Sales_Register_en.jpg"
+    },
+    "Monthly Attendance Sheet": {
+     "pass": true,
+     "rows": 0,
+     "columns": [
+      "Employee",
+      "Employee Name",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "Total Present",
+      "Total Absent",
+      "Total Leaves",
+      "Total Half Days"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "month=09",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Monthly_Attendance_Sheet_en.jpg"
+    },
+    "Employee Leave Balance": {
+     "pass": true,
+     "rows": 60,
+     "columns": [
+      "Leave Type",
+      "Employee",
+      "Employee Name",
+      "Opening Balance",
+      "New Leave(s) Allocated",
+      "Leave(s) Expired",
+      "Leave(s) Taken",
+      "Closing Balance"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-06-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Employee_Leave_Balance_en.jpg"
+    },
+    "Salary Register": {
+     "pass": true,
+     "rows": 61,
+     "columns": [
+      "Salary Slip ID",
+      "Employee",
+      "Employee Name",
+      "Department",
+      "Start Date",
+      "End Date",
+      "Basic Salary",
+      "Housing Allowance",
+      "Transport Allowance",
+      "Gross Pay",
+      "GOSI Employee Share",
+      "Total Deduction",
+      "Net Pay"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "650,700.00",
+      "271,125.00",
+      "162,675.00",
+      "1,084,500.00",
+      "89,877.96",
+      "89,877.96",
+      "994,622.04"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net Pay = Gross Pay − Total Deduction (every slip) (60 slips)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Salary_Register_en.jpg"
+    }
+   },
+   "page_errors": []
+  },
+  "ar": {
+   "reports": {
+    "General Ledger": {
+     "pass": true,
+     "rows": 312,
+     "columns": [
+      "تاريخ الترحيل",
+      "حساب",
+      "Debit (SAR)",
+      "Credit (SAR)",
+      "Balance (SAR)",
+      "نوع السند",
+      "رقم السند",
+      "الحساب المقابل",
+      "نوع الطرف",
+      "الطرف"
+     ],
+     "total": [
+      "",
+      "الإغلاق (الافتتاحي + الإجمالي)",
+      "22,027,584.17",
+      "22,027,584.17",
+      "0.00",
+      "",
+      "",
+      "",
+      "",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Period debit = credit (22027584.17 / 22027584.17)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "group_by=Group by Account",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_General_Ledger_ar.jpg"
+    },
+    "Trial Balance": {
+     "pass": true,
+     "rows": 24,
+     "columns": [
+      "حساب",
+      "افتتاحي  (Dr)",
+      "افتتاحي (Cr)",
+      "مدين",
+      "دائن",
+      "إغلاق (مدين)",
+      "إغلاق (دائن)"
+     ],
+     "total": [
+      "الإجمالي",
+      "0.00",
+      "0.00",
+      "22,027,584.17",
+      "22,027,584.17",
+      "21,089,895.13",
+      "21,089,895.13"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Trial Balance totals balance (period Dr = Cr) (22027584.17 = 22027584.17)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Closing Dr = Closing Cr (21089895.13 = 21089895.13)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "show_zero_values=check",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Trial_Balance_ar.jpg"
+    },
+    "Balance Sheet": {
+     "pass": true,
+     "rows": 18,
+     "columns": [
+      "حساب",
+      "2026"
+     ],
+     "total": [
+      "الإجمالي (الائتمان)",
+      "16,559,412.18"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Balance Sheet balances (Asset = Liability + Equity + Provisional P/L) (16559412.18 = 16559412.18)"
+      }
+     ],
+     "summary": [
+      [
+       "Total Asset",
+       "16,559,412.18"
+      ],
+      [
+       "Total Liability",
+       "4,006,752.18"
+      ],
+      [
+       "Total Equity",
+       "16,692,832.40"
+      ],
+      [
+       "Provisional Profit / Loss (Credit)",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Balance_Sheet_ar.jpg"
+    },
+    "Profit and Loss Statement": {
+     "pass": true,
+     "rows": 12,
+     "columns": [
+      "حساب",
+      "2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "الربح السنوي",
+      "-4,140,172.40",
+      "-4,140,172.40"
+     ],
+     "checks": [],
+     "summary": [
+      [
+       "Total Income This Year",
+       "390,310.55"
+      ],
+      [
+       "Total Expense This Year",
+       "4,530,482.95"
+      ],
+      [
+       "Net Profit",
+       "-4,140,172.40"
+      ]
+     ],
+     "filter_change": "periodicity=Monthly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Profit_and_Loss_Statement_ar.jpg"
+    },
+    "Cash Flow": {
+     "pass": true,
+     "rows": 14,
+     "columns": [
+      "قسم",
+      "2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "صافي التغير في النقد",
+      "1,434,707.77",
+      "1,434,707.77"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net change in cash = movement on Cash/Bank accounts (1434707.77 = 1434707.77)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "periodicity=Quarterly",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Cash_Flow_ar.jpg"
+    },
+    "Accounts Receivable": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "تاريخ الترحيل",
+      "عميل",
+      "نوع السند",
+      "رقم السند",
+      "تاريخ الاستحقاق",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "إشعار دائن",
+      "المبلغ المستحق",
+      "(العمر (أيام",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_ar.jpg"
+    },
+    "Accounts Payable": {
+     "pass": true,
+     "rows": 7,
+     "columns": [
+      "تاريخ الترحيل",
+      "مورد",
+      "نوع السند",
+      "رقم السند",
+      "تاريخ الاستحقاق",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "إشعار مدين",
+      "المبلغ المستحق",
+      "(العمر (أيام",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_ar.jpg"
+    },
+    "Accounts Receivable Summary": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "عميل",
+      "اسم العميل",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "ملاحظة الائتمان المبلغ",
+      "المبلغ المستحق",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_Summary_ar.jpg"
+    },
+    "Accounts Payable Summary": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "مورد",
+      "اسم المورد",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "مبلغ إشعار المدين",
+      "المبلغ المستحق",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_Summary_ar.jpg"
+    },
+    "Stock Balance": {
+     "pass": true,
+     "rows": 97,
+     "columns": [
+      "صنف",
+      "اسم الصنف",
+      "مجموعة الأصناف",
+      "مستودع",
+      "الكمية الافتتاحية",
+      "القيمة الافتتاحية",
+      "كمية قادمة",
+      "القيمة القادمة",
+      "كمية خارجة",
+      "القيمة الخارجه",
+      "كمية الرصيد",
+      "قيمة الرصيد",
+      "سعر التقييم"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "0",
+      "0.00",
+      "6032",
+      "15,916,541.85",
+      "280",
+      "1,046,215.34",
+      "5752",
+      "14,870,326.51",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Stock Balance closing = Stock Ledger closing (per item and warehouse) (96/96 item-warehouse pairs match)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Perpetual inventory: stock account value (stock vouchers) = Stock Ledger value (14870326.51 = 14870326.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Balance_ar.jpg"
+    },
+    "Stock Ledger": {
+     "pass": true,
+     "rows": 149,
+     "columns": [
+      "التاريخ",
+      "صنف",
+      "اسم الصنف",
+      "مستودع",
+      "كمية قادمة",
+      "كمية خارجة",
+      "كمية الرصيد",
+      "سعر الوارد",
+      "سعر التقييم",
+      "قيمة الرصيد",
+      "تغير القيمة",
+      "نوع السند",
+      "سند #"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Ledger_ar.jpg"
+    },
+    "Stock Projected Qty": {
+     "pass": true,
+     "rows": 98,
+     "columns": [
+      "رمز الصنف",
+      "اسم الصنف",
+      "مستودع",
+      "الكمية الفعلية",
+      "الكمية المخططة",
+      "الكمية المطلوبة",
+      "الكمية المطلوبة",
+      "الكمية المحجوزة",
+      "محجوز للإنتاج",
+      "الكمية المتوقعة"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "5752",
+      "0",
+      "164",
+      "56",
+      "1",
+      "0",
+      "5971"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "warehouse=__first",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Projected_Qty_ar.jpg"
+    },
+    "Gross Profit": {
+     "pass": true,
+     "rows": 16,
+     "columns": [
+      "فاتورة مبيعات",
+      "تاريخ الترحيل",
+      "عميل",
+      "الكمية",
+      "كمية البيع",
+      "قيمة الشراء",
+      "مجمل الربح",
+      "Gross Profit %"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "302",
+      "392,874.55",
+      "284,201.61",
+      "108,672.94",
+      "27.66%"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "group_by=Item Code",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Gross_Profit_ar.jpg"
+    },
+    "Sales Analytics": {
+     "pass": true,
+     "rows": 15,
+     "columns": [
+      "عميل",
+      "اسم العميل",
+      "Jan 2026",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026",
+      "May 2026",
+      "Jun 2026",
+      "Jul 2026",
+      "Aug 2026",
+      "Sep 2026",
+      "Oct 2026",
+      "Nov 2026",
+      "Dec 2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "52,220.00",
+      "10,717.65",
+      "88,269.50",
+      "75,998.00",
+      "58,900.00",
+      "3,127.00",
+      "51,195.00",
+      "36,480.00",
+      "2,633.40",
+      "10,770.00",
+      "0.00",
+      "0.00",
+      "390,310.55"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "tree_type=Item",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Sales_Analytics_ar.jpg"
+    },
+    "Purchase Analytics": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "مورد",
+      "اسم المورد",
+      "Jan 2026",
+      "Feb 2026",
+      "Mar 2026",
+      "Apr 2026",
+      "May 2026",
+      "Jun 2026",
+      "Jul 2026",
+      "Aug 2026",
+      "Sep 2026",
+      "Oct 2026",
+      "Nov 2026",
+      "Dec 2026",
+      "الإجمالي"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "5,387.20",
+      "40,624.50",
+      "8,736.00",
+      "494.86",
+      "-3,698.10",
+      "1,356.60",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "0.00",
+      "52,901.06"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "tree_type=Item",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Purchase_Analytics_ar.jpg"
+    },
+    "Item-wise Sales Register": {
+     "pass": true,
+     "rows": 37,
+     "columns": [
+      "رمز الصنف",
+      "اسم الصنف",
+      "مجموعة الأصناف",
+      "الفاتورة",
+      "تاريخ الترحيل",
+      "عميل",
+      "كمية المخزون",
+      "السعر",
+      "المبلغ",
+      "مجموع الضرائب",
+      "الإجمالي"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "302",
+      "",
+      "392,874.55",
+      "58,931.18",
+      "451,805.73"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Item-wise_Sales_Register_ar.jpg"
+    },
+    "Monthly Attendance Sheet": {
+     "pass": true,
+     "rows": 0,
+     "columns": [
+      "موظف",
+      "اسم الموظف",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "إجمالي الحضور",
+      "إجمالي الغياب",
+      "مجموع الإجازات",
+      "Total Half Days"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "month=09",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Monthly_Attendance_Sheet_ar.jpg"
+    },
+    "Employee Leave Balance": {
+     "pass": true,
+     "rows": 60,
+     "columns": [
+      "نوع الإجازة",
+      "موظف",
+      "اسم الموظف",
+      "الرصيد الافتتاحي",
+      "جديد: Leave(s) Allocated",
+      "Leave(s) Expired",
+      "Leave(s) Taken",
+      "رصيد الإقفال"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-06-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Employee_Leave_Balance_ar.jpg"
+    },
+    "Salary Register": {
+     "pass": true,
+     "rows": 61,
+     "columns": [
+      "هوية كشف الراتب",
+      "موظف",
+      "اسم الموظف",
+      "القسم",
+      "تاريخ البدء",
+      "تاريخ الانتهاء",
+      "Basic Salary",
+      "Housing Allowance",
+      "Transport Allowance",
+      "إجمالي الراتب",
+      "GOSI Employee Share",
+      "إجمالي الاستقطاعات",
+      "صافي الراتب"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "650,700.00",
+      "271,125.00",
+      "162,675.00",
+      "1,084,500.00",
+      "89,877.96",
+      "89,877.96",
+      "994,622.04"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net Pay = Gross Pay − Total Deduction (every slip) (60 slips)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Salary_Register_ar.jpg"
+    }
+   },
+   "page_errors": []
+  }
+ }
+}

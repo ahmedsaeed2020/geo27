@@ -1,8 +1,8 @@
 import { QueryClient } from "@tanstack/react-query";
 import { createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
+import { appUrlRewrite } from "./lib/appUrls";
 import { motionIdentity } from "@/motion/identity";
-
 /**
  * Route transitions are a progressive enhancement: only browsers with View Transition types get them, and only when
  * the page itself changes (search-param and hash updates, such as the blueprint builder, never animate). Entering
@@ -19,6 +19,8 @@ function viewTransitions() {
   };
 }
 
+
+
 export const getRouter = () => {
   const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ export const getRouter = () => {
     context: { queryClient },
     scrollRestoration: true,
     defaultPreloadStaleTime: 0,
+    // app address spaces (DIGIT Construction /construction/…) — internal paths stay, visible addresses follow the app
+    rewrite: appUrlRewrite,
     defaultViewTransition: viewTransitions(),
   });
 

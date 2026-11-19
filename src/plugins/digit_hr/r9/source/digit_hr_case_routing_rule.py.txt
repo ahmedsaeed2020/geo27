@@ -1,0 +1,19 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe import _
+from frappe.model.document import Document
+
+
+class DIGITHRCaseRoutingRule(Document):
+	"""CAS-04: which handler receives a new DIGIT HR Service Case of a company / category / severity (lowest priority
+	number first). Handlers must be active users; the rule only names them — Frappe permissions still decide access."""
+
+	def validate(self):
+		for field in ("assign_to", "escalate_to"):
+			user = self.get(field)
+			if user and not frappe.db.get_value("User", user, "enabled"):
+				frappe.throw(_("Handler {0} is not an active user").format(user))
+		if self.escalate_to and self.escalate_to == self.assign_to:
+			frappe.throw(_("Escalate To must be a different user than Assign To"))

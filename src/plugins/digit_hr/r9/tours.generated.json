@@ -1,0 +1,918 @@
+{
+ "source": "digit_hr/api/tours.py (HR 1.0.0+r9, 9cbd7d8)",
+ "untranslated": [
+  "Email",
+  "Employee",
+  "Status"
+ ],
+ "tours": [
+  {
+   "key": "employee_profile",
+   "doctype": "Employee",
+   "section": "01.4",
+   "roles": [
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Create or review an employee",
+    "ar": "إنشاء موظف أو مراجعة ملفه"
+   },
+   "steps": [
+    {
+     "fieldname": "first_name",
+     "title": {
+      "en": "Employee name",
+      "ar": "اسم الموظف"
+     },
+     "description": {
+      "en": "Enter the first name; middle and last names are optional.",
+      "ar": "أدخل الاسم الأول؛ الاسم الأوسط واسم العائلة اختياريان."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "gender",
+     "title": {
+      "en": "Employee gender",
+      "ar": "جنس الموظف"
+     },
+     "description": {
+      "en": "Required by the employee record.",
+      "ar": "حقل مطلوب في سجل الموظف."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "date_of_birth",
+     "title": {
+      "en": "Date of birth",
+      "ar": "تاريخ الميلاد"
+     },
+     "description": {
+      "en": "Required; used for age and retirement dates.",
+      "ar": "مطلوب؛ يُستخدم لحساب العمر وتاريخ التقاعد."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "company",
+     "title": {
+      "en": "Employing company",
+      "ar": "الشركة المُوظِّفة"
+     },
+     "description": {
+      "en": "The legal entity that employs this person. It decides which records and reports include them.",
+      "ar": "الكيان القانوني الذي يوظف هذا الشخص، ويحدد السجلات والتقارير التي يظهر فيها."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "date_of_joining",
+     "title": {
+      "en": "Date of joining",
+      "ar": "تاريخ الالتحاق"
+     },
+     "description": {
+      "en": "First working day; leave, payroll and tenure start from here.",
+      "ar": "أول يوم عمل؛ تبدأ منه الإجازات والرواتب ومدة الخدمة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "department",
+     "title": {
+      "en": "Employee department",
+      "ar": "قسم الموظف"
+     },
+     "description": {
+      "en": "Place the employee in the organization; the org explorer counts them here.",
+      "ar": "موقع الموظف في الهيكل؛ يُحتسب ضمن هذا القسم في مستكشف الهيكل."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "designation",
+     "title": {
+      "en": "Job designation",
+      "ar": "المسمى الوظيفي للموظف"
+     },
+     "description": {
+      "en": "Job title shared with positions, requisitions and openings.",
+      "ar": "المسمى المشترك مع المناصب وطلبات التوظيف والوظائف المعلنة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "reports_to",
+     "title": {
+      "en": "Line manager",
+      "ar": "المدير المباشر"
+     },
+     "description": {
+      "en": "Line manager. Approvals and the team view follow this line.",
+      "ar": "المدير المباشر؛ تتبع الموافقات وعرض الفريق هذا الخط."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "user_id",
+     "title": {
+      "en": "User account",
+      "ar": "حساب المستخدم"
+     },
+     "description": {
+      "en": "Link the login so the employee can use self-service.",
+      "ar": "اربط حساب الدخول ليستخدم الموظف الخدمة الذاتية."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "status",
+     "title": {
+      "en": "Status",
+      "ar": null
+     },
+     "description": {
+      "en": "Active employees appear in headcount; set Left with a relieving date when they leave.",
+      "ar": "الموظفون النشطون يُحتسبون في العدد؛ اختر «غادر» مع تاريخ إخلاء الطرف عند المغادرة."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "leave_request",
+   "doctype": "Leave Application",
+   "section": "03.1",
+   "roles": [
+    "Employee"
+   ],
+   "title": {
+    "en": "Request leave",
+    "ar": "طلب إجازة"
+   },
+   "steps": [
+    {
+     "fieldname": "leave_type",
+     "title": {
+      "en": "Leave type",
+      "ar": "نوع الإجازة"
+     },
+     "description": {
+      "en": "Choose the leave type; the balance below updates for it.",
+      "ar": "اختر نوع الإجازة؛ يتحدث الرصيد أدناه حسبه."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "from_date",
+     "title": {
+      "en": "From date",
+      "ar": "من تاريخ"
+     },
+     "description": {
+      "en": "First day of leave.",
+      "ar": "أول يوم في الإجازة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "to_date",
+     "title": {
+      "en": "To date",
+      "ar": "إلى تاريخ"
+     },
+     "description": {
+      "en": "Last day of leave. Holidays in between follow the leave type rules.",
+      "ar": "آخر يوم في الإجازة. العطل بينهما تتبع قواعد نوع الإجازة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "half_day",
+     "title": {
+      "en": "Half day",
+      "ar": "نصف يوم"
+     },
+     "description": {
+      "en": "Tick when one of the days is a half day, then choose that date.",
+      "ar": "فعّله إذا كان أحد الأيام نصف يوم ثم اختر ذلك التاريخ."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "leave_balance",
+     "title": {
+      "en": "Leave balance",
+      "ar": "رصيد الإجازة"
+     },
+     "description": {
+      "en": "Your balance before this request, from the leave ledger.",
+      "ar": "رصيدك قبل هذا الطلب من دفتر الإجازات."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "description",
+     "title": {
+      "en": "Reason for leave",
+      "ar": "سبب الإجازة"
+     },
+     "description": {
+      "en": "A short reason helps your approver decide.",
+      "ar": "سبب مختصر يساعد المعتمد على القرار."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "leave_approver",
+     "title": {
+      "en": "Leave approver",
+      "ar": "معتمد الإجازة"
+     },
+     "description": {
+      "en": "Who will approve this request.",
+      "ar": "من سيعتمد هذا الطلب."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "leave_review",
+   "doctype": "Leave Application",
+   "section": "03.1",
+   "roles": [
+    "Leave Approver",
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Review a leave request",
+    "ar": "مراجعة طلب إجازة"
+   },
+   "steps": [
+    {
+     "fieldname": "leave_balance",
+     "title": {
+      "en": "Balance before the request",
+      "ar": "الرصيد قبل الطلب"
+     },
+     "description": {
+      "en": "Check the balance before approving.",
+      "ar": "تحقق من الرصيد قبل الاعتماد."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "total_leave_days",
+     "title": {
+      "en": "Days requested",
+      "ar": "الأيام المطلوبة"
+     },
+     "description": {
+      "en": "Working days counted by the leave rules.",
+      "ar": "أيام العمل المحتسبة وفق قواعد الإجازة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "description",
+     "title": {
+      "en": "Employee's reason",
+      "ar": "سبب الموظف"
+     },
+     "description": {
+      "en": "The employee's reason.",
+      "ar": "سبب الموظف."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "status",
+     "title": {
+      "en": "Decision",
+      "ar": "القرار"
+     },
+     "description": {
+      "en": "Set Approved or Rejected, then submit to record the decision.",
+      "ar": "اختر «معتمد» أو «مرفوض» ثم اعتمد المستند لتسجيل القرار."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "attendance_correction",
+   "doctype": "Attendance Request",
+   "section": "03.2",
+   "roles": [
+    "Employee",
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Correct attendance",
+    "ar": "تصحيح الحضور"
+   },
+   "steps": [
+    {
+     "fieldname": "employee",
+     "title": {
+      "en": "Employee",
+      "ar": null
+     },
+     "description": {
+      "en": "The employee whose attendance is corrected.",
+      "ar": "الموظف المراد تصحيح حضوره."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "from_date",
+     "title": {
+      "en": "From date",
+      "ar": "من تاريخ"
+     },
+     "description": {
+      "en": "First day to correct.",
+      "ar": "أول يوم للتصحيح."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "to_date",
+     "title": {
+      "en": "To date",
+      "ar": "إلى تاريخ"
+     },
+     "description": {
+      "en": "Last day to correct.",
+      "ar": "آخر يوم للتصحيح."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "reason",
+     "title": {
+      "en": "Correction reason",
+      "ar": "سبب التصحيح"
+     },
+     "description": {
+      "en": "Work From Home or On Duty, as allowed by HR.",
+      "ar": "العمل من المنزل أو في مهمة عمل، حسب ما تسمح به الموارد البشرية."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "explanation",
+     "title": {
+      "en": "What happened",
+      "ar": "ما الذي حدث"
+     },
+     "description": {
+      "en": "Explain what happened so the approver can verify it.",
+      "ar": "وضّح ما حدث ليتمكن المعتمد من التحقق."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "shift",
+     "title": {
+      "en": "Shift worked",
+      "ar": "الوردية المعنية"
+     },
+     "description": {
+      "en": "Optional: the shift the correction applies to.",
+      "ar": "اختياري: الوردية التي ينطبق عليها التصحيح."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "shift_assignment",
+   "doctype": "Shift Assignment",
+   "section": "03.3",
+   "roles": [
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Assign a shift",
+    "ar": "تعيين وردية"
+   },
+   "steps": [
+    {
+     "fieldname": "employee",
+     "title": {
+      "en": "Employee",
+      "ar": null
+     },
+     "description": {
+      "en": "Who works the shift. Use the eligible-employee list to avoid overlaps.",
+      "ar": "من سيعمل في الوردية. استخدم قائمة الموظفين المؤهلين لتجنب التداخل."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "shift_type",
+     "title": {
+      "en": "Shift type",
+      "ar": "نوع الوردية"
+     },
+     "description": {
+      "en": "The shift timing to assign.",
+      "ar": "توقيت الوردية المراد تعيينها."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "start_date",
+     "title": {
+      "en": "Start date",
+      "ar": "تاريخ البداية"
+     },
+     "description": {
+      "en": "First day of the assignment.",
+      "ar": "أول يوم في التعيين."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "end_date",
+     "title": {
+      "en": "End date",
+      "ar": "تاريخ النهاية"
+     },
+     "description": {
+      "en": "Leave empty for an open-ended assignment.",
+      "ar": "اتركه فارغًا لتعيين مفتوح المدة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "status",
+     "title": {
+      "en": "Status",
+      "ar": null
+     },
+     "description": {
+      "en": "Only Active assignments count in the roster and attendance.",
+      "ar": "التعيينات النشطة فقط تُحتسب في الجدول والحضور."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "job_applicant",
+   "doctype": "Job Applicant",
+   "section": "02.1",
+   "roles": [
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Register an applicant",
+    "ar": "تسجيل متقدم"
+   },
+   "steps": [
+    {
+     "fieldname": "applicant_name",
+     "title": {
+      "en": "Candidate name",
+      "ar": "اسم المرشح"
+     },
+     "description": {
+      "en": "Full name of the candidate.",
+      "ar": "الاسم الكامل للمرشح."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "email_id",
+     "title": {
+      "en": "Email",
+      "ar": null
+     },
+     "description": {
+      "en": "Used for communication and to detect duplicates.",
+      "ar": "يُستخدم للتواصل ولاكتشاف التكرار."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "job_title",
+     "title": {
+      "en": "Job opening",
+      "ar": "الوظيفة المعلنة"
+     },
+     "description": {
+      "en": "The published opening the candidate applied to.",
+      "ar": "الوظيفة المعلنة التي تقدم لها المرشح."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "designation",
+     "title": {
+      "en": "Job designation",
+      "ar": "المسمى الوظيفي للموظف"
+     },
+     "description": {
+      "en": "Filled from the opening when available.",
+      "ar": "يُملأ من الوظيفة المعلنة عند توفرها."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "status",
+     "title": {
+      "en": "Status",
+      "ar": null
+     },
+     "description": {
+      "en": "Open, Replied, Hold, Accepted or Rejected; Accepted allows a job offer.",
+      "ar": "مفتوح، تم الرد، معلّق، مقبول أو مرفوض؛ «مقبول» يتيح إنشاء عرض وظيفي."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "resume_attachment",
+     "title": {
+      "en": "CV attachment",
+      "ar": "مرفق السيرة الذاتية"
+     },
+     "description": {
+      "en": "Attach the CV; it stays private to recruitment users.",
+      "ar": "أرفق السيرة الذاتية؛ تبقى خاصة بمستخدمي التوظيف."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "applicant_rating",
+     "title": {
+      "en": "Screening rating",
+      "ar": "تقييم الفرز"
+     },
+     "description": {
+      "en": "Your overall rating after screening.",
+      "ar": "تقييمك العام بعد الفرز."
+     },
+     "position": "top"
+    }
+   ]
+  },
+  {
+   "key": "onboarding",
+   "doctype": "Employee Onboarding",
+   "section": "02.2",
+   "roles": [
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Prepare onboarding",
+    "ar": "تجهيز الإلحاق"
+   },
+   "steps": [
+    {
+     "fieldname": "job_applicant",
+     "title": {
+      "en": "Job applicant",
+      "ar": "المتقدم"
+     },
+     "description": {
+      "en": "The hired candidate.",
+      "ar": "المرشح الذي تم تعيينه."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "job_offer",
+     "title": {
+      "en": "Job offer",
+      "ar": "العرض الوظيفي"
+     },
+     "description": {
+      "en": "The accepted offer this onboarding follows.",
+      "ar": "العرض المقبول الذي يتبعه هذا الإلحاق."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "date_of_joining",
+     "title": {
+      "en": "Date of joining",
+      "ar": "تاريخ الالتحاق"
+     },
+     "description": {
+      "en": "Planned first day.",
+      "ar": "أول يوم عمل مخطط."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "boarding_begins_on",
+     "title": {
+      "en": "Onboarding begins on",
+      "ar": "يبدأ الإلحاق في"
+     },
+     "description": {
+      "en": "When the checklist tasks start.",
+      "ar": "موعد بدء مهام قائمة التحقق."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "employee_onboarding_template",
+     "title": {
+      "en": "Onboarding template",
+      "ar": "قالب الإلحاق"
+     },
+     "description": {
+      "en": "Loads the standard checklist for this designation or department.",
+      "ar": "يحمّل قائمة التحقق المعتمدة لهذا المسمى أو القسم."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "activities",
+     "title": {
+      "en": "Activities",
+      "ar": "الأنشطة"
+     },
+     "description": {
+      "en": "Each activity becomes a task on submit; tasks marked required must be done before the employee is created.",
+      "ar": "يتحول كل نشاط إلى مهمة عند الاعتماد؛ المهام المطلوبة يجب إنجازها قبل إنشاء الموظف."
+     },
+     "position": "top"
+    }
+   ]
+  },
+  {
+   "key": "payroll_review",
+   "doctype": "Payroll Entry",
+   "section": "04.1",
+   "roles": [
+    "HR Manager",
+    "HR User",
+    "Accounts Manager",
+    "Accounts User"
+   ],
+   "title": {
+    "en": "Review a payroll run",
+    "ar": "مراجعة مسير رواتب"
+   },
+   "steps": [
+    {
+     "fieldname": "company",
+     "title": {
+      "en": "Employing company",
+      "ar": "الشركة المُوظِّفة"
+     },
+     "description": {
+      "en": "Payroll runs per company.",
+      "ar": "يُشغَّل مسير الرواتب لكل شركة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "payroll_frequency",
+     "title": {
+      "en": "Payroll frequency",
+      "ar": "دورية الرواتب"
+     },
+     "description": {
+      "en": "Monthly, weekly or other cycle.",
+      "ar": "شهري أو أسبوعي أو دورة أخرى."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "start_date",
+     "title": {
+      "en": "Period start",
+      "ar": "بداية الفترة"
+     },
+     "description": {
+      "en": "First day of the payroll period.",
+      "ar": "أول يوم في فترة الرواتب."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "end_date",
+     "title": {
+      "en": "Period end",
+      "ar": "نهاية الفترة"
+     },
+     "description": {
+      "en": "Last day of the payroll period.",
+      "ar": "آخر يوم في فترة الرواتب."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "cost_center",
+     "title": {
+      "en": "Cost center",
+      "ar": "مركز التكلفة"
+     },
+     "description": {
+      "en": "Where payroll cost is booked.",
+      "ar": "حيث تُقيَّد تكلفة الرواتب."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "payroll_payable_account",
+     "title": {
+      "en": "Payroll payable account",
+      "ar": "حساب الرواتب المستحقة"
+     },
+     "description": {
+      "en": "The liability account for net pay.",
+      "ar": "حساب الالتزام لصافي الرواتب."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "employees",
+     "title": {
+      "en": "Employees",
+      "ar": "الموظفون"
+     },
+     "description": {
+      "en": "Employees included in this run. Check the DIGIT preflight before creating salary slips.",
+      "ar": "الموظفون المشمولون في هذا المسير. راجع الفحص المسبق في DIGIT قبل إنشاء قسائم الرواتب."
+     },
+     "position": "top"
+    }
+   ]
+  },
+  {
+   "key": "service_case_request",
+   "doctype": "DIGIT HR Service Case",
+   "section": "05.3",
+   "roles": [
+    "Employee"
+   ],
+   "title": {
+    "en": "Ask HR for help",
+    "ar": "طلب مساعدة من الموارد البشرية"
+   },
+   "steps": [
+    {
+     "fieldname": "subject",
+     "title": {
+      "en": "Request subject",
+      "ar": "موضوع الطلب"
+     },
+     "description": {
+      "en": "A short title for your request.",
+      "ar": "عنوان مختصر لطلبك."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "category",
+     "title": {
+      "en": "Request category",
+      "ar": "فئة الطلب"
+     },
+     "description": {
+      "en": "Choose the closest category so the right team handles it.",
+      "ar": "اختر أقرب فئة ليتولاه الفريق المناسب."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "description",
+     "title": {
+      "en": "Request details",
+      "ar": "تفاصيل الطلب"
+     },
+     "description": {
+      "en": "Describe what you need; HR replies on this case.",
+      "ar": "صف ما تحتاجه؛ ترد الموارد البشرية على هذه الحالة."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "private_attachment",
+     "title": {
+      "en": "Supporting document",
+      "ar": "مستند داعم"
+     },
+     "description": {
+      "en": "Attach a document if needed; it is visible only to you and HR.",
+      "ar": "أرفق مستندًا عند الحاجة؛ لا يراه إلا أنت والموارد البشرية."
+     },
+     "position": "top"
+    },
+    {
+     "fieldname": "case_status",
+     "title": {
+      "en": "Status",
+      "ar": null
+     },
+     "description": {
+      "en": "Follow progress here.",
+      "ar": "تابع التقدم من هنا."
+     },
+     "position": "bottom"
+    }
+   ]
+  },
+  {
+   "key": "service_case_handling",
+   "doctype": "DIGIT HR Service Case",
+   "section": "05.3",
+   "roles": [
+    "HR Manager",
+    "HR User"
+   ],
+   "title": {
+    "en": "Handle a service case",
+    "ar": "معالجة حالة خدمة"
+   },
+   "steps": [
+    {
+     "fieldname": "case_status",
+     "title": {
+      "en": "Status",
+      "ar": null
+     },
+     "description": {
+      "en": "Move the case through its workflow.",
+      "ar": "انقل الحالة عبر مراحل سير العمل."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "severity",
+     "title": {
+      "en": "Severity",
+      "ar": "الأهمية"
+     },
+     "description": {
+      "en": "Severity drives the SLA due date and routing.",
+      "ar": "تحدد الأهمية موعد المهلة والتوجيه."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "assigned_to",
+     "title": {
+      "en": "Assigned to",
+      "ar": "مسندة إلى"
+     },
+     "description": {
+      "en": "The HR agent responsible.",
+      "ar": "موظف الموارد البشرية المسؤول."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "due_at",
+     "title": {
+      "en": "Due",
+      "ar": "الاستحقاق"
+     },
+     "description": {
+      "en": "SLA due date and time; pausing while waiting for the employee stops the clock.",
+      "ar": "موعد انتهاء المهلة؛ الإيقاف أثناء انتظار الموظف يوقف احتساب الوقت."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "pause_reason",
+     "title": {
+      "en": "Pause reason",
+      "ar": "سبب الإيقاف"
+     },
+     "description": {
+      "en": "Why the SLA is paused.",
+      "ar": "سبب إيقاف المهلة."
+     },
+     "position": "bottom"
+    },
+    {
+     "fieldname": "resolution_notes",
+     "title": {
+      "en": "Resolution notes",
+      "ar": "ملاحظات الحل"
+     },
+     "description": {
+      "en": "What was done; shown to the employee when resolved.",
+      "ar": "ما تم إنجازه؛ يظهر للموظف عند الحل."
+     },
+     "position": "top"
+    }
+   ]
+  }
+ ]
+}

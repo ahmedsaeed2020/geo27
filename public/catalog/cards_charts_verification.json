@@ -1,0 +1,1358 @@
+{
+ "cards": [
+  {
+   "name": "Active RQ Worker",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "RQ Worker"
+  },
+  {
+   "name": "Error Logs",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Error Log"
+  },
+  {
+   "name": "Failed Scheduled Jobs",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Scheduled Job Log"
+  },
+  {
+   "name": "Scheduled Jobs",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Scheduled Job Type"
+  },
+  {
+   "name": "Failed Login Attempts",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Activity Log"
+  },
+  {
+   "name": "Published Web Forms",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Web Form"
+  },
+  {
+   "name": "Published Web Pages",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Web Page"
+  },
+  {
+   "name": "Total Website Users",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "User"
+  },
+  {
+   "name": "Users",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "User"
+  },
+  {
+   "name": "Website Themes Available",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Website Theme"
+  },
+  {
+   "name": "Total Incoming Bills",
+   "status": "computed",
+   "value": 52901.06,
+   "reason": null,
+   "doctype": "Purchase Invoice"
+  },
+  {
+   "name": "Total Incoming Payment",
+   "status": "computed",
+   "value": 202414.26,
+   "reason": null,
+   "doctype": "Payment Entry"
+  },
+  {
+   "name": "Total Outgoing Bills",
+   "status": "computed",
+   "value": 390310.55000000005,
+   "reason": null,
+   "doctype": "Sales Invoice"
+  },
+  {
+   "name": "Total Outgoing Payment",
+   "status": "computed",
+   "value": 11606.49,
+   "reason": null,
+   "doctype": "Payment Entry"
+  },
+  {
+   "name": "Asset Value",
+   "status": "computed",
+   "value": 349692.6,
+   "reason": null,
+   "doctype": "Asset"
+  },
+  {
+   "name": "New Assets (This Year)",
+   "status": "computed",
+   "value": 7,
+   "reason": null,
+   "doctype": "Asset"
+  },
+  {
+   "name": "Total Assets",
+   "status": "computed",
+   "value": 7,
+   "reason": null,
+   "doctype": "Asset"
+  },
+  {
+   "name": "Active Suppliers",
+   "status": "computed",
+   "value": 17,
+   "reason": null,
+   "doctype": "Supplier"
+  },
+  {
+   "name": "Annual Purchase",
+   "status": "computed",
+   "value": 70467.56,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Average Order Values",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Purchase Orders Count",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Purchase Orders to Bill",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Purchase Orders to Receive",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Total Purchase Amount",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "New Lead (Last 1 Month)",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Lead"
+  },
+  {
+   "name": "New Opportunity (Last 1 Month)",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Open Opportunity",
+   "status": "computed",
+   "value": 22,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Won Opportunity (Last 1 Month)",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Manufactured Items Value",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Stock Entry"
+  },
+  {
+   "name": "Monthly Completed Work Order",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method  runs on server",
+   "doctype": "Work Order"
+  },
+  {
+   "name": "Monthly Quality Inspection",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method  runs on server",
+   "doctype": "Quality Inspection"
+  },
+  {
+   "name": "Monthly Total Work Order",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method  runs on server",
+   "doctype": "Work Order"
+  },
+  {
+   "name": "Ongoing Job Card",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method  runs on server",
+   "doctype": "Job Card"
+  },
+  {
+   "name": "Open Work Orders",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Work Order"
+  },
+  {
+   "name": "WIP Work Orders",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Work Order"
+  },
+  {
+   "name": "Non Completed Tasks",
+   "status": "computed",
+   "value": 8,
+   "reason": null,
+   "doctype": "Task"
+  },
+  {
+   "name": "Open Projects",
+   "status": "computed",
+   "value": 4,
+   "reason": null,
+   "doctype": "Project"
+  },
+  {
+   "name": "Timesheet Working Hours",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Timesheet"
+  },
+  {
+   "name": "Open Non Conformances",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Non Conformance"
+  },
+  {
+   "name": "Open Quality Actions",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Quality Action"
+  },
+  {
+   "name": "Open Quality Reviews",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Quality Review"
+  },
+  {
+   "name": "Active Customers",
+   "status": "computed",
+   "value": 28,
+   "reason": null,
+   "doctype": "Customer"
+  },
+  {
+   "name": "Annual Sales",
+   "status": "computed",
+   "value": 399410.55000000005,
+   "reason": null,
+   "doctype": "Sales Order"
+  },
+  {
+   "name": "Average Sales Order Value",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Sales Orders Count",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Sales Order"
+  },
+  {
+   "name": "Sales Orders to Bill",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Sales Order"
+  },
+  {
+   "name": "Sales Orders to Deliver",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Sales Order"
+  },
+  {
+   "name": "Total Sales Amount",
+   "status": "computed",
+   "value": 12386,
+   "reason": null,
+   "doctype": "Sales Order"
+  },
+  {
+   "name": "Total Active Items",
+   "status": "computed",
+   "value": 44,
+   "reason": null,
+   "doctype": "Item"
+  },
+  {
+   "name": "Total Stock Value",
+   "status": "computed",
+   "value": 8566160.4,
+   "reason": null,
+   "doctype": "Bin"
+  },
+  {
+   "name": "Total Warehouses",
+   "status": "computed",
+   "value": 6,
+   "reason": null,
+   "doctype": "Warehouse"
+  },
+  {
+   "name": "Active Subcontracted Items",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Item"
+  },
+  {
+   "name": "Subcontracting Inward Order Count",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Subcontracting Inward Order"
+  },
+  {
+   "name": "Subcontracting Outward Order Count",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Subcontracting Order"
+  },
+  {
+   "name": "Open Issues",
+   "status": "computed",
+   "value": 2,
+   "reason": null,
+   "doctype": "Issue"
+  },
+  {
+   "name": "Overdue Issues",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Issue"
+  },
+  {
+   "name": "Resolved Issues",
+   "status": "computed",
+   "value": 4,
+   "reason": null,
+   "doctype": "Issue"
+  },
+  {
+   "name": "Accepted Job Applicants",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Applicant-to-Hire Percentage",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method hrms.hr.doctype.job_applicant.job_applicant.get_applicant_to_hire_percentage runs on server",
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Appraisals (This Year)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Appraisal"
+  },
+  {
+   "name": "Approved Claims (This Month)",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Expense Claim"
+  },
+  {
+   "name": "Early Exit (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Attendance"
+  },
+  {
+   "name": "Employee Exits (This Year)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Employees Joining (This Quarter)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Employees Relieving (This Quarter)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Expense Claims (This Month)",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Expense Claim"
+  },
+  {
+   "name": "Goals In Progress",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Goal"
+  },
+  {
+   "name": "Holidays in this month",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method hrms.utils.custom_method_for_charts.get_upcoming_holidays runs on server",
+   "doctype": null
+  },
+  {
+   "name": "Job Offer Acceptance Rate",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method hrms.hr.doctype.job_offer.job_offer.get_offer_acceptance_rate runs on server",
+   "doctype": "Job Offer"
+  },
+  {
+   "name": "Job Offers (This Month)",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Job Offer"
+  },
+  {
+   "name": "Job Openings",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Job Opening"
+  },
+  {
+   "name": "Late Entry (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Attendance"
+  },
+  {
+   "name": "New Hires (This Year)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Number of Employees on Leave (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Leave Application"
+  },
+  {
+   "name": "Number of Employees on Leave (Today)",
+   "status": "computed",
+   "value": 6,
+   "reason": null,
+   "doctype": "Leave Application"
+  },
+  {
+   "name": "Onboardings (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Onboarding"
+  },
+  {
+   "name": "Ongoing Appraisal Cycles",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Appraisal Cycle"
+  },
+  {
+   "name": "Promotions (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Promotion"
+  },
+  {
+   "name": "Rejected Claims (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Expense Claim"
+  },
+  {
+   "name": "Rejected Job Applicants",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Separations (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Separation"
+  },
+  {
+   "name": "Time to Fill",
+   "status": "server",
+   "value": null,
+   "reason": "Custom method hrms.hr.doctype.job_requisition.job_requisition.get_avg_time_to_fill runs on server",
+   "doctype": "Job Requisition"
+  },
+  {
+   "name": "Total Absent (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Attendance"
+  },
+  {
+   "name": "Total Applicants (This month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Total Employees",
+   "status": "computed",
+   "value": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Total Present (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Attendance"
+  },
+  {
+   "name": "Trainings (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Training Event"
+  },
+  {
+   "name": "Transfers (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Transfer"
+  },
+  {
+   "name": "Benefit Claims (This Month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Benefit Claim"
+  },
+  {
+   "name": "Tax Exemption Proofs (This Year)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Tax Exemption Proof Submission"
+  },
+  {
+   "name": "Total Declaration Submitted",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Tax Exemption Declaration"
+  },
+  {
+   "name": "Total Incentive Given(Last month)",
+   "status": "computed",
+   "value": 0,
+   "reason": null,
+   "doctype": "Employee Incentive"
+  },
+  {
+   "name": "Total Outgoing Salary(Last month)",
+   "status": "computed",
+   "value": 497311,
+   "reason": null,
+   "doctype": "Salary Slip"
+  },
+  {
+   "name": "Total Salary Structure",
+   "status": "computed",
+   "value": 1,
+   "reason": null,
+   "doctype": "Salary Structure"
+  }
+ ],
+ "charts": [
+  {
+   "name": "Background Job Activity",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Scheduled Job Type"
+  },
+  {
+   "name": "Notifications By Type",
+   "status": "computed",
+   "points": 4,
+   "total": 5,
+   "reason": null,
+   "doctype": "Notification Log"
+  },
+  {
+   "name": "Email Activity",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Email Queue"
+  },
+  {
+   "name": "Login",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Activity Log"
+  },
+  {
+   "name": "Login Activity",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Activity Log"
+  },
+  {
+   "name": "Webpage Views",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Web Page View"
+  },
+  {
+   "name": "Accounts Payable Ageing",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Accounts Payable\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Accounts Receivable Ageing",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Accounts Receivable\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Bank Balance",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Custom chart source method runs on server",
+   "doctype": null
+  },
+  {
+   "name": "Budget Variance",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Budget Variance Report\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Incoming Bills (Purchase Invoice)",
+   "status": "computed",
+   "points": 6,
+   "total": 52901.06,
+   "reason": null,
+   "doctype": "Purchase Invoice"
+  },
+  {
+   "name": "Outgoing Bills (Sales Invoice)",
+   "status": "computed",
+   "points": 10,
+   "total": 390310.55000000005,
+   "reason": null,
+   "doctype": "Sales Invoice"
+  },
+  {
+   "name": "Profit and Loss",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Profit and Loss Statement\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Asset Value Analytics",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Fixed Asset Register\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Category-wise Asset Value",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Fixed Asset Register\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Location-wise Asset Value",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Fixed Asset Register\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Material Request Analysis",
+   "status": "computed",
+   "points": 2,
+   "total": 3,
+   "reason": null,
+   "doctype": "Material Request"
+  },
+  {
+   "name": "Purchase Order Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Purchase Order Analysis\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Purchase Order Trends",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Purchase Order Trends\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Top Suppliers",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Purchase Receipt Trends\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Incoming Leads",
+   "status": "computed",
+   "points": 11,
+   "total": 23,
+   "reason": null,
+   "doctype": "Lead"
+  },
+  {
+   "name": "Lead Source",
+   "status": "computed",
+   "points": 1,
+   "total": 23,
+   "reason": null,
+   "doctype": "Lead"
+  },
+  {
+   "name": "Opportunities via Campaigns",
+   "status": "computed",
+   "points": 1,
+   "total": 22,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Opportunity Trends",
+   "status": "computed",
+   "points": 20,
+   "total": 22,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Territory Wise Opportunity Count",
+   "status": "computed",
+   "points": 1,
+   "total": 22,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Territory Wise Sales",
+   "status": "computed",
+   "points": 1,
+   "total": 525545.5700000001,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Won Opportunities",
+   "status": "computed",
+   "points": 10,
+   "total": 18,
+   "reason": null,
+   "doctype": "Opportunity"
+  },
+  {
+   "name": "Completed Operation",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Work Order Operation"
+  },
+  {
+   "name": "Job Card Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Job Card Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Last Month Downtime Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Downtime Analysis\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Pending Work Order",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Work Order Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Produced Quantity",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Work Order"
+  },
+  {
+   "name": "Quality Inspection Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Quality Inspection Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Work Order Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Work Order Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Work Order Qty Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Work Order Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Completed Projects",
+   "status": "computed",
+   "points": 1,
+   "total": 1,
+   "reason": null,
+   "doctype": "Project"
+  },
+  {
+   "name": "Project Summary",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Project Summary\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Quality Inspections",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Quality Inspection"
+  },
+  {
+   "name": "Item-wise Annual Sales",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Item-wise Sales History\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Sales Order Analysis",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Sales Order Analysis\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Sales Order Trends",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Sales Order Trends\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Top Customers",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Delivery Note Trends\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Delivery Trends",
+   "status": "computed",
+   "points": 10,
+   "total": 390385.55000000005,
+   "reason": null,
+   "doctype": "Delivery Note"
+  },
+  {
+   "name": "Item Shortage Summary",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Item Shortage Report\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Oldest Items",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Stock Ageing\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Purchase Receipt Trends",
+   "status": "computed",
+   "points": 7,
+   "total": 59378.159999999996,
+   "reason": null,
+   "doctype": "Purchase Receipt"
+  },
+  {
+   "name": "Stock Value by Item Group",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Custom chart source method runs on server",
+   "doctype": ""
+  },
+  {
+   "name": "Warehouse wise Stock Value",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Custom chart source method runs on server",
+   "doctype": null
+  },
+  {
+   "name": "Subcontracting Order",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Purchase Order"
+  },
+  {
+   "name": "Issues Opened",
+   "status": "computed",
+   "points": 10,
+   "total": 10,
+   "reason": null,
+   "doctype": "Issue"
+  },
+  {
+   "name": "Appraisal Overview",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Appraisal Overview\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Attendance Count",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Uses report \"Monthly Attendance Sheet\" (server execute)",
+   "doctype": null
+  },
+  {
+   "name": "Claims by Type",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Expense Claim Detail"
+  },
+  {
+   "name": "Department Wise Employee Count",
+   "status": "computed",
+   "points": 8,
+   "total": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Department wise Expense Claims",
+   "status": "computed",
+   "points": 1,
+   "total": 9,
+   "reason": null,
+   "doctype": "Expense Claim"
+  },
+  {
+   "name": "Department Wise Openings",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Opening"
+  },
+  {
+   "name": "Department wise Timesheet Hours",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Timesheet"
+  },
+  {
+   "name": "Designation Wise Employee Count",
+   "status": "computed",
+   "points": 10,
+   "total": 31,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Designation Wise Openings",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Opening"
+  },
+  {
+   "name": "Employee Advance Status",
+   "status": "computed",
+   "points": 3,
+   "total": 6,
+   "reason": null,
+   "doctype": "Employee Advance"
+  },
+  {
+   "name": "Employees by Age",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Custom chart source method runs on server",
+   "doctype": ""
+  },
+  {
+   "name": "Employees by Branch",
+   "status": "computed",
+   "points": 1,
+   "total": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Employees by Grade",
+   "status": "computed",
+   "points": 1,
+   "total": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Employees by Type",
+   "status": "computed",
+   "points": 1,
+   "total": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Expense Claims",
+   "status": "computed",
+   "points": 8,
+   "total": 4320,
+   "reason": null,
+   "doctype": "Expense Claim"
+  },
+  {
+   "name": "Gender Diversity Ratio",
+   "status": "computed",
+   "points": 2,
+   "total": 34,
+   "reason": null,
+   "doctype": "Employee"
+  },
+  {
+   "name": "Grievance Type",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Employee Grievance"
+  },
+  {
+   "name": "Hiring vs Attrition Count",
+   "status": "server",
+   "points": 0,
+   "total": null,
+   "reason": "Custom chart source method runs on server",
+   "doctype": ""
+  },
+  {
+   "name": "Interview Status",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Interview"
+  },
+  {
+   "name": "Job Applicant Pipeline",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Job Applicant Source",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Job Applicants by Country",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Job Application Frequency",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Job Application Status",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Job Applicant"
+  },
+  {
+   "name": "Job Offer Status",
+   "status": "computed",
+   "points": 1,
+   "total": 1,
+   "reason": null,
+   "doctype": "Job Offer"
+  },
+  {
+   "name": "Leave Applications by Type",
+   "status": "computed",
+   "points": 1,
+   "total": 6,
+   "reason": null,
+   "doctype": "Leave Application"
+  },
+  {
+   "name": "Shift Assignment Breakup",
+   "status": "computed",
+   "points": 2,
+   "total": 30,
+   "reason": null,
+   "doctype": "Shift Assignment"
+  },
+  {
+   "name": "Timesheet Activity Breakup",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Timesheet Detail"
+  },
+  {
+   "name": "Training Type",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Training Event"
+  },
+  {
+   "name": "Y-O-Y Promotions",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Employee Promotion"
+  },
+  {
+   "name": "Y-O-Y Transfers",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Employee Transfer"
+  },
+  {
+   "name": "Benefit Claims",
+   "status": "computed",
+   "points": 0,
+   "total": 0,
+   "reason": null,
+   "doctype": "Employee Benefit Claim"
+  },
+  {
+   "name": "Department Wise Salary(Last Month)",
+   "status": "computed",
+   "points": 7,
+   "total": 497311,
+   "reason": null,
+   "doctype": "Salary Slip"
+  },
+  {
+   "name": "Designation Wise Salary(Last Month)",
+   "status": "computed",
+   "points": 1,
+   "total": 497311,
+   "reason": null,
+   "doctype": "Salary Slip"
+  },
+  {
+   "name": "Outgoing Salary",
+   "status": "computed",
+   "points": 2,
+   "total": 994622,
+   "reason": null,
+   "doctype": "Salary Slip"
+  }
+ ],
+ "summary": {
+  "cards": {
+   "total": 94,
+   "computed": 86,
+   "server": 8,
+   "computed_nonzero": 35
+  },
+  "charts": {
+   "total": 85,
+   "computed": 55,
+   "server": 30,
+   "computed_nonzero": 30
+  }
+ }
+}

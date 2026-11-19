@@ -1,0 +1,310 @@
+{
+ "runs": {
+  "en": {
+   "reports": {
+    "Item-wise Sales Register": {
+     "pass": true,
+     "rows": 37,
+     "columns": [
+      "Item Code",
+      "Item Name",
+      "Item Group",
+      "Invoice",
+      "Posting Date",
+      "Customer",
+      "Stock Qty",
+      "Rate",
+      "Amount",
+      "Total Tax",
+      "Total"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "302",
+      "",
+      "392,874.55",
+      "58,931.18",
+      "451,805.73"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Item-wise_Sales_Register_en.jpg"
+    },
+    "Monthly Attendance Sheet": {
+     "pass": true,
+     "rows": 0,
+     "columns": [
+      "Employee",
+      "Employee Name",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "Total Present",
+      "Total Absent",
+      "Total Leaves",
+      "Total Half Days"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "month=09",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Monthly_Attendance_Sheet_en.jpg"
+    },
+    "Employee Leave Balance": {
+     "pass": true,
+     "rows": 60,
+     "columns": [
+      "Leave Type",
+      "Employee",
+      "Employee Name",
+      "Opening Balance",
+      "New Leave(s) Allocated",
+      "Leave(s) Expired",
+      "Leave(s) Taken",
+      "Closing Balance"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-06-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Employee_Leave_Balance_en.jpg"
+    },
+    "Salary Register": {
+     "pass": true,
+     "rows": 61,
+     "columns": [
+      "Salary Slip ID",
+      "Employee",
+      "Employee Name",
+      "Department",
+      "Start Date",
+      "End Date",
+      "Basic Salary",
+      "Housing Allowance",
+      "Transport Allowance",
+      "Gross Pay",
+      "GOSI Employee Share",
+      "Total Deduction",
+      "Net Pay"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "650,700.00",
+      "271,125.00",
+      "162,675.00",
+      "1,084,500.00",
+      "89,877.96",
+      "89,877.96",
+      "994,622.04"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net Pay = Gross Pay − Total Deduction (every slip) (60 slips)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Salary_Register_en.jpg"
+    }
+   },
+   "page_errors": []
+  },
+  "ar": {
+   "reports": {
+    "Item-wise Sales Register": {
+     "pass": true,
+     "rows": 37,
+     "columns": [
+      "رمز الصنف",
+      "اسم الصنف",
+      "مجموعة الأصناف",
+      "الفاتورة",
+      "تاريخ الترحيل",
+      "عميل",
+      "كمية المخزون",
+      "السعر",
+      "المبلغ",
+      "مجموع الضرائب",
+      "الإجمالي"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "302",
+      "",
+      "392,874.55",
+      "58,931.18",
+      "451,805.73"
+     ],
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Item-wise_Sales_Register_ar.jpg"
+    },
+    "Monthly Attendance Sheet": {
+     "pass": true,
+     "rows": 0,
+     "columns": [
+      "موظف",
+      "اسم الموظف",
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "إجمالي الحضور",
+      "إجمالي الغياب",
+      "مجموع الإجازات",
+      "Total Half Days"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "month=09",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Monthly_Attendance_Sheet_ar.jpg"
+    },
+    "Employee Leave Balance": {
+     "pass": true,
+     "rows": 60,
+     "columns": [
+      "نوع الإجازة",
+      "موظف",
+      "اسم الموظف",
+      "الرصيد الافتتاحي",
+      "جديد: Leave(s) Allocated",
+      "Leave(s) Expired",
+      "Leave(s) Taken",
+      "رصيد الإقفال"
+     ],
+     "total": null,
+     "checks": [],
+     "summary": [],
+     "filter_change": "from_date=2026-06-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Employee_Leave_Balance_ar.jpg"
+    },
+    "Salary Register": {
+     "pass": true,
+     "rows": 61,
+     "columns": [
+      "هوية كشف الراتب",
+      "موظف",
+      "اسم الموظف",
+      "القسم",
+      "تاريخ البدء",
+      "تاريخ الانتهاء",
+      "Basic Salary",
+      "Housing Allowance",
+      "Transport Allowance",
+      "إجمالي الراتب",
+      "GOSI Employee Share",
+      "إجمالي الاستقطاعات",
+      "صافي الراتب"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "650,700.00",
+      "271,125.00",
+      "162,675.00",
+      "1,084,500.00",
+      "89,877.96",
+      "89,877.96",
+      "994,622.04"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Net Pay = Gross Pay − Total Deduction (every slip) (60 slips)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Salary_Register_ar.jpg"
+    }
+   },
+   "page_errors": []
+  }
+ }
+}

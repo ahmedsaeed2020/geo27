@@ -1,0 +1,164 @@
+{
+ "Asset Maintenance Log": {
+  "field_map": {
+   "start": "due_date",
+   "end": "due_date",
+   "id": "name",
+   "title": "task",
+   "allDay": "allDay",
+   "progress": "progress"
+  },
+  "source": "erpnext/erpnext/assets/doctype/asset_maintenance_log/asset_maintenance_log_calendar.js"
+ },
+ "Attendance": {
+  "field_map": {
+   "start": "attendance_date",
+   "end": "attendance_date",
+   "id": "name",
+   "title": "title",
+   "allDay": "allDay",
+   "color": "color"
+  },
+  "source": "hrms/hrms/hr/doctype/attendance/attendance_calendar.js"
+ },
+ "Event": {
+  "field_map": {
+   "start": "starts_on",
+   "end": "ends_on",
+   "id": "name",
+   "allDay": "all_day",
+   "title": "subject",
+   "status": "event_type",
+   "color": "color"
+  },
+  "source": "frappe/frappe/desk/doctype/event/event_calendar.js"
+ },
+ "Holiday List": {
+  "field_map": {
+   "start": "holiday_date",
+   "end": "holiday_date",
+   "id": "name",
+   "title": "description",
+   "allDay": "allDay"
+  },
+  "source": "erpnext/erpnext/setup/doctype/holiday_list/holiday_list_calendar.js"
+ },
+ "Interview": {
+  "field_map": {
+   "start": "from",
+   "end": "to",
+   "id": "name",
+   "title": "subject",
+   "allDay": "allDay",
+   "color": "color"
+  },
+  "source": "hrms/hrms/hr/doctype/interview/interview_calendar.js"
+ },
+ "Job Card": {
+  "field_map": {
+   "start": "from_time",
+   "end": "to_time",
+   "id": "name",
+   "title": "subject",
+   "color": "color",
+   "allDay": "allDay",
+   "progress": "progress"
+  },
+  "source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card_calendar.js"
+ },
+ "Leave Application": {
+  "field_map": {
+   "start": "from_date",
+   "end": "to_date",
+   "id": "name",
+   "title": "title",
+   "color": "color"
+  },
+  "source": "hrms/hrms/hr/doctype/leave_application/leave_application_calendar.js"
+ },
+ "Production Plan Schedule": {
+  "field_map": {
+   "start": "from_time",
+   "end": "to_time",
+   "id": "name",
+   "title": "subject",
+   "allDay": "allDay"
+  },
+  "source": "erpnext/erpnext/manufacturing/doctype/production_plan_schedule/production_plan_schedule_calendar.js"
+ },
+ "Sales Order": {
+  "field_map": {
+   "start": "delivery_date",
+   "end": "delivery_date",
+   "id": "name",
+   "title": "customer_name",
+   "allDay": "allDay",
+   "convertToUserTz": "convertToUserTz"
+  },
+  "source": "erpnext/erpnext/selling/doctype/sales_order/sales_order_calendar.js"
+ },
+ "Shift Assignment": {
+  "field_map": {
+   "start": "start_date",
+   "end": "end_date",
+   "id": "name",
+   "allDay": "allDay",
+   "convertToUserTz": "convertToUserTz"
+  },
+  "source": "hrms/hrms/hr/doctype/shift_assignment/shift_assignment_calendar.js"
+ },
+ "Task": {
+  "field_map": {
+   "start": "exp_start_date",
+   "end": "exp_end_date",
+   "id": "name",
+   "title": "subject",
+   "allDay": "allDay",
+   "progress": "progress"
+  },
+  "source": "erpnext/erpnext/projects/doctype/task/task_calendar.js"
+ },
+ "Timesheet": {
+  "field_map": {
+   "start": "start_date",
+   "end": "end_date",
+   "name": "parent",
+   "id": "name",
+   "allDay": "allDay",
+   "child_name": "name",
+   "title": "title"
+  },
+  "source": "erpnext/erpnext/projects/doctype/timesheet/timesheet_calendar.js"
+ },
+ "ToDo": {
+  "field_map": {
+   "start": "date",
+   "end": "date",
+   "id": "name",
+   "title": "description",
+   "allDay": "allDay"
+  },
+  "source": "frappe/frappe/desk/doctype/todo/todo_calendar.js"
+ },
+ "Training Event": {
+  "field_map": {
+   "start": "start_time",
+   "end": "end_time",
+   "id": "name",
+   "title": "event_name",
+   "allDay": "allDay"
+  },
+  "source": "hrms/hrms/hr/doctype/training_event/training_event_calendar.js"
+ },
+ "Work Order": {
+  "field_map": {
+   "start": "planned_start_date",
+   "end": "planned_end_date",
+   "id": "name",
+   "title": "name",
+   "status": "status",
+   "allDay": "allDay"
+  },
+  "source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order_calendar.js"
+ }
+}

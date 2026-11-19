@@ -1,0 +1,6965 @@
+{
+"_meta": {
+"generated_by": "scripts/extract-engines.py",
+"note": "from set_query / get_query"
+},
+"doctypes": {
+"Account": [
+{
+"field": "parent_account",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/account/account.js"
+},
+{
+"field": "account_category",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/account/account.js"
+}
+],
+"Accounting Dimension": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/accounting_dimension/accounting_dimension.js"
+},
+{
+"field": "offsetting_account",
+"child_table": "dimension_defaults",
+"filters": {
+"company": "d.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/accounting_dimension/accounting_dimension.js"
+}
+],
+"Accounting Dimension Filter": [
+{
+"field": "applicable_on_account",
+"child_table": "accounts",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/accounting_dimension_filter/accounting_dimension_filter.js"
+},
+{
+"field": "dimension_value",
+"child_table": "dimensions",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/accounting_dimension_filter/accounting_dimension_filter.js"
+}
+],
+"Accounting Period": [
+{
+"field": "document_type",
+"child_table": "closed_documents",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_doctypes_for_closing",
+"source": "erpnext/erpnext/accounts/doctype/accounting_period/accounting_period.js"
+}
+],
+"Accounts Settings": [
+{
+"field": "document_type",
+"child_table": "repost_allowed_types",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/accounts_settings/accounts_settings.js"
+}
+],
+"Additional Salary": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/additional_salary/additional_salary.js"
+},
+{
+"field": "salary_component",
+"child_table": null,
+"filters": {
+"disabled": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/additional_salary/additional_salary.js"
+}
+],
+"Address": [
+{
+"field": "link_doctype",
+"child_table": "links",
+"filters": {
+"fieldtype": "HTML",
+"fieldname": "address_html"
+},
+"server_query": "frappe.contacts.address_and_contact.filter_dynamic_link_doctypes",
+"source": "frappe/frappe/contacts/doctype/address/address.js"
+}
+],
+"Appointment": [
+{
+"field": "appointment_with",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/appointment/appointment.js"
+}
+],
+"Appraisal Cycle": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/appraisal_cycle/appraisal_cycle.js"
+}
+],
+"Arrear": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/arrear/arrear.js"
+},
+{
+"field": "payroll_period",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/arrear/arrear.js"
+},
+{
+"field": "salary_structure",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/arrear/arrear.js"
+}
+],
+"Asset": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {
+"is_fixed_asset": "1",
+"is_stock_item": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset/asset.js"
+},
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset/asset.js"
+},
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset/asset.js"
+},
+{
+"field": "purchase_receipt",
+"child_table": null,
+"filters": {
+"item_code": "doc.item_code"
+},
+"server_query": "erpnext.controllers.queries.get_purchase_receipts",
+"source": "erpnext/erpnext/assets/doctype/asset/asset.js"
+},
+{
+"field": "purchase_invoice",
+"child_table": null,
+"filters": {
+"item_code": "doc.item_code"
+},
+"server_query": "erpnext.controllers.queries.get_purchase_invoices",
+"source": "erpnext/erpnext/assets/doctype/asset/asset.js"
+}
+],
+"Asset Capitalization": [
+{
+"field": "target_item_code",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "target_asset",
+"child_table": null,
+"filters": {
+"asset_type": "Composite Asset",
+"docstatus": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "asset",
+"child_table": "asset_items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "stock_items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "item_code",
+"child_table": "stock_items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "item_code",
+"child_table": "service_items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "batch_no",
+"child_table": "stock_items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_batch_no",
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+},
+{
+"field": "expense_account",
+"child_table": "service_items",
+"filters": {
+"is_group": "0",
+"company": "me.frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_capitalization/asset_capitalization.js"
+}
+],
+"Asset Category": [
+{
+"field": "fixed_asset_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Fixed Asset",
+"root_type": "Asset",
+"is_group": "0",
+"company": "d.company_name"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_category/asset_category.js"
+},
+{
+"field": "accumulated_depreciation_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Accumulated Depreciation",
+"is_group": "0",
+"company": "d.company_name"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_category/asset_category.js"
+},
+{
+"field": "depreciation_expense_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Depreciation",
+"is_group": "0",
+"company": "d.company_name"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_category/asset_category.js"
+},
+{
+"field": "capital_work_in_progress_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Capital Work in Progress",
+"is_group": "0",
+"company": "d.company_name"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_category/asset_category.js"
+}
+],
+"Asset Maintenance": [
+{
+"field": "asset_name",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_maintenance/asset_maintenance.js"
+},
+{
+"field": "assign_to",
+"child_table": "asset_maintenance_tasks",
+"filters": {
+"maintenance_team": "doc.maintenance_team"
+},
+"server_query": "erpnext.assets.doctype.asset_maintenance.asset_maintenance.get_team_members",
+"source": "erpnext/erpnext/assets/doctype/asset_maintenance/asset_maintenance.js"
+}
+],
+"Asset Maintenance Log": [
+{
+"field": "task",
+"child_table": null,
+"filters": {
+"asset_maintenance": "doc.asset_maintenance"
+},
+"server_query": "erpnext.assets.doctype.asset_maintenance_log.asset_maintenance_log.get_maintenance_tasks",
+"source": "erpnext/erpnext/assets/doctype/asset_maintenance_log/asset_maintenance_log.js"
+}
+],
+"Asset Movement": [
+{
+"field": "to_employee",
+"child_table": "assets",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_movement/asset_movement.js"
+},
+{
+"field": "from_employee",
+"child_table": "assets",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_movement/asset_movement.js"
+},
+{
+"field": "reference_name",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_movement/asset_movement.js"
+},
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_movement/asset_movement.js"
+},
+{
+"field": "asset",
+"child_table": "assets",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_movement/asset_movement.js"
+}
+],
+"Asset Repair": [
+{
+"field": "asset",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "purchase_invoice",
+"child_table": "invoices",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.assets.doctype.asset_repair.asset_repair.get_purchase_invoice",
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "expense_account",
+"child_table": "invoices",
+"filters": {
+"purchase_invoice": "row.purchase_invoice"
+},
+"server_query": "erpnext.assets.doctype.asset_repair.asset_repair.get_expense_accounts",
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "warehouse",
+"child_table": "stock_items",
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "stock_items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair.js"
+}
+],
+"Asset Shift Allocation": [
+{
+"field": "asset",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_shift_allocation/asset_shift_allocation.js"
+}
+],
+"Asset Value Adjustment": [
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_value_adjustment/asset_value_adjustment.js"
+},
+{
+"field": "asset",
+"child_table": null,
+"filters": {
+"calculate_depreciation": "1",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_value_adjustment/asset_value_adjustment.js"
+},
+{
+"field": "difference_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/asset_value_adjustment/asset_value_adjustment.js"
+}
+],
+"Assignment Rule": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/automation/doctype/assignment_rule/assignment_rule.js"
+}
+],
+"Attendance": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "hrms/hrms/hr/doctype/attendance/attendance.js"
+}
+],
+"Audit Trail": [
+{
+"field": "doctype_name",
+"child_table": null,
+"filters": {
+"track_changes": "1",
+"is_submittable": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/audit_trail/audit_trail.js"
+},
+{
+"field": "document",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/audit_trail/audit_trail.js"
+}
+],
+"Authorization Rule": [
+{
+"field": "system_user",
+"child_table": null,
+"filters": {},
+"server_query": "frappe.core.doctype.user.user.user_query",
+"source": "erpnext/erpnext/setup/doctype/authorization_rule/authorization_rule.js"
+},
+{
+"field": "approving_user",
+"child_table": null,
+"filters": {},
+"server_query": "frappe.core.doctype.user.user.user_query",
+"source": "erpnext/erpnext/setup/doctype/authorization_rule/authorization_rule.js"
+},
+{
+"field": "system_role",
+"child_table": null,
+"filters": {
+"name": [
+"not in",
+"Administrator, Guest, All"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/authorization_rule/authorization_rule.js"
+},
+{
+"field": "master_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/authorization_rule/authorization_rule.js"
+},
+{
+"field": "to_emp",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "erpnext/erpnext/setup/doctype/authorization_rule/authorization_rule.js"
+}
+],
+"Auto Email Report": [
+{
+"field": "sender",
+"child_table": null,
+"filters": {
+"enable_outgoing": "1",
+"awaiting_password": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/email/doctype/auto_email_report/auto_email_report.js"
+}
+],
+"Auto Repeat": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/automation/doctype/auto_repeat/auto_repeat.js"
+},
+{
+"field": "reference_document",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/automation/doctype/auto_repeat/auto_repeat.js"
+},
+{
+"field": "print_format",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/automation/doctype/auto_repeat/auto_repeat.js"
+}
+],
+"BOM": [
+{
+"field": "bom_no",
+"child_table": "items",
+"filters": {
+"currency": "frm.doc.currency",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "workstation",
+"child_table": "operations",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "operation",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "bom_no",
+"child_table": "operations",
+"filters": {
+"currency": "frm.doc.currency",
+"company": "frm.doc.company",
+"item": "row.finished_good",
+"is_active": "1",
+"docstatus": "1"
+},
+"server_query": "erpnext.controllers.queries.bom",
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "source_warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "item",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {
+"status": [
+"not in",
+"Completed, Cancelled"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"include_item_in_manufacturing": "1",
+"is_fixed_asset": "0"
+},
+"server_query": "erpnext.manufacturing.doctype.bom.bom.item_query",
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+},
+{
+"field": "bom_no",
+"child_table": "items",
+"filters": {
+"item": "d.item_code",
+"is_active": "1",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom.js"
+}
+],
+"BOM Creator": [
+{
+"field": "bom_no",
+"child_table": "items",
+"filters": {
+"item": "item.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator.js"
+},
+{
+"field": "fg_item",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator.js"
+},
+{
+"field": "workstation",
+"child_table": null,
+"filters": {
+"workstation_type": "doc.workstation_type"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator.js"
+},
+{
+"field": "item_code",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator.js"
+}
+],
+"BOM Update Tool": [
+{
+"field": "current_bom",
+"child_table": null,
+"filters": {
+"name": "!\" + frm.doc.new_bom"
+},
+"server_query": "erpnext.controllers.queries.bom",
+"source": "erpnext/erpnext/manufacturing/doctype/bom_update_tool/bom_update_tool.js"
+},
+{
+"field": "new_bom",
+"child_table": null,
+"filters": {
+"name": "!\" + frm.doc.current_bom"
+},
+"server_query": "erpnext.controllers.queries.bom",
+"source": "erpnext/erpnext/manufacturing/doctype/bom_update_tool/bom_update_tool.js"
+}
+],
+"Bank Account": [
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"account_type": "Bank",
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_account/bank_account.js"
+},
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.setup.doctype.party_type.party_type.get_party_type",
+"source": "erpnext/erpnext/accounts/doctype/bank_account/bank_account.js"
+}
+],
+"Bank Clearance": [
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_clearance/bank_clearance.js"
+},
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_clearance/bank_clearance.js"
+}
+],
+"Bank Guarantee": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_guarantee/bank_guarantee.js"
+},
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"bank": "frm.doc.bank"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_guarantee/bank_guarantee.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {
+"customer": "frm.doc.customer"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_guarantee/bank_guarantee.js"
+}
+],
+"Bank Reconciliation Tool": [
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_reconciliation_tool/bank_reconciliation_tool.js"
+}
+],
+"Bank Statement Import": [
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_statement_import/bank_statement_import.js"
+},
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_statement_import/bank_statement_import.js"
+}
+],
+"Bank Transaction": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction.js"
+},
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction.js"
+},
+{
+"field": "payment_document",
+"child_table": "payment_entries",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction.js"
+},
+{
+"field": "payment_entry",
+"child_table": "payment_entries",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction.js"
+},
+{
+"field": "bank_statement",
+"child_table": null,
+"filters": {
+"bank_account": "frm.doc.bank_account"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction.js"
+}
+],
+"Bank Transaction Rule": [
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction_rule/bank_transaction_rule.js"
+}
+],
+"Batch": [
+{
+"field": "item",
+"child_table": null,
+"filters": {
+"is_stock_item": "1",
+"has_batch_no": "1"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/stock/doctype/batch/batch.js"
+}
+],
+"Blanket Order": [
+{
+"field": "selling_price_list",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/blanket_order/blanket_order.js"
+},
+{
+"field": "buying_price_list",
+"child_table": null,
+"filters": {
+"buying": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/blanket_order/blanket_order.js"
+},
+{
+"field": "tc_name",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/blanket_order/blanket_order.js"
+},
+{
+"field": "tc_name",
+"child_table": null,
+"filters": {
+"buying": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/blanket_order/blanket_order.js"
+}
+],
+"Brand": [
+{
+"field": "default_warehouse",
+"child_table": "brand_defaults",
+"filters": {
+"company": "row.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "default_discount_account",
+"child_table": "brand_defaults",
+"filters": {
+"report_type": "Profit and Loss",
+"company": "row.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "buying_cost_center",
+"child_table": "brand_defaults",
+"filters": {
+"is_group": "0",
+"company": "row.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "expense_account",
+"child_table": "brand_defaults",
+"filters": {
+"company": "row.company"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "default_provisional_account",
+"child_table": "brand_defaults",
+"filters": {
+"company": "row.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "selling_cost_center",
+"child_table": "brand_defaults",
+"filters": {
+"is_group": "0",
+"company": "row.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+},
+{
+"field": "income_account",
+"child_table": "brand_defaults",
+"filters": {
+"company": "row.company"
+},
+"server_query": "erpnext.controllers.queries.get_income_account",
+"source": "erpnext/erpnext/setup/doctype/brand/brand.js"
+}
+],
+"Budget": [
+{
+"field": "monthly_distribution",
+"child_table": null,
+"filters": {
+"fiscal_year": "frm.doc.fiscal_year"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/budget/budget.js"
+},
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/budget/budget.js"
+}
+],
+"Bulk Salary Structure Assignment": [
+{
+"field": "salary_structure",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_active": "Yes",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js"
+},
+{
+"field": "income_tax_slab",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"disabled": "0",
+"docstatus": "1",
+"currency": "frm.doc.currency"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js"
+},
+{
+"field": "payroll_payable_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"root_type": "Liability",
+"is_group": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/bulk_salary_structure_assignment/bulk_salary_structure_assignment.js"
+}
+],
+"Bulk Update": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"issingle": [
+"=",
+"0"
+],
+"name": [
+"not in",
+"frappe.model.core_doctypes_list"
+]
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/bulk_update/bulk_update.js"
+}
+],
+"CRM Form Script": [
+{
+"field": "dt",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "crm/crm/fcrm/doctype/crm_form_script/crm_form_script.js"
+}
+],
+"Client Script": [
+{
+"field": "dt",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/custom/doctype/client_script/client_script.js"
+}
+],
+"Code List": [
+{
+"field": "default_common_code",
+"child_table": null,
+"filters": {
+"code_list": "doc.name"
+},
+"server_query": null,
+"source": "erpnext/erpnext/edi/doctype/code_list/code_list.js"
+}
+],
+"Communication": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {
+"issingle": "0",
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/communication/communication.js"
+}
+],
+"Company": [
+{
+"field": "parent_company",
+"child_table": null,
+"filters": {
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_operating_cost_account",
+"child_table": null,
+"filters": {
+"company": "doc.name",
+"root_type": "Expense"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_selling_terms",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_sales_contact",
+"child_table": null,
+"filters": {
+"link_doctype": "Company",
+"link_name": "doc.name"
+},
+"server_query": "frappe.contacts.doctype.contact.contact.contact_query",
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_buying_terms",
+"child_table": null,
+"filters": {
+"buying": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_letter_head",
+"child_table": null,
+"filters": {
+"letter_head_for": "DocType"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+},
+{
+"field": "default_letter_head_report",
+"child_table": null,
+"filters": {
+"letter_head_for": "Report"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/company/company.js"
+}
+],
+"Compensatory Leave Request": [
+{
+"field": "leave_type",
+"child_table": null,
+"filters": {
+"is_compensatory": "true"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/compensatory_leave_request/compensatory_leave_request.js"
+}
+],
+"Contact": [
+{
+"field": "link_doctype",
+"child_table": "links",
+"filters": {
+"fieldtype": "HTML",
+"fieldname": "contact_html"
+},
+"server_query": "frappe.contacts.address_and_contact.filter_dynamic_link_doctypes",
+"source": "frappe/frappe/contacts/doctype/contact/contact.js"
+},
+{
+"field": "address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/contacts/doctype/contact/contact.js"
+}
+],
+"Cost Center": [
+{
+"field": "parent_cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/cost_center/cost_center.js"
+}
+],
+"Cost Center Allocation": [
+{
+"field": "main_cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/cost_center_allocation/cost_center_allocation.js"
+},
+{
+"field": "cost_center",
+"child_table": "allocation_percentages",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/cost_center_allocation/cost_center_allocation.js"
+}
+],
+"Coupon Code": [
+{
+"field": "pricing_rule",
+"child_table": null,
+"filters": {
+"coupon_code_based": "1",
+"disable": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/coupon_code/coupon_code.js"
+}
+],
+"Custom Field": [
+{
+"field": "dt",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/custom/doctype/custom_field/custom_field.js"
+}
+],
+"Customer": [
+{
+"field": "allowed_companies",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.stock.doctype.company_restriction.company_restriction.company_query",
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "default_price_list",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "advance_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Receivable",
+"root_type": "Liability",
+"company": "d.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "customer_primary_contact",
+"child_table": null,
+"filters": {
+"customer": "doc.name",
+"type": "Contact"
+},
+"server_query": "erpnext.selling.doctype.customer.customer.get_customer_primary",
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "customer_primary_address",
+"child_table": null,
+"filters": {
+"customer": "doc.name",
+"type": "Address"
+},
+"server_query": "erpnext.selling.doctype.customer.customer.get_customer_primary",
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "default_bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "user",
+"child_table": "portal_users",
+"filters": {
+"ignore_user_type": "true"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "customer_group",
+"child_table": null,
+"filters": {
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+},
+{
+"field": "territory",
+"child_table": null,
+"filters": {
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/customer/customer.js"
+}
+],
+"Customer Group": [
+{
+"field": "parent_customer_group",
+"child_table": null,
+"filters": {
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/customer_group/customer_group.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"root_type": "Asset",
+"account_type": "Receivable",
+"company": "locals[cdt][cdn].company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/customer_group/customer_group.js"
+},
+{
+"field": "advance_account",
+"child_table": "accounts",
+"filters": {
+"root_type": "Liability",
+"account_type": "Receivable",
+"company": "locals[cdt][cdn].company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/customer_group/customer_group.js"
+}
+],
+"Customize Form": [
+{
+"field": "doc_type",
+"child_table": null,
+"filters": {
+"issingle": [
+"=",
+"0"
+],
+"custom": [
+"=",
+"0"
+],
+"name": [
+"not in",
+"frappe.model.core_doctypes_list"
+],
+"restrict_to_domain": [
+"in",
+"frappe.boot.active_domains"
+]
+},
+"server_query": null,
+"source": "frappe/frappe/custom/doctype/customize_form/customize_form.js"
+},
+{
+"field": "default_print_format",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/custom/doctype/customize_form/customize_form.js"
+}
+],
+"Dashboard": [
+{
+"field": "chart",
+"child_table": "charts",
+"filters": {
+"is_public": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/dashboard/dashboard.js"
+},
+{
+"field": "card",
+"child_table": "cards",
+"filters": {
+"is_public": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/dashboard/dashboard.js"
+}
+],
+"Dashboard Chart": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"issingle": "false"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/dashboard_chart/dashboard_chart.js"
+},
+{
+"field": "report_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/dashboard_chart/dashboard_chart.js"
+},
+{
+"field": "parent_document_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/dashboard_chart/dashboard_chart.js"
+}
+],
+"Data Export": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {
+"issingle": "0",
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/data_export/data_export.js"
+}
+],
+"Data Import": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/data_import/data_import.js"
+}
+],
+"Delivery Note": [
+{
+"field": "transporter",
+"child_table": null,
+"filters": {
+"is_transporter": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note.js"
+},
+{
+"field": "driver",
+"child_table": null,
+"filters": {
+"transporter": "doc.transporter"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"report_type": "Profit and Loss",
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note.js"
+},
+{
+"field": "cost_center",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note.js"
+}
+],
+"Delivery Settings": [
+{
+"field": "dispatch_attachment",
+"child_table": null,
+"filters": {
+"doc_type": "Delivery Note"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_settings/delivery_settings.js"
+}
+],
+"Delivery Trip": [
+{
+"field": "driver",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/delivery_trip/delivery_trip.js"
+},
+{
+"field": "address",
+"child_table": "delivery_stops",
+"filters": {
+"link_doctype": "Customer",
+"link_name": "row.customer"
+},
+"server_query": "frappe.contacts.doctype.address.address.address_query",
+"source": "erpnext/erpnext/stock/doctype/delivery_trip/delivery_trip.js"
+},
+{
+"field": "contact",
+"child_table": "delivery_stops",
+"filters": {
+"link_doctype": "Customer",
+"link_name": "row.customer"
+},
+"server_query": "frappe.contacts.doctype.contact.contact.contact_query",
+"source": "erpnext/erpnext/stock/doctype/delivery_trip/delivery_trip.js"
+}
+],
+"Department": [
+{
+"field": "parent_department",
+"child_table": null,
+"filters": {
+"is_group": [
+"=",
+"1"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/department/department.js"
+}
+],
+"Desktop Icon": [
+{
+"field": "parent_icon",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/desktop_icon/desktop_icon.js"
+}
+],
+"DocType Settings Map": [
+{
+"field": "settings_doctype",
+"child_table": "mappings",
+"filters": {
+"issingle": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/doctype_settings_map/doctype_settings_map.js"
+}
+],
+"Document Naming Settings": [
+{
+"field": "document_type",
+"child_table": "amend_naming_override",
+"filters": {
+"is_submittable": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/document_naming_settings/document_naming_settings.js"
+}
+],
+"Driver": [
+{
+"field": "transporter",
+"child_table": null,
+"filters": {
+"is_transporter": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/driver/driver.js"
+},
+{
+"field": "address",
+"child_table": null,
+"filters": {
+"is_your_company_address": "!frm.doc.transporter ? 1 : 0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/driver/driver.js"
+}
+],
+"DuckDB Sync": [
+{
+"field": "doc_type",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0",
+"is_virtual": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/duckdb_sync/duckdb_sync.js"
+}
+],
+"Dunning": [
+{
+"field": "sales_invoice",
+"child_table": "overdue_payments",
+"filters": {
+"docstatus": "1",
+"company": "frm.doc.company",
+"customer": "frm.doc.customer",
+"status": "Overdue"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+},
+{
+"field": "income_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"root_type": "Income",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+},
+{
+"field": "company_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning.js"
+}
+],
+"Dunning Type": [
+{
+"field": "income_account",
+"child_table": null,
+"filters": {
+"root_type": "Income",
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning_type/dunning_type.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/dunning_type/dunning_type.js"
+}
+],
+"Email Account": [
+{
+"field": "append_to",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/email/doctype/email_account/email_account.js"
+},
+{
+"field": "append_to",
+"child_table": "imap_folder",
+"filters": {},
+"server_query": "frappe.email.doctype.email_account.email_account.get_append_to",
+"source": "frappe/frappe/email/doctype/email_account/email_account.js"
+}
+],
+"Employee": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/employee/employee.js"
+},
+{
+"field": "user_id",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/employee/employee.js"
+},
+{
+"field": "reports_to",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/employee/employee.js"
+}
+],
+"Employee Advance": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_advance/employee_advance.js"
+},
+{
+"field": "advance_account",
+"child_table": null,
+"filters": {
+"root_type": "Asset",
+"is_group": "0",
+"company": "frm.doc.company",
+"account_currency": "frm.doc.currency",
+"account_type": "Receivable"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_advance/employee_advance.js"
+}
+],
+"Employee Benefit Claim": [
+{
+"field": "earning_component",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee",
+"date": "frm.doc.payroll_date",
+"company": "frm.doc.company"
+},
+"server_query": "hrms.payroll.doctype.employee_benefit_claim.employee_benefit_claim.get_benefit_components",
+"source": "hrms/hrms/payroll/doctype/employee_benefit_claim/employee_benefit_claim.js"
+}
+],
+"Employee Grade": [
+{
+"field": "default_salary_structure",
+"child_table": null,
+"filters": {
+"docstatus": "1",
+"is_active": "Yes"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_grade/employee_grade.js"
+},
+{
+"field": "default_leave_policy",
+"child_table": null,
+"filters": {
+"docstatus": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_grade/employee_grade.js"
+}
+],
+"Employee Grievance": [
+{
+"field": "grievance_against_party",
+"child_table": null,
+"filters": {
+"Department": [
+"Employee Group",
+"Employee Grade\", \"Employee"
+]
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_grievance/employee_grievance.js"
+},
+{
+"field": "associated_document_type",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_grievance/employee_grievance.js"
+},
+{
+"field": "grievance_against",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_grievance/employee_grievance.js"
+}
+],
+"Employee Incentive": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_incentive/employee_incentive.js"
+},
+{
+"field": "salary_component",
+"child_table": null,
+"filters": {
+"component_type": "Earning",
+"company": "frm.doc.company"
+},
+"server_query": "hrms.payroll.doctype.salary_structure.salary_structure.get_salary_component",
+"source": "hrms/hrms/payroll/doctype/employee_incentive/employee_incentive.js"
+}
+],
+"Employee Onboarding": [
+{
+"field": "job_offer",
+"child_table": null,
+"filters": {
+"status": "Accepted",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_onboarding/employee_onboarding.js"
+}
+],
+"Employee Onboarding Template": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_onboarding_template/employee_onboarding_template.js"
+}
+],
+"Employee Performance Feedback": [
+{
+"field": "appraisal",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.js"
+},
+{
+"field": "reviewer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/employee_performance_feedback/employee_performance_feedback.js"
+}
+],
+"Employee Tax Exemption Declaration": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.js"
+},
+{
+"field": "payroll_period",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.js"
+},
+{
+"field": "exemption_sub_category",
+"child_table": "declarations",
+"filters": {
+"is_active": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_declaration/employee_tax_exemption_declaration.js"
+}
+],
+"Employee Tax Exemption Proof Submission": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.js"
+},
+{
+"field": "payroll_period",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.js"
+},
+{
+"field": "exemption_sub_category",
+"child_table": "tax_exemption_proofs",
+"filters": {
+"is_active": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/employee_tax_exemption_proof_submission/employee_tax_exemption_proof_submission.js"
+}
+],
+"Event": [
+{
+"field": "reference_doctype",
+"child_table": "event_participants",
+"filters": {
+"issingle": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/event/event.js"
+},
+{
+"field": "google_calendar",
+"child_table": null,
+"filters": {
+"owner": "frappe.session.user"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/event/event.js"
+}
+],
+"Exchange Rate Revaluation": [
+{
+"field": "party_type",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/exchange_rate_revaluation/exchange_rate_revaluation.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/exchange_rate_revaluation/exchange_rate_revaluation.js"
+}
+],
+"Expense Claim": [
+{
+"field": "employee_advance",
+"child_table": "advances",
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "expense_approver",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee",
+"doctype": "frm.doc.doctype"
+},
+"server_query": "hrms.hr.doctype.department_approver.department_approver.get_approvers",
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "account_head",
+"child_table": "taxes",
+"filters": {
+"Chargeable": [
+"Income Account",
+"Expenses Included In Valuation"
+]
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "payable_account",
+"child_table": null,
+"filters": {
+"report_type": "Balance Sheet",
+"account_type": "Payable",
+"company": "frm.doc.company",
+"account_currency": "frm.doc.currency",
+"is_group": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "task",
+"child_table": null,
+"filters": {
+"project": "frm.doc.project"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+},
+{
+"field": "bank_or_cash_account",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim.js"
+}
+],
+"Expense Claim Type": [
+{
+"field": "default_account",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/expense_claim_type/expense_claim_type.js"
+}
+],
+"Form Tour": [
+{
+"field": "reference_doctype",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/form_tour/form_tour.js"
+},
+{
+"field": "report_name",
+"child_table": null,
+"filters": {
+"ref_doctype": "frm.doc.reference_doctype"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/form_tour/form_tour.js"
+}
+],
+"Full and Final Statement": [
+{
+"field": "reference_document_type",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/full_and_final_statement/full_and_final_statement.js"
+},
+{
+"field": "reference_document",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/full_and_final_statement/full_and_final_statement.js"
+}
+],
+"Global Defaults": [
+{
+"field": "default_distance_unit",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/global_defaults/global_defaults.js"
+}
+],
+"Global Search Settings": [
+{
+"field": "document_type",
+"child_table": "allowed_in_global_search",
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/global_search_settings/global_search_settings.js"
+}
+],
+"Goal": [
+{
+"field": "parent_goal",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"employee": "frm.doc.employee"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/goal/goal.js"
+},
+{
+"field": "kra",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee",
+"appraisal_cycle": "frm.doc.appraisal_cycle"
+},
+"server_query": "hrms.hr.doctype.appraisal.appraisal.get_kras_for_employee",
+"source": "hrms/hrms/hr/doctype/goal/goal.js"
+},
+{
+"field": "appraisal_cycle",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/goal/goal.js"
+}
+],
+"Gratuity": [
+{
+"field": "salary_component",
+"child_table": null,
+"filters": {
+"type": "Earning"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/gratuity/gratuity.js"
+},
+{
+"field": "expense_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/gratuity/gratuity.js"
+},
+{
+"field": "payable_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/gratuity/gratuity.js"
+}
+],
+"HR Settings": [
+{
+"field": "sender",
+"child_table": null,
+"filters": {
+"enable_outgoing": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/hr_settings/hr_settings.js"
+},
+{
+"field": "hiring_sender",
+"child_table": null,
+"filters": {
+"enable_outgoing": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/hr_settings/hr_settings.js"
+}
+],
+"Import Supplier Invoice": [
+{
+"field": "tax_account",
+"child_table": null,
+"filters": {
+"account_type": "Tax",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/regional/doctype/import_supplier_invoice/import_supplier_invoice.js"
+},
+{
+"field": "default_buying_price_list",
+"child_table": null,
+"filters": {
+"currency": "frappe.get_doc(\":Company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/regional/doctype/import_supplier_invoice/import_supplier_invoice.js"
+}
+],
+"Installation Note": [
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/installation_note/installation_note.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/installation_note/installation_note.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/installation_note/installation_note.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/installation_note/installation_note.js"
+}
+],
+"Interview": [
+{
+"field": "job_applicant",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/interview/interview.js"
+}
+],
+"Interview Feedback": [
+{
+"field": "interview",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/interview_feedback/interview_feedback.js"
+},
+{
+"field": "interviewer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/interview_feedback/interview_feedback.js"
+}
+],
+"Inventory Dimension": [
+{
+"field": "reference_document",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/inventory_dimension/inventory_dimension.js"
+},
+{
+"field": "document_type",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.stock.doctype.inventory_dimension.inventory_dimension.get_inventory_documents",
+"source": "erpnext/erpnext/stock/doctype/inventory_dimension/inventory_dimension.js"
+}
+],
+"Invoice Discounting": [
+{
+"field": "sales_invoice",
+"child_table": "invoices",
+"filters": {
+"docstatus": "1",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/invoice_discounting/invoice_discounting.js"
+}
+],
+"Item": [
+{
+"field": "item_group",
+"child_table": null,
+"filters": {
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "allowed_companies",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.stock.doctype.company_restriction.company_restriction.company_query",
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "default_provisional_account",
+"child_table": "item_defaults",
+"filters": {
+"company": "row.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "default_inventory_account",
+"child_table": "item_defaults",
+"filters": {
+"is_group": "0",
+"company": "row.company",
+"account_type": "Stock"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "expense_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "income_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "default_inventory_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "default_discount_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "buying_cost_center",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "selling_cost_center",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "tax_type",
+"child_table": "taxes",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "deferred_revenue_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "deferred_expense_account",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "default_warehouse",
+"child_table": "item_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "warehouse_group",
+"child_table": "reorder_levels",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "warehouse",
+"child_table": "reorder_levels",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+},
+{
+"field": "price_list",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item/item.js"
+}
+],
+"Item Alternative": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item_alternative/item_alternative.js"
+}
+],
+"Item Group": [
+{
+"field": "default_warehouse",
+"child_table": "item_group_defaults",
+"filters": {
+"company": "row.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "default_inventory_account",
+"child_table": "item_group_defaults",
+"filters": {
+"company": "row.company",
+"account_type": "Stock",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "default_provisional_account",
+"child_table": "item_group_defaults",
+"filters": {
+"company": "row.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "parent_item_group",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "default_discount_account",
+"child_table": "item_group_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "expense_account",
+"child_table": "item_group_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "income_account",
+"child_table": "item_group_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "buying_cost_center",
+"child_table": "item_group_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+},
+{
+"field": "selling_cost_center",
+"child_table": "item_group_defaults",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group.js"
+}
+],
+"Item Price": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {
+"has_variants": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item_price/item_price.js"
+},
+{
+"field": "price_list",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item_price/item_price.js"
+},
+{
+"field": "batch_no",
+"child_table": null,
+"filters": {
+"item": "frm.doc.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/item_price/item_price.js"
+}
+],
+"Item Standard Cost": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.stock.doctype.item_standard_cost.item_standard_cost.get_standard_cost_items",
+"source": "erpnext/erpnext/stock/doctype/item_standard_cost/item_standard_cost.js"
+}
+],
+"Item Tax Template": [
+{
+"field": "tax_type",
+"child_table": "taxes",
+"filters": {
+"company": [
+"=",
+"frm.doc.company"
+],
+"is_group": [
+"=",
+"0"
+],
+"account_type": [
+"in",
+"[\n\t\t\t\t\t\t\t\"Tax\",\n\t\t\t\t\t\t\t\"Chargeable\",\n\t\t\t\t\t\t\t\"Income Account\",\n\t\t\t\t\t\t\t\"Expense Account\",\n\t\t\t\t\t\t\t\"Expenses Included In Valuation\","
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/item_tax_template/item_tax_template.js"
+},
+{
+"field": "tax_type",
+"child_table": "taxes",
+"filters": {
+"company": [
+"=",
+"frm.doc.company"
+],
+"is_group": [
+"=",
+"0"
+],
+"account_type": [
+"in",
+"[\n\t\t\t\t\t\t\t\"Tax\",\n\t\t\t\t\t\t\t\"Chargeable\",\n\t\t\t\t\t\t\t\"Income Account\",\n\t\t\t\t\t\t\t\"Expense Account\",\n\t\t\t\t\t\t\t\"Expenses Included In Valuation\","
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/item_tax_template/item_tax_template.js"
+}
+],
+"Job Applicant": [
+{
+"field": "job_title",
+"child_table": null,
+"filters": {
+"status": "Open"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/job_applicant/job_applicant.js"
+}
+],
+"Job Card": [
+{
+"field": "operation",
+"child_table": null,
+"filters": {
+"work_order": "frm.doc.work_order"
+},
+"server_query": "erpnext.manufacturing.doctype.job_card.job_card.get_operations",
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": null,
+"filters": {
+"item_code": "frm.doc.production_item",
+"voucher_type": "frm.doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "item_code",
+"child_table": "secondary_items",
+"filters": {
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "operation",
+"child_table": "time_logs",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "work_order",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "source_warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"status": "Active"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+},
+{
+"field": "quality_inspection",
+"child_table": null,
+"filters": {
+"item_code": "doc.production_item",
+"reference_name": "doc.name"
+},
+"server_query": "erpnext.stock.doctype.quality_inspection.quality_inspection.quality_inspection_query",
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card.js"
+}
+],
+"Job Offer": [
+{
+"field": "select_terms",
+"child_table": null,
+"filters": {
+"hr": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/job_offer/job_offer.js"
+}
+],
+"Job Opening": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/job_opening/job_opening.js"
+}
+],
+"Journal Entry": [
+{
+"field": "periodic_entry_difference_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+},
+{
+"field": "stock_asset_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"account_type": "Stock",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+},
+{
+"field": "project",
+"child_table": "accounts",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+},
+{
+"field": "party_type",
+"child_table": "accounts",
+"filters": {
+"account": "frappe.get_doc(cdt"
+},
+"server_query": "erpnext.setup.doctype.party_type.party_type.get_party_type",
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+},
+{
+"field": "reference_name",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry.js"
+}
+],
+"Journal Entry Template": [
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/journal_entry_template/journal_entry_template.js"
+},
+{
+"field": "project",
+"child_table": "accounts",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/accounts/doctype/journal_entry_template/journal_entry_template.js"
+},
+{
+"field": "party_type",
+"child_table": "accounts",
+"filters": {
+"account": "row.account"
+},
+"server_query": "erpnext.setup.doctype.party_type.party_type.get_party_type",
+"source": "erpnext/erpnext/accounts/doctype/journal_entry_template/journal_entry_template.js"
+}
+],
+"Landed Cost Voucher": [
+{
+"field": "receipt_document",
+"child_table": "purchase_receipts",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.js"
+},
+{
+"field": "vendor_invoice",
+"child_table": "vendor_invoices",
+"filters": {
+"company": "doc.company"
+},
+"server_query": "erpnext.stock.doctype.landed_cost_voucher.landed_cost_voucher.get_vendor_invoices",
+"source": "erpnext/erpnext/stock/doctype/landed_cost_voucher/landed_cost_voucher.js"
+}
+],
+"Lead": [
+{
+"field": "lead_owner",
+"child_table": null,
+"filters": {},
+"server_query": "frappe.core.doctype.user.user.user_query",
+"source": "erpnext/erpnext/crm/doctype/lead/lead.js"
+}
+],
+"Leave Adjustment": [
+{
+"field": "leave_type",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee"
+},
+"server_query": "hrms.hr.doctype.leave_adjustment.leave_adjustment.get_allocated_leave_types",
+"source": "hrms/hrms/hr/doctype/leave_adjustment/leave_adjustment.js"
+}
+],
+"Leave Allocation": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "hrms/hrms/hr/doctype/leave_allocation/leave_allocation.js"
+},
+{
+"field": "leave_type",
+"child_table": null,
+"filters": {
+"is_lwp": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_allocation/leave_allocation.js"
+}
+],
+"Leave Application": [
+{
+"field": "leave_approver",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee",
+"doctype": "frm.doc.doctype"
+},
+"server_query": "hrms.hr.doctype.department_approver.department_approver.get_approvers",
+"source": "hrms/hrms/hr/doctype/leave_application/leave_application.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_application/leave_application.js"
+},
+{
+"field": "leave_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_application/leave_application.js"
+}
+],
+"Leave Control Panel": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_control_panel/leave_control_panel.js"
+},
+{
+"field": "leave_policy",
+"child_table": null,
+"filters": {
+"docstatus": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_control_panel/leave_control_panel.js"
+},
+{
+"field": "leave_period",
+"child_table": null,
+"filters": {
+"is_active": "1",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_control_panel/leave_control_panel.js"
+}
+],
+"Leave Encashment": [
+{
+"field": "leave_type",
+"child_table": null,
+"filters": {
+"allow_encashment": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_encashment/leave_encashment.js"
+},
+{
+"field": "leave_period",
+"child_table": null,
+"filters": {
+"is_active": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_encashment/leave_encashment.js"
+},
+{
+"field": "payable_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"account_type": "Payable"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_encashment/leave_encashment.js"
+},
+{
+"field": "expense_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"root_type": "Expense",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_encashment/leave_encashment.js"
+}
+],
+"Leave Period": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_period/leave_period.js"
+}
+],
+"Leave Policy Assignment": [
+{
+"field": "leave_policy",
+"child_table": null,
+"filters": {
+"docstatus": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.js"
+},
+{
+"field": "leave_period",
+"child_table": null,
+"filters": {
+"is_active": "1",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment.js"
+}
+],
+"Ledger Merge": [
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"root_type": "doc.root_type",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/ledger_merge/ledger_merge.js"
+},
+{
+"field": "account",
+"child_table": "merge_accounts",
+"filters": {
+"is_group": "doc.is_group",
+"root_type": "doc.root_type",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/ledger_merge/ledger_merge.js"
+}
+],
+"Location": [
+{
+"field": "parent_location",
+"child_table": null,
+"filters": {
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/assets/doctype/location/location.js"
+}
+],
+"Log Settings": [
+{
+"field": "ref_doctype",
+"child_table": "logs_to_clear",
+"filters": {},
+"server_query": "frappe.core.doctype.log_settings.log_settings.get_log_doctypes",
+"source": "frappe/frappe/core/doctype/log_settings/log_settings.js"
+}
+],
+"Loyalty Program": [
+{
+"field": "expense_account",
+"child_table": null,
+"filters": {
+"root_type": "Expense",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/loyalty_program/loyalty_program.js"
+}
+],
+"Maintenance Schedule": [
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_schedule/maintenance_schedule.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_schedule/maintenance_schedule.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_schedule/maintenance_schedule.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "items",
+"filters": {
+"item_code": "item.item_code",
+"voucher_type": "Maintenance Schedule",
+"type_of_transaction": "Maintenance",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_schedule/maintenance_schedule.js"
+}
+],
+"Maintenance Visit": [
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_visit/maintenance_visit.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_visit/maintenance_visit.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_visit/maintenance_visit.js"
+},
+{
+"field": "serial_no",
+"child_table": "purposes",
+"filters": {
+"item_code": "row.item_code",
+"schedule": "doc.maintenance_type === \"Scheduled\" ? doc.maintenance_schedule : undefined"
+},
+"server_query": "erpnext.maintenance.doctype.maintenance_schedule.maintenance_schedule.get_serial_no_query",
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_visit/maintenance_visit.js"
+}
+],
+"Master Production Schedule": [
+{
+"field": "parent_warehouse",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.js"
+},
+{
+"field": "sales_forecast",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/master_production_schedule/master_production_schedule.js"
+}
+],
+"Material Request": [
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "from_warehouse",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "bom_no",
+"child_table": "items",
+"filters": {
+"item": "row.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "buying_price_list",
+"child_table": null,
+"filters": {
+"buying": "1",
+"enabled": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "set_warehouse",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "set_from_warehouse",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request.js"
+}
+],
+"Mode of Payment": [
+{
+"field": "default_account",
+"child_table": "accounts",
+"filters": {
+"account_type": [
+"in",
+"[\"Bank\", \"Cash\", \"Receivable"
+],
+"is_group": [
+"=",
+"0"
+],
+"company": [
+"=",
+"d.company"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/mode_of_payment/mode_of_payment.js"
+}
+],
+"Notification": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/email/doctype/notification/notification.js"
+},
+{
+"field": "print_format",
+"child_table": null,
+"filters": {
+"doc_type": "frm.doc.document_type"
+},
+"server_query": null,
+"source": "frappe/frappe/email/doctype/notification/notification.js"
+},
+{
+"field": "email_template",
+"child_table": null,
+"filters": {
+"reference_doctype": "frm.doc.document_type"
+},
+"server_query": "frappe.email.doctype.email_template.email_template.get_email_templates",
+"source": "frappe/frappe/email/doctype/notification/notification.js"
+},
+{
+"field": "sender",
+"child_table": null,
+"filters": {
+"enable_outgoing": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/email/doctype/notification/notification.js"
+}
+],
+"Notification Settings": [
+{
+"field": "subscribed_documents",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/notification_settings/notification_settings.js"
+}
+],
+"Number Card": [
+{
+"field": "report_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/number_card/number_card.js"
+},
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"issingle": "false"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/number_card/number_card.js"
+},
+{
+"field": "parent_document_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/number_card/number_card.js"
+}
+],
+"Onboarding Step": [
+{
+"field": "form_tour",
+"child_table": null,
+"filters": {
+"reference_doctype": "frm.doc.reference_document"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/onboarding_step/onboarding_step.js"
+}
+],
+"Opening Invoice Creation Tool": [
+{
+"field": "party_type",
+"child_table": "invoices",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/opening_invoice_creation_tool/opening_invoice_creation_tool.js"
+}
+],
+"Operation": [
+{
+"field": "operation",
+"child_table": "sub_operations",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/operation/operation.js"
+}
+],
+"Opportunity": [
+{
+"field": "opportunity_from",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"is_sales_item": "1"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "uom",
+"child_table": "items",
+"filters": {
+"item_code": "row.item_code"
+},
+"server_query": "erpnext.controllers.queries.get_item_uom_query",
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {
+"company": "me.frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity.js"
+}
+],
+"POS Closing Entry": [
+{
+"field": "pos_opening_entry",
+"child_table": null,
+"filters": {
+"status": "Open",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_closing_entry/pos_closing_entry.js"
+}
+],
+"POS Invoice": [
+{
+"field": "set_warehouse",
+"child_table": null,
+"filters": {
+"company": "doc.company ? doc.company : "
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_invoice/pos_invoice.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.accounts.doctype.pos_invoice.pos_invoice.item_query",
+"source": "erpnext/erpnext/accounts/doctype/pos_invoice/pos_invoice.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_invoice/pos_invoice.js"
+}
+],
+"POS Invoice Merge Log": [
+{
+"field": "pos_invoice",
+"child_table": "pos_invoices",
+"filters": {
+"docstatus": "1",
+"customer": "doc.customer",
+"consolidated_invoice": ""
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_invoice_merge_log/pos_invoice_merge_log.js"
+}
+],
+"POS Opening Entry": [
+{
+"field": "user",
+"child_table": null,
+"filters": {
+"parent": "doc.pos_profile"
+},
+"server_query": "erpnext.accounts.doctype.pos_closing_entry.pos_closing_entry.get_cashiers",
+"source": "erpnext/erpnext/accounts/doctype/pos_opening_entry/pos_opening_entry.js"
+}
+],
+"POS Profile": [
+{
+"field": "selling_price_list",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "tc_name",
+"child_table": null,
+"filters": {
+"selling": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "print_format",
+"child_table": null,
+"filters": {
+"doc_type": [
+"=",
+"POS Invoice"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "account_for_change_amount",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "taxes_and_charges",
+"child_table": null,
+"filters": {
+"company": [
+"=",
+"frm.doc.company"
+],
+"docstatus": [
+"!=",
+"2"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "company_address",
+"child_table": null,
+"filters": {
+"link_doctype": "Company",
+"link_name": "doc.company"
+},
+"server_query": "frappe.contacts.doctype.address.address.address_query",
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "income_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company",
+"account_type": "Income Account"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "expense_account",
+"child_table": null,
+"filters": {
+"report_type": "Profit and Loss",
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "select_print_heading",
+"child_table": null,
+"filters": {
+"docstatus": [
+"!=",
+"2"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "write_off_account",
+"child_table": null,
+"filters": {
+"report_type": "Profit and Loss",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+},
+{
+"field": "write_off_cost_center",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pos_profile/pos_profile.js"
+}
+],
+"Packing Slip": [
+{
+"field": "delivery_note",
+"child_table": null,
+"filters": {
+"docstatus": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/packing_slip/packing_slip.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"delivery_note": "doc.delivery_note"
+},
+"server_query": "erpnext.stock.doctype.packing_slip.packing_slip.item_details",
+"source": "erpnext/erpnext/stock/doctype/packing_slip/packing_slip.js"
+}
+],
+"Party Link": [
+{
+"field": "primary_role",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/party_link/party_link.js"
+},
+{
+"field": "secondary_role",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/party_link/party_link.js"
+}
+],
+"Party Specific Item": [
+{
+"field": "party",
+"child_table": null,
+"filters": {
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/party_specific_item/party_specific_item.js"
+},
+{
+"field": "party",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/party_specific_item/party_specific_item.js"
+}
+],
+"Party Type": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/party_type/party_type.js"
+}
+],
+"Payment Entry": [
+{
+"field": "project",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "paid_from",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "party_bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "0",
+"party_type": "frm.doc.party_type",
+"party": "frm.doc.party"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {
+"link_doctype": "frm.doc.party_type",
+"link_name": "frm.doc.party"
+},
+"server_query": "frappe.contacts.doctype.contact.contact.contact_query",
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "paid_to",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "account",
+"child_table": "deductions",
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "advance_tax_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "reference_doctype",
+"child_table": "references",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "payment_term",
+"child_table": "references",
+"filters": {
+"reference": "child.reference_name"
+},
+"server_query": "erpnext.controllers.queries.get_payment_terms_for_references",
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "reference_name",
+"child_table": "references",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "payment_request",
+"child_table": "references",
+"filters": {
+"reference_doctype": "row.reference_doctype",
+"reference_name": "row.reference_name",
+"company": "doc.company",
+"docstatus": "1"
+},
+"server_query": "erpnext.accounts.doctype.payment_request.payment_request.get_open_payment_requests_query",
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "sales_taxes_and_charges_template",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"disabled": "false"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "purchase_taxes_and_charges_template",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"disabled": "false"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+},
+{
+"field": "party",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry.js"
+}
+],
+"Payment Gateway Account": [
+{
+"field": "payment_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_gateway_account/payment_gateway_account.js"
+}
+],
+"Payment Order": [
+{
+"field": "company_bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_order/payment_order.js"
+}
+],
+"Payment Reconciliation": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "receivable_payable_account",
+"child_table": null,
+"filters": {
+"company": "this.frm.doc.company",
+"is_group": "0",
+"account_type": "frappe.boot.party_account_types[this.frm.doc.party_type]",
+"root_type": "this.frm.doc.party_type == \"Customer\" ? \"Asset\" : \"Liability"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "default_advance_account",
+"child_table": null,
+"filters": {
+"company": "this.frm.doc.company",
+"is_group": "0",
+"account_type": "this.frm.doc.party_type == \"Customer\" ? \"Receivable\" : \"Payable",
+"root_type": "this.frm.doc.party_type == \"Customer\" ? \"Liability\" : \"Asset"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "bank_cash_account",
+"child_table": null,
+"filters": {
+"company": [
+"=",
+"this.frm.doc.company"
+],
+"is_group": [
+"=",
+"0"
+],
+"account_type": [
+"in",
+"[\"Bank\", \"Cash"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "this.frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "cost_center",
+"child_table": "payments",
+"filters": {
+"company": "this.frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+},
+{
+"field": "cost_center",
+"child_table": "allocation",
+"filters": {
+"company": "this.frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_reconciliation/payment_reconciliation.js"
+}
+],
+"Payment Request": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.setup.doctype.party_type.party_type.get_party_type",
+"source": "erpnext/erpnext/accounts/doctype/payment_request/payment_request.js"
+},
+{
+"field": "payment_gateway_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/payment_request/payment_request.js"
+}
+],
+"Payroll Entry": [
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/payroll_entry/payroll_entry.js"
+},
+{
+"field": "payroll_payable_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"root_type": "Liability",
+"is_group": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/payroll_entry/payroll_entry.js"
+},
+{
+"field": "payment_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/payroll_entry/payroll_entry.js"
+},
+{
+"field": "employee",
+"child_table": "employees",
+"filters": {},
+"server_query": "hrms.payroll.doctype.payroll_entry.payroll_entry.employee_query",
+"source": "hrms/hrms/payroll/doctype/payroll_entry/payroll_entry.js"
+}
+],
+"Payroll Settings": [
+{
+"field": "sender",
+"child_table": null,
+"filters": {
+"enable_outgoing": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/payroll_settings/payroll_settings.js"
+}
+],
+"Period Closing Voucher": [
+{
+"field": "closing_account_head",
+"child_table": null,
+"filters": {
+"company": [
+"=",
+"frm.doc.company"
+],
+"is_group": [
+"=",
+"0"
+],
+"freeze_account": [
+"=",
+"No"
+],
+"root_type": [
+"in",
+"[\"Liability\", \"Equity"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/period_closing_voucher/period_closing_voucher.js"
+}
+],
+"Pick List": [
+{
+"field": "work_order",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.stock.doctype.pick_list.pick_list.get_pending_work_orders",
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list.js"
+},
+{
+"field": "material_request",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list.js"
+},
+{
+"field": "item_code",
+"child_table": "locations",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list.js"
+},
+{
+"field": "batch_no",
+"child_table": "locations",
+"filters": {
+"item_code": "row.item_code",
+"warehouse": "row.warehouse"
+},
+"server_query": "erpnext.controllers.queries.get_batch_no",
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "locations",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list.js"
+}
+],
+"Plant Floor": [
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/plant_floor/plant_floor.js"
+}
+],
+"Portal Settings": [
+{
+"field": "default_role",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/website/doctype/portal_settings/portal_settings.js"
+}
+],
+"Pricing Rule": [
+{
+"field": "for_price_list",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/pricing_rule/pricing_rule.js"
+}
+],
+"Process Deferred Accounting": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_deferred_accounting/process_deferred_accounting.js"
+},
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"root_type": "frm.doc.type === \"Income\" ? \"Liability\" : \"Asset",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_deferred_accounting/process_deferred_accounting.js"
+}
+],
+"Process Payment Reconciliation": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js"
+},
+{
+"field": "receivable_payable_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0",
+"account_type": "frappe.boot.party_account_types[doc.party_type]"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js"
+},
+{
+"field": "default_advance_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0",
+"account_type": "doc.party_type == \"Customer\" ? \"Receivable\" : \"Payable",
+"root_type": "doc.party_type == \"Customer\" ? \"Liability\" : \"Asset"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js"
+},
+{
+"field": "bank_cash_account",
+"child_table": null,
+"filters": {
+"company": [
+"=",
+"doc.company"
+],
+"is_group": [
+"=",
+"0"
+],
+"account_type": [
+"in",
+"[\"Bank\", \"Cash"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation.js"
+}
+],
+"Process Statement Of Accounts": [
+{
+"field": "currency",
+"child_table": null,
+"filters": {
+"enabled": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "print_format",
+"child_table": null,
+"filters": {
+"print_format_for": "Report",
+"report": "frm.doc.report",
+"disabled": "0",
+"print_format_type": "Jinja"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "account",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+},
+{
+"field": "print_format",
+"child_table": null,
+"filters": {
+"print_format_for": "Report",
+"report": "frm.doc.report",
+"disabled": "0",
+"print_format_type": "Jinja"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/process_statement_of_accounts/process_statement_of_accounts.js"
+}
+],
+"Product Bundle": [
+{
+"field": "new_item_code",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.selling.doctype.product_bundle.product_bundle.get_new_item_code",
+"source": "erpnext/erpnext/selling/doctype/product_bundle/product_bundle.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/selling/doctype/product_bundle/product_bundle.js"
+}
+],
+"Production Plan": [
+{
+"field": "sales_order",
+"child_table": "sales_orders",
+"filters": {
+"company": "frm.doc.company",
+"item_code": "frm.doc.item_code"
+},
+"server_query": "erpnext.manufacturing.doctype.production_plan.production_plan.sales_order_query",
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "for_warehouse",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "raw_material_group_warehouse",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "sub_assembly_warehouse",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "material_request",
+"child_table": "material_requests",
+"filters": {
+"material_request_type": "Manufacture",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "item_code",
+"child_table": "po_items",
+"filters": {
+"is_stock_item": "1"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "bom_no",
+"child_table": "po_items",
+"filters": {
+"item": "d.item_code",
+"docstatus": "1"
+},
+"server_query": "erpnext.controllers.queries.bom",
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "warehouse",
+"child_table": "mr_items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+},
+{
+"field": "warehouse",
+"child_table": "po_items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan.js"
+}
+],
+"Project": [
+{
+"field": "user",
+"child_table": "users",
+"filters": {},
+"server_query": "erpnext.projects.doctype.project.project.get_users_for_project",
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+},
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+},
+{
+"field": "sales_order",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+},
+{
+"field": "project_template",
+"child_table": null,
+"filters": {
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project/project.js"
+}
+],
+"Project Template": [
+{
+"field": "task",
+"child_table": "tasks",
+"filters": {
+"is_template": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/project_template/project_template.js"
+}
+],
+"Promotional Scheme": [
+{
+"field": "for_price_list",
+"child_table": "price_discount_slabs",
+"filters": {
+"selling": "doc.selling",
+"buying": "doc.buying",
+"currency": "doc.currency"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/promotional_scheme/promotional_scheme.js"
+}
+],
+"Purchase Invoice": [
+{
+"field": "unrealized_profit_loss_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0",
+"root_type": "Liability"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"disabled": "0"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "additional_discount_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0",
+"report_type": "Profit and Loss"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "write_off_account",
+"child_table": null,
+"filters": {
+"report_type": "Profit and Loss",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "write_off_cost_center",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "cash_bank_account",
+"child_table": null,
+"filters": {
+"account_type": [
+"in",
+"[\"Cash\", \"Bank"
+],
+"is_group": [
+"=",
+"0"
+],
+"company": [
+"=",
+"doc.company"
+],
+"report_type": [
+"=",
+"Balance Sheet"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "credit_to",
+"child_table": null,
+"filters": {
+"account_type": "Payable",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "select_print_heading",
+"child_table": null,
+"filters": {
+"docstatus": [
+"!=",
+"2"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "wip_composite_asset",
+"child_table": "items",
+"filters": {
+"asset_type": "Composite Asset",
+"docstatus": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "cost_center",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "deferred_expense_account",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+},
+{
+"field": "discount_account",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice.js"
+}
+],
+"Purchase Order": [
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/buying/doctype/purchase_order/purchase_order.js"
+},
+{
+"field": "fg_item",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.subcontracted_item_query",
+"source": "erpnext/erpnext/buying/doctype/purchase_order/purchase_order.js"
+}
+],
+"Purchase Receipt": [
+{
+"field": "wip_composite_asset",
+"child_table": "items",
+"filters": {
+"asset_type": "Composite Asset",
+"docstatus": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt.js"
+},
+{
+"field": "taxes_and_charges",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt.js"
+},
+{
+"field": "select_print_heading",
+"child_table": null,
+"filters": {
+"docstatus": [
+"!=",
+"2"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt.js"
+},
+{
+"field": "bom",
+"child_table": "items",
+"filters": {
+"item": [
+"=",
+"d.item_code"
+],
+"is_active": [
+"=",
+"1"
+],
+"docstatus": [
+"=",
+"1"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"company": "this.frm.doc.company",
+"disabled": "0"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt.js"
+}
+],
+"Putaway Rule": [
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/putaway_rule/putaway_rule.js"
+}
+],
+"Quality Inspection": [
+{
+"field": "reference_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/quality_inspection/quality_inspection.js"
+},
+{
+"field": "batch_no",
+"child_table": null,
+"filters": {
+"item": "frm.doc.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/quality_inspection/quality_inspection.js"
+},
+{
+"field": "item_serial_no",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/quality_inspection/quality_inspection.js"
+},
+{
+"field": "item_code",
+"child_table": null,
+"filters": {
+"reference_doctype": "doc.reference_type",
+"reference_name": "doc.reference_name",
+"inspection_type": "doc.inspection_type"
+},
+"server_query": "erpnext.stock.doctype.quality_inspection.quality_inspection.item_query",
+"source": "erpnext/erpnext/stock/doctype/quality_inspection/quality_inspection.js"
+}
+],
+"Quality Procedure": [
+{
+"field": "procedure",
+"child_table": "processes",
+"filters": {
+"name": "frm.parent_quality_procedure == null"
+},
+"server_query": null,
+"source": "erpnext/erpnext/quality_management/doctype/quality_procedure/quality_procedure.js"
+},
+{
+"field": "parent_quality_procedure",
+"child_table": null,
+"filters": {
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/quality_management/doctype/quality_procedure/quality_procedure.js"
+}
+],
+"Quick Stock Balance": [
+{
+"field": "item",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/quick_stock_balance/quick_stock_balance.js"
+}
+],
+"Quotation": [
+{
+"field": "quotation_to",
+"child_table": null,
+"filters": {
+"Lead": [
+"Prospect",
+"CRM Deal"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "packed_items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "shipping_address_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+},
+{
+"field": "party_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation.js"
+}
+],
+"Report": [
+{
+"field": "ref_doctype",
+"child_table": null,
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/report/report.js"
+},
+{
+"field": "default_print_format",
+"child_table": null,
+"filters": {
+"print_format_for": "Report",
+"report": "frm.doc.name",
+"disabled": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/report/report.js"
+},
+{
+"field": "default_letter_head",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/report/report.js"
+}
+],
+"Repost Accounting Ledger": [
+{
+"field": "voucher_type",
+"child_table": "vouchers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/repost_accounting_ledger/repost_accounting_ledger.js"
+},
+{
+"field": "voucher_no",
+"child_table": "vouchers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/repost_accounting_ledger/repost_accounting_ledger.js"
+}
+],
+"Repost Item Valuation": [
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.js"
+},
+{
+"field": "voucher_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.js"
+},
+{
+"field": "voucher_no",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/repost_item_valuation/repost_item_valuation.js"
+}
+],
+"Repost Payment Ledger": [
+{
+"field": "voucher_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/repost_payment_ledger/repost_payment_ledger.js"
+},
+{
+"field": "voucher_type",
+"child_table": "repost_vouchers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/repost_payment_ledger/repost_payment_ledger.js"
+},
+{
+"field": "voucher_no",
+"child_table": "repost_vouchers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/repost_payment_ledger/repost_payment_ledger.js"
+}
+],
+"Request for Quotation": [
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/request_for_quotation/request_for_quotation.js"
+},
+{
+"field": "supplier",
+"child_table": "suppliers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/request_for_quotation/request_for_quotation.js"
+},
+{
+"field": "contact",
+"child_table": "suppliers",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/request_for_quotation/request_for_quotation.js"
+}
+],
+"Retention Bonus": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/retention_bonus/retention_bonus.js"
+},
+{
+"field": "salary_component",
+"child_table": null,
+"filters": {
+"type": "Earning"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/retention_bonus/retention_bonus.js"
+}
+],
+"Role Permission for Page and Report": [
+{
+"field": "page",
+"child_table": null,
+"filters": {
+"system_page": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/role_permission_for_page_and_report/role_permission_for_page_and_report.js"
+}
+],
+"Routing": [
+{
+"field": "bom_no",
+"child_table": "operations",
+"filters": {
+"is_phantom_bom": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/routing/routing.js"
+}
+],
+"Salary Component": [
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"is_group": "0",
+"company": "d.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_component/salary_component.js"
+},
+{
+"field": "liability_account",
+"child_table": "accounts",
+"filters": {
+"is_group": "0",
+"company": "d.company",
+"root_type": "Liability"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_component/salary_component.js"
+},
+{
+"field": "earning_component_group",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"is_flexible_benefit": "1"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_component/salary_component.js"
+}
+],
+"Salary Slip": [
+{
+"field": "salary_component",
+"child_table": "earnings",
+"filters": {
+"type": "earning"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_slip/salary_slip.js"
+},
+{
+"field": "salary_component",
+"child_table": "deductions",
+"filters": {
+"type": "deduction"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_slip/salary_slip.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "hrms/hrms/payroll/doctype/salary_slip/salary_slip.js"
+},
+{
+"field": "time_sheet",
+"child_table": "timesheets",
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_slip/salary_slip.js"
+}
+],
+"Salary Structure": [
+{
+"field": "payment_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_structure/salary_structure.js"
+},
+{
+"field": "salary_component",
+"child_table": "earnings",
+"filters": {
+"component_type": "earning",
+"company": "frm.doc.company"
+},
+"server_query": "hrms.payroll.doctype.salary_structure.salary_structure.get_salary_component",
+"source": "hrms/hrms/payroll/doctype/salary_structure/salary_structure.js"
+},
+{
+"field": "salary_component",
+"child_table": "deductions",
+"filters": {
+"component_type": "deduction",
+"company": "frm.doc.company"
+},
+"server_query": "hrms.payroll.doctype.salary_structure.salary_structure.get_salary_component",
+"source": "hrms/hrms/payroll/doctype/salary_structure/salary_structure.js"
+},
+{
+"field": "salary_component",
+"child_table": "employer_contributions",
+"filters": {
+"component_type": "employer contribution",
+"company": "frm.doc.company"
+},
+"server_query": "hrms.payroll.doctype.salary_structure.salary_structure.get_salary_component",
+"source": "hrms/hrms/payroll/doctype/salary_structure/salary_structure.js"
+}
+],
+"Salary Structure Assignment": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "hrms/hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.js"
+},
+{
+"field": "salary_structure",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1",
+"is_active": "Yes"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.js"
+},
+{
+"field": "income_tax_slab",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"docstatus": "1",
+"disabled": "0",
+"currency": "frm.doc.currency"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.js"
+},
+{
+"field": "payroll_payable_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"root_type": "Liability",
+"is_group": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.js"
+},
+{
+"field": "cost_center",
+"child_table": "payroll_cost_centers",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "hrms/hrms/payroll/doctype/salary_structure_assignment/salary_structure_assignment.js"
+}
+],
+"Sales Forecast": [
+{
+"field": "parent_warehouse",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/sales_forecast/sales_forecast.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"disabled": "0",
+"is_stock_item": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/sales_forecast/sales_forecast.js"
+}
+],
+"Sales Invoice": [
+{
+"field": "cash_bank_account",
+"child_table": null,
+"filters": {
+"account_type": [
+"in",
+"[\"Cash\", \"Bank"
+],
+"root_type": [
+"=",
+"Asset"
+],
+"is_group": [
+"=",
+"0"
+],
+"company": [
+"=",
+"doc.company"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "write_off_account",
+"child_table": null,
+"filters": {
+"report_type": "Profit and Loss",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "write_off_cost_center",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "cost_center",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "debit_to",
+"child_table": null,
+"filters": {
+"account_type": "Receivable",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "asset",
+"child_table": "items",
+"filters": {
+"item_code": [
+"=",
+"row.item_code"
+],
+"docstatus": [
+"=",
+"1"
+],
+"status": [
+"in",
+"[\"Submitted\", \"Partially Depreciated\", \"Fully Depreciated"
+],
+"company": [
+"=",
+"doc.company"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "account_for_change_amount",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "unrealized_profit_loss_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0",
+"root_type": "Liability"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "adjustment_against",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"customer": "doc.customer",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "additional_discount_account",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"is_group": "0",
+"report_type": "Profit and Loss"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "income_account",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"disabled": "0"
+},
+"server_query": "erpnext.controllers.queries.get_income_account",
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "time_sheet",
+"child_table": "timesheets",
+"filters": {
+"project": "doc.project"
+},
+"server_query": "erpnext.projects.doctype.timesheet.timesheet.get_timesheet",
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "discount_account",
+"child_table": "items",
+"filters": {
+"report_type": "Profit and Loss",
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "deferred_revenue_account",
+"child_table": "items",
+"filters": {
+"root_type": "Liability",
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "pos_profile",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": "erpnext.accounts.doctype.pos_profile.pos_profile.pos_profile_query",
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "loyalty_redemption_account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "loyalty_redemption_cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+},
+{
+"field": "sales_person",
+"child_table": "sales_team",
+"filters": {
+"is_group": "0",
+"enabled": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice.js"
+}
+],
+"Sales Order": [
+{
+"field": "bom_no",
+"child_table": "items",
+"filters": {
+"item": "row.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/sales_order/sales_order.js"
+},
+{
+"field": "sales_person",
+"child_table": "sales_team",
+"filters": {
+"is_group": "0",
+"enabled": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/sales_order/sales_order.js"
+},
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": [
+"in",
+"[\"\", cstr(frm.doc.company)"
+],
+"is_group": [
+"=",
+"0"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/selling/doctype/sales_order/sales_order.js"
+}
+],
+"Sales Partner": [
+{
+"field": "distribution_id",
+"child_table": "targets",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/sales_partner/sales_partner.js"
+}
+],
+"Sales Person": [
+{
+"field": "parent_sales_person",
+"child_table": null,
+"filters": {
+"is_group": [
+"=",
+"1"
+],
+"name": [
+"!=",
+"doc.sales_person_name"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/sales_person/sales_person.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.employee_query",
+"source": "erpnext/erpnext/setup/doctype/sales_person/sales_person.js"
+},
+{
+"field": "distribution_id",
+"child_table": "targets",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/sales_person/sales_person.js"
+}
+],
+"Serial No": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_no/serial_no.js"
+},
+{
+"field": "work_order",
+"child_table": null,
+"filters": {
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_no/serial_no.js"
+}
+],
+"Serial and Batch Bundle": [
+{
+"field": "item_code",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.stock.doctype.serial_and_batch_bundle.serial_and_batch_bundle.item_query",
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "voucher_type",
+"child_table": null,
+"filters": {
+"istable": "0",
+"issingle": "0",
+"is_submittable": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "voucher_no",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "serial_no",
+"child_table": "entries",
+"filters": {
+"item_code": "frm.doc.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "batch_no",
+"child_table": "entries",
+"filters": {
+"item_code": "doc.item_code",
+"warehouse": "doc.warehouse"
+},
+"server_query": "erpnext.controllers.queries.get_batch_no",
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+},
+{
+"field": "warehouse",
+"child_table": "entries",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle.js"
+}
+],
+"Service Level Agreement": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {
+"issingle": [
+"=",
+"0"
+],
+"istable": [
+"=",
+"0"
+],
+"is_submittable": [
+"=",
+"0"
+],
+"name": [
+"not in",
+"invalid_doctypes"
+],
+"module": [
+"not in",
+"[\n\t\t\t\t\t\t\t\"Email\",\n\t\t\t\t\t\t\t\"Core\",\n\t\t\t\t\t\t\t\"Custom\",\n\t\t\t\t\t\t\t\"Event Streaming\",\n\t\t\t\t\t\t\t\"Social\",\n\t\t\t\t\t\t\t\"Data Migration\",\n\t\t\t\t\t\t\t\"Geo\",\n\t\t\t\t\t\t\t\"Desk\","
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/service_level_agreement/service_level_agreement.js"
+}
+],
+"Session Default Settings": [
+{
+"field": "ref_doctype",
+"child_table": "session_defaults",
+"filters": {
+"issingle": "0",
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/session_default_settings/session_default_settings.js"
+}
+],
+"Share Transfer": [
+{
+"field": "equity_or_liability_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company",
+"account_currency": "currency"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/share_transfer/share_transfer.js"
+},
+{
+"field": "asset_account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"root_type": "Asset",
+"company": "frm.doc.company",
+"account_currency": "currency"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/share_transfer/share_transfer.js"
+}
+],
+"Shift Request": [
+{
+"field": "approver",
+"child_table": null,
+"filters": {
+"employee": "frm.doc.employee",
+"doctype": "frm.doc.doctype"
+},
+"server_query": "hrms.hr.doctype.department_approver.department_approver.get_approvers",
+"source": "hrms/hrms/hr/doctype/shift_request/shift_request.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/shift_request/shift_request.js"
+}
+],
+"Shipment": [
+{
+"field": "delivery_address_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment.js"
+},
+{
+"field": "pickup_address_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment.js"
+},
+{
+"field": "delivery_contact_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment.js"
+},
+{
+"field": "pickup_contact_name",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment.js"
+},
+{
+"field": "delivery_note",
+"child_table": "shipment_delivery_note",
+"filters": {
+"customer": "customer",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment.js"
+}
+],
+"Shipping Rule": [
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/shipping_rule/shipping_rule.js"
+}
+],
+"South Africa VAT Settings": [
+{
+"field": "company",
+"child_table": null,
+"filters": {
+"country": "South Africa"
+},
+"server_query": null,
+"source": "erpnext/erpnext/regional/doctype/south_africa_vat_settings/south_africa_vat_settings.js"
+},
+{
+"field": "account",
+"child_table": "vat_accounts",
+"filters": {
+"company": "frm.doc.company",
+"account_type": "Tax",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/regional/doctype/south_africa_vat_settings/south_africa_vat_settings.js"
+}
+],
+"Staffing Plan": [
+{
+"field": "designation",
+"child_table": "staffing_details",
+"filters": {
+"name": [
+"not in",
+"designations"
+]
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/staffing_plan/staffing_plan.js"
+},
+{
+"field": "department",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/staffing_plan/staffing_plan.js"
+}
+],
+"Stock Entry": [
+{
+"field": "work_order",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.stock.doctype.stock_entry.stock_entry.get_pending_work_orders",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "outgoing_stock_entry",
+"child_table": null,
+"filters": {
+"docstatus": [
+"=",
+"1"
+],
+"per_transferred": [
+"<",
+"100"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "source_stock_entry",
+"child_table": null,
+"filters": {
+"purpose": "Manufacture",
+"docstatus": "1",
+"work_order": "frm.doc.work_order || undefined"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "source_warehouse_address",
+"child_table": null,
+"filters": {
+"warehouse": "frm.doc.from_warehouse"
+},
+"server_query": "erpnext.controllers.queries.get_warehouse_address",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "target_warehouse_address",
+"child_table": null,
+"filters": {
+"warehouse": "frm.doc.to_warehouse"
+},
+"server_query": "erpnext.controllers.queries.get_warehouse_address",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "batch_no",
+"child_table": "items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_batch_no",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "project",
+"child_table": "items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "against_fg",
+"child_table": "items",
+"filters": {
+"parent": "frm.doc.subcontracting_inward_order"
+},
+"server_query": "erpnext.controllers.subcontracting_inward_controller.get_fg_reference_names",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "quality_inspection",
+"child_table": "items",
+"filters": {
+"item_code": "d.item_code",
+"reference_name": "doc.name",
+"child_row_reference": "d.name"
+},
+"server_query": "erpnext.stock.doctype.quality_inspection.quality_inspection.quality_inspection_query",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "to_warehouse",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "t_warehouse",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "from_warehouse",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "s_warehouse",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "subcontracting_order",
+"child_table": null,
+"filters": {
+"docstatus": "1",
+"company": "me.frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "uom",
+"child_table": "items",
+"filters": {
+"item_code": "row.item_code"
+},
+"server_query": "erpnext.controllers.queries.get_item_uom_query",
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "supplier_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "stock_entry_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "bom_no",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry.js"
+}
+],
+"Stock Reconciliation": [
+{
+"field": "item_code",
+"child_table": "items",
+"filters": {
+"is_stock_item": "1",
+"company": "doc.company"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.js"
+},
+{
+"field": "batch_no",
+"child_table": "items",
+"filters": {
+"item": "item.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "items",
+"filters": {
+"item_code": "row.item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.js"
+},
+{
+"field": "expense_account",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reconciliation/stock_reconciliation.js"
+}
+],
+"Stock Reservation Entry": [
+{
+"field": "warehouse",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reservation_entry/stock_reservation_entry.js"
+},
+{
+"field": "serial_no",
+"child_table": "sb_entries",
+"filters": {
+"item_code": "doc.item_code",
+"warehouse": "row.warehouse",
+"status": "Active"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reservation_entry/stock_reservation_entry.js"
+},
+{
+"field": "batch_no",
+"child_table": "sb_entries",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/stock_reservation_entry/stock_reservation_entry.js"
+}
+],
+"Subcontracting BOM": [
+{
+"field": "finished_good",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.subcontracted_item_query",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_bom/subcontracting_bom.js"
+},
+{
+"field": "finished_good_bom",
+"child_table": null,
+"filters": {
+"finished_good": "frm.doc.finished_good"
+},
+"server_query": "erpnext.subcontracting.doctype.subcontracting_bom.subcontracting_bom.finished_good_bom_query",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_bom/subcontracting_bom.js"
+},
+{
+"field": "service_item",
+"child_table": null,
+"filters": {
+"disabled": "0",
+"is_stock_item": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_bom/subcontracting_bom.js"
+}
+],
+"Subcontracting Inward Order": [
+{
+"field": "customer_warehouse",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"is_rejected_warehouse": "0",
+"company": "frm.doc.company",
+"customer": "frm.doc.customer",
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.js"
+},
+{
+"field": "sales_order",
+"child_table": null,
+"filters": {
+"docstatus": "1",
+"is_subcontracted": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.js"
+},
+{
+"field": "delivery_warehouse",
+"child_table": "items",
+"filters": {
+"is_group": "0",
+"is_rejected_warehouse": "0",
+"company": "frm.doc.company",
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.js"
+},
+{
+"field": "bom",
+"child_table": "items",
+"filters": {
+"is_active": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.js"
+},
+{
+"field": "set_delivery_warehouse",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"is_rejected_warehouse": "0",
+"company": "frm.doc.company",
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order.js"
+}
+],
+"Subcontracting Order": [
+{
+"field": "supplier_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "purchase_order",
+"child_table": null,
+"filters": {
+"docstatus": "1",
+"is_subcontracted": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "cost_center",
+"child_table": "items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "set_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "bom",
+"child_table": "items",
+"filters": {
+"finished_good": "d.item_code",
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.subcontracting.doctype.subcontracting_bom.subcontracting_bom.finished_good_bom_query",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "set_reserve_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "supplier_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "billing_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+},
+{
+"field": "shipping_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order.js"
+}
+],
+"Subcontracting Receipt": [
+{
+"field": "set_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "supplier_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "billing_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "shipping_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "rejected_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "cost_center",
+"child_table": "items",
+"filters": {
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "supplier_warehouse",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "rejected_warehouse",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "expense_account",
+"child_table": "items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": "erpnext.controllers.queries.get_expense_account",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "batch_no",
+"child_table": "items",
+"filters": {
+"item": "row.item_code"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "rejected_serial_and_batch_bundle",
+"child_table": "items",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "batch_no",
+"child_table": "supplied_items",
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_batch_no",
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+},
+{
+"field": "serial_and_batch_bundle",
+"child_table": "supplied_items",
+"filters": {
+"item_code": "row.rm_item_code",
+"voucher_type": "doc.doctype",
+"is_cancelled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt.js"
+}
+],
+"Subscription": [
+{
+"field": "party_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/subscription/subscription.js"
+},
+{
+"field": "cost_center",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/subscription/subscription.js"
+},
+{
+"field": "sales_tax_template",
+"child_table": null,
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/subscription/subscription.js"
+}
+],
+"Supplier": [
+{
+"field": "allowed_companies",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.stock.doctype.company_restriction.company_restriction.company_query",
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "default_price_list",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Payable",
+"root_type": "Liability",
+"company": "d.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "advance_account",
+"child_table": "accounts",
+"filters": {
+"account_type": "Payable",
+"root_type": "Asset",
+"company": "d.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "default_bank_account",
+"child_table": null,
+"filters": {
+"is_company_account": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "supplier_primary_contact",
+"child_table": null,
+"filters": {
+"supplier": "doc.name",
+"type": "Contact"
+},
+"server_query": "erpnext.buying.doctype.supplier.supplier.get_supplier_primary",
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "supplier_primary_address",
+"child_table": null,
+"filters": {
+"supplier": "doc.name",
+"type": "Address"
+},
+"server_query": "erpnext.buying.doctype.supplier.supplier.get_supplier_primary",
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+},
+{
+"field": "user",
+"child_table": "portal_users",
+"filters": {
+"ignore_user_type": "true"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier.js"
+}
+],
+"Supplier Group": [
+{
+"field": "parent_supplier_group",
+"child_table": null,
+"filters": {
+"is_group": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/supplier_group/supplier_group.js"
+},
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"root_type": "Liability",
+"account_type": "Payable",
+"company": "locals[cdt][cdn].company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/supplier_group/supplier_group.js"
+},
+{
+"field": "advance_account",
+"child_table": "accounts",
+"filters": {
+"root_type": "Asset",
+"account_type": "Payable",
+"company": "locals[cdt][cdn].company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/supplier_group/supplier_group.js"
+}
+],
+"Supplier Quotation": [
+{
+"field": "warehouse",
+"child_table": "items",
+"filters": {
+"company": "doc.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/buying/doctype/supplier_quotation/supplier_quotation.js"
+}
+],
+"Task": [
+{
+"field": "project",
+"child_table": null,
+"filters": {},
+"server_query": "erpnext.controllers.queries.get_project_name",
+"source": "erpnext/erpnext/projects/doctype/task/task.js"
+},
+{
+"field": "task",
+"child_table": "depends_on",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/task/task.js"
+},
+{
+"field": "parent_task",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/task/task.js"
+}
+],
+"Tax Withholding Category": [
+{
+"field": "account",
+"child_table": "accounts",
+"filters": {
+"company": "child.company",
+"is_group": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/tax_withholding_category/tax_withholding_category.js"
+}
+],
+"Territory": [
+{
+"field": "parent_territory",
+"child_table": null,
+"filters": {
+"is_group": [
+"=",
+"1"
+],
+"name": [
+"!=",
+"doc.territory_name"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/territory/territory.js"
+},
+{
+"field": "distribution_id",
+"child_table": "targets",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/territory/territory.js"
+}
+],
+"Timesheet": [
+{
+"field": "parent_project",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet.js"
+},
+{
+"field": "project",
+"child_table": "time_logs",
+"filters": {
+"customer": "doc.customer",
+"status": "Open"
+},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet.js"
+},
+{
+"field": "employee",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet.js"
+},
+{
+"field": "task",
+"child_table": "time_logs",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet.js"
+},
+{
+"field": "project",
+"child_table": "time_logs",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet.js"
+}
+],
+"ToDo": [
+{
+"field": "reference_type",
+"child_table": null,
+"filters": {
+"issingle": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/desk/doctype/todo/todo.js"
+}
+],
+"Training Event": [
+{
+"field": "employee",
+"child_table": "employees",
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/training_event/training_event.js"
+}
+],
+"Transaction Deletion Record": [
+{
+"field": "doctype_name",
+"child_table": "doctypes_to_delete",
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/setup/doctype/transaction_deletion_record/transaction_deletion_record.js"
+}
+],
+"UAE VAT Settings": [
+{
+"field": "account",
+"child_table": "uae_vat_accounts",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/regional/doctype/uae_vat_settings/uae_vat_settings.js"
+}
+],
+"Unreconcile Payment": [
+{
+"field": "voucher_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/unreconcile_payment/unreconcile_payment.js"
+},
+{
+"field": "voucher_no",
+"child_table": null,
+"filters": {
+"company": "doc.company",
+"docstatus": "1"
+},
+"server_query": null,
+"source": "erpnext/erpnext/accounts/doctype/unreconcile_payment/unreconcile_payment.js"
+}
+],
+"User": [
+{
+"field": "default_workspace",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user/user.js"
+}
+],
+"User Permission": [
+{
+"field": "allow",
+"child_table": null,
+"filters": {
+"issingle": "0",
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user_permission/user_permission.js"
+},
+{
+"field": "applicable_for",
+"child_table": null,
+"filters": {
+"doctype": "frm.doc.allow"
+},
+"server_query": "frappe.core.doctype.user_permission.user_permission.get_applicable_for_doctype_list",
+"source": "frappe/frappe/core/doctype/user_permission/user_permission.js"
+}
+],
+"User Type": [
+{
+"field": "document_type",
+"child_table": "user_doctypes",
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user_type/user_type.js"
+},
+{
+"field": "document_type",
+"child_table": "select_doctypes",
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user_type/user_type.js"
+},
+{
+"field": "document_type",
+"child_table": "custom_select_doctypes",
+"filters": {
+"istable": "0"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user_type/user_type.js"
+},
+{
+"field": "role",
+"child_table": null,
+"filters": {
+"is_custom": "1",
+"disabled": "0",
+"desk_access": "1"
+},
+"server_query": null,
+"source": "frappe/frappe/core/doctype/user_type/user_type.js"
+},
+{
+"field": "apply_user_permission_on",
+"child_table": null,
+"filters": {},
+"server_query": "frappe.core.doctype.user_type.user_type.get_user_linked_doctypes",
+"source": "frappe/frappe/core/doctype/user_type/user_type.js"
+}
+],
+"Vehicle Log": [
+{
+"field": "employee",
+"child_table": null,
+"filters": {
+"status": "Active"
+},
+"server_query": null,
+"source": "hrms/hrms/hr/doctype/vehicle_log/vehicle_log.js"
+}
+],
+"Warehouse": [
+{
+"field": "default_in_transit_warehouse",
+"child_table": null,
+"filters": {
+"warehouse_type": "Transit",
+"is_group": "0",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/warehouse/warehouse.js"
+},
+{
+"field": "parent_warehouse",
+"child_table": null,
+"filters": {
+"is_group": "1",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/warehouse/warehouse.js"
+},
+{
+"field": "account",
+"child_table": null,
+"filters": {
+"is_group": "0",
+"account_type": "Stock",
+"company": "doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/stock/doctype/warehouse/warehouse.js"
+}
+],
+"Warranty Claim": [
+{
+"field": "contact_person",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.js"
+},
+{
+"field": "customer_address",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.js"
+},
+{
+"field": "customer",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.js"
+},
+{
+"field": "serial_no",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.js"
+},
+{
+"field": "item_code",
+"child_table": null,
+"filters": {
+"disabled": "0"
+},
+"server_query": null,
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim.js"
+}
+],
+"Web Page": [
+{
+"field": "web_template",
+"child_table": "page_blocks",
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/website/doctype/web_page/web_page.js"
+}
+],
+"Webhook": [
+{
+"field": "background_jobs_queue",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/integrations/doctype/webhook/webhook.js"
+}
+],
+"Website Settings": [
+{
+"field": "navbar_template",
+"child_table": null,
+"filters": {
+"type": "Navbar"
+},
+"server_query": null,
+"source": "frappe/frappe/website/doctype/website_settings/website_settings.js"
+},
+{
+"field": "footer_template",
+"child_table": null,
+"filters": {
+"type": "Footer"
+},
+"server_query": null,
+"source": "frappe/frappe/website/doctype/website_settings/website_settings.js"
+}
+],
+"Work Order": [
+{
+"field": "source_warehouse",
+"child_table": "required_items",
+"filters": {
+"company": "frm.doc.company"
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "sales_order",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "bom_no",
+"child_table": null,
+"filters": {
+"item": "cstr(frm.doc.production_item)"
+},
+"server_query": "erpnext.controllers.queries.bom",
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "production_item",
+"child_table": null,
+"filters": {
+"is_stock_item": "1"
+},
+"server_query": "erpnext.controllers.queries.item_query",
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "project",
+"child_table": null,
+"filters": {
+"status": [
+"not in",
+"Completed, Cancelled"
+]
+},
+"server_query": null,
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "operation",
+"child_table": "required_items",
+"filters": {
+"parent": "frm.doc.bom_no",
+"parenttype": "BOM"
+},
+"server_query": "erpnext.manufacturing.doctype.work_order.work_order.get_bom_operations",
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+},
+{
+"field": "sales_order",
+"child_table": null,
+"filters": {
+"production_item": "frm.doc.production_item"
+},
+"server_query": "erpnext.manufacturing.doctype.work_order.work_order.query_sales_order",
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order.js"
+}
+],
+"Workflow": [
+{
+"field": "document_type",
+"child_table": null,
+"filters": {},
+"server_query": null,
+"source": "frappe/frappe/workflow/doctype/workflow/workflow.js"
+}
+]
+}
+}

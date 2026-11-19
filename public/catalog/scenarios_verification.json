@@ -1,0 +1,690 @@
+{
+ "en": {
+  "scenarios": [
+   {
+    "name": "Sales Invoice: 15% VAT, discount, rounding → submit → partial then full payment",
+    "ok": true,
+    "steps": [
+     {
+      "label": "totals: total / discount / net / VAT / grand",
+      "ok": true,
+      "detail": "1300.99 / 130.1 / 1170.89 / 175.63 / 1346.52"
+     },
+     {
+      "label": "rounding: rounded_total and adjustment",
+      "ok": true,
+      "detail": "1347 (0.48)"
+     },
+     {
+      "label": "In Words",
+      "ok": true,
+      "detail": "SAR One Thousand, Three Hundred And Forty Seven only."
+     },
+     {
+      "label": "submit → docstatus 1, Unpaid, outstanding = rounded total",
+      "ok": true,
+      "detail": "Unpaid 1347 "
+     },
+     {
+      "label": "GL balanced (Debtors, Sales, VAT Output, Round Off)",
+      "ok": true,
+      "detail": "4 GL rows, Dr 1347.00 = Cr 1347.00"
+     },
+     {
+      "label": "partial payment 500 → Partly Paid, outstanding 847",
+      "ok": true,
+      "detail": "Partly Paid 847"
+     },
+     {
+      "label": "full payment → Paid, outstanding 0",
+      "ok": true,
+      "detail": "Paid 0"
+     },
+     {
+      "label": "payments balanced in GL",
+      "ok": true,
+      "detail": "2 GL rows, Dr 500.00 = Cr 500.00; 2 GL rows, Dr 847.00 = Cr 847.00"
+     }
+    ],
+    "docs": [
+     "SCN-SINV-2YX35",
+     "PE-0011",
+     "PE-0012"
+    ]
+   },
+   {
+    "name": "Quotation → Sales Order → partial Delivery Note → Sales Invoice",
+    "ok": true,
+    "steps": [
+     {
+      "label": "Create ▸ Sales Order carries items and Quotation link",
+      "ok": true,
+      "detail": "SO-0019: SYN-ITEM-003×10"
+     },
+     {
+      "label": "Quotation → Ordered",
+      "ok": true,
+      "detail": "Ordered"
+     },
+     {
+      "label": "partial delivery 4/10 → SO 40% delivered, To Deliver and Bill",
+      "ok": true,
+      "detail": "40% To Deliver and Bill"
+     },
+     {
+      "label": "Delivery Note writes stock ledger −4",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT -4"
+     },
+     {
+      "label": "Create ▸ Sales Invoice from DN: qty 4, links DN + SO",
+      "ok": true,
+      "detail": "SI-0020 grand 460"
+     },
+     {
+      "label": "DN 100% billed → Completed; SO billed share 40%",
+      "ok": true,
+      "detail": "DN 100% Completed; SO billed 40%"
+     },
+     {
+      "label": "invoice GL balanced",
+      "ok": true,
+      "detail": "3 GL rows, Dr 460.00 = Cr 460.00"
+     }
+    ],
+    "docs": [
+     "SCN-QTN-2YX35",
+     "SO-0019",
+     "DN-0015",
+     "SI-0020"
+    ]
+   },
+   {
+    "name": "Material Request → Purchase Order → Purchase Receipt → Purchase Invoice → Payment",
+    "ok": true,
+    "steps": [
+     {
+      "label": "PO from MR: 20 × 45.50 + VAT = 1046.50",
+      "ok": true,
+      "detail": "PO-0011 1046.5"
+     },
+     {
+      "label": "MR → Ordered (100%)",
+      "ok": true,
+      "detail": "Ordered 100%"
+     },
+     {
+      "label": "PR writes stock ledger +20 at 45.50",
+      "ok": true,
+      "detail": "20@45.5"
+     },
+     {
+      "label": "PO → 100% received, To Bill",
+      "ok": true,
+      "detail": "100% To Bill"
+     },
+     {
+      "label": "PI submitted: Unpaid, outstanding 1046 (Banker's rounding of 1046.50), PO Completed, PR Completed",
+      "ok": true,
+      "detail": "Unpaid 1046; PO Completed; PR Completed"
+     },
+     {
+      "label": "Payment → PI Paid; GL balanced",
+      "ok": true,
+      "detail": "Paid; 2 GL rows, Dr 1046.00 = Cr 1046.00"
+     }
+    ],
+    "docs": [
+     "SCN-MR-2YX35",
+     "PO-0011",
+     "PR-0008",
+     "PI-0008",
+     "PE-0013"
+    ]
+   },
+   {
+    "name": "Stock Entry — Material Receipt, Material Issue, Material Transfer, Manufacture",
+    "ok": true,
+    "steps": [
+     {
+      "label": "Material Receipt: ledger مستودع الرياض الرئيسي - DDT +10; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT 10"
+     },
+     {
+      "label": "Material Issue: ledger مستودع الرياض الرئيسي - DDT -3; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT -3"
+     },
+     {
+      "label": "Material Transfer: ledger مستودع الرياض الرئيسي - DDT -2, مستودع جدة - DDT +2; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع جدة - DDT 2, مستودع الرياض الرئيسي - DDT -2"
+     },
+     {
+      "label": "Manufacture: ledger مستودع الرياض الرئيسي - DDT -4, مستودع جدة - DDT +1; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع جدة - DDT 1, مستودع الرياض الرئيسي - DDT -4"
+     }
+    ],
+    "docs": [
+     "SCN-STE-Receipt-2YX35",
+     "SCN-STE-Issue-2YX35",
+     "SCN-STE-Transfer-2YX35",
+     "SCN-STE-Manufacture-2YX35"
+    ]
+   },
+   {
+    "name": "Unbalanced Journal Entry is blocked",
+    "ok": true,
+    "steps": [
+     {
+      "label": "form shows difference 100 and blocks Save",
+      "ok": true,
+      "detail": "difference 100; Total Debit must be equal to Total Credit. The difference is 100"
+     },
+     {
+      "label": "Submit refused, no GL written",
+      "ok": true,
+      "detail": "Total Debit must be equal to Total Credit. The difference is 100"
+     },
+     {
+      "label": "balanced → submits and posts",
+      "ok": true,
+      "detail": "2 GL rows, Dr 1000.00 = Cr 1000.00"
+     }
+    ],
+    "docs": [
+     "SCN-JV-2YX35"
+    ]
+   },
+   {
+    "name": "Leave Application → days and balance; Salary Slip → net pay",
+    "ok": true,
+    "steps": [
+     {
+      "label": "1-day leave: total_leave_days ≥ 0 and balance from allocations",
+      "ok": true,
+      "detail": "days 1, balance 30"
+     },
+     {
+      "label": "over-balance request blocked",
+      "ok": true,
+      "detail": "days 401; Insufficient leave balance for Leave Type Sick Leave"
+     },
+     {
+      "label": "gross 11,250 − deductions 877.50 = net 10,372.50",
+      "ok": true,
+      "detail": "11250 − 877.5 = 10372.5 (SAR Ten Thousand, Three Hundred And Seventy Two only.)"
+     }
+    ],
+    "docs": [
+     "SCN-LA-2YX35",
+     "SCN-SAL-2YX35"
+    ]
+   },
+   {
+    "name": "Lead → Deal",
+    "ok": true,
+    "steps": [
+     {
+      "label": "deal created from lead (organization, owner, contact)",
+      "ok": true,
+      "detail": "CD-0031 status Qualification"
+     },
+     {
+      "label": "lead marked converted",
+      "ok": true,
+      "detail": "converted=1 status=Qualified"
+     }
+    ],
+    "docs": [
+     "SCN-LEAD-2YX35",
+     "CD-0031"
+    ]
+   },
+   {
+    "name": "Cancel + Amend reverses GL and creates -1",
+    "ok": true,
+    "steps": [
+     {
+      "label": "cancel: originals flagged cancelled + reversal rows, ledger nets to zero",
+      "ok": true,
+      "detail": "3 rows → 6 (reversals), net 0.00, Debtors 0.00"
+     },
+     {
+      "label": "status Cancelled, docstatus 2",
+      "ok": true,
+      "detail": "Cancelled"
+     },
+     {
+      "label": "amend → draft named -1 with amended_from",
+      "ok": true,
+      "detail": "SCN-SINV-C2YX35-1 from SCN-SINV-C2YX35"
+     },
+     {
+      "label": "amended invoice posts its own balanced GL",
+      "ok": true,
+      "detail": "3 GL rows, Dr 1150.00 = Cr 1150.00"
+     }
+    ],
+    "docs": [
+     "SCN-SINV-C2YX35",
+     "SCN-SINV-C2YX35-1"
+    ]
+   },
+   {
+    "name": "Asset: schedule → 3 monthly depreciations → value adjustment → sale gain/loss → reversal",
+    "ok": true,
+    "steps": [
+     {
+      "label": "3 depreciation JEs, each balanced",
+      "ok": true,
+      "detail": "2 GL rows, Dr 1000.00 = Cr 1000.00 | 2 GL rows, Dr 1000.00 = Cr 1000.00 | 2 GL rows, Dr 1000.00 = Cr 1000.00"
+     },
+     {
+      "label": "no duplicate posting on re-run",
+      "ok": true,
+      "detail": "0 new"
+     },
+     {
+      "label": "accumulated 3,000 / NBV 33,000",
+      "ok": true,
+      "detail": "acc 3000"
+     },
+     {
+      "label": "value adjustment posts balanced JE, NBV 30,000",
+      "ok": true,
+      "detail": "JE-0020 2 GL rows, Dr 3000.00 = Cr 3000.00"
+     },
+     {
+      "label": "sale 31,000 vs NBV 30,000 → gain 1,000, balanced, status Sold",
+      "ok": true,
+      "detail": "1000 4 GL rows, Dr 34000.00 = Cr 34000.00"
+     },
+     {
+      "label": "restore + cancel reverse their GL (net zero)",
+      "ok": true,
+      "detail": "acc now 2000"
+     }
+    ],
+    "docs": [
+     "SCN-AST-2YX35",
+     "JE-0017",
+     "JE-0018",
+     "JE-0019",
+     "SCN-AVA-2YX35",
+     "JE-0021"
+    ]
+   }
+  ],
+  "ui": [
+   {
+    "label": "form shows paid invoice",
+    "ok": true,
+    "detail": "store Paid; chip 'Paid'"
+   },
+   {
+    "label": "Submit button posts GL and sets status",
+    "ok": true,
+    "detail": "DDT-SINV-D01 Unpaid GL 4"
+   },
+   {
+    "label": "Cancel button reverses GL",
+    "ok": true,
+    "detail": "8 rows"
+   },
+   {
+    "label": "Amend button opens -1 draft",
+    "ok": true,
+    "detail": "http://localhost:8080/app/erpnext/sales_invoice/DDT-SINV-D01-1"
+   }
+  ],
+  "page_errors": []
+ },
+ "ar": {
+  "scenarios": [
+   {
+    "name": "Sales Invoice: 15% VAT, discount, rounding → submit → partial then full payment",
+    "ok": true,
+    "steps": [
+     {
+      "label": "totals: total / discount / net / VAT / grand",
+      "ok": true,
+      "detail": "1300.99 / 130.1 / 1170.89 / 175.63 / 1346.52"
+     },
+     {
+      "label": "rounding: rounded_total and adjustment",
+      "ok": true,
+      "detail": "1347 (0.48)"
+     },
+     {
+      "label": "In Words",
+      "ok": true,
+      "detail": "فقط ألف وثلاثمائة وسبعة وأربعون ريالاً لا غير"
+     },
+     {
+      "label": "submit → docstatus 1, Unpaid, outstanding = rounded total",
+      "ok": true,
+      "detail": "Unpaid 1347 "
+     },
+     {
+      "label": "GL balanced (Debtors, Sales, VAT Output, Round Off)",
+      "ok": true,
+      "detail": "4 GL rows, Dr 1347.00 = Cr 1347.00"
+     },
+     {
+      "label": "partial payment 500 → Partly Paid, outstanding 847",
+      "ok": true,
+      "detail": "Partly Paid 847"
+     },
+     {
+      "label": "full payment → Paid, outstanding 0",
+      "ok": true,
+      "detail": "Paid 0"
+     },
+     {
+      "label": "payments balanced in GL",
+      "ok": true,
+      "detail": "2 GL rows, Dr 500.00 = Cr 500.00; 2 GL rows, Dr 847.00 = Cr 847.00"
+     }
+    ],
+    "docs": [
+     "SCN-SINV-30EEQ",
+     "PE-0011",
+     "PE-0012"
+    ]
+   },
+   {
+    "name": "Quotation → Sales Order → partial Delivery Note → Sales Invoice",
+    "ok": true,
+    "steps": [
+     {
+      "label": "Create ▸ Sales Order carries items and Quotation link",
+      "ok": true,
+      "detail": "SO-0019: SYN-ITEM-003×10"
+     },
+     {
+      "label": "Quotation → Ordered",
+      "ok": true,
+      "detail": "Ordered"
+     },
+     {
+      "label": "partial delivery 4/10 → SO 40% delivered, To Deliver and Bill",
+      "ok": true,
+      "detail": "40% To Deliver and Bill"
+     },
+     {
+      "label": "Delivery Note writes stock ledger −4",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT -4"
+     },
+     {
+      "label": "Create ▸ Sales Invoice from DN: qty 4, links DN + SO",
+      "ok": true,
+      "detail": "SI-0020 grand 460"
+     },
+     {
+      "label": "DN 100% billed → Completed; SO billed share 40%",
+      "ok": true,
+      "detail": "DN 100% Completed; SO billed 40%"
+     },
+     {
+      "label": "invoice GL balanced",
+      "ok": true,
+      "detail": "3 GL rows, Dr 460.00 = Cr 460.00"
+     }
+    ],
+    "docs": [
+     "SCN-QTN-30EEQ",
+     "SO-0019",
+     "DN-0015",
+     "SI-0020"
+    ]
+   },
+   {
+    "name": "Material Request → Purchase Order → Purchase Receipt → Purchase Invoice → Payment",
+    "ok": true,
+    "steps": [
+     {
+      "label": "PO from MR: 20 × 45.50 + VAT = 1046.50",
+      "ok": true,
+      "detail": "PO-0011 1046.5"
+     },
+     {
+      "label": "MR → Ordered (100%)",
+      "ok": true,
+      "detail": "Ordered 100%"
+     },
+     {
+      "label": "PR writes stock ledger +20 at 45.50",
+      "ok": true,
+      "detail": "20@45.5"
+     },
+     {
+      "label": "PO → 100% received, To Bill",
+      "ok": true,
+      "detail": "100% To Bill"
+     },
+     {
+      "label": "PI submitted: Unpaid, outstanding 1046 (Banker's rounding of 1046.50), PO Completed, PR Completed",
+      "ok": true,
+      "detail": "Unpaid 1046; PO Completed; PR Completed"
+     },
+     {
+      "label": "Payment → PI Paid; GL balanced",
+      "ok": true,
+      "detail": "Paid; 2 GL rows, Dr 1046.00 = Cr 1046.00"
+     }
+    ],
+    "docs": [
+     "SCN-MR-30EEQ",
+     "PO-0011",
+     "PR-0008",
+     "PI-0008",
+     "PE-0013"
+    ]
+   },
+   {
+    "name": "Stock Entry — Material Receipt, Material Issue, Material Transfer, Manufacture",
+    "ok": true,
+    "steps": [
+     {
+      "label": "Material Receipt: ledger مستودع الرياض الرئيسي - DDT +10; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT 10"
+     },
+     {
+      "label": "Material Issue: ledger مستودع الرياض الرئيسي - DDT -3; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع الرياض الرئيسي - DDT -3"
+     },
+     {
+      "label": "Material Transfer: ledger مستودع الرياض الرئيسي - DDT -2, مستودع جدة - DDT +2; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع جدة - DDT 2, مستودع الرياض الرئيسي - DDT -2"
+     },
+     {
+      "label": "Manufacture: ledger مستودع الرياض الرئيسي - DDT -4, مستودع جدة - DDT +1; from/to warehouse on/on",
+      "ok": true,
+      "detail": "مستودع جدة - DDT 1, مستودع الرياض الرئيسي - DDT -4"
+     }
+    ],
+    "docs": [
+     "SCN-STE-Receipt-30EEQ",
+     "SCN-STE-Issue-30EEQ",
+     "SCN-STE-Transfer-30EEQ",
+     "SCN-STE-Manufacture-30EEQ"
+    ]
+   },
+   {
+    "name": "Unbalanced Journal Entry is blocked",
+    "ok": true,
+    "steps": [
+     {
+      "label": "form shows difference 100 and blocks Save",
+      "ok": true,
+      "detail": "difference 100; Total Debit must be equal to Total Credit. The difference is 100"
+     },
+     {
+      "label": "Submit refused, no GL written",
+      "ok": true,
+      "detail": "Total Debit must be equal to Total Credit. The difference is 100"
+     },
+     {
+      "label": "balanced → submits and posts",
+      "ok": true,
+      "detail": "2 GL rows, Dr 1000.00 = Cr 1000.00"
+     }
+    ],
+    "docs": [
+     "SCN-JV-30EEQ"
+    ]
+   },
+   {
+    "name": "Leave Application → days and balance; Salary Slip → net pay",
+    "ok": true,
+    "steps": [
+     {
+      "label": "1-day leave: total_leave_days ≥ 0 and balance from allocations",
+      "ok": true,
+      "detail": "days 1, balance 28"
+     },
+     {
+      "label": "over-balance request blocked",
+      "ok": true,
+      "detail": "days 401; Insufficient leave balance for Leave Type Sick Leave"
+     },
+     {
+      "label": "gross 11,250 − deductions 877.50 = net 10,372.50",
+      "ok": true,
+      "detail": "11250 − 877.5 = 10372.5 (فقط عشرة آلاف وثلاثمائة واثنان وسبعون ريالاً لا غير)"
+     }
+    ],
+    "docs": [
+     "SCN-LA-30EEQ",
+     "SCN-SAL-30EEQ"
+    ]
+   },
+   {
+    "name": "Lead → Deal",
+    "ok": true,
+    "steps": [
+     {
+      "label": "deal created from lead (organization, owner, contact)",
+      "ok": true,
+      "detail": "CD-0031 status Qualification"
+     },
+     {
+      "label": "lead marked converted",
+      "ok": true,
+      "detail": "converted=1 status=Qualified"
+     }
+    ],
+    "docs": [
+     "SCN-LEAD-30EEQ",
+     "CD-0031"
+    ]
+   },
+   {
+    "name": "Cancel + Amend reverses GL and creates -1",
+    "ok": true,
+    "steps": [
+     {
+      "label": "cancel: originals flagged cancelled + reversal rows, ledger nets to zero",
+      "ok": true,
+      "detail": "3 rows → 6 (reversals), net 0.00, Debtors 0.00"
+     },
+     {
+      "label": "status Cancelled, docstatus 2",
+      "ok": true,
+      "detail": "Cancelled"
+     },
+     {
+      "label": "amend → draft named -1 with amended_from",
+      "ok": true,
+      "detail": "SCN-SINV-C30EEQ-1 from SCN-SINV-C30EEQ"
+     },
+     {
+      "label": "amended invoice posts its own balanced GL",
+      "ok": true,
+      "detail": "3 GL rows, Dr 1150.00 = Cr 1150.00"
+     }
+    ],
+    "docs": [
+     "SCN-SINV-C30EEQ",
+     "SCN-SINV-C30EEQ-1"
+    ]
+   },
+   {
+    "name": "Asset: schedule → 3 monthly depreciations → value adjustment → sale gain/loss → reversal",
+    "ok": true,
+    "steps": [
+     {
+      "label": "3 depreciation JEs, each balanced",
+      "ok": true,
+      "detail": "2 GL rows, Dr 1000.00 = Cr 1000.00 | 2 GL rows, Dr 1000.00 = Cr 1000.00 | 2 GL rows, Dr 1000.00 = Cr 1000.00"
+     },
+     {
+      "label": "no duplicate posting on re-run",
+      "ok": true,
+      "detail": "0 new"
+     },
+     {
+      "label": "accumulated 3,000 / NBV 33,000",
+      "ok": true,
+      "detail": "acc 3000"
+     },
+     {
+      "label": "value adjustment posts balanced JE, NBV 30,000",
+      "ok": true,
+      "detail": "JE-0020 2 GL rows, Dr 3000.00 = Cr 3000.00"
+     },
+     {
+      "label": "sale 31,000 vs NBV 30,000 → gain 1,000, balanced, status Sold",
+      "ok": true,
+      "detail": "1000 4 GL rows, Dr 34000.00 = Cr 34000.00"
+     },
+     {
+      "label": "restore + cancel reverse their GL (net zero)",
+      "ok": true,
+      "detail": "acc now 2000"
+     }
+    ],
+    "docs": [
+     "SCN-AST-30EEQ",
+     "JE-0017",
+     "JE-0018",
+     "JE-0019",
+     "SCN-AVA-30EEQ",
+     "JE-0021"
+    ]
+   }
+  ],
+  "ui": [
+   {
+    "label": "form shows paid invoice",
+    "ok": true,
+    "detail": "store Paid; chip 'مدفوع'"
+   },
+   {
+    "label": "Submit button posts GL and sets status",
+    "ok": true,
+    "detail": "DDT-SINV-D01 Unpaid GL 4"
+   },
+   {
+    "label": "Cancel button reverses GL",
+    "ok": true,
+    "detail": "8 rows"
+   },
+   {
+    "label": "Amend button opens -1 draft",
+    "ok": true,
+    "detail": "http://localhost:8080/app/erpnext/sales_invoice/DDT-SINV-D01-1"
+   }
+  ],
+  "page_errors": [
+   "Hydration failed because the server rendered text didn't match the client. As a result this tree will be regenerated on the client. This can happen if a SSR-ed Client Component used:\n\n- A server/clien"
+  ]
+ }
+}

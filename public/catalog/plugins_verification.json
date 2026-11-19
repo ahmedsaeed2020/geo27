@@ -1,0 +1,216 @@
+{
+ "en": [
+  {
+   "label": "plugin enabled",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "custom field on Customer",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "custom field label",
+   "ok": true,
+   "detail": "Customer Tier\nGold\nSilver\nBronze\n\nSet by the sales team; used by the Sales Cockpit."
+  },
+  {
+   "label": "custom field saves",
+   "ok": true,
+   "detail": "Gold"
+  },
+  {
+   "label": "client script button on Sales Invoice",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "print format link on Sales Invoice",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "button routes to report filtered by customer",
+   "ok": true,
+   "detail": "1 rows"
+  },
+  {
+   "label": "report rows + total = Σ submitted invoices",
+   "ok": true,
+   "detail": "448,943.38 in Total\t\t14\tSAR 448,943.38\tSAR 246,442.74"
+  },
+  {
+   "label": "print format renders items + total",
+   "ok": true,
+   "detail": "شركة ديجيت التجريبية للتجارة\nTax Invoice DDT-SINV-001\nCustomer\tتهامة للبناء\tDate"
+  },
+  {
+   "label": "number cards = local aggregates",
+   "ok": true,
+   "detail": "{'Cockpit Sales This Month': 12385.5, 'Cockpit Outstanding AR': 246442.74, 'Cockpit Overdue Invoices': 6} vs {'Cockpit Sales This Month': 12385.5, 'Cockpit Outstanding AR': 246442.74, 'Cockpit Overdue"
+  },
+  {
+   "label": "top customers chart has bars",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "number card opens filtered list",
+   "ok": true,
+   "detail": "http://localhost:8080/app/erpnext/sales_invoice?filters=%22%5B%5B%5C%22docstatus%5C%22%2C%5C%22%3D%5C%22%2C%5C%221%5C%22%5D%2C%5B%5C%22status%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Overdue%5C%22%5D%5D%22"
+  },
+  {
+   "label": "plugin DocType form renders",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "API method from Server Script returns data",
+   "ok": true,
+   "detail": "HTTP 200\n{\n \"message\": [\n  {\n   \"customer\": \"DDT-CUST-017\",\n   \"customer_name\": \"وردة الصحراء للتجزئة\",\n   \"total\": 8958"
+  },
+  {
+   "label": "event log shows API call",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "export downloads zip",
+   "ok": true,
+   "detail": "digit_sales_cockpit-1.0.0.zip 17207 bytes"
+  },
+  {
+   "label": "disabled: Customer form equals Original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "disabled: Sales Invoice form equals Original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "disabled: plugin DocType gone",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "import of exported zip restores manifest",
+   "ok": true,
+   "detail": "['DocTypes\\n1', 'Custom Fields\\n1', 'Property Setters\\n1', 'Client Scripts\\n1', 'Server Scripts\\n3', 'Workspaces\\n1', 'Number Cards\\n3', 'Dashboard Charts\\n1', 'Reports\\n1', 'Print Formats\\n1', 'Notif"
+  },
+  {
+   "label": "no page errors",
+   "ok": true,
+   "detail": "[]"
+  }
+ ],
+ "ar": [
+  {
+   "label": "plugin enabled",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "custom field on Customer",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "custom field label translated",
+   "ok": true,
+   "detail": "مستوى العميل\nذهبي\nفضي\nبرونزي\n\nيحدده فريق المبيعات؛ وتستخدمه لوحة قيادة المبيعات."
+  },
+  {
+   "label": "custom field saves",
+   "ok": true,
+   "detail": "Gold"
+  },
+  {
+   "label": "client script button on Sales Invoice",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "print format link on Sales Invoice",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "button routes to report filtered by customer",
+   "ok": true,
+   "detail": "1 rows"
+  },
+  {
+   "label": "report rows + total = Σ submitted invoices",
+   "ok": true,
+   "detail": "448,943.38 in Total\t\t14\t448,943.38 ر.س\t246,442.74 ر.س"
+  },
+  {
+   "label": "print format renders items + total",
+   "ok": true,
+   "detail": "شركة ديجيت التجريبية للتجارة\nفاتورة ضريبية DDT-SINV-001\nعميل\tتهامة للبناء\tالتاري"
+  },
+  {
+   "label": "number cards = local aggregates",
+   "ok": true,
+   "detail": "{'Cockpit Sales This Month': 12385.5, 'Cockpit Outstanding AR': 246442.74, 'Cockpit Overdue Invoices': 6} vs {'Cockpit Sales This Month': 12385.5, 'Cockpit Outstanding AR': 246442.74, 'Cockpit Overdue"
+  },
+  {
+   "label": "top customers chart has bars",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "number card opens filtered list",
+   "ok": true,
+   "detail": "http://localhost:8080/app/erpnext/sales_invoice?filters=%22%5B%5B%5C%22docstatus%5C%22%2C%5C%22%3D%5C%22%2C%5C%221%5C%22%5D%2C%5B%5C%22status%5C%22%2C%5C%22%3D%5C%22%2C%5C%22Overdue%5C%22%5D%5D%22"
+  },
+  {
+   "label": "plugin DocType form renders",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "API method from Server Script returns data",
+   "ok": true,
+   "detail": "HTTP 200\n{\n \"message\": [\n  {\n   \"customer\": \"DDT-CUST-017\",\n   \"customer_name\": \"وردة الصحراء للتجزئة\",\n   \"total\": 8958"
+  },
+  {
+   "label": "event log shows API call",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "export downloads zip",
+   "ok": true,
+   "detail": "digit_sales_cockpit-1.0.0.zip 17207 bytes"
+  },
+  {
+   "label": "disabled: Customer form equals Original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "disabled: Sales Invoice form equals Original",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "disabled: plugin DocType gone",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "label": "import of exported zip restores manifest",
+   "ok": true,
+   "detail": "['DocTypes\\n1', 'Custom Fields\\n1', 'Property Setters\\n1', 'Client Scripts\\n1', 'Server Scripts\\n3', 'مساحات العمل\\n1', 'البطاقات الرقمية\\n3', 'Dashboard Charts\\n1', 'التقارير\\n1', 'تنسيقات الطباعة\\n1"
+  },
+  {
+   "label": "no page errors",
+   "ok": true,
+   "detail": "[]"
+  }
+ ]
+}

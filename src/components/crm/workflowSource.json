@@ -1,0 +1,320 @@
+[
+ {
+  "action_type": "SetFieldValue",
+  "label": "Set Field Value",
+  "params_schema": [
+   {
+    "fieldname": "field",
+    "label": "Field",
+    "fieldtype": "Select",
+    "options_source": "doc_fields"
+   },
+   {
+    "fieldname": "value",
+    "label": "Value",
+    "fieldtype": "Data"
+   },
+   {
+    "fieldname": "values",
+    "label": "Field Values",
+    "fieldtype": "JSON"
+   }
+  ]
+ },
+ {
+  "action_type": "CreateDocument",
+  "label": "Create Document",
+  "params_schema": [
+   {
+    "fieldname": "doctype",
+    "label": "Document Type",
+    "fieldtype": "Link",
+    "options": "DocType",
+    "reqd": 1
+   },
+   {
+    "fieldname": "values",
+    "label": "Field Values",
+    "fieldtype": "JSON"
+   }
+  ]
+ },
+ {
+  "action_type": "IncrementFieldValue",
+  "label": "Increment Field Value",
+  "params_schema": [
+   {
+    "fieldname": "field",
+    "label": "Field",
+    "fieldtype": "Select",
+    "options_source": "doc_fields",
+    "reqd": 1
+   },
+   {
+    "fieldname": "amount",
+    "label": "Amount",
+    "fieldtype": "Float",
+    "reqd": 1
+   }
+  ]
+ },
+ {
+  "action_type": "SendNotification",
+  "label": "Send Notification",
+  "params_schema": [
+   {
+    "fieldname": "channel",
+    "label": "Channel",
+    "fieldtype": "Select",
+    "options": "Email\nSystem",
+    "reqd": 1
+   },
+   {
+    "fieldname": "recipients",
+    "label": "Recipients",
+    "fieldtype": "JSON",
+    "reqd": 1,
+    "control": "USER_CONTROL",
+    "options_source": "notification_recipients"
+   },
+   {
+    "fieldname": "email_template",
+    "label": "Email Template",
+    "fieldtype": "Link",
+    "options": "Email Template"
+   },
+   {
+    "fieldname": "subject",
+    "label": "Subject",
+    "fieldtype": "Data"
+   },
+   {
+    "fieldname": "message",
+    "label": "Message",
+    "fieldtype": "Text Editor"
+   }
+  ]
+ },
+ {
+  "action_type": "AssignToUser",
+  "label": "Assign to User",
+  "params_schema": [
+   {
+    "fieldname": "assign_to",
+    "label": "Assign To",
+    "fieldtype": "JSON",
+    "reqd": 1,
+    "control": "USER_CONTROL",
+    "options_source": "users"
+   },
+   {
+    "fieldname": "description",
+    "label": "Description",
+    "fieldtype": "Data"
+   }
+  ]
+ },
+ {
+  "action_type": "CallWebhook",
+  "label": "Call Webhook",
+  "params_schema": [
+   {
+    "fieldname": "url",
+    "label": "URL",
+    "fieldtype": "Data",
+    "reqd": 1
+   },
+   {
+    "fieldname": "method",
+    "label": "Method",
+    "fieldtype": "Select",
+    "options": null
+   },
+   {
+    "fieldname": "headers",
+    "label": "Headers",
+    "fieldtype": "JSON"
+   },
+   {
+    "fieldname": "payload",
+    "label": "Payload",
+    "fieldtype": "JSON"
+   },
+   {
+    "fieldname": "timeout",
+    "label": "Timeout (seconds)",
+    "fieldtype": "Int"
+   }
+  ]
+ },
+ {
+  "action_type": "RunScript",
+  "label": "Run Script",
+  "params_schema": [
+   {
+    "fieldname": "server_script",
+    "label": "Server Script",
+    "fieldtype": "Link",
+    "options": "Server Script",
+    "link_filters": {
+     "script_type": "SCRIPT_TYPE",
+     "disabled": 0
+    },
+    "exclusive_with": "script"
+   },
+   {
+    "fieldname": "script",
+    "label": "Script",
+    "fieldtype": "Code",
+    "options": "Python",
+    "exclusive_with": "server_script"
+   }
+  ]
+ },
+ {
+  "action_type": "AdjustLeadScore",
+  "label": "Adjust Lead Score",
+  "applicable_doctypes": [
+   "CRM Lead"
+  ],
+  "params_schema": [
+   {
+    "fieldname": "amount",
+    "label": "Amount",
+    "fieldtype": "Int",
+    "reqd": 1
+   },
+   {
+    "fieldname": "reason",
+    "label": "Reason",
+    "fieldtype": "Data"
+   },
+   {
+    "fieldname": "min_score",
+    "label": "Minimum Score",
+    "fieldtype": "Int"
+   },
+   {
+    "fieldname": "max_score",
+    "label": "Maximum Score",
+    "fieldtype": "Int"
+   }
+  ]
+ },
+ {
+  "action_type": "SetLeadTemperature",
+  "label": "Set Lead Temperature",
+  "applicable_doctypes": [
+   "CRM Lead"
+  ],
+  "params_schema": [
+   {
+    "fieldname": "temperature",
+    "label": "Temperature",
+    "fieldtype": "Select",
+    "options": "Cold\nWarm\nHot",
+    "reqd": 1
+   }
+  ]
+ },
+ {
+  "action_type": "ConvertLeadToDeal",
+  "label": "Convert Lead to Deal",
+  "applicable_doctypes": [
+   "CRM Lead"
+  ],
+  "params_schema": [
+   {
+    "fieldname": "if_converted",
+    "label": "If Already Converted",
+    "fieldtype": "Select",
+    "options": "Return Existing\nFail",
+    "default": "Return Existing"
+   },
+   {
+    "fieldname": "existing_contact",
+    "label": "Existing Contact",
+    "fieldtype": "Link",
+    "options": "Contact",
+    "templatable": 1
+   },
+   {
+    "fieldname": "existing_organization",
+    "label": "Existing Organization",
+    "fieldtype": "Link",
+    "options": "CRM Organization",
+    "templatable": 1
+   },
+   {
+    "fieldname": "deal",
+    "label": "Deal Field Overrides",
+    "fieldtype": "JSON"
+   }
+  ]
+ },
+ {
+  "action_type": "SendCRMEmail",
+  "label": "Email the Lead or Deal",
+  "applicable_doctypes": [
+   "CRM Lead",
+   "CRM Deal"
+  ],
+  "params_schema": [
+   {
+    "fieldname": "email_template",
+    "label": "Email Template",
+    "fieldtype": "Link",
+    "options": "Email Template"
+   },
+   {
+    "fieldname": "subject",
+    "label": "Subject",
+    "fieldtype": "Data"
+   },
+   {
+    "fieldname": "message",
+    "label": "Message",
+    "fieldtype": "Text Editor"
+   },
+   {
+    "fieldname": "sender",
+    "label": "Send as",
+    "fieldtype": "Link",
+    "options": "User",
+    "description": "Leave empty to send from the default outgoing account."
+   }
+  ]
+ },
+ {
+  "action_type": "SendCRMNotification",
+  "label": "Notify in CRM",
+  "applicable_doctypes": [
+   "CRM Lead",
+   "CRM Deal"
+  ],
+  "params_schema": [
+   {
+    "fieldname": "recipients",
+    "label": "Recipients",
+    "fieldtype": "JSON",
+    "reqd": 1,
+    "control": "USER_CONTROL",
+    "options_source": "notification_recipients"
+   },
+   {
+    "fieldname": "notification_text",
+    "label": "Notification",
+    "fieldtype": "Data",
+    "reqd": 1,
+    "templatable": true,
+    "description": "The line shown in the notification list."
+   },
+   {
+    "fieldname": "message",
+    "label": "Message",
+    "fieldtype": "Text Editor",
+    "templatable": true
+   }
+  ]
+ }
+]

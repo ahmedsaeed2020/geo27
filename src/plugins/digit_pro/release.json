@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "app": "digit_pro",
+  "title": "DIGIT Pro",
+  "title_ar": "ديجيت برو",
+  "frappe_package": "frappe_apps/digit_pro",
+  "frontend": {
+    "kind": "desk-assets",
+    "summary": "Standard Desk Page /app/digit-pro (department workspaces, section workspaces, finance views) plus scoped app_include CSS/JS and doctype_js form extensions shipped as plain assets inside the package. No separate compiled bundle; the Lovable React screens are the virtual preview and are packed in the source ZIP for review only.",
+    "build": null
+  },
+  "sources": [
+    "src/plugins/digit_pro",
+    "src/routes/pro.*",
+    "public/icons/digit_pro"
+  ],
+  "docs": [
+    "docs/DIGIT_PRO_*",
+    "docs/pro",
+    "docs/pro-r2"
+  ],
+  "required_apps": ["frappe", "erpnext"],
+  "target": {
+    "frappe": ">=16.0.0,<17.0.0",
+    "erpnext": ">=16.0.0,<17.0.0",
+    "python": ">=3.10"
+  },
+  "integrations": [
+    { "name": "Frappe Insights", "status": "NOT_INCLUDED", "needs": "Not required. Dashboards use native Number Cards / Dashboard Charts and the app's own server-aggregated widgets." },
+    { "name": "ZATCA / KSA VAT / Zakat", "status": "NOT_INCLUDED", "needs": "Not available in Core; shown as 'Not available', never as links. Needs an approved official rule pack." }
+  ],
+  "env": [],
+  "staging_checks": [
+    "Open /app/digit-pro as Accounts User, Sales User, Purchase User, Stock User and System Manager; each sees only permitted departments and records.",
+    "Main Dashboard and the five department overviews load; every KPI drill opens the native list with the same filter and count.",
+    "Open a Sales Invoice, Purchase Order and Journal Entry from DIGIT Pro: the context bar appears and the native form saves/submits normally.",
+    "Switch the user language to Arabic: the Page and native screens render RTL with Arabic labels.",
+    "bench --site <staging-site> run-tests --app digit_pro passes.",
+    "bench --site <staging-site> uninstall-app digit_pro leaves every ERPNext document untouched."
+  ],
+  "known_limitations": [
+    "Never installed on a real Frappe/ERPNext bench; every runtime claim is unverified until the staging checklist is executed (package BLOCKERS.md item 1).",
+    "Field names validated against the frozen frappe/erpnext v16-line meta; the exact v16 patch release is not pinned and v15 is incompatible (Asset.net_purchase_amount).",
+    "Context on native screens is a DOM context bar inserted by digit_pro.js after router changes, not a documented Desk API.",
+    "Widget aggregations cap at 5,000 rows per widget.",
+    "Several React preview screens (Finance SC-F-05..14 page routes, Customer 360 panel, some section panels) are not ported to the Desk Page; they are disclosed as not available in the export.",
+    "Fonts load from Google Fonts (OFL); air-gapped sites must self-host.",
+    "The virtual plugin manifest (0.2.0) and the Frappe package (0.7.0) are independent version lines."
+  ]
+}

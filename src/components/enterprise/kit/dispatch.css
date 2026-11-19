@@ -1,0 +1,62 @@
+/* Enterprise dispatch pieces (DispatchKit.tsx): day board, travel gaps, actual bars, route map */
+.ek-db { min-width: 0; }
+.ek-db-legend { display: flex; flex-wrap: wrap; gap: 6px 14px; margin-bottom: 8px; font-size: 12px; color: var(--grey); }
+.ek-db-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 12px; background: var(--white); }
+.ek-db-grid { min-width: 884px; display: grid; grid-template-columns: 1fr; }
+.ek-db-axis, .ek-db-row { display: grid; grid-template-columns: 196px minmax(560px, 1fr) 128px; align-items: stretch; }
+.ek-db-axis { position: sticky; top: 0; z-index: 2; background: var(--surface); border-bottom: 1px solid var(--line); font-size: 11.5px; font-weight: 700; color: var(--grey); }
+.ek-db-axis > * { padding: 8px 10px; }
+.ek-db-hours { position: relative; height: 32px; padding: 0 !important; }
+.ek-db-hours span { position: absolute; top: 9px; transform: translateX(-50%); font-variant-numeric: tabular-nums; }
+[dir="rtl"] .ek-db-hours span { transform: translateX(50%); }
+.ek-db-group { grid-column: 1 / -1; padding: 7px 12px; background: color-mix(in oklab, var(--em-50) 70%, var(--white)); border-bottom: 1px solid var(--line); font: 700 12.5px/1.3 var(--font-title); color: var(--deep); }
+.ek-db-row { border-bottom: 1px solid var(--line); min-height: 64px; }
+.ek-db-row[data-over] .ek-db-lane { background: color-mix(in oklab, var(--emerald) 10%, var(--white)); outline: 2px dashed var(--emerald); outline-offset: -2px; }
+.ek-db-rh { padding: 8px 10px; min-width: 0; border-inline-end: 1px solid var(--line); }
+.ek-db-rn { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13px; color: var(--ink); min-width: 0; }
+.ek-db-rs { margin-top: 3px; font-size: 11.5px; color: var(--grey); line-height: 1.35; }
+.ek-db-rt { margin-top: 4px; display: flex; flex-wrap: wrap; gap: 4px; }
+.ek-db-lane { position: relative; min-height: 64px; background: repeating-linear-gradient(90deg, transparent 0, transparent calc(100% / var(--ek-db-hours) - 1px), transparent 0); }
+.ek-db-tick { position: absolute; top: 0; bottom: 0; border-inline-start: 1px solid color-mix(in oklab, var(--line) 70%, transparent); }
+.ek-db-now { position: absolute; top: 0; bottom: 0; z-index: 3; border-inline-start: 2px solid var(--rose); }
+.ek-db-now::before { content: ""; position: absolute; top: -3px; inset-inline-start: -5px; width: 8px; height: 8px; border-radius: 50%; background: var(--rose); }
+.ek-db-gap { position: absolute; top: 10px; bottom: 18px; border-radius: 6px; background: repeating-linear-gradient(135deg, color-mix(in oklab, var(--grey) 22%, transparent) 0 5px, transparent 5px 10px); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.ek-db-gap span { font-size: 10px; color: var(--grey); background: var(--white); border-radius: 4px; padding: 0 3px; white-space: nowrap; }
+.ek-db-block { position: absolute; top: 6px; bottom: 16px; z-index: 1; display: flex; flex-direction: column; justify-content: center; gap: 1px; min-width: 0; padding: 3px 7px; border-radius: 8px; text-align: start; overflow: hidden;
+  background: var(--hb, var(--surface)); color: var(--ink); border: 1px solid color-mix(in oklab, var(--hc, var(--grey)) 35%, transparent); border-inline-start: 4px solid var(--hc, var(--grey)); box-shadow: 0 1px 2px rgb(0 0 0 / 0.06); cursor: pointer; transition: transform .12s, box-shadow .12s; }
+.ek-db-block:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgb(0 0 0 / 0.12); z-index: 4; }
+.ek-db-block[data-hue="blue"] { --hb: var(--blue-bg); --hc: var(--blue); } .ek-db-block[data-hue="amber"] { --hb: var(--amber-bg); --hc: var(--amber); }
+.ek-db-block[data-hue="rose"] { --hb: var(--rose-bg); --hc: var(--rose); } .ek-db-block[data-hue="violet"] { --hb: var(--violet-bg); --hc: var(--violet); }
+.ek-db-block[data-hue="teal"] { --hb: var(--teal-bg); --hc: var(--teal); } .ek-db-block[data-hue="emerald"] { --hb: var(--em-50); --hc: var(--emerald); }
+.ek-db-block[data-hue="coral"] { --hb: var(--coral-bg); --hc: var(--coral); } .ek-db-block[data-hue="gold"] { --hb: var(--gold-bg); --hc: var(--gold); } .ek-db-block[data-hue="grey"] { --hb: var(--surface); --hc: var(--grey); }
+.ek-db-block[data-status="dispatched"] { border-style: solid; border-top-width: 2px; }
+.ek-db-block[data-status="onsite"] { box-shadow: 0 0 0 2px color-mix(in oklab, var(--hc) 55%, transparent); }
+.ek-db-block[data-status="done"] { opacity: .78; } .ek-db-block[data-status="done"] .ek-db-bt::before { content: "✓ "; color: var(--positive); }
+.ek-db-block[data-status="planned"] { border-style: dashed; border-inline-start-style: solid; }
+.ek-db-block[data-status="cancelled"] { opacity: .5; text-decoration: line-through; }
+.ek-db-block[data-alert] { outline: 2px solid var(--negative); outline-offset: 1px; }
+.ek-db-bt { font-size: 11.5px; font-weight: 700; line-height: 1.25; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ek-db-bs { font-size: 10.5px; color: var(--grey); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant-numeric: tabular-nums; }
+.ek-db-alert { font-size: 10px; font-weight: 700; color: var(--negative); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ek-db-actual { position: absolute; bottom: 5px; height: 6px; z-index: 2; border-radius: 3px; background: var(--emerald); }
+.ek-db-actual[data-late] { background: var(--amber); }
+.ek-db-actual i { position: absolute; inset-inline-start: 0; bottom: 7px; font-style: normal; font-size: 9.5px; font-weight: 700; color: var(--warning-text); white-space: nowrap; }
+.ek-db-ft { display: flex; flex-direction: column; justify-content: center; gap: 4px; padding: 6px 10px; border-inline-start: 1px solid var(--line); font-size: 12px; font-weight: 700; }
+.ek-db-axis .ek-db-ft { font-weight: 700; }
+
+.ek-map { min-width: 0; }
+.ek-map-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; }
+.ek-map-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 12px; color: var(--grey); }
+.ek-map-legend i { display: inline-block; width: 14px; height: 4px; border-radius: 2px; margin-inline-end: 5px; vertical-align: middle; }
+.ek-map-box { position: relative; overflow: hidden; border-radius: 12px; border: 1px solid var(--line); background: linear-gradient(0deg, var(--surface), var(--surface)), repeating-linear-gradient(0deg, var(--line) 0 1px, transparent 1px 40px); }
+.ek-map-canvas { position: absolute; left: 0; top: 0; }
+.ek-map-tile { position: absolute; width: 256px; height: 256px; max-width: none; user-select: none; filter: saturate(.75) brightness(1.02); }
+.ek-map-routes { position: absolute; inset: 0; pointer-events: none; }
+.ek-map-pin { position: absolute; transform: translate(-50%, -100%); width: 28px; height: 28px; border-radius: 50% 50% 50% 0; rotate: -45deg; display: grid; place-items: center; background: var(--pin, var(--blue)); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--route, transparent), 0 3px 8px rgb(0 0 0 / .25); cursor: pointer; }
+.ek-map-pin span { rotate: 45deg; color: var(--white); font: 800 12px/1 var(--font-title); }
+.ek-map-pin[data-tone="planned"] { --pin: var(--blue); } .ek-map-pin[data-tone="dispatched"] { --pin: var(--violet); } .ek-map-pin[data-tone="onsite"] { --pin: var(--amber); }
+.ek-map-pin[data-tone="done"] { --pin: var(--emerald); } .ek-map-pin[data-tone="cancelled"] { --pin: var(--grey); } .ek-map-pin[data-tone="alert"] { --pin: var(--rose); }
+.ek-map-pin:hover { z-index: 3; scale: 1.12; }
+.ek-map-attr { position: absolute; bottom: 4px; right: 6px; font-size: 10px; color: var(--grey); background: color-mix(in oklab, var(--white) 85%, transparent); padding: 1px 5px; border-radius: 4px; }
+.ek-map-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
+.ek-map-dot[data-tone="dispatched"] { background: var(--violet); } .ek-map-dot[data-tone="onsite"] { background: var(--amber); } .ek-map-dot[data-tone="done"] { background: var(--emerald); } .ek-map-dot[data-tone="alert"] { background: var(--rose); }

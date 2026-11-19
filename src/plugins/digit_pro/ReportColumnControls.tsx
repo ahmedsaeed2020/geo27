@@ -1,0 +1,9 @@
+import {ArrowUp,ArrowDown,RotateCcw,Columns3} from 'lucide-react';
+import {Button} from '@/components/ui/button';
+import {useLang} from '@/i18n';
+import {moveColumn} from './reportColumns';
+export function ReportColumnControls({available,selected,onChange}:{available:{key:string;label:string}[];selected:string[];onChange:(value:string|undefined)=>void}) {
+ const ar=useLang()==='ar',t=(en:string,arabic:string)=>ar?arabic:en;
+ const choices=[...selected,...available.map(c=>c.key).filter(k=>!selected.includes(k))];
+ return <details className='text-xs' data-dp-column-controls><summary className='flex cursor-pointer items-center gap-2 py-2'><Columns3 className='h-4 w-4'/>{t('Columns','الأعمدة')}</summary><div className='flex flex-wrap gap-3 border-y border-border py-3'>{choices.map(key=>{const col=available.find(c=>c.key===key);if(!col)return null;const i=selected.indexOf(key);return <div key={key} className='flex items-center gap-1'><label className='flex items-center gap-2'><input type='checkbox' checked={i>=0} disabled={selected.length===1&&i>=0} onChange={e=>onChange((e.target.checked?[...selected,key]:selected.filter(k=>k!==key)).join(','))}/>{col.label}</label>{i>=0&&<><Button size='icon' variant='ghost' className='h-6 w-6' aria-label={`${t('Move earlier','نقل للأمام')}: ${col.label}`} title={t('Move earlier','نقل للأمام')} disabled={i===0} onClick={()=>onChange(moveColumn(selected,key,-1).join(','))}><ArrowUp/></Button><Button size='icon' variant='ghost' className='h-6 w-6' aria-label={`${t('Move later','نقل للخلف')}: ${col.label}`} title={t('Move later','نقل للخلف')} disabled={i===selected.length-1} onClick={()=>onChange(moveColumn(selected,key,1).join(','))}><ArrowDown/></Button></>}</div>})}<Button variant='ghost' size='icon' title={t('Reset columns','إعادة ضبط الأعمدة')} aria-label={t('Reset columns','إعادة ضبط الأعمدة')} onClick={()=>onChange(undefined)}><RotateCcw/></Button></div></details>;
+}

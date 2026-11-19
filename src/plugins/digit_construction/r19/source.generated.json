@@ -1,0 +1,7646 @@
+{
+"meta": {
+"generated_by": "scripts/construction-r19-import.py",
+"generated_at": "2026-11-09T16:22:50Z",
+"package": "DIGIT_CONSTRUCTION_LOVABLE_CORE_INSTALL_R19_V5.zip",
+"package_sha256": "fdf42463789834eb62a00e2c54d501e790762c941dd38a2e68d9e33e9eff8419",
+"source_zip": "02_CONSTRUCTION_APP_SOURCE/digit_construction-main_2026-11-09_uploaded_snapshot.zip",
+"source_zip_sha256": "072278761b57fe580dbcdb5f8674577d01193357b2f80c8ebd979a297ed84130",
+"source_commit": "NOT_SUPPLIED (snapshot without .git)",
+"counts": {
+"source_doctypes": 128,
+"core_doctypes_before": 73,
+"imported_doctypes": 55,
+"merged_fields": 67,
+"native_custom_fields": 5,
+"workflows": 6,
+"roles": [
+"Digit Construction Viewer"
+],
+"source_reports": 19,
+"source_reports_missing": [
+"Change Exposure",
+"Commercial Claims Register",
+"Contract Line Margin",
+"Open Commitments",
+"Risk Quality Outstanding Actions",
+"Site Labour and Equipment Register",
+"Tender Pipeline and Awards"
+],
+"translations": 294,
+"untranslated_in_source_csv": 347
+},
+"source_defects": [
+{
+"doctype": "Digit Back Charge",
+"property": "naming_rule",
+"value": "Expression (regex autoname)",
+"action": "dropped; autoname kept"
+},
+{
+"doctype": "Digit Subcontract Final Account",
+"property": "naming_rule",
+"value": "Expression (regex autoname)",
+"action": "dropped; autoname kept"
+}
+]
+},
+"doctypes": [
+{
+"name": "Digit Addendum Item Change",
+"istable": 1,
+"autoname": "hash",
+"naming_rule": "Random",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_key",
+"label": "Item Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"description": "Stable key of the Digit Tender Item row"
+},
+{
+"fieldname": "change_type",
+"label": "Change Type",
+"fieldtype": "Select",
+"options": "Qty Changed\nAdded\nRemoved\nSpec Changed",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "new_qty",
+"label": "New Quantity",
+"fieldtype": "Float",
+"in_list_view": 1
+},
+{
+"fieldname": "old_qty",
+"label": "Old Quantity (captured at apply)",
+"fieldtype": "Float",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Back Charge",
+"autoname": "BC-.YYYY.-.#####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"reqd": 1,
+"fetch_from": "project.company",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "work_order",
+"label": "Work Order",
+"fieldtype": "Link",
+"options": "Digit Subcontract Work Order",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "subcontractor",
+"label": "Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"in_list_view": 1,
+"fetch_from": "work_order.subcontractor",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "charge_type",
+"label": "Charge Type",
+"fieldtype": "Select",
+"options": "Defect Rectification\nDelay Penalty\nDamage\nNon-Compliance\nOther",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "workflow_state",
+"label": "Workflow State",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nApproved\nRejected\nDeducted",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "source_bill",
+"label": "Deduct in Bill",
+"fieldtype": "Link",
+"options": "Digit Subcontractor Bill",
+"description": "Draft bill of the same work order that will deduct this approved charge"
+},
+{
+"fieldname": "defect",
+"label": "Defect",
+"fieldtype": "Link",
+"options": "Digit Defect",
+"description": "Defect of this work order that the charge recovers (one active charge per defect)."
+},
+{
+"fieldname": "stock_entry",
+"label": "Material Issue (Stock Entry)",
+"fieldtype": "Link",
+"options": "Stock Entry",
+"description": "Submitted stock entry of this project whose material the charge recovers."
+},
+{
+"fieldname": "cost_code",
+"label": "Cost Code",
+"fieldtype": "Link",
+"options": "Digit Cost Code",
+"description": "Cost recovered by this back charge; its expense account is credited when the bill deduction is posted. Empty = the work order's single cost code."
+},
+{
+"fieldname": "sb_details",
+"label": "Charge Details",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Small Text",
+"reqd": 1
+},
+{
+"fieldname": "amount",
+"label": "Amount",
+"fieldtype": "Currency",
+"reqd": 1,
+"in_list_view": 1,
+"non_negative": 1
+},
+{
+"fieldname": "deduction_date",
+"label": "Deduction Date",
+"fieldtype": "Date",
+"reqd": 1
+},
+{
+"fieldname": "column_break_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "raised_by",
+"label": "Raised By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "approved_by",
+"label": "Approved By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "approved_on",
+"label": "Approved On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "dispute_note",
+"label": "Decision Note",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "deducted_in_bill",
+"label": "Deducted in Bill",
+"fieldtype": "Link",
+"options": "Digit Subcontractor Bill",
+"read_only": 1
+},
+{
+"fieldname": "settled_on",
+"label": "Deducted On",
+"fieldtype": "Date",
+"read_only": 1
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Baseline Task",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "task",
+"label": "Task",
+"fieldtype": "Link",
+"options": "Task",
+"in_list_view": 1
+},
+{
+"fieldname": "task_subject",
+"label": "Task Subject",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "baseline_start",
+"label": "Baseline Start",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "baseline_end",
+"label": "Baseline End",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "duration_days",
+"label": "Duration (Days)",
+"fieldtype": "Int",
+"read_only": 1
+},
+{
+"fieldname": "progress_at_capture",
+"label": "Progress at Capture",
+"fieldtype": "Percent",
+"read_only": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Bid Invitee",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "supplier",
+"label": "Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "invited_on",
+"label": "Invited On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "response",
+"label": "Response",
+"fieldtype": "Select",
+"options": "Pending\nWill Bid\nDeclined\nSubmitted",
+"in_list_view": 1,
+"default": "Pending"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Bid Leveling",
+"autoname": "BLV-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "bid_package",
+"label": "Bid Package",
+"fieldtype": "Link",
+"options": "Digit Bid Package",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nRecommended\nAwarded",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft",
+"allow_on_submit": 1,
+"no_copy": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "recommended_by",
+"label": "Recommended By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "approved_by",
+"label": "Approved By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "awarded_supplier",
+"label": "Awarded Supplier",
+"fieldtype": "Link",
+"options": "Supplier",
+"in_list_view": 1
+},
+{
+"fieldname": "sb_award",
+"label": "Award Basis",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "award_reason",
+"label": "Award Reason (required if not lowest)",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "sb_cells",
+"label": "Leveling Matrix",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "cells",
+"label": "Cells",
+"fieldtype": "Table",
+"options": "Digit Leveling Cell"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1,
+"write": 1,
+"create": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1
+}
+]
+},
+{
+"name": "Digit Bid Package",
+"autoname": "BPK-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "tender",
+"label": "Tender",
+"fieldtype": "Link",
+"options": "Digit Tender",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project"
+},
+{
+"fieldname": "trade",
+"label": "Trade",
+"fieldtype": "Select",
+"options": "Civil\nMEP\nFinishing\nStructure\nOther",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "due_date",
+"label": "Due Date",
+"fieldtype": "Datetime",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Open\nClosed\nAwarded",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Open",
+"no_copy": 1
+},
+{
+"fieldname": "sb_items",
+"label": "Package Items",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "items",
+"label": "Items",
+"fieldtype": "Table",
+"options": "Digit Bid Package Item"
+},
+{
+"fieldname": "sb_invitees",
+"label": "Invitees",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "invitees",
+"label": "Invitees",
+"fieldtype": "Table",
+"options": "Digit Bid Invitee"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1,
+"write": 1,
+"create": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1
+}
+]
+},
+{
+"name": "Digit Bid Package Item",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_key",
+"label": "Item Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "uom",
+"label": "UOM",
+"fieldtype": "Link",
+"options": "UOM",
+"in_list_view": 1
+},
+{
+"fieldname": "qty",
+"label": "Qty",
+"fieldtype": "Float",
+"in_list_view": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit CE Line",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "line_key",
+"label": "Line Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "cost_code",
+"label": "Cost Code",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "direction",
+"label": "Direction",
+"fieldtype": "Select",
+"options": "Addition\nDeduction",
+"reqd": 1,
+"in_list_view": 1,
+"default": "Addition"
+},
+{
+"fieldname": "amount",
+"label": "Amount",
+"fieldtype": "Currency",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "cb_pricing",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "qty",
+"label": "Quantity",
+"fieldtype": "Float",
+"in_list_view": 1
+},
+{
+"fieldname": "unit_cost",
+"label": "Unit Cost",
+"fieldtype": "Currency",
+"description": "Contractor cost per unit"
+},
+{
+"fieldname": "selling_rate",
+"label": "Selling Rate",
+"fieldtype": "Currency",
+"description": "Client billing rate per unit"
+},
+{
+"fieldname": "markup_pct",
+"label": "Markup %",
+"fieldtype": "Float"
+},
+{
+"fieldname": "line_amount",
+"label": "Line Amount",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1,
+"description": "qty × selling_rate; or qty × unit_cost × (1 + markup/100) when selling_rate absent"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit CE Pricing Response",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "supplier",
+"label": "Supplier / Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Requested\nReceived\nDeclined\nSelected",
+"reqd": 1,
+"in_list_view": 1,
+"default": "Requested"
+},
+{
+"fieldname": "requested_on",
+"label": "Requested On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "due_on",
+"label": "Response Due",
+"fieldtype": "Date"
+},
+{
+"fieldname": "received_on",
+"label": "Received On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "quoted_amount",
+"label": "Quoted Amount",
+"fieldtype": "Currency",
+"in_list_view": 1
+},
+{
+"fieldname": "quoted_days",
+"label": "Quoted Time (days)",
+"fieldtype": "Int"
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Change Event",
+"autoname": "CE-.YYYY.-.#####",
+"title_field": "title",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"reqd": 1
+},
+{
+"fieldname": "ce_date",
+"label": "Change Event Date",
+"fieldtype": "Date",
+"reqd": 1
+},
+{
+"fieldname": "source_type",
+"label": "Source",
+"fieldtype": "Select",
+"options": "\nRFI\nSite Condition\nDesign Change\nOwner Request\nContract Claim\nVariation Order",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "source_rfi",
+"label": "Source RFI",
+"fieldtype": "Link",
+"options": "Digit RFI",
+"depends_on": "eval:doc.source_type=='RFI'"
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nUnder Review\nPricing Requested\nApproved\nRejected\nCancelled",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "contract",
+"label": "Client Contract",
+"fieldtype": "Link",
+"options": "Digit Client Contract"
+},
+{
+"fieldname": "raised_by",
+"label": "Raised By",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "decided_by",
+"label": "Decided By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "decided_on",
+"label": "Decided On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "sb_cost",
+"label": "Cost & Time Impact",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "cost_impact",
+"label": "Cost Impact",
+"fieldtype": "Currency",
+"options": "currency"
+},
+{
+"fieldname": "time_impact_days",
+"label": "Time Impact (days)",
+"fieldtype": "Int"
+},
+{
+"fieldname": "associated_variation",
+"label": "Associated Variation",
+"fieldtype": "Link",
+"options": "Digit Client Variation",
+"read_only": 1,
+"description": "Set automatically when Promote to Variation action runs"
+},
+{
+"fieldname": "sb_pricing",
+"label": "Pricing",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "pricing_sent_on",
+"label": "Pricing Request Sent",
+"fieldtype": "Date"
+},
+{
+"fieldname": "pricing_due_on",
+"label": "Pricing Response Due",
+"fieldtype": "Date"
+},
+{
+"fieldname": "pricing_response",
+"label": "Pricing Response",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "pricing_responses",
+"label": "Pricing Responses (RFQ)",
+"fieldtype": "Table",
+"options": "Digit CE Pricing Response"
+},
+{
+"fieldname": "sb_lines",
+"label": "Cost Code Lines",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "lines",
+"label": "Lines",
+"fieldtype": "Table",
+"options": "Digit CE Line"
+},
+{
+"fieldname": "sb_notes",
+"label": "Description & Notes",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Text"
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "sb_provenance",
+"label": "Provenance & Locks",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "locked_at",
+"label": "Locked At",
+"fieldtype": "Datetime",
+"read_only": 1,
+"description": "FT-04-09: Timestamp when CE entered a terminal state (Approved/Rejected/Cancelled)"
+},
+{
+"fieldname": "locked_by",
+"label": "Locked By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1,
+"description": "FT-04-09: User who triggered the state lock"
+},
+{
+"fieldname": "locked_state",
+"label": "Locked From State",
+"fieldtype": "Data",
+"read_only": 1,
+"description": "The prior workflow_state when the lock was applied"
+},
+{
+"fieldname": "provenance_note",
+"label": "Provenance Note",
+"fieldtype": "Small Text",
+"read_only": 1,
+"description": "FT-04-09: Immutable record: source_rfi, source_type, contract, ce_date at point of lock"
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Checklist Item",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_no",
+"label": "Item No",
+"fieldtype": "Int"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "mandatory",
+"label": "Mandatory",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "1"
+},
+{
+"fieldname": "note",
+"label": "Note",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Checklist Template",
+"autoname": "CTL-.YYYY.-.####",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project"
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "template_name",
+"label": "Template Name",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "items",
+"label": "Checklist Items",
+"fieldtype": "Table",
+"options": "Digit Checklist Item"
+}
+],
+"permissions": [
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+}
+]
+},
+{
+"name": "Digit Commercial Claim",
+"autoname": "CCL-.YYYY.-.#####",
+"title_field": "title",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "contract",
+"label": "Client Contract",
+"fieldtype": "Link",
+"options": "Digit Client Contract",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"read_only": 1,
+"in_standard_filter": 1,
+"fetch_from": "contract.project",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"read_only": 1,
+"fetch_from": "contract.company",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "customer",
+"label": "Customer",
+"fieldtype": "Link",
+"options": "Customer",
+"read_only": 1,
+"fetch_from": "contract.customer",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "claim_category",
+"label": "Category",
+"fieldtype": "Select",
+"options": "\nDelay and Disruption\nAdditional Work\nChanged Conditions\nSuspension\nPayment Delay\nOther",
+"reqd": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nUnder Assessment\nAgreed\nPartially Agreed\nDisputed\nRejected\nWithdrawn",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft",
+"no_copy": 1
+},
+{
+"fieldname": "event_date",
+"label": "Event Date",
+"fieldtype": "Date",
+"reqd": 1
+},
+{
+"fieldname": "notice_date",
+"label": "Notice Date",
+"fieldtype": "Date",
+"reqd": 1
+},
+{
+"fieldname": "notice_ref",
+"label": "Notice Reference",
+"fieldtype": "Data"
+},
+{
+"fieldname": "notice_late",
+"label": "Notice Late",
+"fieldtype": "Check",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "decided_by",
+"label": "Decided By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "decided_on",
+"label": "Decided On",
+"fieldtype": "Date",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "sb_amounts",
+"label": "Amounts",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "claimed_amount",
+"label": "Claimed Amount",
+"fieldtype": "Currency",
+"reqd": 1,
+"in_list_view": 1,
+"non_negative": 1
+},
+{
+"fieldname": "assessed_amount",
+"label": "Assessed Amount",
+"fieldtype": "Currency",
+"non_negative": 1
+},
+{
+"fieldname": "column_break_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "agreed_amount",
+"label": "Agreed Amount",
+"fieldtype": "Currency",
+"no_copy": 1,
+"non_negative": 1
+},
+{
+"fieldname": "disputed_amount",
+"label": "Disputed Amount",
+"fieldtype": "Currency",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "time_claimed_days",
+"label": "Time Claimed (days)",
+"fieldtype": "Int",
+"non_negative": 1
+},
+{
+"fieldname": "sb_links",
+"label": "Lineage",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "source_change_event",
+"label": "Source Change Event",
+"fieldtype": "Link",
+"options": "Digit Change Event"
+},
+{
+"fieldname": "associated_variation",
+"label": "Variation",
+"fieldtype": "Link",
+"options": "Digit Client Variation",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "column_break_3",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "dispute_transfer_fa",
+"label": "Final Account (dispute)",
+"fieldtype": "Link",
+"options": "Digit Final Account",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "sb_notes",
+"label": "Basis and Decision",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "basis",
+"label": "Contractual Basis",
+"fieldtype": "Small Text",
+"reqd": 1
+},
+{
+"fieldname": "decision_note",
+"label": "Decision Note",
+"fieldtype": "Small Text",
+"no_copy": 1
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Correspondence",
+"autoname": "COR-.YYYY.-.####",
+"title_field": "subject",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "direction",
+"label": "Direction",
+"fieldtype": "Select",
+"options": "Incoming\nOutgoing",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "corr_type",
+"label": "Type",
+"fieldtype": "Select",
+"options": "Letter\nSite Instruction\nNotice\nMinutes\nEmail",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "subject",
+"label": "Subject",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "party",
+"label": "Party",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "ref_no",
+"label": "Reference No",
+"fieldtype": "Data"
+},
+{
+"fieldname": "date",
+"label": "Date",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "response_required",
+"label": "Response Required",
+"fieldtype": "Check",
+"default": "0"
+},
+{
+"fieldname": "response_due",
+"label": "Response Due",
+"fieldtype": "Date"
+},
+{
+"fieldname": "replied_by",
+"label": "Replied By (Outgoing Reference)",
+"fieldtype": "Link",
+"options": "Digit Correspondence"
+},
+{
+"fieldname": "contractual_flag",
+"label": "Contractual Flag",
+"fieldtype": "Select",
+"options": "None\nPossible Change\nPossible EOT\nNotice"
+},
+{
+"fieldname": "change_event_status",
+"label": "Change Event Status",
+"fieldtype": "Data",
+"read_only": 1,
+"default": "BLOCKED_CANONICAL_CHANGE_EVENT",
+"description": "F02-11-2: blocked pending canonical Digit Change Event DocType"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Cost Code",
+"autoname": "field:code",
+"naming_rule": "By fieldname",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "code",
+"label": "Code",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"unique": 1
+},
+{
+"fieldname": "description",
+"label": "Description (EN)",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description_ar",
+"label": "Description (AR)",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "parent_cost_code",
+"label": "Parent Cost Code",
+"fieldtype": "Link",
+"options": "Digit Cost Code"
+},
+{
+"fieldname": "category",
+"label": "Category",
+"fieldtype": "Select",
+"options": "Labour\nMaterials\nEquipment\nSubcontract\nPreliminary\nOther",
+"in_list_view": 1
+},
+{
+"fieldname": "is_group",
+"label": "Is Group",
+"fieldtype": "Check",
+"default": "0"
+},
+{
+"fieldname": "is_active",
+"label": "Active",
+"fieldtype": "Select",
+"options": "Yes\nNo",
+"reqd": 1,
+"in_list_view": 1,
+"default": "Yes"
+},
+{
+"fieldname": "sb_details",
+"label": "Rate & Notes",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "uom",
+"label": "UOM",
+"fieldtype": "Link",
+"options": "UOM"
+},
+{
+"fieldname": "unit_rate",
+"label": "Unit Rate (Budget)",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "sb_accounts",
+"label": "Expense Accounts",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "accounts",
+"label": "Expense Account per Company",
+"fieldtype": "Table",
+"options": "Digit Cost Code Account",
+"description": "Expense account used when a subcontractor bill line with this cost code is invoiced. No default account is assumed."
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1,
+"write": 1,
+"report": 1,
+"export": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Cost Code Account",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "expense_account",
+"label": "Expense Account",
+"fieldtype": "Link",
+"options": "Account",
+"reqd": 1,
+"in_list_view": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Defect",
+"autoname": "DEF-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "task",
+"label": "Task",
+"fieldtype": "Link",
+"options": "Task"
+},
+{
+"fieldname": "location",
+"label": "Location",
+"fieldtype": "Data"
+},
+{
+"fieldname": "severity",
+"label": "Severity",
+"fieldtype": "Select",
+"options": "\nCritical\nMajor\nMinor",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "category",
+"label": "Category",
+"fieldtype": "Select",
+"options": "\nDefect\nNCR",
+"reqd": 1,
+"in_list_view": 1,
+"default": "Defect"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Text",
+"reqd": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "\nOpen\nIn Progress\nReady to Inspect\nClosed\nDisputed",
+"in_list_view": 1,
+"default": "Open"
+},
+{
+"fieldname": "assigned_to",
+"label": "Assigned To",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "due_date",
+"label": "Due Date",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "origin_inspection",
+"label": "Origin Inspection",
+"fieldtype": "Link",
+"options": "Digit Inspection",
+"read_only": 1
+},
+{
+"fieldname": "origin_line_no",
+"label": "Origin Line No",
+"fieldtype": "Int",
+"read_only": 1
+},
+{
+"fieldname": "corrective_action",
+"label": "Corrective Action",
+"fieldtype": "Text"
+},
+{
+"fieldname": "root_cause",
+"label": "Root Cause (NCR)",
+"fieldtype": "Text"
+},
+{
+"fieldname": "before_photo",
+"label": "Before Photo",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "after_photo",
+"label": "After Photo (Evidence)",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "checker",
+"label": "Independent Checker",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "work_order",
+"label": "Work Order",
+"fieldtype": "Link",
+"options": "Digit Subcontract Work Order"
+},
+{
+"fieldname": "cost_to_fix",
+"label": "Cost to Fix",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "backcharge_status",
+"label": "Backcharge Status",
+"fieldtype": "Data",
+"read_only": 1
+}
+],
+"permissions": [
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+}
+]
+},
+{
+"name": "Digit Drawing",
+"autoname": "DRW-.YYYY.-.####",
+"title_field": "title",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "drawing_no",
+"label": "Drawing No",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "discipline",
+"label": "Discipline",
+"fieldtype": "Select",
+"options": "Architecture\nStructure\nMEP\nCivil\nSurvey\nOther",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "current_revision",
+"label": "Current Revision",
+"fieldtype": "Data",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Active\nSuperseded\nCancelled",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Active"
+},
+{
+"fieldname": "revisions_section",
+"label": "Revisions",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "revisions",
+"label": "Revisions",
+"fieldtype": "Table",
+"options": "Digit Drawing Revision"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Drawing Revision",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "revision_code",
+"label": "Revision Code",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "issue_date",
+"label": "Issue Date",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "purpose",
+"label": "Purpose",
+"fieldtype": "Select",
+"options": "IFR\nIFC\nAs-Built\nFor Information",
+"in_list_view": 1
+},
+{
+"fieldname": "is_current",
+"label": "Is Current",
+"fieldtype": "Check",
+"read_only": 1,
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "attachment",
+"label": "Attachment (PDF)",
+"fieldtype": "Attach"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit EOT",
+"autoname": "EOT-.YYYY.-.#####",
+"title_field": "title",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "contract",
+"label": "Client Contract",
+"fieldtype": "Link",
+"options": "Digit Client Contract",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"fetch_from": "contract.project",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"fetch_from": "contract.company",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "eot_date",
+"label": "Submission Date",
+"fieldtype": "Date",
+"reqd": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nUnder Review\nPartially Granted\nGranted\nRejected",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "raised_by",
+"label": "Raised By",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "decided_by",
+"label": "Decided By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "decided_on",
+"label": "Decided On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "sb_dates",
+"label": "Dates & Duration",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "original_completion_date",
+"label": "Original Completion Date",
+"fieldtype": "Date",
+"fetch_from": "contract.end_date",
+"fetch_if_empty": 1,
+"description": "From contract.end_date at time of EOT submission"
+},
+{
+"fieldname": "requested_days",
+"label": "Days Requested",
+"fieldtype": "Int",
+"description": "Total calendar days requested (computed from union of delay events, or entered directly)"
+},
+{
+"fieldname": "column_break_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "granted_days",
+"label": "Days Granted",
+"fieldtype": "Int",
+"description": "FT-04-11: Days actually granted (may be partial; 0 = Rejected)"
+},
+{
+"fieldname": "revised_completion_date",
+"label": "Revised Completion Date",
+"fieldtype": "Date",
+"read_only": 1,
+"description": "FT-04-11: original_completion_date + granted_days (computed by controller)"
+},
+{
+"fieldname": "notice_late",
+"label": "Late Notice",
+"fieldtype": "Check",
+"read_only": 1,
+"description": "Submitted after the contract's delay-notice period"
+},
+{
+"fieldname": "partial_grant_note",
+"label": "Partial Grant Note",
+"fieldtype": "Small Text",
+"description": "Required when granted_days < requested_days (partial grant justification)"
+},
+{
+"fieldname": "sb_events",
+"label": "Delay Events",
+"fieldtype": "Section Break",
+"description": "FT-04-11: Each delay event with start/end dates. Union logic removes overlapping periods."
+},
+{
+"fieldname": "delay_events",
+"label": "Delay Events",
+"fieldtype": "Table",
+"options": "Digit EOT Delay Event"
+},
+{
+"fieldname": "sb_notes",
+"label": "Basis & Notes",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "basis",
+"label": "Claim Basis",
+"fieldtype": "Small Text",
+"description": "Contractual clause and supporting narrative for this EOT claim"
+},
+{
+"fieldname": "decision_note",
+"label": "Decision Note",
+"fieldtype": "Small Text",
+"description": "Reason for partial grant, rejection, or conditions of approval"
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit EOT Delay Event",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "event_ref",
+"label": "Event Ref",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "delay_category",
+"label": "Delay Category",
+"fieldtype": "Select",
+"options": "Employer Risk\nForce Majeure\nNeutral\nContractor Risk",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "start_date",
+"label": "Start Date",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "end_date",
+"label": "End Date",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "days_affected",
+"label": "Days Affected",
+"fieldtype": "Int",
+"read_only": 1,
+"description": "Computed: end_date - start_date + 1 (controller). Union logic removes overlapping days."
+},
+{
+"fieldname": "concurrent_with_prev",
+"label": "Concurrent with Previous Event",
+"fieldtype": "Check",
+"description": "If checked, overlapping days are excluded from the total (FT-04-11 union logic)"
+},
+{
+"fieldname": "evidence_ref",
+"label": "Evidence Reference",
+"fieldtype": "Data",
+"description": "Letter, site diary or programme reference supporting this delay event"
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Estimate Risk",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "risk",
+"label": "Risk Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "probability_pct",
+"label": "Probability %",
+"fieldtype": "Percent",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "impact",
+"label": "Impact Amount",
+"fieldtype": "Currency",
+"options": "currency",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "expected",
+"label": "Expected Loss",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1,
+"in_list_view": 1
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1
+}
+]
+},
+{
+"name": "Digit Field Task",
+"autoname": "FTK-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "task",
+"label": "Task",
+"fieldtype": "Link",
+"options": "Task"
+},
+{
+"fieldname": "drawing",
+"label": "Drawing",
+"fieldtype": "Link",
+"options": "Digit Drawing"
+},
+{
+"fieldname": "drawing_revision",
+"label": "Drawing Revision",
+"fieldtype": "Data",
+"read_only": 1
+},
+{
+"fieldname": "location",
+"label": "Location",
+"fieldtype": "Data"
+},
+{
+"fieldname": "assigned_to",
+"label": "Assigned To",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "\nOpen\nTracked\nVerified",
+"in_list_view": 1,
+"default": "Open"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Text",
+"reqd": 1
+},
+{
+"fieldname": "before_photo",
+"label": "Before Photo",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "after_photo",
+"label": "After Photo (Evidence)",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "comment",
+"label": "Comment",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "closed_on",
+"label": "Closed On",
+"fieldtype": "Date",
+"read_only": 1
+}
+],
+"permissions": [
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+}
+]
+},
+{
+"name": "Digit Handover Package",
+"autoname": "HNP-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "package_name",
+"label": "Package Name",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "\nDraft\nSubmitted\nApproved",
+"in_list_view": 1,
+"default": "Draft"
+},
+{
+"fieldname": "completeness_pct",
+"label": "Completeness %",
+"fieldtype": "Percent",
+"read_only": 1
+},
+{
+"fieldname": "requirements",
+"label": "Requirements",
+"fieldtype": "Table",
+"options": "Digit Handover Requirement"
+}
+],
+"permissions": [
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+}
+]
+},
+{
+"name": "Digit Handover Requirement",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "requirement_type",
+"label": "Type",
+"fieldtype": "Select",
+"options": "\nAs-built Drawing\nO&M Manual\nWarranty\nInspection Certificate\nOther",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "required",
+"label": "Required",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "1"
+},
+{
+"fieldname": "file_attachment",
+"label": "File",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "accepted",
+"label": "Accepted",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "reviewer",
+"label": "Reviewer",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "review_date",
+"label": "Review Date",
+"fieldtype": "Date"
+},
+{
+"fieldname": "drawing",
+"label": "Drawing Reference",
+"fieldtype": "Link",
+"options": "Digit Drawing"
+},
+{
+"fieldname": "revision",
+"label": "Revision",
+"fieldtype": "Data"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Inspection",
+"autoname": "INS-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "task",
+"label": "Task",
+"fieldtype": "Link",
+"options": "Task"
+},
+{
+"fieldname": "checklist_template",
+"label": "Checklist Template",
+"fieldtype": "Link",
+"options": "Digit Checklist Template"
+},
+{
+"fieldname": "inspection_date",
+"label": "Inspection Date",
+"fieldtype": "Date"
+},
+{
+"fieldname": "inspector",
+"label": "Inspector",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "\nDraft\nSubmitted",
+"in_list_view": 1,
+"default": "Draft"
+},
+{
+"fieldname": "outcome",
+"label": "Outcome",
+"fieldtype": "Select",
+"options": "\nPass\nPartial\nFail",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "score",
+"label": "Score",
+"fieldtype": "Percent",
+"read_only": 1
+},
+{
+"fieldname": "lines",
+"label": "Inspection Lines",
+"fieldtype": "Table",
+"options": "Digit Inspection Line"
+}
+],
+"permissions": [
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+}
+]
+},
+{
+"name": "Digit Inspection Line",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_no",
+"label": "Item No",
+"fieldtype": "Int"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "mandatory",
+"label": "Mandatory",
+"fieldtype": "Check",
+"in_list_view": 1
+},
+{
+"fieldname": "outcome",
+"label": "Outcome",
+"fieldtype": "Select",
+"options": "\nOK\nNot OK",
+"in_list_view": 1
+},
+{
+"fieldname": "evidence",
+"label": "Evidence",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "defect",
+"label": "Defect",
+"fieldtype": "Link",
+"options": "Digit Defect",
+"read_only": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Leveling Cell",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_key",
+"label": "Item Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "supplier",
+"label": "Supplier",
+"fieldtype": "Link",
+"options": "Supplier",
+"in_list_view": 1
+},
+{
+"fieldname": "amount",
+"label": "Submitted Amount",
+"fieldtype": "Currency",
+"in_list_view": 1
+},
+{
+"fieldname": "override_amount",
+"label": "Override Amount",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "override_reason",
+"label": "Override Reason",
+"fieldtype": "Data"
+},
+{
+"fieldname": "plug",
+"label": "Plug (missing item)",
+"fieldtype": "Check"
+},
+{
+"fieldname": "included",
+"label": "Included",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "1"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Lookahead",
+"autoname": "LAH-.YYYY.-.####",
+"title_field": "project",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "week_start",
+"label": "Week Start",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "week_end",
+"label": "Week End",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nClosed",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "ppc",
+"label": "PPC %",
+"fieldtype": "Percent",
+"read_only": 1,
+"description": "F02-04-2: PPC = committed completed ÷ total committed × 100"
+},
+{
+"fieldname": "rows_section",
+"label": "Lookahead Rows",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "lookahead_rows",
+"label": "Lookahead Rows",
+"fieldtype": "Table",
+"options": "Digit Lookahead Row"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Lookahead Row",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "task",
+"label": "Task",
+"fieldtype": "Link",
+"options": "Task",
+"in_list_view": 1
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "crew",
+"label": "Crew",
+"fieldtype": "Link",
+"options": "Digit Crew"
+},
+{
+"fieldname": "committed",
+"label": "Committed",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "completed",
+"label": "Completed",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "missed_reason",
+"label": "Reason for Non-completion",
+"fieldtype": "Small Text",
+"description": "Required when committed=1 and completed=0 on Close"
+},
+{
+"fieldname": "constraint_type",
+"label": "Constraint Type",
+"fieldtype": "Select",
+"options": "\nRFI\nMaterial\nManpower\nEquipment\nDesign\nOther"
+},
+{
+"fieldname": "constraint_note",
+"label": "Constraint Note",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Portfolio Scenario",
+"is_submittable": 1,
+"autoname": "SCEN-.YYYY.-.####",
+"title_field": "title",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Scenario Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "plan_year",
+"label": "Plan Year",
+"fieldtype": "Int",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nShared\nRejected",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "based_on",
+"label": "Based On (Revision)",
+"fieldtype": "Link",
+"options": "Digit Portfolio Scenario"
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "total_revenue",
+"label": "Weighted Revenue",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "total_cost",
+"label": "Weighted Cost",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "total_margin_pct",
+"label": "Portfolio Margin %",
+"fieldtype": "Percent",
+"read_only": 1
+},
+{
+"fieldname": "peak_negative_cash",
+"label": "Peak Negative Cash",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "decision_note",
+"label": "Decision Note",
+"fieldtype": "Small Text",
+"description": "Required when rejecting a scenario (DEC-002)"
+},
+{
+"fieldname": "cb_1",
+"label": "Project Lines",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "project_lines",
+"label": "Projects",
+"fieldtype": "Table",
+"options": "Digit Scenario Project"
+},
+{
+"fieldname": "cb_2",
+"label": "Monthly Cash Flow",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "cash_months",
+"label": "Cash Months",
+"fieldtype": "Table",
+"options": "Digit Scenario Cash Month"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"submit": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"submit": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"submit": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Punch Item",
+"autoname": "PUN-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company"
+},
+{
+"fieldname": "location",
+"label": "Location",
+"fieldtype": "Data"
+},
+{
+"fieldname": "severity",
+"label": "Severity",
+"fieldtype": "Select",
+"options": "\nCritical\nMajor\nMinor",
+"in_list_view": 1
+},
+{
+"fieldname": "assigned_to",
+"label": "Assigned To",
+"fieldtype": "Link",
+"options": "User",
+"reqd": 1
+},
+{
+"fieldname": "stage",
+"label": "Stage",
+"fieldtype": "Data"
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "\nOpen\nReady for Review\nClosed",
+"in_list_view": 1,
+"default": "Open"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Text",
+"reqd": 1
+},
+{
+"fieldname": "evidence",
+"label": "Evidence",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "closer",
+"label": "Closer",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "closed_on",
+"label": "Closed On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "source_doctype",
+"label": "Source Type",
+"fieldtype": "Select",
+"options": "\nDigit Inspection\nDigit Defect\nOther"
+},
+{
+"fieldname": "source_document",
+"label": "Source Document",
+"fieldtype": "Dynamic Link",
+"options": "source_doctype"
+}
+],
+"permissions": [
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+}
+]
+},
+{
+"name": "Digit Revenue Earning Line",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "step",
+"label": "Step / Milestone",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "earning_percent",
+"label": "Earning %",
+"fieldtype": "Percent",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "trigger",
+"label": "Evidence / Trigger",
+"fieldtype": "Small Text",
+"in_list_view": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Revenue Earning Rule",
+"autoname": "RER-.YYYY.-.#####",
+"title_field": "title",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "contract",
+"label": "Client Contract",
+"fieldtype": "Link",
+"options": "Digit Client Contract",
+"reqd": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"read_only": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "pay_item",
+"label": "Pay Item (SOV line)",
+"fieldtype": "Data",
+"description": "Blank = applies to every pay item of the contract without its own rule."
+},
+{
+"fieldname": "basis",
+"label": "Earning Basis",
+"fieldtype": "Select",
+"options": "Certified Progress\nMilestone\nCost to Cost",
+"reqd": 1,
+"in_list_view": 1,
+"default": "Certified Progress"
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nActive\nInactive",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "effective_from",
+"label": "Effective From",
+"fieldtype": "Date"
+},
+{
+"fieldname": "sb_lines",
+"label": "Earning Steps",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "lines",
+"label": "Steps",
+"fieldtype": "Table",
+"options": "Digit Revenue Earning Line",
+"reqd": 1
+},
+{
+"fieldname": "total_percent",
+"label": "Total Earning %",
+"fieldtype": "Percent",
+"read_only": 1
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Review Step",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "seq",
+"label": "Sequence",
+"fieldtype": "Int",
+"in_list_view": 1
+},
+{
+"fieldname": "reviewer",
+"label": "Reviewer",
+"fieldtype": "Link",
+"options": "User",
+"in_list_view": 1
+},
+{
+"fieldname": "due",
+"label": "Due",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "step_status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Forecast\nCurrent\nCompleted\nOverdue\nSkipped",
+"in_list_view": 1,
+"default": "Forecast"
+},
+{
+"fieldname": "outcome",
+"label": "Outcome",
+"fieldtype": "Select",
+"options": "\nA\nB\nC\nD",
+"in_list_view": 1
+},
+{
+"fieldname": "comment",
+"label": "Comment",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "completed_on",
+"label": "Completed On",
+"fieldtype": "Datetime",
+"read_only": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Review Workflow",
+"autoname": "RWF-.YYYY.-.####",
+"title_field": "title",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "ref_doctype",
+"label": "Document Type",
+"fieldtype": "Select",
+"options": "Digit Submittal\nDigit Drawing\nDigit RFI\nDigit Correspondence\nOther",
+"in_list_view": 1
+},
+{
+"fieldname": "ref_name",
+"label": "Document",
+"fieldtype": "Dynamic Link",
+"options": "ref_doctype",
+"in_list_view": 1
+},
+{
+"fieldname": "title",
+"label": "Review Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Active\nCompleted\nTerminated",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Active"
+},
+{
+"fieldname": "final_outcome",
+"label": "Final Outcome",
+"fieldtype": "Select",
+"options": "\nA\nB\nC\nD",
+"read_only": 1,
+"in_list_view": 1,
+"description": "F02-10-2: worst step outcome (D < C < B < A)"
+},
+{
+"fieldname": "steps_section",
+"label": "Review Steps",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "steps",
+"label": "Steps",
+"fieldtype": "Table",
+"options": "Digit Review Step"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit RFI",
+"autoname": "RFI-.YYYY.-.####",
+"title_field": "subject",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "subject",
+"label": "Subject",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "question",
+"label": "Question / Issue Description",
+"fieldtype": "Text",
+"reqd": 1
+},
+{
+"fieldname": "ball_in_court",
+"label": "Ball in Court (Responsible)",
+"fieldtype": "Link",
+"options": "User",
+"in_list_view": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nOpen\nAnswered\nClosed",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "sent_on",
+"label": "Sent On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "due_date",
+"label": "Due Date",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "answered_on",
+"label": "Answered On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "answered_by",
+"label": "Answered By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "cb_1",
+"label": "Official Response",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "official_response",
+"label": "Official Response",
+"fieldtype": "Text",
+"description": "Frozen after answering (DEC-018)"
+},
+{
+"fieldname": "response_frozen",
+"label": "Response Frozen",
+"fieldtype": "Check",
+"read_only": 1,
+"default": "0"
+},
+{
+"fieldname": "cost_impact",
+"label": "Cost Impact",
+"fieldtype": "Select",
+"options": "\nYes\nNo\nTBD",
+"description": "Required before closing"
+},
+{
+"fieldname": "reopen_reason",
+"label": "Reopen Reason",
+"fieldtype": "Small Text",
+"description": "Required when reopening from Answered"
+},
+{
+"fieldname": "linked_drawing",
+"label": "Linked Drawing",
+"fieldtype": "Link",
+"options": "Digit Drawing"
+},
+{
+"fieldname": "linked_submittal",
+"label": "Linked Submittal",
+"fieldtype": "Link",
+"options": "Digit Submittal"
+},
+{
+"fieldname": "change_event_status",
+"label": "Change Event Status",
+"fieldtype": "Data",
+"read_only": 1,
+"description": "Workflow state of the linked native Change Event; validation does not create an event."
+},
+{
+"fieldname": "change_event",
+"label": "Change Event",
+"fieldtype": "Link",
+"options": "Digit Change Event",
+"description": "FT-04-04: RFI-to-commercial-change linkage"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Risk",
+"autoname": "RISK-.YYYY.-.####",
+"title_field": "title",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "title",
+"label": "Risk Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"read_only": 1,
+"fetch_from": "project.company"
+},
+{
+"fieldname": "category",
+"label": "Category",
+"fieldtype": "Select",
+"options": "\nCommercial\nTechnical\nSchedule\nHSE\nSupply\nOther",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "column_break_main",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Proposed\nOpen\nRejected\nActive\nManaged\nImpacted",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Proposed"
+},
+{
+"fieldname": "response",
+"label": "Response Strategy",
+"fieldtype": "Select",
+"options": "\nAvoid\nMitigate\nTransfer\nAccept"
+},
+{
+"fieldname": "owner_user",
+"label": "Risk Owner",
+"fieldtype": "Link",
+"options": "User"
+},
+{
+"fieldname": "due_date",
+"label": "Review Date",
+"fieldtype": "Date"
+},
+{
+"fieldname": "sb_scores",
+"label": "Risk Score",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "impact_score",
+"label": "Impact Score (1–5)",
+"fieldtype": "Select",
+"options": "\n1\n2\n3\n4\n5"
+},
+{
+"fieldname": "probability_score",
+"label": "Probability Score (1–5)",
+"fieldtype": "Select",
+"options": "\n1\n2\n3\n4\n5"
+},
+{
+"fieldname": "risk_score",
+"label": "Risk Score (I × P)",
+"fieldtype": "Int",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_cost",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "potential_cost",
+"label": "Potential Cost",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "probability_pct",
+"label": "Probability %",
+"fieldtype": "Percent"
+},
+{
+"fieldname": "cost_exposure",
+"label": "Cost Exposure",
+"fieldtype": "Currency",
+"read_only": 1,
+"description": "= potential_cost × probability_pct / 100"
+},
+{
+"fieldname": "time_days",
+"label": "Schedule Impact (days)",
+"fieldtype": "Int"
+},
+{
+"fieldname": "sb_mitigation",
+"label": "Mitigation",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "mitigation",
+"label": "Mitigation Plan",
+"fieldtype": "Text Editor"
+},
+{
+"fieldname": "change_event",
+"label": "Change Event",
+"fieldtype": "Link",
+"options": "Digit Client Variation",
+"read_only": 1,
+"description": "Auto-linked when risk materialises (F01-05-3; requires Risk origin on Digit Client Variation — BLOCKED_DEPENDENCY)"
+},
+{
+"fieldname": "sb_closing",
+"label": "Closing",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "closed_note",
+"label": "Closing Note",
+"fieldtype": "Small Text"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"report": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Scenario Cash Month",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "period",
+"label": "Period (YYYY-MM)",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"description": "Format: YYYY-MM"
+},
+{
+"fieldname": "inflow",
+"label": "Inflow",
+"fieldtype": "Currency",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "outflow",
+"label": "Outflow",
+"fieldtype": "Currency",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "cumulative",
+"label": "Cumulative",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1,
+"description": "Running sum of (inflow - outflow); computed on save"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Scenario Project",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"in_list_view": 1,
+"description": "Leave blank for a proposed project"
+},
+{
+"fieldname": "proposed_name",
+"label": "Proposed Project Name",
+"fieldtype": "Data",
+"in_list_view": 1,
+"description": "Required when project is blank"
+},
+{
+"fieldname": "include",
+"label": "Include",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "1"
+},
+{
+"fieldname": "start_date",
+"label": "Start Date",
+"fieldtype": "Date"
+},
+{
+"fieldname": "end_date",
+"label": "End Date",
+"fieldtype": "Date"
+},
+{
+"fieldname": "contract_value",
+"label": "Contract Value",
+"fieldtype": "Currency",
+"in_list_view": 1
+},
+{
+"fieldname": "budget_cost",
+"label": "Budget Cost",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "probability_pct",
+"label": "Win Probability %",
+"fieldtype": "Percent",
+"default": "100",
+"description": "100 for existing/awarded projects"
+},
+{
+"fieldname": "weighted_revenue",
+"label": "Weighted Revenue",
+"fieldtype": "Currency",
+"read_only": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Schedule Baseline",
+"autoname": "BSL-.YYYY.-.####",
+"title_field": "baseline_name",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "baseline_name",
+"label": "Baseline Name",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "baseline_type",
+"label": "Baseline Type",
+"fieldtype": "Select",
+"options": "Project\nUser",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Project"
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "captured_on",
+"label": "Captured On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Active\nSuperseded",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Active"
+},
+{
+"fieldname": "based_on_revision",
+"label": "Supersedes",
+"fieldtype": "Link",
+"options": "Digit Schedule Baseline",
+"read_only": 1
+},
+{
+"fieldname": "notes",
+"label": "Notes",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "sb_tasks",
+"label": "Task Snapshots",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "task_snapshots",
+"label": "Task Snapshots",
+"fieldtype": "Table",
+"options": "Digit Baseline Task"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Subcontract Bid",
+"autoname": "SBD-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "bid_package",
+"label": "Bid Package",
+"fieldtype": "Link",
+"options": "Digit Bid Package",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "supplier",
+"label": "Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "submitted_on",
+"label": "Submitted On",
+"fieldtype": "Datetime",
+"in_list_view": 1
+},
+{
+"fieldname": "validity_days",
+"label": "Validity (days)",
+"fieldtype": "Int"
+},
+{
+"fieldname": "total",
+"label": "Total",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "sb_lines",
+"label": "Bid Lines",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "lines",
+"label": "Lines",
+"fieldtype": "Table",
+"options": "Digit Subcontract Bid Line"
+},
+{
+"fieldname": "sb_exclusions",
+"label": "Exclusions",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "exclusions",
+"label": "Exclusions / Qualifications",
+"fieldtype": "Text"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1,
+"write": 1,
+"create": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1
+}
+]
+},
+{
+"name": "Digit Subcontract Bid Line",
+"istable": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_key",
+"label": "Item Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "qty",
+"label": "Qty",
+"fieldtype": "Float",
+"in_list_view": 1,
+"default": "1",
+"description": "Package quantity priced by the bidder; amount = unit rate × qty"
+},
+{
+"fieldname": "unit_rate",
+"label": "Unit Rate",
+"fieldtype": "Currency",
+"in_list_view": 1
+},
+{
+"fieldname": "amount",
+"label": "Amount",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "included",
+"label": "Included",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "1"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Subcontract Change",
+"is_submittable": 1,
+"autoname": "SCC-.YYYY.-.#####",
+"title_field": "work_order",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "work_order",
+"label": "Work Order",
+"fieldtype": "Link",
+"options": "Digit Subcontract Work Order",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"read_only": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"read_only": 1
+},
+{
+"fieldname": "subcontractor",
+"label": "Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "change_date",
+"label": "Change Date",
+"fieldtype": "Date",
+"reqd": 1,
+"default": "Today"
+},
+{
+"fieldname": "change_event",
+"label": "Change Event",
+"fieldtype": "Link",
+"options": "Digit Change Event",
+"description": "Approved change event this subcontract change comes from (source lineage)."
+},
+{
+"fieldname": "workflow_state",
+"label": "Workflow State",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nApproved\nRejected\nCancelled",
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft",
+"allow_on_submit": 1,
+"no_copy": 1
+},
+{
+"fieldname": "reason",
+"label": "Reason",
+"fieldtype": "Small Text",
+"reqd": 1
+},
+{
+"fieldname": "sb_lines",
+"label": "Schedule of Values Changes",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "lines",
+"label": "Lines",
+"fieldtype": "Table",
+"options": "Digit Subcontract Change Line",
+"reqd": 1
+},
+{
+"fieldname": "sb_totals",
+"label": "Totals and Budget",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "current_wo_value",
+"label": "Current Work Order Value",
+"fieldtype": "Currency",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "total_delta",
+"label": "Change Amount",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "revised_wo_value",
+"label": "Revised Work Order Value",
+"fieldtype": "Currency",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "column_break_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "budget_status",
+"label": "Budget Check",
+"fieldtype": "Small Text",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "overrun_reason",
+"label": "Budget Overrun Justification",
+"fieldtype": "Small Text",
+"description": "Required to approve a change that exceeds the available budget of its cost code."
+},
+{
+"fieldname": "sb_decision",
+"label": "Decision",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "decision_note",
+"label": "Decision Note",
+"fieldtype": "Small Text",
+"allow_on_submit": 1,
+"no_copy": 1
+},
+{
+"fieldname": "approved_by",
+"label": "Approved By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "approved_on",
+"label": "Approved On",
+"fieldtype": "Date",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "amended_from",
+"label": "Amended From",
+"fieldtype": "Link",
+"options": "Digit Subcontract Change",
+"read_only": 1,
+"no_copy": 1,
+"print_hide": 1
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"submit": 1,
+"cancel": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"submit": 1,
+"cancel": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"submit": 1,
+"cancel": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Subcontract Change Line",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "wo_line_key",
+"label": "Work Order Line",
+"fieldtype": "Data",
+"in_list_view": 1,
+"description": "Existing SOV line key; leave blank to add a new line."
+},
+{
+"fieldname": "scope",
+"label": "Scope",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "uom",
+"label": "UOM",
+"fieldtype": "Link",
+"options": "UOM"
+},
+{
+"fieldname": "cost_code",
+"label": "Cost Code",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "current_qty",
+"label": "Current Qty",
+"fieldtype": "Float",
+"read_only": 1
+},
+{
+"fieldname": "certified_qty",
+"label": "Certified Qty",
+"fieldtype": "Float",
+"read_only": 1
+},
+{
+"fieldname": "qty_delta",
+"label": "Qty Change",
+"fieldtype": "Float",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "revised_qty",
+"label": "Revised Qty",
+"fieldtype": "Float",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "rate",
+"label": "Rate",
+"fieldtype": "Currency"
+},
+{
+"fieldname": "amount_delta",
+"label": "Amount Change",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Subcontract Final Account",
+"autoname": "SFA-.YYYY.-.#####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "work_order",
+"label": "Work Order",
+"fieldtype": "Link",
+"options": "Digit Subcontract Work Order",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"fetch_from": "work_order.project",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "subcontractor",
+"label": "Subcontractor",
+"fieldtype": "Link",
+"options": "Supplier",
+"in_list_view": 1,
+"fetch_from": "work_order.subcontractor",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"reqd": 1,
+"fetch_from": "project.company",
+"fetch_if_empty": 1
+},
+{
+"fieldname": "workflow_state",
+"label": "Workflow State",
+"fieldtype": "Select",
+"options": "Draft\nUnder Review\nAgreed\nApproved\nDisputed",
+"reqd": 1,
+"read_only": 1,
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "sb_financial",
+"label": "Financial Position",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "total_wo_value",
+"label": "Total WO Value",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "total_billed",
+"label": "Total Billed (gross, approved bills)",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "retention_held",
+"label": "Retention Held",
+"fieldtype": "Currency",
+"read_only": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "back_charges_total",
+"label": "Back Charges Deducted",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "advance_unrecovered",
+"label": "Advance Not Yet Recovered",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "pending_back_charges",
+"label": "Approved Back Charges Not Yet Deducted",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "column_break_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "final_amount",
+"label": "Final Amount",
+"fieldtype": "Currency",
+"reqd": 1,
+"in_list_view": 1,
+"non_negative": 1
+},
+{
+"fieldname": "outstanding_balance",
+"label": "Outstanding Balance",
+"fieldtype": "Currency",
+"read_only": 1
+},
+{
+"fieldname": "agreed_on",
+"label": "Agreed On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "agreed_by",
+"label": "Agreed By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "sb_settlement",
+"label": "Settlement",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "settlement_note",
+"label": "Settlement Note",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "purchase_invoice",
+"label": "Purchase Invoice",
+"fieldtype": "Link",
+"options": "Purchase Invoice",
+"description": "Settlement invoice, linked manually (settlement is not automated)"
+},
+{
+"fieldname": "settled_on",
+"label": "Settled On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "dispute_note",
+"label": "Decision Note",
+"fieldtype": "Small Text"
+}
+],
+"permissions": [
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Submittal",
+"autoname": "SUB-.YYYY.-.####",
+"title_field": "title",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "submittal_type",
+"label": "Type",
+"fieldtype": "Select",
+"options": "Shop Drawing\nMaterial\nSample\nMethod Statement\nCalculation",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "spec_section",
+"label": "Spec Section",
+"fieldtype": "Data"
+},
+{
+"fieldname": "revision",
+"label": "Revision",
+"fieldtype": "Int",
+"in_list_view": 1,
+"default": "0"
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSubmitted\nUnder Review\nReturned\nClosed",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "ball_in_court",
+"label": "Ball in Court",
+"fieldtype": "Link",
+"options": "User",
+"in_list_view": 1
+},
+{
+"fieldname": "decision_code",
+"label": "Decision Code",
+"fieldtype": "Select",
+"options": "\nA\nB\nC\nD",
+"read_only": 1,
+"in_list_view": 1,
+"description": "A=Approved, B=Approved with Comments, C=Revise and Resubmit, D=Rejected"
+},
+{
+"fieldname": "cb_1",
+"label": "Schedule",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "required_on_site",
+"label": "Required On Site",
+"fieldtype": "Date"
+},
+{
+"fieldname": "lead_time_days",
+"label": "Lead Time (Days)",
+"fieldtype": "Int",
+"default": "0"
+},
+{
+"fieldname": "review_days",
+"label": "Design Review (Days)",
+"fieldtype": "Int",
+"default": "14"
+},
+{
+"fieldname": "internal_days",
+"label": "Internal Review (Days)",
+"fieldtype": "Int",
+"default": "3"
+},
+{
+"fieldname": "cb_2",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "planned_return",
+"label": "Planned Return",
+"fieldtype": "Date",
+"read_only": 1,
+"description": "= required_on_site - lead_time_days"
+},
+{
+"fieldname": "submit_by",
+"label": "Submit By",
+"fieldtype": "Date",
+"read_only": 1,
+"description": "= planned_return - review_days - internal_days"
+},
+{
+"fieldname": "actual_return",
+"label": "Actual Return",
+"fieldtype": "Date"
+},
+{
+"fieldname": "linked_purchase_order",
+"label": "Purchase Order",
+"fieldtype": "Link",
+"options": "Purchase Order"
+},
+{
+"fieldname": "review_steps_section",
+"label": "Review Steps",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "review_steps",
+"label": "Review Steps",
+"fieldtype": "Table",
+"options": "Digit Submittal Review Step"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Submittal Review Step",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "step",
+"label": "Step",
+"fieldtype": "Data",
+"in_list_view": 1
+},
+{
+"fieldname": "reviewer",
+"label": "Reviewer",
+"fieldtype": "Link",
+"options": "User",
+"in_list_view": 1
+},
+{
+"fieldname": "due",
+"label": "Due",
+"fieldtype": "Date"
+},
+{
+"fieldname": "outcome",
+"label": "Outcome",
+"fieldtype": "Select",
+"options": "\nA\nB\nC\nD",
+"in_list_view": 1
+},
+{
+"fieldname": "comment",
+"label": "Comment",
+"fieldtype": "Small Text"
+},
+{
+"fieldname": "done_on",
+"label": "Completed On",
+"fieldtype": "Date",
+"read_only": 1
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Takeoff Dimension",
+"istable": 1,
+"autoname": "hash",
+"naming_rule": "Random",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "item_key",
+"label": "Item Key",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1,
+"description": "Stable key of the linked Digit Tender Item"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Small Text",
+"in_list_view": 1
+},
+{
+"fieldname": "nos",
+"label": "No.",
+"fieldtype": "Float",
+"in_list_view": 1,
+"default": "1",
+"description": "Number of repetitions (default 1)"
+},
+{
+"fieldname": "length",
+"label": "Length",
+"fieldtype": "Float",
+"in_list_view": 1
+},
+{
+"fieldname": "breadth",
+"label": "Breadth",
+"fieldtype": "Float"
+},
+{
+"fieldname": "depth",
+"label": "Depth",
+"fieldtype": "Float"
+},
+{
+"fieldname": "uom",
+"label": "UOM",
+"fieldtype": "Link",
+"options": "UOM"
+},
+{
+"fieldname": "is_deduction",
+"label": "Deduction",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "0",
+"description": "If checked, the computed quantity is subtracted (negative)"
+},
+{
+"fieldname": "quantity",
+"label": "Quantity",
+"fieldtype": "Float",
+"read_only": 1,
+"in_list_view": 1,
+"description": "Server-computed: nos × L × B × D (signed negative for deduction)",
+"no_copy": 1
+},
+{
+"fieldname": "origin",
+"label": "Origin / Method",
+"fieldtype": "Data",
+"description": "e.g. measured, transferred from drawing, BIM (future)"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Takeoff Sheet",
+"autoname": "TKF-.YYYY.-.####",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "tender",
+"label": "Tender",
+"fieldtype": "Link",
+"options": "Digit Tender",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "title",
+"label": "Title",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "drawing",
+"label": "Drawing",
+"fieldtype": "Link",
+"options": "Digit Drawing",
+"description": "Source drawing for this takeoff (optional when Dept02 DocTypes are available)"
+},
+{
+"fieldname": "drawing_revision",
+"label": "Drawing Revision",
+"fieldtype": "Data",
+"description": "Revision code at the time of takeoff (e.g. A, B, C)"
+},
+{
+"fieldname": "status",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nReviewed",
+"in_list_view": 1,
+"default": "Draft"
+},
+{
+"fieldname": "reviewed",
+"label": "Reviewed",
+"fieldtype": "Check",
+"read_only": 1,
+"default": "0",
+"no_copy": 1
+},
+{
+"fieldname": "reviewed_by",
+"label": "Reviewed By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "reviewed_on",
+"label": "Reviewed On",
+"fieldtype": "Date",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "sb_dimensions",
+"label": "Dimensions",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "dimensions",
+"label": "Dimensions",
+"fieldtype": "Table",
+"options": "Digit Takeoff Dimension",
+"description": "Each row: nos × L × B × D; deduction rows subtract from item total"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Tender Addendum",
+"autoname": "TND-ADD-.YYYY.-.####",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "tender",
+"label": "Tender",
+"fieldtype": "Link",
+"options": "Digit Tender",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "addendum_no",
+"label": "Addendum No.",
+"fieldtype": "Int",
+"reqd": 1,
+"in_list_view": 1,
+"description": "Sequential number per tender (1, 2, 3…)"
+},
+{
+"fieldname": "issued_on",
+"label": "Issued On",
+"fieldtype": "Date",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "new_deadline",
+"label": "New Submission Deadline",
+"fieldtype": "Date",
+"description": "If provided, updates the tender's submission_deadline on apply"
+},
+{
+"fieldname": "applied",
+"label": "Applied",
+"fieldtype": "Check",
+"read_only": 1,
+"in_list_view": 1,
+"default": "0",
+"no_copy": 1
+},
+{
+"fieldname": "applied_on",
+"label": "Applied On",
+"fieldtype": "Date",
+"read_only": 1,
+"no_copy": 1
+},
+{
+"fieldname": "sb_summary",
+"label": "Summary",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "summary",
+"label": "Summary",
+"fieldtype": "Text"
+},
+{
+"fieldname": "file_attachment",
+"label": "Attachment",
+"fieldtype": "Attach"
+},
+{
+"fieldname": "sb_items",
+"label": "Item Changes",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "items",
+"label": "Item Changes",
+"fieldtype": "Table",
+"options": "Digit Addendum Item Change"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit QS",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1,
+"report": 1,
+"export": 1,
+"print": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Tender Award Decision",
+"is_submittable": 1,
+"autoname": "TAD-.YYYY.-.####",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "tender",
+"label": "Tender",
+"fieldtype": "Link",
+"options": "Digit Tender",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "decision",
+"label": "Decision",
+"fieldtype": "Select",
+"options": "Won\nLost\nWithdrawn",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "column_break_1",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "approved_estimate",
+"label": "Approved Estimate",
+"fieldtype": "Link",
+"options": "Digit Estimate Version",
+"in_list_view": 1
+},
+{
+"fieldname": "decided_by",
+"label": "Decided By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1
+},
+{
+"fieldname": "decided_on",
+"label": "Decided On",
+"fieldtype": "Date",
+"read_only": 1
+},
+{
+"fieldname": "sb_reason",
+"label": "Decision Basis",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "reason",
+"label": "Reason / Rationale",
+"fieldtype": "Small Text",
+"reqd": 1
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit Director",
+"read": 1,
+"write": 1,
+"create": 1,
+"delete": 1
+},
+{
+"role": "Digit QS",
+"read": 1
+},
+{
+"role": "Digit Estimator",
+"read": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1
+},
+{
+"role": "Digit Procurement Officer",
+"read": 1
+},
+{
+"role": "Digit Site Engineer",
+"read": 1
+},
+{
+"role": "Digit Accountant",
+"read": 1
+},
+{
+"role": "Digit Store Keeper",
+"read": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1
+}
+]
+},
+{
+"name": "Digit Tender Criterion",
+"istable": 1,
+"autoname": "hash",
+"naming_rule": "Random",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "criterion",
+"label": "Criterion",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "weight_pct",
+"label": "Weight %",
+"fieldtype": "Float",
+"reqd": 1,
+"in_list_view": 1,
+"description": "Must sum to 100 across all criteria"
+},
+{
+"fieldname": "score",
+"label": "Score (1-5)",
+"fieldtype": "Int",
+"in_list_view": 1,
+"description": "1 = lowest, 5 = highest"
+},
+{
+"fieldname": "comment",
+"label": "Comment",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+},
+{
+"name": "Digit Transmittal",
+"autoname": "TRM-.YYYY.-.####",
+"title_field": "to_party",
+"naming_rule": "Expression",
+"track_changes": 1,
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "project",
+"label": "Project",
+"fieldtype": "Link",
+"options": "Project",
+"reqd": 1,
+"in_list_view": 1,
+"in_standard_filter": 1
+},
+{
+"fieldname": "company",
+"label": "Company",
+"fieldtype": "Link",
+"options": "Company",
+"in_list_view": 1
+},
+{
+"fieldname": "to_party",
+"label": "To Party",
+"fieldtype": "Data",
+"reqd": 1,
+"in_list_view": 1
+},
+{
+"fieldname": "purpose",
+"label": "Purpose",
+"fieldtype": "Select",
+"options": "For Information\nFor Approval\nFor Construction\nFor Review",
+"reqd": 1
+},
+{
+"fieldname": "cb_0",
+"fieldtype": "Column Break"
+},
+{
+"fieldname": "workflow_state",
+"label": "Status",
+"fieldtype": "Select",
+"options": "Draft\nSent\nAcknowledged",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Draft"
+},
+{
+"fieldname": "sent_on",
+"label": "Sent On",
+"fieldtype": "Date",
+"in_list_view": 1
+},
+{
+"fieldname": "acknowledged_on",
+"label": "Acknowledged On",
+"fieldtype": "Date"
+},
+{
+"fieldname": "response_due",
+"label": "Response Due",
+"fieldtype": "Date"
+},
+{
+"fieldname": "items_section",
+"label": "Documents Transmitted",
+"fieldtype": "Section Break"
+},
+{
+"fieldname": "items",
+"label": "Items",
+"fieldtype": "Table",
+"options": "Digit Transmittal Item"
+}
+],
+"permissions": [
+{
+"role": "System Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"export": 1,
+"print": 1,
+"email": 1,
+"share": 1
+},
+{
+"role": "Digit Project Manager",
+"read": 1,
+"write": 1,
+"create": 1,
+"report": 1,
+"print": 1,
+"email": 1
+},
+{
+"role": "Digit Construction Viewer",
+"read": 1,
+"report": 1,
+"print": 1
+}
+]
+},
+{
+"name": "Digit Transmittal Item",
+"istable": 1,
+"autoname": "hash",
+"module": "Digit Construction",
+"fields": [
+{
+"fieldname": "ref_doctype",
+"label": "Document Type",
+"fieldtype": "Select",
+"options": "Digit Drawing\nDigit Submittal\nDigit Correspondence\nOther",
+"in_list_view": 1
+},
+{
+"fieldname": "ref_name",
+"label": "Document",
+"fieldtype": "Dynamic Link",
+"options": "ref_doctype",
+"in_list_view": 1
+},
+{
+"fieldname": "transmitted_revision",
+"label": "Transmitted Revision",
+"fieldtype": "Data",
+"read_only": 1,
+"in_list_view": 1,
+"description": "Frozen at time of sending (DEC-016)"
+},
+{
+"fieldname": "description",
+"label": "Description",
+"fieldtype": "Small Text"
+}
+],
+"permissions": []
+}
+],
+"extra_fields": {
+"Digit Budget Line": [
+{
+"after": "original_amount",
+"field": {
+"fieldname": "pay_item",
+"label": "Contract Pay Item (SOV line)",
+"fieldtype": "Data",
+"description": "Client contract SOV line key this budget line delivers; used by the Contract Line Margin report.",
+"allow_on_submit": 1
+}
+}
+],
+"Digit Claim Line": [
+{
+"after": "location",
+"field": {
+"fieldname": "materials_stored",
+"label": "Materials Stored on Site",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "BLOCKED_DEPENDENCY (FT-04-13): Activated only when verified receiving evidence, non-installed materials valuation policy, and owner decision are in place. Do not enter values in this field until unblocked."
+}
+}
+],
+"Digit Client Claim": [
+{
+"after": "sb_commercial",
+"field": {
+"fieldname": "claim_type",
+"label": "Claim Type",
+"fieldtype": "Select",
+"options": "Payment Application\nCommercial Claim",
+"in_standard_filter": 1,
+"default": "Payment Application"
+}
+},
+{
+"after": "claim_type",
+"field": {
+"fieldname": "notice_date",
+"label": "Notice Date",
+"fieldtype": "Date",
+"description": "Date the contractor gave formal contractual notice of this claim"
+}
+},
+{
+"after": "notice_date",
+"field": {
+"fieldname": "notice_ref",
+"label": "Notice Reference",
+"fieldtype": "Data",
+"description": "Document reference of the contractual notice letter/email"
+}
+},
+{
+"after": "cb_commercial",
+"field": {
+"fieldname": "claim_basis",
+"label": "Claim Basis",
+"fieldtype": "Small Text",
+"description": "Contractual clause / basis for this commercial claim"
+}
+},
+{
+"after": "claim_basis",
+"field": {
+"fieldname": "agreed_amount",
+"label": "Agreed Amount",
+"fieldtype": "Currency",
+"options": "currency",
+"description": "FT-04-10: Agreed settlement amount. When set and claim is Certified, triggers idempotent Draft Variation."
+}
+},
+{
+"after": "agreed_amount",
+"field": {
+"fieldname": "associated_variation",
+"label": "Associated Variation",
+"fieldtype": "Link",
+"options": "Digit Client Variation",
+"read_only": 1,
+"description": "FT-04-10: Variation created idempotently when commercial claim is agreed"
+}
+},
+{
+"after": "associated_variation",
+"field": {
+"fieldname": "disputed_amount",
+"label": "Disputed Amount",
+"fieldtype": "Currency",
+"options": "currency",
+"description": "FT-04-10: Amount still in dispute. Transferable to Final Account dispute records."
+}
+},
+{
+"after": "disputed_amount",
+"field": {
+"fieldname": "dispute_transfer_fa",
+"label": "Dispute Transferred to FA",
+"fieldtype": "Link",
+"options": "Digit Final Account",
+"read_only": 1,
+"description": "FT-04-10: Final Account where the disputed amount was transferred"
+}
+}
+],
+"Digit Client Contract": [
+{
+"after": "payment_days",
+"field": {
+"fieldname": "claim_notice_days",
+"label": "Claim Notice Period (days)",
+"fieldtype": "Int",
+"default": "28",
+"description": "Contractual notice period for commercial claims (DEC-052)",
+"non_negative": 1
+}
+},
+{
+"after": "claim_notice_days",
+"field": {
+"fieldname": "delay_notice_days",
+"label": "Delay Notice Period (days)",
+"fieldtype": "Int",
+"description": "Contractual notice period for delay events; late EOT submissions are flagged (DEC-053)",
+"non_negative": 1
+}
+}
+],
+"Digit Client Variation": [
+{
+"after": "origin",
+"field": {
+"fieldname": "source_change_event",
+"label": "Source Change Event",
+"fieldtype": "Link",
+"options": "Digit Change Event",
+"description": "FT-VAR-CE: Variation promoted from a Change Event"
+}
+}
+],
+"Digit Construction Settings": [
+{
+"after": "overrun_alert_pct",
+"field": {
+"fieldname": "overrun_alert_pct_is_set",
+"label": "overrun_alert_pct entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "stale_forecast_days",
+"field": {
+"fieldname": "stale_forecast_days_is_set",
+"label": "stale_forecast_days entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "rate_expiry_warning_days",
+"field": {
+"fieldname": "rate_expiry_warning_days_is_set",
+"label": "rate_expiry_warning_days entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "rate_expiry_warning_days_is_set",
+"field": {
+"fieldname": "retention_payable_account",
+"label": "Subcontract Retention Payable Account",
+"fieldtype": "Link",
+"options": "Account",
+"description": "Liability account that receives retention withheld from subcontractor bills (Journal Entry against the Purchase Invoice). Must belong to the bill company."
+}
+}
+],
+"Digit Cost Forecast Snapshot": [
+{
+"after": "workflow_state",
+"field": {
+"fieldname": "visibility",
+"label": "Visibility",
+"fieldtype": "Select",
+"options": "Private\nShared\nLive",
+"in_list_view": 1,
+"in_standard_filter": 1,
+"default": "Shared",
+"description": "Private = only the preparer sees it; Shared = the project team; Live = the approved current forecast (set on approval).",
+"allow_on_submit": 1
+}
+},
+{
+"after": "visibility",
+"field": {
+"fieldname": "source_forecast",
+"label": "Promoted From",
+"fieldtype": "Link",
+"options": "Digit Cost Forecast Snapshot",
+"read_only": 1,
+"no_copy": 1
+}
+},
+{
+"after": "total_etc",
+"field": {
+"fieldname": "total_etc_is_set",
+"label": "total_etc entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "total_eac",
+"field": {
+"fieldname": "total_eac_is_set",
+"label": "total_eac entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "total_variance",
+"field": {
+"fieldname": "total_variance_is_set",
+"label": "total_variance entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "forecast_margin",
+"field": {
+"fieldname": "forecast_margin_is_set",
+"label": "forecast_margin entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+}
+],
+"Digit Final Account": [
+{
+"after": "agreed_on",
+"field": {
+"fieldname": "decided_by",
+"label": "Decided By",
+"fieldtype": "Link",
+"options": "User",
+"read_only": 1,
+"no_copy": 1
+}
+}
+],
+"Digit Forecast Line": [
+{
+"after": "uncommitted_remaining",
+"field": {
+"fieldname": "uncommitted_remaining_is_set",
+"label": "uncommitted_remaining entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "manual_etc",
+"field": {
+"fieldname": "manual_etc_is_set",
+"label": "manual_etc entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "etc",
+"field": {
+"fieldname": "etc_is_set",
+"label": "etc entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "eac",
+"field": {
+"fieldname": "eac_is_set",
+"label": "eac entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "variance",
+"field": {
+"fieldname": "variance_is_set",
+"label": "variance entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+}
+],
+"Digit Measurement Entry": [
+{
+"after": "accepted_qty",
+"field": {
+"fieldname": "accepted_qty_is_set",
+"label": "accepted_qty entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+}
+],
+"Digit Policy Decision": [
+{
+"after": "value",
+"field": {
+"fieldname": "is_demo",
+"label": "Demo Policy",
+"fieldtype": "Check",
+"in_list_view": 1,
+"default": "0",
+"description": "In force only on a site that enables digit_construction_demo_policies, and only for the demo company."
+}
+},
+{
+"after": "is_demo",
+"field": {
+"fieldname": "demo_company",
+"label": "Demo Company",
+"fieldtype": "Link",
+"options": "Company",
+"depends_on": "is_demo",
+"mandatory_depends_on": "is_demo"
+}
+}
+],
+"Digit Project Team Member": [
+{
+"after": "to_date",
+"field": {
+"fieldname": "allocation_pct",
+"label": "Allocation %",
+"fieldtype": "Float",
+"default": "100",
+"description": "Share of this person's time assigned to this role on this project (0–100). Used to enforce the 100% cross-project limit (OD-24)."
+}
+},
+{
+"after": "task",
+"field": {
+"fieldname": "approval_limit",
+"label": "Approval Limit",
+"fieldtype": "Currency",
+"description": "Optional monetary limit for approval delegation (OD: approval_limit). Feeds approval-level configuration; no automated enforcement in this release."
+}
+},
+{
+"after": "approval_limit",
+"field": {
+"fieldname": "delegate",
+"label": "Delegate During Absence",
+"fieldtype": "Link",
+"options": "User",
+"description": "User who covers this member's approval queue during absence (F01-02-2). Delegation behaviour requires policy configuration; see BLOCKED_BY_POLICY in implementation tracker."
+}
+}
+],
+"Digit Subcontract Work Order": [
+{
+"after": "total_value",
+"field": {
+"fieldname": "revised_value",
+"label": "Revised Value (after approved changes)",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1,
+"allow_on_submit": 1,
+"no_copy": 1
+}
+},
+{
+"after": "revised_value",
+"field": {
+"fieldname": "approved_changes",
+"label": "Approved Changes",
+"fieldtype": "Int",
+"read_only": 1,
+"allow_on_submit": 1,
+"no_copy": 1
+}
+},
+{
+"after": "approved_changes",
+"field": {
+"fieldname": "budget_status",
+"label": "Budget Check",
+"fieldtype": "Small Text",
+"read_only": 1,
+"no_copy": 1
+}
+},
+{
+"after": "budget_status",
+"field": {
+"fieldname": "overrun_reason",
+"label": "Budget Overrun Justification",
+"fieldtype": "Small Text",
+"description": "Required to activate a work order that exceeds the available budget of its cost codes."
+}
+}
+],
+"Digit Subcontractor Bill": [
+{
+"after": "other_deductions",
+"field": {
+"fieldname": "back_charge_amount",
+"label": "Back Charges",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1,
+"description": "Approved back charges assigned to this bill; marked Deducted when the bill is approved"
+}
+}
+],
+"Digit Tender": [
+{
+"after": "est_cost",
+"field": {
+"fieldname": "est_cost_is_set",
+"label": "est_cost entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "est_selling",
+"field": {
+"fieldname": "est_selling_is_set",
+"label": "est_selling entered",
+"fieldtype": "Check",
+"read_only": 1,
+"hidden": 1,
+"default": "0",
+"description": "DIGIT: 1 when the number is known; 0 means blank (not zero)."
+}
+},
+{
+"after": "tender_reference",
+"field": {
+"fieldname": "version",
+"label": "Tender Version",
+"fieldtype": "Int",
+"read_only": 1,
+"default": "1",
+"description": "Increments on each applied addendum"
+}
+},
+{
+"after": "issuing_body",
+"field": {
+"fieldname": "source_channel",
+"label": "Source Channel",
+"fieldtype": "Data",
+"description": "How the tender was received (e.g. Direct, Portal, Referral)"
+}
+},
+{
+"after": "source_channel",
+"field": {
+"fieldname": "site_visit_date",
+"label": "Site Visit Date",
+"fieldtype": "Date"
+}
+},
+{
+"after": "site_visit_date",
+"field": {
+"fieldname": "clarification_deadline",
+"label": "Clarification Deadline",
+"fieldtype": "Date"
+}
+},
+{
+"after": "sb_gng",
+"field": {
+"fieldname": "criteria",
+"label": "Criteria",
+"fieldtype": "Table",
+"options": "Digit Tender Criterion"
+}
+},
+{
+"after": "criteria",
+"field": {
+"fieldname": "gng_score",
+"label": "Go/No-Go Score (%)",
+"fieldtype": "Percent",
+"read_only": 1,
+"no_copy": 1
+}
+},
+{
+"after": "gng_score",
+"field": {
+"fieldname": "gng_decision",
+"label": "Go/No-Go Decision",
+"fieldtype": "Select",
+"options": "Pending\nGo\nNo Go",
+"default": "Pending"
+}
+},
+{
+"after": "gng_decision",
+"field": {
+"fieldname": "gng_decision_by",
+"label": "Decision By",
+"fieldtype": "Data",
+"read_only": 1,
+"no_copy": 1
+}
+},
+{
+"after": "gng_decision_by",
+"field": {
+"fieldname": "gng_decision_on",
+"label": "Decision Date",
+"fieldtype": "Date",
+"read_only": 1,
+"no_copy": 1
+}
+},
+{
+"after": "gng_decision_on",
+"field": {
+"fieldname": "gng_decision_note",
+"label": "Decision Note",
+"fieldtype": "Small Text",
+"description": "Required justification when Go is approved below the 60% threshold"
+}
+}
+],
+"Digit Tender Item": [
+{
+"after": "code",
+"field": {
+"fieldname": "section_code",
+"label": "Section Code",
+"fieldtype": "Data",
+"description": "Maps to BOQ group (OD-04/DEC-041). Carried to BOQ group_code on estimate finalization."
+}
+}
+],
+"Digit Estimate Line": [
+{
+"after": "change_reason",
+"field": {
+"fieldname": "reprice_required",
+"label": "Reprice Required",
+"fieldtype": "Check",
+"read_only": 1,
+"default": "0",
+"description": "Set when a tender addendum changes this line's tender item quantity",
+"no_copy": 1
+}
+},
+{
+"after": "reprice_required",
+"field": {
+"fieldname": "reprice_reason",
+"label": "Reprice Reason",
+"fieldtype": "Small Text",
+"read_only": 1,
+"description": "Source addendum and change type that triggered repricing flag",
+"no_copy": 1
+}
+},
+{
+"after": "sb_cost_decomp",
+"field": {
+"fieldname": "labor_cost",
+"label": "Labor Cost",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "labor_cost",
+"field": {
+"fieldname": "plant_cost",
+"label": "Plant Cost",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "plant_cost",
+"field": {
+"fieldname": "material_cost",
+"label": "Material Cost",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "material_cost",
+"field": {
+"fieldname": "sub_cost",
+"label": "Subcontract Cost",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "sub_cost",
+"field": {
+"fieldname": "man_hours",
+"label": "Man-Hours",
+"fieldtype": "Float",
+"read_only": 1
+}
+}
+],
+"Digit Assembly Component": [
+{
+"after": "description",
+"field": {
+"fieldname": "resource_type",
+"label": "Resource Type",
+"fieldtype": "Select",
+"options": "Labor\nPlant\nMaterial\nSubcontract",
+"in_list_view": 1
+}
+},
+{
+"after": "resource_type",
+"field": {
+"fieldname": "productivity",
+"label": "Productivity (units/hr)",
+"fieldtype": "Float",
+"description": "For Labor/Plant: coefficient = 1 / productivity. Leave 0 to use the coefficient field directly."
+}
+}
+],
+"Digit Estimate Version": [
+{
+"after": "sb_risk",
+"field": {
+"fieldname": "risks",
+"label": "Risk Register",
+"fieldtype": "Table",
+"options": "Digit Estimate Risk"
+}
+},
+{
+"after": "risks",
+"field": {
+"fieldname": "contingency_pct",
+"label": "Fallback Contingency %",
+"fieldtype": "Percent",
+"description": "Used only when no risk register rows exist. Applied to total_direct_cost."
+}
+},
+{
+"after": "contingency_pct",
+"field": {
+"fieldname": "contingency_amount",
+"label": "Contingency Amount",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "contingency_amount",
+"field": {
+"fieldname": "total_direct_cost",
+"label": "Total Direct Cost",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+},
+{
+"after": "total_direct_cost",
+"field": {
+"fieldname": "grand_total",
+"label": "Grand Total (incl. Contingency)",
+"fieldtype": "Currency",
+"options": "currency",
+"read_only": 1
+}
+}
+]
+},
+"custom_fields": [
+{
+"dt": "Purchase Order",
+"fieldname": "digit_long_lead",
+"label": "Long Lead Item",
+"fieldtype": "Check",
+"insert_after": "digit_cost_code",
+"in_standard_filter": 1,
+"description": "DIGIT Construction — S1-C FT-01-10: mark this PO as a long-lead procurement item to include it in the cross-project exception monitor"
+},
+{
+"dt": "Task",
+"fieldname": "digit_contract_milestone",
+"label": "Contract Milestone",
+"fieldtype": "Check",
+"insert_after": "digit_wbs_code",
+"in_standard_filter": 1,
+"description": "DIGIT Construction — S1-G: marks this task as a contract milestone with a locked deadline"
+},
+{
+"dt": "Task",
+"fieldname": "digit_locked_deadline",
+"label": "Locked Deadline",
+"fieldtype": "Date",
+"insert_after": "digit_contract_milestone",
+"description": "DIGIT Construction — S1-G: frozen contract milestone date; variance = days_between(locked_deadline, exp_end_date)"
+},
+{
+"dt": "Task",
+"fieldname": "digit_sov_line",
+"label": "SOV Line",
+"fieldtype": "Link",
+"options": "Digit Contract SOV Line",
+"insert_after": "digit_locked_deadline",
+"description": "DIGIT Construction — S1-G: links task to SOV line for weighted progress calculation"
+},
+{
+"dt": "Task",
+"fieldname": "digit_hold_point_template",
+"label": "Hold Point Template",
+"fieldtype": "Link",
+"options": "Digit Checklist Template",
+"insert_after": "digit_wbs_code",
+"description": "DIGIT Construction: mandatory inspection template that must Pass before progress can be recorded"
+}
+],
+"workflows": [
+{
+"name": "Digit Change Event Workflow",
+"document_type": "Digit Change Event",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Under Review",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Pricing Requested",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Approved",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Rejected",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Cancelled",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit for Review",
+"next_state": "Under Review",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit for Review",
+"next_state": "Under Review",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Under Review",
+"action": "Request Pricing",
+"next_state": "Pricing Requested",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Under Review",
+"action": "Request Pricing",
+"next_state": "Pricing Requested",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Under Review",
+"action": "Approve",
+"next_state": "Approved",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Pricing Requested",
+"action": "Approve",
+"next_state": "Approved",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Review",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Pricing Requested",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Draft",
+"action": "Withdraw",
+"next_state": "Cancelled",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Under Review",
+"action": "Withdraw",
+"next_state": "Cancelled",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Pricing Requested",
+"action": "Withdraw",
+"next_state": "Cancelled",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+}
+]
+},
+{
+"name": "Digit EOT Workflow",
+"document_type": "Digit EOT",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Submitted",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Under Review",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Granted",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Partially Granted",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Rejected",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Start Review",
+"next_state": "Under Review",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Grant",
+"next_state": "Granted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Partially Grant",
+"next_state": "Partially Granted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Review",
+"action": "Grant",
+"next_state": "Granted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Review",
+"action": "Partially Grant",
+"next_state": "Partially Granted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Review",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+}
+]
+},
+{
+"name": "Digit Commercial Claim Workflow",
+"document_type": "Digit Commercial Claim",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Submitted",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Under Assessment",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Agreed",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Partially Agreed",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Disputed",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Rejected",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Withdrawn",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Start Assessment",
+"next_state": "Under Assessment",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Agree",
+"next_state": "Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Partially Agree",
+"next_state": "Partially Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Dispute",
+"next_state": "Disputed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Assessment",
+"action": "Agree",
+"next_state": "Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Assessment",
+"action": "Partially Agree",
+"next_state": "Partially Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Assessment",
+"action": "Dispute",
+"next_state": "Disputed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Assessment",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Disputed",
+"action": "Agree",
+"next_state": "Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Disputed",
+"action": "Partially Agree",
+"next_state": "Partially Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Draft",
+"action": "Withdraw",
+"next_state": "Withdrawn",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Withdraw",
+"next_state": "Withdrawn",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Under Assessment",
+"action": "Withdraw",
+"next_state": "Withdrawn",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+}
+]
+},
+{
+"name": "Digit Back Charge Workflow",
+"document_type": "Digit Back Charge",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Submitted",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Approved",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Rejected",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Deducted",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Approve",
+"next_state": "Approved",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+}
+]
+},
+{
+"name": "Digit Subcontract Final Account Workflow",
+"document_type": "Digit Subcontract Final Account",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Under Review",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Agreed",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Disputed",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Approved",
+"doc_status": "0",
+"allow_edit": "Digit Director"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Under Review",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Under Review",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Under Review",
+"action": "Agree",
+"next_state": "Agreed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Under Review",
+"action": "Dispute",
+"next_state": "Disputed",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Disputed",
+"action": "Resubmit",
+"next_state": "Under Review",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Disputed",
+"action": "Resubmit",
+"next_state": "Under Review",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Agreed",
+"action": "Approve",
+"next_state": "Approved",
+"allowed": "Digit Director",
+"allow_self_approval": 0
+}
+]
+},
+{
+"name": "Digit Subcontract Change Workflow",
+"document_type": "Digit Subcontract Change",
+"workflow_state_field": "workflow_state",
+"is_active": 1,
+"states": [
+{
+"state": "Draft",
+"doc_status": "0",
+"allow_edit": "Digit QS"
+},
+{
+"state": "Submitted",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Approved",
+"doc_status": "1",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Rejected",
+"doc_status": "0",
+"allow_edit": "Digit Project Manager"
+},
+{
+"state": "Cancelled",
+"doc_status": "2",
+"allow_edit": "Digit Director"
+}
+],
+"transitions": [
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit QS",
+"allow_self_approval": 1
+},
+{
+"state": "Draft",
+"action": "Submit",
+"next_state": "Submitted",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 1
+},
+{
+"state": "Submitted",
+"action": "Approve",
+"next_state": "Approved",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Submitted",
+"action": "Reject",
+"next_state": "Rejected",
+"allowed": "Digit Project Manager",
+"allow_self_approval": 0
+},
+{
+"state": "Approved",
+"action": "Cancel",
+"next_state": "Cancelled",
+"allowed": "Digit Director",
+"allow_self_approval": 1
+}
+]
+}
+],
+"roles": [
+"Digit Construction Viewer"
+],
+"links": {},
+"translations": {
+"Active": "نشط",
+"Addition": "إضافة",
+"Additional Work": "أعمال إضافية",
+"Advance Not Yet Recovered": "الدفعة المقدمة غير المستردة",
+"Agree": "موافقة",
+"Agreed": "متفق عليه",
+"Agreed Amount": "المبلغ المتفق عليه",
+"Agreed By": "اتُّفق بواسطة",
+"Agreed On": "تاريخ الاتفاق",
+"Amended From": "معدل من",
+"Amount": "المبلغ",
+"Amount Change": "تغيير المبلغ",
+"Amounts": "المبالغ",
+"Approve": "اعتماد",
+"Approved": "معتمد",
+"Approved Back Charges Not Yet Deducted": "خصومات معتمدة لم تُخصم بعد",
+"Approved By": "اعتمد بواسطة",
+"Approved Changes": "التغييرات المعتمدة",
+"Approved Estimate": "التقدير المعتمد",
+"Approved On": "تاريخ الاعتماد",
+"Assessed Amount": "المبلغ المُقيَّم",
+"Associated Variation": "الأمر التغييري المرتبط",
+"Back Charges": "الخصومات على المقاول",
+"Back Charges Deducted": "الخصومات المخصومة",
+"Basis & Notes": "الأساس والملاحظات",
+"Basis and Decision": "الأساس والقرار",
+"Breadth": "العرض",
+"Budget Check": "فحص الميزانية",
+"Budget Overrun Justification": "مبرر تجاوز الميزانية",
+"Cancel": "إلغاء",
+"Cancelled": "ملغى",
+"Category": "الفئة",
+"Certified Progress": "التقدم المعتمد",
+"Certified Qty": "الكمية المعتمدة",
+"Change Amount": "مبلغ التغيير",
+"Change Date": "تاريخ التغيير",
+"Change Event": "حدث التغيير",
+"Change Event Date": "تاريخ حدث التغيير",
+"Changed Conditions": "ظروف متغيرة",
+"Charge Details": "تفاصيل الخصم",
+"Charge Type": "نوع الخصم",
+"Checklist Items": "بنود قائمة التحقق",
+"Civil": "مدني",
+"Claim Basis": "أساس المطالبة",
+"Claim Notice Period (days)": "مهلة إشعار المطالبة (أيام)",
+"Claimed Amount": "المبلغ المطالب به",
+"Client Contract": "عقد العميل",
+"Closed": "مغلق",
+"Code": "الرمز",
+"Commercial": "تجاري",
+"Commercial Claim": "مطالبة تجارية",
+"Committed": "ملتزم به",
+"Company": "شركة",
+"Completed": "مكتمل",
+"Contract Claim": "مطالبة تعاقدية",
+"Contract Pay Item (SOV line)": "بند الدفع في العقد (بند جدول الكميات)",
+"Contract Value": "قيمة العقد",
+"Contractual Basis": "الأساس التعاقدي",
+"Cost & Time Impact": "أثر التكلفة والوقت",
+"Cost Code": "رمز تكلفة",
+"Cost Code Lines": "بنود رموز التكلفة",
+"Cost Exposure": "التعرض التكاليفي",
+"Cost Impact": "أثر التكلفة",
+"Cost to Cost": "التكلفة إلى التكلفة",
+"Crew": "الطاقم",
+"Cumulative": "التراكمي",
+"Current Qty": "الكمية الحالية",
+"Current Work Order Value": "قيمة أمر العمل الحالية",
+"Customer": "العميل",
+"Damage": "أضرار",
+"Date": "التاريخ",
+"Dates & Duration": "التواريخ والمدة",
+"Days Granted": "الأيام الممنوحة",
+"Days Requested": "الأيام المطلوبة",
+"Decided By": "قرّر بواسطة",
+"Decided On": "تاريخ القرار",
+"Decision": "القرار",
+"Decision Note": "ملاحظة القرار",
+"Declined": "مرفوض",
+"Deduct in Bill": "الخصم في المستخلص",
+"Deducted": "مخصوم",
+"Deducted On": "تاريخ الخصم الفعلي",
+"Deducted in Bill": "خُصم في المستخلص",
+"Deduction": "خصم",
+"Deduction Date": "تاريخ الخصم",
+"Defect": "العيب",
+"Defect Rectification": "إصلاح عيوب",
+"Delay Events": "أحداث التأخير",
+"Delay Notice Period (days)": "مهلة إشعار التأخير (أيام)",
+"Delay Penalty": "غرامة تأخير",
+"Delay and Disruption": "تأخير وإرباك",
+"Demo Company": "الشركة التجريبية",
+"Depth": "العمق",
+"Description": "الوصف",
+"Description & Notes": "الوصف والملاحظات",
+"Description (AR)": "الوصف (عربي)",
+"Description (EN)": "الوصف (إنجليزي)",
+"Design Change": "تغيير تصميم",
+"Digit Back Charge": "خصم على مقاول الباطن",
+"Digit CE Pricing Response": "رد تسعير حدث التغيير",
+"Digit Commercial Claim": "مطالبة تجارية",
+"Digit Cost Code": "رمز التكلفة",
+"Digit Cost Code Account": "حساب رمز التكلفة",
+"Digit Revenue Earning Line": "بند قاعدة اكتساب الإيراد",
+"Digit Revenue Earning Rule": "قاعدة اكتساب الإيراد",
+"Digit Subcontract Change": "تغيير أمر عمل مقاول الباطن",
+"Digit Subcontract Change Line": "بند تغيير أمر عمل مقاول الباطن",
+"Digit Subcontract Final Account": "الحساب الختامي لمقاول الباطن",
+"Digit Tender Award Decision": "قرار ترسية المناقصة",
+"Direction": "الاتجاه",
+"Dispute": "نزاع",
+"Disputed": "متنازع عليه",
+"Disputed Amount": "المبلغ المتنازع عليه",
+"Draft": "مسودة",
+"Due Date": "تاريخ الاستحقاق",
+"Earning %": "نسبة الاكتساب %",
+"Earning Basis": "أساس الاكتساب",
+"Earning Steps": "مراحل الاكتساب",
+"Effective From": "ساري من",
+"End Date": "تاريخ الانتهاء",
+"Equipment": "معدات",
+"Event Date": "تاريخ الحدث",
+"Evidence": "الإثبات",
+"Evidence / Trigger": "الدليل / المُحفِّز",
+"Expense Account": "حساب المصروف",
+"Expense Account per Company": "حساب المصروف لكل شركة",
+"Expense Accounts": "حسابات المصروفات",
+"Final Account (dispute)": "الحساب الختامي (النزاع)",
+"Final Amount": "القيمة النهائية",
+"Financial Position": "الموقف المالي",
+"Finishing": "تشطيبات",
+"Force Majeure": "قوة قاهرة",
+"Forecast": "توقع",
+"Grant": "منح",
+"Granted": "ممنوح",
+"In Progress": "قيد التنفيذ",
+"Inactive": "غير نشط",
+"Inflow": "تدفق داخل",
+"Is Group": "مجموعة",
+"Item Key": "مفتاح البند",
+"Items": "العناصر",
+"Labour": "عمالة",
+"Late Notice": "إشعار متأخر",
+"Length": "الطول",
+"Line Key": "مفتاح البند",
+"Lineage": "المصدر والتتبع",
+"Lines": "البنود",
+"Live": "حيّ",
+"Location": "الموقع",
+"Locked At": "تاريخ القفل",
+"Locked By": "قفل بواسطة",
+"Locked From State": "مقفل من الحالة",
+"Lost": "لم تتم الترسية",
+"MEP": "كهروميكانيك",
+"Material": "مواد",
+"Material Issue (Stock Entry)": "صرف مواد (قيد مخزون)",
+"Materials": "المواد",
+"Milestone": "مرحلة إنجاز",
+"No": "لا",
+"Non-Compliance": "عدم مطابقة",
+"Note": "ملاحظة",
+"Notes": "ملاحظات",
+"Notice Date": "تاريخ الإشعار",
+"Notice Late": "الإشعار متأخر",
+"Notice Reference": "مرجع الإشعار",
+"Open": "مفتوح",
+"Original Completion Date": "تاريخ الإنجاز الأصلي",
+"Other": "أخرى",
+"Outflow": "تدفق خارج",
+"Outstanding Balance": "الرصيد المستحق",
+"Overdue": "متأخر",
+"Owner Request": "طلب المالك",
+"Parent Cost Code": "رمز التكلفة الأب",
+"Partial": "جزئي",
+"Partial Grant Note": "ملاحظة المنح الجزئي",
+"Partially Agree": "موافقة جزئية",
+"Partially Agreed": "متفق عليه جزئيًا",
+"Partially Grant": "منح جزئي",
+"Partially Granted": "ممنوح جزئيًا",
+"Party": "الطرف",
+"Pay Item (SOV line)": "بند الدفع (بند جدول الكميات)",
+"Payment Delay": "تأخر الدفع",
+"Pending": "معلّق",
+"Period (YYYY-MM)": "الفترة",
+"Preliminary": "الأعمال التمهيدية",
+"Pricing": "قيد التسعير",
+"Pricing Request Sent": "تاريخ إرسال طلب التسعير",
+"Pricing Requested": "طُلب التسعير",
+"Pricing Response": "رد التسعير",
+"Pricing Response Due": "موعد رد التسعير",
+"Pricing Responses (RFQ)": "ردود التسعير (طلبات عروض الأسعار)",
+"Private": "خاص",
+"Project": "المشروع",
+"Promoted From": "مُرقّى من",
+"Provenance & Locks": "المصدر والأقفال",
+"Provenance Note": "ملاحظة المصدر",
+"Purchase Invoice": "فاتورة المشتريات",
+"Purchase Order": "أمر الشراء",
+"Qty": "الكمية",
+"Qty Change": "تغيير الكمية",
+"Quantity": "الكمية",
+"Quoted Amount": "المبلغ المعروض",
+"Quoted Time (days)": "المدة المعروضة (أيام)",
+"RFI": "طلب معلومات",
+"Raised By": "أنشأه",
+"Rate": "السعر",
+"Rate & Notes": "السعر والملاحظات",
+"Reason": "السبب",
+"Received": "مستلم",
+"Received On": "تاريخ الاستلام",
+"Reject": "رفض",
+"Rejected": "مرفوض",
+"Request Pricing": "طلب تسعير",
+"Requested": "مطلوب",
+"Requested On": "تاريخ الطلب",
+"Response Due": "موعد الرد",
+"Resubmit": "إعادة الإرسال",
+"Retention Held": "المحتجزات المحتفظ بها",
+"Returned": "مُعاد",
+"Reviewed": "تمت المراجعة",
+"Reviewed By": "راجع بواسطة",
+"Reviewed On": "تاريخ المراجعة",
+"Reviewer": "المراجع",
+"Revised Completion Date": "تاريخ الإنجاز المعدل",
+"Revised Qty": "الكمية المعدلة",
+"Revised Value (after approved changes)": "القيمة المعدلة (بعد التغييرات المعتمدة)",
+"Revised Work Order Value": "قيمة أمر العمل المعدلة",
+"Revision": "المراجعة",
+"SOV Line": "بند جدول القيم",
+"Schedule of Values Changes": "تغييرات جدول الكميات والأسعار",
+"Scope": "نطاق العمل",
+"Selected": "مختار",
+"Selling Rate": "سعر البيع",
+"Settled On": "تاريخ التسوية",
+"Settlement": "التسوية",
+"Settlement Note": "ملاحظة التسوية",
+"Severity": "الخطورة",
+"Shared": "مشترك",
+"Site Condition": "ظروف الموقع",
+"Source": "المصدر",
+"Source Change Event": "حدث التغيير المصدر",
+"Source Document": "مستند المصدر",
+"Source RFI": "طلب المعلومات المصدر",
+"Source Type": "نوع المصدر",
+"Start Assessment": "بدء التقييم",
+"Start Date": "تاريخ البدء",
+"Start Review": "بدء المراجعة",
+"Status": "الحالة",
+"Step / Milestone": "المرحلة / الإنجاز",
+"Steps": "المراحل",
+"Subcontract": "مقاولو باطن",
+"Subcontractor": "مقاول الباطن",
+"Submission Date": "تاريخ التقديم",
+"Submit": "إرسال",
+"Submit for Review": "إرسال للمراجعة",
+"Submitted": "مُرسل",
+"Submitted On": "تاريخ الإرسال",
+"Superseded": "مُستبدل",
+"Supplier": "المورّد",
+"Supplier / Subcontractor": "المورد / مقاول الباطن",
+"Suspension": "إيقاف",
+"Task": "مهمة",
+"Technical": "فني",
+"Tender": "المنافسة",
+"Time Claimed (days)": "المدة المطالب بها (أيام)",
+"Time Impact (days)": "الأثر الزمني (أيام)",
+"Title": "العنوان",
+"Total Billed (gross, approved bills)": "إجمالي المستخلص (الإجمالي، مستخلصات معتمدة)",
+"Total Earning %": "إجمالي نسبة الاكتساب %",
+"Total WO Value": "إجمالي قيمة أمر العمل",
+"Totals and Budget": "الإجماليات والميزانية",
+"Trade": "التخصص",
+"UOM": "وحدة القياس",
+"Under Assessment": "قيد التقييم",
+"Under Review": "قيد المراجعة",
+"Unit Cost": "تكلفة الوحدة",
+"Unit Rate": "سعر الوحدة",
+"Unit Rate (Budget)": "سعر الوحدة (الميزانية)",
+"User": "مستخدم",
+"Variation": "أمر تغييري",
+"Variation Order": "أمر تغييري",
+"Verified": "تم التحقق",
+"Visibility": "الظهور",
+"Withdraw": "سحب",
+"Withdrawn": "مسحوب",
+"Won": "تمت الترسية",
+"Work Order": "أمر العمل",
+"Work Order Line": "بند أمر العمل",
+"Workflow State": "حالة سير العمل",
+"Yes": "نعم",
+"forecast_margin entered": "تم إدخال الهامش المتوقع",
+"total_eac entered": "تم إدخال التكلفة عند الإنجاز",
+"total_etc entered": "تم إدخال التكلفة المتبقية",
+"total_variance entered": "تم إدخال الانحراف"
+},
+"doctype_ar": {
+"Digit Portfolio Scenario": "سيناريوهات المحفظة",
+"Digit Risk": "سجل المخاطر",
+"Digit Schedule Baseline": "خطوط الأساس",
+"Digit Lookahead": "جدول الأسابيع القادمة",
+"Digit Field Task": "مهام الموقع",
+"Digit RFI": "طلبات المعلومات",
+"Digit Submittal": "طلبات الاعتماد الفني",
+"Digit Drawing": "اللوحات",
+"Digit Transmittal": "الإحالات",
+"Digit Correspondence": "المراسلات",
+"Digit Inspection": "الفحوصات",
+"Digit Checklist Template": "قوالب الفحص",
+"Digit Defect": "العيوب",
+"Digit Punch Item": "الملاحظات النهائية",
+"Digit Handover Package": "حزم التسليم",
+"Digit Takeoff Sheet": "حصر الكميات",
+"Digit Estimate Risk": "مخاطر التقدير",
+"Digit Tender Addendum": "ملاحق العطاء",
+"Digit Tender Criterion": "معايير التقييم",
+"Digit Bid Package": "حزم العروض",
+"Digit Subcontract Bid": "عروض الباطن",
+"Digit Bid Leveling": "مقارنة العروض",
+"Digit Tender Award Decision": "قرارات الترسية",
+"Digit Change Event": "أحداث التغيير",
+"Digit CE Pricing Response": "تسعير التغييرات",
+"Digit EOT": "تمديدات المدة",
+"Digit Commercial Claim": "المطالبات التعاقدية",
+"Digit Subcontract Change": "تغييرات الباطن",
+"Digit Back Charge": "الخصومات",
+"Digit Subcontract Final Account": "الحساب الختامي للباطن",
+"Digit Cost Code": "أكواد التكلفة",
+"Digit Revenue Earning Rule": "قواعد الإيراد"
+}
+}

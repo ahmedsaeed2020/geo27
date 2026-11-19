@@ -1,0 +1,1644 @@
+{
+"_meta": {
+"generated_by": "scripts/extract-engines.py",
+"note": "from *_dashboard.py"
+},
+"doctypes": {
+"Asset": {
+"source": "erpnext/erpnext/assets/doctype/asset/asset_dashboard.py",
+"fieldname": null,
+"non_standard_fieldnames": {
+"Asset Movement": "asset"
+},
+"transactions": [
+{
+"label": "Movement",
+"items": [
+"Asset Movement"
+]
+}
+]
+},
+"BOM": {
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom_dashboard.py",
+"fieldname": "bom_no",
+"non_standard_fieldnames": {
+"Item": "default_bom",
+"Purchase Order": "bom"
+},
+"transactions": [
+{
+"label": "Stock",
+"items": [
+"Item",
+"Stock Entry",
+"Quality Inspection"
+]
+},
+{
+"label": "Manufacture",
+"items": [
+"BOM",
+"Work Order",
+"Job Card"
+]
+},
+{
+"label": "Subcontract",
+"items": [
+"Purchase Order"
+]
+}
+]
+},
+"Bank": {
+"source": "erpnext/erpnext/accounts/doctype/bank/bank_dashboard.py",
+"fieldname": "bank",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Bank Details",
+"items": [
+"Bank Account",
+"Bank Guarantee"
+]
+}
+]
+},
+"Batch": {
+"source": "erpnext/erpnext/stock/doctype/batch/batch_dashboard.py",
+"fieldname": "batch_no",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Buy",
+"items": [
+"Purchase Invoice",
+"Purchase Receipt"
+]
+},
+{
+"label": "Sell",
+"items": [
+"Sales Invoice",
+"Delivery Note"
+]
+},
+{
+"label": "Move",
+"items": [
+"Stock Entry",
+"Serial and Batch Bundle"
+]
+},
+{
+"label": "Quality",
+"items": [
+"Quality Inspection"
+]
+}
+]
+},
+"Company": {
+"source": "erpnext/erpnext/setup/doctype/company/company_dashboard.py",
+"fieldname": "company",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Pre Sales",
+"items": [
+"Quotation"
+]
+},
+{
+"label": "Orders",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Support",
+"items": [
+"Issue"
+]
+},
+{
+"label": "Projects",
+"items": [
+"Project"
+]
+}
+]
+},
+"Cost Center": {
+"source": "erpnext/erpnext/accounts/doctype/cost_center/cost_center_dashboard.py",
+"fieldname": "cost_center",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reports",
+"items": [
+"Budget Variance Report",
+"General Ledger"
+]
+}
+]
+},
+"Customer": {
+"source": "erpnext/erpnext/selling/doctype/customer/customer_dashboard.py",
+"fieldname": "customer",
+"non_standard_fieldnames": {
+"Payment Entry": "party",
+"Quotation": "party_name",
+"Opportunity": "party_name",
+"Bank Account": "party",
+"Subscription": "party"
+},
+"transactions": [
+{
+"label": "Pre Sales",
+"items": [
+"Opportunity",
+"Quotation"
+]
+},
+{
+"label": "Orders",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Payments",
+"items": [
+"Payment Entry",
+"Bank Account",
+"Dunning"
+]
+},
+{
+"label": "Support",
+"items": [
+"Issue",
+"Maintenance Visit",
+"Installation Note",
+"Warranty Claim"
+]
+},
+{
+"label": "Projects",
+"items": [
+"Project"
+]
+},
+{
+"label": "Pricing",
+"items": [
+"Pricing Rule"
+]
+},
+{
+"label": "Subscriptions",
+"items": [
+"Subscription"
+]
+}
+]
+},
+"Delivery Note": {
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note_dashboard.py",
+"fieldname": "delivery_note",
+"non_standard_fieldnames": {
+"Stock Entry": "delivery_note_no",
+"Quality Inspection": "reference_name",
+"Auto Repeat": "reference_document",
+"Purchase Receipt": "inter_company_reference"
+},
+"transactions": [
+{
+"label": "Related",
+"items": [
+"Sales Invoice",
+"Packing Slip",
+"Delivery Trip"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Sales Order",
+"Shipment",
+"Quality Inspection"
+]
+},
+{
+"label": "Returns",
+"items": [
+"Stock Entry"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+},
+{
+"label": "Internal Transfer",
+"items": [
+"Material Request",
+"Purchase Order",
+"Purchase Receipt"
+]
+}
+]
+},
+"Expense Claim": {
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim_dashboard.py",
+"fieldname": "reference_name",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Journal Entry"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Employee Advance"
+]
+}
+]
+},
+"Finance Book": {
+"source": "erpnext/erpnext/accounts/doctype/finance_book/finance_book_dashboard.py",
+"fieldname": "finance_book",
+"non_standard_fieldnames": {
+"Asset": "default_finance_book",
+"Company": "default_finance_book"
+},
+"transactions": [
+{
+"label": "Assets",
+"items": [
+"Asset",
+"Asset Value Adjustment"
+]
+}
+]
+},
+"Fiscal Year": {
+"source": "erpnext/erpnext/accounts/doctype/fiscal_year/fiscal_year_dashboard.py",
+"fieldname": "fiscal_year",
+"non_standard_fieldnames": {
+"Budget": "from_fiscal_year"
+},
+"transactions": [
+{
+"label": "Budgets",
+"items": [
+"Budget"
+]
+},
+{
+"label": "References",
+"items": [
+"Period Closing Voucher"
+]
+},
+{
+"label": "Target Details",
+"items": [
+"Sales Person",
+"Sales Partner",
+"Territory",
+"Monthly Distribution"
+]
+}
+]
+},
+"Gratuity": {
+"source": "hrms/hrms/payroll/doctype/gratuity/gratuity_dashboard.py",
+"fieldname": "reference_name",
+"non_standard_fieldnames": {
+"Additional Salary": "ref_docname"
+},
+"transactions": [
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Additional Salary"
+]
+}
+]
+},
+"Gratuity Rule": {
+"source": "hrms/hrms/payroll/doctype/gratuity_rule/gratuity_rule_dashboard.py",
+"fieldname": "gratuity_rule",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Gratuity",
+"items": [
+"Gratuity"
+]
+}
+]
+},
+"Invoice Discounting": {
+"source": "erpnext/erpnext/accounts/doctype/invoice_discounting/invoice_discounting_dashboard.py",
+"fieldname": "reference_name",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"Sales Invoice"
+]
+},
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Journal Entry"
+]
+}
+]
+},
+"Issue": {
+"source": "erpnext/erpnext/support/doctype/issue/issue_dashboard.py",
+"fieldname": "issue",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Activity",
+"items": [
+"Task"
+]
+}
+]
+},
+"Item": {
+"source": "erpnext/erpnext/stock/doctype/item/item_dashboard.py",
+"fieldname": "item_code",
+"non_standard_fieldnames": {
+"Work Order": "production_item",
+"Product Bundle": "new_item_code",
+"BOM": "item",
+"Batch": "item"
+},
+"transactions": [
+{
+"label": "Groups",
+"items": [
+"BOM",
+"Product Bundle",
+"Item Alternative"
+]
+},
+{
+"label": "Pricing",
+"items": [
+"Item Price",
+"Pricing Rule"
+]
+},
+{
+"label": "Sell",
+"items": [
+"Quotation",
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Buy",
+"items": [
+"Material Request",
+"Supplier Quotation",
+"Request for Quotation",
+"Purchase Order",
+"Purchase Receipt",
+"Purchase Invoice"
+]
+},
+{
+"label": "Manufacture",
+"items": [
+"Production Plan",
+"Work Order",
+"Item Manufacturer"
+]
+},
+{
+"label": "Traceability",
+"items": [
+"Serial No",
+"Batch"
+]
+},
+{
+"label": "Stock Movement",
+"items": [
+"Stock Entry",
+"Stock Reconciliation"
+]
+},
+{
+"label": "Lead Time",
+"items": [
+"Item Lead Time"
+]
+},
+{
+"label": "Standard Cost",
+"items": [
+"Item Standard Cost"
+]
+}
+]
+},
+"Item Tax Template": {
+"source": "erpnext/erpnext/accounts/doctype/item_tax_template/item_tax_template_dashboard.py",
+"fieldname": "item_tax_template",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Pre Sales",
+"items": [
+"Quotation",
+"Supplier Quotation"
+]
+},
+{
+"label": "Sales",
+"items": [
+"Sales Invoice",
+"Sales Order",
+"Delivery Note"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Invoice",
+"Purchase Order",
+"Purchase Receipt"
+]
+},
+{
+"label": "Stock",
+"items": [
+"Item Group",
+"Item"
+]
+}
+]
+},
+"Job Card": {
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card_dashboard.py",
+"fieldname": "job_card",
+"non_standard_fieldnames": {
+"Quality Inspection": "reference_name"
+},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Material Request",
+"Stock Entry"
+]
+},
+{
+"label": "Subcontracting",
+"items": [
+"Purchase Order",
+"Subcontracting Order"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Quality Inspection"
+]
+}
+]
+},
+"Leave Application": {
+"source": "hrms/hrms/hr/doctype/leave_application/leave_application_dashboard.py",
+"fieldname": "leave_application",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reports",
+"items": [
+"Employee Leave Balance"
+]
+}
+]
+},
+"Leave Period": {
+"source": "hrms/hrms/hr/doctype/leave_period/leave_period_dashboard.py",
+"fieldname": "leave_period",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Leave Allocation"
+]
+}
+]
+},
+"Leave Policy Assignment": {
+"source": "hrms/hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment_dashboard.py",
+"fieldname": "leave_policy_assignment",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Leaves",
+"items": [
+"Leave Allocation"
+]
+}
+]
+},
+"MapReduce Job": {
+"source": "frappe/frappe/core/doctype/mapreduce_job/mapreduce_job_dashboard.py",
+"fieldname": "master",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Tasks",
+"items": [
+"MapReduce Task"
+]
+}
+]
+},
+"Material Request": {
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request_dashboard.py",
+"fieldname": "material_request",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"Sales Order",
+"Request for Quotation",
+"Supplier Quotation",
+"Purchase Order"
+]
+},
+{
+"label": "Stock",
+"items": [
+"Stock Entry",
+"Purchase Receipt",
+"Pick List"
+]
+},
+{
+"label": "Manufacturing",
+"items": [
+"Work Order"
+]
+},
+{
+"label": "Internal Transfer",
+"items": [
+"Sales Order"
+]
+},
+{
+"label": "Accounting Dimensions",
+"items": [
+"Project",
+"Cost Center"
+]
+}
+]
+},
+"Monthly Distribution": {
+"source": "erpnext/erpnext/accounts/doctype/monthly_distribution/monthly_distribution_dashboard.py",
+"fieldname": "monthly_distribution",
+"non_standard_fieldnames": {
+"Sales Person": "distribution_id",
+"Territory": "distribution_id",
+"Sales Partner": "distribution_id"
+},
+"transactions": [
+{
+"label": "Target Details",
+"items": [
+"Sales Person",
+"Territory",
+"Sales Partner"
+]
+}
+]
+},
+"Operation": {
+"source": "erpnext/erpnext/manufacturing/doctype/operation/operation_dashboard.py",
+"fieldname": "operation",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Manufacture",
+"items": [
+"BOM",
+"Work Order",
+"Job Card"
+]
+}
+]
+},
+"Payment Request": {
+"source": "erpnext/erpnext/accounts/doctype/payment_request/payment_request_dashboard.py",
+"fieldname": "payment_request",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Payment Order"
+]
+}
+]
+},
+"Payment Term": {
+"source": "erpnext/erpnext/accounts/doctype/payment_term/payment_term_dashboard.py",
+"fieldname": "payment_term",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Sales",
+"items": [
+"Sales Invoice",
+"Sales Order",
+"Quotation"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Invoice",
+"Purchase Order"
+]
+}
+]
+},
+"Payment Terms Template": {
+"source": "erpnext/erpnext/accounts/doctype/payment_terms_template/payment_terms_template_dashboard.py",
+"fieldname": "payment_terms_template",
+"non_standard_fieldnames": {
+"Customer Group": "payment_terms",
+"Supplier Group": "payment_terms",
+"Supplier": "payment_terms",
+"Customer": "payment_terms"
+},
+"transactions": [
+{
+"label": "Sales",
+"items": [
+"Sales Invoice",
+"Sales Order",
+"Quotation"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Invoice",
+"Purchase Order"
+]
+},
+{
+"label": "Party",
+"items": [
+"Customer",
+"Supplier"
+]
+},
+{
+"label": "Group",
+"items": [
+"Customer Group",
+"Supplier Group"
+]
+}
+]
+},
+"Pick List": {
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list_dashboard.py",
+"fieldname": "pick_list",
+"non_standard_fieldnames": {
+"Stock Reservation Entry": "from_voucher_no",
+"Delivery Note": "against_pick_list",
+"Sales Invoice": "against_pick_list"
+},
+"transactions": [
+{
+"label": "Sales",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Manufacturing",
+"items": [
+"Stock Entry"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Stock Reservation Entry"
+]
+}
+]
+},
+"Process Payment Reconciliation": {
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation_dashboard.py",
+"fieldname": "process_pr",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reconciliation Logs",
+"items": [
+"Process Payment Reconciliation Log"
+]
+}
+]
+},
+"Production Plan": {
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan_dashboard.py",
+"fieldname": "production_plan",
+"non_standard_fieldnames": {
+"Stock Reservation Entry": "voucher_no"
+},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Work Order",
+"Material Request"
+]
+},
+{
+"label": "Subcontract",
+"items": [
+"Purchase Order"
+]
+},
+{
+"label": "Reservation",
+"items": [
+"Stock Reservation Entry"
+]
+},
+{
+"label": "Schedule",
+"items": [
+"Production Plan Schedule"
+]
+}
+]
+},
+"Project": {
+"source": "erpnext/erpnext/projects/doctype/project/project_dashboard.py",
+"fieldname": "project",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Project",
+"items": [
+"Task",
+"Timesheet",
+"Issue",
+"Project Update"
+]
+},
+{
+"label": "Material",
+"items": [
+"Material Request",
+"BOM",
+"Stock Entry"
+]
+},
+{
+"label": "Sales",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Order",
+"Purchase Receipt",
+"Purchase Invoice"
+]
+},
+{
+"label": "Manufacture",
+"items": [
+"Work Order"
+]
+}
+]
+},
+"Promotional Scheme": {
+"source": "erpnext/erpnext/accounts/doctype/promotional_scheme/promotional_scheme_dashboard.py",
+"fieldname": "promotional_scheme",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"Pricing Rule"
+]
+}
+]
+},
+"Purchase Invoice": {
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice_dashboard.py",
+"fieldname": "purchase_invoice",
+"non_standard_fieldnames": {
+"Journal Entry": "reference_name",
+"Payment Entry": "reference_name",
+"Payment Request": "reference_name",
+"Landed Cost Voucher": "receipt_document",
+"Purchase Invoice": "return_against",
+"Auto Repeat": "reference_document"
+},
+"transactions": [
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Payment Request",
+"Journal Entry"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Purchase Order",
+"Purchase Receipt",
+"Asset",
+"Landed Cost Voucher"
+]
+},
+{
+"label": "Returns",
+"items": [
+"Purchase Invoice"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+}
+]
+},
+"Purchase Order": {
+"source": "erpnext/erpnext/buying/doctype/purchase_order/purchase_order_dashboard.py",
+"fieldname": "purchase_order",
+"non_standard_fieldnames": {
+"Journal Entry": "reference_name",
+"Payment Entry": "reference_name",
+"Payment Request": "reference_name",
+"Auto Repeat": "reference_document"
+},
+"transactions": [
+{
+"label": "Related",
+"items": [
+"Purchase Receipt",
+"Purchase Invoice",
+"Sales Order"
+]
+},
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Journal Entry",
+"Payment Request"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Supplier Quotation",
+"Project",
+"Auto Repeat"
+]
+},
+{
+"label": "Manufacturing",
+"items": [
+"Material Request",
+"BOM",
+"Production Plan",
+"Blanket Order"
+]
+},
+{
+"label": "Sub-contracting",
+"items": [
+"Subcontracting Order",
+"Subcontracting Receipt",
+"Stock Entry"
+]
+}
+]
+},
+"Purchase Receipt": {
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt_dashboard.py",
+"fieldname": "purchase_receipt_no",
+"non_standard_fieldnames": {
+"Purchase Invoice": "purchase_receipt",
+"Asset": "purchase_receipt",
+"Landed Cost Voucher": "receipt_document",
+"Auto Repeat": "reference_document",
+"Purchase Receipt": "return_against",
+"Stock Reservation Entry": "from_voucher_no",
+"Quality Inspection": "reference_name"
+},
+"transactions": [
+{
+"label": "Related",
+"items": [
+"Purchase Invoice",
+"Landed Cost Voucher",
+"Asset",
+"Stock Reservation Entry"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Material Request",
+"Purchase Order",
+"Quality Inspection",
+"Project"
+]
+},
+{
+"label": "Returns",
+"items": [
+"Purchase Receipt"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+}
+]
+},
+"Purchase Taxes and Charges Template": {
+"source": "erpnext/erpnext/accounts/doctype/purchase_taxes_and_charges_template/purchase_taxes_and_charges_template_dashboard.py",
+"fieldname": "taxes_and_charges",
+"non_standard_fieldnames": {
+"Tax Rule": "purchase_tax_template"
+},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Purchase Invoice",
+"Purchase Order",
+"Purchase Receipt"
+]
+},
+{
+"label": "References",
+"items": [
+"Supplier Quotation",
+"Tax Rule"
+]
+}
+]
+},
+"Quotation": {
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation_dashboard.py",
+"fieldname": "prevdoc_docname",
+"non_standard_fieldnames": {
+"Auto Repeat": "reference_document",
+"Quotation": "revision_of"
+},
+"transactions": [
+{
+"label": "Sales Order",
+"items": [
+"Sales Order"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+},
+{
+"label": "Versions",
+"items": [
+"Quotation"
+]
+}
+]
+},
+"Sales Forecast": {
+"source": "erpnext/erpnext/manufacturing/doctype/sales_forecast/sales_forecast_dashboard.py",
+"fieldname": "sales_forecast",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "MPS",
+"items": [
+"Master Production Schedule"
+]
+}
+]
+},
+"Sales Invoice": {
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice_dashboard.py",
+"fieldname": "sales_invoice",
+"non_standard_fieldnames": {
+"Delivery Note": "against_sales_invoice",
+"Journal Entry": "reference_name",
+"Payment Entry": "reference_name",
+"Payment Request": "reference_name",
+"Sales Invoice": "return_against",
+"Auto Repeat": "reference_document",
+"Purchase Invoice": "inter_company_invoice_reference"
+},
+"transactions": [
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Payment Request",
+"Journal Entry",
+"Invoice Discounting",
+"Dunning"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Timesheet",
+"Delivery Note",
+"Sales Order"
+]
+},
+{
+"label": "Returns",
+"items": [
+"Sales Invoice"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+},
+{
+"label": "Internal Transfers",
+"items": [
+"Purchase Invoice"
+]
+}
+]
+},
+"Sales Order": {
+"source": "erpnext/erpnext/selling/doctype/sales_order/sales_order_dashboard.py",
+"fieldname": "sales_order",
+"non_standard_fieldnames": {
+"Delivery Note": "against_sales_order",
+"Journal Entry": "reference_name",
+"Payment Entry": "reference_name",
+"Payment Request": "reference_name",
+"Auto Repeat": "reference_document",
+"Maintenance Visit": "prevdoc_docname",
+"Stock Reservation Entry": "voucher_no"
+},
+"transactions": [
+{
+"label": "Fulfillment",
+"items": [
+"Sales Invoice",
+"Pick List",
+"Delivery Note",
+"Maintenance Visit"
+]
+},
+{
+"label": "Proforma",
+"items": [
+"Proforma Invoice"
+]
+},
+{
+"label": "Purchasing",
+"items": [
+"Material Request",
+"Purchase Order"
+]
+},
+{
+"label": "Projects",
+"items": [
+"Project"
+]
+},
+{
+"label": "Manufacturing",
+"items": [
+"Work Order",
+"BOM",
+"Blanket Order"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Quotation",
+"Auto Repeat",
+"Stock Reservation Entry"
+]
+},
+{
+"label": "Payment",
+"items": [
+"Payment Entry",
+"Payment Request",
+"Journal Entry"
+]
+},
+{
+"label": "Schedule",
+"items": [
+"Delivery Schedule Item"
+]
+},
+{
+"label": "Subcontracting Inward",
+"items": [
+"Subcontracting Inward Order"
+]
+}
+]
+},
+"Sales Person": {
+"source": "erpnext/erpnext/setup/doctype/sales_person/sales_person_dashboard.py",
+"fieldname": "sales_person",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Sales",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+}
+]
+},
+"Sales Taxes and Charges Template": {
+"source": "erpnext/erpnext/accounts/doctype/sales_taxes_and_charges_template/sales_taxes_and_charges_template_dashboard.py",
+"fieldname": "taxes_and_charges",
+"non_standard_fieldnames": {
+"Tax Rule": "sales_tax_template",
+"Subscription": "sales_tax_template"
+},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Sales Invoice",
+"Sales Order",
+"Delivery Note"
+]
+},
+{
+"label": "References",
+"items": [
+"POS Profile",
+"Subscription",
+"Tax Rule"
+]
+}
+]
+},
+"Share Type": {
+"source": "erpnext/erpnext/accounts/doctype/share_type/share_type_dashboard.py",
+"fieldname": "share_type",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "References",
+"items": [
+"Share Transfer",
+"Shareholder"
+]
+}
+]
+},
+"Shipping Rule": {
+"source": "erpnext/erpnext/accounts/doctype/shipping_rule/shipping_rule_dashboard.py",
+"fieldname": "shipping_rule",
+"non_standard_fieldnames": {
+"Payment Entry": "party_name"
+},
+"transactions": [
+{
+"label": "Pre Sales",
+"items": [
+"Quotation",
+"Supplier Quotation"
+]
+},
+{
+"label": "Sales",
+"items": [
+"Sales Order",
+"Delivery Note",
+"Sales Invoice"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Invoice",
+"Purchase Order",
+"Purchase Receipt"
+]
+}
+]
+},
+"Stock Closing Entry": {
+"source": "erpnext/erpnext/stock/doctype/stock_closing_entry/stock_closing_entry_dashboard.py",
+"fieldname": "stock_closing_entry",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Stock Closing Log",
+"items": [
+"Stock Closing Balance"
+]
+}
+]
+},
+"Stock Entry": {
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry_dashboard.py",
+"fieldname": "stock_entry",
+"non_standard_fieldnames": {
+"Stock Reservation Entry": "from_voucher_no"
+},
+"transactions": [
+{
+"label": "Stock Reservation",
+"items": [
+"Stock Reservation Entry"
+]
+}
+]
+},
+"Subcontracting Inward Order": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order_dashboard.py",
+"fieldname": "subcontracting_inward_order",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Stock Entry"
+]
+},
+{
+"label": "Manufacturing",
+"items": [
+"Work Order"
+]
+}
+]
+},
+"Subcontracting Order": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order_dashboard.py",
+"fieldname": "subcontracting_order",
+"non_standard_fieldnames": {
+"Stock Reservation Entry": "voucher_no"
+},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"Subcontracting Receipt",
+"Stock Entry"
+]
+},
+{
+"label": "Stock Reservation",
+"items": [
+"Stock Reservation Entry"
+]
+}
+]
+},
+"Subcontracting Receipt": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt_dashboard.py",
+"fieldname": "subcontracting_receipt",
+"non_standard_fieldnames": {
+"Subcontracting Receipt": "return_against"
+},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"Purchase Order",
+"Purchase Receipt",
+"Subcontracting Order",
+"Quality Inspection",
+"Project"
+]
+},
+{
+"label": "Returns",
+"items": [
+"Subcontracting Receipt"
+]
+}
+]
+},
+"Subscription Plan": {
+"source": "erpnext/erpnext/accounts/doctype/subscription_plan/subscription_plan_dashboard.py",
+"fieldname": "subscription_plan",
+"non_standard_fieldnames": {
+"Payment Request": "plan",
+"Subscription": "plan"
+},
+"transactions": [
+{
+"label": "References",
+"items": [
+"Payment Request",
+"Subscription"
+]
+}
+]
+},
+"Supplier": {
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier_dashboard.py",
+"fieldname": "supplier",
+"non_standard_fieldnames": {
+"Payment Entry": "party",
+"Bank Account": "party"
+},
+"transactions": [
+{
+"label": "Procurement",
+"items": [
+"Request for Quotation",
+"Supplier Quotation"
+]
+},
+{
+"label": "Orders",
+"items": [
+"Purchase Order",
+"Purchase Receipt",
+"Purchase Invoice"
+]
+},
+{
+"label": "Payments",
+"items": [
+"Payment Entry",
+"Bank Account"
+]
+},
+{
+"label": "Pricing",
+"items": [
+"Pricing Rule"
+]
+}
+]
+},
+"Supplier Quotation": {
+"source": "erpnext/erpnext/buying/doctype/supplier_quotation/supplier_quotation_dashboard.py",
+"fieldname": "supplier_quotation",
+"non_standard_fieldnames": {
+"Auto Repeat": "reference_document"
+},
+"transactions": [
+{
+"label": "Related",
+"items": [
+"Purchase Order",
+"Quotation"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Material Request",
+"Request for Quotation",
+"Project"
+]
+},
+{
+"label": "Subscription",
+"items": [
+"Auto Repeat"
+]
+}
+]
+},
+"Supplier Scorecard": {
+"source": "erpnext/erpnext/buying/doctype/supplier_scorecard/supplier_scorecard_dashboard.py",
+"fieldname": "supplier",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Scorecards",
+"items": [
+"Supplier Scorecard Period"
+]
+}
+]
+},
+"Task": {
+"source": "erpnext/erpnext/projects/doctype/task/task_dashboard.py",
+"fieldname": "task",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Activity",
+"items": [
+"Timesheet"
+]
+}
+]
+},
+"Tax Category": {
+"source": "erpnext/erpnext/accounts/doctype/tax_category/tax_category_dashboard.py",
+"fieldname": "tax_category",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Pre Sales",
+"items": [
+"Quotation",
+"Supplier Quotation"
+]
+},
+{
+"label": "Sales",
+"items": [
+"Sales Invoice",
+"Delivery Note",
+"Sales Order"
+]
+},
+{
+"label": "Purchase",
+"items": [
+"Purchase Invoice",
+"Purchase Receipt"
+]
+},
+{
+"label": "Party",
+"items": [
+"Customer",
+"Supplier"
+]
+},
+{
+"label": "Taxes",
+"items": [
+"Item",
+"Tax Rule"
+]
+}
+]
+},
+"Timesheet": {
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet_dashboard.py",
+"fieldname": "time_sheet",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "References",
+"items": [
+"Sales Invoice"
+]
+}
+]
+},
+"Training Program": {
+"source": "hrms/hrms/hr/doctype/training_program/training_program_dashboard.py",
+"fieldname": "training_program",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Training Events",
+"items": [
+"Training Event"
+]
+}
+]
+},
+"User Type": {
+"source": "frappe/frappe/core/doctype/user_type/user_type_dashboard.py",
+"fieldname": "user_type",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Reference",
+"items": [
+"User"
+]
+}
+]
+},
+"Work Order": {
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order_dashboard.py",
+"fieldname": "work_order",
+"non_standard_fieldnames": {
+"Batch": "reference_name",
+"Stock Reservation Entry": "voucher_no"
+},
+"transactions": [
+{
+"label": "Transactions",
+"items": [
+"Stock Entry",
+"Job Card",
+"Pick List"
+]
+},
+{
+"label": "Reference",
+"items": [
+"Serial No",
+"Batch",
+"Material Request"
+]
+},
+{
+"label": "Stock Reservation",
+"items": [
+"Stock Reservation Entry"
+]
+}
+]
+},
+"Workstation": {
+"source": "erpnext/erpnext/manufacturing/doctype/workstation/workstation_dashboard.py",
+"fieldname": "workstation",
+"non_standard_fieldnames": {},
+"transactions": [
+{
+"label": "Master",
+"items": [
+"BOM",
+"Routing",
+"Operation"
+]
+},
+{
+"label": "Transaction",
+"items": [
+"Work Order",
+"Job Card"
+]
+}
+]
+}
+}
+}

@@ -1,0 +1,1535 @@
+[
+ {
+  "id": "V4I-WA-001",
+  "board": "executive",
+  "title_ar": "إيراد الشهر",
+  "source_formula": "SUM(Sales Invoice.grand_total) docstatus=1 in current month; monthly bars; 90-day total",
+  "source_drill": "native Sales Invoice list filtered"
+ },
+ {
+  "id": "V4I-WA-002",
+  "board": "executive",
+  "title_ar": "صافي الربح",
+  "source_formula": "Income - Expense from GL by root_type for period",
+  "source_drill": "P&L line -> GL (account) -> source voucher"
+ },
+ {
+  "id": "V4I-WA-003",
+  "board": "executive",
+  "title_ar": "النقد والبنوك",
+  "source_formula": "SUM(GL Entry.debit - credit) on accounts with account_type in (Bank, Cash), is_cancelled=0",
+  "source_drill": "/pro/general-ledger (company)"
+ },
+ {
+  "id": "V4I-WA-004",
+  "board": "executive",
+  "title_ar": "فواتير متأخرة",
+  "source_formula": "Sales Invoice docstatus=1 AND outstanding_amount>0 AND due_date<today",
+  "source_drill": "native Sales Invoice list filtered"
+ },
+ {
+  "id": "V4I-WA-005",
+  "board": "executive",
+  "title_ar": "الإيراد حسب القسم",
+  "source_formula": "department performance needs an approved department dimension; not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-006",
+  "board": "executive",
+  "title_ar": "الإيرادات مقابل المصروفات",
+  "source_formula": "monthly income vs expense from GL (P&L totals proven; monthly series not independently re-computed)",
+  "source_drill": "month -> GL"
+ },
+ {
+  "id": "V4I-WA-007",
+  "board": "executive",
+  "title_ar": "كبار العملاء",
+  "source_formula": "customer ranking/concentration (Selling intelligence panel; share not independently re-computed)",
+  "source_drill": "customer -> Customer 360"
+ },
+ {
+  "id": "V4I-WA-008",
+  "board": "executive",
+  "title_ar": "اعتمادات معلّقة",
+  "source_formula": "Journal Entry / Payment Entry docstatus=0",
+  "source_drill": "native list filtered (docstatus=0)"
+ },
+ {
+  "id": "V4I-WA-009",
+  "board": "executive",
+  "title_ar": "نقص مخزون",
+  "source_formula": "items short against reorder/projection are measured on the dashboard; reorder-level suggestions (replenishment panel) not independently re-computed",
+  "source_drill": "native Bin / Item list"
+ },
+ {
+  "id": "V4I-WA-010",
+  "board": "executive",
+  "title_ar": "قيود غير مرحّلة",
+  "source_formula": "Journal Entry / Payment Entry docstatus=0",
+  "source_drill": "native list filtered (docstatus=0)"
+ },
+ {
+  "id": "V4I-WA-011",
+  "board": "finance",
+  "title_ar": "النقد والبنوك",
+  "source_formula": "SUM(GL Entry.debit - credit) on accounts with account_type in (Bank, Cash), is_cancelled=0",
+  "source_drill": "/pro/general-ledger (company)"
+ },
+ {
+  "id": "V4I-WA-012",
+  "board": "finance",
+  "title_ar": "الذمم المدينة",
+  "source_formula": "SUM(Sales Invoice.outstanding_amount) docstatus=1 AND outstanding_amount>0",
+  "source_drill": "native Sales Invoice list / AR report -> invoice -> eligible payment"
+ },
+ {
+  "id": "V4I-WA-013",
+  "board": "finance",
+  "title_ar": "الذمم الدائنة",
+  "source_formula": "SUM(Purchase Invoice.outstanding_amount) docstatus=1 AND outstanding_amount>0",
+  "source_drill": "native Purchase Invoice list / AP report -> invoice"
+ },
+ {
+  "id": "V4I-WA-014",
+  "board": "finance",
+  "title_ar": "ضريبة VAT",
+  "source_formula": "VAT position from tax rows of submitted invoices (Pro VAT page; not independently measured; no compliance claim)",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WA-015",
+  "board": "finance",
+  "title_ar": "توزيع المصروفات",
+  "source_formula": "expense by account/category from GL (Pro finance intelligence; not measured)",
+  "source_drill": "account -> GL"
+ },
+ {
+  "id": "V4I-WA-016",
+  "board": "finance",
+  "title_ar": "التدفق النقدي (داخل/خارج)",
+  "source_formula": "cash in/out by month (payment-entry month charts proven; GL cash movement trend not re-computed)",
+  "source_drill": "month -> Payment Entry list"
+ },
+ {
+  "id": "V4I-WA-017",
+  "board": "finance",
+  "title_ar": "صافي الربح الشهري",
+  "source_formula": "monthly income vs expense from GL (P&L totals proven; monthly series not independently re-computed)",
+  "source_drill": "month -> GL"
+ },
+ {
+  "id": "V4I-WA-018",
+  "board": "finance",
+  "title_ar": "مطابقة بنكية معلّقة",
+  "source_formula": "Bank Transaction docstatus=1 grouped by status (Unreconciled vs Reconciled)",
+  "source_drill": "native Bank Transaction list filtered"
+ },
+ {
+  "id": "V4I-WA-019",
+  "board": "finance",
+  "title_ar": "قيود تنتظر المراجعة",
+  "source_formula": "Journal Entry / Payment Entry docstatus=0",
+  "source_drill": "native list filtered (docstatus=0)"
+ },
+ {
+  "id": "V4I-WA-020",
+  "board": "finance",
+  "title_ar": "جاهزية الإقفال",
+  "source_formula": "blocking drafts + Period Closing Voucher count are measured; a checklist score is not defined",
+  "source_drill": "native lists"
+ },
+ {
+  "id": "V4I-WA-021",
+  "board": "selling",
+  "title_ar": "مبيعات الشهر",
+  "source_formula": "SUM(Sales Invoice.grand_total) docstatus=1 in current month; monthly bars; 90-day total",
+  "source_drill": "native Sales Invoice list filtered"
+ },
+ {
+  "id": "V4I-WA-022",
+  "board": "selling",
+  "title_ar": "عروض مفتوحة",
+  "source_formula": "Quotation docstatus=1 AND status in (Open, Replied)",
+  "source_drill": "native Quotation list filtered"
+ },
+ {
+  "id": "V4I-WA-023",
+  "board": "selling",
+  "title_ar": "أوامر مفتوحة",
+  "source_formula": "Sales Order docstatus=1 AND per_delivered<100 AND status not Closed/On Hold; late = delivery_date<today",
+  "source_drill": "native Sales Order list -> order -> Delivery Note"
+ },
+ {
+  "id": "V4I-WA-024",
+  "board": "selling",
+  "title_ar": "غير مدفوعة",
+  "source_formula": "as F.AR (positive outstanding of submitted invoices)",
+  "source_drill": "native Sales Invoice list"
+ },
+ {
+  "id": "V4I-WA-025",
+  "board": "selling",
+  "title_ar": "المبيعات حسب فئة الصنف",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WA-026",
+  "board": "selling",
+  "title_ar": "اتجاه المبيعات",
+  "source_formula": "monthly invoiced and ordered value (6 months)",
+  "source_drill": "bar -> filtered native list"
+ },
+ {
+  "id": "V4I-WA-027",
+  "board": "selling",
+  "title_ar": "المبيعات حسب المندوب",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WA-028",
+  "board": "selling",
+  "title_ar": "عروض تنتظر متابعة",
+  "source_formula": "open quotations expiring within window / already past valid_till",
+  "source_drill": "native Quotation list filtered"
+ },
+ {
+  "id": "V4I-WA-029",
+  "board": "selling",
+  "title_ar": "أوامر لم تُسلَّم",
+  "source_formula": "Sales Order docstatus=1 AND per_delivered<100 AND status not Closed/On Hold; late = delivery_date<today",
+  "source_drill": "native Sales Order list -> order -> Delivery Note"
+ },
+ {
+  "id": "V4I-WA-030",
+  "board": "selling",
+  "title_ar": "عملاء متأخرون",
+  "source_formula": "Sales Invoice docstatus=1 AND outstanding_amount>0 AND due_date<today",
+  "source_drill": "native Sales Invoice list filtered"
+ },
+ {
+  "id": "V4I-WA-031",
+  "board": "purchasing",
+  "title_ar": "إنفاق الشراء",
+  "source_formula": "SUM(Purchase Invoice.grand_total) docstatus=1 for current month / last 12 months",
+  "source_drill": "native Purchase Invoice list filtered"
+ },
+ {
+  "id": "V4I-WA-032",
+  "board": "purchasing",
+  "title_ar": "أوامر مفتوحة",
+  "source_formula": "Purchase Order docstatus=1 AND per_received<100 AND status not Closed/On Hold",
+  "source_drill": "PO -> PO line -> PR/PI (verified references)"
+ },
+ {
+  "id": "V4I-WA-033",
+  "board": "purchasing",
+  "title_ar": "مستلَم بلا فاتورة",
+  "source_formula": "Purchase Receipt docstatus=1 AND per_billed<100 AND is_return=0",
+  "source_drill": "native Purchase Receipt list filtered"
+ },
+ {
+  "id": "V4I-WA-034",
+  "board": "purchasing",
+  "title_ar": "غير مدفوعة",
+  "source_formula": "as F.AP; due list by due_date",
+  "source_drill": "native Purchase Invoice list"
+ },
+ {
+  "id": "V4I-WA-035",
+  "board": "purchasing",
+  "title_ar": "الإنفاق حسب الفئة",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WA-036",
+  "board": "purchasing",
+  "title_ar": "اتجاه الإنفاق",
+  "source_formula": "monthly ordered value (PO) and offered value (SQ), 6 months",
+  "source_drill": "bar -> filtered native list"
+ },
+ {
+  "id": "V4I-WA-037",
+  "board": "purchasing",
+  "title_ar": "كبار الموردين",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WA-038",
+  "board": "purchasing",
+  "title_ar": "طلبات تنتظر عروض",
+  "source_formula": "Material Request docstatus=1 AND per_ordered<100 AND status not Stopped",
+  "source_drill": "native Material Request list filtered"
+ },
+ {
+  "id": "V4I-WA-039",
+  "board": "purchasing",
+  "title_ar": "فروقات مطابقة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-040",
+  "board": "purchasing",
+  "title_ar": "أصناف تحت الحد",
+  "source_formula": "reorder suggestions / items without reorder level (replenishment panel; not independently re-computed)",
+  "source_drill": "item -> Item form"
+ },
+ {
+  "id": "V4I-WA-041",
+  "board": "inventory",
+  "title_ar": "قيمة المخزون",
+  "source_formula": "SUM(Bin.stock_value) is measured, but Bin (SAR 8,566,160.40) differs from posted SLE/stock GL (SAR 14,870,326.51); owner/finance decision pending (P4)",
+  "source_drill": "/pro/stock-reconciliation-check"
+ },
+ {
+  "id": "V4I-WA-042",
+  "board": "inventory",
+  "title_ar": "تحت حد الطلب",
+  "source_formula": "reorder suggestions / items without reorder level (replenishment panel; not independently re-computed)",
+  "source_drill": "item -> Item form"
+ },
+ {
+  "id": "V4I-WA-043",
+  "board": "inventory",
+  "title_ar": "تحويلات معلّقة",
+  "source_formula": "posted transfers measured; in-transit/awaiting-receipt state (add_to_transit) not measured",
+  "source_drill": "Stock Entry list"
+ },
+ {
+  "id": "V4I-WA-044",
+  "board": "inventory",
+  "title_ar": "دوران المخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-045",
+  "board": "inventory",
+  "title_ar": "المخزون حسب المستودع",
+  "source_formula": "warehouse count measured; value by warehouse (Pro heatmap) not independently re-computed; native Warehouse Wise Stock Balance needs server",
+  "source_drill": "warehouse -> Stock Balance"
+ },
+ {
+  "id": "V4I-WA-046",
+  "board": "inventory",
+  "title_ar": "أصناف منخفضة المخزون",
+  "source_formula": "items short against reorder/projection are measured on the dashboard; reorder-level suggestions (replenishment panel) not independently re-computed",
+  "source_drill": "native Bin / Item list"
+ },
+ {
+  "id": "V4I-WA-047",
+  "board": "inventory",
+  "title_ar": "حركات المخزون",
+  "source_formula": "Stock Entry docstatus=1 by purpose (receipt/issue/transfer) and month",
+  "source_drill": "native Stock Entry list filtered"
+ },
+ {
+  "id": "V4I-WA-048",
+  "board": "inventory",
+  "title_ar": "دفعات قاربت الانتهاء",
+  "source_formula": "Batch.expiry_date within window / past, disabled=0",
+  "source_drill": "native Batch list filtered"
+ },
+ {
+  "id": "V4I-WA-049",
+  "board": "inventory",
+  "title_ar": "جرد معلّق",
+  "source_formula": "Stock Entry / Stock Reconciliation docstatus=0 (pending posting/count)",
+  "source_drill": "native list (docstatus=0)"
+ },
+ {
+  "id": "V4I-WA-050",
+  "board": "inventory",
+  "title_ar": "تحويلات بانتظار الاستلام",
+  "source_formula": "posted transfers measured; in-transit/awaiting-receipt state (add_to_transit) not measured",
+  "source_drill": "Stock Entry list"
+ },
+ {
+  "id": "V4I-WA-051",
+  "board": "assets",
+  "title_ar": "إجمالي الأصول",
+  "source_formula": "Asset docstatus/status counts; gross_purchase_amount and current value per register; saved views verified 24/24",
+  "source_drill": "native Asset list filtered -> Asset"
+ },
+ {
+  "id": "V4I-WA-052",
+  "board": "assets",
+  "title_ar": "قيمة الأصول",
+  "source_formula": "Asset docstatus/status counts; gross_purchase_amount and current value per register; saved views verified 24/24",
+  "source_drill": "native Asset list filtered -> Asset"
+ },
+ {
+  "id": "V4I-WA-053",
+  "board": "assets",
+  "title_ar": "أصول جديدة (السنة)",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-054",
+  "board": "assets",
+  "title_ar": "إهلاك مستحق",
+  "source_formula": "Depreciation schedule rows due (schedule_date<=today AND journal_entry not set) vs posted JE",
+  "source_drill": "asset -> schedule -> JE (none posted in demo)"
+ },
+ {
+  "id": "V4I-WA-055",
+  "board": "assets",
+  "title_ar": "قيمة الأصول حسب الفئة",
+  "source_formula": "Assets grouped by asset_category (count); missing category",
+  "source_drill": "bar -> native Asset list filtered"
+ },
+ {
+  "id": "V4I-WA-056",
+  "board": "assets",
+  "title_ar": "تحليل قيمة الأصول",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-057",
+  "board": "assets",
+  "title_ar": "الأصول حسب الموقع",
+  "source_formula": "Assets grouped by location (count); missing location (demo: one location only)",
+  "source_drill": "bar -> native Asset list filtered"
+ },
+ {
+  "id": "V4I-WA-058",
+  "board": "assets",
+  "title_ar": "أصول تحتاج صيانة",
+  "source_formula": "Asset Maintenance Log due in 30 days / overdue; open Asset Repair (maintenance rows are preview lazy-seed data: PASS_AFTER_LAZY_SEED)",
+  "source_drill": "native list filtered"
+ },
+ {
+  "id": "V4I-WA-059",
+  "board": "assets",
+  "title_ar": "أصول للتخريد",
+  "source_formula": "disposed assets measured; gain/loss is shown only from posted disposal entries on the server (preview shows review only)",
+  "source_drill": "/pro/asset-disposal -> native Asset"
+ },
+ {
+  "id": "V4I-WA-060",
+  "board": "assets",
+  "title_ar": "مسارات الإهلاك تحتاج تحقّق v15/16",
+  "source_formula": "future schedule rows (reference schedule) — active schedules measured, forecast amounts not independently re-computed",
+  "source_drill": "asset -> schedule"
+ },
+ {
+  "id": "V4I-WA-061",
+  "board": "vat",
+  "title_ar": "حالة الربط",
+  "source_formula": "ZATCA e-invoicing status/integration needs official technical specs, credentials and owner approval; not simulated",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-062",
+  "board": "vat",
+  "title_ar": "فواتير صادرة",
+  "source_formula": "ZATCA e-invoicing status/integration needs official technical specs, credentials and owner approval; not simulated",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-063",
+  "board": "vat",
+  "title_ar": "ضريبة الفترة",
+  "source_formula": "VAT position from tax rows of submitted invoices (Pro VAT page; not independently measured; no compliance claim)",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WA-064",
+  "board": "vat",
+  "title_ar": "تحتاج مراجعة",
+  "source_formula": "ZATCA e-invoicing status/integration needs official technical specs, credentials and owner approval; not simulated",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-065",
+  "board": "vat",
+  "title_ar": "المبيعات الخاضعة مقابل المعفاة",
+  "source_formula": "taxable vs exempt/zero-rated split needs approved tax categories — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-066",
+  "board": "vat",
+  "title_ar": "بيانات ضريبية ناقصة",
+  "source_formula": "parties/invoices missing tax ID or tax template — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-067",
+  "board": "vat",
+  "title_ar": "ضريبة المخرجات/المدخلات",
+  "source_formula": "VAT position from tax rows of submitted invoices (Pro VAT page; not independently measured; no compliance claim)",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WA-068",
+  "board": "vat",
+  "title_ar": "جاهزية الربط (حسب النطاق)",
+  "source_formula": "ZATCA e-invoicing status/integration needs official technical specs, credentials and owner approval; not simulated",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WA-069",
+  "board": "vat",
+  "title_ar": "صياغة آمنة فقط",
+  "source_formula": "ZATCA e-invoicing status/integration needs official technical specs, credentials and owner approval; not simulated",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-001",
+  "board": "accounting",
+  "title_ar": "رصيد النقد",
+  "source_formula": "SUM(GL Entry.debit - credit) on accounts with account_type in (Bank, Cash), is_cancelled=0",
+  "source_drill": "/pro/general-ledger (company)"
+ },
+ {
+  "id": "V4I-WI-002",
+  "board": "accounting",
+  "title_ar": "أعمار الذمم المدينة",
+  "source_formula": "SUM(Sales Invoice.outstanding_amount) docstatus=1 AND outstanding_amount>0",
+  "source_drill": "native Sales Invoice list / AR report -> invoice -> eligible payment"
+ },
+ {
+  "id": "V4I-WI-003",
+  "board": "accounting",
+  "title_ar": "أعمار الذمم الدائنة",
+  "source_formula": "SUM(Purchase Invoice.outstanding_amount) docstatus=1 AND outstanding_amount>0",
+  "source_drill": "native Purchase Invoice list / AP report -> invoice"
+ },
+ {
+  "id": "V4I-WI-004",
+  "board": "accounting",
+  "title_ar": "وضع الضريبة",
+  "source_formula": "VAT position from tax rows of submitted invoices (Pro VAT page; not independently measured; no compliance claim)",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-005",
+  "board": "accounting",
+  "title_ar": "اتجاه الربح والخسارة",
+  "source_formula": "monthly income vs expense from GL (P&L totals proven; monthly series not independently re-computed)",
+  "source_drill": "month -> GL"
+ },
+ {
+  "id": "V4I-WI-006",
+  "board": "accounting",
+  "title_ar": "هامش الربح الإجمالي",
+  "source_formula": "native Gross Profit report (selling amount - buying amount); figures not independently re-computed; group-by variants not verified",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-007",
+  "board": "accounting",
+  "title_ar": "المصروفات حسب الفئة",
+  "source_formula": "expense by account/category from GL (Pro finance intelligence; not measured)",
+  "source_drill": "account -> GL"
+ },
+ {
+  "id": "V4I-WI-008",
+  "board": "accounting",
+  "title_ar": "اتجاه التدفق النقدي",
+  "source_formula": "cash in/out by month (payment-entry month charts proven; GL cash movement trend not re-computed)",
+  "source_drill": "month -> Payment Entry list"
+ },
+ {
+  "id": "V4I-WI-009",
+  "board": "accounting",
+  "title_ar": "حالة المطابقة البنكية",
+  "source_formula": "Bank Transaction docstatus=1 grouped by status (Unreconciled vs Reconciled)",
+  "source_drill": "native Bank Transaction list filtered"
+ },
+ {
+  "id": "V4I-WI-010",
+  "board": "accounting",
+  "title_ar": "حركات غير مطابقة",
+  "source_formula": "Bank Transaction docstatus=1 grouped by status (Unreconciled vs Reconciled)",
+  "source_drill": "native Bank Transaction list filtered"
+ },
+ {
+  "id": "V4I-WI-011",
+  "board": "accounting",
+  "title_ar": "قيود غير مرحّلة",
+  "source_formula": "Journal Entry / Payment Entry docstatus=0",
+  "source_drill": "native list filtered (docstatus=0)"
+ },
+ {
+  "id": "V4I-WI-012",
+  "board": "accounting",
+  "title_ar": "جاهزية الإقفال",
+  "source_formula": "blocking drafts + Period Closing Voucher count are measured; a checklist score is not defined",
+  "source_drill": "native lists"
+ },
+ {
+  "id": "V4I-WI-013",
+  "board": "accounting",
+  "title_ar": "حسابات بحركة غير معتادة",
+  "source_formula": "statistical outlier detection on account movement — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-014",
+  "board": "accounting",
+  "title_ar": "ربحية مركز التكلفة",
+  "source_formula": "posted income/expense by cost center (GL); cost-center count measured, attribution not independently re-computed",
+  "source_drill": "cost center -> GL"
+ },
+ {
+  "id": "V4I-WI-015",
+  "board": "accounting",
+  "title_ar": "ربحية الفرع",
+  "source_formula": "project/branch profitability needs an approved dimension policy; not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-016",
+  "board": "accounting",
+  "title_ar": "ربحية العميل",
+  "source_formula": "native Gross Profit report (selling amount - buying amount); figures not independently re-computed; group-by variants not verified",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-017",
+  "board": "accounting",
+  "title_ar": "اتجاه التحصيل",
+  "source_formula": "DSO / collection trend needs an owner-approved definition (denominator, period); intentionally not shown",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-018",
+  "board": "accounting",
+  "title_ar": "ذمم مدينة متأخرة",
+  "source_formula": "Sales Invoice docstatus=1 AND outstanding_amount>0 AND due_date<today",
+  "source_drill": "native Sales Invoice list filtered"
+ },
+ {
+  "id": "V4I-WI-019",
+  "board": "accounting",
+  "title_ar": "ذمم دائنة متأخرة",
+  "source_formula": "Purchase Invoice docstatus=1 AND outstanding_amount>0 AND due_date<today",
+  "source_drill": "native Purchase Invoice list filtered"
+ },
+ {
+  "id": "V4I-WI-020",
+  "board": "accounting",
+  "title_ar": "فواتير بيع قائمة",
+  "source_formula": "as F.AR (positive outstanding of submitted invoices)",
+  "source_drill": "native Sales Invoice list"
+ },
+ {
+  "id": "V4I-WI-021",
+  "board": "accounting",
+  "title_ar": "فواتير شراء قائمة",
+  "source_formula": "as F.AP; due list by due_date",
+  "source_drill": "native Purchase Invoice list"
+ },
+ {
+  "id": "V4I-WI-022",
+  "board": "accounting",
+  "title_ar": "حركة الأستاذ حسب الحساب",
+  "source_formula": "GL movement grouped by account (GL engine proven; grouping not measured)",
+  "source_drill": "account -> GL"
+ },
+ {
+  "id": "V4I-WI-023",
+  "board": "accounting",
+  "title_ar": "أعلى حسابات المصروفات",
+  "source_formula": "expense by account/category from GL (Pro finance intelligence; not measured)",
+  "source_drill": "account -> GL"
+ },
+ {
+  "id": "V4I-WI-024",
+  "board": "accounting",
+  "title_ar": "استثناءات الضريبة",
+  "source_formula": "parties/invoices missing tax ID or tax template — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-025",
+  "board": "accounting",
+  "title_ar": "مخاطر القيد اليدوي",
+  "source_formula": "finance exception queue (Pro audit page; reasons not independently measured)",
+  "source_drill": "row -> source document"
+ },
+ {
+  "id": "V4I-WI-026",
+  "board": "accounting",
+  "title_ar": "فجوات أبعاد المحاسبة",
+  "source_formula": "accounts/vouchers missing a mandatory accounting dimension (Pro cost-center screen; not measured)",
+  "source_drill": "GL filtered"
+ },
+ {
+  "id": "V4I-WI-027",
+  "board": "accounting",
+  "title_ar": "حركة المركز المالي",
+  "source_formula": "native Balance Sheet",
+  "source_drill": "account -> GL"
+ },
+ {
+  "id": "V4I-WI-028",
+  "board": "accounting",
+  "title_ar": "تعرّض المورد",
+  "source_formula": "supplier concentration of open payables (Pro payables panel; concentration share not independently re-computed)",
+  "source_drill": "supplier -> PI list"
+ },
+ {
+  "id": "V4I-WI-029",
+  "board": "accounting",
+  "title_ar": "اتجاه تحصيل المدفوعات",
+  "source_formula": "cash in/out by month (payment-entry month charts proven; GL cash movement trend not re-computed)",
+  "source_drill": "month -> Payment Entry list"
+ },
+ {
+  "id": "V4I-WI-030",
+  "board": "accounting",
+  "title_ar": "طابور استثناءات المالية",
+  "source_formula": "finance exception queue (Pro audit page; reasons not independently measured)",
+  "source_drill": "row -> source document"
+ },
+ {
+  "id": "V4I-WI-031",
+  "board": "selling",
+  "title_ar": "الأكثر مبيعًا حسب الشهر",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-032",
+  "board": "selling",
+  "title_ar": "الأكثر مبيعًا حسب الفرع",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-033",
+  "board": "selling",
+  "title_ar": "الأكثر مبيعًا حسب المنطقة",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-034",
+  "board": "selling",
+  "title_ar": "الأكثر مبيعًا حسب المندوب",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-035",
+  "board": "selling",
+  "title_ar": "أعلى صنف هامشًا",
+  "source_formula": "native Gross Profit report (selling amount - buying amount); figures not independently re-computed; group-by variants not verified",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-036",
+  "board": "selling",
+  "title_ar": "أدنى صنف هامشًا",
+  "source_formula": "native Gross Profit report (selling amount - buying amount); figures not independently re-computed; group-by variants not verified",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-037",
+  "board": "selling",
+  "title_ar": "المبيعات حسب شريحة العميل",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-038",
+  "board": "selling",
+  "title_ar": "أوامر مفتوحة حسب تاريخ التسليم",
+  "source_formula": "Sales Order docstatus=1 AND per_delivered<100 AND status not Closed/On Hold; late = delivery_date<today",
+  "source_drill": "native Sales Order list -> order -> Delivery Note"
+ },
+ {
+  "id": "V4I-WI-039",
+  "board": "selling",
+  "title_ar": "معدّل تحويل العروض",
+  "source_formula": "conversion/win rate needs an owner-approved denominator rule; shown as unavailable, never as 0%",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-040",
+  "board": "selling",
+  "title_ar": "مخاطر انتهاء العروض",
+  "source_formula": "open quotations expiring within window / already past valid_till",
+  "source_drill": "native Quotation list filtered"
+ },
+ {
+  "id": "V4I-WI-041",
+  "board": "selling",
+  "title_ar": "مخاطر تحصيل الفواتير",
+  "source_formula": "overdue receivables to chase + customer receipts in 90 days",
+  "source_drill": "native Sales Invoice / Payment Entry lists"
+ },
+ {
+  "id": "V4I-WI-042",
+  "board": "selling",
+  "title_ar": "مرتجعات حسب الصنف",
+  "source_formula": "delivery returns (Delivery Note is_return=1) measured; credit-note value by customer/item not independently re-computed",
+  "source_drill": "native Delivery Note list filtered"
+ },
+ {
+  "id": "V4I-WI-043",
+  "board": "selling",
+  "title_ar": "إشعارات دائنة حسب العميل",
+  "source_formula": "delivery returns (Delivery Note is_return=1) measured; credit-note value by customer/item not independently re-computed",
+  "source_drill": "native Delivery Note list filtered"
+ },
+ {
+  "id": "V4I-WI-044",
+  "board": "selling",
+  "title_ar": "أداء المندوب حسب الصنف",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-045",
+  "board": "selling",
+  "title_ar": "أداء الفرع حسب المنتج",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-046",
+  "board": "selling",
+  "title_ar": "تكرار شراء العملاء",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-047",
+  "board": "selling",
+  "title_ar": "عملاء جدد مقابل متكرّرين",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-048",
+  "board": "selling",
+  "title_ar": "تسرّب الخصومات",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-049",
+  "board": "selling",
+  "title_ar": "مخاطر تجاوز السعر",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-050",
+  "board": "selling",
+  "title_ar": "أوامر لم تُسلّم",
+  "source_formula": "Sales Order docstatus=1 AND per_delivered<100 AND status not Closed/On Hold; late = delivery_date<today",
+  "source_drill": "native Sales Order list -> order -> Delivery Note"
+ },
+ {
+  "id": "V4I-WI-051",
+  "board": "selling",
+  "title_ar": "مسلّم لم يُفوتر",
+  "source_formula": "Delivery Note docstatus=1 AND per_billed<100 AND is_return=0",
+  "source_drill": "native Delivery Note list filtered"
+ },
+ {
+  "id": "V4I-WI-052",
+  "board": "selling",
+  "title_ar": "مفوتر لم يُدفع",
+  "source_formula": "as F.AR (positive outstanding of submitted invoices)",
+  "source_drill": "native Sales Invoice list"
+ },
+ {
+  "id": "V4I-WI-053",
+  "board": "selling",
+  "title_ar": "كبار العملاء غير المسدّدين",
+  "source_formula": "customer ranking/concentration (Selling intelligence panel; share not independently re-computed)",
+  "source_drill": "customer -> Customer 360"
+ },
+ {
+  "id": "V4I-WI-054",
+  "board": "selling",
+  "title_ar": "اتجاه الإيراد",
+  "source_formula": "monthly invoiced and ordered value (6 months)",
+  "source_drill": "bar -> filtered native list"
+ },
+ {
+  "id": "V4I-WI-055",
+  "board": "selling",
+  "title_ar": "اتجاه الهامش",
+  "source_formula": "native Gross Profit report (selling amount - buying amount); figures not independently re-computed; group-by variants not verified",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-056",
+  "board": "selling",
+  "title_ar": "اتجاه فئة الصنف",
+  "source_formula": "Sales Analytics with another tree type (customer/item/territory/sales person/group) — same engine, that tree type not separately re-computed",
+  "source_drill": "cell -> invoice rows"
+ },
+ {
+  "id": "V4I-WI-057",
+  "board": "selling",
+  "title_ar": "موسمية المبيعات",
+  "source_formula": "monthly invoiced and ordered value (6 months)",
+  "source_drill": "bar -> filtered native list"
+ },
+ {
+  "id": "V4I-WI-058",
+  "board": "selling",
+  "title_ar": "المبيعات حسب شروط الدفع",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-059",
+  "board": "selling",
+  "title_ar": "الصفقات عالية القيمة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-060",
+  "board": "selling",
+  "title_ar": "طابور استثناءات المبيعات",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-061",
+  "board": "purchasing",
+  "title_ar": "الإنفاق حسب المورد",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WI-062",
+  "board": "purchasing",
+  "title_ar": "الإنفاق حسب الفئة",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WI-063",
+  "board": "purchasing",
+  "title_ar": "فروق أسعار الشراء",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-064",
+  "board": "purchasing",
+  "title_ar": "تأخّر تسليم الموردين",
+  "source_formula": "late open POs are measured; on-time-delivery % (supplier reliability panel) not independently re-computed",
+  "source_drill": "supplier -> POs"
+ },
+ {
+  "id": "V4I-WI-065",
+  "board": "purchasing",
+  "title_ar": "موثوقية المورد",
+  "source_formula": "late open POs are measured; on-time-delivery % (supplier reliability panel) not independently re-computed",
+  "source_drill": "supplier -> POs"
+ },
+ {
+  "id": "V4I-WI-066",
+  "board": "purchasing",
+  "title_ar": "أوامر شراء متأخرة",
+  "source_formula": "open Purchase Orders with schedule_date < today",
+  "source_drill": "native Purchase Order list filtered"
+ },
+ {
+  "id": "V4I-WI-067",
+  "board": "purchasing",
+  "title_ar": "طلبات مواد معلّقة",
+  "source_formula": "Material Request docstatus=1 AND per_ordered<100 AND status not Stopped",
+  "source_drill": "native Material Request list filtered"
+ },
+ {
+  "id": "V4I-WI-068",
+  "board": "purchasing",
+  "title_ar": "معدّل رد عروض الموردين",
+  "source_formula": "supplier response rate needs the supplier portal / email sending on the server",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-069",
+  "board": "purchasing",
+  "title_ar": "مقارنة عروض الموردين",
+  "source_formula": "Pro quote comparison panel on the SQ form (no weighted winner; currency/UOM basis open); native comparison report needs server",
+  "source_drill": "SQ -> comparison"
+ },
+ {
+  "id": "V4I-WI-070",
+  "board": "purchasing",
+  "title_ar": "أوامر لم تُستلم",
+  "source_formula": "Purchase Order docstatus=1 AND per_received<100 AND status not Closed/On Hold",
+  "source_drill": "PO -> PO line -> PR/PI (verified references)"
+ },
+ {
+  "id": "V4I-WI-071",
+  "board": "purchasing",
+  "title_ar": "مستلم لم يُفوتر (GRNI)",
+  "source_formula": "Purchase Receipt docstatus=1 AND per_billed<100 AND is_return=0",
+  "source_drill": "native Purchase Receipt list filtered"
+ },
+ {
+  "id": "V4I-WI-072",
+  "board": "purchasing",
+  "title_ar": "مفوتر لم يُدفع",
+  "source_formula": "as F.AP; due list by due_date",
+  "source_drill": "native Purchase Invoice list"
+ },
+ {
+  "id": "V4I-WI-073",
+  "board": "purchasing",
+  "title_ar": "كبار الموردين",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WI-074",
+  "board": "purchasing",
+  "title_ar": "موردون جدد",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-075",
+  "board": "purchasing",
+  "title_ar": "اتجاه الإنفاق",
+  "source_formula": "monthly ordered value (PO) and offered value (SQ), 6 months",
+  "source_drill": "bar -> filtered native list"
+ },
+ {
+  "id": "V4I-WI-076",
+  "board": "purchasing",
+  "title_ar": "إنفاق الفرع",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-077",
+  "board": "purchasing",
+  "title_ar": "إنفاق القسم",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-078",
+  "board": "purchasing",
+  "title_ar": "مشتريات طارئة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-079",
+  "board": "purchasing",
+  "title_ar": "اختناقات الاعتماد",
+  "source_formula": "approval bottleneck timing needs workflow-transition history — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-080",
+  "board": "purchasing",
+  "title_ar": "زمن دورة أمر الشراء",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-081",
+  "board": "purchasing",
+  "title_ar": "أثر التكلفة المحمّلة",
+  "source_formula": "landed-cost impact analysis — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-082",
+  "board": "purchasing",
+  "title_ar": "اعتماد الصنف على مورد",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WI-083",
+  "board": "purchasing",
+  "title_ar": "مخاطر المورد الوحيد",
+  "source_formula": "spend by supplier/category, top suppliers, single-supplier dependence (Pro supplier panels; shares not independently re-computed)",
+  "source_drill": "supplier -> Supplier form/360 panel"
+ },
+ {
+  "id": "V4I-WI-084",
+  "board": "purchasing",
+  "title_ar": "ارتفاع أسعار المورد",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-085",
+  "board": "purchasing",
+  "title_ar": "مراجعة ضريبة المشتريات",
+  "source_formula": "VAT position from tax rows of submitted invoices (Pro VAT page; not independently measured; no compliance claim)",
+  "source_drill": "row -> invoice"
+ },
+ {
+  "id": "V4I-WI-086",
+  "board": "purchasing",
+  "title_ar": "مرتجعات الشراء",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-087",
+  "board": "purchasing",
+  "title_ar": "استخدام الأوامر الإطارية",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-088",
+  "board": "purchasing",
+  "title_ar": "الموازنة مقابل الفعلي",
+  "source_formula": "purchase budget vs actual needs approved budgets",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-089",
+  "board": "purchasing",
+  "title_ar": "مراجعة الأسعار عبر الموردين",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-090",
+  "board": "purchasing",
+  "title_ar": "طابور استثناءات المشتريات",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-091",
+  "board": "inventory",
+  "title_ar": "قيمة المخزون حسب المستودع",
+  "source_formula": "warehouse count measured; value by warehouse (Pro heatmap) not independently re-computed; native Warehouse Wise Stock Balance needs server",
+  "source_drill": "warehouse -> Stock Balance"
+ },
+ {
+  "id": "V4I-WI-092",
+  "board": "inventory",
+  "title_ar": "أصناف سريعة الحركة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-093",
+  "board": "inventory",
+  "title_ar": "أصناف بطيئة الحركة",
+  "source_formula": "stock held with no movement since a cut-off (Stock Exposure: posted SLE per item/warehouse, last movement date) — inactivity only, not FIFO ageing, velocity or turnover",
+  "source_drill": "row -> Stock Ledger"
+ },
+ {
+  "id": "V4I-WI-094",
+  "board": "inventory",
+  "title_ar": "مخزون ميت",
+  "source_formula": "stock held with no movement since a cut-off (Stock Exposure: posted SLE per item/warehouse, last movement date) — inactivity only, not FIFO ageing, velocity or turnover",
+  "source_drill": "row -> Stock Ledger"
+ },
+ {
+  "id": "V4I-WI-095",
+  "board": "inventory",
+  "title_ar": "مخزون منخفض",
+  "source_formula": "items short against reorder/projection are measured on the dashboard; reorder-level suggestions (replenishment panel) not independently re-computed",
+  "source_drill": "native Bin / Item list"
+ },
+ {
+  "id": "V4I-WI-096",
+  "board": "inventory",
+  "title_ar": "مخزون زائد",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-097",
+  "board": "inventory",
+  "title_ar": "مخاطر النفاد",
+  "source_formula": "items short against reorder/projection are measured on the dashboard; reorder-level suggestions (replenishment panel) not independently re-computed",
+  "source_drill": "native Bin / Item list"
+ },
+ {
+  "id": "V4I-WI-098",
+  "board": "inventory",
+  "title_ar": "مخاطر المخزون السالب",
+  "source_formula": "Bin.projected_qty<0 measured; negative ACTUAL stock (actual_qty/qty_after_transaction<0) is a different predicate, not measured",
+  "source_drill": "native Bin list filtered"
+ },
+ {
+  "id": "V4I-WI-099",
+  "board": "inventory",
+  "title_ar": "حركة الصنف حسب الفرع",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-100",
+  "board": "inventory",
+  "title_ar": "استخدام المستودع",
+  "source_formula": "warehouse utilisation needs a capacity field not present in native Warehouse — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-101",
+  "board": "inventory",
+  "title_ar": "تقادم المخزون",
+  "source_formula": "native Stock Ageing (FIFO queue on server); preview shows labelled source rows only",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-102",
+  "board": "inventory",
+  "title_ar": "مخاطر انتهاء الدفعات",
+  "source_formula": "Batch.expiry_date within window / past, disabled=0",
+  "source_drill": "native Batch list filtered"
+ },
+ {
+  "id": "V4I-WI-103",
+  "board": "inventory",
+  "title_ar": "استثناءات الأرقام التسلسلية",
+  "source_formula": "active serial count measured (demo has 0 serial rows -> NO_DATA chart); serial history panel reused; native Serial No Ledger needs server",
+  "source_drill": "Serial No list"
+ },
+ {
+  "id": "V4I-WI-104",
+  "board": "inventory",
+  "title_ar": "فروق تسوية المخزون",
+  "source_formula": "pending counts measured; count/valuation variance amounts (StockReconPanel) not independently re-computed",
+  "source_drill": "Stock Reconciliation"
+ },
+ {
+  "id": "V4I-WI-105",
+  "board": "inventory",
+  "title_ar": "قيمة تعديل المخزون",
+  "source_formula": "pending counts measured; count/valuation variance amounts (StockReconPanel) not independently re-computed",
+  "source_drill": "Stock Reconciliation"
+ },
+ {
+  "id": "V4I-WI-106",
+  "board": "inventory",
+  "title_ar": "تأخّر التحويلات",
+  "source_formula": "posted transfers measured; in-transit/awaiting-receipt state (add_to_transit) not measured",
+  "source_drill": "Stock Entry list"
+ },
+ {
+  "id": "V4I-WI-107",
+  "board": "inventory",
+  "title_ar": "اقتراحات إعادة الطلب",
+  "source_formula": "reorder suggestions / items without reorder level (replenishment panel; not independently re-computed)",
+  "source_drill": "item -> Item form"
+ },
+ {
+  "id": "V4I-WI-108",
+  "board": "inventory",
+  "title_ar": "أصناف بلا حد إعادة طلب",
+  "source_formula": "reorder suggestions / items without reorder level (replenishment panel; not independently re-computed)",
+  "source_drill": "item -> Item form"
+ },
+ {
+  "id": "V4I-WI-109",
+  "board": "inventory",
+  "title_ar": "تأخّر استلام إلى مخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-110",
+  "board": "inventory",
+  "title_ar": "مخاطر نقص التسليم",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-111",
+  "board": "inventory",
+  "title_ar": "أعلى الأصناف قيمةً",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-112",
+  "board": "inventory",
+  "title_ar": "أعلى الأصناف دورانًا",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-113",
+  "board": "inventory",
+  "title_ar": "الهامش مقابل قيمة المخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-114",
+  "board": "inventory",
+  "title_ar": "معدّل دوران المخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-115",
+  "board": "inventory",
+  "title_ar": "أيام المخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-116",
+  "board": "inventory",
+  "title_ar": "تصنيف ABC",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-117",
+  "board": "inventory",
+  "title_ar": "تغيّر التقييم",
+  "source_formula": "Stock Ledger Entry (is_cancelled=0) by item/warehouse/voucher; monthly stock_value_difference",
+  "source_drill": "SLE row -> source voucher -> Back"
+ },
+ {
+  "id": "V4I-WI-118",
+  "board": "inventory",
+  "title_ar": "بضاعة تالفة/مرتجعة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-119",
+  "board": "inventory",
+  "title_ar": "استلام مقابل فاتورة",
+  "source_formula": "Purchase Receipt docstatus=1 AND per_billed<100 AND is_return=0",
+  "source_drill": "native Purchase Receipt list filtered"
+ },
+ {
+  "id": "V4I-WI-120",
+  "board": "inventory",
+  "title_ar": "طابور استثناءات المخزون",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-121",
+  "board": "assets",
+  "title_ar": "قيمة الأصول حسب الفئة",
+  "source_formula": "Assets grouped by asset_category (count); missing category",
+  "source_drill": "bar -> native Asset list filtered"
+ },
+ {
+  "id": "V4I-WI-122",
+  "board": "assets",
+  "title_ar": "قيمة الأصول حسب الموقع",
+  "source_formula": "Assets grouped by location (count); missing location (demo: one location only)",
+  "source_drill": "bar -> native Asset list filtered"
+ },
+ {
+  "id": "V4I-WI-123",
+  "board": "assets",
+  "title_ar": "قيمة الأصول حسب القسم",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-124",
+  "board": "assets",
+  "title_ar": "إهلاك مستحق",
+  "source_formula": "Depreciation schedule rows due (schedule_date<=today AND journal_entry not set) vs posted JE",
+  "source_drill": "asset -> schedule -> JE (none posted in demo)"
+ },
+ {
+  "id": "V4I-WI-125",
+  "board": "assets",
+  "title_ar": "إهلاك مُرحّل",
+  "source_formula": "Journal Entry voucher_type=Depreciation Entry this month (0 in demo — reported as no data, not zero value)",
+  "source_drill": "native JE list"
+ },
+ {
+  "id": "V4I-WI-126",
+  "board": "assets",
+  "title_ar": "إهلاك معلّق",
+  "source_formula": "Depreciation schedule rows due (schedule_date<=today AND journal_entry not set) vs posted JE",
+  "source_drill": "asset -> schedule -> JE (none posted in demo)"
+ },
+ {
+  "id": "V4I-WI-127",
+  "board": "assets",
+  "title_ar": "صيانة مستحقة",
+  "source_formula": "Asset Maintenance Log due in 30 days / overdue; open Asset Repair (maintenance rows are preview lazy-seed data: PASS_AFTER_LAZY_SEED)",
+  "source_drill": "native list filtered"
+ },
+ {
+  "id": "V4I-WI-128",
+  "board": "assets",
+  "title_ar": "صيانة متأخرة",
+  "source_formula": "Asset Maintenance Log due in 30 days / overdue; open Asset Repair (maintenance rows are preview lazy-seed data: PASS_AFTER_LAZY_SEED)",
+  "source_drill": "native list filtered"
+ },
+ {
+  "id": "V4I-WI-129",
+  "board": "assets",
+  "title_ar": "أصول بلا عهدة",
+  "source_formula": "Assets with custodian not set",
+  "source_drill": "native Asset list filtered"
+ },
+ {
+  "id": "V4I-WI-130",
+  "board": "assets",
+  "title_ar": "أصول بلا موقع",
+  "source_formula": "Assets grouped by location (count); missing location (demo: one location only)",
+  "source_drill": "bar -> native Asset list filtered"
+ },
+ {
+  "id": "V4I-WI-131",
+  "board": "assets",
+  "title_ar": "حركة أصول معلّقة",
+  "source_formula": "Asset Movement drafts / submitted in 90 days",
+  "source_drill": "native Asset Movement list filtered"
+ },
+ {
+  "id": "V4I-WI-132",
+  "board": "assets",
+  "title_ar": "إصلاحات مفتوحة",
+  "source_formula": "Asset Maintenance Log due in 30 days / overdue; open Asset Repair (maintenance rows are preview lazy-seed data: PASS_AFTER_LAZY_SEED)",
+  "source_drill": "native list filtered"
+ },
+ {
+  "id": "V4I-WI-133",
+  "board": "assets",
+  "title_ar": "مؤشّر تعطّل الأصل",
+  "source_formula": "needs fields/process absent from native Asset (downtime, insurance/warranty) — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-134",
+  "board": "assets",
+  "title_ar": "مرشّحات الاستبعاد",
+  "source_formula": "disposed assets measured; gain/loss is shown only from posted disposal entries on the server (preview shows review only)",
+  "source_drill": "/pro/asset-disposal -> native Asset"
+ },
+ {
+  "id": "V4I-WI-135",
+  "board": "assets",
+  "title_ar": "أصول مستهلَكة بالكامل",
+  "source_formula": "Asset status = Fully Depreciated",
+  "source_drill": "native Asset list filtered"
+ },
+ {
+  "id": "V4I-WI-136",
+  "board": "assets",
+  "title_ar": "إضافات الأصول",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-137",
+  "board": "assets",
+  "title_ar": "استبعادات الأصول",
+  "source_formula": "disposed assets measured; gain/loss is shown only from posted disposal entries on the server (preview shows review only)",
+  "source_drill": "/pro/asset-disposal -> native Asset"
+ },
+ {
+  "id": "V4I-WI-138",
+  "board": "assets",
+  "title_ar": "القيمة الدفترية الصافية",
+  "source_formula": "Asset docstatus/status counts; gross_purchase_amount and current value per register; saved views verified 24/24",
+  "source_drill": "native Asset list filtered -> Asset"
+ },
+ {
+  "id": "V4I-WI-139",
+  "board": "assets",
+  "title_ar": "تأمين/ضمان (placeholder)",
+  "source_formula": "needs fields/process absent from native Asset (downtime, insurance/warranty) — not built",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-140",
+  "board": "assets",
+  "title_ar": "رسملة معلّقة",
+  "source_formula": "draft assets measured; Asset Capitalization pending (native doc) not measured — SC-A-03 has NO_DATA",
+  "source_drill": "native Asset list"
+ },
+ {
+  "id": "V4I-WI-141",
+  "board": "assets",
+  "title_ar": "أعمال تحت التنفيذ (CWIP)",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-142",
+  "board": "assets",
+  "title_ar": "بيع الأصول (سياقي)",
+  "source_formula": "disposed assets measured; gain/loss is shown only from posted disposal entries on the server (preview shows review only)",
+  "source_drill": "/pro/asset-disposal -> native Asset"
+ },
+ {
+  "id": "V4I-WI-143",
+  "board": "assets",
+  "title_ar": "تعديل القيمة/الاضمحلال",
+  "source_formula": "Asset Value Adjustment docstatus=1",
+  "source_drill": "native list filtered"
+ },
+ {
+  "id": "V4I-WI-144",
+  "board": "assets",
+  "title_ar": "تكلفة الصيانة حسب الأصل",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-145",
+  "board": "assets",
+  "title_ar": "تكلفة الصيانة حسب الفئة",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-146",
+  "board": "assets",
+  "title_ar": "عمر الأصل",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-147",
+  "board": "assets",
+  "title_ar": "أصول حسب الفرع",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-148",
+  "board": "assets",
+  "title_ar": "اكتمال سجل الأصول",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-149",
+  "board": "assets",
+  "title_ar": "استثناءات قيود الأصول",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ },
+ {
+  "id": "V4I-WI-150",
+  "board": "assets",
+  "title_ar": "طابور استثناءات الأصول",
+  "source_formula": "no implementation found in the current source for this exact concept (historical PARTIAL came from a DOMAIN_KEYWORD match only)",
+  "source_drill": "-"
+ }
+]

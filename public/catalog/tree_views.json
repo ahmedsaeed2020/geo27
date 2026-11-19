@@ -1,0 +1,160 @@
+{
+"_meta": {
+"generated_by": "scripts/extract-engines.py",
+"note": "from *_tree.js + is_tree DocTypes"
+},
+"doctypes": {
+"Account": {
+"source": "erpnext/erpnext/accounts/doctype/account/account_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"BOM": {
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom_tree.js",
+"breadcrumb": "Manufacturing",
+"root_label": "BOM",
+"get_tree_nodes": "erpnext.manufacturing.doctype.bom.bom.get_children",
+"add_tree_node": null,
+"server_dependent": true
+},
+"CRM Sales Hierarchy": {
+"source": "crm/crm/fcrm/doctype/crm_sales_hierarchy/crm_sales_hierarchy_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"CRM Territory": {
+"source": "crm/crm/fcrm/doctype/crm_territory/crm_territory_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Company": {
+"source": "erpnext/erpnext/setup/doctype/company/company_tree.js",
+"breadcrumb": "Setup",
+"root_label": "All Companies",
+"get_tree_nodes": "erpnext.setup.doctype.company.company.get_children",
+"add_tree_node": "erpnext.setup.doctype.company.company.add_node",
+"server_dependent": true
+},
+"Cost Center": {
+"source": "erpnext/erpnext/accounts/doctype/cost_center/cost_center_tree.js",
+"breadcrumb": "Accounts",
+"root_label": "Cost Centers",
+"get_tree_nodes": "erpnext.accounts.utils.get_children",
+"add_tree_node": "erpnext.accounts.utils.add_cc",
+"server_dependent": true
+},
+"Customer Group": {
+"source": "erpnext/erpnext/setup/doctype/customer_group/customer_group_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Department": {
+"source": "erpnext/erpnext/setup/doctype/department/department_tree.js",
+"breadcrumb": "HR",
+"root_label": "All Departments",
+"get_tree_nodes": "erpnext.setup.doctype.department.department.get_children",
+"add_tree_node": "erpnext.setup.doctype.department.department.add_node",
+"server_dependent": true
+},
+"Employee": {
+"source": "erpnext/erpnext/setup/doctype/employee/employee_tree.js",
+"breadcrumb": "Hr",
+"root_label": null,
+"get_tree_nodes": "erpnext.setup.doctype.employee.employee.get_children",
+"add_tree_node": null,
+"server_dependent": true
+},
+"Goal": {
+"source": "hrms/hrms/hr/doctype/goal/goal_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Item Group": {
+"source": "erpnext/erpnext/setup/doctype/item_group/item_group_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Location": {
+"source": "erpnext/erpnext/assets/doctype/location/location_tree.js",
+"breadcrumb": "Assets",
+"root_label": "All Locations",
+"get_tree_nodes": "erpnext.assets.doctype.location.location.get_children",
+"add_tree_node": "erpnext.assets.doctype.location.location.add_node",
+"server_dependent": true
+},
+"Quality Procedure": {
+"source": "erpnext/erpnext/quality_management/doctype/quality_procedure/quality_procedure_tree.js",
+"breadcrumb": "Quality Management",
+"root_label": "All Quality Procedures",
+"get_tree_nodes": "erpnext.quality_management.doctype.quality_procedure.quality_procedure.get_children",
+"add_tree_node": "erpnext.quality_management.doctype.quality_procedure.quality_procedure.add_node",
+"server_dependent": true
+},
+"Sales Person": {
+"source": "erpnext/erpnext/setup/doctype/sales_person/sales_person_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Supplier Group": {
+"source": "erpnext/erpnext/setup/doctype/supplier_group/supplier_group_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Task": {
+"source": "erpnext/erpnext/projects/doctype/task/task_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Territory": {
+"source": "erpnext/erpnext/setup/doctype/territory/territory_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+},
+"Warehouse": {
+"source": "erpnext/erpnext/stock/doctype/warehouse/warehouse_tree.js",
+"breadcrumb": null,
+"root_label": "Warehouses",
+"get_tree_nodes": "erpnext.stock.doctype.warehouse.warehouse.get_children",
+"add_tree_node": "erpnext.stock.doctype.warehouse.warehouse.add_node",
+"server_dependent": true
+},
+"{doctype}": {
+"source": "frappe/frappe/core/doctype/doctype/boilerplate/controller_tree.js",
+"breadcrumb": null,
+"root_label": null,
+"get_tree_nodes": null,
+"add_tree_node": null,
+"server_dependent": false
+}
+}
+}

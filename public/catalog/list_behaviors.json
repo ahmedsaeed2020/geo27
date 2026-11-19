@@ -1,0 +1,3256 @@
+{
+"_meta": {
+"generated_by": "scripts/extract-engines.py",
+"note": "from *_list.js listview_settings"
+},
+"doctypes": {
+"Access Log": {
+"source": "frappe/frappe/core/doctype/access_log/access_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Activity Log": {
+"source": "frappe/frappe/core/doctype/activity_log/activity_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Asset": {
+"source": "erpnext/erpnext/assets/doctype/asset/asset_list.js",
+"indicators": [
+{
+"label": "Fully Depreciated",
+"color": "green",
+"filter": "status,=,Fully Depreciated"
+},
+{
+"label": "Partially Depreciated",
+"color": "grey",
+"filter": "status,=,Partially Depreciated"
+},
+{
+"label": "Sold",
+"color": "green",
+"filter": "status,=,Sold"
+},
+{
+"label": "Work In Progress",
+"color": "orange",
+"filter": "status,=,Work In Progress"
+},
+{
+"label": "Capitalized",
+"color": "grey",
+"filter": "status,=,Capitalized"
+},
+{
+"label": "Scrapped",
+"color": "grey",
+"filter": "status,=,Scrapped"
+},
+{
+"label": "In Maintenance",
+"color": "orange",
+"filter": "status,=,In Maintenance"
+},
+{
+"label": "Out of Order",
+"color": "grey",
+"filter": "status,=,Out of Order"
+},
+{
+"label": "Issue",
+"color": "orange",
+"filter": "status,=,Issue"
+},
+{
+"label": "Receipt",
+"color": "green",
+"filter": "status,=,Receipt"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+}
+],
+"add_fields": [
+"status",
+"docstatus"
+],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [
+"Make Asset Movement"
+],
+"hide_name_column": false
+},
+"Asset Maintenance Log": {
+"source": "erpnext/erpnext/assets/doctype/asset_maintenance_log/asset_maintenance_log_list.js",
+"indicators": [],
+"add_fields": [
+"maintenance_status"
+],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Asset Repair": {
+"source": "erpnext/erpnext/assets/doctype/asset_repair/asset_repair_list.js",
+"indicators": [],
+"add_fields": [
+"repair_status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Attendance": {
+"source": "hrms/hrms/hr/doctype/attendance/attendance_list.js",
+"indicators": [],
+"add_fields": [
+"status",
+"attendance_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Mark Attendance"
+],
+"hide_name_column": false
+},
+"Auto Repeat": {
+"source": "frappe/frappe/automation/doctype/auto_repeat/auto_repeat_list.js",
+"indicators": [
+{
+"label": "Active",
+"color": "green",
+"filter": "status,=,Active"
+},
+{
+"label": "Disabled",
+"color": "red",
+"filter": "status,=,Disabled"
+},
+{
+"label": "Completed",
+"color": "blue",
+"filter": "status,=,Completed"
+}
+],
+"add_fields": [
+"next_schedule_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Automation Trigger Queue": {
+"source": "frappe/frappe/automation/doctype/automation_trigger_queue/automation_trigger_queue_list.js",
+"indicators": [],
+"add_fields": [
+"run_after"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"BOM": {
+"source": "erpnext/erpnext/manufacturing/doctype/bom/bom_list.js",
+"indicators": [
+{
+"label": "Template",
+"color": "orange",
+"filter": "has_variants,=,1"
+},
+{
+"label": "Default",
+"color": "green",
+"filter": "is_default,=,1"
+},
+{
+"label": "Active",
+"color": "blue",
+"filter": "is_active,=,1"
+},
+{
+"label": "Not active",
+"color": "gray",
+"filter": "is_active,=,0"
+}
+],
+"add_fields": [
+"is_active",
+"is_default",
+"total_cost",
+"has_variants"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"BOM Creator": {
+"source": "erpnext/erpnext/manufacturing/doctype/bom_creator/bom_creator_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "In Progress",
+"color": "orange",
+"filter": "status,=,In Progress"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"BOM Update Log": {
+"source": "erpnext/erpnext/manufacturing/doctype/bom_update_log/bom_update_log_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Bank Statement Import": {
+"source": "erpnext/erpnext/accounts/doctype/bank_statement_import/bank_statement_import_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Bank Transaction": {
+"source": "erpnext/erpnext/accounts/doctype/bank_transaction/bank_transaction_list.js",
+"indicators": [
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "docstatus,=,2"
+},
+{
+"label": "Reconciled",
+"color": "green",
+"filter": "unallocated_amount,=,0"
+},
+{
+"label": "Unreconciled",
+"color": "orange",
+"filter": "unallocated_amount,>,0"
+}
+],
+"add_fields": [
+"unallocated_amount"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Batch": {
+"source": "erpnext/erpnext/stock/doctype/batch/batch_list.js",
+"indicators": [],
+"add_fields": [
+"item",
+"expiry_date",
+"batch_qty",
+"disabled"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"CRM Product": {
+"source": "crm/crm/fcrm/doctype/crm_product/crm_product_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Calendar View": {
+"source": "frappe/frappe/desk/doctype/calendar_view/calendar_view_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Code List": {
+"source": "erpnext/erpnext/edi/doctype/code_list/code_list_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Import Genericode File"
+],
+"hide_name_column": true
+},
+"Common Code": {
+"source": "erpnext/erpnext/edi/doctype/common_code/common_code_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Import Genericode File"
+],
+"hide_name_column": true
+},
+"Communication": {
+"source": "frappe/frappe/core/doctype/communication/communication_list.js",
+"indicators": [],
+"add_fields": [
+"sent_or_received",
+"recipients",
+"subject",
+"communication_medium",
+"communication_type",
+"sender",
+"seen",
+"reference_doctype",
+"reference_name",
+"has_attachment",
+"communication_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Mark as Read",
+"Mark as Unread"
+],
+"hide_name_column": false
+},
+"Contact": {
+"source": "frappe/frappe/contacts/doctype/contact/contact_list.js",
+"indicators": [],
+"add_fields": [
+"image"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Download vCards"
+],
+"hide_name_column": false
+},
+"Contract": {
+"source": "erpnext/erpnext/crm/doctype/contract/contract_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Custom Sidebar": {
+"source": "frappe/frappe/desk/doctype/custom_sidebar/custom_sidebar_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Customer": {
+"source": "erpnext/erpnext/selling/doctype/customer/customer_list.js",
+"indicators": [
+{
+"label": "On Hold",
+"color": "red",
+"filter": "on_hold,=,1"
+}
+],
+"add_fields": [
+"customer_name",
+"territory",
+"customer_group",
+"customer_type",
+"image",
+"on_hold",
+"release_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Dashboard": {
+"source": "frappe/frappe/desk/doctype/dashboard/dashboard_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Data Import": {
+"source": "frappe/frappe/core/doctype/data_import/data_import_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Deleted Document": {
+"source": "frappe/frappe/core/doctype/deleted_document/deleted_document_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Delivery Note": {
+"source": "erpnext/erpnext/stock/doctype/delivery_note/delivery_note_list.js",
+"indicators": [
+{
+"label": "Return",
+"color": "gray",
+"filter": "is_return,=,1"
+},
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "Return Issued",
+"color": "grey",
+"filter": "status,=,Return Issued"
+},
+{
+"label": "To Bill",
+"color": "orange",
+"filter": "per_billed,=,0|docstatus,=,1"
+},
+{
+"label": "Partially Billed",
+"color": "yellow",
+"filter": "per_billed,<,100|docstatus,=,1"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "per_billed,=,100|docstatus,=,1"
+}
+],
+"add_fields": [
+"customer",
+"customer_name",
+"base_grand_total",
+"per_installed",
+"per_billed",
+"transporter_name",
+"grand_total",
+"is_return",
+"status",
+"currency"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Create Delivery Trip",
+"Sales Invoice",
+"Packaging Slip From Delivery Note"
+],
+"hide_name_column": false
+},
+"Delivery Trip": {
+"source": "erpnext/erpnext/stock/doctype/delivery_trip/delivery_trip_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"DocType": {
+"source": "frappe/frappe/core/doctype/doctype/doctype_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Document Naming Rule": {
+"source": "frappe/frappe/core/doctype/document_naming_rule/document_naming_rule_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Dunning": {
+"source": "erpnext/erpnext/accounts/doctype/dunning/dunning_list.js",
+"indicators": [
+{
+"label": "Resolved",
+"color": "green",
+"filter": "status,=,Resolved"
+},
+{
+"label": "Unresolved",
+"color": "red",
+"filter": "status,=,Unresolved"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Email Account": {
+"source": "frappe/frappe/email/doctype/email_account/email_account_list.js",
+"indicators": [],
+"add_fields": [
+"default_incoming",
+"default_outgoing",
+"enable_incoming",
+"enable_outgoing"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Email Campaign": {
+"source": "erpnext/erpnext/crm/doctype/email_campaign/email_campaign_list.js",
+"indicators": [
+{
+"label": "Unsubscribed",
+"color": "red",
+"filter": "status,=,Unsubscribed"
+},
+{
+"label": "Scheduled",
+"color": "blue",
+"filter": "status,=,Scheduled"
+},
+{
+"label": "In Progress",
+"color": "orange",
+"filter": "status,=,In Progress"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Email Queue": {
+"source": "frappe/frappe/email/doctype/email_queue/email_queue_list.js",
+"indicators": [
+{
+"label": "Sent",
+"color": "green",
+"filter": "status,=,Sent"
+},
+{
+"label": "Sending",
+"color": "blue",
+"filter": "status,=,Sending"
+},
+{
+"label": "Not Sent",
+"color": "gray",
+"filter": "status,=,Not Sent"
+},
+{
+"label": "Error",
+"color": "red",
+"filter": "status,=,Error"
+},
+{
+"label": "Expired",
+"color": "amber",
+"filter": "status,=,Expired"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Employee": {
+"source": "erpnext/erpnext/setup/doctype/employee/employee_list.js",
+"indicators": [],
+"add_fields": [
+"status",
+"branch",
+"department",
+"designation",
+"image"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Import Employees"
+],
+"hide_name_column": false
+},
+"Employee Benefit Ledger": {
+"source": "hrms/hrms/payroll/doctype/employee_benefit_ledger/employee_benefit_ledger_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Employee Checkin": {
+"source": "hrms/hrms/hr/doctype/employee_checkin/employee_checkin_list.js",
+"indicators": [
+{
+"label": "Off-Shift",
+"color": "yellow",
+"filter": "offshift,=,1"
+}
+],
+"add_fields": [
+"offshift"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Fetch Shifts",
+"Add Checkin for Another Employee"
+],
+"hide_name_column": false
+},
+"Employee Grievance": {
+"source": "hrms/hrms/hr/doctype/employee_grievance/employee_grievance_list.js",
+"indicators": [
+{
+"label": "Open",
+"color": "red",
+"filter": "status,=,Open"
+},
+{
+"label": "Investigated",
+"color": "orange",
+"filter": "status,=,Investigated"
+},
+{
+"label": "Resolved",
+"color": "green",
+"filter": "status,=,Resolved"
+},
+{
+"label": "Invalid",
+"color": "grey",
+"filter": "status,=,Invalid"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Employee Onboarding": {
+"source": "hrms/hrms/hr/doctype/employee_onboarding/employee_onboarding_list.js",
+"indicators": [],
+"add_fields": [
+"boarding_status",
+"employee_name",
+"date_of_joining",
+"department"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Employee Referral": {
+"source": "hrms/hrms/hr/doctype/employee_referral/employee_referral_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Employee Separation": {
+"source": "hrms/hrms/hr/doctype/employee_separation/employee_separation_list.js",
+"indicators": [],
+"add_fields": [
+"boarding_status",
+"employee_name",
+"department"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Error Log": {
+"source": "frappe/frappe/core/doctype/error_log/error_log_list.js",
+"indicators": [
+{
+"label": "Seen",
+"color": "green",
+"filter": "seen,=,1"
+},
+{
+"label": "Not Seen",
+"color": "red",
+"filter": "seen,=,0"
+}
+],
+"add_fields": [
+"seen"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Flush Error Logs",
+"Clear Error Logs"
+],
+"hide_name_column": false
+},
+"Event": {
+"source": "frappe/frappe/desk/doctype/event/event_list.js",
+"indicators": [],
+"add_fields": [
+"starts_on",
+"ends_on"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Exit Interview": {
+"source": "hrms/hrms/hr/doctype/exit_interview/exit_interview_list.js",
+"indicators": [
+{
+"label": "Pending",
+"color": "orange",
+"filter": "status,=,Pending"
+},
+{
+"label": "Scheduled",
+"color": "yellow",
+"filter": "status,=,Scheduled"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [
+"Send Exit Questionnaires"
+],
+"hide_name_column": false
+},
+"Expense Claim": {
+"source": "hrms/hrms/hr/doctype/expense_claim/expense_claim_list.js",
+"indicators": [],
+"add_fields": [
+"company"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"File": {
+"source": "frappe/frappe/core/doctype/file/file_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Full and Final Statement": {
+"source": "hrms/hrms/hr/doctype/full_and_final_statement/full_and_final_statement_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Unpaid",
+"color": "orange",
+"filter": "status,=,Unpaid"
+},
+{
+"label": "Paid",
+"color": "green",
+"filter": "status,=,Paid"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Goal": {
+"source": "hrms/hrms/hr/doctype/goal/goal_list.js",
+"indicators": [
+{
+"label": "Pending",
+"color": "yellow",
+"filter": "status,=,Pending"
+},
+{
+"label": "In Progress",
+"color": "orange",
+"filter": "status,=,In Progress"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Archived",
+"color": "gray",
+"filter": "status,=,Archived"
+},
+{
+"label": "Closed",
+"color": "red",
+"filter": "status,=,Closed"
+}
+],
+"add_fields": [
+"end_date",
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Gratuity": {
+"source": "hrms/hrms/payroll/doctype/gratuity/gratuity_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+},
+{
+"label": "Paid",
+"color": "green",
+"filter": "status,=,Paid"
+},
+{
+"label": "Unpaid",
+"color": "orange",
+"filter": "status,=,Unpaid"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Integration Request": {
+"source": "frappe/frappe/integrations/doctype/integration_request/integration_request_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Interview": {
+"source": "hrms/hrms/hr/doctype/interview/interview_list.js",
+"indicators": [
+{
+"label": "Pending",
+"color": "orange",
+"filter": "status,=,Pending"
+},
+{
+"label": "Under Review",
+"color": "blue",
+"filter": "status,=,Under Review"
+},
+{
+"label": "Cleared",
+"color": "green",
+"filter": "status,=,Cleared"
+},
+{
+"label": "Rejected",
+"color": "red",
+"filter": "status,=,Rejected"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Invoice Discounting": {
+"source": "erpnext/erpnext/accounts/doctype/invoice_discounting/invoice_discounting_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Sanctioned",
+"color": "green",
+"filter": "status,=,Sanctioned"
+},
+{
+"label": "Disbursed",
+"color": "blue",
+"filter": "status,=,Disbursed"
+},
+{
+"label": "Settled",
+"color": "orange",
+"filter": "status,=,Settled"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Issue": {
+"source": "erpnext/erpnext/support/doctype/issue/issue_list.js",
+"indicators": [],
+"add_fields": [
+"priority"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Set as Open",
+"Set as Closed"
+],
+"hide_name_column": false
+},
+"Item": {
+"source": "erpnext/erpnext/stock/doctype/item/item_list.js",
+"indicators": [
+{
+"label": "Disabled",
+"color": "grey",
+"filter": "disabled,=,Yes"
+},
+{
+"label": "Expired",
+"color": "grey",
+"filter": "end_of_life,<,Today"
+},
+{
+"label": "Template",
+"color": "orange",
+"filter": "has_variants,=,Yes"
+},
+{
+"label": "Variant",
+"color": "green",
+"filter": "variant_of,=,"
+}
+],
+"add_fields": [
+"item_name",
+"stock_uom",
+"item_group",
+"image",
+"has_variants",
+"end_of_life",
+"disabled",
+"variant_of",
+"is_stock_item",
+"is_fixed_asset",
+"is_sales_item",
+"is_purchase_item"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Item Price": {
+"source": "erpnext/erpnext/stock/doctype/item_price/item_price_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Job Applicant": {
+"source": "hrms/hrms/hr/doctype/job_applicant/job_applicant_list.js",
+"indicators": [],
+"add_fields": [
+"status",
+"applicant_rating",
+"designation"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Job Card": {
+"source": "erpnext/erpnext/manufacturing/doctype/job_card/job_card_list.js",
+"indicators": [],
+"add_fields": [
+"expected_start_date",
+"expected_end_date"
+],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Job Offer": {
+"source": "hrms/hrms/hr/doctype/job_offer/job_offer_list.js",
+"indicators": [],
+"add_fields": [
+"company",
+"designation",
+"job_applicant",
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Job Requisition": {
+"source": "hrms/hrms/hr/doctype/job_requisition/job_requisition_list.js",
+"indicators": [
+{
+"label": "Pending",
+"color": "yellow",
+"filter": "status,=,Pending"
+},
+{
+"label": "Approved",
+"color": "blue",
+"filter": "status,=,Approved"
+},
+{
+"label": "Rejected",
+"color": "red",
+"filter": "status,=,Rejected"
+},
+{
+"label": "Filled",
+"color": "green",
+"filter": "status,=,Filled"
+},
+{
+"label": "Cancelled",
+"color": "gray",
+"filter": "status,=,Cancelled"
+},
+{
+"label": "On Hold",
+"color": "gray",
+"filter": "status,=,On Hold"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Journal Entry": {
+"source": "erpnext/erpnext/accounts/doctype/journal_entry/journal_entry_list.js",
+"indicators": [],
+"add_fields": [
+"voucher_type",
+"posting_date",
+"total_debit",
+"company",
+"remark",
+"reversal_of"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Lead": {
+"source": "erpnext/erpnext/crm/doctype/lead/lead_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Create Prospect"
+],
+"hide_name_column": false
+},
+"Leave Allocation": {
+"source": "hrms/hrms/hr/doctype/leave_allocation/leave_allocation_list.js",
+"indicators": [
+{
+"label": "Expired",
+"color": "gray",
+"filter": "expired, =, 1"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Leave Application": {
+"source": "hrms/hrms/hr/doctype/leave_application/leave_application_list.js",
+"indicators": [],
+"add_fields": [
+"leave_type",
+"employee",
+"employee_name",
+"total_leave_days",
+"from_date",
+"to_date"
+],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Leave Ledger Entry": {
+"source": "hrms/hrms/hr/doctype/leave_ledger_entry/leave_ledger_entry_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Leave Policy Assignment": {
+"source": "hrms/hrms/hr/doctype/leave_policy_assignment/leave_policy_assignment_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Bulk Leave Policy Assignment"
+],
+"hide_name_column": false
+},
+"Maintenance Visit": {
+"source": "erpnext/erpnext/maintenance/doctype/maintenance_visit/maintenance_visit_list.js",
+"indicators": [],
+"add_fields": [
+"customer",
+"customer_name",
+"completion_status",
+"maintenance_type"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Material Request": {
+"source": "erpnext/erpnext/stock/doctype/material_request/material_request_list.js",
+"indicators": [
+{
+"label": "Stopped",
+"color": "red",
+"filter": "status,=,Stopped"
+},
+{
+"label": "Not Started",
+"color": "orange",
+"filter": "transfer_status,=,Not Started"
+},
+{
+"label": "In Transit",
+"color": "yellow",
+"filter": "transfer_status,=,In Transit"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "transfer_status,=,Completed"
+},
+{
+"label": "Partially Received",
+"color": "yellow",
+"filter": "per_ordered,<,100"
+},
+{
+"label": "Pending",
+"color": "orange",
+"filter": "per_ordered,=,0|docstatus,=,1"
+},
+{
+"label": "Partially Received",
+"color": "yellow",
+"filter": "per_ordered,<,100"
+},
+{
+"label": "Partially Ordered",
+"color": "yellow",
+"filter": "per_ordered,<,100"
+},
+{
+"label": "Partially Received",
+"color": "yellow",
+"filter": "per_received,<,100"
+},
+{
+"label": "Received",
+"color": "green",
+"filter": "per_received,=,100"
+},
+{
+"label": "Ordered",
+"color": "green",
+"filter": "per_ordered,=,100"
+},
+{
+"label": "Transferred",
+"color": "green",
+"filter": "per_ordered,=,100"
+},
+{
+"label": "Issued",
+"color": "green",
+"filter": "per_ordered,=,100"
+},
+{
+"label": "Received",
+"color": "green",
+"filter": "per_ordered,=,100"
+}
+],
+"add_fields": [
+"material_request_type",
+"status",
+"per_ordered",
+"per_received",
+"transfer_status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Module Def": {
+"source": "frappe/frappe/core/doctype/module_def/module_def_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Note": {
+"source": "frappe/frappe/desk/doctype/note/note_list.js",
+"indicators": [
+{
+"label": "Public",
+"color": "green",
+"filter": "public,=,Yes"
+},
+{
+"label": "Private",
+"color": "gray",
+"filter": "public,=,No"
+}
+],
+"add_fields": [
+"public"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Notification Log": {
+"source": "frappe/frappe/desk/doctype/notification_log/notification_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Opportunity": {
+"source": "erpnext/erpnext/crm/doctype/opportunity/opportunity_list.js",
+"indicators": [],
+"add_fields": [
+"customer_name",
+"opportunity_type",
+"opportunity_from",
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Set as Open",
+"Set as Closed"
+],
+"hide_name_column": false
+},
+"POS Closing Entry": {
+"source": "erpnext/erpnext/accounts/doctype/pos_closing_entry/pos_closing_entry_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Queued",
+"color": "orange",
+"filter": "status,=,Queued"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"POS Invoice": {
+"source": "erpnext/erpnext/accounts/doctype/pos_invoice/pos_invoice_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Unpaid",
+"color": "orange",
+"filter": "status,=,Unpaid"
+},
+{
+"label": "Paid",
+"color": "green",
+"filter": "status,=,Paid"
+},
+{
+"label": "Partly Paid",
+"color": "yellow",
+"filter": "status,=,Partly Paid"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Consolidated",
+"color": "green",
+"filter": "status,=,Consolidated"
+},
+{
+"label": "Return",
+"color": "darkgrey",
+"filter": "status,=,Return"
+},
+{
+"label": "Unpaid and Discounted",
+"color": "orange",
+"filter": "status,=,Unpaid and Discounted"
+},
+{
+"label": "Overdue and Discounted",
+"color": "red",
+"filter": "status,=,Overdue and Discounted"
+},
+{
+"label": "Partly Paid and Discounted",
+"color": "yellow",
+"filter": "status,=,Partly Paid and Discounted"
+},
+{
+"label": "Overdue",
+"color": "red",
+"filter": "status,=,Overdue"
+}
+],
+"add_fields": [
+"customer",
+"customer_name",
+"base_grand_total",
+"outstanding_amount",
+"due_date",
+"company",
+"currency",
+"is_return"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"POS Opening Entry": {
+"source": "erpnext/erpnext/accounts/doctype/pos_opening_entry/pos_opening_entry_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Payment Entry": {
+"source": "erpnext/erpnext/accounts/doctype/payment_entry/payment_entry_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Payment Request": {
+"source": "erpnext/erpnext/accounts/doctype/payment_request/payment_request_list.js",
+"indicators": [
+{
+"label": "Partially Paid",
+"color": "orange",
+"filter": "status,=,Partially Paid"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+},
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+},
+{
+"label": "Initiated",
+"color": "green",
+"filter": "status,=,Initiated"
+},
+{
+"label": "Paid",
+"color": "blue",
+"filter": "status,=,Paid"
+},
+{
+"label": "Requested",
+"color": "green",
+"filter": "status,=,Requested"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Payroll Entry": {
+"source": "hrms/hrms/payroll/doctype/payroll_entry/payroll_entry_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Queued",
+"color": "orange",
+"filter": "status,=,Queued"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": true,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Period Closing Voucher": {
+"source": "erpnext/erpnext/accounts/doctype/period_closing_voucher/period_closing_voucher_list.js",
+"indicators": [],
+"add_fields": [
+"gle_processing_status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Permission Log": {
+"source": "frappe/frappe/core/doctype/permission_log/permission_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Pick List": {
+"source": "erpnext/erpnext/stock/doctype/pick_list/pick_list_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Partly Delivered",
+"color": "orange",
+"filter": "status,=,Partly Delivered"
+},
+{
+"label": "Partially Transferred",
+"color": "yellow",
+"filter": "status,=,Partially Transferred"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Prepared Report": {
+"source": "frappe/frappe/core/doctype/prepared_report/prepared_report_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Print Format": {
+"source": "frappe/frappe/printing/doctype/print_format/print_format_list.js",
+"indicators": [],
+"add_fields": [
+"print_format_builder_beta",
+"custom_format",
+"print_format_for",
+"standard"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Process Payment Reconciliation": {
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation/process_payment_reconciliation_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Process Payment Reconciliation Log": {
+"source": "erpnext/erpnext/accounts/doctype/process_payment_reconciliation_log/process_payment_reconciliation_log_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Process Period Closing Voucher": {
+"source": "erpnext/erpnext/accounts/doctype/process_period_closing_voucher/process_period_closing_voucher_list.js",
+"indicators": [
+{
+"label": "Queued",
+"color": "blue",
+"filter": "status,=,Queued"
+},
+{
+"label": "Running",
+"color": "orange",
+"filter": "status,=,Running"
+},
+{
+"label": "Paused",
+"color": "gray",
+"filter": "status,=,Paused"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Product Bundle": {
+"source": "erpnext/erpnext/selling/doctype/product_bundle/product_bundle_list.js",
+"indicators": [
+{
+"label": "Disabled",
+"color": "grey",
+"filter": "disabled,=,1"
+},
+{
+"label": "Active",
+"color": "green",
+"filter": "is_active,=,1|disabled,=,0|docstatus,=,1"
+},
+{
+"label": "Inactive",
+"color": "gray",
+"filter": "is_active,=,0|docstatus,=,1"
+}
+],
+"add_fields": [
+"is_active",
+"disabled"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Production Plan": {
+"source": "erpnext/erpnext/manufacturing/doctype/production_plan/production_plan_list.js",
+"indicators": [
+{
+"label": "Not Started",
+"color": "orange",
+"filter": "status,=,Submitted"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": true
+},
+"Project": {
+"source": "erpnext/erpnext/projects/doctype/project/project_list.js",
+"indicators": [
+{
+"label": "On hold",
+"color": "blue",
+"filter": "status,=,On hold"
+}
+],
+"add_fields": [
+"status",
+"priority",
+"is_active",
+"percent_complete",
+"expected_end_date",
+"project_name"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Purchase Invoice": {
+"source": "erpnext/erpnext/accounts/doctype/purchase_invoice/purchase_invoice_list.js",
+"indicators": [
+{
+"label": "Unpaid",
+"color": "orange",
+"filter": "status,=,Unpaid"
+},
+{
+"label": "Paid",
+"color": "green",
+"filter": "status,=,Paid"
+},
+{
+"label": "Return",
+"color": "gray",
+"filter": "status,=,Return"
+},
+{
+"label": "Overdue",
+"color": "red",
+"filter": "status,=,Overdue"
+},
+{
+"label": "Partly Paid",
+"color": "yellow",
+"filter": "status,=,Partly Paid"
+},
+{
+"label": "Internal Transfer",
+"color": "darkgrey",
+"filter": "status,=,Internal Transfer"
+}
+],
+"add_fields": [
+"supplier",
+"supplier_name",
+"base_grand_total",
+"outstanding_amount",
+"due_date",
+"company",
+"currency",
+"is_return",
+"release_date",
+"on_hold",
+"represents_company",
+"is_internal_supplier"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Purchase Receipt",
+"Payment"
+],
+"hide_name_column": false
+},
+"Purchase Order": {
+"source": "erpnext/erpnext/buying/doctype/purchase_order/purchase_order_list.js",
+"indicators": [
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "On Hold",
+"color": "orange",
+"filter": "status,=,On Hold"
+},
+{
+"label": "Delivered",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "To Pay",
+"color": "gray",
+"filter": "advance_payment_status,=,Initiated"
+},
+{
+"label": "To Receive and Bill",
+"color": "orange",
+"filter": "per_received,<,100|per_billed,<,100|status,!=,Closed|docstatus,=,1"
+},
+{
+"label": "To Receive",
+"color": "orange",
+"filter": "per_received,<,100|per_billed,=,100|status,!=,Closed|docstatus,=,1"
+},
+{
+"label": "To Bill",
+"color": "orange",
+"filter": "per_received,=,100|per_billed,<,100|status,!=,Closed|docstatus,=,1"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "per_received,=,100|per_billed,=,100|status,!=,Closed|docstatus,=,1"
+}
+],
+"add_fields": [
+"base_grand_total",
+"company",
+"currency",
+"supplier",
+"supplier_name",
+"per_received",
+"per_billed",
+"status",
+"advance_payment_status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Close",
+"Reopen",
+"Purchase Invoice",
+"Purchase Receipt",
+"Advance Payment"
+],
+"hide_name_column": false
+},
+"Purchase Receipt": {
+"source": "erpnext/erpnext/stock/doctype/purchase_receipt/purchase_receipt_list.js",
+"indicators": [
+{
+"label": "Return",
+"color": "gray",
+"filter": "is_return,=,1"
+},
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "Return Issued",
+"color": "grey",
+"filter": "per_returned,=,100|docstatus,=,1"
+},
+{
+"label": "To Bill",
+"color": "orange",
+"filter": "per_billed,<,100|docstatus,=,1"
+},
+{
+"label": "Partly Billed",
+"color": "yellow",
+"filter": "per_billed,<,100|docstatus,=,1"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "per_billed,>=,100|docstatus,=,1"
+}
+],
+"add_fields": [
+"supplier",
+"supplier_name",
+"base_grand_total",
+"is_subcontracted",
+"transporter_name",
+"is_return",
+"status",
+"per_billed",
+"currency"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Purchase Invoice"
+],
+"hide_name_column": false
+},
+"Putaway Rule": {
+"source": "erpnext/erpnext/stock/doctype/putaway_rule/putaway_rule_list.js",
+"indicators": [],
+"add_fields": [
+"disable"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Quality Meeting": {
+"source": "erpnext/erpnext/quality_management/doctype/quality_meeting/quality_meeting_list.js",
+"indicators": [
+{
+"label": "Open",
+"color": "red",
+"filter": "status=,Open"
+},
+{
+"label": "Close",
+"color": "green",
+"filter": ",status=,Close"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Quality Review": {
+"source": "erpnext/erpnext/quality_management/doctype/quality_review/quality_review_list.js",
+"indicators": [
+{
+"label": "No Action",
+"color": "green",
+"filter": "action,=,No Action"
+},
+{
+"label": "Action Initialised",
+"color": "red",
+"filter": "action,=,Action Initialised"
+}
+],
+"add_fields": [
+"action"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Quotation": {
+"source": "erpnext/erpnext/selling/doctype/quotation/quotation_list.js",
+"indicators": [
+{
+"label": "Lost",
+"color": "gray",
+"filter": "status,=,Lost"
+},
+{
+"label": "Inactive",
+"color": "red",
+"filter": "is_active,=,0"
+},
+{
+"label": "Latest",
+"color": "orange",
+"filter": "is_latest_revision,=,1"
+},
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Partially Ordered",
+"color": "yellow",
+"filter": "status,=,Partially Ordered"
+},
+{
+"label": "Ordered",
+"color": "green",
+"filter": "status,=,Ordered"
+},
+{
+"label": "Expired",
+"color": "gray",
+"filter": "status,=,Expired"
+}
+],
+"add_fields": [
+"customer_name",
+"base_grand_total",
+"status",
+"company",
+"currency",
+"valid_till",
+"is_active",
+"is_latest_revision"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Sales Order",
+"Sales Invoice"
+],
+"hide_name_column": false
+},
+"RQ Job": {
+"source": "frappe/frappe/core/doctype/rq_job/rq_job_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Remove Failed Jobs",
+"Enable Scheduler"
+],
+"hide_name_column": true
+},
+"RQ Worker": {
+"source": "frappe/frappe/core/doctype/rq_worker/rq_worker_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Recorder": {
+"source": "frappe/frappe/core/doctype/recorder/recorder_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Repost Accounting Ledger": {
+"source": "erpnext/erpnext/accounts/doctype/repost_accounting_ledger/repost_accounting_ledger_list.js",
+"indicators": [
+{
+"label": "Queued",
+"color": "yellow",
+"filter": "status,=,Queued"
+},
+{
+"label": "In Progress",
+"color": "blue",
+"filter": "status,=,In Progress"
+},
+{
+"label": "Partially Reposted",
+"color": "orange",
+"filter": "status,=,Partially Reposted"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Repost Item Valuation": {
+"source": "erpnext/erpnext/stock/doctype/repost_item_valuation/repost_item_valuation_list.js",
+"indicators": [
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Queued",
+"color": "red",
+"filter": "status,=,Queued"
+},
+{
+"label": "In Progress",
+"color": "orange",
+"filter": "status,=,In Progress"
+},
+{
+"label": "Failed",
+"color": "red",
+"filter": "status,=,Failed"
+}
+],
+"add_fields": [
+"status",
+"name",
+"voucher_type",
+"voucher_no"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Restart Failed Entries"
+],
+"hide_name_column": false
+},
+"Repost Payment Ledger": {
+"source": "erpnext/erpnext/accounts/doctype/repost_payment_ledger/repost_payment_ledger_list.js",
+"indicators": [],
+"add_fields": [
+"repost_status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Route History": {
+"source": "frappe/frappe/desk/doctype/route_history/route_history_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Salary Slip": {
+"source": "hrms/hrms/payroll/doctype/salary_slip/salary_slip_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Email Salary Slips"
+],
+"hide_name_column": false
+},
+"Salary Structure": {
+"source": "hrms/hrms/payroll/doctype/salary_structure/salary_structure_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Bulk Salary Structure Assignment"
+],
+"hide_name_column": false
+},
+"Sales Forecast": {
+"source": "erpnext/erpnext/manufacturing/doctype/sales_forecast/sales_forecast_list.js",
+"indicators": [
+{
+"label": "Planned",
+"color": "orange",
+"filter": "status,=,Planned"
+},
+{
+"label": "MPS Generated",
+"color": "green",
+"filter": "status,=,MPS Generated"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Sales Invoice": {
+"source": "erpnext/erpnext/accounts/doctype/sales_invoice/sales_invoice_list.js",
+"indicators": [
+{
+"label": "Settled with Credit Note",
+"color": "green",
+"filter": "status,=,Credit Note Issued|outstanding_amount,=,0"
+},
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Unpaid",
+"color": "orange",
+"filter": "status,=,Unpaid"
+},
+{
+"label": "Paid",
+"color": "green",
+"filter": "status,=,Paid"
+},
+{
+"label": "Return",
+"color": "gray",
+"filter": "status,=,Return"
+},
+{
+"label": "Credit Note Issued",
+"color": "gray",
+"filter": "status,=,Credit Note Issued"
+},
+{
+"label": "Unpaid and Discounted",
+"color": "orange",
+"filter": "status,=,Unpaid and Discounted"
+},
+{
+"label": "Partly Paid and Discounted",
+"color": "yellow",
+"filter": "status,=,Partly Paid and Discounted"
+},
+{
+"label": "Overdue and Discounted",
+"color": "red",
+"filter": "status,=,Overdue and Discounted"
+},
+{
+"label": "Overdue",
+"color": "red",
+"filter": "status,=,Overdue"
+},
+{
+"label": "Partly Paid",
+"color": "yellow",
+"filter": "status,=,Partly Paid"
+},
+{
+"label": "Internal Transfer",
+"color": "darkgrey",
+"filter": "status,=,Internal Transfer"
+}
+],
+"add_fields": [
+"customer",
+"customer_name",
+"base_grand_total",
+"outstanding_amount",
+"due_date",
+"company",
+"currency",
+"is_return"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Delivery Note",
+"Payment"
+],
+"hide_name_column": false
+},
+"Sales Order": {
+"source": "erpnext/erpnext/selling/doctype/sales_order/sales_order_list.js",
+"indicators": [
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "On Hold",
+"color": "orange",
+"filter": "status,=,On Hold"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "To Pay",
+"color": "gray",
+"filter": "advance_payment_status,=,Requested"
+},
+{
+"label": "Overdue",
+"color": "red",
+"filter": "per_delivered,<,100|delivery_date,<,Today|status,!=,Closed|docstatus,=,1"
+},
+{
+"label": "To Deliver",
+"color": "orange",
+"filter": "per_delivered,<,100|grand_total,=,0|status,!=,Closed|docstatus,=,1"
+},
+{
+"label": "To Deliver and Bill",
+"color": "orange",
+"filter": "per_delivered,<,100|per_billed,<,100|status,!=,Closed"
+},
+{
+"label": "To Deliver",
+"color": "orange",
+"filter": "per_delivered,<,100|per_billed,=,100|status,!=,Closed"
+},
+{
+"label": "To Bill",
+"color": "orange",
+"filter": "per_delivered,=,100|per_billed,<,100|status,!=,Closed"
+}
+],
+"add_fields": [
+"base_grand_total",
+"customer_name",
+"currency",
+"delivery_date",
+"per_delivered",
+"per_billed",
+"status",
+"advance_payment_status",
+"order_type",
+"skip_delivery_note",
+"name"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Close",
+"Re-open",
+"Sales Invoice",
+"Delivery Note",
+"Advance Payment"
+],
+"hide_name_column": false
+},
+"Scheduled Job Log": {
+"source": "frappe/frappe/core/doctype/scheduled_job_log/scheduled_job_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Serial and Batch Bundle": {
+"source": "erpnext/erpnext/stock/doctype/serial_and_batch_bundle/serial_and_batch_bundle_list.js",
+"indicators": [
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "is_cancelled,=,1"
+}
+],
+"add_fields": [
+"is_cancelled"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Assignment": {
+"source": "hrms/hrms/hr/doctype/shift_assignment/shift_assignment_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Location": {
+"source": "hrms/hrms/hr/doctype/shift_location/shift_location_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Request": {
+"source": "hrms/hrms/hr/doctype/shift_request/shift_request_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Schedule": {
+"source": "hrms/hrms/hr/doctype/shift_schedule/shift_schedule_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Schedule Assignment": {
+"source": "hrms/hrms/hr/doctype/shift_schedule_assignment/shift_schedule_assignment_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shift Type": {
+"source": "hrms/hrms/hr/doctype/shift_type/shift_type_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Shipment": {
+"source": "erpnext/erpnext/stock/doctype/shipment/shipment_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Stock Closing Entry": {
+"source": "erpnext/erpnext/stock/doctype/stock_closing_entry/stock_closing_entry_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Stock Entry": {
+"source": "erpnext/erpnext/stock/doctype/stock_entry/stock_entry_list.js",
+"indicators": [
+{
+"label": "Material Returned from WIP",
+"color": "orange",
+"filter": "is_return,=,1|purpose,=,Material Transfer for Manufacture|docstatus,<,2"
+},
+{
+"label": "Draft",
+"color": "red",
+"filter": "docstatus,=,0"
+},
+{
+"label": "In Transit",
+"color": "yellow",
+"filter": "docstatus,=,1|add_to_transit,=,1|purpose,=,Material Transfer|per_transferred,<,100"
+},
+{
+"label": "Goods In Transit",
+"color": "grey",
+"filter": "per_transferred,<,100"
+},
+{
+"label": "Goods Transferred",
+"color": "green",
+"filter": "per_transferred,=,100"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "docstatus,=,2"
+},
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "docstatus,=,1"
+}
+],
+"add_fields": [
+"from_warehouse",
+"to_warehouse",
+"purpose",
+"work_order",
+"bom_no",
+"is_return",
+"add_to_transit",
+"per_transferred"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Stock Reservation Entry": {
+"source": "erpnext/erpnext/stock/doctype/stock_reservation_entry/stock_reservation_entry_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Partially Reserved",
+"color": "orange",
+"filter": "status,=,Partially Reserved"
+},
+{
+"label": "Reserved",
+"color": "blue",
+"filter": "status,=,Reserved"
+},
+{
+"label": "Partially Delivered",
+"color": "purple",
+"filter": "status,=,Partially Delivered"
+},
+{
+"label": "Delivered",
+"color": "green",
+"filter": "status,=,Delivered"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Subcontracting Inward Order": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_inward_order/subcontracting_inward_order_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Ongoing",
+"color": "yellow",
+"filter": "status,=,Ongoing"
+},
+{
+"label": "Produced",
+"color": "blue",
+"filter": "status,=,Produced"
+},
+{
+"label": "Delivered",
+"color": "green",
+"filter": "status,=,Delivered"
+},
+{
+"label": "Returned",
+"color": "grey",
+"filter": "status,=,Returned"
+},
+{
+"label": "Closed",
+"color": "grey",
+"filter": "status,=,Closed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Subcontracting Order": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_order/subcontracting_order_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Partially Received",
+"color": "yellow",
+"filter": "status,=,Partially Received"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Partial Material Transferred",
+"color": "purple",
+"filter": "status,=,Partial Material Transferred"
+},
+{
+"label": "Material Transferred",
+"color": "blue",
+"filter": "status,=,Material Transferred"
+},
+{
+"label": "Closed",
+"color": "green",
+"filter": "status,=,Closed"
+},
+{
+"label": "Cancelled",
+"color": "red",
+"filter": "status,=,Cancelled"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Subcontracting Receipt": {
+"source": "erpnext/erpnext/subcontracting/doctype/subcontracting_receipt/subcontracting_receipt_list.js",
+"indicators": [
+{
+"label": "Draft",
+"color": "red",
+"filter": "status,=,Draft"
+},
+{
+"label": "Return",
+"color": "gray",
+"filter": "status,=,Return"
+},
+{
+"label": "Return Issued",
+"color": "grey",
+"filter": "status,=,Return Issued"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+}
+],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Subscription": {
+"source": "erpnext/erpnext/accounts/doctype/subscription/subscription_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Supplier": {
+"source": "erpnext/erpnext/buying/doctype/supplier/supplier_list.js",
+"indicators": [
+{
+"label": "Disabled",
+"color": "gray",
+"filter": "disabled,=,1"
+},
+{
+"label": "On Hold",
+"color": "red",
+"filter": "on_hold,=,1"
+},
+{
+"label": "Frozen",
+"color": "orange",
+"filter": "is_frozen,=,1"
+},
+{
+"label": "Active",
+"color": "green",
+"filter": "disabled,=,0|on_hold,=,0|is_frozen,=,0"
+}
+],
+"add_fields": [
+"supplier_name",
+"supplier_group",
+"image",
+"on_hold",
+"disabled",
+"is_frozen"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Supplier Quotation": {
+"source": "erpnext/erpnext/buying/doctype/supplier_quotation/supplier_quotation_list.js",
+"indicators": [
+{
+"label": "Submitted",
+"color": "blue",
+"filter": "status,=,Submitted"
+},
+{
+"label": "Partially Ordered",
+"color": "yellow",
+"filter": "status,=,Partially Ordered"
+},
+{
+"label": "Ordered",
+"color": "green",
+"filter": "status,=,Ordered"
+},
+{
+"label": "Expired",
+"color": "gray",
+"filter": "status,=,Expired"
+}
+],
+"add_fields": [
+"supplier",
+"base_grand_total",
+"status",
+"company",
+"currency"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Purchase Order"
+],
+"hide_name_column": false
+},
+"Supplier Scorecard": {
+"source": "erpnext/erpnext/buying/doctype/supplier_scorecard/supplier_scorecard_list.js",
+"indicators": [],
+"add_fields": [
+"indicator_color",
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Task": {
+"source": "erpnext/erpnext/projects/doctype/task/task_list.js",
+"indicators": [
+{
+"label": "Open",
+"color": "orange",
+"filter": "status,=,Open"
+},
+{
+"label": "Overdue",
+"color": "red",
+"filter": "status,=,Overdue"
+},
+{
+"label": "Pending Review",
+"color": "orange",
+"filter": "status,=,Pending Review"
+},
+{
+"label": "Working",
+"color": "orange",
+"filter": "status,=,Working"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,Completed"
+},
+{
+"label": "Template",
+"color": "blue",
+"filter": "status,=,Template"
+}
+],
+"add_fields": [
+"project",
+"status",
+"priority",
+"exp_start_date",
+"exp_end_date",
+"subject",
+"progress",
+"depends_on_tasks"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Set as Open",
+"Set as Completed"
+],
+"hide_name_column": false
+},
+"Timesheet": {
+"source": "erpnext/erpnext/projects/doctype/timesheet/timesheet_list.js",
+"indicators": [
+{
+"label": "Partially Billed",
+"color": "orange",
+"filter": "status,=,"
+},
+{
+"label": "Billed",
+"color": "green",
+"filter": "status,=,"
+},
+{
+"label": "Payslip",
+"color": "green",
+"filter": "status,=,"
+},
+{
+"label": "Completed",
+"color": "green",
+"filter": "status,=,"
+}
+],
+"add_fields": [
+"status",
+"total_hours",
+"start_date",
+"end_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"ToDo": {
+"source": "frappe/frappe/desk/doctype/todo/todo_list.js",
+"indicators": [],
+"add_fields": [
+"reference_type",
+"reference_name"
+],
+"has_indicator_for_draft": false,
+"button": "Open",
+"onload_actions": [],
+"hide_name_column": true
+},
+"Transaction Deletion Record": {
+"source": "erpnext/erpnext/setup/doctype/transaction_deletion_record/transaction_deletion_record_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"User": {
+"source": "frappe/frappe/core/doctype/user/user_list.js",
+"indicators": [
+{
+"label": "Active",
+"color": "green",
+"filter": "enabled,=,1"
+},
+{
+"label": "Disabled",
+"color": "gray",
+"filter": "enabled,=,0"
+}
+],
+"add_fields": [
+"enabled",
+"user_type",
+"user_image"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"User Permission": {
+"source": "frappe/frappe/core/doctype/user_permission/user_permission_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [
+"Add / Update",
+"Bulk Delete"
+],
+"hide_name_column": false
+},
+"User Type": {
+"source": "frappe/frappe/core/doctype/user_type/user_type_list.js",
+"indicators": [
+{
+"label": "Standard",
+"color": "green",
+"filter": "is_standard,=,1"
+},
+{
+"label": "Custom",
+"color": "blue",
+"filter": "is_standard,=,0"
+}
+],
+"add_fields": [
+"is_standard"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Video": {
+"source": "erpnext/erpnext/utilities/doctype/video/video_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Warranty Claim": {
+"source": "erpnext/erpnext/support/doctype/warranty_claim/warranty_claim_list.js",
+"indicators": [],
+"add_fields": [
+"status",
+"customer",
+"item_code"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Web Form": {
+"source": "frappe/frappe/website/doctype/web_form/web_form_list.js",
+"indicators": [
+{
+"label": "Published",
+"color": "green",
+"filter": "published,=,1"
+},
+{
+"label": "Not Published",
+"color": "gray",
+"filter": "published,=,0"
+}
+],
+"add_fields": [
+"title",
+"published"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Web Form Request": {
+"source": "frappe/frappe/website/doctype/web_form_request/web_form_request_list.js",
+"indicators": [
+{
+"label": "Used",
+"color": "green",
+"filter": "first_used_on,is,set"
+},
+{
+"label": "Expired",
+"color": "red",
+"filter": "expires_on,is,set|expires_on,<,${now_string}"
+},
+{
+"label": "Not Used",
+"color": "gray",
+"filter": "first_used_on,is,not set"
+}
+],
+"add_fields": [
+"expires_on",
+"first_used_on"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Web Page": {
+"source": "frappe/frappe/website/doctype/web_page/web_page_list.js",
+"indicators": [
+{
+"label": "Published",
+"color": "green",
+"filter": "published,=,Yes"
+},
+{
+"label": "Not Published",
+"color": "gray",
+"filter": "published,=,Yes"
+}
+],
+"add_fields": [
+"title",
+"published"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Webhook Request Log": {
+"source": "frappe/frappe/integrations/doctype/webhook_request_log/webhook_request_log_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Work Order": {
+"source": "erpnext/erpnext/manufacturing/doctype/work_order/work_order_list.js",
+"indicators": [
+{
+"label": "Not Started",
+"color": "orange",
+"filter": "status,=,Submitted"
+}
+],
+"add_fields": [
+"bom_no",
+"status",
+"sales_order",
+"qty",
+"produced_qty",
+"expected_delivery_date",
+"planned_start_date",
+"planned_end_date"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Workflow": {
+"source": "frappe/frappe/workflow/doctype/workflow/workflow_list.js",
+"indicators": [
+{
+"label": "Active",
+"color": "green",
+"filter": "is_active,=,Yes"
+},
+{
+"label": "Not active",
+"color": "gray",
+"filter": "is_active,=,No"
+}
+],
+"add_fields": [
+"is_active"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Workflow Action": {
+"source": "frappe/frappe/workflow/doctype/workflow_action/workflow_action_list.js",
+"indicators": [],
+"add_fields": [],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"Workstation": {
+"source": "erpnext/erpnext/manufacturing/doctype/workstation/workstation_list.js",
+"indicators": [
+{
+"label": "Production",
+"color": "green",
+"filter": "status,=,Production"
+},
+{
+"label": "Off",
+"color": "gray",
+"filter": "status,=,Off"
+},
+{
+"label": "Idle",
+"color": "gray",
+"filter": "status,=,Idle"
+},
+{
+"label": "Problem",
+"color": "red",
+"filter": "status,=,Problem"
+},
+{
+"label": "Maintenance",
+"color": "yellow",
+"filter": "status,=,Maintenance"
+},
+{
+"label": "Setup",
+"color": "blue",
+"filter": "status,=,Setup"
+}
+],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+},
+"{doctype}": {
+"source": "frappe/frappe/core/doctype/doctype/boilerplate/controller_list.js",
+"indicators": [],
+"add_fields": [
+"status"
+],
+"has_indicator_for_draft": false,
+"button": null,
+"onload_actions": [],
+"hide_name_column": false
+}
+}
+}

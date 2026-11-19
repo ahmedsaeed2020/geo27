@@ -1,0 +1,25 @@
+{
+ "_note": "SHL-08: user-facing release notes per DIGIT HR version. 'status' is the source state only: candidate = in main, not yet released on a site; a site's deployed state comes from docs/releases/<release>.json written by the release owner. Every feature id is a row of docs/r9_all147/TRACKER_147.csv.",
+ "releases": [
+  {
+   "version": "1.0.0+r9",
+   "date": "2026-10-28",
+   "status": "candidate",
+   "title": {"ar": "R9: مساحات العمل التشغيلية وتقارير الموارد البشرية", "en": "R9: operational workspaces and HR reports"},
+   "highlights": [
+    {"ar": "مركز خدمات الموارد البشرية: طوابير القضايا وملف القضية 360 مع المهلة والسجل والملاحظات الداخلية", "en": "HR Service Center: case queues and Case 360 with SLA, history and internal notes", "features": ["CAS-01", "CAS-03", "CAS-04", "CAS-06"]},
+    {"ar": "مركز قيادة الموارد البشرية بمؤشرات معرّفة المصدر والمعادلة وقابلة للتعمق", "en": "HR command centre with KPIs that state their source and formula and drill to records", "features": ["ANL-04", "ANL-07"]},
+    {"ar": "مكتبة تقارير: العدد، الحركة، الدوران، جودة البيانات، مهلة القضايا، مدة شغل الوظائف، قمع التوظيف، الإلحاق المتأخر، إكمال التدريب", "en": "Report library: headcount, movement, turnover, data quality, case SLA, time to fill, recruitment funnel, overdue onboarding, training completion", "features": ["ANL-01", "ANL-08"]},
+    {"ar": "ملف الموظف 360 والتاريخ الوظيفي قبل/بعد", "en": "Employee 360 and job history before / after", "features": ["COR-01", "COR-02", "COR-03"]},
+    {"ar": "مستكشف الهيكل التنظيمي وروابط المنصب بالطلبات والإعلانات وتعريفات المصطلحات", "en": "Organization explorer, position to requisition / opening links and term definitions", "features": ["ORG-03", "ORG-06", "ORG-08"]},
+    {"ar": "اختيار الموظفين المؤهلين للوردية وفق قواعد HRMS", "en": "Eligible employees for a shift using HRMS's rules", "features": ["SCH-02"]},
+    {"ar": "مستكشف المسار الوظيفي وجاهزية التعيين قبل إنشاء الموظف", "en": "Career explorer and hire readiness before the employee record", "features": ["TAL-03", "HIR-02"]},
+    {"ar": "ملخص سياسات الشركة وحصة صاحب العمل في كشف التعويض", "en": "Company policy summary and the employer share in the compensation statement", "features": ["SET-06", "CMP-07"]}
+   ],
+   "not_included": [
+    {"ar": "أي ميزة تحتاج قرار المالك تبقى مطفأة", "en": "Features awaiting an owner decision stay switched off"},
+    {"ar": "عرض الشاشات الجديدة في واجهة DIGIT Enterprise مسؤولية مالك Enterprise", "en": "Rendering the new screens in the DIGIT Enterprise UI belongs to the Enterprise owner"}
+   ]
+  }
+ ]
+}

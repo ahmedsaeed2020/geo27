@@ -1,0 +1,534 @@
+{
+ "formats": {
+  "en|None|Accounts Payable Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|None|Accounts Payable Summary Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|None|Accounts Receivable Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|None|Accounts Receivable Summary Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|None|Balance Sheet Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|Payment Entry|Bank and Cash Payment Voucher": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 263,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PE-R-001"
+  },
+  "en|None|Cash Flow Statement Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|Journal Entry|Cheque Printing Format": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 307,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-JV-001"
+  },
+  "en|Journal Entry|Credit Note": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 198,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-JV-001"
+  },
+  "en|Dunning|Dunning Letter": {
+   "ok": null,
+   "kind": "no-record"
+  },
+  "en|None|General Ledger Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|Journal Entry|Journal Auditing Voucher": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 266,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-JV-001"
+  },
+  "en|None|P&L Statement Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|Journal Entry|Payment Receipt Voucher": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 198,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-JV-001"
+  },
+  "en|POS Invoice|POS Invoice Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 513,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|POS Invoice|POS Invoice Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 449,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|POS Invoice|POS Invoice Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 485,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|POS Invoice|POS Invoice Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 481,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|Purchase Invoice|Purchase Auditing Voucher": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 766,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Purchase Invoice|Purchase Invoice Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 530,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Purchase Invoice|Purchase Invoice Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 466,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Purchase Invoice|Purchase Invoice Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 507,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Purchase Invoice|Purchase Invoice Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 511,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Sales Invoice|Sales Auditing Voucher": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 674,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Sales Invoice Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 532,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Sales Invoice Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 468,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Sales Invoice Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 506,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Sales Invoice Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 510,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Sales Invoice Return": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 137,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|None|Trial Balance Standard": {
+   "ok": null,
+   "kind": "report-or-non-doctype",
+   "note": "Print format for a report/page view, not a DocType record"
+  },
+  "en|Purchase Order|Drop Shipping Format": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 429,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Purchase Order|Purchase Order Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 549,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Purchase Order|Purchase Order Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 485,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Purchase Order|Purchase Order Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 502,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Purchase Order|Purchase Order Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 498,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Request for Quotation|Request for Quotation Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 332,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-RFQ-001"
+  },
+  "en|Request for Quotation|Request for Quotation Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 305,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-RFQ-001"
+  },
+  "en|Request for Quotation|Request for Quotation Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 313,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-RFQ-001"
+  },
+  "en|Request for Quotation|Request for Quotation Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 318,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-RFQ-001"
+  },
+  "en|Sales Invoice|Detailed Tax Invoice": {
+   "ok": true,
+   "kind": "builder",
+   "len": 775,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Supplier|IRS 1099 Form": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 2586,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SUPP-001"
+  },
+  "en|Purchase Invoice|Purchase eInvoice": {
+   "ok": true,
+   "kind": "builder",
+   "len": 167,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PINV-001"
+  },
+  "en|Sales Invoice|Simplified Tax Invoice": {
+   "ok": true,
+   "kind": "builder",
+   "len": 686,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Tax Invoice": {
+   "ok": true,
+   "kind": "builder",
+   "len": 753,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|POS Invoice|POS Invoice": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 675,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|Sales Order|Proforma Invoice": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 417,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SO-001"
+  },
+  "en|Quotation|Quotation Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 545,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-QTN-001"
+  },
+  "en|Quotation|Quotation Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 485,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-QTN-001"
+  },
+  "en|Quotation|Quotation Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 500,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-QTN-001"
+  },
+  "en|Quotation|Quotation Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 496,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-QTN-001"
+  },
+  "en|POS Invoice|Return POS Invoice": {
+   "ok": true,
+   "kind": "jinja",
+   "len": 669,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-POS-001"
+  },
+  "en|Sales Order|Sales Order Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 550,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SO-001"
+  },
+  "en|Sales Order|Sales Order Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 486,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SO-001"
+  },
+  "en|Sales Order|Sales Order Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 503,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SO-001"
+  },
+  "en|Sales Order|Sales Order Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 499,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SO-001"
+  },
+  "en|Delivery Note|Delivery Note Bordered": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 529,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-DN-001"
+  },
+  "en|Delivery Note|Delivery Note Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 465,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-DN-001"
+  },
+  "en|Delivery Note|Delivery Note Modern": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 482,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-DN-001"
+  },
+  "en|Delivery Note|Delivery Note Modern with Images": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 478,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-DN-001"
+  },
+  "en|Pick List|Pick List": {
+   "ok": null,
+   "kind": "no-record"
+  },
+  "en|Purchase Receipt|Purchase Receipt Serial and Batch Bundle Print": {
+   "ok": true,
+   "kind": "builder",
+   "len": 584,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PR-001"
+  },
+  "en|Job Offer|Job Offer": {
+   "ok": null,
+   "kind": "no-record"
+  },
+  "en|Appointment Letter|Standard Appointment Letter": {
+   "ok": null,
+   "kind": "no-record"
+  },
+  "en|Salary Slip|Salary Slip Classic": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 643,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SAL-2026-08-001"
+  },
+  "en|Salary Slip|Salary Slip Compact": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 437,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SAL-2026-08-001"
+  },
+  "en|Salary Slip|Salary Slip Detailed": {
+   "ok": true,
+   "kind": "builder-beta",
+   "len": 750,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SAL-2026-08-001"
+  },
+  "en|Sales Invoice|Standard": {
+   "ok": true,
+   "kind": "standard",
+   "len": 686,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Sales Invoice|Digit Arabic Tax Invoice": {
+   "ok": true,
+   "kind": "digit",
+   "len": 743,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SINV-001"
+  },
+  "en|Purchase Order|Standard": {
+   "ok": true,
+   "kind": "standard",
+   "len": 646,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-PO-001"
+  },
+  "en|Salary Slip|Standard": {
+   "ok": true,
+   "kind": "standard",
+   "len": 962,
+   "leftover": false,
+   "dir": "ltr",
+   "doc": "DDT-SAL-2026-08-001"
+  }
+ },
+ "pdf": {
+  "en": {
+   "file": "docs/screens/tax_invoice_en.pdf",
+   "bytes": 171006,
+   "is_pdf": true,
+   "pages": 1
+  }
+ },
+ "summary": {
+  "rendered_ok": 57,
+  "failed": 0,
+  "not_applicable": 13
+ }
+}

@@ -1,0 +1,5257 @@
+{
+"summary": {
+"checked": 0,
+"with_diffs": 0,
+"diffs": 0,
+"fixed_doctypes": 0,
+"no_source": 1049,
+"by_kind": {}
+},
+"results": [
+{
+"doctype": "Assignment Rule",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Assignment Rule Day",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Assignment Rule User",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Auto Repeat",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Auto Repeat Day",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Auto Repeat User",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Action",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Event Subscription",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Flow",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Run",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Run Step",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Automation Trigger Queue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Milestone",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Milestone Tracker",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Reminder",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Address",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Address Template",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Contact",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Contact Email",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Contact Phone",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Gender",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Salutation",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Access Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Activity Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Amended Document Naming Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "API Request Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Audit Trail",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Background Task",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Block Module",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Comment",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Communication",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Communication Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom DocPerm",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom Icon",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Data Export",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Data Import",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Data Import Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Data Import Skipped Row",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Data Import Value Mapping",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DefaultValue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Deleted Document",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocField",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocPerm",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocShare",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Action",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Layout",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Layout Child Table",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Layout Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Settings Map",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType Settings Map Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DocType State",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Doctype To Sync",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Naming Rule",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Naming Rule Condition",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Naming Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Share Key",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Domain",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Domain Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DuckDB Sync",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "DuckDB Sync Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dynamic Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Error Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "File",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Has Domain",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Has Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Installed Application",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Installed Applications",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Language",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Log Setting User",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Log Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Logs To Clear",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "MapReduce Job",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "MapReduce Task",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Module Def",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Module Profile",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Navbar Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Navbar Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Package",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Package Import",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Package Release",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Page",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Patch Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Permission Inspector",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Permission Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Permission Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Prepared Report",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Recorder",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Recorder Event",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Recorder Query",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Recorder Suggested Index",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Report",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Report Column",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Report Filter",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Role Permission for Page and Report",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Role Profile",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "RQ Job",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "RQ Worker",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Scheduled Job Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Scheduled Job Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Scheduler Event",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Security Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Security Settings Contact",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Security Settings Language",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Server Script",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Session Default",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Session Default Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "SMS Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "SMS Parameter",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "SMS Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Submission Queue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Success Action",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Translation",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Document Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Email",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Group",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Group Member",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Invitation",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Permission",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Role Profile",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Select Document Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Session Display",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Social Login",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Type Module",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "User Workspaces",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Version",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "View Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Client Script",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Customize Form",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Customize Form Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Property Setter",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Bulk Update",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Calendar View",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Console Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom HTML Block",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom Sidebar",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Custom Workspace",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard Chart",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard Chart Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard Chart Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard Chart Source",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dashboard Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Desktop Icon",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Desktop Layout",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Desktop Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dock",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Dock Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Template",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Event",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Event Notifications",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Event Participants",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Form Tour",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Form Tour Step",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Global Search DocType",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Global Search Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Kanban Board",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Kanban Board Column",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Kanban Board Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Kanban Board Group Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "List Filter",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "List View Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Module Onboarding",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Note",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Note Seen By",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Subscribed Document",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Type",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Type Preference",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Number Card",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Number Card Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Onboarding Permission",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Onboarding Step",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Onboarding Step Map",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Route History",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Sidebar",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Sidebar Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Console",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report Errors",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report Failing Jobs",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report Queue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report Tables",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "System Health Report Workers",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Tag",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Tag Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "ToDo",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Chart",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Custom Block",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Link",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Number Card",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Quick List",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Shortcut",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Sidebar",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workspace Sidebar Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Auto Email Report",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Document Follow",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Account",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Domain",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Flag Queue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Group",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Group Member",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Queue",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Queue Recipient",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Rule",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Template",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Email Unsubscribe",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "IMAP Folder",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Notification Recipient",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Reply To Address",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Unhandled Email",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Country",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Currency",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Connected App",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Geolocation Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Google Calendar",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Google Contacts",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Google Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Integration Request",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "LDAP Group Mapping",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "LDAP Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Authorization Code",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Bearer Token",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Client",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Client Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Provider Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Scope",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "OAuth Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Push Notification Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Query Parameters",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Slack Webhook URL",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Social Login Key",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Token Cache",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Webhook",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Webhook Data",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Webhook Header",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Webhook Request Log",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Letter Head",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Network Printer Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Format",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Format Field Template",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Format Snippet",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Heading",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Print Style",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "About Us Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "About Us Team Member",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Color",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Company History",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Contact Us Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Discussion Reply",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Discussion Topic",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Help Article",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Help Category",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Personal Data Deletion Request",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Personal Data Deletion Step",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Personal Data Download Request",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Portal Menu Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Portal Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Social Link Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Top Bar Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "UTM Campaign",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "UTM Medium",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "UTM Source",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Form",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Form Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Form List Column",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Form Request",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Page",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Page Block",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Page View",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Template",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Web Template Field",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Meta Tag",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Route Meta",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Route Redirect",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Script",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Settings",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Sidebar",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Sidebar Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Slideshow",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Slideshow Item",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Theme",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Website Theme Ignore App",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Action",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Action Master",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Action Permitted Role",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Condition",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Document State",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow State",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Transition",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Transition Task",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Workflow Transition Tasks",
+"app": "frappe",
+"status": "no-source"
+},
+{
+"doctype": "Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Account Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Account Closing Balance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Accounting Dimension",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Accounting Dimension Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Accounting Dimension Filter",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Accounting Period",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Accounts Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Advance Payment Ledger Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Advance Taxes and Charges",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Allowed Dimension",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Allowed To Transact With",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Applicable On Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Account Balance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Account Subtype",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Account Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Clearance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Clearance Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Guarantee",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Reconciliation Tool",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Statement Import",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Statement Import Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Statement Import Log Column Map",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction Mapping",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction Payments",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction Rule Accounts",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bank Transaction Rule Description Conditions",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bisect Accounting Statements",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bisect Nodes",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Budget",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Budget Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Budget Distribution",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Campaign Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cashier Closing",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cashier Closing Payments",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Chart of Accounts Importer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cheque Print Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Closed Document",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cost Center",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cost Center Allocation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Cost Center Allocation Percentage",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Coupon Code",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Currency Exchange Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Currency Exchange Settings Details",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Currency Exchange Settings Result",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer Group Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Discounted Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Dunning",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Dunning Letter Text",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Dunning Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Exchange Rate Revaluation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Exchange Rate Revaluation Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Finance Book",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Financial Report Row",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Financial Report Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Fiscal Year",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Fiscal Year Company",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "GL Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Invoice Discounting",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Tax Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Tax Template Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Wise Tax Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Journal Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Journal Entry Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Journal Entry Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Journal Entry Template Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Ledger Health",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Ledger Health Monitor",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Ledger Health Monitor Company",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Ledger Merge",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Ledger Merge Accounts",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Loyalty Point Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Loyalty Point Entry Redemption",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Loyalty Program",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Loyalty Program Collection",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Mode of Payment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Mode of Payment Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Monthly Distribution",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Monthly Distribution Percentage",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opening Invoice Creation Tool",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opening Invoice Creation Tool Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Overdue Payment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Party Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Party Link",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Entry Deduction",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Entry Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Gateway Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Ledger Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Order Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Reconciliation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Reconciliation Allocation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Reconciliation Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Reconciliation Payment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Request",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Term",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Terms Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Payment Terms Template Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pegged Currencies",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pegged Currency Details",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Period Closing Voucher",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Closing Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Closing Entry Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Closing Entry Taxes",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Customer Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Field",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Invoice Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Invoice Merge Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Invoice Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Item Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Opening Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Opening Entry Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Payment Method",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Profile",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Profile User",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Search Fields",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "POS Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pricing Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pricing Rule Brand",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pricing Rule Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pricing Rule Item Code",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pricing Rule Item Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Deferred Accounting",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Payment Reconciliation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Payment Reconciliation Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Payment Reconciliation Log Allocations",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Period Closing Voucher",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Period Closing Voucher Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Statement Of Accounts",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Statement Of Accounts CC",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Statement Of Accounts Customer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Process Subscription",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Promotional Scheme",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Promotional Scheme Price Discount",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Promotional Scheme Product Discount",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "PSOA Cost Center",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "PSOA Project",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Invoice Advance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Invoice Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Taxes and Charges",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Taxes and Charges Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Accounting Ledger",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Accounting Ledger Items",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Allowed Types",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Payment Ledger",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Payment Ledger Items",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice Advance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice Payment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Invoice Timesheet",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Partner Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Taxes and Charges",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Taxes and Charges Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Share Balance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Share Transfer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Share Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shareholder",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipping Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipping Rule Condition",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipping Rule Country",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "South Africa VAT Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subscription",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subscription Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subscription Plan",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subscription Plan Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subscription Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Group Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Withholding Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Withholding Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Withholding Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Withholding Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Tax Withholding Rate",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Territory Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Transaction Deletion Record Details",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Unreconcile Payment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Unreconcile Payment Entries",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Activity",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Capitalization",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Capitalization Asset Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Capitalization Service Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Capitalization Stock Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Category Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Depreciation Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Finance Book",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Maintenance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Maintenance Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Maintenance Task",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Maintenance Team",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Movement",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Movement Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Repair",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Repair Consumed Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Repair Purchase Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Shift Allocation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Shift Factor",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Asset Value Adjustment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Depreciation Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Linked Location",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Location",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Team Member",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bulk Transaction Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bulk Transaction Log Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Buying Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer Number At Supplier",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Receipt Item Supplied",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Request for Quotation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Request for Quotation Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Request for Quotation Supplier",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Quotation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Quotation Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Criteria",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Period",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Scoring Criteria",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Scoring Standing",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Scoring Variable",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Standing",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Scorecard Variable",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Communication Medium",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Communication Medium Timeslot",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Appointment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Appointment Booking Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Appointment Booking Slots",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Availability Of Slots",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Campaign",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Campaign Email Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Competitor",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Competitor Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Contract",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Contract Fulfilment Checklist",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Contract Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Contract Template Fulfilment Terms",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "CRM Note",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "CRM Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Email Campaign",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Frappe CRM Allowed User",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Lead",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Lost Reason Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Market Segment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opportunity",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opportunity Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opportunity Lost Reason",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opportunity Lost Reason Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Opportunity Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Prospect",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Prospect Lead",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Prospect Opportunity",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Stage",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Code List",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Common Code",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Plaid Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Schedule Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Schedule Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Visit",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Maintenance Visit Purpose",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Blanket Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Blanket Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Creator",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Creator Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Explosion Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Secondary Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Update Batch",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Update Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Update Tool",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Website Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "BOM Website Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Downtime Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card Scheduled Time",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card Secondary Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Job Card Time Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Manufacturing Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Master Production Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Master Production Schedule Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Material Request Plan Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Plant Floor",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Item Reference",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Material Request",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Material Request Warehouse",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Sales Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Production Plan Sub Assembly Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Routing",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Forecast",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Forecast Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sub Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Work Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Work Order Additional Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Work Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Work Order Operation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation Cost",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation Operating Component",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation Operating Component Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Workstation Working Hour",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Website Attribute",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Website Filter Field",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Activity Cost",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Activity Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Dependent Task",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project Template Task",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project Update",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Project User",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Projects Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Task",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Task Depends On",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Task Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Timesheet",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Timesheet Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Non Conformance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Action",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Action Resolution",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Feedback",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Feedback Parameter",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Feedback Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Feedback Template Parameter",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Goal",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Goal Objective",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Meeting",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Meeting Agenda",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Meeting Minutes",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Procedure",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Procedure Process",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Review",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Review Objective",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Import Supplier Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Lower Deduction Certificate",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "South Africa VAT Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UAE VAT Account",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UAE VAT Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer Credit Limit",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Schedule Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Industry Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Installation Note",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Installation Note Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Party Specific Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Product Bundle",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Product Bundle Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Proforma Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Proforma Invoice Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quotation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quotation Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Partner Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Team",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Selling Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "SMS Center",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Number At Customer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Authorization Control",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Authorization Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Branch",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Brand",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Company",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Currency Exchange",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customer Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Department",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Designation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Driver",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Driving License Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Email Digest",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Email Digest Recipient",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee Education",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee External Work History",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee Group Table",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Employee Internal Work History",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Global Defaults",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Holiday",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Holiday List",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Incoterm",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Party Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quotation Lost Reason",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quotation Lost Reason Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Partner",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Sales Person",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Supplier Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Target Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Terms and Conditions",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Territory",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Transaction Deletion Record",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Transaction Deletion Record Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Transaction Deletion Record To Delete",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UOM",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UOM Conversion Factor",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Vehicle",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Website Item Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Batch",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Bin",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Company Restriction",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Customs Tariff Number",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Note",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Note Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Stop",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Delivery Trip",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Inventory Dimension",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Alternative",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Attribute",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Attribute Value",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Barcode",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Customer Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Default",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Lead Time",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Lead Time Supplier",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Manufacturer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Price",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Quality Inspection Parameter",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Reorder",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Standard Cost",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Supplier",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Tax",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Variant",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Variant Attribute",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Variant Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Item Website Specification",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Landed Cost Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Landed Cost Purchase Receipt",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Landed Cost Taxes and Charges",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Landed Cost Vendor Invoice",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Landed Cost Voucher",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Manufacturer",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Material Request",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Material Request Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Packed Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Packing Slip",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Packing Slip Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pick List",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pick List Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Price List",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Price List Country",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Receipt",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Purchase Receipt Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Putaway Rule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Inspection",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Inspection Parameter",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Inspection Parameter Group",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Inspection Reading",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quality Inspection Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Quick Stock Balance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Repost Item Valuation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Serial and Batch Bundle",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Serial and Batch Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Serial No",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipment",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipment Delivery Note",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipment Parcel",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Shipment Parcel Template",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Closing Balance",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Closing Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Entry Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Entry Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Ledger Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Reconciliation",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Reconciliation Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Reposting Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Reservation Entry",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Stock Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UOM Category",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "UOM Conversion Detail",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Variant Field",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Warehouse",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Warehouse Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting BOM",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Inward Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Inward Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Inward Order Received Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Inward Order Secondary Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Inward Order Service Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Order",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Order Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Order Service Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Order Supplied Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Receipt",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Receipt Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Subcontracting Receipt Supplied Item",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Issue",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Issue Priority",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Issue Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Pause SLA On Status",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Service Day",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Service Level Agreement",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Service Level Priority",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "SLA Fulfilled On Status",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Support Search Source",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Support Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Warranty Claim",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Call Log",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Incoming Call Handling Schedule",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Incoming Call Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Telephony Call Type",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Voice Call Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Portal User",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Rename Tool",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Video",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Video Settings",
+"app": "erpnext",
+"status": "no-source"
+},
+{
+"doctype": "Appointment Letter",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appointment Letter content",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appointment Letter Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal Cycle",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal Goal",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal KRA",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisal Template Goal",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Appraisee",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Attendance",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Attendance Request",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Compensatory Leave Request",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Department Approver",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Designation Skill",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Earned Leave Schedule",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Advance",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Attendance Tool",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Boarding Activity",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Checkin",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Feedback Criteria",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Feedback Rating",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Grade",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Grievance",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Health Insurance",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Onboarding",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Onboarding Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Performance Feedback",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Promotion",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Property History",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Referral",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Separation",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Separation Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Skill",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Skill Map",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Training",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Transfer",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employment Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Exit Interview",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expected Skill Set",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Claim",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Claim Account",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Claim Advance",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Claim Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Claim Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Expense Taxes and Charges",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Full and Final Asset",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Full and Final Outstanding Statement",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Full and Final Statement",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Goal",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Grievance Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Holiday List Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "HR Settings",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "HR Telemetry Milestone",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Identification Document Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interest",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interview",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interview Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interview Feedback",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interview Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Interviewer",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Applicant",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Applicant Source",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Offer",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Offer Term",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Offer Term Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Opening",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Opening Template",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Job Requisition",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "KRA",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Adjustment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Allocation",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Application",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Block List",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Block List Allow",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Block List Date",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Control Panel",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Encashment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Ledger Entry",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Period",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Policy",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Policy Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Policy Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Leave Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Offer Term",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Overtime Details",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Overtime Salary Component",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Overtime Slip",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Overtime Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Purpose of Travel",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "PWA Notification",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Assignment Tool",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Location",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Request",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Schedule",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Schedule Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Shift Type",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Skill",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Skill Assessment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Staffing Plan",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Staffing Plan Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Event",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Event Employee",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Feedback",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Program",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Result",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Training Result Employee",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Travel Itinerary",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Travel Request",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Travel Request Costing",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Vehicle Log",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Vehicle Service",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Vehicle Service Item",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Additional Salary",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Arrear",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Bulk Salary Structure Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Benefit Application",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Benefit Application Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Benefit Claim",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Benefit Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Benefit Ledger",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Cost Center",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Incentive",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Other Income",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Category",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Declaration",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Declaration Category",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Proof Submission",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Proof Submission Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Employee Tax Exemption Sub Category",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Gratuity",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Gratuity Applicable Component",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Gratuity Rule",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Gratuity Rule Slab",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Income Tax Slab",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Income Tax Slab Other Charges",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Correction",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Correction Child",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Employee Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Entry",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Period",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Period Date",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Payroll Settings",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Retention Bonus",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Component",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Component Account",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Detail",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Slip",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Slip Leave",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Slip Loan",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Slip Timesheet",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Structure",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Structure Assignment",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Withholding",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Salary Withholding Cycle",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "Taxable Salary Slab",
+"app": "hrms",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Domain",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Field Mapping",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Link Priority",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Rule",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Rule Pattern",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Run",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Enrichment Skip Pattern",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Call Log",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Communication Status",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Contacts",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Dashboard",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Deal",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Deal Status",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Dropdown Item",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Exotel Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Fields Layout",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Form Script",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Global Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Holiday",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Holiday List",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Industry",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Invitation",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Lead",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Lead Source",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Lead Status",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Lost Reason",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Notification",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Organization",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Product",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Product Sync Issue",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Products",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Rolling Response Time",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Sales Hierarchy",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Service Day",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Service Level Agreement",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Service Level Priority",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Status Change Log",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Task",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Telephony Agent",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Telephony Phone",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Territory",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM Twilio Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "CRM View Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "ERPNext CRM Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "FCRM Note",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "FCRM Settings",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "Facebook Lead Form",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "Facebook Lead Form Question",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "Facebook Page",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "Failed Lead Sync Log",
+"app": "crm",
+"status": "no-source"
+},
+{
+"doctype": "Lead Sync Source",
+"app": "crm",
+"status": "no-source"
+}
+]
+}

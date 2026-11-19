@@ -1,0 +1,26 @@
+{
+ "source": "upstream locale/ar.po of each archive",
+ "apps": {
+  "frappe": {
+   "entries": 7798,
+   "translated": 5782
+  },
+  "erpnext": {
+   "entries": 10831,
+   "translated": 7989
+  },
+  "hrms": {
+   "entries": 2252,
+   "translated": 745
+  },
+  "crm": {
+   "entries": 1781,
+   "translated": 537
+  },
+  "insights": {
+   "entries": 686,
+   "translated": 197
+  }
+ },
+ "merged_unique_strings": 14525
+}

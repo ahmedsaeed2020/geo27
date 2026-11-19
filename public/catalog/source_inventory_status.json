@@ -1,0 +1,155 @@
+{
+ "rows": 17459,
+ "total": {
+  "Rendered": 11018,
+  "Missing": 2181,
+  "Behaves": 3949,
+  "Server-dependent": 311
+ },
+ "by_app": {
+  "ERPNext": {
+   "Rendered": 8662,
+   "Missing": 1431,
+   "Behaves": 2772,
+   "Server-dependent": 195
+  },
+  "HRMS": {
+   "Rendered": 1643,
+   "Behaves": 1021,
+   "Server-dependent": 37,
+   "Missing": 606
+  },
+  "CRM": {
+   "Missing": 134,
+   "Rendered": 656,
+   "Behaves": 121,
+   "Server-dependent": 79
+  },
+  "Frappe Desk": {
+   "Rendered": 57,
+   "Behaves": 35,
+   "Missing": 10
+  }
+ },
+ "by_type": {
+  "1 DocType": {
+   "Rendered": 478,
+   "Behaves": 261,
+   "Missing": 4
+  },
+  "3 Field": {
+   "Rendered": 8171,
+   "Behaves": 1437,
+   "Missing": 29
+  },
+  "4 Form behavior (event)": {
+   "Missing": 1482,
+   "Rendered": 350,
+   "Behaves": 744,
+   "Server-dependent": 36
+  },
+  "10 Server hook": {
+   "Rendered": 90,
+   "Behaves": 574,
+   "Server-dependent": 34
+  },
+  "2 Form tab": {
+   "Rendered": 302
+  },
+  "4 Form behavior (logic count)": {
+   "Rendered": 26,
+   "Behaves": 156,
+   "Missing": 27,
+   "Server-dependent": 6
+  },
+  "9 Connection": {
+   "Rendered": 75
+  },
+  "5 Form button": {
+   "Rendered": 406,
+   "Behaves": 68,
+   "Server-dependent": 11,
+   "Missing": 4
+  },
+  "6 Link filter (set_query)": {
+   "Behaves": 102,
+   "Rendered": 483,
+   "Server-dependent": 8
+  },
+  "7 List setting": {
+   "Missing": 100,
+   "Behaves": 119,
+   "Rendered": 3,
+   "Server-dependent": 4
+  },
+  "7 List label/indicator": {
+   "Missing": 42,
+   "Behaves": 195,
+   "Rendered": 1,
+   "Server-dependent": 12
+  },
+  "9 Dashboard/Connections": {
+   "Rendered": 92
+  },
+  "10 Server method": {
+   "Rendered": 46,
+   "Server-dependent": 79,
+   "Behaves": 208
+  },
+  "8 Tree view": {
+   "Server-dependent": 2,
+   "Rendered": 14,
+   "Behaves": 2
+  },
+  "8 Calendar view": {
+   "Missing": 12,
+   "Server-dependent": 1
+  },
+  "11 Report": {
+   "Rendered": 201,
+   "Behaves": 19
+  },
+  "12 Print format": {
+   "Server-dependent": 57,
+   "Missing": 9
+  },
+  "13 Number card": {
+   "Missing": 84
+  },
+  "13 Dashboard chart": {
+   "Missing": 79
+  },
+  "14 Workspace": {
+   "Missing": 25
+  },
+  "15 Onboarding step": {
+   "Missing": 127
+  },
+  "15 Module onboarding": {
+   "Missing": 18
+  },
+  "16 Page": {
+   "Rendered": 9
+  },
+  "16 Web form": {
+   "Missing": 4
+  },
+  "17 SPA component": {
+   "Missing": 109,
+   "Rendered": 206,
+   "Behaves": 5,
+   "Server-dependent": 60
+  },
+  "17 SPA page": {
+   "Behaves": 24,
+   "Missing": 16,
+   "Rendered": 8,
+   "Server-dependent": 1
+  },
+  "0 Desk/Framework UI": {
+   "Rendered": 57,
+   "Behaves": 35,
+   "Missing": 10
+  }
+ }
+}

@@ -1,0 +1,369 @@
+/* =====================================================================================================================
+   DIGIT CRM visual system (V2) — presentation only.
+   Every rule is scoped to [data-app-shell="digit_crm"], the attribute the shared Core Shell sets only while the DIGIT CRM
+   app shell owns the page. Nothing here targets :root, html, body or another app, so Standard Desk, DIGIT Pro, HR and
+   Insights render exactly as before. Colours are the DIGIT brand tokens (deep, emerald, mint, ink, paper; enterprise/tokens.css).
+   ===================================================================================================================== */
+
+/* ---- DIGIT CRM base rules (imported from the CRM source snapshot src/styles.css — app-owned .dc-* / [data-digit-crm] /
+   [data-ws-dept] classes only; the Final Core keeps them in this app stylesheet instead of the Core sheet). ---- */
+@media (max-width: 767px) {
+  [data-app-shell="digit_crm"] [data-digit-crm] nav{ flex-wrap: nowrap; overflow-x: auto; }
+  [data-app-shell="digit_crm"] [data-digit-crm] .dp-tab{ white-space: nowrap; }
+}
+@media (max-width: 767px) {
+  [data-app-shell="digit_crm"] [data-digit-crm] section, [data-app-shell="digit_crm"] [data-digit-crm] .panel{ overflow-x: auto; max-width: 100%; }
+  [data-app-shell="digit_crm"] [data-digit-crm]{ min-width: 0; max-width: 100%; }
+}
+/* CRM-local analytics series: semantic alternatives to repetitive primary bars. */
+[data-app-shell="digit_crm"] [data-digit-crm], [data-app-shell="digit_crm"] [data-ws-dept]{ --dc-series-positive: var(--status-green); --dc-series-warning: var(--status-orange); --dc-series-neutral: var(--primary); }
+[data-app-shell="digit_crm"] [data-digit-crm] .dc-series-0, [data-app-shell="digit_crm"] [data-ws-dept] .dc-series-0{ background: var(--dc-series-positive); }
+[data-app-shell="digit_crm"] [data-digit-crm] .dc-series-1, [data-app-shell="digit_crm"] [data-ws-dept] .dc-series-1{ background: var(--dc-series-warning); }
+[data-app-shell="digit_crm"] [data-digit-crm] .dc-series-2, [data-app-shell="digit_crm"] [data-ws-dept] .dc-series-2{ background: var(--dc-series-neutral); }
+/* DIGIT CRM command centers — CRM-scoped tokens (deep green structural band, emerald tabs, semantic signal tones).
+   Scoped to [data-digit-crm] (DIGIT CRM pages) and [data-ws-dept] (the CRM department band on native registers, rendered
+   only inside DIGIT CRM), so Core, Standard Desk, DIGIT Pro and other apps never inherit them. */
+[data-app-shell="digit_crm"] [data-digit-crm], [data-app-shell="digit_crm"] [data-ws-dept]{
+  --dc-deep: oklch(0.378 0.073 168.9); --dc-emerald: oklch(0.550 0.126 157.9); --dc-mint: oklch(0.773 0.153 163.2);
+  --dc-on-deep: oklch(1 0 0); --dc-on-deep-muted: color-mix(in oklab, white 76%, transparent);
+  --dc-tone-critical: var(--destructive); --dc-tone-warning: var(--status-orange); --dc-tone-positive: var(--status-green); --dc-tone-neutral: var(--dc-emerald);
+  --dc-s0: var(--dc-emerald); --dc-s1: var(--status-blue); --dc-s2: var(--status-amber); --dc-s3: var(--status-purple);
+  --dc-s4: var(--status-teal); --dc-s5: var(--status-pink); --dc-s6: var(--status-orange); --dc-s7: var(--status-gray);
+  --dc-area: color-mix(in oklab, var(--dc-emerald) 16%, transparent);
+}
+.dc-command { border-radius: calc(var(--radius) + 4px); background: var(--dc-deep); color: var(--dc-on-deep); padding: 1.25rem 1.5rem 1rem; box-shadow: 0 6px 24px color-mix(in oklab, var(--dc-deep) 22%, transparent); }
+.dc-command-main { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1rem; }
+/* the band badge shows the light-on-dark CRM mark (iconMap DARK_PLACES), so it sits on the green band, never on a white tile (owner 2026-10-19) */
+.dc-command-logo { height: 2.75rem; width: 2.75rem; flex-shrink: 0; border-radius: 0.6rem; background: oklch(1 0 0 / 0.06); padding: 0.3rem; }
+.dc-command-eyebrow { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--dc-mint); }
+.dc-command-title { margin-top: 0.15rem; font-size: 1.5rem; font-weight: 650; line-height: 1.2; }
+.dc-command-question { margin-top: 0.25rem; font-size: 0.9375rem; color: var(--dc-on-deep-muted); }
+.dc-command-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-inline-start: auto; }
+.dc-cmd-btn { display: inline-flex; align-items: center; gap: 0.375rem; border-radius: 0.5rem; border: 1px solid color-mix(in oklab, white 30%, transparent); padding: 0.4rem 0.8rem; font-size: 0.8125rem; font-weight: 500; color: var(--dc-on-deep); background: color-mix(in oklab, white 6%, transparent); transition: background-color .15s; }
+.dc-cmd-btn:hover { background: color-mix(in oklab, white 16%, transparent); }
+.dc-cmd-btn:focus-visible { outline: 2px solid var(--dc-mint); outline-offset: 2px; }
+.dc-cmd-btn-primary { background: var(--dc-mint); border-color: var(--dc-mint); color: var(--dc-deep); }
+.dc-cmd-btn-primary:hover { background: color-mix(in oklab, var(--dc-mint) 85%, white); }
+.dc-command-ctx { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem 1.75rem; border-top: 1px solid color-mix(in oklab, white 16%, transparent); padding-top: 0.75rem; font-size: 0.8125rem; }
+.dc-command-ctx dt { font-size: 0.6875rem; color: var(--dc-on-deep-muted); }
+.dc-command-ctx dd { font-weight: 500; }
+.dc-tabs { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 0.25rem; border-bottom: 1px solid var(--border); }
+.dc-tab { padding: 0.55rem 0.9rem; font-size: 0.875rem; color: var(--muted-foreground); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap; }
+.dc-tab:hover { color: var(--foreground); }
+.dc-tab[aria-selected="true"] { color: var(--foreground); font-weight: 600; border-bottom-color: var(--dc-emerald); }
+.dc-tab:focus-visible { outline: 2px solid var(--dc-emerald); outline-offset: -2px; border-radius: 4px; }
+.dc-signal { height: 100%; border: 1px solid var(--border); border-top: 3px solid var(--dc-tone, var(--dc-tone-neutral)); border-radius: var(--radius); background: var(--card); padding: 0.85rem 1rem; transition: box-shadow .15s, border-color .15s; }
+.dc-signal[data-tone="critical"] { --dc-tone: var(--dc-tone-critical); }
+.dc-signal[data-tone="warning"] { --dc-tone: var(--dc-tone-warning); }
+.dc-signal[data-tone="positive"] { --dc-tone: var(--dc-tone-positive); }
+.dc-signal[data-tone="neutral"] { --dc-tone: var(--dc-tone-neutral); }
+.dc-signal-link:hover .dc-signal { box-shadow: 0 4px 16px color-mix(in oklab, var(--dc-deep) 10%, transparent); border-color: color-mix(in oklab, var(--dc-emerald) 40%, var(--border)); }
+.dc-signal-link:focus-visible { outline: 2px solid var(--dc-emerald); outline-offset: 2px; }
+.dc-signal-value { font-size: 1.625rem; font-weight: 650; line-height: 1.1; overflow-wrap: anywhere; }
+.dc-panel { min-width: 0; border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 1rem 1.1rem; }
+.dc-doc-card { border: 1px solid var(--border); border-radius: var(--radius); background: var(--card); padding: 0.85rem 1rem; transition: border-color .15s, box-shadow .15s; }
+[data-app-shell="digit_crm"] a.dc-doc-card:hover { border-color: var(--dc-emerald); box-shadow: 0 4px 16px color-mix(in oklab, var(--dc-deep) 8%, transparent); }
+.dc-reason { display: inline-flex; align-items: center; gap: 0.25rem; border-radius: 999px; border: 1px solid var(--border); padding: 0.05rem 0.5rem; font-size: 0.6875rem; white-space: nowrap; }
+.dc-reason[data-tone="critical"] { border-color: color-mix(in oklab, var(--dc-tone-critical) 45%, var(--border)); background: color-mix(in oklab, var(--dc-tone-critical) 9%, var(--card)); color: var(--dc-tone-critical); }
+.dc-reason[data-tone="warning"] { border-color: color-mix(in oklab, var(--dc-tone-warning) 45%, var(--border)); background: color-mix(in oklab, var(--dc-tone-warning) 10%, var(--card)); }
+[data-app-shell="digit_crm"] a.dc-reason:hover { text-decoration: underline; }
+.dc-tone-dot { display: inline-block; height: 0.6rem; width: 0.6rem; flex-shrink: 0; border-radius: 999px; background: var(--dc-tone-neutral); }
+.dc-tone-dot[data-tone="critical"] { background: var(--dc-tone-critical); }
+.dc-tone-dot[data-tone="warning"] { background: var(--dc-tone-warning); }
+.dc-tone-dot[data-tone="positive"] { background: var(--dc-tone-positive); }
+.dc-tone-dot[data-tone="neutral"] { background: var(--muted-foreground); }
+[data-dc-go] { cursor: pointer; }
+/* CRM sidebar: long report/section names wrap instead of being cut at the sidebar edge (DIGIT Pro keeps its own rule). */
+[data-dc-nav] .dp-nav-item { white-space: normal; overflow-wrap: anywhere; line-height: 1.3; padding-block: 5px; }
+[data-dc-go]:focus-visible { outline: 2px solid var(--dc-emerald, var(--ring)); outline-offset: 1px; }
+/* Native CRM registers keep their department band; its KPI cards take the same signal grammar. */
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi]{ border-top: 3px solid var(--dc-tone, var(--dc-tone-neutral)); }
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi][data-tone="critical"]{ --dc-tone: var(--destructive); }
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi][data-tone="warning"]{ --dc-tone: var(--status-orange); }
+@media (max-width: 640px) {
+  .dc-command { padding: 1rem; }
+  .dc-command-title { font-size: 1.25rem; }
+  .dc-tabs { flex-wrap: nowrap; overflow-x: auto; }
+}
+
+[data-app-shell="digit_crm"] {
+  --dcx-deep: oklch(0.378 0.073 168.9);
+  --dcx-deep-2: oklch(0.407 0.081 166.9);
+  --dcx-rail: oklch(0.328 0.062 170.0);
+  --dcx-panel: oklch(0.372 0.071 169.2);
+  --dcx-emerald: oklch(0.550 0.126 157.9);
+  --dcx-mint: oklch(0.773 0.153 163.2);
+  --dcx-canvas: oklch(0.964 0.007 97.4);
+  --dcx-ink: oklch(0.219 0.031 165.5);
+  --dcx-muted: oklch(0.512 0.023 163.9);
+  --dcx-border: oklch(0.894 0.009 161.3);
+  --dcx-line: oklch(0.925 0.007 161.3);
+  --dcx-surf: oklch(0.948 0.006 153.8);
+  --dcx-tint: oklch(0.956 0.016 166.7);
+  --dcx-success: oklch(0.587 0.131 158.4);
+  --dcx-success-tx: oklch(0.451 0.101 159.6);
+  --dcx-warning: oklch(0.654 0.120 78.1);
+  --dcx-warning-tint: oklch(0.961 0.028 84.6);
+  --dcx-warning-tx: oklch(0.527 0.103 79.7);
+  --dcx-critical: oklch(0.543 0.174 29.7);
+  --dcx-critical-tint: oklch(0.935 0.022 38.3);
+  --dcx-critical-tx: oklch(0.482 0.154 31.4);
+  --dcx-info: oklch(0.496 0.127 253.7);
+  --dcx-info-tint: oklch(0.942 0.017 250.8);
+  --dcx-on-deep: oklch(1 0 0);
+  --dcx-on-deep-soft: oklch(1 0 0 / 0.78);
+  --dcx-on-deep-faint: oklch(1 0 0 / 0.14);
+  --dcx-r-sm: 8px; --dcx-r-md: 10px; --dcx-r-lg: 14px;
+  --dcx-sh: 0 1px 2px oklch(0.378 0.073 168.9 / 0.06);
+  --dcx-shh: 0 4px 16px oklch(0.378 0.073 168.9 / 0.09);
+  --dcx-rail-w: 68px;
+  --dcx-pnav-w: 224px;
+}
+@media (min-width: 1440px) { [data-app-shell="digit_crm"] { --dcx-pnav-w: 240px; } }
+
+/* Light theme: the shared semantic tokens take the DIGIT palette inside the CRM shell only (the user's dark theme keeps
+   its own values). Native CRM screens (--crm-*) and hosted Desk forms inherit through these tokens. */
+html:not(.dark) [data-app-shell="digit_crm"] {
+  --background: var(--dcx-canvas); --foreground: var(--dcx-ink);
+  --card: oklch(1 0 0); --card-foreground: var(--dcx-ink); --popover: oklch(1 0 0); --popover-foreground: var(--dcx-ink);
+  --primary: var(--dcx-emerald); --primary-foreground: oklch(1 0 0);
+  --secondary: var(--dcx-surf); --secondary-foreground: var(--dcx-ink);
+  --muted: var(--dcx-surf); --muted-foreground: var(--dcx-muted);
+  --accent: var(--dcx-tint); --accent-foreground: var(--dcx-success-tx);
+  --destructive: var(--dcx-critical); --success: var(--dcx-success); --success-text: var(--dcx-success-tx);
+  --warning: var(--dcx-warning); --info: var(--dcx-info);
+  --border: var(--dcx-border); --input: oklch(0.860 0.011 161.3); --ring: var(--dcx-emerald);
+  --crm-sidebar: var(--dcx-canvas); --crm-surface: oklch(1 0 0); --crm-ink: var(--dcx-ink); --crm-ink-muted: var(--dcx-muted);
+  --crm-line: var(--dcx-line); --crm-hover: var(--dcx-surf); --crm-dark: var(--dcx-deep);
+  background: var(--dcx-canvas);
+}
+/* CRM-scoped command-center tokens follow the same semantic palette. */
+[data-app-shell="digit_crm"] [data-digit-crm], [data-app-shell="digit_crm"] [data-ws-dept] {
+  --dc-deep: var(--dcx-deep); --dc-emerald: var(--dcx-emerald); --dc-mint: var(--dcx-mint);
+  --dc-tone-critical: var(--dcx-critical); --dc-tone-warning: var(--dcx-warning); --dc-tone-positive: var(--dcx-success); --dc-tone-neutral: var(--dcx-emerald);
+  --dc-series-positive: var(--dcx-success); --dc-series-warning: var(--dcx-warning); --dc-series-neutral: var(--dcx-emerald);
+}
+
+/* ---------- Shared Core topbar and breadcrumb rhythm (controls unchanged) ---------- */
+[data-app-shell="digit_crm"] > div > header { border-color: var(--dcx-border); box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] > div > header > div { min-height: 3.5rem; }
+/* Tablet widths: the search field yields space so the language switch, bell and user menu always stay fully visible. */
+@media (max-width: 1023px) {
+  [data-app-shell="digit_crm"] > div > header .us-search { min-width: 0; flex: 1 1 0; }
+  [data-app-shell="digit_crm"] > div > header .us-search * { min-width: 0; max-width: 100%; }
+}
+
+/* ---------- Level 2/3 navigation: module rail + contextual section panel ---------- */
+[data-app-shell="digit_crm"] .us-module-sidebar.dc-sidebar { width: auto; background: var(--dcx-panel); border-color: color-mix(in oklab, var(--dcx-deep) 70%, black); }
+[data-app-shell="digit_crm"] .dc-sidebar > div { overflow: hidden; }
+.dc-nav { display: flex; height: 100%; min-height: 0; color: var(--dcx-on-deep, oklch(1 0 0)); }
+.dc-rail { display: flex; width: var(--dcx-rail-w, 68px); flex-shrink: 0; flex-direction: column; align-items: center; gap: 4px; padding: 12px 4px 10px; background: var(--dcx-rail); overflow-y: auto; scrollbar-width: none; }
+.dc-rail::-webkit-scrollbar { display: none; }
+.dc-rail-brand { display: flex; border-radius: 12px; padding: 2px; margin-bottom: 2px; }
+.dc-rail-brand img { height: 38px; width: 38px; }
+.dc-rail-btn { display: flex; height: 36px; width: 44px; align-items: center; justify-content: center; border-radius: var(--dcx-r-sm); color: var(--dcx-on-deep-soft); transition: background-color .15s, color .15s; }
+.dc-rail-btn:hover { background: oklch(1 0 0 / 0.10); color: oklch(1 0 0); }
+.dc-rail-mods { display: grid; width: 100%; gap: 2px; margin-top: 4px; padding-top: 8px; border-top: 1px solid var(--dcx-on-deep-faint); }
+.dc-rail-mod { position: relative; display: flex; flex-direction: column; align-items: center; gap: 4px; border-radius: var(--dcx-r-md); padding: 8px 2px 7px; color: var(--dcx-on-deep-soft); text-align: center; transition: background-color .15s, color .15s; }
+.dc-nav[data-dc-nav] .dc-rail-mod:hover { background: oklch(1 0 0 / 0.08); color: oklch(1 0 0); }
+.dc-nav[data-dc-nav] .dc-rail-mod[data-on] { background: color-mix(in oklab, var(--dcx-emerald) 42%, var(--dcx-rail)); color: oklch(1 0 0); }
+.dc-rail-mod[data-on]::before { content: ""; position: absolute; inset-block: 10px; inset-inline-start: -4px; width: 3px; border-radius: 3px; background: var(--dcx-mint); }
+.dc-rail-mod[data-on] .dc-rail-ico { color: var(--dcx-mint); }
+.dc-rail-ico { display: flex; }
+.dc-rail-label { display: -webkit-box; max-width: 100%; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; font-size: 10px; font-weight: 500; line-height: 1.25; overflow-wrap: normal; hyphens: none; }
+.dc-rail-foot { display: grid; width: 100%; justify-items: center; gap: 4px; margin-top: auto; padding-top: 8px; border-top: 1px solid var(--dcx-on-deep-faint); }
+.dc-pnav { display: flex; width: var(--dcx-pnav-w, 224px); flex-shrink: 0; flex-direction: column; min-height: 0; overflow-y: auto; padding: 14px 10px 10px; background: var(--dcx-panel); }
+.dc-pnav-head { margin-bottom: 8px; border-bottom: 1px solid var(--dcx-on-deep-faint); padding: 2px 8px 12px; }
+.dc-pnav-brand { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; color: var(--dcx-mint); }
+.dc-pnav-title { display: flex; align-items: center; gap: 8px; margin-top: 4px; font-size: 15px; font-weight: 600; line-height: 1.35; color: oklch(1 0 0); }
+.dc-pnav-title svg { color: var(--dcx-mint); }
+.dc-pnav-items { display: grid; gap: 2px; }
+.dc-pnav-item { position: relative; display: block; border-radius: var(--dcx-r-sm); padding: 7px 10px; padding-inline-start: 14px; font-size: 14px; line-height: 1.3; color: var(--dcx-on-deep-soft); overflow-wrap: anywhere; transition: background-color .15s, color .15s; }
+.dc-nav[data-dc-nav] a.dc-pnav-item:hover { background: oklch(1 0 0 / 0.08); color: oklch(1 0 0); }
+.dc-nav[data-dc-nav] .dc-pnav-item[data-on] { background: color-mix(in oklab, var(--dcx-emerald) 58%, var(--dcx-panel)); color: oklch(1 0 0); font-weight: 600; }
+.dc-pnav-item[data-on]::before { content: ""; position: absolute; inset-block: 7px; inset-inline-start: 4px; width: 3px; border-radius: 3px; background: var(--dcx-mint); }
+.dc-pnav-missing { color: oklch(1 0 0 / 0.45); font-style: italic; cursor: not-allowed; }
+.dc-pnav-exit { display: flex; align-items: center; gap: 8px; margin-top: auto; border-top: 1px solid var(--dcx-on-deep-faint); padding: 12px 10px 4px; font-size: 13px; color: var(--dcx-on-deep-soft); }
+.dc-pnav-exit:hover { color: oklch(1 0 0); }
+.dc-rail-brand:focus-visible, .dc-rail-btn:focus-visible, .dc-rail-mod:focus-visible, .dc-pnav-item:focus-visible, .dc-pnav-exit:focus-visible { outline: 2px solid var(--dcx-mint); outline-offset: -2px; }
+/* Tablet widths: the section panel starts collapsed (rail only) and the rail button opens it; ≥1280 px it starts open.
+   An explicit choice (data-dc-panel) is kept for the browser tab. */
+@media (min-width: 768px) and (max-width: 1279px) { [data-dc-nav]:not([data-dc-panel="open"]) .dc-pnav { display: none; } }
+@media (min-width: 768px) { [data-dc-nav][data-dc-panel="closed"] .dc-pnav { display: none; } }
+/* Phones: the Core ☰ drawer holds the rail and the section panel together. */
+@media (max-width: 767px) {
+  [data-app-shell="digit_crm"] .us-module-sidebar.dc-sidebar[data-mobile-open] { width: min(calc(var(--dcx-rail-w) + 232px), calc(100vw - 4rem)); background: var(--dcx-panel); }
+  [data-dc-nav] .dc-pnav { width: auto; min-width: 0; flex: 1 1 0; }
+  [data-dc-panel-toggle] { display: none; }
+}
+
+/* ---------- Two-tone gradient command band (module command centers) ---------- */
+[data-app-shell="digit_crm"] .dc-command {
+  position: relative; overflow: hidden; border-radius: var(--dcx-r-lg); padding: 16px 20px 0; color: oklch(1 0 0);
+  background:
+    radial-gradient(ellipse at 22% 38%, oklch(0.773 0.153 163.2 / 0.13), transparent 38%),
+    radial-gradient(ellipse at 96% 130%, oklch(0.550 0.126 157.9 / 0.30), transparent 46%),
+    linear-gradient(112deg, var(--dcx-deep) 0%, var(--dcx-deep-2) 55%, var(--dcx-deep) 100%);
+  box-shadow: var(--dcx-shh);
+}
+[dir="rtl"] [data-app-shell="digit_crm"] .dc-command, [data-app-shell="digit_crm"][dir="rtl"] .dc-command {
+  background:
+    radial-gradient(ellipse at 78% 38%, oklch(0.773 0.153 163.2 / 0.13), transparent 38%),
+    radial-gradient(ellipse at 4% 130%, oklch(0.550 0.126 157.9 / 0.30), transparent 46%),
+    linear-gradient(248deg, var(--dcx-deep) 0%, var(--dcx-deep-2) 55%, var(--dcx-deep) 100%);
+}
+[data-app-shell="digit_crm"] .dc-command-main { align-items: center; gap: 14px; }
+[data-app-shell="digit_crm"] .dc-command-logo { height: 42px; width: 42px; border-radius: var(--dcx-r-md); padding: 4px; background: oklch(1 0 0 / 0.06); box-shadow: 0 0 0 1px oklch(1 0 0 / 0.14); }
+[data-app-shell="digit_crm"] .dc-command-eyebrow { font-size: 11px; letter-spacing: 0.07em; color: var(--dcx-mint); }
+[data-app-shell="digit_crm"] .dc-command-title { margin-top: 2px; font-size: 1.375rem; font-weight: 600; line-height: 1.25; }
+[data-app-shell="digit_crm"] .dc-command-question { margin-top: 2px; font-size: 0.875rem; color: var(--dcx-on-deep-soft); }
+[data-app-shell="digit_crm"] .dc-cmd-btn { height: 34px; border-radius: var(--dcx-r-sm); border-color: oklch(1 0 0 / 0.30); background: oklch(1 0 0 / 0.07); padding-inline: 12px; font-size: 13px; }
+[data-app-shell="digit_crm"] .dc-cmd-btn:hover { background: oklch(1 0 0 / 0.16); }
+[data-app-shell="digit_crm"] .dc-cmd-btn-primary { border-color: var(--dcx-mint); background: var(--dcx-mint); color: var(--dcx-deep); font-weight: 600; }
+[data-app-shell="digit_crm"] .dc-cmd-btn-primary:hover { background: color-mix(in oklab, var(--dcx-mint) 82%, white); }
+/* Lower tone of the band: page context (period, owner, company, data, freshness) as separated columns.
+   Columns follow the band's own width (container query), so a wrapped row always starts flush, without a stray divider. */
+[data-app-shell="digit_crm"] .dc-command-ctx {
+  display: flex; flex-wrap: wrap; gap: 8px 0; margin: 14px -20px 0; border-top: 1px solid oklch(1 0 0 / 0.10);
+  background: oklch(0.18 0.04 168 / 0.28); padding: 10px 20px 12px; container-type: inline-size;
+}
+[data-app-shell="digit_crm"] .dc-command-ctx > div { flex: 1 1 0; min-width: 0; padding-inline: 14px; border-inline-start: 1px solid oklch(1 0 0 / 0.14); }
+[data-app-shell="digit_crm"] .dc-command-ctx > div:first-child { padding-inline-start: 0; border-inline-start: 0; }
+[data-app-shell="digit_crm"] .dc-command-ctx dt { font-size: 11px; color: var(--dcx-on-deep-soft); }
+[data-app-shell="digit_crm"] .dc-command-ctx dd { margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13px; font-weight: 600; }
+@container (max-width: 699px) {
+  [data-app-shell="digit_crm"] .dc-command-ctx > div { flex: 0 0 33.333%; padding-inline-start: 14px; border-inline-start: 1px solid oklch(1 0 0 / 0.14); }
+  [data-app-shell="digit_crm"] .dc-command-ctx > div:nth-child(3n + 1) { padding-inline-start: 0; border-inline-start: 0; }
+}
+@container (max-width: 459px) {
+  [data-app-shell="digit_crm"] .dc-command-ctx > div { flex: 0 0 50%; }
+  [data-app-shell="digit_crm"] .dc-command-ctx > div:nth-child(3n + 1) { padding-inline-start: 14px; border-inline-start: 1px solid oklch(1 0 0 / 0.14); }
+  [data-app-shell="digit_crm"] .dc-command-ctx > div:nth-child(odd) { padding-inline-start: 0; border-inline-start: 0; }
+}
+
+/* ---------- Compact band (registers, records and secondary CRM pages) ---------- */
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead {
+  border-radius: var(--dcx-r-lg); padding: 12px 18px; color: oklch(1 0 0); box-shadow: var(--dcx-sh);
+  background: radial-gradient(ellipse at 18% 40%, oklch(0.773 0.153 163.2 / 0.12), transparent 40%), linear-gradient(112deg, var(--dcx-deep) 0%, var(--dcx-deep-2) 60%, var(--dcx-deep) 100%);
+}
+[dir="rtl"] [data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead {
+  background: radial-gradient(ellipse at 82% 40%, oklch(0.773 0.153 163.2 / 0.12), transparent 40%), linear-gradient(248deg, var(--dcx-deep) 0%, var(--dcx-deep-2) 60%, var(--dcx-deep) 100%);
+}
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead > img { height: 36px; width: 36px; border-radius: var(--dcx-r-sm); background: var(--ek-surface, oklch(1 0 0)); padding: 3px; }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead h1 { font-size: 1.25rem; font-weight: 600; }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead p { color: var(--dcx-on-deep-soft); }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead .btn-ghost { border-color: oklch(1 0 0 / 0.30); background: oklch(1 0 0 / 0.07); color: oklch(1 0 0); }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead .btn-ghost:hover { background: oklch(1 0 0 / 0.16); }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead .btn-primary { background: var(--dcx-mint); color: var(--dcx-deep); }
+[data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead :is(a, button):focus-visible { outline: 2px solid var(--dcx-mint); outline-offset: 2px; }
+
+/* ---------- Demo notice ---------- */
+[data-app-shell="digit_crm"] [data-demo-banner] { margin-bottom: 12px; border: 1px solid color-mix(in oklab, var(--dcx-warning) 35%, var(--dcx-border)); border-radius: var(--dcx-r-md); background: var(--dcx-warning-tint); color: var(--dcx-warning-tx); }
+[data-app-shell="digit_crm"] [data-demo-banner] [data-demo-label] { background: var(--dcx-warning-tx); color: oklch(1 0 0); }
+[data-app-shell="digit_crm"] [data-demo-banner] .text-muted-foreground { color: color-mix(in oklab, var(--dcx-warning-tx) 80%, var(--dcx-ink)); }
+[data-app-shell="digit_crm"] [data-demo-banner] a { color: var(--dcx-success-tx); font-weight: 500; }
+
+/* ---------- In-content tabs ---------- */
+[data-app-shell="digit_crm"] .dc-tabs { border-color: var(--dcx-border); gap: 2px; }
+[data-app-shell="digit_crm"] .dc-tab { padding: 10px 14px; font-size: 14px; color: var(--dcx-muted); }
+[data-app-shell="digit_crm"] .dc-tab:hover { color: var(--dcx-ink); }
+[data-app-shell="digit_crm"] .dc-tab[aria-selected="true"] { color: var(--dcx-deep); border-bottom-color: var(--dcx-emerald); font-weight: 600; }
+
+/* ---------- KPI signal cards (semantic top rule) ---------- */
+[data-app-shell="digit_crm"] .dc-signal { border-color: var(--dcx-border); border-top: 3px solid var(--dc-tone, var(--dc-tone-neutral)); border-radius: var(--dcx-r-md); padding: 14px 16px; box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] .dc-signal-value { font-size: 1.4375rem; font-weight: 650; color: var(--dcx-ink); font-variant-numeric: tabular-nums; }
+[data-app-shell="digit_crm"] .dc-signal-link:hover .dc-signal { box-shadow: var(--dcx-shh); border-color: color-mix(in oklab, var(--dcx-emerald) 45%, var(--dcx-border)); }
+[data-app-shell="digit_crm"] .dc-signal-link:hover .dc-signal svg { color: var(--dcx-emerald); }
+[data-app-shell="digit_crm"] .dc-signal-link:focus-visible { outline-color: var(--dcx-emerald); }
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi] { border-radius: var(--dcx-r-md); border-color: var(--dcx-border); border-top: 3px solid var(--dc-tone, var(--dc-tone-neutral)); box-shadow: var(--dcx-sh); }
+/* Summary cards on CRM record and work pages (Customer 360, My Work, Follow-up Center, Manager Workbench). */
+[data-app-shell="digit_crm"] [data-digit-crm] :is([data-crm-kpi], [data-kpi]) { border-color: var(--dcx-border); border-top: 3px solid var(--dcx-emerald); border-radius: var(--dcx-r-md); box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] [data-digit-crm] [data-kpi]:has(.text-destructive) { border-top-color: var(--dcx-critical); }
+[data-app-shell="digit_crm"] [data-digit-crm] a:is([data-crm-kpi], [data-kpi]):hover { background: var(--ek-surface, oklch(1 0 0)); border-color: color-mix(in oklab, var(--dcx-emerald) 45%, var(--dcx-border)); border-top-color: var(--dcx-emerald); box-shadow: var(--dcx-shh); }
+[data-app-shell="digit_crm"] [data-digit-crm] :is([data-crm-kpi], [data-kpi]) .text-2xl { font-size: 1.4375rem; font-variant-numeric: tabular-nums; }
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi][data-tone="warning"] { --dc-tone: var(--dcx-warning); }
+[data-app-shell="digit_crm"] [data-ws-dept] [data-ws-kpi][data-tone="critical"] { --dc-tone: var(--dcx-critical); }
+
+/* ---------- Panels, charts, worklists, documents ---------- */
+[data-app-shell="digit_crm"] .dc-panel, [data-app-shell="digit_crm"] [data-digit-crm] .panel, [data-app-shell="digit_crm"] [data-ws-dept] .panel {
+  border-color: var(--dcx-border); border-radius: var(--dcx-r-md); background: var(--ek-surface, oklch(1 0 0)); box-shadow: var(--dcx-sh);
+}
+[data-app-shell="digit_crm"] .dc-panel { padding: 16px 18px; }
+[data-app-shell="digit_crm"] .dc-panel h3 { font-size: 15px; font-weight: 600; color: var(--dcx-ink); }
+[data-app-shell="digit_crm"] .dc-doc-card { border-color: var(--dcx-border); border-radius: var(--dcx-r-md); box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] a.dc-doc-card:hover { border-color: var(--dcx-emerald); box-shadow: var(--dcx-shh); }
+[data-app-shell="digit_crm"] .dc-reason { border-color: var(--dcx-border); background: var(--dcx-surf); color: var(--dcx-ink); }
+[data-app-shell="digit_crm"] .dc-reason[data-tone="critical"] { border-color: color-mix(in oklab, var(--dcx-critical) 35%, var(--dcx-border)); background: var(--dcx-critical-tint); color: var(--dcx-critical-tx); }
+[data-app-shell="digit_crm"] .dc-reason[data-tone="warning"] { border-color: color-mix(in oklab, var(--dcx-warning) 40%, var(--dcx-border)); background: var(--dcx-warning-tint); color: var(--dcx-warning-tx); }
+[data-app-shell="digit_crm"] .dc-reason[data-tone="positive"] { border-color: color-mix(in oklab, var(--dcx-success) 35%, var(--dcx-border)); background: var(--dcx-tint); color: var(--dcx-success-tx); }
+[data-app-shell="digit_crm"] [data-dc-worklist-rows] thead th { font-size: 12px; font-weight: 600; color: var(--dcx-muted); }
+[data-app-shell="digit_crm"] [data-dc-worklist-rows] tbody tr:hover { background: var(--dcx-tint); }
+
+/* Filter bar */
+[data-app-shell="digit_crm"] [data-dc-filter] { border-radius: var(--dcx-r-md); padding: 12px 14px; }
+[data-app-shell="digit_crm"] [data-dc-filter] .field-input { height: 36px; border-radius: var(--dcx-r-sm); }
+
+/* Tables (CRM summary tables + native registers) */
+[data-app-shell="digit_crm"] .dp-table th { background: var(--dcx-surf); color: var(--dcx-muted); font-size: 12px; font-weight: 600; }
+[data-app-shell="digit_crm"] .dp-table tbody tr:hover td { background: var(--dcx-tint); }
+[data-app-shell="digit_crm"] [data-crm-hosted] { border-color: var(--dcx-border); border-radius: var(--dcx-r-md); box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] [data-crm-hosted] table thead { background: var(--dcx-surf); }
+[data-app-shell="digit_crm"] [data-crm-hosted] table thead th { font-size: 12px; font-weight: 600; color: var(--dcx-muted); }
+[data-app-shell="digit_crm"] [data-crm-hosted] table tbody tr:hover { background: var(--dcx-tint); }
+[data-app-shell="digit_crm"] [data-crm-hosted] input[type="checkbox"] { accent-color: var(--dcx-emerald); }
+/* Hosted registers (PES V1 C14/C15, owner directive 2026-10-19): the page header, insights, view bar and highlight chips sit
+   on the warm canvas and only cards and the register table are white — no page-wide white frame with white cards inside.
+   Record pages (no view bar) keep their single white record surface. */
+[data-app-shell="digit_crm"] [data-crm-hosted]:has([data-crm-viewbar]) { background: transparent; border-color: transparent; box-shadow: none; border-radius: 0; overflow: visible; }
+[data-app-shell="digit_crm"] [data-crm-hosted]:has([data-crm-viewbar]) > header { border-bottom-color: var(--dcx-border); padding-inline: 0; }
+/* one alignment line: the frame's rows (insights, view bar, highlights, column/pager rows) lose their frame inset */
+[data-app-shell="digit_crm"] [data-crm-hosted]:has([data-crm-viewbar]) > div > :is([class~="px-4"], [class~="px-5"], [data-crm-viewbar]) { padding-inline: 0; }
+[data-app-shell="digit_crm"] [data-crm-register] { background: var(--card); border: 1px solid var(--dcx-border); border-radius: var(--dcx-r-md); box-shadow: var(--dcx-sh); overflow-x: auto; }
+[data-app-shell="digit_crm"] [data-crm-register] table thead { border-top-color: transparent; }
+
+/* Kanban boards */
+[data-app-shell="digit_crm"] .core-kanban { border-radius: var(--dcx-r-md); background: var(--dcx-surf); }
+[data-app-shell="digit_crm"] .core-kanban-column { border-radius: var(--dcx-r-md); }
+[data-app-shell="digit_crm"] .core-kanban-card { border-color: var(--dcx-border); border-radius: var(--dcx-r-sm); box-shadow: var(--dcx-sh); }
+[data-app-shell="digit_crm"] .core-kanban-card:hover { border-color: color-mix(in oklab, var(--dcx-emerald) 50%, var(--dcx-border)); box-shadow: var(--dcx-shh); }
+
+/* Primary actions inside CRM keep their role; brand colours come from the tokens above. */
+[data-app-shell="digit_crm"] .btn-primary:focus-visible, [data-app-shell="digit_crm"] .btn-ghost:focus-visible { outline: 2px solid var(--dcx-emerald); outline-offset: 2px; }
+
+@media (max-width: 640px) {
+  [data-app-shell="digit_crm"] .dc-command { padding: 14px 14px 0; }
+  [data-app-shell="digit_crm"] .dc-command-ctx { margin-inline: -14px; padding-inline: 14px; }
+  [data-app-shell="digit_crm"] .dc-command-title { font-size: 1.2rem; }
+  [data-app-shell="digit_crm"] [data-digit-crm] > .dp-pagehead { padding: 12px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dc-rail-btn, .dc-rail-mod, .dc-pnav-item { transition: none; }
+}
+
+/* Record activity timeline (CrmRecordPage Activity): marker per event type on a vertical rule; logical sides mirror in Arabic */
+.crm-timeline { position: relative; margin: 0; padding: 0; list-style: none; }
+.crm-timeline::before { content: ""; position: absolute; inset-block: 6px; inset-inline-start: 13px; width: 1px; background: var(--dcx-border, var(--line)); }
+.crm-tl-item { position: relative; display: flex; gap: 12px; padding-block: 8px; }
+.crm-tl-dot { position: relative; z-index: 1; display: inline-flex; flex: none; align-items: center; justify-content: center; width: 27px; height: 27px; border: 1px solid var(--dcx-border, var(--line)); border-radius: 999px; background: var(--dx-surface, var(--white)); color: var(--dcx-muted, var(--grey)); }
+.crm-tl-item[data-kind="created"] .crm-tl-dot, .crm-tl-item[data-kind="task"] .crm-tl-dot { color: var(--dcx-emerald, var(--emerald)); border-color: color-mix(in oklab, var(--dcx-emerald, var(--emerald)) 35%, transparent); }
+.crm-tl-item[data-kind="email"] .crm-tl-dot, .crm-tl-item[data-kind="call"] .crm-tl-dot { color: var(--dx-info, var(--blue)); border-color: color-mix(in oklab, var(--dx-info, var(--blue)) 35%, transparent); }
+.crm-tl-body { min-width: 0; flex: 1; padding: 8px 12px; border: 1px solid var(--dcx-border, var(--line)); border-radius: 10px; background: var(--dx-surface, var(--white)); }
+.crm-tl-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 2px 12px; }
+.crm-tl-actor { font-size: 13px; font-weight: 600; }
+.crm-tl-time { font-size: 12px; color: var(--dcx-muted, var(--grey)); white-space: nowrap; }
+.crm-tl-text { margin-top: 2px; font-size: 13.5px; line-height: 1.55; overflow-wrap: anywhere; }
+
+/* Night mode at token level (ONE STANDARD R7): the CRM palette follows the Enterprise night tokens, so panels, tiles and
+   labels stay readable without per-screen colours. */
+html.dark [data-app-shell="digit_crm"] {
+  --dcx-canvas: var(--ek-canvas); --dcx-ink: var(--ek-ink); --dcx-muted: var(--ek-muted); --dcx-border: var(--ek-border);
+  --dcx-line: color-mix(in oklab, var(--ek-border) 70%, transparent); --dcx-surf: color-mix(in oklab, var(--ek-surface) 82%, var(--ek-ink) 6%);
+  --dcx-tint: color-mix(in oklab, var(--ek-mint) 14%, var(--ek-surface)); --dcx-success-tx: var(--ek-mint);
+  --dcx-warning-tint: color-mix(in oklab, var(--dcx-warning) 18%, var(--ek-surface)); --dcx-warning-tx: oklch(0.82 0.12 80);
+  --dcx-critical-tint: color-mix(in oklab, var(--dcx-critical) 18%, var(--ek-surface)); --dcx-critical-tx: oklch(0.78 0.13 30);
+  --dcx-info-tint: color-mix(in oklab, var(--dcx-info) 18%, var(--ek-surface));
+  --dcx-sh: 0 1px 2px oklch(0 0 0 / 0.3); --dcx-shh: 0 4px 16px oklch(0 0 0 / 0.35);
+}
+
+/* CRM C3 — Customer 360: the company facts sit in the narrow column, so they take two per row there */
+[data-app-shell="digit_crm"] [data-crm-c360-split] .r1-facts-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }

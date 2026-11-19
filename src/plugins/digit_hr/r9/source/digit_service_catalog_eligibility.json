@@ -1,0 +1,49 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-10-28 18:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "index_web_pages_for_search": 0,
+ "is_submittable": 0,
+ "issingle": 0,
+ "links": [],
+ "modified": "2026-10-28 18:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DIGIT HR",
+ "owner": "Administrator",
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "name": "DIGIT Service Catalog Eligibility",
+ "autoname": "hash",
+ "naming_rule": "Random",
+ "istable": 1,
+ "permissions": [],
+ "track_changes": 0,
+ "field_order": [
+  "based_on",
+  "value"
+ ],
+ "fields": [
+  {
+   "fieldname": "based_on",
+   "fieldtype": "Select",
+   "label": "Based On",
+   "options": "Department\nEmployee Grade\nEmployment Type",
+   "reqd": 1,
+   "in_list_view": 1,
+   "idx": 1
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Dynamic Link",
+   "label": "Value",
+   "options": "based_on",
+   "reqd": 1,
+   "in_list_view": 1,
+   "idx": 2
+  }
+ ]
+}

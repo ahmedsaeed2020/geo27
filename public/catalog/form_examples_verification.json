@@ -1,0 +1,92 @@
+{
+ "en": {
+  "cases": {
+   "sales_invoice": {
+    "pass": true,
+    "note": "qty 3 × 72.50, VAT 15% → {'total': '217.5', 'net_total': '217.5', 'total_taxes_and_charges': '32.62', 'grand_total': '250.12', 'rounded_total': '250', 'rounding_adjustment': '-0.12', 'in_words': 'SAR Two Hundred And Fifty only.'}",
+    "screenshot": "docs/parity/form_sales_invoice_en.jpg"
+   },
+   "purchase_order": {
+    "pass": true,
+    "note": "qty 4 × 10, 10% discount on Grand Total → {'total': '40', 'discount_amount': '4.00', 'grand_total': '36', 'in_words': 'SAR Thirty Six only.'}",
+    "screenshot": "docs/parity/form_purchase_order_en.jpg"
+   },
+   "journal_entry": {
+    "pass": true,
+    "note": "Dr 500 / Cr 300 → {'total_debit': '500', 'total_credit': '300', 'difference': '200'}; save blocked: 'Total Debit must be equal to Total Credit. The difference is 200'; 500/500 saved=True",
+    "screenshot": "docs/parity/form_journal_entry_en.jpg"
+   },
+   "stock_entry": {
+    "pass": true,
+    "note": "type Material Receipt (purpose fetched) → from/to read-only ['hidden', '0']; Material Issue → ['0', None]; qty 5 × 10 → outgoing 50",
+    "screenshot": "docs/parity/form_stock_entry_en.jpg"
+   },
+   "payment_entry": {
+    "pass": true,
+    "note": "paid 1500 against 600 + 700 → {'total_allocated_amount': '1300', 'unallocated_amount': '200.00'}",
+    "screenshot": "docs/parity/form_payment_entry_en.jpg"
+   },
+   "leave_application": {
+    "pass": true,
+    "note": "1–4 Nov → total_leave_days 4, balance 21; 60 days → save blocked: 'Insufficient leave balance for Leave Type Annual Leave'",
+    "screenshot": "docs/parity/form_leave_application_en.jpg"
+   },
+   "salary_slip": {
+    "pass": true,
+    "note": "earnings 8000 + 2000, deduction 975 → {'gross_pay': '10000', 'total_deduction': '975', 'net_pay': '9025', 'rounded_total': '9025'}",
+    "screenshot": "docs/parity/form_salary_slip_en.jpg"
+   },
+   "employee": {
+    "pass": true,
+    "note": "date_of_birth 1990-05-10 → date_of_retirement 2050-05-10",
+    "screenshot": "docs/parity/form_employee_en.jpg"
+   }
+  },
+  "page_errors": []
+ },
+ "ar": {
+  "cases": {
+   "sales_invoice": {
+    "pass": true,
+    "note": "qty 3 × 72.50, VAT 15% → {'total': '217.5', 'net_total': '217.5', 'total_taxes_and_charges': '32.62', 'grand_total': '250.12', 'rounded_total': '250', 'rounding_adjustment': '-0.12', 'in_words': 'فقط مائتان وخمسون ريالاً لا غير'}",
+    "screenshot": "docs/parity/form_sales_invoice_ar.jpg"
+   },
+   "purchase_order": {
+    "pass": true,
+    "note": "qty 4 × 10, 10% discount on Grand Total → {'total': '40', 'discount_amount': '4.00', 'grand_total': '36', 'in_words': 'فقط ستة وثلاثون ريالاً لا غير'}",
+    "screenshot": "docs/parity/form_purchase_order_ar.jpg"
+   },
+   "journal_entry": {
+    "pass": true,
+    "note": "Dr 500 / Cr 300 → {'total_debit': '500', 'total_credit': '300', 'difference': '200'}; save blocked: 'Total Debit must be equal to Total Credit. The difference is 200'; 500/500 saved=True",
+    "screenshot": "docs/parity/form_journal_entry_ar.jpg"
+   },
+   "stock_entry": {
+    "pass": true,
+    "note": "type Material Receipt (purpose fetched) → from/to read-only ['hidden', '0']; Material Issue → ['0', None]; qty 5 × 10 → outgoing 50",
+    "screenshot": "docs/parity/form_stock_entry_ar.jpg"
+   },
+   "payment_entry": {
+    "pass": true,
+    "note": "paid 1500 against 600 + 700 → {'total_allocated_amount': '1300', 'unallocated_amount': '200.00'}",
+    "screenshot": "docs/parity/form_payment_entry_ar.jpg"
+   },
+   "leave_application": {
+    "pass": true,
+    "note": "1–4 Nov → total_leave_days 4, balance 21; 60 days → save blocked: 'Insufficient leave balance for Leave Type Annual Leave'",
+    "screenshot": "docs/parity/form_leave_application_ar.jpg"
+   },
+   "salary_slip": {
+    "pass": true,
+    "note": "earnings 8000 + 2000, deduction 975 → {'gross_pay': '10000', 'total_deduction': '975', 'net_pay': '9025', 'rounded_total': '9025'}",
+    "screenshot": "docs/parity/form_salary_slip_ar.jpg"
+   },
+   "employee": {
+    "pass": true,
+    "note": "date_of_birth 1990-05-10 → date_of_retirement 2050-05-10",
+    "screenshot": "docs/parity/form_employee_ar.jpg"
+   }
+  },
+  "page_errors": []
+ }
+}

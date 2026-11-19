@@ -1,0 +1,27 @@
+# Copyright (c) 2026, Digit and contributors
+# For license information, please see license.txt
+
+import frappe
+from frappe import _
+from frappe.model.document import Document
+from frappe.utils import getdate
+
+
+class DIGITApprovalDelegation(Document):
+	"""APR-01: an approver's open requests handed to a delegate for a period (digit_hr.api.delegation).
+
+	The delegation itself never grants a role: activate() shares only documents the delegator may approve, with the same
+	submit share HRMS gives a named approver (hrms.hr.utils.share_doc_with_approver), and revoke() removes exactly the
+	shares it recorded."""
+
+	def validate(self):
+		if self.delegator == self.delegate:
+			frappe.throw(_("The delegate must be a different user than the approver"))
+		for user in (self.delegator, self.delegate):
+			if not frappe.db.get_value("User", user, "enabled"):
+				frappe.throw(_("User {0} is not active").format(user))
+		if getdate(self.to_date) < getdate(self.from_date):
+			frappe.throw(_("To Date cannot be before From Date"))
+		before = self.get_doc_before_save()
+		if before and before.delegation_status != "Draft" and any(before.get(f) != self.get(f) for f in ("delegator", "delegate", "company")):
+			frappe.throw(_("Revoke the delegation before changing its approver, delegate or company"))

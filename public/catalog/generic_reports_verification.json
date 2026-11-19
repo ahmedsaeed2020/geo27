@@ -1,0 +1,7152 @@
+{
+ "runs": {
+  "en": {
+   "reports": {
+    "Addresses And Contacts": {
+     "ok": true,
+     "rows": 25,
+     "cols": 3,
+     "heads": [
+      "Address Type",
+      "City/Town",
+      "Country"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Prepared Report Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 1,
+     "heads": [
+      "Status"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Website Analytics": {
+     "pass": false,
+     "note": "Page.wait_for_selector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-split-report] table, .panel t"
+    },
+    "Bank Clearance Summary": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Entry Type",
+      "Posting Date",
+      "Total Debit",
+      "Total Credit"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Calculated Discount Mismatch": {
+     "ok": true,
+     "rows": 120,
+     "cols": 2,
+     "heads": [
+      "DocType",
+      "Document Name"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Receivable": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Custom Financial Statement": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Dimension-wise Accounts Balance Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Inactive Sales Items": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Payment Period Based On Invoice Date": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Entry Type",
+      "Posting Date",
+      "Total Debit",
+      "Total Credit"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Payment Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Supplier Ledger Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Trial Balance (Simple)": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Fixed Asset Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Asset Name",
+      "Location",
+      "Company",
+      "Asset Category",
+      "Purchase Date",
+      "Available for Use Date",
+      "Value After Depreciation"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Order Trends": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Supplier",
+      "Date",
+      "Required By",
+      "Currency",
+      "Price List",
+      "Set Target Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Raw Materials To Be Transferred": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Purchase Order",
+      "Job Worker",
+      "Job Worker Warehouse",
+      "Job Worker Currency",
+      "Company",
+      "Date",
+      "Required By",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Lead Conversion Time": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Opportunity Summary by Sales Stage": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "BOM Explorer": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Item to manufacture",
+      "Is active",
+      "Set as default",
+      "Currency"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Completed Work Orders": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Issued Items Against Work Order": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Process Loss Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Quality Inspection Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Report Date",
+      "Inspection Type",
+      "Item Code",
+      "Item Serial No",
+      "Batch No",
+      "BOM No",
+      "Quality Inspection Template"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Work Orders in Progress": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Project wise Stock Tracking": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "Status",
+      "% Completed",
+      "Expected Start date",
+      "Expected End date",
+      "Customer",
+      "Company",
+      "Default Cost Center",
+      "Estimated Cost"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "IRS 1099": {
+     "ok": true,
+     "rows": 17,
+     "cols": 4,
+     "heads": [
+      "Supplier Type",
+      "Supplier Group",
+      "Country",
+      "Billing Currency"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Available Stock for Packing Items": {
+     "ok": true,
+     "rows": 5,
+     "cols": 4,
+     "heads": [
+      "Parent Item",
+      "Description",
+      "Is Active",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Customers Without Any Sales Transactions": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Payment Terms Status for Sales Order": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Order Trends": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person Commission Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Territory-wise Sales": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Batch Split Tree": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Batch No",
+      "Item",
+      "Item Name",
+      "Parent Batch",
+      "Manufacturing Date",
+      "Batch Quantity",
+      "Batch UOM",
+      "Expiry Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Item Report": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "Customer",
+      "Date",
+      "Company",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Balance Qty After Transaction": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Balance (Simple)": {
+     "ok": true,
+     "rows": 102,
+     "cols": 6,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Actual Qty",
+      "Ordered Qty",
+      "Reserved Qty",
+      "UOM"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Variant Details": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Items To Be Requested": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "Purpose",
+      "Company",
+      "Transaction Date",
+      "Required By",
+      "Status"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Negative Batch Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Item Code",
+      "Warehouse",
+      "Item Group",
+      "Voucher Type",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Reserved Stock": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "Reserved Qty",
+      "Item Code",
+      "Warehouse",
+      "Stock UOM",
+      "Company",
+      "Project",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Ledger": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ageing": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ledger Invariant Check": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Valuation Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Items To Be Delivered": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Sales Order",
+      "Customer",
+      "Customer Currency",
+      "Company",
+      "Date",
+      "Customer Warehouse",
+      "Amended From",
+      "Set Delivery Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Issue Analytics": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "Subject",
+      "Customer",
+      "Raised By (Email)",
+      "Status",
+      "Priority",
+      "Opening Date",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Appraisal Overview": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Department",
+      "Designation",
+      "Company",
+      "Appraisal Cycle",
+      "Start Date",
+      "End Date",
+      "Final Score"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Exits": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Company",
+      "Status",
+      "Date",
+      "Department",
+      "Designation",
+      "Reports To",
+      "Date of Joining"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employees working on a holiday": {
+     "ok": true,
+     "rows": 500,
+     "cols": 6,
+     "heads": [
+      "Employee",
+      "Status",
+      "Attendance Date",
+      "Company",
+      "Department",
+      "Shift"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Shift Attendance": {
+     "ok": true,
+     "rows": 500,
+     "cols": 6,
+     "heads": [
+      "Employee",
+      "Status",
+      "Attendance Date",
+      "Company",
+      "Department",
+      "Shift"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Bank Remittance": {
+     "ok": true,
+     "rows": 2,
+     "cols": 7,
+     "heads": [
+      "Posting Date",
+      "Company",
+      "Currency",
+      "Payroll Payable Account",
+      "Start Date",
+      "End Date",
+      "Cost Center"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Salary Payments Based On Payment Mode": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Employee Name",
+      "Company",
+      "Department",
+      "Posting Date",
+      "Currency",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Database Storage Usage By Tables": {
+     "ok": true,
+     "rows": 5,
+     "cols": 3,
+     "heads": [
+      "Reference DocType",
+      "Reference Name",
+      "Title"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "User Doctype Permissions": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Full Name",
+      "Username",
+      "Language",
+      "Role Profile",
+      "Module Profile",
+      "Gender",
+      "Birth Date",
+      "Last Password Reset Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Account Balance": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "Account Name",
+      "Company Account",
+      "Bank",
+      "Company",
+      "IBAN"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Bank Reconciliation Statement": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Entry Type",
+      "Posting Date",
+      "Total Debit",
+      "Total Credit"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Cheques and Deposits Incorrectly cleared": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "Payment Type",
+      "Posting Date",
+      "Company",
+      "Mode of Payment",
+      "Party Type",
+      "Party",
+      "Account Paid From",
+      "Account Currency (From)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Receivable Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Customer Ledger Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Financial Ratios": {
+     "ok": true,
+     "rows": 25,
+     "cols": 6,
+     "heads": [
+      "Account Name",
+      "Company",
+      "Root Type",
+      "Currency",
+      "Parent Account",
+      "Account Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Invalid Ledger Entries": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "POS Register": {
+     "ok": true,
+     "rows": 15,
+     "cols": 10,
+     "heads": [
+      "Customer",
+      "POS Profile",
+      "Company",
+      "Date",
+      "Currency",
+      "Net Total (Company Currency)",
+      "Total",
+      "Net Total"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Received Items To Be Billed": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Register": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Tax Withholding Details": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Voucher-wise Balance": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Purchase History": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Supplier",
+      "Date",
+      "Required By",
+      "Currency",
+      "Price List",
+      "Set Target Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Requested Items to Order and Receive": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "Purpose",
+      "Company",
+      "Transaction Date",
+      "Required By",
+      "Status"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Supplier Quotation Comparison": {
+     "ok": true,
+     "rows": 8,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Date",
+      "Currency",
+      "Price List",
+      "Net Total (Company Currency)",
+      "Total",
+      "Net Total"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Lead Details": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "Status",
+      "Organization Name",
+      "Territory",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Prospects Engaged But Not Converted": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "Status",
+      "Organization Name",
+      "Territory",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "BOM Operations Time": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Item to manufacture",
+      "Is active",
+      "Set as default",
+      "Currency"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Cost of Poor Quality Report": {
+     "ok": true,
+     "rows": 2,
+     "cols": 6,
+     "heads": [
+      "Work Order",
+      "Operation",
+      "Qty to Manufacture",
+      "Workstation",
+      "Final Product",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Job Card Summary": {
+     "ok": true,
+     "rows": 2,
+     "cols": 6,
+     "heads": [
+      "Work Order",
+      "Operation",
+      "Qty to Manufacture",
+      "Workstation",
+      "Final Product",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Production Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Consumed Materials": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Daily Timesheet Summary": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Status",
+      "Project",
+      "Start Date",
+      "Employee",
+      "Total Billable Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Timesheet Billing Summary": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Status",
+      "Project",
+      "Start Date",
+      "Employee",
+      "Total Billable Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "UAE VAT 201": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Customer Acquisition and Loyalty": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "Customer Type",
+      "Customer Group",
+      "Territory",
+      "Billing Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Inactive Customers": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Pending SO Items For Purchase Request": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Commission Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person Target Variance Based On Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Available Batch Report": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Batch-Wise Balance History": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Order Report": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "Customer",
+      "Date",
+      "Company",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Serial and Batch Bundle": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Item Code",
+      "Warehouse",
+      "Item Group",
+      "Voucher Type",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Price Stock": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Where Used": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Itemwise Recommended Reorder Level": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Product Bundle Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial and Batch Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Item Code",
+      "Warehouse",
+      "Item Group",
+      "Voucher Type",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Service Contract Expiry": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "ID",
+      "name",
+      "Serial No",
+      "Item Code",
+      "AMC Expiry Date",
+      "Maintenance Status",
+      "Item Name",
+      "Description"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Stock Analytics": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Stock Entry Type",
+      "Purpose",
+      "Posting Date",
+      "Total Outgoing Value (Consumption)",
+      "Total Incoming Value (Receipt)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ledger Variance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Total Stock Summary": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Stock Entry Type",
+      "Purpose",
+      "Posting Date",
+      "Total Outgoing Value (Consumption)",
+      "Total Incoming Value (Receipt)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Raw Materials To Be Received": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Sales Order",
+      "Customer",
+      "Customer Currency",
+      "Company",
+      "Date",
+      "Customer Warehouse",
+      "Amended From",
+      "Set Delivery Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Issue Summary": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "Subject",
+      "Customer",
+      "Raised By (Email)",
+      "Status",
+      "Priority",
+      "Opening Date",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Advance Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 9,
+     "heads": [
+      "Employee",
+      "Posting Date",
+      "Company",
+      "Currency",
+      "Purpose",
+      "Advance Amount",
+      "Paid Amount",
+      "Pending Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Hours Utilization Based On Timesheet": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Status",
+      "Project",
+      "Start Date",
+      "Employee",
+      "Total Billable Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Leave Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 9,
+     "heads": [
+      "Employee",
+      "Leave Type",
+      "Transaction Type",
+      "Company",
+      "Leaves",
+      "From Date",
+      "To Date",
+      "Holiday List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Unpaid Expense Claim": {
+     "ok": true,
+     "rows": 13,
+     "cols": 9,
+     "heads": [
+      "From Employee",
+      "Company",
+      "Expense Approver",
+      "Currency",
+      "Total Sanctioned Amount",
+      "Grand Total",
+      "Total Claimed Amount",
+      "Posting Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee CTC Break-up": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Employee Name",
+      "Company",
+      "Department",
+      "Posting Date",
+      "Currency",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Salary Payments via ECS": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Employee Name",
+      "Company",
+      "Department",
+      "Posting Date",
+      "Currency",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Document Share Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "ID",
+      "name",
+      "User",
+      "Document Type",
+      "Document Name",
+      "Read",
+      "Write",
+      "Share"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Audit System Hooks": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "Applied On",
+      "DocType",
+      "Field Name",
+      "Module (for export)",
+      "Property",
+      "Set Value"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Asset Depreciation Ledger": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Asset Name",
+      "Location",
+      "Company",
+      "Asset Category",
+      "Purchase Date",
+      "Available for Use Date",
+      "Value After Depreciation"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Billed Items To Be Received": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Payable": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Financial Statement": {
+     "ok": true,
+     "rows": 25,
+     "cols": 6,
+     "heads": [
+      "Account Name",
+      "Company",
+      "Root Type",
+      "Currency",
+      "Parent Account",
+      "Account Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Deferred Revenue and Expense": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "General and Payment Ledger Comparison": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Purchase Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Profitability Analysis": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Invoice Trends": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Share Balance": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Transfer Type",
+      "Date",
+      "From Shareholder",
+      "To Shareholder",
+      "Equity/Liability Account",
+      "Asset Account",
+      "Share Type",
+      "Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "TDS Computation Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Asset Activity": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "ID",
+      "Asset",
+      "Date",
+      "User",
+      "Subject"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Procurement Tracker": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Supplier",
+      "Date",
+      "Required By",
+      "Currency",
+      "Price List",
+      "Set Target Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontract Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Purchase Order",
+      "Job Worker",
+      "Job Worker Warehouse",
+      "Job Worker Currency",
+      "Company",
+      "Date",
+      "Required By",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Campaign Efficiency": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "Status",
+      "Organization Name",
+      "Territory",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Lead Owner Efficiency": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "Status",
+      "Organization Name",
+      "Territory",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Pipeline Analytics": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "BOM Stock Analysis": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Item to manufacture",
+      "Is active",
+      "Set as default",
+      "Currency"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Downtime Analysis": {
+     "ok": true,
+     "rows": 5,
+     "cols": 4,
+     "heads": [
+      "Workstation / Machine",
+      "Operator",
+      "From Time",
+      "To Time"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Material Requirements Planning Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "Company",
+      "Posting Date",
+      "From Date",
+      "To Date",
+      "Parent Warehouse",
+      "Sales Forecast",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Production Plan Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Posting Date",
+      "Amended From",
+      "Get Items From",
+      "Item Code",
+      "Customer",
+      "Warehouse",
+      "Project"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Stock Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Tasks Summary": {
+     "ok": true,
+     "rows": 19,
+     "cols": 5,
+     "heads": [
+      "Subject",
+      "Project",
+      "Status",
+      "Priority",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Review": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "Corrective/Preventive",
+      "Review",
+      "Feedback",
+      "Status",
+      "Date",
+      "Goal",
+      "Procedure"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "VAT Audit Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Customer Credit Balance": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "Customer Type",
+      "Customer Group",
+      "Territory",
+      "Billing Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Sales History": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Quotation Trends": {
+     "ok": true,
+     "rows": 19,
+     "cols": 10,
+     "heads": [
+      "Quotation To",
+      "Party",
+      "Date",
+      "Valid Till",
+      "Company",
+      "Currency",
+      "Price List",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Target Variance based on Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person-wise Transaction Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Available Serial No": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "BOM Search": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Item to manufacture",
+      "Is active",
+      "Set as default",
+      "Currency"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Delivery Note Trends": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "Customer",
+      "Date",
+      "Company",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Serial No Valuation": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Prices": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Wise Consumption": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Landed Cost Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Posting Date",
+      "Total Vendor Invoices Cost (Company Currency)",
+      "Total Landed Cost (Company Currency)",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Receipt Trends": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Date",
+      "Company",
+      "Currency",
+      "Price List",
+      "Accepted Warehouse",
+      "Net Total (Company Currency)",
+      "Total"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial and Batch Wise Stock Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Status": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "ID",
+      "name",
+      "Serial No",
+      "Item Code",
+      "Warehouse",
+      "Item Name",
+      "Description",
+      "Item Group"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Stock and Account Value Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Qty vs Batch Qty": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Warehouse wise Item Balance Age and Value": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracting Inward Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Sales Order",
+      "Customer",
+      "Customer Currency",
+      "Company",
+      "Date",
+      "Customer Warehouse",
+      "Amended From",
+      "Set Delivery Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Support Hour Distribution": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "Subject",
+      "Customer",
+      "Raised By (Email)",
+      "Status",
+      "Priority",
+      "Opening Date",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Analytics": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "Full Name",
+      "Gender",
+      "Date of Birth",
+      "Date of Joining",
+      "Company",
+      "Department",
+      "Designation",
+      "Reports to"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Information": {
+     "ok": true,
+     "rows": 34,
+     "cols": 13,
+     "heads": [
+      "ID",
+      "name",
+      "Employee Number",
+      "Date of Joining",
+      "Branch",
+      "Department",
+      "Designation",
+      "Gender"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Project Profitability": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Status",
+      "Project",
+      "Start Date",
+      "Employee",
+      "Total Billable Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Vehicle Expenses": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Model",
+      "Company",
+      "Odometer Value (Last)",
+      "Acquisition Date",
+      "Vehicle Value",
+      "Employee",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Income Tax Computation": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Employee Name",
+      "Company",
+      "Department",
+      "Posting Date",
+      "Currency",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Permitted Documents For User": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Full Name",
+      "Username",
+      "Language",
+      "Role Profile",
+      "Module Profile",
+      "Gender",
+      "Birth Date",
+      "Last Password Reset Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "ToDo": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "Status",
+      "Priority",
+      "Due Date",
+      "Allocated To",
+      "Reference Type",
+      "Role",
+      "Assigned By",
+      "Assignment Rule"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Asset Depreciations and Balances": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Asset Name",
+      "Location",
+      "Company",
+      "Asset Category",
+      "Purchase Date",
+      "Available for Use Date",
+      "Value After Depreciation"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Budget Variance Report": {
+     "ok": true,
+     "rows": 4,
+     "cols": 3,
+     "heads": [
+      "Cost Center Name",
+      "Parent Cost Center",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Payable Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Trial Balance": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Delivered Items To Be Billed": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Gross and Net Profit Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Payment Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Company",
+      "Account",
+      "Party Type",
+      "Due Date",
+      "Cost Center",
+      "Finance Book",
+      "Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Invoice Trends": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "Supplier",
+      "Company",
+      "Posting Date",
+      "Due Date",
+      "Return Against Purchase Invoice",
+      "Supplier Invoice No",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partners Commission": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Share Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Transfer Type",
+      "Date",
+      "From Shareholder",
+      "To Shareholder",
+      "Equity/Liability Account",
+      "Asset Account",
+      "Share Type",
+      "Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Trial Balance for Party": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Asset Maintenance": {
+     "ok": true,
+     "rows": 5,
+     "cols": 11,
+     "heads": [
+      "ID",
+      "name",
+      "Asset Name",
+      "Item Code",
+      "maintenance_type",
+      "maintenance_task",
+      "description",
+      "assign_to_name"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Purchase Order Analysis": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Supplier",
+      "Date",
+      "Required By",
+      "Currency",
+      "Price List",
+      "Set Target Warehouse",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Item To Be Received": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Subcontracting Purchase Order",
+      "Job Worker",
+      "Job Worker Warehouse",
+      "Job Worker Currency",
+      "Company",
+      "Date",
+      "Required By",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "First Response Time for Opportunity": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Lost Opportunity": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "Opportunity From",
+      "Party",
+      "Status",
+      "Sales Stage",
+      "Currency",
+      "Opportunity Amount",
+      "Company",
+      "Opportunity Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Maintenance Schedules": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Customer",
+      "Status",
+      "Transaction Date",
+      "Customer Name",
+      "Contact Person",
+      "Customer Address",
+      "Territory",
+      "Customer Group"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "BOM Variance Report": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Stock Entry Type",
+      "Purpose",
+      "Posting Date",
+      "Total Outgoing Value (Consumption)",
+      "Total Incoming Value (Receipt)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Exponential Smoothing Forecasting": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Open Work Orders": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Production Planning Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Item To Manufacture",
+      "BOM No",
+      "Qty To Manufacture",
+      "Sales Order",
+      "Work-in-Progress Warehouse",
+      "Target Warehouse",
+      "Scrap Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Project Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "Status",
+      "% Completed",
+      "Expected Start date",
+      "Expected End date",
+      "Customer",
+      "Company",
+      "Default Cost Center",
+      "Estimated Cost"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Electronic Invoice Register": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Posting Date",
+      "Payment Due Date",
+      "Return Against",
+      "Cost Center",
+      "Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Address And Contacts": {
+     "ok": true,
+     "rows": 25,
+     "cols": 3,
+     "heads": [
+      "Address Type",
+      "City/Town",
+      "Country"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Customer-wise Item Price": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "Customer Type",
+      "Customer Group",
+      "Territory",
+      "Billing Currency",
+      "Price List"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Lost Quotations": {
+     "ok": true,
+     "rows": 19,
+     "cols": 10,
+     "heads": [
+      "Quotation To",
+      "Party",
+      "Date",
+      "Valid Till",
+      "Company",
+      "Currency",
+      "Price List",
+      "Net Total (Company Currency)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Order Analysis": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Transaction Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Territory Target Variance Based On Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "Company",
+      "Customer",
+      "Date",
+      "Delivery Date",
+      "Cost Center",
+      "Currency",
+      "Price List",
+      "Set Source Warehouse"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Batch Item Expiry Status": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "COGS By Item Group": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "Posting Date",
+      "Fiscal Year",
+      "Account",
+      "Party Type",
+      "Party",
+      "Voucher Type",
+      "Voucher No",
+      "Against Voucher Type"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "FIFO Queue vs Qty After Transaction Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Stock Value Report": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item Shortage Report": {
+     "ok": true,
+     "rows": 102,
+     "cols": 6,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Actual Qty",
+      "Ordered Qty",
+      "Reserved Qty",
+      "UOM"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Price List Rate": {
+     "ok": true,
+     "rows": 120,
+     "cols": 7,
+     "heads": [
+      "ID",
+      "Item Code",
+      "Item Name",
+      "Brand",
+      "Price List",
+      "Rate",
+      "Reference"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Material Requests for which Supplier Quotations are not created": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "Purpose",
+      "Company",
+      "Transaction Date",
+      "Required By",
+      "Status"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Requested Items To Be Transferred": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Stock Entry Type",
+      "Purpose",
+      "Posting Date",
+      "Total Outgoing Value (Consumption)",
+      "Total Incoming Value (Receipt)"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial No and Batch Traceability": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "Company",
+      "Item Code",
+      "Warehouse",
+      "Item Group",
+      "Voucher Type",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Warranty Expiry": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "ID",
+      "name",
+      "Serial No",
+      "Item Code",
+      "AMC Expiry Date",
+      "Maintenance Status",
+      "Item Name",
+      "Description"
+     ],
+     "rtl": false,
+     "split": false,
+     "pass": true
+    },
+    "Stock Ledger Entries of Cancelled Vouchers": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Stock Qty vs Serial No Count": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "Item Group",
+      "Default Unit of Measure",
+      "Standard Selling Rate",
+      "Valuation Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Warehouse Wise Stock Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Item Code",
+      "Warehouse",
+      "Posting Date",
+      "Voucher Type",
+      "Voucher No",
+      "Qty Change",
+      "Incoming Rate",
+      "Average Rate"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "First Response Time for Issues": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "Subject",
+      "Customer",
+      "Raised By (Email)",
+      "Status",
+      "Priority",
+      "Opening Date",
+      "Company"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "YouTube Interactions": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "Title",
+      "Provider",
+      "Publish Date",
+      "Likes",
+      "Views"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Birthday": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "Full Name",
+      "Gender",
+      "Date of Birth",
+      "Date of Joining",
+      "Company",
+      "Department",
+      "Designation",
+      "Reports to"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Employee Leave Balance Summary": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "Full Name",
+      "Gender",
+      "Date of Birth",
+      "Date of Joining",
+      "Company",
+      "Department",
+      "Designation",
+      "Reports to"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Recruitment Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "Company",
+      "Department",
+      "From Date",
+      "To Date",
+      "Amended From"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Accrued Earnings Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 9,
+     "heads": [
+      "Posting Date",
+      "Employee",
+      "Salary Component",
+      "Payroll Period",
+      "Reference Doctype",
+      "Salary Slip",
+      "Transaction Type",
+      "Amount"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    },
+    "Income Tax Deductions": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "Employee",
+      "Employee Name",
+      "Company",
+      "Department",
+      "Posting Date",
+      "Currency",
+      "Start Date",
+      "End Date"
+     ],
+     "rtl": false,
+     "split": true,
+     "pass": true
+    }
+   },
+   "page_errors": []
+  },
+  "ar": {
+   "reports": {
+    "Addresses And Contacts": {
+     "ok": true,
+     "rows": 25,
+     "cols": 3,
+     "heads": [
+      "نوع العنوان",
+      "المدينة / البلدة",
+      "الدولة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Prepared Report Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 1,
+     "heads": [
+      "الحالة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Website Analytics": {
+     "pass": false,
+     "note": "Page.wait_for_selector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"[data-split-report] table, .panel t"
+    },
+    "Bank Clearance Summary": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "نوع القيد",
+      "تاريخ الترحيل",
+      "إجمالي المدين",
+      "إجمالي الدائن"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Calculated Discount Mismatch": {
+     "ok": true,
+     "rows": 120,
+     "cols": 2,
+     "heads": [
+      "نوع المستند",
+      "اسم المستند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Receivable": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Custom Financial Statement": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Dimension-wise Accounts Balance Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Inactive Sales Items": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Payment Period Based On Invoice Date": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "نوع القيد",
+      "تاريخ الترحيل",
+      "إجمالي المدين",
+      "إجمالي الدائن"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Payment Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Supplier Ledger Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Trial Balance (Simple)": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Fixed Asset Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "اسم الأصل",
+      "الموقع",
+      "الشركة",
+      "فئة الأصول",
+      "تاريخ الشراء",
+      "تاريخ الجاهزية للاستخدام",
+      "القيمة بعد الإهلاك"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Order Trends": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "مورد",
+      "التاريخ",
+      "مطلوب بحلول",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع الهدف",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Raw Materials To Be Transferred": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر شراء تصنيع لدى الغير",
+      "المصنّع لدى الغير",
+      "مستودع المصنّع لدى الغير",
+      "عملة المصنّع لدى الغير",
+      "الشركة",
+      "التاريخ",
+      "مطلوب بحلول",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Lead Conversion Time": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Opportunity Summary by Sales Stage": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "BOM Explorer": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "نشط",
+      "تعيين كافتراضي",
+      "العملة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Completed Work Orders": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Issued Items Against Work Order": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Process Loss Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Quality Inspection Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "تاريخ التقرير",
+      "نوع الفحص",
+      "رمز الصنف",
+      "الرقم التسلسلي للصنف",
+      "رقم الدفعة",
+      "رقم قائمة المواد",
+      "قالب فحص الجودة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Work Orders in Progress": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Project wise Stock Tracking": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "الحالة",
+      "نسبة الإنجاز %",
+      "تاريخ البدء المتوقع",
+      "تاريخ الانتهاء المتوقع",
+      "عميل",
+      "الشركة",
+      "مركز التكلفة الافتراضي",
+      "التكلفة التقديرية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "IRS 1099": {
+     "ok": true,
+     "rows": 17,
+     "cols": 4,
+     "heads": [
+      "نوع المورد",
+      "مجموعة الموردين",
+      "الدولة",
+      "عملة الفوترة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Available Stock for Packing Items": {
+     "ok": true,
+     "rows": 5,
+     "cols": 4,
+     "heads": [
+      "الصنف الرئيسي",
+      "الوصف",
+      "نشط",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Customers Without Any Sales Transactions": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Payment Terms Status for Sales Order": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Order Trends": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person Commission Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Territory-wise Sales": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Batch Split Tree": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "رقم الدفعة",
+      "صنف",
+      "اسم الصنف",
+      "الدفعة الأصلية",
+      "تاريخ التصنيع",
+      "كمية الدفعة",
+      "وحدة قياس الدفعة",
+      "تاريخ انتهاء الصلاحية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Item Report": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "عميل",
+      "التاريخ",
+      "الشركة",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Balance Qty After Transaction": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Balance (Simple)": {
+     "ok": true,
+     "rows": 102,
+     "cols": 6,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "الكمية الفعلية",
+      "الكمية المطلوبة",
+      "الكمية المحجوزة",
+      "وحدة القياس"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Variant Details": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Items To Be Requested": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "الغرض",
+      "الشركة",
+      "تاريخ المعاملة",
+      "مطلوب بحلول",
+      "الحالة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Negative Batch Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "رمز الصنف",
+      "مستودع",
+      "مجموعة الأصناف",
+      "نوع السند",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Reserved Stock": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "الكمية المحجوزة",
+      "رمز الصنف",
+      "مستودع",
+      "وحدة المخزون",
+      "الشركة",
+      "مشروع",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Ledger": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ageing": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ledger Invariant Check": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Valuation Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Items To Be Delivered": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر بيع تصنيع لصالح الغير",
+      "عميل",
+      "عملة العميل",
+      "الشركة",
+      "التاريخ",
+      "مستودع العميل",
+      "مُعدّل من",
+      "تحديد مستودع التسليم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Issue Analytics": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "الموضوع",
+      "عميل",
+      "مقدّم البلاغ (البريد)",
+      "الحالة",
+      "الأولوية",
+      "تاريخ الافتتاح",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Appraisal Overview": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "القسم",
+      "المسمى الوظيفي",
+      "الشركة",
+      "دورة تقييم الأداء",
+      "تاريخ البدء",
+      "تاريخ الانتهاء",
+      "الدرجة النهائية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Exits": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "الشركة",
+      "الحالة",
+      "التاريخ",
+      "القسم",
+      "المسمى الوظيفي",
+      "المدير المباشر",
+      "تاريخ المباشرة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employees working on a holiday": {
+     "ok": true,
+     "rows": 500,
+     "cols": 6,
+     "heads": [
+      "موظف",
+      "الحالة",
+      "تاريخ الحضور",
+      "الشركة",
+      "القسم",
+      "الوردية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Shift Attendance": {
+     "ok": true,
+     "rows": 500,
+     "cols": 6,
+     "heads": [
+      "موظف",
+      "الحالة",
+      "تاريخ الحضور",
+      "الشركة",
+      "القسم",
+      "الوردية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Bank Remittance": {
+     "ok": true,
+     "rows": 2,
+     "cols": 7,
+     "heads": [
+      "تاريخ الترحيل",
+      "الشركة",
+      "العملة",
+      "حساب الرواتب المستحقة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء",
+      "مركز تكلفة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Salary Payments Based On Payment Mode": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "اسم الموظف",
+      "الشركة",
+      "القسم",
+      "تاريخ الترحيل",
+      "العملة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Database Storage Usage By Tables": {
+     "ok": true,
+     "rows": 5,
+     "cols": 3,
+     "heads": [
+      "نوع المستند المرجعي",
+      "الاسم المرجعي",
+      "العنوان"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "User Doctype Permissions": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الاسم الكامل",
+      "اسم المستخدم",
+      "اللغة",
+      "ملف الأدوار",
+      "ملف الوحدات",
+      "الجنس",
+      "تاريخ الميلاد",
+      "تاريخ آخر إعادة تعيين لكلمة المرور"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Account Balance": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "اسم الحساب",
+      "حساب الشركة",
+      "بنك",
+      "الشركة",
+      "الآيبان (IBAN)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Bank Reconciliation Statement": {
+     "ok": true,
+     "rows": 15,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "نوع القيد",
+      "تاريخ الترحيل",
+      "إجمالي المدين",
+      "إجمالي الدائن"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Cheques and Deposits Incorrectly cleared": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "نوع الدفعة",
+      "تاريخ الترحيل",
+      "الشركة",
+      "طريقة السداد",
+      "نوع الطرف",
+      "الطرف",
+      "الحساب المدفوع منه",
+      "عملة الحساب (من)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Receivable Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Customer Ledger Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Financial Ratios": {
+     "ok": true,
+     "rows": 25,
+     "cols": 6,
+     "heads": [
+      "اسم الحساب",
+      "الشركة",
+      "النوع الأساسي",
+      "العملة",
+      "الحساب الرئيسي",
+      "نوع الحساب"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Invalid Ledger Entries": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "POS Register": {
+     "ok": true,
+     "rows": 15,
+     "cols": 10,
+     "heads": [
+      "عميل",
+      "ملف نقطة البيع",
+      "الشركة",
+      "التاريخ",
+      "العملة",
+      "الصافي (بعملة الشركة)",
+      "الإجمالي",
+      "الصافي"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Received Items To Be Billed": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Register": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Tax Withholding Details": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Voucher-wise Balance": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Purchase History": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "مورد",
+      "التاريخ",
+      "مطلوب بحلول",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع الهدف",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Requested Items to Order and Receive": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "الغرض",
+      "الشركة",
+      "تاريخ المعاملة",
+      "مطلوب بحلول",
+      "الحالة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Supplier Quotation Comparison": {
+     "ok": true,
+     "rows": 8,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "التاريخ",
+      "العملة",
+      "قائمة الأسعار",
+      "الصافي (بعملة الشركة)",
+      "الإجمالي",
+      "الصافي"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Lead Details": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "الحالة",
+      "اسم المنشأة",
+      "المنطقة",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Prospects Engaged But Not Converted": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "الحالة",
+      "اسم المنشأة",
+      "المنطقة",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "BOM Operations Time": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "نشط",
+      "تعيين كافتراضي",
+      "العملة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Cost of Poor Quality Report": {
+     "ok": true,
+     "rows": 2,
+     "cols": 6,
+     "heads": [
+      "أمر تشغيل",
+      "عملية تشغيل",
+      "الكمية المراد تصنيعها",
+      "محطة عمل",
+      "المنتج النهائي",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Job Card Summary": {
+     "ok": true,
+     "rows": 2,
+     "cols": 6,
+     "heads": [
+      "أمر تشغيل",
+      "عملية تشغيل",
+      "الكمية المراد تصنيعها",
+      "محطة عمل",
+      "المنتج النهائي",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Production Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Consumed Materials": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Daily Timesheet Summary": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "الحالة",
+      "مشروع",
+      "تاريخ البدء",
+      "موظف",
+      "إجمالي المبلغ القابل للفوترة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Timesheet Billing Summary": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "الحالة",
+      "مشروع",
+      "تاريخ البدء",
+      "موظف",
+      "إجمالي المبلغ القابل للفوترة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "UAE VAT 201": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Customer Acquisition and Loyalty": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "نوع العميل",
+      "مجموعة العملاء",
+      "المنطقة",
+      "عملة الفوترة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Inactive Customers": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Pending SO Items For Purchase Request": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Commission Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person Target Variance Based On Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Available Batch Report": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Batch-Wise Balance History": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Order Report": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "عميل",
+      "التاريخ",
+      "الشركة",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Serial and Batch Bundle": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "رمز الصنف",
+      "مستودع",
+      "مجموعة الأصناف",
+      "نوع السند",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Price Stock": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Where Used": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Itemwise Recommended Reorder Level": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Product Bundle Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial and Batch Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "رمز الصنف",
+      "مستودع",
+      "مجموعة الأصناف",
+      "نوع السند",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Service Contract Expiry": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "الرقم التسلسلي",
+      "رمز الصنف",
+      "تاريخ انتهاء عقد الصيانة السنوي",
+      "حالة الصيانة",
+      "اسم الصنف",
+      "الوصف"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Stock Analytics": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "نوع حركة المخزون",
+      "الغرض",
+      "تاريخ الترحيل",
+      "إجمالي قيمة الصادر (الاستهلاك)",
+      "إجمالي قيمة الوارد (الاستلام)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Ledger Variance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Total Stock Summary": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "نوع حركة المخزون",
+      "الغرض",
+      "تاريخ الترحيل",
+      "إجمالي قيمة الصادر (الاستهلاك)",
+      "إجمالي قيمة الوارد (الاستلام)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Raw Materials To Be Received": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر بيع تصنيع لصالح الغير",
+      "عميل",
+      "عملة العميل",
+      "الشركة",
+      "التاريخ",
+      "مستودع العميل",
+      "مُعدّل من",
+      "تحديد مستودع التسليم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Issue Summary": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "الموضوع",
+      "عميل",
+      "مقدّم البلاغ (البريد)",
+      "الحالة",
+      "الأولوية",
+      "تاريخ الافتتاح",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Advance Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 9,
+     "heads": [
+      "موظف",
+      "تاريخ الترحيل",
+      "الشركة",
+      "العملة",
+      "الغرض",
+      "مبلغ السلفة",
+      "المبلغ المدفوع",
+      "المبلغ المتبقي"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Hours Utilization Based On Timesheet": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "الحالة",
+      "مشروع",
+      "تاريخ البدء",
+      "موظف",
+      "إجمالي المبلغ القابل للفوترة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Leave Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 9,
+     "heads": [
+      "موظف",
+      "نوع الإجازة",
+      "نوع المعاملة",
+      "الشركة",
+      "الإجازات",
+      "من تاريخ",
+      "إلى تاريخ",
+      "قائمة العطلات"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Unpaid Expense Claim": {
+     "ok": true,
+     "rows": 13,
+     "cols": 9,
+     "heads": [
+      "من الموظف",
+      "الشركة",
+      "معتمد المصروفات",
+      "العملة",
+      "إجمالي المبلغ المعتمد",
+      "الإجمالي النهائي",
+      "إجمالي المبلغ المطالب به",
+      "تاريخ الترحيل"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee CTC Break-up": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "اسم الموظف",
+      "الشركة",
+      "القسم",
+      "تاريخ الترحيل",
+      "العملة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Salary Payments via ECS": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "اسم الموظف",
+      "الشركة",
+      "القسم",
+      "تاريخ الترحيل",
+      "العملة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Document Share Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "مستخدم",
+      "نوع المستند",
+      "اسم المستند",
+      "قراءة",
+      "كتابة",
+      "مشاركة"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Audit System Hooks": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "تاريخ التطبيق",
+      "نوع المستند",
+      "اسم الحقل",
+      "الوحدة (للتصدير)",
+      "الخاصية",
+      "تعيين القيمة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Asset Depreciation Ledger": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "اسم الأصل",
+      "الموقع",
+      "الشركة",
+      "فئة الأصول",
+      "تاريخ الشراء",
+      "تاريخ الجاهزية للاستخدام",
+      "القيمة بعد الإهلاك"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Billed Items To Be Received": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Payable": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Financial Statement": {
+     "ok": true,
+     "rows": 25,
+     "cols": 6,
+     "heads": [
+      "اسم الحساب",
+      "الشركة",
+      "النوع الأساسي",
+      "العملة",
+      "الحساب الرئيسي",
+      "نوع الحساب"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Deferred Revenue and Expense": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "General and Payment Ledger Comparison": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Purchase Register": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Profitability Analysis": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Invoice Trends": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Share Balance": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "نوع التحويل",
+      "التاريخ",
+      "من المساهم",
+      "إلى المساهم",
+      "حساب حقوق الملكية / الالتزامات",
+      "حساب الأصل",
+      "نوع السهم",
+      "السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "TDS Computation Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Asset Activity": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "المعرّف",
+      "أصل",
+      "التاريخ",
+      "مستخدم",
+      "الموضوع"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Procurement Tracker": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "مورد",
+      "التاريخ",
+      "مطلوب بحلول",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع الهدف",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontract Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر شراء تصنيع لدى الغير",
+      "المصنّع لدى الغير",
+      "مستودع المصنّع لدى الغير",
+      "عملة المصنّع لدى الغير",
+      "الشركة",
+      "التاريخ",
+      "مطلوب بحلول",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Campaign Efficiency": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "الحالة",
+      "اسم المنشأة",
+      "المنطقة",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Lead Owner Efficiency": {
+     "ok": true,
+     "rows": 23,
+     "cols": 4,
+     "heads": [
+      "الحالة",
+      "اسم المنشأة",
+      "المنطقة",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Pipeline Analytics": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "BOM Stock Analysis": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "نشط",
+      "تعيين كافتراضي",
+      "العملة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Downtime Analysis": {
+     "ok": true,
+     "rows": 5,
+     "cols": 4,
+     "heads": [
+      "محطة العمل / الآلة",
+      "المشغّل",
+      "من وقت",
+      "إلى وقت"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Material Requirements Planning Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "الشركة",
+      "تاريخ الترحيل",
+      "من تاريخ",
+      "إلى تاريخ",
+      "المستودع الرئيسي",
+      "توقعات المبيعات",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Production Plan Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "تاريخ الترحيل",
+      "مُعدّل من",
+      "جلب الأصناف من",
+      "رمز الصنف",
+      "عميل",
+      "مستودع",
+      "مشروع"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Stock Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Delayed Tasks Summary": {
+     "ok": true,
+     "rows": 19,
+     "cols": 5,
+     "heads": [
+      "الموضوع",
+      "مشروع",
+      "الحالة",
+      "الأولوية",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Review": {
+     "ok": true,
+     "rows": 5,
+     "cols": 7,
+     "heads": [
+      "تصحيحي / وقائي",
+      "المراجعة",
+      "الملاحظات والتقييم",
+      "الحالة",
+      "التاريخ",
+      "هدف",
+      "الإجراء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "VAT Audit Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Customer Credit Balance": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "نوع العميل",
+      "مجموعة العملاء",
+      "المنطقة",
+      "عملة الفوترة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Sales History": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Quotation Trends": {
+     "ok": true,
+     "rows": 19,
+     "cols": 10,
+     "heads": [
+      "عرض السعر إلى",
+      "الطرف",
+      "التاريخ",
+      "صالح حتى",
+      "الشركة",
+      "العملة",
+      "قائمة الأسعار",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Target Variance based on Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Person-wise Transaction Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Available Serial No": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "BOM Search": {
+     "ok": true,
+     "rows": 2,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "نشط",
+      "تعيين كافتراضي",
+      "العملة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Delivery Note Trends": {
+     "ok": true,
+     "rows": 14,
+     "cols": 10,
+     "heads": [
+      "عميل",
+      "التاريخ",
+      "الشركة",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Serial No Valuation": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Prices": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Wise Consumption": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Landed Cost Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "تاريخ الترحيل",
+      "إجمالي تكلفة فواتير الموردين (بعملة الشركة)",
+      "إجمالي التكاليف الإضافية (بعملة الشركة)",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Receipt Trends": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "التاريخ",
+      "الشركة",
+      "العملة",
+      "قائمة الأسعار",
+      "مستودع المقبول",
+      "الصافي (بعملة الشركة)",
+      "الإجمالي"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial and Batch Wise Stock Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Status": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "الرقم التسلسلي",
+      "رمز الصنف",
+      "مستودع",
+      "اسم الصنف",
+      "الوصف",
+      "مجموعة الأصناف"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Stock and Account Value Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Qty vs Batch Qty": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Warehouse wise Item Balance Age and Value": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracting Inward Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر بيع تصنيع لصالح الغير",
+      "عميل",
+      "عملة العميل",
+      "الشركة",
+      "التاريخ",
+      "مستودع العميل",
+      "مُعدّل من",
+      "تحديد مستودع التسليم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Support Hour Distribution": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "الموضوع",
+      "عميل",
+      "مقدّم البلاغ (البريد)",
+      "الحالة",
+      "الأولوية",
+      "تاريخ الافتتاح",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Analytics": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "الاسم الكامل",
+      "الجنس",
+      "تاريخ الميلاد",
+      "تاريخ المباشرة",
+      "الشركة",
+      "القسم",
+      "المسمى الوظيفي",
+      "المدير المباشر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Information": {
+     "ok": true,
+     "rows": 34,
+     "cols": 13,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "الرقم الوظيفي",
+      "تاريخ المباشرة",
+      "فرع",
+      "القسم",
+      "المسمى الوظيفي",
+      "الجنس"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Project Profitability": {
+     "ok": true,
+     "rows": 8,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "الحالة",
+      "مشروع",
+      "تاريخ البدء",
+      "موظف",
+      "إجمالي المبلغ القابل للفوترة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Vehicle Expenses": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الطراز",
+      "الشركة",
+      "قيمة العداد (الأخيرة)",
+      "تاريخ الاقتناء",
+      "قيمة المركبة",
+      "موظف",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Income Tax Computation": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "اسم الموظف",
+      "الشركة",
+      "القسم",
+      "تاريخ الترحيل",
+      "العملة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Permitted Documents For User": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الاسم الكامل",
+      "اسم المستخدم",
+      "اللغة",
+      "ملف الأدوار",
+      "ملف الوحدات",
+      "الجنس",
+      "تاريخ الميلاد",
+      "تاريخ آخر إعادة تعيين لكلمة المرور"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "ToDo": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "الحالة",
+      "الأولوية",
+      "تاريخ الاستحقاق",
+      "مُسندة إلى",
+      "نوع المرجع",
+      "الدور",
+      "أُسند بواسطة",
+      "قاعدة الإسناد"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Asset Depreciations and Balances": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "اسم الأصل",
+      "الموقع",
+      "الشركة",
+      "فئة الأصول",
+      "تاريخ الشراء",
+      "تاريخ الجاهزية للاستخدام",
+      "القيمة بعد الإهلاك"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Budget Variance Report": {
+     "ok": true,
+     "rows": 4,
+     "cols": 3,
+     "heads": [
+      "اسم مركز التكلفة",
+      "مركز التكلفة الرئيسي",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Accounts Payable Summary": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Consolidated Trial Balance": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Delivered Items To Be Billed": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Gross and Net Profit Report": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Payment Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "الشركة",
+      "حساب",
+      "نوع الطرف",
+      "تاريخ الاستحقاق",
+      "مركز تكلفة",
+      "دفتر مالي",
+      "نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Purchase Invoice Trends": {
+     "ok": true,
+     "rows": 7,
+     "cols": 10,
+     "heads": [
+      "مورد",
+      "الشركة",
+      "تاريخ الترحيل",
+      "تاريخ الاستحقاق",
+      "مرتجع مقابل فاتورة المشتريات",
+      "رقم فاتورة المورد",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partners Commission": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Share Ledger": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "نوع التحويل",
+      "التاريخ",
+      "من المساهم",
+      "إلى المساهم",
+      "حساب حقوق الملكية / الالتزامات",
+      "حساب الأصل",
+      "نوع السهم",
+      "السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Trial Balance for Party": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Asset Maintenance": {
+     "ok": true,
+     "rows": 5,
+     "cols": 11,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "اسم الأصل",
+      "رمز الصنف",
+      "maintenance_type",
+      "maintenance_task",
+      "الوصف",
+      "assign_to_name"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Purchase Order Analysis": {
+     "ok": true,
+     "rows": 10,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "مورد",
+      "التاريخ",
+      "مطلوب بحلول",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع الهدف",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Subcontracted Item To Be Received": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "أمر شراء تصنيع لدى الغير",
+      "المصنّع لدى الغير",
+      "مستودع المصنّع لدى الغير",
+      "عملة المصنّع لدى الغير",
+      "الشركة",
+      "التاريخ",
+      "مطلوب بحلول",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "First Response Time for Opportunity": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Lost Opportunity": {
+     "ok": true,
+     "rows": 22,
+     "cols": 8,
+     "heads": [
+      "مصدر الفرصة",
+      "الطرف",
+      "الحالة",
+      "مرحلة البيع",
+      "العملة",
+      "مبلغ الفرصة",
+      "الشركة",
+      "تاريخ الفرصة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Maintenance Schedules": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "عميل",
+      "الحالة",
+      "تاريخ المعاملة",
+      "اسم العميل",
+      "مسؤول التواصل",
+      "عنوان العميل",
+      "المنطقة",
+      "مجموعة العملاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "BOM Variance Report": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "نوع حركة المخزون",
+      "الغرض",
+      "تاريخ الترحيل",
+      "إجمالي قيمة الصادر (الاستهلاك)",
+      "إجمالي قيمة الوارد (الاستلام)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Exponential Smoothing Forecasting": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Open Work Orders": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Production Planning Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Work Order Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "الصنف المراد تصنيعه",
+      "رقم قائمة المواد",
+      "الكمية المراد تصنيعها",
+      "أمر بيع",
+      "مستودع الإنتاج تحت التشغيل",
+      "المستودع الهدف",
+      "مستودع الخردة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Project Summary": {
+     "ok": true,
+     "rows": 5,
+     "cols": 8,
+     "heads": [
+      "الحالة",
+      "نسبة الإنجاز %",
+      "تاريخ البدء المتوقع",
+      "تاريخ الانتهاء المتوقع",
+      "عميل",
+      "الشركة",
+      "مركز التكلفة الافتراضي",
+      "التكلفة التقديرية"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Electronic Invoice Register": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "تاريخ الترحيل",
+      "تاريخ استحقاق الدفعة",
+      "مرتجع مقابل",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Address And Contacts": {
+     "ok": true,
+     "rows": 25,
+     "cols": 3,
+     "heads": [
+      "نوع العنوان",
+      "المدينة / البلدة",
+      "الدولة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Customer-wise Item Price": {
+     "ok": true,
+     "rows": 28,
+     "cols": 5,
+     "heads": [
+      "نوع العميل",
+      "مجموعة العملاء",
+      "المنطقة",
+      "عملة الفوترة",
+      "قائمة الأسعار"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Lost Quotations": {
+     "ok": true,
+     "rows": 19,
+     "cols": 10,
+     "heads": [
+      "عرض السعر إلى",
+      "الطرف",
+      "التاريخ",
+      "صالح حتى",
+      "الشركة",
+      "العملة",
+      "قائمة الأسعار",
+      "الصافي (بعملة الشركة)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Order Analysis": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Sales Partner Transaction Summary": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Territory Target Variance Based On Item Group": {
+     "ok": true,
+     "rows": 18,
+     "cols": 10,
+     "heads": [
+      "الشركة",
+      "عميل",
+      "التاريخ",
+      "تاريخ التسليم",
+      "مركز تكلفة",
+      "العملة",
+      "قائمة الأسعار",
+      "تحديد المستودع المصدر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Batch Item Expiry Status": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "COGS By Item Group": {
+     "ok": true,
+     "rows": 254,
+     "cols": 10,
+     "heads": [
+      "تاريخ الترحيل",
+      "السنة المالية",
+      "حساب",
+      "نوع الطرف",
+      "الطرف",
+      "نوع السند",
+      "رقم السند",
+      "مقابل نوع السند"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "FIFO Queue vs Qty After Transaction Comparison": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Incorrect Stock Value Report": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item Shortage Report": {
+     "ok": true,
+     "rows": 102,
+     "cols": 6,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "الكمية الفعلية",
+      "الكمية المطلوبة",
+      "الكمية المحجوزة",
+      "وحدة القياس"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Item-wise Price List Rate": {
+     "ok": true,
+     "rows": 120,
+     "cols": 7,
+     "heads": [
+      "المعرّف",
+      "رمز الصنف",
+      "اسم الصنف",
+      "علامة تجارية",
+      "قائمة الأسعار",
+      "السعر",
+      "المرجع"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Material Requests for which Supplier Quotations are not created": {
+     "ok": true,
+     "rows": 10,
+     "cols": 5,
+     "heads": [
+      "الغرض",
+      "الشركة",
+      "تاريخ المعاملة",
+      "مطلوب بحلول",
+      "الحالة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Requested Items To Be Transferred": {
+     "ok": true,
+     "rows": 9,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "نوع حركة المخزون",
+      "الغرض",
+      "تاريخ الترحيل",
+      "إجمالي قيمة الصادر (الاستهلاك)",
+      "إجمالي قيمة الوارد (الاستلام)"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial No and Batch Traceability": {
+     "ok": true,
+     "rows": 5,
+     "cols": 6,
+     "heads": [
+      "الشركة",
+      "رمز الصنف",
+      "مستودع",
+      "مجموعة الأصناف",
+      "نوع السند",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Serial No Warranty Expiry": {
+     "ok": true,
+     "rows": 5,
+     "cols": 10,
+     "heads": [
+      "المعرّف",
+      "الاسم",
+      "الرقم التسلسلي",
+      "رمز الصنف",
+      "تاريخ انتهاء عقد الصيانة السنوي",
+      "حالة الصيانة",
+      "اسم الصنف",
+      "الوصف"
+     ],
+     "rtl": true,
+     "split": false,
+     "pass": true
+    },
+    "Stock Ledger Entries of Cancelled Vouchers": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Stock Qty vs Serial No Count": {
+     "ok": true,
+     "rows": 44,
+     "cols": 4,
+     "heads": [
+      "مجموعة الأصناف",
+      "وحدة القياس الافتراضية",
+      "سعر البيع القياسي",
+      "سعر التقييم"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Warehouse Wise Stock Balance": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "رمز الصنف",
+      "مستودع",
+      "تاريخ الترحيل",
+      "نوع السند",
+      "رقم السند",
+      "التغير في الكمية",
+      "سعر الوارد",
+      "متوسط السعر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "First Response Time for Issues": {
+     "ok": true,
+     "rows": 10,
+     "cols": 7,
+     "heads": [
+      "الموضوع",
+      "عميل",
+      "مقدّم البلاغ (البريد)",
+      "الحالة",
+      "الأولوية",
+      "تاريخ الافتتاح",
+      "الشركة"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "YouTube Interactions": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "العنوان",
+      "المزوّد",
+      "تاريخ النشر",
+      "الإعجابات",
+      "المشاهدات"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Birthday": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "الاسم الكامل",
+      "الجنس",
+      "تاريخ الميلاد",
+      "تاريخ المباشرة",
+      "الشركة",
+      "القسم",
+      "المسمى الوظيفي",
+      "المدير المباشر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Employee Leave Balance Summary": {
+     "ok": true,
+     "rows": 34,
+     "cols": 10,
+     "heads": [
+      "الاسم الكامل",
+      "الجنس",
+      "تاريخ الميلاد",
+      "تاريخ المباشرة",
+      "الشركة",
+      "القسم",
+      "المسمى الوظيفي",
+      "المدير المباشر"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Recruitment Analytics": {
+     "ok": true,
+     "rows": 5,
+     "cols": 5,
+     "heads": [
+      "الشركة",
+      "القسم",
+      "من تاريخ",
+      "إلى تاريخ",
+      "مُعدّل من"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Accrued Earnings Report": {
+     "ok": true,
+     "rows": 5,
+     "cols": 9,
+     "heads": [
+      "تاريخ الترحيل",
+      "موظف",
+      "مكوّن الراتب",
+      "فترة الرواتب",
+      "نوع المستند المرجعي",
+      "قسيمة راتب",
+      "نوع المعاملة",
+      "المبلغ"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    },
+    "Income Tax Deductions": {
+     "ok": true,
+     "rows": 61,
+     "cols": 10,
+     "heads": [
+      "موظف",
+      "اسم الموظف",
+      "الشركة",
+      "القسم",
+      "تاريخ الترحيل",
+      "العملة",
+      "تاريخ البدء",
+      "تاريخ الانتهاء"
+     ],
+     "rtl": true,
+     "split": true,
+     "pass": true
+    }
+   },
+   "page_errors": []
+  }
+ }
+}

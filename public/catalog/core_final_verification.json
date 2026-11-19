@@ -1,0 +1,462 @@
+{
+ "pass": 76,
+ "total": 76,
+ "results": [
+  {
+   "lang": "en",
+   "label": "CF: Property Setters written (label, reqd, read_only, in_list_view, depends_on, field_order)",
+   "ok": true,
+   "detail": "['undefined.field_order=[\"overview_tab\",\"overview_html\",\"details_tab\",\"basic_info\",\"naming_series\",\"customer_type\",\"customer_name\",\"digit_customer_name_en\",\"alias\",\"gender\",\"column_break0\",\"customer_g"
+  },
+  {
+   "lang": "en",
+   "label": "CF: Custom Field created",
+   "ok": true,
+   "detail": "['custom_loyalty_tier:Select:Gold Silver', 'digit_customer_name_en:Data:']"
+  },
+  {
+   "lang": "en",
+   "label": "CF live: new label on form",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CF live: reqd applied",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CF live: read_only applied",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CF live: custom field rendered",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CF live: order changed (customer_type before customer_name)",
+   "ok": true,
+   "detail": "['details_tab', 'basic_info', 'naming_series', 'customer_type', 'customer_name', 'digit_customer_name_en', 'alias', 'customer_group']"
+  },
+  {
+   "lang": "en",
+   "label": "CF exportable (site_customizations manifest)",
+   "ok": true,
+   "detail": "[6, 2]"
+  },
+  {
+   "lang": "en",
+   "label": "CS refresh: set_intro shown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CS refresh: set_df_property hidden",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CS custom button sets value",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "CS field change sets dependent value",
+   "ok": true,
+   "detail": "Individual customer"
+  },
+  {
+   "lang": "en",
+   "label": "CS set_query filters link options (is_group=0)",
+   "ok": true,
+   "detail": "[7, ['Group Territory X']]"
+  },
+  {
+   "lang": "en",
+   "label": "WF: Submit hidden, state chip Draft",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "WF roles: Sales User sees only Review",
+   "ok": true,
+   "detail": "['Review']"
+  },
+  {
+   "lang": "en",
+   "label": "WF transition: Pending Approval",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "WF roles: Sales User has no Approve in Pending + form read-only (allow_edit)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "WF docstatus 0→1 on Approve",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "lang": "en",
+   "label": "WF docstatus 1→2 on Cancel",
+   "ok": true,
+   "detail": "['2|Cancelled', []]"
+  },
+  {
+   "lang": "en",
+   "label": "WF timeline comment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Switch User via avatar menu",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: list shows only permitted Customer",
+   "ok": true,
+   "detail": "DDT-CUST-001"
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: other Customer form Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: permitted Customer editable (write)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: no read on Journal Entry → list Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: Sales Invoice list limited by User Permission (role All read), no Add",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: report on GL Entry Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: AR report rows + totals limited to permitted Customer",
+   "ok": true,
+   "detail": "1\tTotal\t\t\t\t\tSAR 0.00\tSAR 0.00\tSAR 0.00\tSAR 0.00\t\tSAR 0.00\tSAR 0.00\tSAR 0.00\tSAR "
+  },
+  {
+   "lang": "en",
+   "label": "Sales User: link search limited by User Permission",
+   "ok": true,
+   "detail": "['DDT-CUST-001']"
+  },
+  {
+   "lang": "en",
+   "label": "Accounts User: Customer read-only (read without write)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Accounts User: no create on Customer",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Accounts User: submitted SI has no Cancel (no cancel perm)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "Accounts User: AR report allowed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "en",
+   "label": "if_owner: own ToDo readable, others' not",
+   "ok": true,
+   "detail": "[1, 0]"
+  },
+  {
+   "lang": "en",
+   "label": "Connections tab: Domain",
+   "ok": true,
+   "detail": "D-0001"
+  },
+  {
+   "lang": "en",
+   "label": "Connections tab: Address",
+   "ok": true,
+   "detail": "DDT-CUST-001-Billing"
+  },
+  {
+   "lang": "en",
+   "label": "Connections tab: Comment",
+   "ok": true,
+   "detail": "C-0092"
+  },
+  {
+   "lang": "en",
+   "label": "Connections tab: Income Tax Slab",
+   "ok": true,
+   "detail": "ITS-0002"
+  },
+  {
+   "lang": "ar",
+   "label": "CF: Property Setters written (label, reqd, read_only, in_list_view, depends_on, field_order)",
+   "ok": true,
+   "detail": "['undefined.field_order=[\"overview_tab\",\"overview_html\",\"details_tab\",\"basic_info\",\"naming_series\",\"customer_type\",\"customer_name\",\"digit_customer_name_en\",\"alias\",\"gender\",\"column_break0\",\"customer_g"
+  },
+  {
+   "lang": "ar",
+   "label": "CF: Custom Field created",
+   "ok": true,
+   "detail": "['custom_loyalty_tier:Select:Gold Silver', 'digit_customer_name_en:Data:']"
+  },
+  {
+   "lang": "ar",
+   "label": "CF live: new label on form",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CF live: reqd applied",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CF live: read_only applied",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CF live: custom field rendered",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CF live: order changed (customer_type before customer_name)",
+   "ok": true,
+   "detail": "['details_tab', 'basic_info', 'naming_series', 'customer_type', 'customer_name', 'digit_customer_name_en', 'alias', 'customer_group']"
+  },
+  {
+   "lang": "ar",
+   "label": "CF exportable (site_customizations manifest)",
+   "ok": true,
+   "detail": "[6, 2]"
+  },
+  {
+   "lang": "ar",
+   "label": "CS refresh: set_intro shown",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CS refresh: set_df_property hidden",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CS custom button sets value",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "CS field change sets dependent value",
+   "ok": true,
+   "detail": "Individual customer"
+  },
+  {
+   "lang": "ar",
+   "label": "CS set_query filters link options (is_group=0)",
+   "ok": true,
+   "detail": "[7, ['Group Territory X']]"
+  },
+  {
+   "lang": "ar",
+   "label": "WF: Submit hidden, state chip Draft",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "WF roles: Sales User sees only Review",
+   "ok": true,
+   "detail": "['Review']"
+  },
+  {
+   "lang": "ar",
+   "label": "WF transition: Pending Approval",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "WF roles: Sales User has no Approve in Pending + form read-only (allow_edit)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "WF docstatus 0→1 on Approve",
+   "ok": true,
+   "detail": "1"
+  },
+  {
+   "lang": "ar",
+   "label": "WF docstatus 1→2 on Cancel",
+   "ok": true,
+   "detail": "['2|Cancelled', []]"
+  },
+  {
+   "lang": "ar",
+   "label": "WF timeline comment",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Switch User via avatar menu",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: list shows only permitted Customer",
+   "ok": true,
+   "detail": "DDT-CUST-001"
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: other Customer form Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: permitted Customer editable (write)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: no read on Journal Entry → list Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: Sales Invoice list limited by User Permission (role All read), no Add",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: report on GL Entry Not Permitted",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: AR report rows + totals limited to permitted Customer",
+   "ok": true,
+   "detail": "1\tالإجمالي\t\t\t\t\t0.00 ر.س\t0.00 ر.س\t0.00 ر.س\t0.00 ر.س\t\t0.00 ر.س\t0.00 ر.س\t0.00 ر.س\t0"
+  },
+  {
+   "lang": "ar",
+   "label": "Sales User: link search limited by User Permission",
+   "ok": true,
+   "detail": "['DDT-CUST-001']"
+  },
+  {
+   "lang": "ar",
+   "label": "Accounts User: Customer read-only (read without write)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Accounts User: no create on Customer",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Accounts User: submitted SI has no Cancel (no cancel perm)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "Accounts User: AR report allowed",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "lang": "ar",
+   "label": "if_owner: own ToDo readable, others' not",
+   "ok": true,
+   "detail": "[1, 0]"
+  },
+  {
+   "lang": "ar",
+   "label": "Connections tab: Domain",
+   "ok": true,
+   "detail": "D-0001"
+  },
+  {
+   "lang": "ar",
+   "label": "Connections tab: Address",
+   "ok": true,
+   "detail": "DDT-CUST-001-Billing"
+  },
+  {
+   "lang": "ar",
+   "label": "Connections tab: Comment",
+   "ok": true,
+   "detail": "C-0092"
+  },
+  {
+   "lang": "ar",
+   "label": "Connections tab: Income Tax Slab",
+   "ok": true,
+   "detail": "ITS-0001"
+  }
+ ]
+}

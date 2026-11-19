@@ -1,0 +1,462 @@
+{
+ "runs": {
+  "en": {
+   "reports": {
+    "Accounts Receivable": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "Posting Date",
+      "Customer",
+      "Voucher Type",
+      "Voucher No",
+      "Due Date",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Credit Note",
+      "Outstanding Amount",
+      "Age (Days)",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_en.jpg"
+    },
+    "Accounts Payable": {
+     "pass": true,
+     "rows": 7,
+     "columns": [
+      "Posting Date",
+      "Supplier",
+      "Voucher Type",
+      "Voucher No",
+      "Due Date",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Debit Note",
+      "Outstanding Amount",
+      "Age (Days)",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_en.jpg"
+    },
+    "Accounts Receivable Summary": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "Customer",
+      "Customer Name",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Credit Note Amount",
+      "Outstanding Amount",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_Summary_en.jpg"
+    },
+    "Accounts Payable Summary": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "Supplier",
+      "Supplier Name",
+      "Invoiced Amount",
+      "Paid Amount",
+      "Debit Note Amount",
+      "Outstanding Amount",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "Total",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_Summary_en.jpg"
+    },
+    "Stock Balance": {
+     "pass": true,
+     "rows": 97,
+     "columns": [
+      "Item",
+      "Item Name",
+      "Item Group",
+      "Warehouse",
+      "Opening Qty",
+      "Opening Value",
+      "In Qty",
+      "In Value",
+      "Out Qty",
+      "Out Value",
+      "Balance Qty",
+      "Balance Value",
+      "Valuation Rate"
+     ],
+     "total": [
+      "Total",
+      "",
+      "",
+      "",
+      "0",
+      "0.00",
+      "6032",
+      "15,916,541.85",
+      "280",
+      "1,046,215.34",
+      "5752",
+      "14,870,326.51",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Stock Balance closing = Stock Ledger closing (per item and warehouse) (96/96 item-warehouse pairs match)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Perpetual inventory: stock account value (stock vouchers) = Stock Ledger value (14870326.51 = 14870326.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Balance_en.jpg"
+    }
+   },
+   "page_errors": []
+  },
+  "ar": {
+   "reports": {
+    "Accounts Receivable": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "تاريخ الترحيل",
+      "عميل",
+      "نوع السند",
+      "رقم السند",
+      "تاريخ الاستحقاق",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "إشعار دائن",
+      "المبلغ المستحق",
+      "(العمر (أيام",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_ar.jpg"
+    },
+    "Accounts Payable": {
+     "pass": true,
+     "rows": 7,
+     "columns": [
+      "تاريخ الترحيل",
+      "مورد",
+      "نوع السند",
+      "رقم السند",
+      "تاريخ الاستحقاق",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "إشعار مدين",
+      "المبلغ المستحق",
+      "(العمر (أيام",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "ageing_based_on=Posting Date",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_ar.jpg"
+    },
+    "Accounts Receivable Summary": {
+     "pass": true,
+     "rows": 13,
+     "columns": [
+      "عميل",
+      "اسم العميل",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "ملاحظة الائتمان المبلغ",
+      "المبلغ المستحق",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "368,822.00",
+      "122,293.76",
+      "86.00",
+      "246,442.24",
+      "-0.41",
+      "100,826.00",
+      "1,840.85",
+      "0.00",
+      "143,775.80"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AR total = Σ outstanding_amount of submitted Sales Invoices (as on 2026-10-12) (246442.24 = 246442.24)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Receivable_Summary_ar.jpg"
+    },
+    "Accounts Payable Summary": {
+     "pass": true,
+     "rows": 6,
+     "columns": [
+      "مورد",
+      "اسم المورد",
+      "قيمة الفواتير",
+      "المبلغ المدفوع",
+      "مبلغ إشعار المدين",
+      "المبلغ المستحق",
+      "0-30",
+      "31-60",
+      "61-90",
+      "91-120",
+      "121-Above"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "66,953.00",
+      "11,606.49",
+      "6,118.00",
+      "49,228.51",
+      "0.00",
+      "0.00",
+      "-0.09",
+      "0.00",
+      "49,228.60"
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ AP total = Σ outstanding_amount of submitted Purchase Invoices (as on 2026-10-12) (49228.51 = 49228.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "report_date=2026-03-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Accounts_Payable_Summary_ar.jpg"
+    },
+    "Stock Balance": {
+     "pass": true,
+     "rows": 97,
+     "columns": [
+      "صنف",
+      "اسم الصنف",
+      "مجموعة الأصناف",
+      "مستودع",
+      "الكمية الافتتاحية",
+      "القيمة الافتتاحية",
+      "كمية قادمة",
+      "القيمة القادمة",
+      "كمية خارجة",
+      "القيمة الخارجه",
+      "كمية الرصيد",
+      "قيمة الرصيد",
+      "سعر التقييم"
+     ],
+     "total": [
+      "الإجمالي",
+      "",
+      "",
+      "",
+      "0",
+      "0.00",
+      "6032",
+      "15,916,541.85",
+      "280",
+      "1,046,215.34",
+      "5752",
+      "14,870,326.51",
+      ""
+     ],
+     "checks": [
+      {
+       "ok": true,
+       "text": "✓ Stock Balance closing = Stock Ledger closing (per item and warehouse) (96/96 item-warehouse pairs match)"
+      },
+      {
+       "ok": true,
+       "text": "✓ Perpetual inventory: stock account value (stock vouchers) = Stock Ledger value (14870326.51 = 14870326.51)"
+      }
+     ],
+     "summary": [],
+     "filter_change": "from_date=2026-09-01",
+     "filter_changed_result": true,
+     "screenshot": "docs/parity/report_Stock_Balance_ar.jpg"
+    }
+   },
+   "page_errors": []
+  }
+ }
+}
