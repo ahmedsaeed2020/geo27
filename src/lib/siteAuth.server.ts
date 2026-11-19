@@ -57,6 +57,7 @@ export function siteTokenFromCookieHeader(header: string | null): string | undef
 export async function verifySiteAdmin(email: string, password: string): Promise<string | null> {
   const url = process.env["SUPABASE_URL"];
   const publishable = process.env["SUPABASE_PUBLISHABLE_KEY"];
+  if (email && !email.includes("@")) email = `${email}@geointime.trilogy.com.sa`;
   if (!url || !publishable || !email.includes("@")) return null;
   const sb = createClient(url, publishable, { auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false } });
   const { data, error } = await sb.auth.signInWithPassword({ email, password });

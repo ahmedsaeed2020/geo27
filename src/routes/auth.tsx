@@ -32,7 +32,7 @@ function AuthPage() {
     event.preventDefault();
     setBusy(true);
     setError(null);
-    const { error: e } = await supabase.auth.signInWithPassword({ email, password });
+    const { error: e } = await supabase.auth.signInWithPassword({ email: email.includes("@") ? email.trim() : `${email.trim().toLowerCase()}@geointime.trilogy.com.sa`, password });
     setBusy(false);
     if (e) return setError(t("بيانات الدخول غير صحيحة. تحقق من البريد وكلمة المرور.", "Incorrect email or password."));
     window.location.assign("/digit-crm/");
@@ -50,7 +50,7 @@ function AuthPage() {
         <form onSubmit={submit} className="lux-form">
           <label>
             <span>{t("البريد الإلكتروني", "Email")}</span>
-            <input type="email" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" autoFocus />
+            <input type="text" dir="ltr" value={email} onChange={(e) => setEmail(e.target.value)} required autoComplete="email" autoFocus />
           </label>
           <label>
             <span>{t("كلمة المرور", "Password")}</span>
