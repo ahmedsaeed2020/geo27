@@ -258,4 +258,4 @@ Rules: Pro and HR frozen (no page/content/route/SEO/CSS changes); corporate prof
 # GeoInTime landing V5 (owner design image + V5 content file, 2026-11-19)
 - [x] Generate brand characters from the GeoInTime atlases (sites, presence, tasks, band slides, warehouse team, supervisor).
 - [x] Rebuild / and /en landing on the owner's design with the V5 content file (hero circles, band slider, trial form, system screen, journey, closing).
-- [ ] Verify AR/EN, mobile, form submission, motion and reduced motion.
+- [x] Verify AR/EN, mobile, form submission, motion and reduced motion.
