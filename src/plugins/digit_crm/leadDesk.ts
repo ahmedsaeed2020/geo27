@@ -36,7 +36,7 @@ export const LEAD_STATUS_TONE: Record<string, "neutral" | "info" | "warn" | "ok"
 export const LEAD_STATUS_HUE: Record<string, "blue" | "amber" | "violet" | "emerald" | "teal" | "rose" | "grey"> = { New: "blue", Contacted: "amber", Nurture: "violet", Qualified: "emerald", Converted: "teal", Unqualified: "rose", Junk: "grey" };
 /** The status a lead shows: a converted lead reads «تم التحويل» whatever status it was converted from. */
 export const leadStage = (l: Doc) => (Number(l["converted"]) ? "Converted" : s(l["status"]) || "New");
-export const statusLabel = (k: string, ar: boolean) => (ar ? LEAD_STATUS_AR[k] ?? k : k);
+export const statusLabel = (k: string, ar: boolean) => (ar ? String(adapter.get("CRM Lead Status", k)?.["custom_label_ar"] ?? "") || LEAD_STATUS_AR[k] || k : k);
 
 /* ------------------------------------------------------------------ SLA (first response) ------------------------------------------------------------------ */
 export type SlaState = "ok" | "risk" | "breached" | "met" | "na";

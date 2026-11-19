@@ -55,7 +55,7 @@ export function dueText(v: unknown, ar: boolean, now = new Date()): { text: stri
   if (k < t) { const n = Math.round((Date.parse(`${t}T00:00:00`) - Date.parse(`${k}T00:00:00`)) / 864e5); return { text: ar ? `متأخر ${daysAr(n)}` : `${n} day${n === 1 ? "" : "s"} late`, tone: "bad" }; }
   return { text: dmy(v), tone: undefined };
 }
-export const sar = (n: number) => fmtCurrency(Math.round(n * 100) / 100, "SAR");
+export const sar = (n: number) => fmtCurrency(Math.round(n * 100) / 100, String(adapter.get("FCRM Settings", "FCRM Settings")?.["custom_currency"] ?? "") || "SAR");
 
 /* ------------------------------------------------------------------ labels ------------------------------------------------------------------ */
 export const SOURCES = ["Website", "Cold Calling", "Exhibition", "Reference", "Advertisement", "Campaign", "WhatsApp", "Business card"];
@@ -65,7 +65,7 @@ export const SIZES = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"]
 export const CITIES = ["الرياض", "جدة", "الدمام", "مكة المكرمة", "المدينة المنورة", "الخبر", "الطائف", "أبها"];
 export const srcLabel = (v: string, ar: boolean) => (ar ? SOURCE_AR[v] ?? v : v) || "—";
 export const indLabel = (v: string, ar: boolean) => (ar ? INDUSTRY_AR[v] ?? v : v) || "—";
-export const stLabel = (v: string, ar: boolean) => (ar ? LEAD_STATUS_AR[v] ?? v : v);
+export const stLabel = (v: string, ar: boolean) => (ar ? String(adapter.get("CRM Lead Status", v)?.["custom_label_ar"] ?? "") || LEAD_STATUS_AR[v] || v : v);
 const DEAL_STAGE_AR: Record<string, string> = { Qualification: "التأهيل", "Demo/Making": "العرض التوضيحي", "Proposal/Quotation": "العرض / التسعير", Negotiation: "التفاوض", "Ready to Close": "جاهزة للإغلاق", Won: "ربح", Lost: "خسارة" };
 export const stageLabelOf = (v: string, ar: boolean) => (ar ? DEAL_STAGE_AR[v] ?? v : v);
 export const FIELD_LABEL: Record<string, [string, string]> = {

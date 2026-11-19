@@ -21,6 +21,7 @@ import { linkTitle } from "@/lib/linkTitle";
 import { useLang } from "@/i18n";
 import { QuickLink } from "@/components/enterprise/QuickView";
 import { WorkingRules } from "./SalesDesk";
+import { CrmAdminSettings } from "./CrmAdminSettings";
 import { LeadRulesCard } from "./LeadRulesCard";
 
 const slug = (dt: string) => dt.toLowerCase().replace(/[^a-z0-9]+/g, "_");
@@ -190,6 +191,7 @@ export function Automation() {
 }
 export function Settings() {
   return <CrmFrame title="Settings" subtitle="Pipeline stages, sources, reasons and price lists used by DIGIT CRM.">{(user) => <>
+    <CrmAdminSettings user={user} ar={useLang() === "ar"} />
     <DemoControls />
     <WorkingRules user={user} />
     <LeadRulesCard user={user} />

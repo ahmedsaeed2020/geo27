@@ -50,14 +50,14 @@ export function CrmSidebar() {
   const wide = useWide();
   const shown = panel === "auto" ? wide : panel === "open";
   const toggle = () => { const next: PanelState = shown ? "closed" : "open"; setPanel(next); sessionStorage.setItem(PANEL_KEY, next); };
-  const exit = <Link to="/" search={{ experience: "standard" } as never} onClick={() => setActiveExperience("")} className="dc-rail-btn" aria-label={t("Standard Desk")} title={t("Standard Desk")} data-dc-exit><Glyph name="exit" /></Link>;
+  const _exit = <Link to="/" search={{ experience: "standard" } as never} onClick={() => setActiveExperience("")} className="dc-rail-btn" aria-label={t("Standard Desk")} title={t("Standard Desk")} data-dc-exit><Glyph name="exit" /></Link>;
   return (
     <nav className="dc-nav" aria-label={brand} data-no-i18n data-dc-nav data-dc-panel={panel === "auto" ? undefined : panel}>
       <div className="dc-rail" data-dc-rail>
-        <Link to="/digit-crm/home" className="dc-rail-brand" aria-label={`${brand} ${t("Home")}`} title={brand}><img src={appIconFor("digit_crm", "rail")} alt="" /></Link>
+        <Link to="/digit-crm/leads" className="dc-rail-brand" aria-label={`${brand} ${t("Home")}`} title={brand}><img src={appIconFor("digit_crm", "rail")} alt="" /></Link>
         <button type="button" className="dc-rail-btn" onClick={() => openShellDialog("global-search")} aria-label={t("Search")} title={t("Search")} data-dc-search><Glyph name="search" /></button>
         <ul className="dc-rail-mods">
-          {CRM_NAV.map((g) => {
+          {CRM_NAV.filter((g) => g.id !== "home").map((g) => {
             const home = groupHome(g);
             if (!home?.to) return null;
             const on = g.id === active.id;
@@ -70,7 +70,6 @@ export function CrmSidebar() {
         </ul>
         <div className="dc-rail-foot">
           <button type="button" className="dc-rail-btn" onClick={toggle} aria-expanded={shown} aria-controls="dc-nav-panel" aria-label={t(shown ? "Hide sections" : "Show sections")} title={t(shown ? "Hide sections" : "Show sections")} data-dc-panel-toggle><Glyph name="panel" /></button>
-          {exit}
         </div>
       </div>
       <div className="dc-pnav" id="dc-nav-panel" data-dc-pnav>
