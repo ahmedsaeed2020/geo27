@@ -14,6 +14,57 @@ export type Database = {
   }
   public: {
     Tables: {
+      activities: {
+        Row: {
+          created_at: string
+          deal_id: string | null
+          due_at: string | null
+          id: string
+          lead_id: string | null
+          outcome: string
+          owner: string
+          status: string
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          deal_id?: string | null
+          due_at?: string | null
+          id?: string
+          lead_id?: string | null
+          outcome?: string
+          owner: string
+          status?: string
+          type: string
+        }
+        Update: {
+          created_at?: string
+          deal_id?: string | null
+          due_at?: string | null
+          id?: string
+          lead_id?: string | null
+          outcome?: string
+          owner?: string
+          status?: string
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "activities_deal_id_fkey"
+            columns: ["deal_id"]
+            isOneToOne: false
+            referencedRelation: "deals"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "activities_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chat_messages: {
         Row: {
           content: string
@@ -512,6 +563,95 @@ export type Database = {
         }
         Relationships: []
       }
+      crm_settings: {
+        Row: {
+          id: number
+          round_robin_cursor: number
+          sla_hours: number
+          stages: Json
+        }
+        Insert: {
+          id?: number
+          round_robin_cursor?: number
+          sla_hours?: number
+          stages?: Json
+        }
+        Update: {
+          id?: number
+          round_robin_cursor?: number
+          sla_hours?: number
+          stages?: Json
+        }
+        Relationships: []
+      }
+      crm_users: {
+        Row: {
+          active: boolean
+          created_at: string
+          email: string
+          role: string
+          user_id: string
+        }
+        Insert: {
+          active?: boolean
+          created_at?: string
+          email: string
+          role?: string
+          user_id: string
+        }
+        Update: {
+          active?: boolean
+          created_at?: string
+          email?: string
+          role?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      deals: {
+        Row: {
+          created_at: string
+          expected_close_date: string | null
+          id: string
+          lead_id: string
+          owner: string | null
+          reason: string
+          stage: string
+          stage_changed_at: string
+          value: number
+        }
+        Insert: {
+          created_at?: string
+          expected_close_date?: string | null
+          id?: string
+          lead_id: string
+          owner?: string | null
+          reason?: string
+          stage?: string
+          stage_changed_at?: string
+          value?: number
+        }
+        Update: {
+          created_at?: string
+          expected_close_date?: string | null
+          id?: string
+          lead_id?: string
+          owner?: string | null
+          reason?: string
+          stage?: string
+          stage_changed_at?: string
+          value?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deals_lead_id_fkey"
+            columns: ["lead_id"]
+            isOneToOne: true
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       lead_rate_limits: {
         Row: {
           attempts: number
@@ -529,6 +669,75 @@ export type Database = {
           window_start?: string
         }
         Relationships: []
+      }
+      leads: {
+        Row: {
+          attribution: Json
+          company: string | null
+          consent: boolean
+          created_at: string
+          email: string | null
+          first_response_at: string | null
+          id: string
+          merged_into: string | null
+          name: string
+          owner: string | null
+          phone: string | null
+          reason: string
+          request_id: string | null
+          source: string
+          status: string
+        }
+        Insert: {
+          attribution?: Json
+          company?: string | null
+          consent?: boolean
+          created_at?: string
+          email?: string | null
+          first_response_at?: string | null
+          id?: string
+          merged_into?: string | null
+          name: string
+          owner?: string | null
+          phone?: string | null
+          reason?: string
+          request_id?: string | null
+          source?: string
+          status?: string
+        }
+        Update: {
+          attribution?: Json
+          company?: string | null
+          consent?: boolean
+          created_at?: string
+          email?: string | null
+          first_response_at?: string | null
+          id?: string
+          merged_into?: string | null
+          name?: string
+          owner?: string | null
+          phone?: string | null
+          reason?: string
+          request_id?: string | null
+          source?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "leads_merged_into_fkey"
+            columns: ["merged_into"]
+            isOneToOne: false
+            referencedRelation: "leads"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "leads_request_id_fkey"
+            columns: ["request_id"]
+            isOneToOne: true
+            referencedRelation: "contact_requests"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       site_settings: {
         Row: {
@@ -608,6 +817,15 @@ export type Database = {
         }[]
       }
       consume_lead_limit: { Args: { rate_key: string }; Returns: boolean }
+      crm_assign: {
+        Args: { ids: string[]; rep?: string; rotating?: boolean }
+        Returns: undefined
+      }
+      crm_merge: {
+        Args: { keep_id: string; remove_id: string }
+        Returns: undefined
+      }
+      crm_role: { Args: never; Returns: string }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]

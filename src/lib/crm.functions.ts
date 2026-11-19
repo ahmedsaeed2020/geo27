@@ -1,0 +1,33 @@
+import { createServerFn } from '@tanstack/react-start';
+import { requireSupabaseAuth } from '@/integrations/supabase/auth-middleware';
+import { z } from 'zod';
+import type { Db } from './cms-access';
+import { activitySchema,dealSchema,leadEditSchema,settingsSchema,DEFAULT_STAGES } from './crm-schema';
+async function roleFor(db:Db){const {data,error}=await db.rpc('crm_role');if(error)throw new Error('CRM unavailable');if(data!=='admin'&&data!=='sales')throw new Error('Forbidden');return data;}
+async function adminOnly(db:Db){if(await roleFor(db)!=='admin')throw new Error('Forbidden');}
+function check(error:{message:string}|null){if(error)throw new Error(error.message);}
+export const crmIdentity=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).handler(async({context})=>{const {data,error}=await context.supabase.rpc('crm_role');check(error);const {data:siteAdmin}=await context.supabase.rpc('cms_access',{scope:'owner'});return {role:data,userId:context.userId,siteAdmin:!!siteAdmin};});
+export const crmWorkspace=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).handler(async({context})=>{
+ const role=await roleFor(context.supabase); const db=context.supabase;
+ async function leads(){const all=[];for(let from=0;;from+=1000){const r=await db.from('leads').select('*').is('merged_into',null).order('created_at',{ascending:false}).order('id').range(from,from+999);check(r.error);all.push(...r.data??[]);if((r.data?.length??0)<1000)return all;}}
+ async function deals(){const all=[];for(let from=0;;from+=1000){const r=await db.from('deals').select('*').order('created_at',{ascending:false}).order('id').range(from,from+999);check(r.error);all.push(...r.data??[]);if((r.data?.length??0)<1000)return all;}}
+ async function activities(){const all=[];for(let from=0;;from+=1000){const r=await db.from('activities').select('*').order('created_at',{ascending:false}).order('id').range(from,from+999);check(r.error);all.push(...r.data??[]);if((r.data?.length??0)<1000)return all;}}
+ const [l,d,a,users,settings]=await Promise.all([leads(),deals(),activities(),db.from('crm_users').select('*').order('created_at'),db.from('crm_settings').select('*').eq('id',1).maybeSingle()]);check(users.error);check(settings.error);
+ return {role,userId:context.userId,leads:l,deals:d,activities:a,users:users.data??[],settings:{sla_hours:settings.data?.sla_hours??24,stages:Array.isArray(settings.data?.stages)?settings.data.stages.filter((s):s is string=>typeof s==='string'):DEFAULT_STAGES}};
+});
+export type CrmWorkspace=Awaited<ReturnType<typeof crmWorkspace>>;
+export const crmSaveLead=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(leadEditSchema).handler(async({context,data})=>{const role=await roleFor(context.supabase);const {id,...fields}=data;if(!id&&role!=='admin')throw new Error('Forbidden');const r=id?await context.supabase.from('leads').update(fields).eq('id',id).select().single():await context.supabase.from('leads').insert(fields).select().single();check(r.error);return r.data;});
+export const crmAssign=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({ids:z.array(z.string().uuid()).min(1).max(1000),rep:z.string().uuid().nullable(),rotating:z.boolean()})).handler(async({context,data})=>{await adminOnly(context.supabase);const r=await context.supabase.rpc('crm_assign',{ids:data.ids,...(data.rep?{rep:data.rep}:{}),rotating:data.rotating});check(r.error);return {saved:true};});
+export const crmMerge=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({keep:z.string().uuid(),remove:z.string().uuid()})).handler(async({context,data})=>{await adminOnly(context.supabase);const r=await context.supabase.rpc('crm_merge',{keep_id:data.keep,remove_id:data.remove});check(r.error);return {saved:true};});
+export const crmActivity=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(activitySchema).handler(async({context,data})=>{await roleFor(context.supabase);const r=await context.supabase.from('activities').insert({...data,owner:context.userId}).select().single();check(r.error);return r.data;});
+export const crmComplete=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({id:z.string().uuid(),outcome:z.string().max(4000)})).handler(async({context,data})=>{await roleFor(context.supabase);const r=await context.supabase.from('activities').update({status:'done',outcome:data.outcome}).eq('id',data.id).select().single();check(r.error);return {saved:true};});
+export const crmSaveDeal=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(dealSchema).handler(async({context,data})=>{await roleFor(context.supabase);const {id,...fields}=data;const r=id?await context.supabase.from('deals').update(fields).eq('id',id).select().single():await context.supabase.from('deals').insert(fields).select().single();check(r.error);return r.data;});
+export const crmSettings=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(settingsSchema).handler(async({context,data})=>{await adminOnly(context.supabase);const {data:existing,error}=await context.supabase.from('deals').select('stage');check(error);if(existing?.some(d=>!data.stages.includes(d.stage)))throw new Error('Move opportunities before removing their stage');const r=await context.supabase.from('crm_settings').upsert({id:1,...data});check(r.error);return {saved:true};});
+export const crmUser=createServerFn({method:'POST'}).middleware([requireSupabaseAuth]).inputValidator(z.object({user_id:z.string().uuid().optional(),email:z.string().email(),role:z.enum(['admin','sales']),active:z.boolean()})).handler(async({context,data})=>{
+ await adminOnly(context.supabase);const {supabaseAdmin}=await import('@/integrations/supabase/client.server');
+ if(data.user_id===context.userId&&(!data.active||data.role!=='admin'))throw new Error('You cannot deactivate or demote yourself');
+ let id=data.user_id;let invited=false;
+ if(!id){const {data:users,error}=await supabaseAdmin.auth.admin.listUsers({perPage:1000});check(error);const existing=users.users.find(u=>u.email?.toLowerCase()===data.email.toLowerCase());id=existing?.id;if(!id){const {data:invite,error:inviteError}=await supabaseAdmin.auth.admin.inviteUserByEmail(data.email);check(inviteError);id=invite.user?.id;invited=true;}}
+ if(!id)throw new Error('Could not invite user');
+ const r=await supabaseAdmin.from('crm_users').upsert({user_id:id,email:data.email,role:data.role,active:data.active});check(r.error);return {saved:true,invited};
+});

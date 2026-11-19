@@ -1,0 +1,3 @@
+import { createFileRoute } from '@tanstack/react-router';
+import CrmWorkspace from '@/components/crm/CrmWorkspace';
+export const Route=createFileRoute('/_authenticated/admin/crm/')({head:()=>({meta:[{title:'GeoInTime CRM — العملاء والفرص'},{name:'description',content:'إدارة العملاء والفرص والمهام لفريق GeoInTime.'},{property:'og:title',content:'GeoInTime CRM'},{property:'og:description',content:'Private customer and opportunity workspace.'},{property:'og:type',content:'website'},{name:'twitter:card',content:'summary'},{name:'robots',content:'noindex,nofollow'}]}),component:()=> <CrmWorkspace/>});

@@ -24,6 +24,7 @@ export type Role = 'owner' | 'editor' | 'sales';
 type Tab = { id: string; label: string; icon: ComponentType<{ size?: number }>; roles: Role[]; group: string };
 
 export const TABS: Tab[] = [
+  { id: 'crm', label: 'إدارة العملاء CRM', icon: ChartNoAxesCombined, roles: ['owner'], group: 'العملاء' },
   { id: 'overview', label: 'نظرة عامة', icon: LayoutDashboard, roles: ['owner', 'editor', 'sales'], group: '' },
   { id: 'pages', label: 'الصفحات', icon: FileText, roles: ['owner', 'editor'], group: 'المحتوى' },
   { id: 'catalog', label: 'المنتجات والأقسام', icon: Boxes, roles: ['owner', 'editor'], group: 'المحتوى' },

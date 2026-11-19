@@ -7,6 +7,8 @@ export type CmsRole = 'owner' | 'editor' | 'sales';
 
 /** Role resolution runs through the caller's own RLS-scoped client, never the admin client. */
 export async function resolveAccess(supabase: Db, userId: string) {
+  const { data: crmRole } = await supabase.rpc('crm_role');
+  if (crmRole === 'disabled' || crmRole === 'sales') return { role: null, content: false, leads: false, owner: false, admin: false };
   const [content, leads, owner, admin] = await Promise.all([
     supabase.rpc('cms_access', { scope: 'content' }),
     supabase.rpc('cms_access', { scope: 'leads' }),

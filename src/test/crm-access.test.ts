@@ -1,0 +1,14 @@
+import { it as baseIt,expect } from 'vitest';
+import {readFileSync} from 'node:fs';
+import {createClient} from '@supabase/supabase-js';
+const env=Object.fromEntries(readFileSync('.env','utf8').split('\n').filter(l=>l.includes('=')).map(l=>{const i=l.indexOf('=');return [l.slice(0,i),l.slice(i+1).trim().replace(/^["']|["']$/g,'')];}));
+import {existsSync} from 'node:fs';
+const file='/tmp/browser/crm/sales-session.json';const live=existsSync(file);const session=live?JSON.parse(readFileSync(file,'utf8')):{session:{access_token:'',user:{id:''}}};const it=live?baseIt:baseIt.skip;
+const key=env['VITE_SUPABASE_PUBLISHABLE_KEY'];const url=env['VITE_SUPABASE_URL'];if(!key||!url)throw new Error('Missing config');
+const db=createClient(url,key,{auth:{persistSession:false,autoRefreshToken:false},global:{headers:{Authorization:`Bearer ${session.session.access_token}`}}});
+it('Sales reads only its assigned lead from real RLS',async()=>{const r=await db.from('leads').select('name,owner');expect(r.error).toBeNull();expect(r.data?.some(l=>l.name==='Sales assigned acceptance')).toBe(true);expect(r.data?.some(l=>l.name==='Landing CRM acceptance')).toBe(false);expect(r.data?.every(l=>l.owner===session.session.user.id)).toBe(true);});
+it('Sales cannot read another rep opportunity',async()=>{const r=await db.from('deals').select('id');expect(r.error).toBeNull();expect(r.data?.length).toBe(1);});
+it('Sales cannot read another rep activities',async()=>{const r=await db.from('activities').select('id');expect(r.error).toBeNull();expect(r.data?.length).toBe(2);});
+it('Sales cannot self-assign an unassigned lead',async()=>{const r=await db.rpc('crm_assign',{ids:['00000000-0000-4000-8000-000000000001'],rep:session.session.user.id,rotating:false});expect(r.error?.message).toContain('Forbidden');});
+it('Sales cannot read legacy all-client inbox',async()=>{const r=await db.from('contact_requests').select('id');expect(r.data).toEqual([]);});
+it('Sales cannot change settings',async()=>{const r=await db.from('crm_settings').update({sla_hours:3}).eq('id',1).select();expect(r.data??[]).toEqual([]);});

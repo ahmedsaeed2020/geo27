@@ -1,5 +1,9 @@
 import AdminWorkspace from "@/components/cms/AdminWorkspace";
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, useNavigate, useRouterState, Outlet } from "@tanstack/react-router";
+import { useQuery } from '@tanstack/react-query';
+import { useServerFn } from '@tanstack/react-start';
+import { crmIdentity } from '@/lib/crm.functions';
+import CrmWorkspace from '@/components/crm/CrmWorkspace';
 import { useCallback, useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
@@ -33,4 +37,12 @@ export const Route = createFileRoute("/_authenticated/admin")({
   component: AdminPage,
 });
 
-function AdminPage() { return <AdminWorkspace />; }
+function AdminPage() {
+  const path=useRouterState({select:s=>s.location.pathname});
+  const api=useServerFn(crmIdentity);
+  const identity=useQuery({queryKey:['crm-identity'],queryFn:()=>api()});
+  if(path.startsWith('/admin/crm')) return <Outlet/>;
+  if(identity.isPending) return <p className="p-8" dir="rtl">جارٍ تحميل الإدارة…</p>;
+  if(identity.data?.role==='sales'||identity.data?.role==='disabled'||identity.data?.role==='admin'&&!identity.data.siteAdmin) return <CrmWorkspace/>;
+  return <AdminWorkspace/>;
+}

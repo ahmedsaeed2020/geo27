@@ -17,6 +17,7 @@ import Team from './admin/Team';
 import Audit from './admin/Audit';
 import Integrations from './admin/Integrations';
 import Campaigns from './admin/Campaigns';
+import CrmWorkspace from '@/components/crm/CrmWorkspace';
 import Redirects from './admin/Redirects';
 import FormsEditor from './admin/FormsEditor';
 import BrandingEditor from './admin/BrandingEditor';
@@ -154,6 +155,7 @@ export default function AdminWorkspace() {
         )}
 
         {current?.id === 'overview' && <Overview w={w} onOpen={open} />}
+        {current?.id === 'crm' && <CrmWorkspace embedded />}
         {listKind &&
           (active ? (
             <PageEditor

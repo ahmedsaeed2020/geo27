@@ -1,0 +1,22 @@
+import {describe,it,expect} from 'vitest';
+import {LEAD_STATUSES,DEFAULT_STAGES,leadEditSchema,dealSchema,activitySchema,settingsSchema,duplicateContacts,responseOverdue,mayAccess} from '../lib/crm-schema';
+const id='00000000-0000-4000-8000-000000000001';
+const lead={name:'Client',phone:null,email:null,company:'Acme',source:'google',consent:true,status:'new',reason:''};
+describe('Lite CRM rules',()=>{
+ it('defaults expose the four requested lead statuses',()=>expect(LEAD_STATUSES).toEqual(['new','contacted','qualified','unqualified']));
+ it('unqualified requires a reason',()=>{expect(leadEditSchema.safeParse({...lead,status:'unqualified'}).success).toBe(false);expect(leadEditSchema.safeParse({...lead,status:'unqualified',reason:'Not a fit'}).success).toBe(true);});
+ it('matches duplicate email without case sensitivity',()=>expect(duplicateContacts({phone:null,email:'A@example.com'},{phone:null,email:'a@example.com'})).toBe(true));
+ it('matches duplicate formatted phone',()=>expect(duplicateContacts({phone:'+966 55 123 4567',email:null},{phone:'966551234567',email:null})).toBe(true));
+ it('empty contacts do not match',()=>expect(duplicateContacts({phone:null,email:null},{phone:null,email:null})).toBe(false));
+ it('response SLA is configurable in hours',()=>{const l={created_at:'2026-11-19T00:00:00Z',first_response_at:null,status:'new'};expect(responseOverdue(l,2,Date.parse('2026-11-19T03:00:00Z'))).toBe(true);expect(responseOverdue(l,4,Date.parse('2026-11-19T03:00:00Z'))).toBe(false);});
+ it('responded leads are not overdue',()=>expect(responseOverdue({created_at:'2026-11-01',first_response_at:'2026-11-02',status:'contacted'},1)).toBe(false));
+ it('Sales only sees assigned records',()=>{expect(mayAccess('sales',true,id,id)).toBe(true);expect(mayAccess('sales',true,'other',id)).toBe(false);expect(mayAccess('sales',true,null,id)).toBe(false);});
+ it('Admin sees all',()=>expect(mayAccess('admin',true,null,id)).toBe(true));
+ it('inactive users see nothing',()=>expect(mayAccess('admin',false,id,id)).toBe(false));
+ it('meeting datetime required',()=>expect(activitySchema.safeParse({lead_id:id,type:'meeting',outcome:'Meet'}).success).toBe(false));
+ it('task due date required',()=>expect(activitySchema.safeParse({lead_id:id,type:'task',outcome:'Follow up'}).success).toBe(false));
+ it('activity belongs to exactly one lead or deal',()=>expect(activitySchema.safeParse({lead_id:id,deal_id:id,type:'note',outcome:'Note'}).success).toBe(false));
+ it('lost opportunity requires reason',()=>expect(dealSchema.safeParse({lead_id:id,value:500,expected_close_date:null,stage:'lost',reason:''}).success).toBe(false));
+ it('pipeline has the requested six default stages',()=>expect(DEFAULT_STAGES).toEqual(['opportunity','meeting held','quotation','negotiation','won','lost']));
+ it('stages editable while retaining conversion and final states',()=>{expect(settingsSchema.safeParse({sla_hours:4,stages:['opportunity','proposal','won','lost']}).success).toBe(true);expect(settingsSchema.safeParse({sla_hours:4,stages:['proposal','won','lost']}).success).toBe(false);});
+});

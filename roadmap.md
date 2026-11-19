@@ -1,3 +1,8 @@
+# Lite CRM (2026-11-19)
+- [x] Saved checkpoint 11be11e; private Admin/Sales CRM tables, trigger-based landing capture, duplicate merge, activity and deal rules.
+- [x] Leads, lead detail, Pipeline, My day, Manager and user/settings inside existing admin; AR/EN and 390px mobile.
+- [x] 36 focused tests passed (including six live RLS tests); signed-in Admin/Sales flows verified, landing submissions read back, duplicate merge/round-robin/drag/active toggle checked; temporary data removed. Landing unchanged; not published. Invite delivery not exercised (no real recipient supplied).
+
 # Admin marketing setup (2026-11-19)
 - [x] Prepare owner-only admin integration settings for Analytics, Search Console, Google Sheets and n8n without connecting accounts now.
 - [x] Add campaign link builder and lead source insights for Facebook, Google, LinkedIn and X; retain existing visitor forms and admin permissions.

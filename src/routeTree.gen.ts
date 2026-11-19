@@ -180,7 +180,9 @@ import { Route as EnServicesHostingRouteImport } from './routes/en.services.host
 import { Route as EnServicesImplementationRouteImport } from './routes/en.services.implementation'
 import { Route as EnServicesSupportRouteImport } from './routes/en.services.support'
 import { Route as EnServicesTrainingRouteImport } from './routes/en.services.training'
+import { Route as AuthenticatedAdminCrmIndexRouteImport } from './routes/_authenticated/admin.crm.index'
 import { Route as ApiPublicCmsMediaFileRouteImport } from './routes/api/public/cms-media.$file'
+import { Route as AuthenticatedAdminCrmLeadIdRouteImport } from './routes/_authenticated/admin.crm.lead.$id'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -1060,11 +1062,23 @@ const EnServicesTrainingRoute = EnServicesTrainingRouteImport.update({
   path: '/training',
   getParentRoute: () => EnServicesRoute,
 } as any)
+const AuthenticatedAdminCrmIndexRoute =
+  AuthenticatedAdminCrmIndexRouteImport.update({
+    id: '/crm/',
+    path: '/crm/',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 const ApiPublicCmsMediaFileRoute = ApiPublicCmsMediaFileRouteImport.update({
   id: '/api/public/cms-media/$file',
   path: '/api/public/cms-media/$file',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuthenticatedAdminCrmLeadIdRoute =
+  AuthenticatedAdminCrmLeadIdRouteImport.update({
+    id: '/crm/lead/$id',
+    path: '/crm/lead/$id',
+    getParentRoute: () => AuthenticatedAdminRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -1095,7 +1109,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
-  '/admin': typeof AuthenticatedAdminRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
   '/crm/$department': typeof CrmDepartmentRoute
@@ -1238,6 +1252,8 @@ export interface FileRoutesByFullPath {
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/admin/crm/': typeof AuthenticatedAdminCrmIndexRoute
+  '/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -1264,7 +1280,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
-  '/admin': typeof AuthenticatedAdminRoute
+  '/admin': typeof AuthenticatedAdminRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
   '/crm/$department': typeof CrmDepartmentRoute
@@ -1404,6 +1420,8 @@ export interface FileRoutesByTo {
   '/en/modules': typeof EnModulesIndexRoute
   '/en/services-3': typeof EnServices3IndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/admin/crm': typeof AuthenticatedAdminCrmIndexRoute
+  '/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -1436,7 +1454,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/trust-security': typeof TrustSecurityRoute
-  '/_authenticated/admin': typeof AuthenticatedAdminRoute
+  '/_authenticated/admin': typeof AuthenticatedAdminRouteWithChildren
   '/api/chat': typeof ApiChatRoute
   '/construction/$department': typeof ConstructionDepartmentRoute
   '/crm/$department': typeof CrmDepartmentRoute
@@ -1579,6 +1597,8 @@ export interface FileRoutesById {
   '/en/modules/': typeof EnModulesIndexRoute
   '/en/services-3/': typeof EnServices3IndexRoute
   '/api/public/cms-media/$file': typeof ApiPublicCmsMediaFileRoute
+  '/_authenticated/admin/crm/': typeof AuthenticatedAdminCrmIndexRoute
+  '/_authenticated/admin/crm/lead/$id': typeof AuthenticatedAdminCrmLeadIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -1754,6 +1774,8 @@ export interface FileRouteTypes {
     | '/en/modules/'
     | '/en/services-3/'
     | '/api/public/cms-media/$file'
+    | '/admin/crm/'
+    | '/admin/crm/lead/$id'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -1920,6 +1942,8 @@ export interface FileRouteTypes {
     | '/en/modules'
     | '/en/services-3'
     | '/api/public/cms-media/$file'
+    | '/admin/crm'
+    | '/admin/crm/lead/$id'
   id:
     | '__root__'
     | '/'
@@ -2094,6 +2118,8 @@ export interface FileRouteTypes {
     | '/en/modules/'
     | '/en/services-3/'
     | '/api/public/cms-media/$file'
+    | '/_authenticated/admin/crm/'
+    | '/_authenticated/admin/crm/lead/$id'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -3352,6 +3378,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EnServicesTrainingRouteImport
       parentRoute: typeof EnServicesRoute
     }
+    '/_authenticated/admin/crm/': {
+      id: '/_authenticated/admin/crm/'
+      path: '/crm'
+      fullPath: '/admin/crm/'
+      preLoaderRoute: typeof AuthenticatedAdminCrmIndexRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
     '/api/public/cms-media/$file': {
       id: '/api/public/cms-media/$file'
       path: '/api/public/cms-media/$file'
@@ -3359,15 +3392,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiPublicCmsMediaFileRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_authenticated/admin/crm/lead/$id': {
+      id: '/_authenticated/admin/crm/lead/$id'
+      path: '/crm/lead/$id'
+      fullPath: '/admin/crm/lead/$id'
+      preLoaderRoute: typeof AuthenticatedAdminCrmLeadIdRouteImport
+      parentRoute: typeof AuthenticatedAdminRoute
+    }
   }
 }
 
+interface AuthenticatedAdminRouteChildren {
+  AuthenticatedAdminCrmIndexRoute: typeof AuthenticatedAdminCrmIndexRoute
+  AuthenticatedAdminCrmLeadIdRoute: typeof AuthenticatedAdminCrmLeadIdRoute
+}
+
+const AuthenticatedAdminRouteChildren: AuthenticatedAdminRouteChildren = {
+  AuthenticatedAdminCrmIndexRoute: AuthenticatedAdminCrmIndexRoute,
+  AuthenticatedAdminCrmLeadIdRoute: AuthenticatedAdminCrmLeadIdRoute,
+}
+
+const AuthenticatedAdminRouteWithChildren =
+  AuthenticatedAdminRoute._addFileChildren(AuthenticatedAdminRouteChildren)
+
 interface AuthenticatedRouteRouteChildren {
-  AuthenticatedAdminRoute: typeof AuthenticatedAdminRoute
+  AuthenticatedAdminRoute: typeof AuthenticatedAdminRouteWithChildren
 }
 
 const AuthenticatedRouteRouteChildren: AuthenticatedRouteRouteChildren = {
-  AuthenticatedAdminRoute: AuthenticatedAdminRoute,
+  AuthenticatedAdminRoute: AuthenticatedAdminRouteWithChildren,
 }
 
 const AuthenticatedRouteRouteWithChildren =

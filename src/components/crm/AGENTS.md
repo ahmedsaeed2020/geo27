@@ -1,0 +1,3 @@
+- CRM uses authenticated server functions and assignment-scoped RLS; never fetch private records through the privileged client.
+- Existing landing submissions enter CRM through the contact_requests trigger so legacy forms remain unchanged.
+- CRM users override legacy Sales access; inactive users must not retain CMS privileges.
