@@ -15,6 +15,8 @@ import Leads from './admin/Leads';
 import Chats from './admin/Chats';
 import Team from './admin/Team';
 import Audit from './admin/Audit';
+import Integrations from './admin/Integrations';
+import Campaigns from './admin/Campaigns';
 import Redirects from './admin/Redirects';
 import FormsEditor from './admin/FormsEditor';
 import BrandingEditor from './admin/BrandingEditor';
@@ -187,6 +189,8 @@ export default function AdminWorkspace() {
         {current?.id === 'branding' && <BrandingEditor rows={w.config} media={w.media} owner={owner} team={w.team} notice={setNotice} />}
         {current?.id === 'leads' && <Leads rows={w.leads} team={w.team} notice={setNotice} />}
         {current?.id === 'chats' && <Chats />}
+        {current?.id === 'campaigns' && <Campaigns notice={setNotice} />}
+        {current?.id === 'integrations' && <Integrations notice={setNotice} />}
         {current?.id === 'team' && <Team rows={w.team} currentUser={w.userId} notice={setNotice} />}
         {current?.id === 'security' && <SecurityPanel owner={owner} aal={w.aal} config={w.config} notice={setNotice} />}
         {current?.id === 'audit' && <Audit rows={w.audit} team={w.team} docs={w.docs} />}

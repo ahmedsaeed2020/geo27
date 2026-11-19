@@ -16,6 +16,8 @@ import {
   Shield,
   SquarePen,
   Rows3,
+  Plug,
+  ChartNoAxesCombined,
 } from 'lucide-react';
 
 export type Role = 'owner' | 'editor' | 'sales';
@@ -37,6 +39,8 @@ export const TABS: Tab[] = [
   { id: 'branding', label: 'الهوية', icon: Palette, roles: ['owner'], group: 'الموقع' },
   { id: 'leads', label: 'طلبات العملاء', icon: Inbox, roles: ['owner', 'sales'], group: 'العملاء' },
   { id: 'chats', label: 'محادثات المساعد', icon: MessagesSquare, roles: ['owner', 'sales'], group: 'العملاء' },
+  { id: 'campaigns', label: 'الحملات والمصادر', icon: ChartNoAxesCombined, roles: ['owner', 'sales'], group: 'التسويق' },
+  { id: 'integrations', label: 'الربط والتكاملات', icon: Plug, roles: ['owner'], group: 'التسويق' },
   { id: 'team', label: 'الفريق والصلاحيات', icon: Shield, roles: ['owner'], group: 'الإدارة' },
   { id: 'security', label: 'أمان الحساب', icon: KeyRound, roles: ['owner', 'editor', 'sales'], group: 'الإدارة' },
   { id: 'audit', label: 'سجل النشاط', icon: History, roles: ['owner', 'editor', 'sales'], group: 'الإدارة' },

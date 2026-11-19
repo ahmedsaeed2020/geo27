@@ -24,6 +24,7 @@ import v3Css from '../v3.css?url';
 import catalogCss from '../catalog.css?url';
 import motionCss from '../motion.css?url';
 import { motionIdentity } from '@/motion/identity';
+import { captureAttribution } from '@/lib/campaign-attribution';
 
 import appCss from "../styles.css?url";
 import bilingualCss from "../bilingual.css?url";
@@ -203,6 +204,8 @@ function RootComponent() {
   const privateArea = useRouterState({ select: s => /^\/(admin|auth)(\/|$)/.test(s.location.pathname) });
   const landing = useRouterState({ select: s => /^\/(?:en\/?)?$/.test(s.location.pathname) });
   const draft = useSettingsDraft();
+  const campaignLocation = useRouterState({ select: s => s.location.href });
+  useEffect(() => { if (!privateArea) captureAttribution(); }, [campaignLocation, privateArea]);
   const config: SiteConfig = draft.status === 'ok' ? { ...site.config, [draft.key]: draft.value } : site.config;
 
   return (

@@ -5,6 +5,7 @@ import { useHydrated } from '@tanstack/react-router';
 import { contextForPath } from '@/content/catalog';
 import { submitLead } from '@/lib/leads.functions';
 import { leadSchema } from '@/lib/leads-schema';
+import { captureAttribution } from '@/lib/campaign-attribution';
 import { useLocale } from "@/lib/i18n";
 import { useSiteConfig } from '@/components/cms/CmsContext';
 import { Button } from "@/components/ui/button";
@@ -119,8 +120,7 @@ export default function ContactForm({ kind, interest = '', demo = false, product
       product: chosenProduct,
       department: chosenDepartment,
       topic: element.dataset['leadTopic'] ?? '',
-      referrer: document.referrer,
-      utm: Object.fromEntries([...new URLSearchParams(window.location.search)].filter(([key]) => key.startsWith('utm_'))),
+      ...captureAttribution(),
       consent: form.get('consent') === 'on',
       website: form.get('website') ?? '',
     });

@@ -3,6 +3,7 @@ import { useServerFn } from '@tanstack/react-start';
 import { Download, Mail, Phone } from 'lucide-react';
 import { updateLead, LEAD_STATUSES } from '@/lib/cms.functions';
 import { LEAD_RECIPIENT } from '@/lib/leads-schema';
+import { leadAttribution, SOURCE_LABELS } from '@/lib/marketing';
 import { productByKey } from '@/content/catalog';
 import { proTopicLabel } from '@/content/pro/pro-pages';
 import { blueprintTopicLabel } from '@/content/blueprint';
@@ -49,6 +50,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
   const [status, setStatus] = useState('all');
   const [owner, setOwner] = useState('all');
   const [product, setProduct] = useState('all');
+  const [source, setSource] = useState('all');
   const update = useServerFn(updateLead);
   const refresh = useRefresh();
   const assignable = team.filter(t => t.role !== 'editor');
@@ -59,9 +61,11 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
         (status === 'all' || r.status === status) &&
         (owner === 'all' || (owner === 'none' ? !r.assigned_to : r.assigned_to === owner)) &&
         (product === 'all' || (product === 'none' ? !r.product : r.product === product)) &&
-        (!needle || `${r.name} ${r.company ?? ''} ${r.email ?? ''} ${r.phone ?? ''} ${r.interest ?? ''}`.toLowerCase().includes(needle)),
+        (source === 'all' || leadAttribution(r.utm, r.referrer).source === source) &&
+        (!needle || `${r.name} ${r.company ?? ''} ${r.email ?? ''} ${r.phone ?? ''} ${r.interest ?? ''} ${leadAttribution(r.utm, r.referrer).campaign}`.toLowerCase().includes(needle)),
     );
-  }, [rows, q, status, owner, product]);
+  }, [rows, q, status, owner, product, source]);
+  const sources = [...new Set(rows.map(r => leadAttribution(r.utm, r.referrer).source))];
   const products = useMemo(() => [...new Set(rows.map(r => r.product).filter((p): p is string => !!p))], [rows]);
   const counts = useMemo(() => Object.fromEntries(LEAD_STATUSES.map(s => [s, rows.filter(r => r.status === s).length])), [rows]);
 
@@ -125,6 +129,7 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
           <Download size={16} />
           تصدير {visible.length} طلب
         </Button>
+        <NativeSelect aria-label="مصدر الطلبات" className="max-w-[14rem]" value={source} onChange={e => setSource(e.target.value)}><option value="all">كل المصادر</option>{sources.map(s => <option key={s} value={s}>{SOURCE_LABELS[s] || s}</option>)}</NativeSelect>
       </div>
       <p className="mb-5 text-sm text-muted-foreground">
         عنوان الإشعارات: <span dir="ltr">{LEAD_RECIPIENT}</span> · الإرسال البريدي غير مفعّل حتى يُجهّز نطاق الإرسال؛ كل الطلبات محفوظة هنا.
@@ -167,6 +172,8 @@ export default function Leads({ rows, team, notice }: { rows: Lead[]; team: Team
             </div>
             {r.message && <p className="whitespace-pre-line text-sm">{r.message}</p>}
             <div className="mt-3 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
+              <StatusPill tone="info">{SOURCE_LABELS[leadAttribution(r.utm, r.referrer).source] || leadAttribution(r.utm, r.referrer).source}</StatusPill>
+              {leadAttribution(r.utm, r.referrer).campaign && <span>الحملة: {leadAttribution(r.utm, r.referrer).campaign}</span>}
               {leadContextLabel(r.product, r.department) && <StatusPill tone="info">{leadContextLabel(r.product, r.department)}</StatusPill>}
               {proTopicLabel(r.topic) && <StatusPill tone="info">{proTopicLabel(r.topic)}</StatusPill>}
               {blueprintTopicLabel(r.topic) && <StatusPill tone="info">{blueprintTopicLabel(r.topic)}</StatusPill>}

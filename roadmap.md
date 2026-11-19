@@ -1,3 +1,8 @@
+# Admin marketing setup (2026-11-19)
+- [ ] Prepare admin integration settings for Analytics, Search Console, Google Sheets and n8n without connecting accounts now.
+- [ ] Add campaign link builder and lead source insights for Facebook, Google, LinkedIn and X; retain existing visitor forms and admin permissions.
+- [ ] Test settings persistence, attribution rules and signed-in admin flows; external delivery stays disabled until configured.
+
 # GeoInTime landing conversion (2026-11-19)
 - [x] Replace Arabic/English home with four source-grounded blocks, original imagery and scoped brand motion; hide DIGIT navigation from landing.
 - [x] Preserve administration and existing lead functions; brand the landing form without DIGIT customer claims.
