@@ -1,7 +1,8 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { redirect, createFileRoute } from "@tanstack/react-router";
 import { DeskLauncher } from "@/components/desk/DeskLauncher";
 
 export const Route = createFileRoute("/desk/")({
+  beforeLoad: () => { throw redirect({ href: "/admin/crm" }); },
   head: () => ({
     meta: [
       { title: "Desk Home — DIGIT Enterprise" },

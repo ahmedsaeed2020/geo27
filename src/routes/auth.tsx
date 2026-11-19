@@ -37,7 +37,7 @@ function AuthPage() {
       setError("بيانات الدخول غير صحيحة. تحقق من البريد وكلمة المرور.");
       return;
     }
-    navigate({ to: "/admin" });
+    navigate({ to: "/admin/crm" });
   }
 
   async function handleOAuth(provider: "google" | "lovable") {
@@ -50,7 +50,7 @@ function AuthPage() {
       return;
     }
     if (result.redirected) return;
-    navigate({ to: "/admin" });
+    navigate({ to: "/admin/crm" });
   }
 
   return (

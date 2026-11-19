@@ -122,8 +122,8 @@ export default function AdminWorkspace() {
         </h1>
         <p className="mb-6 text-xs text-muted-foreground">{ROLE_LABELS[role]}</p>
         {/* DIGIT CRM (Core + Enterprise + CRM) lives in the same project under /digit-crm */}
-        <a href="/digit-crm/home" className="mb-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90" data-admin-digit-crm>
-          DIGIT CRM
+        <a href="/admin/crm" className="mb-4 flex w-full items-center justify-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-primary-foreground hover:bg-primary/90" data-admin-digit-crm>
+          CRM
         </a>
         <nav aria-label="أقسام الإدارة" className="space-y-4">
           {groups.map(g => (

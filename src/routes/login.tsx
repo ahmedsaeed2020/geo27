@@ -9,11 +9,7 @@ const safe = (r?: string) => (r && r.startsWith("/") && !r.startsWith("//") && !
 
 export const Route = createFileRoute("/login")({
   validateSearch: (s: Record<string, unknown>): Search => ({ redirect: typeof s["redirect"] === "string" ? s["redirect"] : undefined }),
-  beforeLoad: async ({ search }) => {
-    // an unreachable server only means "not known to be signed in": show the sign-in form instead of the error screen
-    const session = await withNetworkRetry(() => getSiteSession()).catch(() => ({ signedIn: false }));
-    if (session.signedIn) throw redirect({ href: safe(search.redirect) });
-  },
+  beforeLoad: () => { throw redirect({ href: "/auth" }); },
   head: () => ({
     meta: [
       { title: "Sign in — DIGIT Enterprise" },
