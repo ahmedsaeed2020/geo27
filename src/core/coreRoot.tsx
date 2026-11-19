@@ -50,7 +50,7 @@ export function CoreNotFound() {
       <section className="ek-card p-6" data-route-not-found role="alert">
         <p className="text-sm text-muted-foreground">{ar ? "العنوان المطلوب" : "Requested address"}: <bdi dir="ltr" data-no-i18n className="font-mono text-foreground">{path}</bdi></p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Link to="/enterprise" className="btn-primary inline-flex">{ar ? "العودة إلى الرئيسية" : "Back to Home"}</Link>
+          <Link to="/digit-crm/home" className="btn-primary inline-flex">{ar ? "العودة إلى الرئيسية" : "Back to Home"}</Link>
           <button type="button" className="btn-ghost inline-flex" onClick={() => router.history.back()}>{ar ? "الصفحة السابقة" : "Previous page"}</button>
         </div>
       </section>

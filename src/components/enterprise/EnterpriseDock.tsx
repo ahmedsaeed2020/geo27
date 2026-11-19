@@ -58,11 +58,6 @@ export function EnterpriseDock({ variant = "rail", onNavigate }: { variant?: "ra
     <nav data-dock={grid ? undefined : ""} data-dock-enterprise data-dock-variant={variant} aria-label={tEnt("apps", ar)} className={grid ? "dx-dock-grid" : "us-dock dx-dock"}>
       {/* exact: the router's prefix match would announce an app tile as the current page on every page inside the app;
           the tile of the active app says aria-current="true" (current app), "page" only on the app's own home */}
-      <Link to={ENTERPRISE_HOME} activeOptions={EXACT} data-dock-app="enterprise" data-active={onHome || undefined} aria-current={onHome ? "page" : undefined} title={tEnt("home", ar)} onClick={() => { leaveExperience(); onNavigate?.(); }} className="dx-dock-item">
-        <AppTile icon={digitIconSrc("ui-dashboard")} />
-        <span className="dx-dock-label">{tEnt("home", ar)}</span>
-      </Link>
-      {!grid && <span className="dx-dock-sep" aria-hidden />}
       {apps.filter((a) => /crm/i.test(a.name)).map((a) => {
         const on = xp?.name === a.name;
         return (

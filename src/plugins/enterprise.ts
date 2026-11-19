@@ -20,7 +20,7 @@ import { defaultCompany } from "@/lib/sessionDefaults";
 import { allSlotProviders, type EnterpriseIndicator, type ExperienceSlots } from "./experienceSlots";
 import { enabledPlugins, usePluginsVersion } from "./runtime";
 
-export const ENTERPRISE_HOME = "/enterprise";
+export const ENTERPRISE_HOME = "/digit-crm/home";
 export const DESK_HOME = "/desk";
 
 export interface EnterpriseApp {

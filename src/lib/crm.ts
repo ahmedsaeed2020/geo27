@@ -147,7 +147,7 @@ export const DIR_COLUMNS: Record<CrmDirKind, { label: string; key: string }[]> =
 
 /** Seeds Contacts and CRM Call Logs referenced by the directory pages. Insert-if-missing only. */
 export function seedCrmDirectory() {
-  if (isServerHosted()) return undefined as never;
+  if (isServerHosted() || true) return undefined as never; // owner decision: no sample contacts / call logs
   if (!adapter.list("Contact").some((d) => d.name === "Sara Haddad")) {
     PEOPLE.forEach(([f, l], i) => adapter.insertDoc("Contact", {
       name: `${f} ${l}`, first_name: f, last_name: l, full_name: `${f} ${l}`,

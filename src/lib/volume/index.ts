@@ -56,6 +56,7 @@ export function seedVolume(): VolumeStats {
       const gone = deletedIndex();
       const vouchers = new Set<string>();
       const put = (dt: string, name: string, data: Record<string, unknown>) => {
+        if (dt === "Contact") return false; // owner decision: CRM contacts start empty
         if (adapter.get(dt, name) || wasRenamed(dt, name) || gone.has(deletedKey(dt, name))) return false;
         adapter.insertDocQuiet(dt, { ...data, name, __synthetic: 1, __sample: "volume" });
         stats.inserted++; stats.byDoctype[dt] = (stats.byDoctype[dt] ?? 0) + 1;
@@ -93,6 +94,7 @@ export function runVolumeProvider(app: string): VolumeStats {
       const gone = deletedIndex();
       const vouchers = new Set<string>();
       const put = (dt: string, name: string, data: Record<string, unknown>) => {
+        if (dt === "Contact") return false; // owner decision: CRM contacts start empty
         if (adapter.get(dt, name) || wasRenamed(dt, name) || gone.has(deletedKey(dt, name))) return false;
         adapter.insertDocQuiet(dt, { ...data, name, __synthetic: 1, __sample: "volume" });
         stats.inserted++; stats.byDoctype[dt] = (stats.byDoctype[dt] ?? 0) + 1;

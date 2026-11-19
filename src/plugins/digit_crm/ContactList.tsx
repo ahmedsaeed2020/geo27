@@ -24,6 +24,7 @@ import { CALL_OUTCOMES, logActivity, WA_TEMPLATES } from "./leadDesk";
 import { CONTACT_REL_HUE, CONTACT_REL_LABEL, CONTACT_REL_ORDER, contactRows, contactStrip, idleDays, type ContactRow, type Consent } from "./contactDesk";
 import { ago, dueText, m, OwnerTag, personLabel, sar, tx } from "./CrmRecordParts";
 import { LEAD_HUE_VAR } from "./leadCard";
+import { contactToLead } from "./contactConvert";
 
 const s = (v: unknown) => String(v ?? "");
 const relLabel = (k: string, ar: boolean) => CONTACT_REL_LABEL[k as keyof typeof CONTACT_REL_LABEL]?.[ar ? 1 : 0] ?? k;
@@ -45,7 +46,14 @@ function Body({ user, ar }: { user: string; ar: boolean }) {
   const rows = contactRows(user);
   const reg = useQuery(capabilityQuery);
   const [, bump] = useState(0);
-  const bulk: RlBulk[] = [{ key: "delete", label: tx(ar, "Delete", "حذف"), icon: "🗑", tone: "bad", run: (keys) => {
+  const toLead = (names: string[]) => {
+    let made = 0, last = "";
+    for (const n of names) { const r = contactToLead(n, user); if (r.ok) { last = r.lead; if (!r.existed) made++; } }
+    bump((x) => x + 1);
+    toast.success(tx(ar, `${made} lead(s) created`, `أُنشئ ${made} عميل محتمل`));
+    if (names.length === 1 && last) void nav({ to: "/digit-crm/leads/$leadId", params: { leadId: last } });
+  };
+  const bulk: RlBulk[] = [{ key: "to-lead", label: tx(ar, "Convert to lead", "تحويل إلى عميل محتمل"), icon: "↗", run: (keys) => toLead(keys) }, { key: "delete", label: tx(ar, "Delete", "حذف"), icon: "🗑", tone: "bad", run: (keys) => {
     const meta = cachedMeta("Contact"); if (!meta || !reg.data) { toast.error(tx(ar, "Contacts are not ready yet", "جهات الاتصال غير جاهزة بعد")); return; }
     if (!window.confirm(tx(ar, `Delete ${keys.length} contacts?`, `حذف ${keys.length} جهة اتصال؟`))) return;
     const r = deleteDocuments(meta, keys, reg.data, user); bump((x) => x + 1);
@@ -102,6 +110,7 @@ function Body({ user, ar }: { user: string; ar: boolean }) {
   const target = (r: ContactRow): { dt: "CRM Deal" | "CRM Lead"; name: string } | null => r.openDeals[0] ? { dt: "CRM Deal", name: r.openDeals[0].name } : r.deals[0] ? { dt: "CRM Deal", name: r.deals[0].name } : r.lead && !Number(r.lead["converted"]) ? { dt: "CRM Lead", name: r.lead.name } : null;
   const act = (mode: ComposerMode): RlRowAction<ContactRow>["run"] => (r) => setLog({ row: r, mode });
   const rowActions: RlRowAction<ContactRow>[] = [
+    { key: "to-lead", label: tx(ar, "Convert to lead", "تحويل إلى عميل محتمل"), icon: "↗", run: (r) => toLead([r.name]), hidden: (r) => !!r.lead && !Number(r.lead["converted"]) },
     { key: "call", label: tx(ar, "Call", "اتصال"), icon: "☎", run: act("call"), hidden: (r) => !target(r) || !r.phone },
     { key: "email", label: tx(ar, "Email", "بريد"), icon: "✉", run: act("email"), hidden: (r) => !target(r) || !r.email },
     { key: "whatsapp", label: tx(ar, "WhatsApp", "واتساب"), icon: "◉", run: act("whatsapp"), hidden: (r) => !target(r) || !r.phone },
