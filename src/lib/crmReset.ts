@@ -3,13 +3,17 @@ import { supabase } from "@/integrations/supabase/client";
 
 /** Owner decision: DIGIT CRM starts empty (no sample data); website sign-ups arrive as CRM Leads. */
 export const isCrmDoctype = (dt: string) => dt.startsWith("CRM ") || dt === "FCRM Note";
-const FLAG = "digit-crm:reset-v1";
+const FLAG = "digit-crm:reset-v2";
 
 export function resetCrmOnce() {
   if (typeof localStorage === "undefined" || localStorage.getItem(FLAG)) return;
   const types = new Set<string>();
   for (const dt of ["CRM Lead", "CRM Deal", "CRM Organization", "CRM Contact", "Contact", "CRM Task", "CRM Note", "FCRM Note", "CRM Call Log", "CRM Notification", "CRM Campaign", "CRM Target", "CRM Commission"]) types.add(dt);
   for (const dt of types) { try { for (const d of adapter.list(dt)) if (dt !== "Contact" || d["__synthetic"]) adapter.remove(dt, d.name); } catch { /* unknown doctype */ } }
+  // activities logged against CRM records (emails, to-dos, events, comments, versions)
+  for (const dt of ["Communication", "ToDo", "Event", "Comment", "Version", "Notification Log", "Activity Log"]) {
+    try { for (const d of adapter.list(dt)) { const ref = String(d["reference_doctype"] ?? d["ref_doctype"] ?? d["document_type"] ?? ""); if (isCrmDoctype(ref)) adapter.remove(dt, d.name); } } catch { /* unknown doctype */ }
+  }
   localStorage.setItem(FLAG, "1");
 }
 
